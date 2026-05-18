@@ -5,6 +5,7 @@ import { AboutHeroSectionContent } from "@/components/GeneralComponents/content"
 import ReadAboutTutors from "@/components/aboutUsComponents/ReadAboutTutors";
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
 import KeySection from "@/components/aboutUsComponents/KeySection";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 
 export async function generateMetadata() {
@@ -16,7 +17,10 @@ import TrustedBrands from "@/components/TrustedBrands";
 const AboutUs = () => {
   return (
     <>
-      <GeneralHeroSection  {...AboutHeroSectionContent} />
+      <GeneralHeroSection
+        {...AboutHeroSectionContent}
+        breadcrumb={<Breadcrumbs />}
+      />
       <main className="min-h-screen m-auto bg-white">
         <div className="max-w-324 h-auto flex flex-col gap-45 align-middle justify-center-safe">
           <MakesUsDifferenceSection />

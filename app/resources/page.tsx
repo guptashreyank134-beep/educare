@@ -1,4 +1,5 @@
 import React from 'react'
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import GeneralHeroSection from "@/components/GeneralComponents/GereralHeroSection";
 import { ResourcesHeroSectionContent } from '@/components/GeneralComponents/content';
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
@@ -11,14 +12,20 @@ import ResourcesTabsSection from '@/components/ResourcesPageComponents/Resources
 import { getResourcePageData } from '@/utils/seoBuilder';
 
 
+
 const Page = async () => {
   const resourceData = await getResourcePageData();
 
   return (
     <>
-      <GeneralHeroSection  {...ResourcesHeroSectionContent} />
-      <main className="min-h-screen max-w-467.5  px-4 sm:px-6 py-16 m-auto bg-white">
+      <GeneralHeroSection
+        {...ResourcesHeroSectionContent}
+        breadcrumb={<Breadcrumbs />}
+      />
+      <main className="min-h-screen m-auto bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
           <ResourcesTabsSection initialData={resourceData} />
+        </div>
       </main>
     </>
   )

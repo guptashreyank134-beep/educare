@@ -83,7 +83,7 @@ const LearningProgramsSection = () => {
               {activeProgram.rightSections.map((section, index) => {
                 const IconComponent = section.icon;
                 return (
-                  <div className="space-y-4">
+                  <div className="space-y-4" key={index}>
                             <div className="flex items-start gap-2" key={index}>
                                 <div className="h-8 w-8 rounded-sm bg-yellow-light text-slate flex items-center justify-center">
                                     <IconComponent className="w-6 h-6" />

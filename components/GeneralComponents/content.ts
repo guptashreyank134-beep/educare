@@ -1,10 +1,13 @@
 /** @format */
 
+import type { ReactNode } from "react";
+
 export interface GeneralHeroSectionProps {
   heading?: string;
   description?: string;
   buttonText?: string;
   buttonVisiblity?: boolean;
+  breadcrumb?: ReactNode;
   image?: {
     src: string;
     alt: string;

@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import {
   Bricolage_Grotesque,
   Montserrat,
-  Plus_Jakarta_Sans,
 } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
@@ -36,7 +35,7 @@ export default function RootLayout({
       lang="en"
       className={`${bricolageGrotesque.variable} ${montserrat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col pt-20">
         <Header />
         {children}
         <Footer />

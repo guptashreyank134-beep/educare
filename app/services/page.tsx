@@ -1,4 +1,5 @@
 import React from 'react'
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import GeneralHeroSection from "@/components/GeneralComponents/GereralHeroSection";
 import { ServicesHeroSectionContent } from '@/components/GeneralComponents/content';
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
@@ -13,12 +14,15 @@ import LearningProgramsSection from '@/components/servicesPageComponents/Learnin
 const page = () => {
   return (
     <>
-      <GeneralHeroSection  {...ServicesHeroSectionContent} />
+      <GeneralHeroSection
+        {...ServicesHeroSectionContent}
+        breadcrumb={<Breadcrumbs />}
+      />
       <main className="min-h-screen m-auto bg-white">
-      <div className="max-w-324 h-auto flex flex-col gap-45 align-middle justify-center-safe">
-        <LearningProgramsSection />
-      </div>
-    </main>
+        <div className="max-w-324 h-auto flex flex-col gap-45 align-middle justify-center-safe">
+          <LearningProgramsSection />
+        </div>
+      </main>
     </>
   )
 }

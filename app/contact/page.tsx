@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import { getMetaDataBySlug, getMetadata } from '@/utils/seoBuilder';
 import ContactForm from '@/components/ContactForm';
+import HeroBreadcrumb from '@/components/GeneralComponents/HeroBreadcrumb';
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("page", "contact");
@@ -13,7 +14,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
       {/* Background Grid Pattern */}
-      <div 
+      <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(to right, #FACC1510 1px, transparent 1px), linear-gradient(to bottom, #FACC1510 1px, transparent 1px)`,
@@ -22,11 +23,18 @@ const ContactPage = () => {
         }}
       ></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 py-8">
-        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contact Us', href: '/contact' }]} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-24 pb-8 sm:pt-28 lg:pt-32">
+        <HeroBreadcrumb>
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Contact Us', href: '/contact' },
+            ]}
+          />
+        </HeroBreadcrumb>
 
         {/* Hero Section */}
-        <div className="text-center mt-12 mb-16 max-w-4xl mx-auto px-4">
+        <div className="text-center mb-16 max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-[#1E293B] mb-6 leading-tight">
             Let's Build A Smarter Learning Journey Together!
           </h1>

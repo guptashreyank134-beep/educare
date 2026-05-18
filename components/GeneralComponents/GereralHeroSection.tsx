@@ -5,13 +5,19 @@ import { ArrowRight, Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { GeneralHeroSectionProps } from "./content";
+import HeroBreadcrumb from "./HeroBreadcrumb";
 
 
 const GeneralHeroSection = ({
-    heading, description, image, buttonText, buttonVisiblity = true
+    heading,
+    description,
+    image,
+    buttonText,
+    buttonVisiblity = true,
+    breadcrumb,
 }: GeneralHeroSectionProps) => {
     return (
-        <section className="relative pt-32 pb-20 overflow-hidden min-h-[80vh] flex items-center">
+        <section className="relative overflow-hidden min-h-[70vh] pt-24 pb-16 sm:pt-28 lg:pt-32 lg:pb-20">
             {/* Grid Background */}
             <div
                 className="absolute inset-0 z-0 opacity-100 pointer-events-none"
@@ -22,10 +28,16 @@ const GeneralHeroSection = ({
                 }}
             />
 
-            <div className="max-w-7xl max-h-81.5 mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                <div className="flex flex-col lg:flex-row gap-12 items-center w-full justify-between">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+                {breadcrumb ? (
+                    <HeroBreadcrumb>
+                        {breadcrumb}
+                    </HeroBreadcrumb>
+                ) : null}
+
+                <div className="flex flex-col lg:flex-row gap-12 lg:px-10 items-center w-full justify-between">
                     {/* Content */}
-                    <div className="max-w-211.25 w-full">
+                    <div className="max-w-166.25 w-full">
                         <h1 className="text-[42px] font-bricolage font-display font-normal text-slate leading-none mb-6 whitespace-pre-line">
                             {heading}
                         </h1>
