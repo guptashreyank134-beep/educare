@@ -1,13 +1,13 @@
-/** @format */
-
 import { MetadataRoute } from "next";
+import { client } from "@/sanity/lib/client";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://drshreyankeducare.com";
 
-  const routes = [
+  const staticRoutes = [
     "",
     "/about",
+    "/blog",
     "/contact",
     "/pricing",
     "/privacy",
@@ -42,10 +42,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms",
   ];
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "daily",
-    priority: route === "" ? 1 : 0.8,
-  }));
+  let dynamicRoutes: string[] = [];
+  try {
+    const posts = await client.fetch<Array<{ slug: string }>>(
+      `*[_type == "post" && defined(slug.current)] {
+        "slug": slug.current
+      }`
+    );
+    dynamicRoutes = posts.map((post) => `/blog/${post.slug}`);
+  } catch (error) {
+    console.error("Error fetching posts for sitemap:", error);
+  }
+
+  const allRoutes = [...staticRoutes, ...dynamicRoutes];
+
+  return allRoutes.map((route) => {
+    const suffix = route.endsWith("/") ? "" : "/";
+    return {
+      url: `${baseUrl}${route}${suffix}`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: route === "" ? 1 : 0.8,
+    };
+  });
 }
+

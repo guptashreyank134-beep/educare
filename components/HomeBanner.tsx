@@ -49,12 +49,12 @@ export default function HomeBanner() {
           </div>
 
           {/* Hero Image / Grid */}
-          <div className="relative lg:mt-0 mt-12 flex justify-center lg:justify-end">
+          <div className="relative lg:mt-0 mt-12 flex justify-center lg:justify-center">
             <div className="relative max-w-[500px] w-full">
               {/* Decorative background circle */}
               <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#3A5A98]/5 rounded-full blur-3xl" />
 
-              <div className="relative overflow-hidden p-2">
+              <div className="relative overflow-hidden p-2 flex justify-center w-full">
                 <div className="rounded-xl overflow-hidden">
                   <Image
                     src="/assets/homeBanner.webp"

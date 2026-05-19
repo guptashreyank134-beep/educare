@@ -118,3 +118,16 @@ export const keySectionContent: KeySectionContent = {
     },
   ],
 };
+
+export const BlogsHeroSectionContent = {
+  heading: "Stay Informed with the\nLatest Educational Insights",
+  description:
+    "Explore expert tips, rigorous study guides, and actionable industry insights from Dr. Shreyank Educare to elevate academic success.",
+  buttonText: "Browse Articles",
+  buttonVisiblity: false,
+  image: {
+    src: "servicesPage/ServicesHeroImg.webp",
+    alt: "Educare Blog Hero Image",
+    href: "/blog",
+  },
+};
