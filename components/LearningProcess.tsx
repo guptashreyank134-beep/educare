@@ -7,23 +7,23 @@ import Link from "next/link";
 const steps = [
   {
     number: "1",
-    title: "Book",
-    description: "Schedule your initial assessment and consultation.",
+    title: "Analysis",
+    description: "Diagnose Weak Areas & Work Out A Plan",
   },
   {
     number: "2",
-    title: "Plan",
-    description: "Receive a personalized roadmap based on your goals.",
+    title: "Concepts",
+    description: "Build Strong Conceptual Foundation",
   },
   {
     number: "3",
-    title: "Start",
-    description: "Engage in high-impact, focused learning sessions.",
+    title: "Application",
+    description: "Apply To Real Problems, Utilize Learnt Concepts",
   },
   {
     number: "4",
     title: "Track",
-    description: "Track your improvement with regular feedback.",
+    description: "Track Your Progress & Improve Continuously",
   },
 ];
 

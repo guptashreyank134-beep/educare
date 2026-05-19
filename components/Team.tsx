@@ -13,20 +13,20 @@ const teamMembers = [
     credentials: "and Numerical Methods.",
     image: "/assets/team-1.png",
   },
-  {
-    id: 2,
-    name: "Vipin Garg",
-    role: "Expert Finance Tutor",
-    credentials: "B.tech, MBA, CFA- Level III",
-    image: "/assets/team-2.png",
-  },
-  {
-    id: 3,
-    name: "Seema",
-    role: "Expert Chemistry Tutor",
-    credentials: "M.Sc. (Chemistry), B.Ed.",
-    image: "/assets/team-3.png",
-  },
+  // {
+  //   id: 2,
+  //   name: "Vipin Garg",
+  //   role: "Expert Finance Tutor",
+  //   credentials: "B.tech, MBA, CFA- Level III",
+  //   image: "/assets/team-2.png",
+  // },
+  // {
+  //   id: 3,
+  //   name: "Seema",
+  //   role: "Expert Chemistry Tutor",
+  //   credentials: "M.Sc. (Chemistry), B.Ed.",
+  //   image: "/assets/team-3.png",
+  // },
   {
     id: 4,
     name: "Zeba Shaikh",
@@ -41,13 +41,13 @@ const teamMembers = [
     credentials: "Ph.D. in Applied Mathematics",
     image: "/assets/team-5.png",
   },
-  {
-    id: 6,
-    name: "Dr. Devinder Kaur",
-    role: "Expert Physics & Math Tutor",
-    credentials: "Ph.D. in High Energy Physics",
-    image: "/assets/team-6.png",
-  },
+  // {
+  //   id: 6,
+  //   name: "Dr. Devinder Kaur",
+  //   role: "Expert Physics & Math Tutor",
+  //   credentials: "Ph.D. in High Energy Physics",
+  //   image: "/assets/team-6.png",
+  // },
 ];
 
 export default function Team() {

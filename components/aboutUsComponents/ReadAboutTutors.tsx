@@ -58,53 +58,53 @@ export const tutors = [
     ],
   },
 
-  {
-    id: 2,
-    name: "Vipin Garg",
-    role: "Expert Finance Tutor",
-    image: "/assets/tutors/vipin.webp",
-
-    belowshortDescription:
-      "Vipin offers the expertise, guidance, and personalized support to help you achieve your academic and professional goals.",
-
-    fullDescription:
-      "Vipin Garg is a results-driven finance tutor with over a decade of experience teaching undergraduate, graduate, and professional-level courses. His expertise spans corporate finance, investments, and financial markets.\n\nWith extensive corporate experience in financial planning, capital markets, and FinTech, he brings practical insights into his teaching, helping students connect theory with real-world applications.\n\n",
-
-    education: ["B.Tech", "MBA", "CFA Level III"],
-
-    expertise: "Expert Finance Tutor",
-
-    strengths: [
-      "Strong industry and academic experience in finance",
-      "Expertise in professional exam preparation (CFA, CSC, IFC)",
-      "Practical, real-world teaching approach",
-      "Structured learning plans for academic and career growth",
-    ],
-  },
-
-  {
-    id: 3,
-    name: "Seema",
-    role: "Expert Chemistry Tutor",
-    image: "/assets/tutors/seema.webp",
-
-    belowshortDescription:
-      "Seema’s student-centered tutoring style ensures every learner receives personalized attention.",
-
-    fullDescription:
-      "Seema is a dedicated chemistry tutor with strong academic expertise and teaching experience across school and college levels. She specializes in organic, inorganic, and physical chemistry.\n\nHer teaching style focuses on breaking down difficult topics into simple, understandable concepts, helping students build confidence and improve exam performance.\n\n",
-
-    education: ["M.Sc. Chemistry", "B.Ed."],
-
-    expertise: "Expert Chemistry Tutor",
-
-    strengths: [
-      "Strong subject knowledge across all chemistry domains",
-      "Clear and structured teaching approach",
-      "Personalized learning support",
-      "Focus on conceptual clarity and exam readiness",
-    ],
-  },
+  // {
+  //   id: 2,
+  //   name: "Vipin Garg",
+  //   role: "Expert Finance Tutor",
+  //   image: "/assets/tutors/vipin.webp",
+  //
+  //   belowshortDescription:
+  //     "Vipin offers the expertise, guidance, and personalized support to help you achieve your academic and professional goals.",
+  //
+  //   fullDescription:
+  //     "Vipin Garg is a results-driven finance tutor with over a decade of experience teaching undergraduate, graduate, and professional-level courses. His expertise spans corporate finance, investments, and financial markets.\n\nWith extensive corporate experience in financial planning, capital markets, and FinTech, he brings practical insights into his teaching, helping students connect theory with real-world applications.\n\n",
+  //
+  //   education: ["B.Tech", "MBA", "CFA Level III"],
+  //
+  //   expertise: "Expert Finance Tutor",
+  //
+  //   strengths: [
+  //     "Strong industry and academic experience in finance",
+  //     "Expertise in professional exam preparation (CFA, CSC, IFC)",
+  //     "Practical, real-world teaching approach",
+  //     "Structured learning plans for academic and career growth",
+  //   ],
+  // },
+  //
+  // {
+  //   id: 3,
+  //   name: "Seema",
+  //   role: "Expert Chemistry Tutor",
+  //   image: "/assets/tutors/seema.webp",
+  //
+  //   belowshortDescription:
+  //     "Seema’s student-centered tutoring style ensures every learner receives personalized attention.",
+  //
+  //   fullDescription:
+  //     "Seema is a dedicated chemistry tutor with strong academic expertise and teaching experience across school and college levels. She specializes in organic, inorganic, and physical chemistry.\n\nHer teaching style focuses on breaking down difficult topics into simple, understandable concepts, helping students build confidence and improve exam performance.\n\n",
+  //
+  //   education: ["M.Sc. Chemistry", "B.Ed."],
+  //
+  //   expertise: "Expert Chemistry Tutor",
+  //
+  //   strengths: [
+  //     "Strong subject knowledge across all chemistry domains",
+  //     "Clear and structured teaching approach",
+  //     "Personalized learning support",
+  //     "Focus on conceptual clarity and exam readiness",
+  //   ],
+  // },
 
   {
     id: 4,
@@ -154,29 +154,29 @@ export const tutors = [
     ],
   },
 
-  {
-    id: 6,
-    name: "Dr. Devinder Kaur",
-    role: "Expert Physics & Mathematics Tutor",
-    image: "/assets/tutors/devinder.webp",
-
-    belowshortDescription:
-      "Dr. Devinder’s teaching integrates simulations, technology, and visual tools to create engaging physics lessons tailored to each student’s needs.",
-
-    fullDescription:
-      "Dr. Devinder Kaur brings over 7 years of experience in teaching physics and mathematics. With a Ph.D. in High Energy Physics, she specializes in making complex topics such as mechanics, calculus, and nuclear physics easy to understand.\n\nHer sessions integrate visual tools, simulations, and structured problem-solving techniques to help students develop deeper understanding and confidence.\n\n",
-
-    education: ["Ph.D. in High Energy Physics"],
-
-    expertise: "Expert Physics & Mathematics Tutor",
-
-    strengths: [
-      "Strong foundation in physics and applied mathematics",
-      "Experience in research and higher education",
-      "Use of technology-driven teaching methods",
-      "Focus on analytical thinking and clarity",
-    ],
-  },
+  // {
+  //   id: 6,
+  //   name: "Dr. Devinder Kaur",
+  //   role: "Expert Physics & Mathematics Tutor",
+  //   image: "/assets/tutors/devinder.webp",
+  //
+  //   belowshortDescription:
+  //     "Dr. Devinder’s teaching integrates simulations, technology, and visual tools to create engaging physics lessons tailored to each student’s needs.",
+  //
+  //   fullDescription:
+  //     "Dr. Devinder Kaur brings over 7 years of experience in teaching physics and mathematics. With a Ph.D. in High Energy Physics, she specializes in making complex topics such as mechanics, calculus, and nuclear physics easy to understand.\n\nHer sessions integrate visual tools, simulations, and structured problem-solving techniques to help students develop deeper understanding and confidence.\n\n",
+  //
+  //   education: ["Ph.D. in High Energy Physics"],
+  //
+  //   expertise: "Expert Physics & Mathematics Tutor",
+  //
+  //   strengths: [
+  //     "Strong foundation in physics and applied mathematics",
+  //     "Experience in research and higher education",
+  //     "Use of technology-driven teaching methods",
+  //     "Focus on analytical thinking and clarity",
+  //   ],
+  // },
 ];
 const ReadAboutTutors = () => {
   const [activeTutor, setActiveTutor] = useState(tutors[0]);
