@@ -16,7 +16,7 @@ const PricingPage = () => {
             <section className="relative overflow-hidden bg-white pt-24 pb-16 sm:pt-28 lg:pt-32 lg:pb-20">
                 {/* Grid Background */}
                 <div
-                    className="absolute inset-0 z-0 opacity-100 pointer-events-none"
+                    className="absolute inset-0 z-0 opacity-150 pointer-events-none"
                     style={{
                         backgroundImage: `url('/backgrounds/yellowGrid.svg')`,
                         backgroundSize: "cover",
@@ -27,17 +27,17 @@ const PricingPage = () => {
                     <HeroBreadcrumb>
                         <Breadcrumbs />
                     </HeroBreadcrumb>
-                </div>
                 <main className="relative z-10 bg-white">
                     <PricingSection
                         heading={pricingSectionContent.heading}
                         subheading={pricingSectionContent.subheading}
                         cards={pricingSectionContent.cards}
                     />
+                </main>
                     <div className="max-w-324 h-auto flex flex-col gap-45 align-middle justify-center-safe">
                         <LearningProcess />
                     </div>
-                </main>
+                </div>
 
             </section>
 
