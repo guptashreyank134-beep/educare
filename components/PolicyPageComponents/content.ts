@@ -1,3 +1,5 @@
+/** @format */
+
 export interface PolicySection {
   heading: string;
   content: string[];
@@ -5,7 +7,7 @@ export interface PolicySection {
 
 export const PrivacyPolicyContent = {
   title: "Privacy Policy",
-  lastUpdated: "Last Updated: January 2024",
+  lastUpdated: "Last Updated: January 2026",
   introduction:
     "At Dr. Shreyank Educare, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.",
   sections: [
@@ -54,7 +56,7 @@ export const PrivacyPolicyContent = {
     {
       heading: "6. Contact Us",
       content: [
-        "If you have any questions about our Privacy Policy or how we handle your information, please contact us at info@drshreyankedulcare.com or call +1 (778) 819-3202.",
+        "If you have any questions about our Privacy Policy or how we handle your information, please contact us at  info@drshreyankeducare.com or call +1 (778) 819-3202.",
       ],
     },
   ],
@@ -62,7 +64,7 @@ export const PrivacyPolicyContent = {
 
 export const TermsAndConditionsContent = {
   title: "Terms and Conditions",
-  lastUpdated: "Last Updated: January 2024",
+  lastUpdated: "Last Updated: January 2026",
   introduction:
     "These Terms and Conditions govern your use of the Dr. Shreyank Educare website and services. By accessing our website or enrolling in our programs, you agree to be bound by these terms.",
   sections: [
@@ -94,7 +96,7 @@ export const TermsAndConditionsContent = {
       content: [
         "Refunds are available within 7 days of enrollment if no sessions have been attended.",
         "For ongoing programs, refunds may be available based on the specific program terms.",
-        "Requests for refunds must be submitted in writing to info@drshreyankedulcare.com.",
+        "Requests for refunds must be submitted in writing to  info@drshreyankeducare.com.",
       ],
     },
     {
@@ -128,7 +130,7 @@ export const TermsAndConditionsContent = {
     {
       heading: "9. Contact Information",
       content: [
-        "For questions or concerns about these Terms and Conditions, please contact us at info@drshreyankedulcare.com or call +1 (778) 819-3202.",
+        "For questions or concerns about these Terms and Conditions, please contact us at  info@drshreyankeducare.com or call +1 (778) 819-3202.",
       ],
     },
   ],

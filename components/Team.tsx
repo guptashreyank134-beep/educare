@@ -3,6 +3,7 @@
 import { Button } from "./ui/Button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const teamMembers = [
   {
@@ -98,7 +99,9 @@ export default function Team() {
         </div>
 
         <div className="flex justify-center">
-          <Button iconRight={ArrowRight}>Read About Our Team</Button>
+          <Link href="/about">
+            <Button iconRight={ArrowRight}>Read About Our Team</Button>
+          </Link>
         </div>
       </div>
     </section>

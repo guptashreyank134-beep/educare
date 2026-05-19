@@ -220,11 +220,11 @@ function FooterBar() {
               +1 (778) 819-3202
             </a>
             <a
-              href="mailto:info@drshreyankedulcare.com"
+              href="mailto: info@drshreyankeducare.com"
               className="flex items-center gap-2 text-[14px] font-montserrat text-white/80 hover:text-white transition-colors"
             >
               <Mail className="w-4 h-4 shrink-0" />
-              info@drshreyankedulcare.com
+              info@drshreyankeducare.com
             </a>
           </div>
 
@@ -270,7 +270,7 @@ function FooterBar() {
         {/* Divider + Nav */}
         <div className="border-t border-bg-white mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[12px] font-montserrat ">
-            © Copyright 2024. All Rights Reserved
+            © Copyright 2026. All Rights Reserved
           </p>
         </div>
       </div>

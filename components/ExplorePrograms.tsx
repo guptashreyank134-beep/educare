@@ -102,7 +102,9 @@ export default function ExplorePrograms() {
 
         {/* CTA */}
         <div className="flex justify-center">
-          <Button iconRight={ArrowRight}>Explore Our Programs</Button>
+          <Link href="/programs">
+            <Button iconRight={ArrowRight}>Explore Our Programs</Button>
+          </Link>
         </div>
       </div>
     </section>

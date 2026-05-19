@@ -3,6 +3,7 @@
 import { Button } from "./ui/Button";
 import { ArrowRight, Zap } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FocusedLearning() {
   return (
@@ -77,7 +78,9 @@ export default function FocusedLearning() {
               </ul>
             </div>
 
-            <Button iconRight={ArrowRight}>More About Us</Button>
+            <Link href="/about">
+              <Button iconRight={ArrowRight}>More About Us</Button>
+            </Link>
           </div>
         </div>
       </div>

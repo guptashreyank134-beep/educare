@@ -2,6 +2,7 @@
 
 import { Button } from "./ui/Button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const steps = [
   {
@@ -65,7 +66,9 @@ export default function LearningProcess() {
 
         {/* CTA */}
         <div className="flex justify-center">
-          <Button iconRight={ArrowRight}>Get A Free Consultation</Button>
+          <Link href="/contact">
+            <Button iconRight={ArrowRight}>Get A Free Consultation</Button>
+          </Link>
         </div>
       </div>
     </section>
