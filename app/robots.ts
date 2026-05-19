@@ -1,12 +1,14 @@
-import { MetadataRoute } from 'next'
+/** @format */
+
+import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/studio/'],
+      userAgent: "*",
+      allow: "/",
+      disallow: ["/studio/"],
     },
-    sitemap: 'https://drshreyankeducare.com/sitemap.xml',
-  }
+    sitemap: "https://drshreyankeducare.com/sitemap.xml",
+  };
 }
