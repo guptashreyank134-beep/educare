@@ -69,10 +69,10 @@ const PracticeTestsSection = ({ data }: PracticeTestsSectionProps) => {
                 <div className="flex flex-col gap-8 py-2.5 px-0">
                     <div className="max-w-165">
                         <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate leading-8.5 mb-5">
-                            {content.mainHeading}
+                            {content.practiceTestsSection?.mainHeading}
                         </h2>
                         <p className="text-base sm:text-lg text-justify text-slate leading-7 max-w-3xl whitespace-pre-wrap">
-                            {content.mainDescription}
+                            {content.practiceTestsSection?.mainDescription}
                         </p>
                     </div>
 

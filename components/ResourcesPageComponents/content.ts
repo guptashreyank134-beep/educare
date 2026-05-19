@@ -200,6 +200,7 @@ export const practiceMaterialData: PracticeMaterialSectionData = {
 // Practice Tests Data
 export interface PracticeTestItem {
   label: string;
+  link?: string;
 }
 
 export interface PracticeTestCardSection {
@@ -247,15 +248,19 @@ export const practiceTestData: PracticeTestSectionData = {
   practiceTests: [ 
     {
       label: "Take Exam 1 Online",
+      link: "https://drshreyankeducare.com/Exam/exam_e_online.html"
     },
     {
       label: "Take Exam 2 Online",
+      link: "https://drshreyankeducare.com/Exam/exam_f_online.html"
     },
     {
       label: "Take Exam 3 Online",
+      link: "https://drshreyankeducare.com/Exam/exam_g_online.html"
     },
     {
       label: "Take Exam 4 Online",
+      link: "https://drshreyankeducare.com/Exam/exam_h_online.html"
     },
   ],
 };

@@ -12,7 +12,9 @@ const PracticeMaterialSection = ({ data }: PracticeMaterialSectionProps) => {
     const studyTips = content.studyTips || practiceMaterialData.studyTips;
     const whyPracticeHelp = content.whyPracticeHelp || practiceMaterialData.whyPraticeHelp;
     const imageUrl = data?.image || practiceMaterialData.imageUrl;
-
+ 
+    console.log(data);
+    
     return (
         <div className="max-w-[1296px] w-full mx-auto">
             <div className="grid grid-cols-1 xl:grid-cols-[1.05fr_0.95fr] gap-8">
@@ -21,7 +23,7 @@ const PracticeMaterialSection = ({ data }: PracticeMaterialSectionProps) => {
                         <div className="relative flex-1 h-[368px] rounded-lg overflow-hidden aspect-[16/10]">
                             <Image
                                 src={imageUrl}
-                                alt={content.imageAlt || practiceMaterialData.imageAlt}
+                                alt={content.practiceMaterialSection?.imageAlt || practiceMaterialData.imageAlt}
                                 fill
                                 className="object-cover h-full w-full"
                                 priority
@@ -73,10 +75,10 @@ const PracticeMaterialSection = ({ data }: PracticeMaterialSectionProps) => {
                 <div className="flex flex-col gap-8 py-2.5 px-0">
                     <div className="max-w-165">
                         <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate-900 leading-8.5 mb-5">
-                            {content.heading}
+                            {content.practiceMaterialSection?.heading}
                         </h2>
                         <p className="text-base sm:text-lg text-slate-700 leading-7 max-w-3xl whitespace-pre-wrap">
-                            {content.description}
+                            {content.practiceMaterialSection?.description}
                         </p>
                     </div>
 
