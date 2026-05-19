@@ -7,6 +7,13 @@ import Link from "next/link";
 
 const teamMembers = [
   {
+    id: 0,
+    name: "Dr. Shreyank",
+    role: "PhD in Ultrasound Signal & Image Processing",
+    credentials: "Founder & Lead Instructor",
+    image: "/assets/drShreyank.webp",
+  },
+  {
     id: 1,
     name: "Prashanth Karupothula",
     role: "Fluid Sciences, Heat Transfer,",

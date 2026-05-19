@@ -31,6 +31,27 @@ import { GraduationCap, NotebookPen, Zap } from "lucide-react";
 
 export const tutors = [
   {
+    id: 0,
+    name: "Dr. Shreyank",
+    role: "Founder & Lead Instructor",
+    image: "/assets/drShreyank.webp",
+    belowshortDescription:
+      "Dr. Shreyank offers personalized tutoring programs designed to help students build confidence and achieve academic excellence.",
+    fullDescription:
+      "Dr. Shreyank is the founder and director of Dr. Shreyank Educare. He holds a PhD in Ultrasound Signal & Image Processing and brings over 10 years of professional teaching experience.\n\nHe has successfully supported students from top Canadian universities, including McGill, York, Carleton, and the University of Ottawa. His personalized tutoring programs are designed to help students improve grades, build confidence, and gain a deeper understanding of core subjects like mathematics, physics, chemistry, biology, and computer science.",
+    education: [
+      "Ph.D. in Ultrasound Signal & Image Processing",
+      "10+ Years of Teaching Experience",
+    ],
+    expertise: "Expert Tutoring in Math, Science & Coding",
+    strengths: [
+      "PhD-level expert instructor with over 10 years of teaching experience",
+      "Tailored 1-on-1 and group coaching styles",
+      "Proven track record with students from McGill, York, Carleton, and Ottawa",
+      "Comprehensive coverage of mathematics, physics, chemistry, and coding",
+    ],
+  },
+  {
     id: 1,
     name: "Prashanth Karupothula",
     role: "Mechanical Engineering Tutor",
