@@ -17,6 +17,9 @@ const PolicySectionComponent: React.FC<PolicySectionComponentProps> = ({
                             {section.heading}
                         </h2>
                         <div className="space-y-3">
+                            <h3 className="text-base font-bricolage font-semibold text-slate-700 sr-only">
+                                {section.heading} Details
+                            </h3>
                             {section.content.map((paragraph, pIndex) => (
                                 <p
                                     key={pIndex}

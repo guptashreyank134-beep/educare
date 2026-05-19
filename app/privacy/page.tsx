@@ -2,6 +2,7 @@ import React from "react";
 import { PrivacyPolicyContent } from "@/components/PolicyPageComponents/content";
 import PolicySectionComponent from "@/components/PolicyPageComponents/PolicySection";
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
+import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
 export async function generateMetadata() {
     try {
@@ -15,9 +16,15 @@ export async function generateMetadata() {
     }
 }
 
-const PrivacyPage = () => {
+const PrivacyPage = async () => {
+    let data;
+    try {
+        data = await getMetaDataBySlug("page", "privacy");
+    } catch (e) {}
+
     return (
         <>
+            <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/privacy")} />
             <main className="min-h-screen max-w-467.5 px-4 sm:px-6 m-auto bg-white">
                 <div className="space-y-8 pt-22">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6">

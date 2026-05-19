@@ -4,15 +4,18 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import { getMetaDataBySlug, getMetadata } from '@/utils/seoBuilder';
 import ContactForm from '@/components/ContactForm';
 import HeroBreadcrumb from '@/components/GeneralComponents/HeroBreadcrumb';
+import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("page", "contact");
   return getMetadata(data, "https://drshreyankeducare.com/contact");
 }
 
-const ContactPage = () => {
+const ContactPage = async () => {
+  const data = await getMetaDataBySlug("page", "contact");
   return (
     <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
+      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/contact")} />
       {/* Background Grid Pattern */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"

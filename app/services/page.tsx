@@ -9,11 +9,13 @@ export async function generateMetadata() {
   return getMetadata(data, "https://drshreyankeducare.com/services");
 }
 import LearningProgramsSection from '@/components/servicesPageComponents/LearningProgramsSection';
+import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
-
-const page = () => {
+const page = async () => {
+  const data = await getMetaDataBySlug("page", "services");
   return (
     <>
+      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/services")} />
       <GeneralHeroSection
         {...ServicesHeroSectionContent}
         breadcrumb={<Breadcrumbs />}

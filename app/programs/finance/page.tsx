@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
+import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "finance");
@@ -25,9 +26,9 @@ const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
     <div className="bg-yellow-light h-8 w-8 flex items-center justify-center rounded-lg text-slate shadow-sm">
       <Icon size={24} />
     </div>
-    <h3 className="text-[22px] font-bricolage font-normal text-slate">
+    <h2 className="text-[22px] font-bricolage font-normal text-slate">
       {title}
-    </h3>
+    </h2>
   </div>
 );
 
@@ -45,7 +46,8 @@ const ListItems = ({ items }: { items: string[] }) => (
   </ul>
 );
 
-export default function FinanceProgramPage() {
+export default async function FinanceProgramPage() {
+  const data = await getMetaDataBySlug("programPage", "finance");
   const breadcrumbItems = [
     { label: "Programs", href: "/programs" },
     { label: "Academic", href: "/programs" },
@@ -53,7 +55,9 @@ export default function FinanceProgramPage() {
   ];
 
   return (
-    <main className="relative min-h-screen bg-bg-grey overflow-hidden">
+    <>
+      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/programs/finance")} />
+      <main className="relative min-h-screen bg-bg-grey overflow-hidden">
       {/* Background Grid Pattern */}
       <div
         className="absolute h-[1568px] inset-0 z-0 pointer-events-none"
@@ -373,5 +377,6 @@ export default function FinanceProgramPage() {
         </section>
       </div>
     </main>
+    </>
   );
 }

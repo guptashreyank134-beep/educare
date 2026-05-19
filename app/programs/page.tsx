@@ -4,15 +4,18 @@ import GeneralHeroSection from "@/components/GeneralComponents/GereralHeroSectio
 import { ProgramsHeroSectionContent } from "@/components/GeneralComponents/content";
 import ProgramsSection from "@/components/programsComponents/ProgramsSection";
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
+import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("page", "programs");
   return getMetadata(data, "https://drshreyankeducare.com/programs");
 }
 
-const ProgramsPage = () => {
+const ProgramsPage = async () => {
+  const data = await getMetaDataBySlug("page", "programs");
   return (
     <>
+      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/programs")} />
       <GeneralHeroSection
         {...ProgramsHeroSectionContent}
         breadcrumb={<Breadcrumbs />}

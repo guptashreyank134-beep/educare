@@ -31,9 +31,9 @@ function ProgramCard({
         className="w-full flex items-center justify-between text-left  hover:bg-gray-50 transition-colors cursor-pointer"
         aria-expanded={open}
       >
-        <span className="text-[22px] font-bricolage font-semibold pb-5 text-slate">
+        <h2 className="text-[22px] font-bricolage font-semibold pb-5 text-slate">
           {program.title}
-        </span>
+        </h2>
         {open ? (
           <ChevronUp className="w-6 h-6 text-slate shrink-0" />
         ) : (
@@ -51,9 +51,9 @@ function ProgramCard({
           <div className="border-t border-[#F8F5F5] pt-5 grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Core Targets */}
             <div>
-              <p className="text-[18px] font-montserrat font-medium text-primary mb-[18px] uppercase">
+              <h3 className="text-[18px] font-montserrat font-medium text-primary mb-[18px] uppercase">
                 Core Targets
-              </p>
+              </h3>
               <ul className="space-y-1.5">
                 {program.coreTargets.map((item) => (
                   <li
@@ -69,9 +69,9 @@ function ProgramCard({
 
             {/* Ideal For */}
             <div>
-              <p className="text-[18px] font-montserrat font-medium text-primary mb-[18px] uppercase">
+              <h3 className="text-[18px] font-montserrat font-medium text-primary mb-[18px] uppercase">
                 Ideal For
-              </p>
+              </h3>
               <p className="text-[16px] font-montserrat text-slate leading-relaxed">
                 {program.idealFor}
               </p>
@@ -79,9 +79,9 @@ function ProgramCard({
 
             {/* Expected Outcome */}
             <div>
-              <p className="text-[18px] font-montserrat font-medium text-primary mb-[18px] uppercase">
+              <h3 className="text-[18px] font-montserrat font-medium text-primary mb-[18px] uppercase">
                 Expected Outcome
-              </p>
+              </h3>
               <p className="text-[16px] font-montserrat text-slate leading-relaxed mb-[18px]">
                 {program.expectedOutcome}
               </p>

@@ -110,9 +110,9 @@ export default function HomeBanner() {
                 key={index}
                 className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transform hover:-translate-y-1 transition-all"
               >
-                <h3 className="text-[34px] font-bricolage font-display font-medium text-primary leading-none mb-2">
+                <p className="text-[34px] font-bricolage font-display font-medium text-primary leading-none mb-2">
                   {metric.value}
-                </h3>
+                </p>
                 <p className="text-[20px] font-sans font-normal text-slate leading-none">
                   {metric.label}
                 </p>

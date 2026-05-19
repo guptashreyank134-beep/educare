@@ -9,10 +9,13 @@ export async function generateMetadata() {
     return getMetadata(data, "https://drshreyankeducare.com/pricing");
 }
 import LearningProcess from "@/components/LearningProcess";
+import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
-const PricingPage = () => {
+const PricingPage = async () => {
+    const data = await getMetaDataBySlug("page", "pricing");
     return (
         <>
+            <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/pricing")} />
             <section className="relative overflow-hidden bg-white pt-24 pb-16 sm:pt-28 lg:pt-32 lg:pb-20">
                 {/* Grid Background */}
                 <div

@@ -4,9 +4,9 @@ import LearningProcess from "@/components/LearningProcess";
 import { AboutHeroSectionContent } from "@/components/GeneralComponents/content";
 import ReadAboutTutors from "@/components/aboutUsComponents/ReadAboutTutors";
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
+import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 import KeySection from "@/components/aboutUsComponents/KeySection";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
-
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("page", "about");
@@ -14,9 +14,11 @@ export async function generateMetadata() {
 }
 import TrustedBrands from "@/components/TrustedBrands";
 
-const AboutUs = () => {
+const AboutUs = async () => {
+  const data = await getMetaDataBySlug("page", "about");
   return (
     <>
+      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/about")} />
       <GeneralHeroSection
         {...AboutHeroSectionContent}
         breadcrumb={<Breadcrumbs />}

@@ -9,6 +9,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WhatsAppFloating from "../components/WhatsAppFloating";
+import { JsonLd, getOrganizationSchema } from "../components/SchemaMarkup";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -36,6 +37,7 @@ export default function RootLayout({
       className={`${bricolageGrotesque.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col pt-20">
+        <JsonLd schema={getOrganizationSchema()} />
         <Header />
         {children}
         <Footer />

@@ -10,14 +10,16 @@ export async function generateMetadata() {
 }
 import ResourcesTabsSection from '@/components/ResourcesPageComponents/ResourcesTabsSection';
 import { getResourcePageData } from '@/utils/seoBuilder';
-
+import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
 
 const Page = async () => {
   const resourceData = await getResourcePageData();
+  const pageData = await getMetaDataBySlug("page", "resources");
 
   return (
     <>
+      <JsonLd schema={getPageSchema(pageData, "https://drshreyankeducare.com/resources")} />
       <GeneralHeroSection
         {...ResourcesHeroSectionContent}
         breadcrumb={<Breadcrumbs />}
