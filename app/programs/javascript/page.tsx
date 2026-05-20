@@ -285,3 +285,5 @@ export default async function JavaScriptProgramPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

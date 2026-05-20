@@ -254,3 +254,5 @@ export default async function UniversityChemistryPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

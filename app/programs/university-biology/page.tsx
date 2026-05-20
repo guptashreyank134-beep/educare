@@ -239,3 +239,5 @@ export default async function UniversityBiologyPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

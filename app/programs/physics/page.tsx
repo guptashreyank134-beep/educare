@@ -289,3 +289,5 @@ export default async function PhysicsProgramPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

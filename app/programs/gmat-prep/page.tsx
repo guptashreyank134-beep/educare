@@ -201,3 +201,5 @@ export default async function GmatPrepProgramPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

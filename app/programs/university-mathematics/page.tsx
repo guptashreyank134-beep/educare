@@ -291,3 +291,5 @@ export default async function UniversityMathematicsPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

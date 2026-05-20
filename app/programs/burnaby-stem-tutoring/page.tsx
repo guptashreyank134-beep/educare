@@ -268,3 +268,5 @@ export default async function BurnabySTEMTutoringPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

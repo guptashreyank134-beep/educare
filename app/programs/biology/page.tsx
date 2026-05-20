@@ -242,3 +242,5 @@ export default async function BiologyProgramPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

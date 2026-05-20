@@ -284,3 +284,5 @@ export default async function MathematicsProgramPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

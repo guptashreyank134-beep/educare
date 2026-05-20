@@ -380,3 +380,5 @@ export default async function FinanceProgramPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

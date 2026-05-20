@@ -255,3 +255,5 @@ export default async function ChemistryProgramPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

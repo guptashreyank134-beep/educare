@@ -274,3 +274,5 @@ export default async function IBAPTutoringPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

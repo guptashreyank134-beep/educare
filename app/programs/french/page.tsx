@@ -207,3 +207,5 @@ export default async function FrenchCoursePage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

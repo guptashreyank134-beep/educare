@@ -46,3 +46,5 @@ const TermsPage = async () => {
 };
 
 export default TermsPage;
+
+export const dynamic = "force-dynamic";

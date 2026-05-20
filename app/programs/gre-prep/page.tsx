@@ -201,3 +201,5 @@ export default async function GrePrepProgramPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

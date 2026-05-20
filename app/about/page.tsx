@@ -38,3 +38,4 @@ const AboutUs = async () => {
 }
 
 export default AboutUs;
+export const dynamic = "force-dynamic";

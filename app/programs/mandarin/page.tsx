@@ -207,3 +207,5 @@ export default async function MandarinCoursePage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

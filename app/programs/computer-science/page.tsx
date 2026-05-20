@@ -314,3 +314,5 @@ export default async function ComputerScienceProgramPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

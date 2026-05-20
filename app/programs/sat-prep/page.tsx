@@ -203,3 +203,5 @@ export default async function SatPrepProgramPage() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";
