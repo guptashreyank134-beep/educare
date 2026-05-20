@@ -8,22 +8,22 @@ const steps = [
   {
     number: "1",
     title: "Analysis",
-    description: "Diagnose Weak Areas & Work Out A Plan",
+    description: "Diagnose weak areas and work out a plan",
   },
   {
     number: "2",
     title: "Concepts",
-    description: "Build Strong Conceptual Foundation",
+    description: "Build a strong conceptual foundation",
   },
   {
     number: "3",
     title: "Application",
-    description: "Apply To Real Problems, Utilize Learnt Concepts",
+    description: "Apply to real-world problems and utilize learned concepts",
   },
   {
     number: "4",
     title: "Track",
-    description: "Track Your Progress & Improve Continuously",
+    description: "Track your progress and improve continuously",
   },
 ];
 

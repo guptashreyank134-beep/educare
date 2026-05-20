@@ -34,7 +34,7 @@ const programs = [
     icon: Landmark,
     title: "University Courses",
     description:
-      "Portfolio building and admissions counselling for global universities",
+      "Portfolio building and admissions counselling for global universities.",
     href: "/programs/university",
   },
 ];

@@ -6,9 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const metrics = [
-  { value: "10+ Years", label: "of teaching experience!" },
-  { value: "90% Success", label: "rate in students!" },
-  { value: "30% Improvement", label: "in overall grades!" },
+  { value: "10+ Years", label: "of teaching experience" },
+  { value: "90% Success", label: "student success rate" },
+  { value: "30% Improvement", label: "in overall grades" },
 ];
 
 export default function HomeBanner() {
@@ -28,12 +28,11 @@ export default function HomeBanner() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="max-w-xl">
-            <h1 className="text-[42px] font-bricolage font-display font-normal text-slate leading-none mb-6">
-              Personalized Learning, That Works At Every Level!
+            <h1 className="text-[42px] font-bricolage font-display font-normal text-slate leading-tight mb-6">
+              Struggling With Math, Physics, Chemistry, Or Coding? We Make It Finally Click.
             </h1>
-            <p className="text-[18px] font-sans font-normal text-slate mb-8 leading-none">
-              From math and science to coding and exam preparation, our
-              structured approach helps students build clarity, confidence, and
+            <p className="text-[18px] font-sans font-normal text-slate mb-8 leading-relaxed">
+              PhD-led tutoring helping students build clarity, confidence, and
               consistent academic improvement.
             </p>
             <div className="flex flex-wrap gap-4">
