@@ -23,23 +23,10 @@ const LearningProgramsSection = () => {
                 key={program.id}
                 type="button"
                 onClick={() => setActiveProgram(program)}
-                className={`
-                  inline-flex items-center justify-center
-                  px-3 py-2.5 sm:px-4 sm:py-3 lg:p-5 rounded-[20px] sm:rounded-[24px] leading-[100%]
-                  text-[14px] sm:text-[18px] lg:text-[22px] font-bricolage font-normal
-                  transition-all duration-200 cursor-pointer whitespace-nowrap
-                  focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 shadow-[0px_0px_50px_0px_#5757561F]
-                  ${
-                    activeProgram.id === program.id
-                      ? "bg-slate text-white"
-                      : "bg-bg-grey text-slate hover:bg-[#E9EAEC]"
-                  }
-                `}
-                style={
-                  activeProgram.id === program.id
-                    ? { boxShadow: "0px 0px 50px 0px #5757561F" }
-                    : undefined
-                }
+                className={`cursor-pointer rounded-3xl font-bricolage p-5 text-[22px] font-normal transition-all duration-200 whitespace-nowrap shadow-sm ${activeProgram.id === program.id
+                    ? "bg-slate-900 text-white"
+                    : "bg-white text-slate-800 group hover:bg-[#7C9FE3]"
+                  }`}
               >
                 {program.tabTitle}
               </button>
@@ -48,7 +35,7 @@ const LearningProgramsSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-[1.05fr_0.95fr] gap-8 max-w-[1157px]">
+        <div className="grid grid-cols-1 xl:grid-cols-[1.05fr_0.95fr] gap-8 max-w-289.25 mt-12">
           {/* Left sidebar */}
           <div className="space-y-6">
             <div className="relative lg:max-w-[461px] h-[334px] rounded-lg overflow-visible">

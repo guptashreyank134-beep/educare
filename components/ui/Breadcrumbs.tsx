@@ -65,7 +65,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
           href="/"
           className="inline-flex items-center text-slate-500 transition-colors hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
-          <Home size={16} />
+          <Home size={16} className="text-primary" />
         </Link>
 
         {breadcrumbItems.map((item, index) => {
@@ -76,12 +76,12 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
               {item.href && !isLast ? (
                 <Link
                   href={item.href}
-                  className="whitespace-nowrap text-primary transition-colors hover:text-slate focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  className="whitespace-nowrap font-bricolage text-primary transition-colors hover:text-slate focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 >
                   {item.label}
                 </Link>
               ) : (
-                <span className="whitespace-nowrap font-medium text-slate">
+                <span className="whitespace-nowrap font-bricolage font-medium text-primary">
                   {item.label}
                 </span>
               )}

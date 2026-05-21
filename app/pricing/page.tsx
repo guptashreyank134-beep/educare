@@ -27,7 +27,7 @@ const PricingPage = async () => {
                     }}
                 />
                 <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <HeroBreadcrumb>
+                    <HeroBreadcrumb nearHeader>
                         <Breadcrumbs />
                     </HeroBreadcrumb>
                 <main className="relative z-10 bg-white">

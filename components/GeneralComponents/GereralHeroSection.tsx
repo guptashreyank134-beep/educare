@@ -30,7 +30,7 @@ const GeneralHeroSection = ({
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
                 {breadcrumb ? (
-                    <HeroBreadcrumb>
+                    <HeroBreadcrumb nearHeader>
                         {breadcrumb}
                     </HeroBreadcrumb>
                 ) : null}

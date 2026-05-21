@@ -13,11 +13,11 @@ const DemoVideosSection = ({ data }: DemoVideosSectionProps) => {
     const imageUrl = data?.image || demoVideoData.imageUrl;
 
     return (
-        <div className="max-w-[1296px] w-full mx-auto">
+        <div className="max-w-324 mt-10 w-full mx-auto">
             <div className="grid grid-cols-1 xl:grid-cols-[1.05fr_0.95fr] gap-8">
                 <div className="space-y-6">
-                    <div className="flex items-start gap-3 max-w-[472px]">
-                        <div className="relative flex-1 h-[368px] rounded-lg overflow-hidden aspect-[16/10]">
+                    <div className="flex items-start gap-3 max-w-118">
+                        <div className="relative flex-1 h-92 rounded-lg overflow-hidden aspect-16/10">
                             <Image
                                 src={imageUrl}
                                 alt={content.imageAlt || demoVideoData.imageAlt}
@@ -34,11 +34,11 @@ const DemoVideosSection = ({ data }: DemoVideosSectionProps) => {
                     </div>
 
                     <div className="grid gap-8">
-                        <div className="bg-white max-w-[414px] rounded-lg border-slate-200 shadow-sm p-5">
-                            <h3 className="text-[22px] underline underline-offset-4 decoration-yellow-light decoration-2 font-semibold text-slate mb-3">
+                        <div className="bg-white max-w-103.5 rounded-lg border-slate-200 shadow-sm p-5">
+                            <h3 className="text-[22px] font-bricolage underline underline-offset-4 decoration-yellow-light decoration-2 font-semibold text-slate mb-3">
                                 {learningPoints.heading}
                             </h3>
-                            <ul className="space-y-2 text-[16px] text-slate-700 leading-4 list-disc list-inside">
+                            <ul className="space-y-2 text-[16px] font-montserrat text-slate-700 leading-4 list-disc list-inside">
                                 {learningPoints.pointers?.map((point: string, pointIndex: number) => (
                                     <li key={pointIndex}>{point}</li>
                                 ))}
@@ -52,7 +52,7 @@ const DemoVideosSection = ({ data }: DemoVideosSectionProps) => {
                         <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate-900 leading-[34px] mb-5">
                             {content.heading}
                         </h2>
-                        <p className="text-base sm:text-lg text-slate-700 leading-7 max-w-3xl whitespace-pre-wrap">
+                        <p className="text-base sm:text-lg font-montserrat text-slate-700 leading-7 max-w-3xl whitespace-pre-wrap">
                             {content.description}
                         </p>
                     </div>
@@ -72,7 +72,7 @@ const DemoVideosSection = ({ data }: DemoVideosSectionProps) => {
                             <ul className="space-y-3 ml-1 text-[16px] leading-relaxed font-montserrat text-slate list-disc list-inside">
                                 {categories.map((category: any, index: number) => (
                                     <li key={index} className="py-2 whitespace-break-spaces">
-                                        <span className="font-medium text-slate">{category.title}</span> {category.description}
+                                        <span className="font-medium font-montserrat text-slate">{category.title}</span><span className="font-normal text-base font-montserrat text-slate"> {category.description}</span>
                                     </li>
                                 ))}
                             </ul>
