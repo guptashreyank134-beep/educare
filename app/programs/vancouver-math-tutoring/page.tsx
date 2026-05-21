@@ -273,4 +273,4 @@ export default async function VancouverMathTutoringPage() {
   );
 }
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;

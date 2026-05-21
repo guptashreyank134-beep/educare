@@ -272,4 +272,4 @@ export default async function UniversityPhysicsPage() {
   );
 }
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;

@@ -265,4 +265,4 @@ export default async function PreCalculusProgramPage() {
   );
 }
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;

@@ -207,6 +207,7 @@ const redirectPairs: [string, string][] = [
 
 const nextConfig: NextConfig = {
   images: {
+    minimumCacheTTL: 31536000, // 1 year cache policy for optimized images
     remotePatterns: [
       {
         protocol: "https",

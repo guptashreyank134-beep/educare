@@ -62,6 +62,7 @@ export default function HomeBanner() {
                     height={478}
                     className="w-[265px] h-[478px] object-cover transform hover:scale-[1.02] transition-transform duration-700"
                     priority
+                    fetchPriority="high"
                   />
                 </div>
               </div>

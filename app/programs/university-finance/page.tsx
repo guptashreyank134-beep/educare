@@ -379,4 +379,4 @@ export default async function UniversityFinancePage() {
   );
 }
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;

@@ -107,4 +107,4 @@ const ContactInfoCard = ({ icon, title, value, href }: { icon: React.ReactNode, 
 
 export default ContactPage;
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;

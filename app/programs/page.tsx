@@ -29,4 +29,4 @@ const ProgramsPage = async () => {
 
 export default ProgramsPage;
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;

@@ -50,4 +50,4 @@ const PricingPage = async () => {
 }
 
 export default PricingPage;
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;

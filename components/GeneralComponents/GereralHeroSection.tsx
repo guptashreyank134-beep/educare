@@ -68,6 +68,7 @@ const GeneralHeroSection = ({
                                         height={326}
                                         className="w-full max-w-[341px] h-auto object-cover rounded-xl"
                                         priority
+                                        fetchPriority="high"
                                     />
                                 </div>
                                 <div className="absolute p-1 -bottom-4 left-0 sm:-left-7 h-11 w-[215px] bg-yellow-light rounded-lg flex gap-2.5 items-center justify-center z-10 shadow-lg">

@@ -47,4 +47,4 @@ const TermsPage = async () => {
 
 export default TermsPage;
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;

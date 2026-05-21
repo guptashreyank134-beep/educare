@@ -219,4 +219,4 @@ export default async function BlogListingPage({ searchParams }: PageProps) {
   );
 }
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;

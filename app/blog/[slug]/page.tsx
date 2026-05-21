@@ -408,4 +408,4 @@ export default async function BlogPostPage({ params }: PageProps) {
   );
 }
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;

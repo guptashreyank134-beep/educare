@@ -262,4 +262,4 @@ export default async function PhysicsTutoringPage() {
   );
 }
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
