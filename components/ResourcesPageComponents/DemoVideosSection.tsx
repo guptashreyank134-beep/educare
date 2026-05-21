@@ -34,7 +34,7 @@ const DemoVideosSection = ({ data }: DemoVideosSectionProps) => {
                     </div>
 
                     <div className="grid gap-8">
-                        <div className="bg-white max-w-103.5 rounded-lg border-slate-200 shadow-sm p-5">
+                        <div className="bg-white max-w-[414px] rounded-lg border-slate-200 shadow-sm p-5">
                             <h3 className="text-[22px] underline underline-offset-4 decoration-yellow-light decoration-2 font-semibold text-slate mb-3">
                                 {learningPoints.heading}
                             </h3>
@@ -48,8 +48,8 @@ const DemoVideosSection = ({ data }: DemoVideosSectionProps) => {
                 </div>
 
                 <div className="flex flex-col gap-8 py-2.5 px-0">
-                    <div className="max-w-165">
-                        <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate-900 leading-8.5 mb-5">
+                    <div className="max-w-[660px]">
+                        <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate-900 leading-[34px] mb-5">
                             {content.heading}
                         </h2>
                         <p className="text-base sm:text-lg text-slate-700 leading-7 max-w-3xl whitespace-pre-wrap">

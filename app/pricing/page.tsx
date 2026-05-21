@@ -37,7 +37,7 @@ const PricingPage = async () => {
                         cards={pricingSectionContent.cards}
                     />
                 </main>
-                    <div className="max-w-324 h-auto flex flex-col gap-45 align-middle justify-center-safe">
+                    <div className="max-w-[1296px] mx-auto h-auto flex flex-col gap-12 sm:gap-24">
                         <LearningProcess />
                     </div>
                 </div>

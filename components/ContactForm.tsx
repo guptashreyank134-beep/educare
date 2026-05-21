@@ -28,7 +28,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto bg-white rounded-[40px] shadow-[0_20px_80px_rgba(0,0,0,0.06)] p-8 md:p-16 border border-[#F1F5F9] mb-32 mx-4">
+    <div className="max-w-4xl mx-auto bg-white rounded-[24px] sm:rounded-[40px] shadow-[0_20px_80px_rgba(0,0,0,0.06)] p-6 sm:p-10 md:p-16 border border-[#F1F5F9] mb-16 sm:mb-32">
       <form onSubmit={handleSubmit} className="space-y-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Input label="First Name" placeholder="enter first name" id="firstName" name="firstName" required />

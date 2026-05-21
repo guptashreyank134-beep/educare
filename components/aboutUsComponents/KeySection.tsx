@@ -11,9 +11,9 @@ const KeySection = () => {
 
     return (
         <div className="max-w-[1296px] w-full mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-1 xl:grid-cols-[1.3fr_0.85fr_0.90fr] gap-5 py-10 lg:py-5">
-                <div className="flex items-start gap-[10px]">
-                    <div className="relative rounded-[8px] overflow-hidden flex-1 h-[684px]">
+            <div className="grid grid-cols-1 xl:grid-cols-[1.3fr_0.85fr_0.90fr] gap-8 xl:gap-5 py-10 lg:py-5">
+                <div className="flex items-start gap-[10px] order-2 xl:order-1">
+                    <div className="relative rounded-[8px] overflow-hidden flex-1 h-[300px] sm:h-[450px] xl:h-[684px]">
                         <Image
                             src={keySectionContent.imageUrl}
                             alt={keySectionContent.imageAlt}
@@ -22,12 +22,12 @@ const KeySection = () => {
                             priority
                         />
                     </div>
-                    <div className="w-[49px] h-[44px] rounded-[8px] bg-yellow-light text-slate-900 flex items-center justify-center shadow-lg border border-slate-200">
+                    <div className="w-[49px] h-[44px] rounded-[8px] bg-yellow-light text-slate-900 hidden sm:flex items-center justify-center shadow-lg border border-slate-200">
                         <Icon className="w-[24px] h-[24px]" />
                     </div>
                 </div>
 
-                <div className="flex flex-col justify-center max-w-[350px]">
+                <div className="flex flex-col justify-center w-full xl:max-w-[350px] order-1 xl:order-2">
                     <div >
                         <h2 className="text-4xl sm:text-[48px] font-bricolage font-normal text-slate mb-5">
                             {keySectionContent.heading}
@@ -38,7 +38,7 @@ const KeySection = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col justify-center gap-10 max-w-[386px]">
+                <div className="flex flex-col justify-center gap-6 xl:gap-10 w-full xl:max-w-[386px] order-3 xl:order-3">
                     {keySectionContent.cards.map((card, index) => (
                         <div key={index} className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6">
                             <div className="inline-block border-b-2 border-yellow-light pb-1 mb-4">

@@ -6,6 +6,7 @@ import LearningProcess from "./LearningProcess";
 import FocusedLearning from "./FocusedLearning";
 import ExplorePrograms from "./ExplorePrograms";
 import Team from "./Team";
+import Reviews from "./Reviews";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ExplorePrograms />
       <Team />
       <TrustedBrands />
+      <Reviews />
     </main>
   );
 }

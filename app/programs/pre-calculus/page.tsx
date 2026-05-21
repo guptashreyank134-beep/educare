@@ -84,7 +84,7 @@ export default async function PreCalculusProgramPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 mt-10 items-start">
             {/* Left Column */}
             <div>
-              <h1 className="text-[42px] sm:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
+              <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
                 Pre-Calculus 11 & 12 Tutoring
               </h1>
 
@@ -187,14 +187,14 @@ export default async function PreCalculusProgramPage() {
             </div>
 
             {/* Right Column */}
-            <div className="relative lg:pt-20 w-fit">
-              <div className="relative w-fit rounded-3xl overflow-hidden shadow-2xl transform rotate-1 group transition-transform hover:rotate-0 duration-500">
+            <div className="relative lg:pt-20 w-full lg:w-auto flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[378px] rounded-3xl overflow-hidden shadow-2xl transform rotate-1 group transition-transform hover:rotate-0 duration-500">
                 <Image
                   src="/assets/mathematics.jpg"
                   alt="Pre-Calculus 11 and 12 Tutoring"
                   width={378}
                   height={361}
-                  className="h-[361px] w-[378px] object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
+                  className="h-[280px] sm:h-[361px] w-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
                 />
                 <div className="absolute bottom-8 left-0 bg-yellow-light text-slate px-4 py-2 rounded-r-xl shadow-lg flex items-center gap-2 animate-bounce-slow">
                   <Zap size={18} fill="currentColor" />

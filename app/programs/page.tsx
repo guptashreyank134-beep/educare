@@ -20,7 +20,7 @@ const ProgramsPage = async () => {
         {...ProgramsHeroSectionContent}
         breadcrumb={<Breadcrumbs />}
       />
-      <main className="min-h-screen m-auto bg-white">
+      <main className="min-h-screen m-auto bg-white w-[100vw] md:w-full">
         <ProgramsSection />
       </main>
     </>

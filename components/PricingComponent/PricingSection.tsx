@@ -19,10 +19,10 @@ interface PricingSectionProps {
 }: PricingSectionProps) => {
     return (
         <section className="py-10 bg-white overflow-hidden">
-            <div className="mx-auto w-full max-w-324 flex flex-col gap-10 px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto w-full max-w-[1296px] flex flex-col gap-10 px-4 sm:px-6 lg:px-8">
                 {/* Heading Wrapper */}
-                <div className="w-full max-w-170.75 h-auto mx-auto gap-3 flex flex-col items-center justify-center">
-                    <h1 className="text-[28px] sm:text-[32px] leading-10 sm:leading-11 font-bricolage font-display font-normal text-slate text-center">
+                <div className="w-full max-w-[683px] h-auto mx-auto gap-3 flex flex-col items-center justify-center">
+                    <h1 className="text-[28px] sm:text-[32px] leading-[40px] sm:leading-[44px] font-bricolage font-display font-normal text-slate text-center">
                         {heading}
                     </h1>
                     <p className="text-[14px] sm:text-[16px] leading-5 sm:leading-6 font-montserrat font-normal text-slate opacity-80 text-center">

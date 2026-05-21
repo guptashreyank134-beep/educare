@@ -103,7 +103,7 @@ export default async function BlogListingPage({ searchParams }: PageProps) {
         breadcrumb={<Breadcrumbs />}
       />
 
-      <main className="min-h-screen bg-slate-50 py-16">
+      <main className="min-h-screen py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {posts.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-2xl shadow-sm border border-slate-100">
@@ -136,10 +136,10 @@ export default async function BlogListingPage({ searchParams }: PageProps) {
                   const readingTime = getReadingTime(plainTextBody);
                   const formattedDate = post.publishedAt
                     ? new Date(post.publishedAt).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })
                     : "Recently published";
 
                   const imageUrl = post.mainImage

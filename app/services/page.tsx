@@ -20,8 +20,8 @@ const page = async () => {
         {...ServicesHeroSectionContent}
         breadcrumb={<Breadcrumbs />}
       />
-      <main className="min-h-screen m-auto bg-white">
-        <div className="max-w-324 h-auto flex flex-col gap-45 align-middle justify-center-safe">
+      <main className="min-h-screen m-auto bg-white w-[100vw] md:w-full">
+        <div className="max-w-[1296px] mx-auto h-auto flex flex-col gap-12 sm:gap-24 px-4 sm:px-6 lg:px-8 w-full min-w-0">
           <LearningProgramsSection />
         </div>
       </main>

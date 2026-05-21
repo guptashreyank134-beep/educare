@@ -12,7 +12,7 @@
 //      <div id='mainSection'>
 
 //      </div>
-       
+
 
 
 //     </main>>
@@ -205,36 +205,36 @@ const ReadAboutTutors = () => {
   return (
     <main className="max-w-7xl mx-auto px-4 py-16 flex flex-col gap-12">
       {/* Heading */}
-      <div className="text-center max-w-136.5 mx-auto mb-10">
-          <h2 className="text-[32px] font-bricolage font-display font-normal text-slate leading-8.5 mb-4">
-            Read about our tutors, <br />
-            get to know them better!
-          </h2>
-          <p className="text-[16px] font-sans font-normal text-slate leading-none opacity-80">
-            Our experienced instructors combine academic excellence with real-world teaching, ensuring students grasp concepts thoroughly.
-          </p>
-        </div>
+      <div className="text-center max-w-[546px] mx-auto mb-10">
+        <h2 className="text-[32px] font-bricolage font-display font-normal text-slate leading-[34px] mb-4">
+          Read about our tutors, <br />
+          get to know them better!
+        </h2>
+        <p className="text-[16px] font-sans font-normal text-slate leading-relaxed opacity-80">
+          Our experienced instructors combine academic excellence with real-world teaching, ensuring students grasp concepts thoroughly.
+        </p>
+      </div>
 
       {/* Main Section */}
       <div
         id="mainSection"
-        className="grid grid-cols-1 lg:grid-cols-[280px_1fr_300px] gap-8"
+        className="grid grid-cols-1 lg:grid-cols-[280px_1fr_300px] gap-8 items-start"
       >
         {/* LEFT SECTION */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 order-2 lg:order-1 w-full max-w-[341px] mx-auto lg:max-w-none">
           {/* Image */}
-          <div className="rounded-xl">
+          <div className="rounded-xl overflow-hidden w-full">
             <Image
               src={activeTutor.image}
               alt={activeTutor.name}
               width={266}
               height={328}
-              className="w-full h-100 object-cover"
+              className="w-full h-[400px] object-cover object-top rounded-xl"
             />
           </div>
 
           {/* Small Info Card */}
-          <div className="bg-white rounded-lg shadow-md p-2.5 flex flex-col gap-5">
+          <div className="bg-white rounded-lg shadow-md p-5 flex flex-col gap-5 w-full">
             <div className="flex items-start gap-3">
               <div className="bg-yellow-light p-2.5 rounded-lg">
                 <GraduationCap className="w-8 h-8 text-slate" />
@@ -260,13 +260,13 @@ const ReadAboutTutors = () => {
         </div>
 
         {/* MIDDLE SECTION */}
-        <div className="bg-white rounded-lg shadow-md p-5 flex flex-col gap-6">
+        <div className="bg-white rounded-lg shadow-md p-5 sm:p-8 flex flex-col gap-6 order-3 lg:order-2 w-full">
           <div>
-            <h3 className="text-4xl font-semibold text-slate-800 mb-4">
+            <h3 className="text-3xl sm:text-4xl font-semibold text-slate-800 mb-4">
               {activeTutor.name}
             </h3>
 
-            <p className="text-gray-700 leading-5.5 font-normal whitespace-pre-line">
+            <p className="text-gray-700 leading-[22px] font-normal whitespace-pre-line">
               {activeTutor.fullDescription}
             </p>
           </div>
@@ -296,26 +296,24 @@ const ReadAboutTutors = () => {
         </div>
 
         {/* RIGHT SECTION */}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible whitespace-nowrap lg:whitespace-normal pb-4 lg:pb-0 gap-4 lg:gap-5 snap-x order-1 lg:order-3 w-full lg:w-auto">
           {tutors.map((tutor) => (
             <button
               key={tutor.id}
               onClick={() => setActiveTutor(tutor)}
-              className={`group p-5 rounded-xl text-left transition-all shadow-sm cursor-pointer hover:text-white
-                ${
-                  activeTutor.id === tutor.id
-                    ? "bg-slate-800 text-white"
-                    : "bg-white hover:bg-[#7C9FE3]"
+              className={`group p-5 rounded-xl text-left transition-all shadow-sm cursor-pointer hover:text-white min-w-[220px] lg:min-w-0 shrink-0 lg:shrink w-auto lg:w-full snap-start whitespace-normal
+                ${activeTutor.id === tutor.id
+                  ? "bg-slate-800 text-white"
+                  : "bg-white hover:bg-[#7C9FE3]"
                 }`}
             >
               <h3 className="text-xl font-medium underline decoration-yellow-light underline-offset-6">{tutor.name}</h3>
 
               <p
-                className={`mt-2 text-[16px] group-hover:text-white ${
-                  activeTutor.id === tutor.id
-                    ? "text-gray-20 "
-                    : "text-gray-600" 
-                }`}
+                className={`mt-2 text-[16px] group-hover:text-white ${activeTutor.id === tutor.id
+                  ? "text-gray-20 "
+                  : "text-gray-600"
+                  }`}
               >
                 {tutor.role}
               </p>

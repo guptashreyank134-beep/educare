@@ -73,8 +73,8 @@ const PracticeMaterialSection = ({ data }: PracticeMaterialSectionProps) => {
                 </div>
 
                 <div className="flex flex-col gap-8 py-2.5 px-0">
-                    <div className="max-w-165">
-                        <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate-900 leading-8.5 mb-5">
+                    <div className="max-w-[660px]">
+                        <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate-900 leading-[34px] mb-5">
                             {content.practiceMaterialSection?.heading}
                         </h2>
                         <p className="text-base sm:text-lg text-slate-700 leading-7 max-w-3xl whitespace-pre-wrap">

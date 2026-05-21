@@ -38,7 +38,7 @@ const ContactPage = async () => {
 
         {/* Hero Section */}
         <div className="text-center mb-16 max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1E293B] mb-6 leading-tight">
+          <h1 className="text-[28px] sm:text-4xl md:text-5xl font-bold text-[#1E293B] mb-6 leading-tight">
             Let's Build A Smarter Learning Journey Together!
           </h1>
           <p className="text-[#64748B] text-lg leading-relaxed max-w-3xl mx-auto">
@@ -87,7 +87,7 @@ const ContactPage = async () => {
 };
 
 const ContactInfoCard = ({ icon, title, value, href }: { icon: React.ReactNode, title: string, value: string, href?: string }) => (
-  <div className="bg-white p-10 rounded-[32px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-[#F1F5F9] flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] group">
+  <div className="bg-white p-6 sm:p-10 rounded-[32px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-[#F1F5F9] flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] group">
     <div className="w-16 h-16 bg-[#FEF9C3] rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110">
       {icon}
     </div>

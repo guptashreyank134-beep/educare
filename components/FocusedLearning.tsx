@@ -25,7 +25,7 @@ export default function FocusedLearning() {
             </div>
 
             {/* Trophy Icon */}
-            <div className="absolute top-6 -right-20  flex items-center justify-center transform rotate-[-5deg] hover:rotate-0 transition-transform">
+            <div className="absolute top-6 -right-20 hidden md:flex items-center justify-center transform rotate-[-5deg] hover:rotate-0 transition-transform">
               <Image
                 src="/icons/trophy.svg"
                 alt="Trophy"
@@ -37,7 +37,7 @@ export default function FocusedLearning() {
 
           {/* Content Section */}
           <div>
-            <h2 className="text-[32px] font-display font-normal text-slate leading-[34px] mb-[14px]">
+            <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-normal text-slate leading-[34px] mb-[14px]">
               A Focused Learning Experience Designed For Consistent Academic
               Growth
             </h2>

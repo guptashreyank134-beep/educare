@@ -35,13 +35,13 @@ const GeneralHeroSection = ({
                     </HeroBreadcrumb>
                 ) : null}
 
-                <div className="flex flex-col lg:flex-row gap-12 lg:px-10 items-center w-full justify-between">
+                <div className="flex flex-col lg:flex-row gap-12 lg:px-6 xl:px-10 items-center w-full justify-between">
                     {/* Content */}
-                    <div className="max-w-166.25 w-full">
-                        <h1 className="text-[42px] font-bricolage font-display font-normal text-slate leading-none mb-6 whitespace-pre-line">
+                    <div className="max-w-[665px] w-full">
+                        <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-display font-normal text-slate leading-tight mb-6 whitespace-pre-line">
                             {heading}
                         </h1>
-                        <p className="text-[18px] font-montserrat font-normal text-slate mb-8 leading-none whitespace-pre-line">
+                        <p className="text-[18px] font-montserrat font-normal text-slate mb-8 leading-relaxed whitespace-pre-line">
                             {description}
                         </p>
                         {buttonVisiblity && (
@@ -55,22 +55,22 @@ const GeneralHeroSection = ({
 
                     {/* Hero Image / Grid */}
                     <div className="relative lg:mt-0 mt-12 flex justify-center lg:justify-end">
-                        <div className="relative max-w-85.25 w-full">
+                        <div className="relative max-w-[341px] w-full">
                             {/* Decorative background circle */}
-                            <div className="absolute -top-12 -right-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+                            <div className="absolute -top-12 -right-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl hidden sm:block" />
 
                             <div className="relative overflow-visible p-2">
-                                <div className="rounded-xl overflow-visible">
+                                <div className="rounded-xl overflow-hidden">
                                     <Image
                                         src={`/assets/${image?.src || "aboutUsPage/aboutHeroImg.webp"}`}
                                         alt={image?.alt || "HeroImage"}
                                         width={341}
                                         height={326}
-                                        className="w-85.25 h-81.5 object-cover rounded-xl"
+                                        className="w-full max-w-[341px] h-auto object-cover rounded-xl"
                                         priority
                                     />
                                 </div>
-                                <div className="absolute p-1 -bottom-4 -left-7 h-11 w-53.75 bg-yellow-light rounded-lg flex gap-2.5 items-center justify-center">
+                                <div className="absolute p-1 -bottom-4 left-0 sm:-left-7 h-11 w-[215px] bg-yellow-light rounded-lg flex gap-2.5 items-center justify-center z-10 shadow-lg">
                                     <Zap className="w-6 h-6 text-black" />
                                     <span className="text-[16px] font-medium font-bricolage text-black">
                                         Accelerated Learning

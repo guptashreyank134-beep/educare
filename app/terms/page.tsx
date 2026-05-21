@@ -25,7 +25,7 @@ const TermsPage = async () => {
     return (
         <>
             <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/terms")} />
-            <main className="min-h-screen max-w-467.5 px-4 sm:px-6 m-auto bg-white">
+            <main className="min-h-screen max-w-7xl px-4 sm:px-6 m-auto bg-white pt-20">
                 <div className="space-y-8 pt-22">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6">
                         <h1 className="text-4xl font-bricolage font-semibold text-slate-900 leading-tight mb-8">

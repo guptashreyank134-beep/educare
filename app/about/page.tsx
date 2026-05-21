@@ -13,6 +13,7 @@ export async function generateMetadata() {
   return getMetadata(data, "https://drshreyankeducare.com/about");
 }
 import TrustedBrands from "@/components/TrustedBrands";
+import Reviews from "@/components/Reviews";
 
 const AboutUs = async () => {
   const data = await getMetaDataBySlug("page", "about");
@@ -23,13 +24,14 @@ const AboutUs = async () => {
         {...AboutHeroSectionContent}
         breadcrumb={<Breadcrumbs />}
       />
-      <main className="min-h-screen m-auto bg-white">
-        <div className="max-w-324 h-auto flex flex-col gap-45 align-middle justify-center-safe">
+      <main className="min-h-screen m-auto bg-white w-[100vw] md:w-full">
+        <div className="max-w-[1296px] mx-auto h-auto flex flex-col gap-16 sm:gap-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
           <MakesUsDifferenceSection />
           <LearningProcess />
           <ReadAboutTutors />
           <TrustedBrands />
           <KeySection />
+          <Reviews />
         </div>
       </main>
     </>

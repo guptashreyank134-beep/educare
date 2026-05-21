@@ -12,36 +12,51 @@ const LearningProgramsSection = () => {
   );
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-      <div className="flex flex-col gap-8">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full min-w-0">
+      <div className="flex flex-col gap-8 w-full min-w-0">
         {/* Top tabs */}
-        <div className="overflow-x-auto pb-10 border-b-2 border-yellow-light">
-          <div className="inline-flex gap-3 flex-wrap min-w-max ">
+        <div className="border-b-2 border-yellow-light mb-6 w-full min-w-0">
+          <div className="overflow-x-auto pb-[2px] -mb-[2px]">
+            <div className="flex gap-2 sm:gap-3 pb-4 min-w-max">
             {learningProgramsTabs.map((program) => (
               <button
                 key={program.id}
                 type="button"
                 onClick={() => setActiveProgram(program)}
-                className={`cursor-pointer rounded-3xl p-5 text-[22px] font-normal transition-all duration-200 whitespace-nowrap shadow-sm ${activeProgram.id === program.id
-                    ? "bg-slate-900 text-white"
-                    : "bg-white text-slate-800 group hover:bg-[#7C9FE3]"
-                  }`}
+                className={`
+                  inline-flex items-center justify-center
+                  px-3 py-2.5 sm:px-4 sm:py-3 lg:p-5 rounded-[20px] sm:rounded-[24px] leading-[100%]
+                  text-[14px] sm:text-[18px] lg:text-[22px] font-bricolage font-normal
+                  transition-all duration-200 cursor-pointer whitespace-nowrap
+                  focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 shadow-[0px_0px_50px_0px_#5757561F]
+                  ${
+                    activeProgram.id === program.id
+                      ? "bg-slate text-white"
+                      : "bg-bg-grey text-slate hover:bg-[#E9EAEC]"
+                  }
+                `}
+                style={
+                  activeProgram.id === program.id
+                    ? { boxShadow: "0px 0px 50px 0px #5757561F" }
+                    : undefined
+                }
               >
-                <p className="text-5.5 group-hover:text-bg-grey">{program.tabTitle}</p>
+                {program.tabTitle}
               </button>
             ))}
+            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-[1.05fr_0.95fr] gap-8 max-w-289.25">
+        <div className="grid grid-cols-1 xl:grid-cols-[1.05fr_0.95fr] gap-8 max-w-[1157px]">
           {/* Left sidebar */}
           <div className="space-y-6">
-            <div className="relative lg:max-w-115.25 h-83.5 rounded-lg overflow-visible">
+            <div className="relative lg:max-w-[461px] h-[334px] rounded-lg overflow-visible">
               <Image
                 src={activeProgram.image}
                 alt={activeProgram.heading}
                 fill
-                className="object-cover rounded-lg max-w-103.25"
+                className="object-cover rounded-lg max-w-[413px]"
                 priority
               />
               <div className="absolute top-0 right-0 h-10 w-10 rounded-lg bg-yellow-light text-slate flex items-center justify-center shadow-lg">
@@ -53,7 +68,7 @@ const LearningProgramsSection = () => {
               {activeProgram.infoCards.map((card, index) => (
                 <div
                   key={index}
-                  className="bg-white max-w-103.5 rounded-lg border-slate-200 shadow-sm p-5"
+                  className="bg-white max-w-[414px] rounded-lg border-slate-200 shadow-sm p-5"
                 >
                   <h3 className="text-[22px] underline underline-offset-4 decoration-yellow-light decoration-2 font-semibold text-slate mb-3">
                     {card.title}
@@ -70,8 +85,8 @@ const LearningProgramsSection = () => {
 
           {/* Right main content */}
           <div className="flex flex-col gap-8 py-2.5 px-5">
-            <div className="max-w-165">
-              <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate-900 leading-8.5 mb-5">
+            <div className="max-w-[660px]">
+              <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate-900 leading-[34px] mb-5">
                 {activeProgram.heading}
               </h2>
               <p className="text-base sm:text-lg text-slate-700 leading-7 max-w-3xl">

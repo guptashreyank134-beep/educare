@@ -28,7 +28,7 @@ export default function HomeBanner() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="max-w-xl">
-            <h1 className="text-[42px] font-bricolage font-display font-normal text-slate leading-tight mb-6">
+            <h1 className="text-[30px] sm:text-[38px] lg:text-[42px] font-bricolage font-display font-normal text-slate leading-tight mb-6">
               Struggling With Math, Physics, Chemistry, Or Coding? We Make It Finally Click.
             </h1>
             <p className="text-[18px] font-sans font-normal text-slate mb-8 leading-relaxed">
@@ -67,7 +67,7 @@ export default function HomeBanner() {
               </div>
 
               {/* Floating elements to mimic screenshot feel */}
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce-slow">
+              <div className="absolute -bottom-6 -left-6 hidden sm:flex bg-white p-4 rounded-xl shadow-xl border border-gray-100 items-center gap-3 animate-bounce-slow">
                 <div className="w-10 h-10 bg-yellow-400/20 rounded-lg flex items-center justify-center">
                   <Code
                     className="text-yellow-600"
@@ -85,7 +85,7 @@ export default function HomeBanner() {
                 </div>
               </div>
 
-              <div className="absolute -top-6 right-36 bg-white p-4 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-float">
+              <div className="absolute -top-6 right-36 hidden sm:flex bg-white p-4 rounded-xl shadow-xl border border-gray-100 items-center gap-3 animate-float">
                 <div className="w-10 h-10 bg-blue-400/20 rounded-lg flex items-center justify-center">
                   <BookOpen
                     className="text-primary"
@@ -107,17 +107,17 @@ export default function HomeBanner() {
         </div>
 
         {/* Metric Cards Section */}
-        <div className="mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-16 sm:mt-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {metrics.map((metric, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transform hover:-translate-y-1 transition-all"
+                className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transform hover:-translate-y-1 transition-all"
               >
-                <p className="text-[34px] font-bricolage font-display font-medium text-primary leading-none mb-2">
+                <p className="text-[30px] sm:text-[34px] font-bricolage font-display font-medium text-primary leading-tight mb-2">
                   {metric.value}
                 </p>
-                <p className="text-[20px] font-sans font-normal text-slate leading-none">
+                <p className="text-[16px] sm:text-[20px] font-sans font-normal text-slate leading-tight">
                   {metric.label}
                 </p>
               </div>

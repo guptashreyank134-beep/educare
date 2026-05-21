@@ -67,8 +67,8 @@ const PracticeTestsSection = ({ data }: PracticeTestsSectionProps) => {
                 </div>
 
                 <div className="flex flex-col gap-8 py-2.5 px-0">
-                    <div className="max-w-165">
-                        <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate leading-8.5 mb-5">
+                    <div className="max-w-[660px]">
+                        <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate leading-[34px] mb-5">
                             {content.practiceTestsSection?.mainHeading}
                         </h2>
                         <p className="text-base sm:text-lg text-justify text-slate leading-7 max-w-3xl whitespace-pre-wrap">
@@ -94,7 +94,7 @@ const PracticeTestsSection = ({ data }: PracticeTestsSectionProps) => {
                                     href={test.link || "#"}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="rounded-lg max-w-92.75 group flex items-center justify-between bg-bg-grey p-5 shadow-[0px_0px_25px_0px_#5757561A] border border-slate-200 hover:shadow-md transition-all cursor-pointer"
+                                    className="rounded-lg w-full max-w-[371px] group flex items-center justify-between bg-bg-grey p-5 shadow-[0px_0px_25px_0px_#5757561A] border border-slate-200 hover:shadow-md transition-all cursor-pointer"
                                 >
                                     <p className="text-lg font-semibold underline decoration-2 underline-offset-4 decoration-yellow-light text-slate-900">
                                         {test.label}

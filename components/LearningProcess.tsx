@@ -32,11 +32,11 @@ export default function LearningProcess() {
     <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-136.5 mx-auto mb-10">
+        <div className="text-center max-w-[546px] mx-auto mb-10">
           <h2 className="text-[32px] font-bricolage font-display font-normal text-slate leading-[34px] mb-4">
             A Structured Learning Process, Designed To Keep You On Track
           </h2>
-          <p className="text-[16px] font-sans font-normal text-slate leading-none opacity-80">
+          <p className="text-[16px] font-sans font-normal text-slate leading-relaxed opacity-80">
             Every step is designed to make learning simple, effective, and
             goal-oriented.
           </p>

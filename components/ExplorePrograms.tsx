@@ -55,12 +55,12 @@ export default function ExplorePrograms() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-[32px] font-bricolage font-display font-normal text-slate leading-[34px] mb-[14px]">
+          <h2 className="text-[26px] sm:text-[32px] font-bricolage font-display font-normal text-slate leading-[34px] mb-[14px]">
             Explore Learning Programs,
             <br />
             Designed Around Your Academic Goals
           </h2>
-          <p className="text-[16px] font-sans font-normal text-slate opacity-80 leading-[16px] max-w-xl mx-auto">
+          <p className="text-[16px] font-sans font-normal text-slate opacity-80 leading-relaxed max-w-xl mx-auto">
             Tailored curricula designed to push academic boundaries and secure
             top-tier results.
           </p>

@@ -28,12 +28,12 @@ const PricingCard = ({
     onCtaClick,
 }: PricingCardProps) => {
     return (
-        <div className="w-85.25 h-131.5 rounded-lg bg-bg-grey p-10 shadow-[0px_0px_50px_0px_rgba(87,87,86,0.12)] flex flex-col transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-[0px_0px_60px_0px_rgba(87,87,86,0.16)] hover:border-2 hover:border-yellow-light">
+        <div className="w-full sm:w-[341px] min-h-[526px] rounded-lg bg-bg-grey p-10 shadow-[0px_0px_50px_0px_rgba(87,87,86,0.12)] flex flex-col transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-[0px_0px_60px_0px_rgba(87,87,86,0.16)] hover:border-2 hover:border-yellow-light">
             {/* Content Wrapper */}
-            <div className="w-65.25 h-111.5 flex flex-col gap-6 justify-between">
+            <div className="w-full h-full flex flex-col gap-6 justify-between flex-grow">
                 <div className="flex flex-col gap-6">
                     {/* Icon Box */}
-                    <div className="h-11 w-12.25 rounded-lg bg-yellow-light p-2.5 flex items-center justify-center shadow-[0px_0px_50px_0px_rgba(87,87,86,0.12)]">
+                    <div className="h-11 w-[49px] rounded-lg bg-yellow-light p-2.5 flex items-center justify-center shadow-[0px_0px_50px_0px_rgba(87,87,86,0.12)]">
                         <Icon className="h-6 w-6 text-slate" strokeWidth={1.5} />
                     </div>
 
