@@ -45,6 +45,9 @@ export default function TrustedBrands() {
               ))}
             </div>
           </div>
+          <p className="text-[12px] text-slate/60 mt-6 font-montserrat max-w-2xl mx-auto">
+            * University logos are shown for representational purposes to indicate where some of our students study or have been accepted. They do not imply any official partnership or endorsement by the respective institutions.
+          </p>
         </div>
       </div>
 

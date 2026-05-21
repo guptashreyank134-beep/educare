@@ -45,6 +45,8 @@ import { Button } from "./ui/Button";
 import { Input } from "./ui/Input";
 import { Textarea } from "./ui/TextArea";
 
+import { createLead } from "../app/actions/lead";
+
 // ─── Contact Form ─────────────────────────────────────────────────────────────
 
 function ContactForm() {
@@ -56,6 +58,7 @@ function ContactForm() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -63,10 +66,16 @@ function ContactForm() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: wire up form submission
+    setIsSubmitting(true);
+    
+    const formElement = e.currentTarget as HTMLFormElement;
+    const form = new FormData(formElement);
+    await createLead(form);
+    
     setSubmitted(true);
+    setIsSubmitting(false);
   };
 
   return (
@@ -165,8 +174,8 @@ function ContactForm() {
 
             {/* Submit */}
             <div className="flex justify-center pt-2">
-              <Button type="submit" iconRight={ArrowRight}>
-                Submit For Consultation
+              <Button type="submit" disabled={isSubmitting} iconRight={isSubmitting ? undefined : ArrowRight}>
+                {isSubmitting ? "Submitting..." : "Submit For Consultation"}
               </Button>
             </div>
           </form>
@@ -213,11 +222,11 @@ function FooterBar() {
               Contact Us
             </p>
             <a
-              href="tel:+17788193202"
+              href="tel:+16725147587"
               className="flex items-center gap-2 text-[14px] font-montserrat text-white/80 hover:text-white transition-colors mb-2"
             >
               <Phone className="w-4 h-4 shrink-0" />
-              +1 (778) 819-3202
+              +1 (672) 514-7587
             </a>
             <a
               href="mailto: info@drshreyankeducare.com"
