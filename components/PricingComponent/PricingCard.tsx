@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 
@@ -80,13 +81,16 @@ const PricingCard = ({
                         </p>
 
                     </div>
+                    <Link href={'/contact'} className="w-full h-full flex items-center justify-center">
                     <Button
                         iconRight={ArrowRight}
                         onClick={onCtaClick}
                         className="w-full"
                     >
+                        
                         {ctaText}
                     </Button>
+                        </Link>
                 </div>
             </div>
         </div>
