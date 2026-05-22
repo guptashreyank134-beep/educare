@@ -27,7 +27,7 @@ export const programTabs: ProgramTab[] = [
         ],
         idealFor:
           "Students preparing for school exams and competitive entrance tests requiring strong analytical thinking.",
-        expectedOutcome: "98% success rate in SAT/JEE math modules.",
+        expectedOutcome: "98% success rate in SAT math modules.",
         learnMoreHref: "/programs/mathematics",
       },
       {
@@ -51,7 +51,7 @@ export const programTabs: ProgramTab[] = [
           "Chemical Reactions & Bonding",
         ],
         idealFor:
-          "School students and aspirants preparing for competitive exams like NEET or equivalent.",
+          "School students and aspirants preparing for competitive academic exams.",
         expectedOutcome:
           "Improved conceptual clarity, better retention, and higher accuracy in problem-solving and theory.",
         learnMoreHref: "/programs/chemistry",
@@ -155,7 +155,7 @@ export const programTabs: ProgramTab[] = [
         ],
         idealFor: "Students preparing for SAT/PSAT",
         expectedOutcome:
-          "98% success rate in SAT/JEE math modules, +150 pts target score",
+          "98% success rate in SAT math modules, +150 pts target score",
         learnMoreHref: "/programs/sat-prep",
       },
       {

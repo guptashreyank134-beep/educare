@@ -4,6 +4,7 @@ import type { NextConfig } from "next";
 
 const redirectPairs: [string, string][] = [
   // General & About
+  ["/vancouver-math-tutor", "/"],
   ["/why-drshreyankeducare-tutoring", "/about"],
   ["/our-tutors", "/about"],
   ["/our-tutoring-process", "/about"],

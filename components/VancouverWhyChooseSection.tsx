@@ -34,7 +34,7 @@ export default function VancouverWhyChooseSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-[32px] sm:text-[38px] font-bricolage font-medium text-slate">
-            Why Parent's Choose Dr. Shreyank Educare
+            Why Parents Choose Dr. Shreyank Educare
           </h2>
         </div>
 
