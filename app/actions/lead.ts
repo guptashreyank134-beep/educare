@@ -56,16 +56,18 @@ export async function createLead(formData: FormData) {
         `
       }
 
-      // Fire and forget email sending to avoid blocking the user response
-      transporter.sendMail(mailOptions).catch((err: any) => {
-        console.error('Failed to send email notification:', err)
-      })
+      // Await email sending to guarantee it succeeds in serverless environments
+      try {
+        await transporter.sendMail(mailOptions);
+      } catch (err: unknown) {
+        console.error('Failed to send email notification:', err);
+      }
     } else {
       console.warn('Brevo SMTP credentials not found. Skipping email notification.')
     }
 
     return { success: true, message: 'Thank you for your message! We will get back to you soon.' }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error creating lead:', error)
     return { success: false, message: 'Something went wrong. Please try again later.' }
   }
