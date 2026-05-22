@@ -16,7 +16,7 @@ const PracticeMaterialSection = ({ data }: PracticeMaterialSectionProps) => {
     console.log(data);
     
     return (
-        <div className="max-w-[1296px] w-full mx-auto">
+        <div className="max-w-[1296px] mt-10 w-full mx-auto">
             <div className="grid grid-cols-1 xl:grid-cols-[1.05fr_0.95fr] gap-8">
                 <div className="space-y-6">
                     <div className="flex items-start gap-3 max-w-[472px]">
@@ -58,7 +58,7 @@ const PracticeMaterialSection = ({ data }: PracticeMaterialSectionProps) => {
                                         rel={material.externalLink ? "noopener noreferrer" : undefined}
                                         className="group rounded-3xl w-fit bg-bg-grey p-5 shadow-[0px_0px_25px_0px_#5757561A] hover:shadow-md transition-all cursor-pointer"
                                     >
-                                        <p className="text-[22px] font-semibold text-slate mb-2 underline decoration-2 decoration-yellow-light underline-offset-4">
+                                        <p className="text-[22px] font-semibold font-bricolage text-slate mb-2 underline decoration-2 decoration-yellow-light underline-offset-4">
                                             {material.label}
                                         </p>
                                         <div className="flex items-center gap-1 text-primary font-medium">
@@ -73,31 +73,31 @@ const PracticeMaterialSection = ({ data }: PracticeMaterialSectionProps) => {
                 </div>
 
                 <div className="flex flex-col gap-8 py-2.5 px-0">
-                    <div className="max-w-[660px]">
-                        <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate-900 leading-[34px] mb-5">
-                            {content.practiceMaterialSection?.heading}
+                    <div className="max-w-165">
+                        <h2 className="text-4xl sm:text-[32px] font-bricolage font-normal text-slate leading-8.5 mb-5">
+                            {content?.heading}
                         </h2>
-                        <p className="text-base sm:text-lg text-slate-700 leading-7 max-w-3xl whitespace-pre-wrap">
-                            {content.practiceMaterialSection?.description}
+                        <p className="text-base font-montserrat sm:text-lg text-slate leading-7 max-w-3xl whitespace-pre-wrap">
+                            {content?.description}
                         </p>
                     </div>
 
                     <div className="grid gap-8">
                         <div className="space-y-4">
                             <div className="flex items-start gap-2">
-                                <div className="h-8 w-8 rounded-sm bg-yellow-light text-slate-900 flex items-center justify-center">
+                                <div className="h-8 w-8 rounded-sm bg-yellow-light text-slate flex items-center justify-center">
                                     <FileText className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <h3 className="text-[22px] font-bricolage font-display font-normal text-slate-900">
+                                    <h3 className="text-[22px] font-bricolage font-display font-normal text-slate">
                                         Study Tips
                                     </h3>
                                 </div>
                             </div>
                             <ul className="space-y-3 ml-1 text-[16px] leading-relaxed font-montserrat text-slate list-disc list-inside whitespace-pre-wrap">
                                 {studyTips.map((tip: any, index: number) => (
-                                    <li key={index} className="py-2">
-                                        <span className="font-medium text-slate">{tip.title}</span>: <span className="font-normal text-slate">{tip.description}</span>
+                                    <li key={index} className="">
+                                        <span className="font-medium text-[16px] font-montserrat text-slate">{tip.title}</span>: <span className="font-normal text-[16px] font-montserrat text-slate">{`\n${tip.description}`}</span>
                                     </li>
                                 ))}
                             </ul>

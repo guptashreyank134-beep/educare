@@ -5,24 +5,72 @@ import { urlFor } from "../sanity/lib/image";
 
 export const getResourcePageData = async () => {
   const query = `*[_type == "resourcePage" && slug.current == "resources"][0]{
-    ...,
-    "videosSection": {
-      ...,
-      "image": videosSection.image.asset->url
+  title,
+  "slug": slug.current,
+
+  faqs[]{
+    question,
+    answer
+  },
+
+  videosSection{
+    heading,
+    description,
+    "image": image.asset->url,
+
+    categories[]{
+      title,
+      description
     },
-    "practiceMaterialSection": {
-      ...,
-      "image": practiceMaterialSection.image.asset->url,
-      "downloadMaterials": practiceMaterialSection.downloadMaterials[]{
-        ...,
-        "fileUrl": file.asset->url
-      }
-    },
-    "practiceTestsSection": {
-      ...,
-      "image": practiceTestsSection.image.asset->url
+
+    learningPoints{
+      heading,
+      pointers
     }
-  }`;
+  },
+
+  practiceMaterialSection{
+    heading,
+    description,
+    "image": image.asset->url,
+
+    studyTips[]{
+      title,
+      description
+    },
+
+    whyPracticeHelp{
+      heading,
+      icon,
+      pointers
+    },
+
+    downloadMaterials[]{
+      label,
+      "fileUrl": file.asset->url
+    }
+  },
+
+  practiceTestsSection{
+    mainHeading,
+    mainDescription,
+    testHeading,
+    testDescription,
+
+    "image": image.asset->url,
+
+    leftSections[]{
+      heading,
+      description,
+      points
+    },
+
+    practiceTests[]{
+      label,
+      link
+    }
+  }
+}`;
   const data = await client.fetch(query);
   return data;
 };

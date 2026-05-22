@@ -33,27 +33,27 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ items }) => {
                     const isOpen = openIds.includes(itemId);
 
                     return (
-                        <div key={itemId} className="border-b border-slate-300">
+                        <div key={itemId} className="border-b-2 border-primary">
                             <button
                                 onClick={() => toggleExpand(itemId)}
                                 className="w-full flex items-start justify-between pt-5 pb-10 px-0 text-left hover:opacity-80 transition-opacity"
                                 aria-expanded={isOpen}
                             >
-                                <h3 className="text-xl font-montserrat font-medium text-primary leading-6">
+                                <h3 className="text-xl font-montserrat font-medium text-primary leading-7">
                                     {item.question}
                                 </h3>
                                 <div className="shrink-0 ml-4">
                                     {isOpen ? (
-                                        <Minus className="w-7 h-7 text-primary font-extrabold" />
+                                        <Minus className="w-7 cursor-pointer h-7 text-primary font-extrabold" />
                                     ) : (
-                                        <Plus className="w-7 h-7 text-primary font-extrabold" />
+                                        <Plus className="w-7 h-7 cursor-pointer text-primary font-extrabold" />
                                     )}
                                 </div>
                             </button>
 
                             {isOpen && (
                                 <div className="pb-5 px-0 animate-in fade-in duration-200">
-                                    <p className="text-[16px] text-slate-700 leading-7 whitespace-pre-wrap">
+                                    <p className="text-[18px] font-montserrat text-slate leading-7 whitespace-pre-wrap">
                                         {item.answer}
                                     </p>
                                 </div>

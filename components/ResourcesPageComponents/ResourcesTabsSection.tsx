@@ -30,7 +30,7 @@ const ResourcesTabsSection = ({ initialData }: ResourcesTabsSectionProps) => {
         switch (activeTabId) {
             case 1:
                 return (
-                    <div className="max-w-[1296px] w-full mx-auto">
+                    <div className="max-w-324 w-full mx-auto">
                         <div className="space-y-8">
                             <div className="text-center max-w-2xl mx-auto">
                                 <h2 className="text-4xl font-bricolage font-display text-slate-900 leading-tight mb-4">
@@ -69,25 +69,12 @@ const ResourcesTabsSection = ({ initialData }: ResourcesTabsSectionProps) => {
                                 key={tab.id}
                                 type="button"
                                 onClick={() => setActiveTabId(tab.id)}
-                                className={`
-                                  inline-flex items-center justify-center
-                                  px-3 py-2.5 sm:px-4 sm:py-3 lg:p-5 rounded-[20px] sm:rounded-[24px] leading-[100%]
-                                  text-[14px] sm:text-[18px] lg:text-[22px] font-bricolage font-normal
-                                  transition-all duration-200 cursor-pointer whitespace-nowrap
-                                  focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 shadow-[0px_0px_50px_0px_#5757561F]
-                                  ${
-                                    activeTabId === tab.id
-                                      ? "bg-slate text-white"
-                                      : "bg-bg-grey text-slate hover:bg-[#E9EAEC]"
-                                  }
-                                `}
-                                style={
-                                  activeTabId === tab.id
-                                    ? { boxShadow: "0px 0px 50px 0px #5757561F" }
-                                    : undefined
-                                }
+                                className={`cursor-pointer font-bricolage rounded-3xl p-5 text-[22px] font-medium transition-all duration-200 whitespace-nowrap shadow-sm ${activeTabId === tab.id
+                                    ? "bg-slate-900 text-white"
+                                    : "bg-white text-slate-800 hover:bg-[#7C9FE3] hover:text-white"
+                                    }`}
                             >
-                                {tab.tabTitle}
+                                <p className="text-[22px] font-bricolage group-hover:text-bg-grey">{tab.tabTitle}</p>
                             </button>
                         ))}
                         </div>

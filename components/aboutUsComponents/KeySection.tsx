@@ -10,20 +10,20 @@ const KeySection = () => {
     const Icon = iconMap[keySectionContent.icon] ?? Layers;
 
     return (
-        <div className="max-w-[1296px] w-full mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-1 xl:grid-cols-[1.3fr_0.85fr_0.90fr] gap-8 xl:gap-5 py-10 lg:py-5">
-                <div className="flex items-start gap-[10px] order-2 xl:order-1">
-                    <div className="relative rounded-[8px] overflow-hidden flex-1 h-[300px] sm:h-[450px] xl:h-[684px]">
+        <div className="max-w-324 w-full mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-1 xl:grid-cols-[1.3fr_0.85fr_0.90fr] gap-5 py-10 lg:py-5">
+                <div className="flex items-start gap-2.5">
+                    <div className="relative rounded-lg overflow-hidden flex-1 h-171">
                         <Image
                             src={keySectionContent.imageUrl}
                             alt={keySectionContent.imageAlt}
                             fill
-                            className="object-cover object-left-top h-full w-full"
+                            className="object-cover object-top-left h-full w-full"
                             priority
                         />
                     </div>
-                    <div className="w-[49px] h-[44px] rounded-[8px] bg-yellow-light text-slate-900 hidden sm:flex items-center justify-center shadow-lg border border-slate-200">
-                        <Icon className="w-[24px] h-[24px]" />
+                    <div className="w-12.25 h-11 rounded-lg bg-yellow-light text-slate-900 flex items-center justify-center shadow-lg border border-slate-200">
+                        <Icon className="w-6 h-6" />
                     </div>
                 </div>
 
