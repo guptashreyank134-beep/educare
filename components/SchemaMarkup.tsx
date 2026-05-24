@@ -32,8 +32,8 @@ export function getOrganizationSchema() {
       addressCountry: "CA",
     },
     sameAs: [
-      "https://www.facebook.com/drshreyankeducare",
-      "https://www.instagram.com/drshreyankeducare",
+      "https://www.facebook.com/DrShreyankEducare/",
+      "https://www.instagram.com/drshreyankeducare/",
     ],
   };
 }
