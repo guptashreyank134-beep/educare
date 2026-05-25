@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Calculus 12 — Practice Exam E</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#1565c0;--blue-dk:#0d47a1;--blue-lt:#e3f2fd;--green:#2e7d32;--green-lt:#e8f5e9;--red:#c62828;--red-lt:#ffebee;--orange:#e65100;--orange-lt:#fff3e0;--text:#212121;--muted:#757575;--border:#e0e0e0;--bg:#eceff1}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.6}
+#splash{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d47a1 0%,#1565c0 50%,#1976d2 100%);padding:20px}
+.splash-card{background:white;border-radius:20px;padding:48px 40px;max-width:500px;width:100%;text-align:center;box-shadow:0 16px 48px rgba(0,0,0,0.2)}
+.splash-logo{width:64px;height:64px;background:var(--blue-lt);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:30px}
+.splash-card h1{font-size:26px;font-weight:800;color:var(--blue);margin-bottom:4px}
+.splash-card h2{font-size:17px;font-weight:400;color:var(--muted);margin-bottom:28px}
+.badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.badge{background:var(--blue-lt);color:var(--blue);padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600}
+.field-group{text-align:left;margin-bottom:14px}
+.field-label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px}
+.field-input{width:100%;padding:14px 16px;border:2px solid var(--border);border-radius:10px;font-size:15px;outline:none;transition:border-color 0.2s;color:var(--text);background:white}
+.field-input:focus{border-color:var(--blue)}
+.field-input.err{border-color:var(--red)}
+.err-msg{font-size:12px;color:var(--red);margin-top:4px;display:none}
+.start-btn{width:100%;padding:16px;background:var(--blue);color:white;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;transition:background 0.2s,transform 0.1s;margin-top:4px}
+.start-btn:hover{background:var(--blue-dk)}
+.start-btn:active{transform:scale(0.98)}
+.splash-note{font-size:12px;color:var(--muted);margin-top:16px;line-height:1.5}
+#exam-wrap{display:none}
+#hdr{position:sticky;top:0;z-index:200;background:var(--blue);color:white;display:flex;align-items:center;justify-content:space-between;padding:10px 24px;gap:12px;box-shadow:0 2px 10px rgba(0,0,0,0.2)}
+.hdr-title{font-size:14px;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hdr-name{font-size:12px;opacity:0.8;white-space:nowrap}
+#timer{font-size:20px;font-weight:800;font-family:'Courier New',monospace;background:rgba(255,255,255,0.15);padding:6px 14px;border-radius:8px;letter-spacing:2px;white-space:nowrap}
+#timer.warn{background:#e53935;animation:blink 1s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.6}}
+#prog-wrap{background:#e0e0e0;height:5px;position:sticky;top:52px;z-index:199}
+#prog-bar{background:#4caf50;height:100%;width:0%;transition:width 0.4s ease}
+#exam-body{max-width:880px;margin:0 auto;padding:20px 16px 100px}
+.part-banner{background:white;border-radius:14px;padding:20px 24px;margin:28px 0 16px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-left:5px solid var(--blue);display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.part-banner-info h2{font-size:17px;color:var(--blue);margin-bottom:3px}
+.part-banner-info p{font-size:13px;color:var(--muted)}
+.calc-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:700;white-space:nowrap}
+.no-calc{background:var(--orange-lt);color:var(--orange)}
+.yes-calc{background:var(--green-lt);color:var(--green)}
+.q-card{background:white;border-radius:14px;padding:20px 24px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border:1.5px solid transparent;transition:border-color 0.2s,box-shadow 0.2s}
+.q-card.answered{border-color:#c8e6c9}
+.q-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.09)}
+.q-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--blue);margin-bottom:10px}
+.q-text{font-size:15px;line-height:1.75;margin-bottom:16px;color:var(--text)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:11px 16px;border:1.5px solid var(--border);border-radius:10px;cursor:pointer;transition:all 0.15s;user-select:none}
+.opt:hover{border-color:var(--blue);background:var(--blue-lt)}
+.opt.sel{border-color:var(--blue);background:var(--blue-lt)}
+.opt.sel .opt-ltr{background:var(--blue);color:white}
+.opt-ltr{width:28px;height:28px;min-width:28px;border-radius:50%;background:#eeeeee;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;transition:all 0.15s}
+.opt-txt{font-size:14px;padding-top:5px;line-height:1.5}
+.wr-banner{background:white;border-radius:14px;padding:20px 24px;margin:28px 0 16px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-left:5px solid #7b1fa2}
+.wr-banner h2{font-size:17px;color:#7b1fa2;margin-bottom:3px}
+.wr-banner p{font-size:13px;color:var(--muted)}
+.wr-card{background:white;border-radius:14px;padding:22px 24px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.wr-card h3{font-size:15px;font-weight:700;color:#7b1fa2;margin-bottom:2px}
+.wr-q{font-size:14px;line-height:1.75;margin-bottom:14px;color:var(--text)}
+.wr-ta{width:100%;min-height:130px;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;resize:vertical;outline:none;transition:border-color 0.2s;line-height:1.6;color:var(--text)}
+.wr-ta:focus{border-color:#7b1fa2}
+.submit-area{text-align:center;padding:36px 0}
+.sub-btn{background:var(--green);color:white;border:none;padding:16px 56px;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;transition:background 0.2s,transform 0.1s;box-shadow:0 4px 12px rgba(46,125,50,0.35)}
+.sub-btn:hover{background:#1b5e20}
+.sub-btn:active{transform:scale(0.97)}
+.sub-btn:disabled{background:#9e9e9e;cursor:not-allowed;box-shadow:none}
+.sub-note{font-size:12px;color:var(--muted);margin-top:12px}
+#results{display:none;min-height:100vh;background:var(--bg);padding:24px 16px}
+.res-inner{max-width:880px;margin:0 auto}
+.email-status-card{border-radius:14px;padding:18px 24px;margin-bottom:20px;display:flex;align-items:center;gap:14px;font-size:14px;font-weight:500;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.email-status-card.sending{background:#fff8e1;border:1.5px solid #ffd54f;color:#e65100}
+.email-status-card.sent{background:var(--green-lt);border:1.5px solid #81c784;color:var(--green)}
+.email-status-card.failed{background:var(--red-lt);border:1.5px solid #ef9a9a;color:var(--red)}
+.spin{display:inline-block;animation:spin 1s linear infinite;font-size:22px}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.score-card{background:white;border-radius:20px;padding:40px 32px;text-align:center;margin-bottom:20px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.score-card h1{font-size:22px;font-weight:800;color:var(--blue);margin-bottom:6px}
+.score-student{font-size:15px;color:var(--muted);margin-bottom:28px}
+.score-ring{width:140px;height:140px;border-radius:50%;margin:0 auto 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:38px;font-weight:900;border:8px solid}
+.score-ring.high{border-color:#4caf50;color:var(--green);background:var(--green-lt)}
+.score-ring.mid{border-color:#ff9800;color:#e65100;background:#fff8e1}
+.score-ring.low{border-color:#f44336;color:var(--red);background:var(--red-lt)}
+.score-ring small{font-size:13px;font-weight:500;color:var(--muted)}
+.score-pct{font-size:16px;font-weight:600;margin-bottom:24px}
+.breakdown-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.bdwn{background:var(--bg);border-radius:12px;padding:14px 22px;text-align:center;min-width:100px}
+.bdwn-num{font-size:26px;font-weight:800;color:var(--blue)}
+.bdwn-label{font-size:12px;color:var(--muted);margin-top:2px}
+.res-section-hdr{font-size:15px;font-weight:700;color:var(--text);margin:28px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+.res-q{background:white;border-radius:12px;padding:14px 18px;margin-bottom:8px;display:flex;align-items:flex-start;gap:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.res-q.ok{border-left:4px solid #4caf50}
+.res-q.no{border-left:4px solid #f44336}
+.res-q.na{border-left:4px solid #bdbdbd}
+.res-icon{font-size:20px;min-width:24px;margin-top:1px}
+.res-body{flex:1;min-width:0}
+.res-qnum{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:2px}
+.res-qtext{font-size:13px;margin-bottom:4px}
+.res-ans{font-size:12px;display:flex;gap:16px;flex-wrap:wrap}
+.res-yours{color:var(--red)}
+.res-correct{color:var(--green);font-weight:700}
+.res-correct-only{color:var(--green);font-weight:700}
+.wr-model{background:#f3e5f5;border-radius:10px;padding:14px 16px;margin-top:10px}
+.wr-model-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#7b1fa2;margin-bottom:6px}
+.wr-model-text{font-size:13px;color:#4a148c;line-height:1.6;white-space:pre-wrap}
+.wr-your{background:var(--blue-lt);border-radius:10px;padding:14px 16px;margin-top:8px}
+.wr-your-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--blue);margin-bottom:6px}
+.wr-your-text{font-size:13px;color:var(--text);line-height:1.6;white-space:pre-wrap}
+.wr-your-empty{font-size:13px;color:var(--muted);font-style:italic}
+.print-btn{background:var(--blue);color:white;border:none;padding:12px 28px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;margin-top:20px}
+.print-btn:hover{background:var(--blue-dk)}
+.mfrac{display:inline-block;vertical-align:middle;text-align:center}
+.mfrac .mn{display:block;border-bottom:1px solid currentColor;padding:0 3px;font-size:.88em;line-height:1.3}
+.mfrac .md{display:block;padding:0 3px;font-size:.88em;line-height:1.3}
+@media(max-width:600px){#hdr{padding:8px 14px}.hdr-name{display:none}#timer{font-size:16px;padding:4px 10px}#exam-body{padding:14px 10px 100px}.q-card,.wr-card,.part-banner{padding:16px}.score-card{padding:28px 16px}}
+@media print{#hdr,#prog-wrap,.print-btn{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ===== SPLASH ===== -->
+<div id="splash">
+  <div class="splash-card">
+    <div class="splash-logo">📐</div>
+    <h1>Pre-Calculus 12</h1>
+    <h2>Practice Exam E — Dr. Shreyank Educare</h2>
+    <div class="badges">
+      <span class="badge">⏱ 150 minutes</span>
+      <span class="badge">43 Multiple Choice</span>
+      <span class="badge">5 Written Response</span>
+      <span class="badge">78 marks</span>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">Your Full Name *</label>
+      <input type="text" class="field-input" id="sname" placeholder="e.g. Alex Kim" autocomplete="name">
+      <span class="err-msg" id="err-name">Please enter your full name.</span>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">Your Email Address *</label>
+      <input type="email" class="field-input" id="semail" placeholder="e.g. alex@gmail.com" autocomplete="email">
+      <span class="err-msg" id="err-email">Please enter a valid email address.</span>
+    </div>
+
+    <button class="start-btn" onclick="startExam()">Start Exam →</button>
+    <p class="splash-note">⚠ Do not refresh the page — your progress is not saved.<br>Your results will be emailed to your teacher automatically when you submit.</p>
+  </div>
+</div>
+
+<!-- ===== EXAM ===== -->
+<div id="exam-wrap">
+  <div id="hdr">
+    <span class="hdr-title">Pre-Calculus 12 — Practice Exam E</span>
+    <span class="hdr-name" id="hdr-name"></span>
+    <span id="timer">150:00</span>
+  </div>
+  <div id="prog-wrap"><div id="prog-bar"></div></div>
+  <div id="exam-body"></div>
+</div>
+
+<!-- ===== RESULTS ===== -->
+<div id="results">
+  <div class="res-inner">
+    <div id="email-status" class="email-status-card sending">
+      <span class="spin">⏳</span>
+      <span>Sending your results to your teacher...</span>
+    </div>
+    <div class="score-card">
+      <h1>Exam Complete</h1>
+      <p class="score-student" id="res-name"></p>
+      <div class="score-ring" id="score-ring">
+        <span id="score-frac"></span>
+        <small>MC Score</small>
+      </div>
+      <p class="score-pct" id="score-pct"></p>
+      <div class="breakdown-row">
+        <div class="bdwn"><div class="bdwn-num" id="bd-correct"></div><div class="bdwn-label">Correct</div></div>
+        <div class="bdwn"><div class="bdwn-num" id="bd-wrong"></div><div class="bdwn-label">Incorrect</div></div>
+        <div class="bdwn"><div class="bdwn-num" id="bd-blank"></div><div class="bdwn-label">Unanswered</div></div>
+        <div class="bdwn"><div class="bdwn-num" id="bd-time"></div><div class="bdwn-label">Time Used</div></div>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨 Print Results</button>
+    </div>
+    <div id="res-mc"></div>
+    <div id="res-wr"></div>
+  </div>
+</div>
+
+<script>
+emailjs.init('vQUT-AI9ztQ2fRo8f');
+
+const Qs=[
+{id:1,p:1,text:"Evaluate: sec<span class='mfrac'><span class='mn'>11π</span><span class='md'>6</span></span>",opts:["−2√3/3","2√3/3","−√3/2","√3/2"],ans:"B"},
+{id:2,p:1,text:"Determine the period of y = −4 sin(<span class='mfrac'><span class='mn'>2π</span><span class='md'>3</span></span>x − <span class='mfrac'><span class='mn'>π</span><span class='md'>6</span></span>)",opts:["3","2π/3","6π","3π"],ans:"A"},
+{id:3,p:1,text:"The terminal arm of angle θ intersects the unit circle at (m, n). Which expression represents sec 2θ ?",opts:["1/(m²−n²)","1/(2mn)","m²+n²","2m/n"],ans:"A"},
+{id:4,p:1,text:"A sinusoidal function y = a sin b(x−c)+d has maximum 7, minimum −1, and period 4π. Which values are correct?",opts:["a=4, b=½, d=3","a=4, b=2, d=3","a=3, b=½, d=4","a=8, b=½, d=3"],ans:"A"},
+{id:5,p:1,text:"Determine an equation of an asymptote of y = csc(2x − π/2).",opts:["x = 0","x = π/4","x = π/2","x = π"],ans:"B"},
+{id:6,p:1,text:"Which expression is equivalent to cos(π + 2x) ?",opts:["2cos²x − 1","1 − 2cos²x","2sin²x − 1","−2 sin x cos x"],ans:"C"},
+{id:7,p:1,text:"Solve 2sin²x − sin x − 1 = 0, where 0 ≤ x < 2π.",opts:["π/2, 7π/6, 11π/6","π/6, 5π/6, 3π/2","7π/6, 11π/6","π/2, 7π/6"],ans:"A"},
+{id:8,p:1,text:"Solve cos 2x + cos x = 0, where 0 ≤ x < 2π.",opts:["π/3, π, 5π/3","π/3, 2π/3, 4π/3, 5π/3","π/2, π, 3π/2","π/6, π, 11π/6"],ans:"A"},
+{id:9,p:1,text:"Determine the domain of y = log<sub>3</sub>(2x − 6).",opts:["x &gt; 0","x &gt; 3","x &gt; 6","x &lt; 3"],ans:"B"},
+{id:10,p:1,text:"Determine an equivalent expression for log<span class='mfrac'><span class='mn'>√a</span><span class='md'>b³</span></span>",opts:["½ log a + 3 log b","½ log a − 3 log b","2 log a − ⅓ log b","³⁄₂ log a − 3 log b"],ans:"B"},
+{id:11,p:1,text:"Evaluate: log<sub>2</sub>(log<sub>3</sub> 81)",opts:["1","2","4","8"],ans:"B"},
+{id:12,p:1,text:"A bacteria colony triples every 4 hours. Which equation finds t (hours) for the population to reach 10× initial size?",opts:["10 = 3<sup>4/t</sup>","10 = 3<sup>t/4</sup>","3 = 10<sup>t/4</sup>","4 = 3<sup>t/10</sup>"],ans:"B"},
+{id:13,p:1,text:"Solve: log<sub>3</sub>(log<sub>2</sub> x) = 2",opts:["9","81","256","512"],ans:"D"},
+{id:14,p:1,text:"Solve: 3<sup>2x+1</sup> = 5<sup>x−1</sup>",opts:["x = (log 3 + log 5)/(log 5 − 2 log 3)","x = (log 5 − log 3)/(2 log 3 − log 5)","x = −(log 3 + log 5)/(log 3 − 2 log 5)","x = log 5/(log 3 − log 5)"],ans:"A"},
+{id:15,p:1,text:"Which of the following IS a polynomial function?",opts:["f(x) = 3x<sup>2/3</sup> − x + 1","g(x) = 2/x² + 5x","h(x) = −3x⁴ + 2x² − √7","y = x<sup>1.5</sup> − 2x"],ans:"C"},
+{id:16,p:1,text:"Which equation represents y = f(x) after horizontal stretch by 3, reflection in y-axis, then translated 4 units up?",opts:["y = f(−x/3) + 4","y = f(−3x) + 4","y = −f(x/3) + 4","y = f(x/3) − 4"],ans:"A"},
+{id:17,p:1,text:"Determine the inverse of f(x) = (2x − 3)/(x + 5).",opts:["f⁻¹(x) = (x+3)/(2x−5)","f⁻¹(x) = (−5x−3)/(x−2)","f⁻¹(x) = (2−x)/(5x+3)","f⁻¹(x) = (x+5)/(2x−3)"],ans:"B"},
+{id:18,p:1,text:"The y-intercept of y = f(x) is 4. Find the y-intercept of y = 3f(−x) − 2.",opts:["−14","−2","10","14"],ans:"C"},
+{id:19,p:1,text:"The point (−3, 5) is on y = f(x). Which point must be on y = f⁻¹(2x) ?",opts:["(5/2, −3)","(−3, 5/2)","(5, −3)","(−3, 5)"],ans:"A"},
+{id:20,p:1,text:"The point (−6, 4) is on y = f(x). Which point must be on y = f(−x/3 + 1) ?",opts:["(21, 4)","(−21, 4)","(17, 4)","(19, 4)"],ans:"A"},
+{id:21,p:2,text:"The point (3, −4) is on y = f(x). If g(x) = −3f(x+2)−1, find the corresponding point on y = g(x).",opts:["(1, 11)","(5, 11)","(1, 13)","(5, −14)"],ans:"A"},
+{id:22,p:2,text:"Given f(x) = −2(x−3)² + 8, which domain restriction is required for f⁻¹(x) to exist?",opts:["x ≥ 3","x ≥ 0","x ≥ 8","x ≤ 0"],ans:"A"},
+{id:23,p:2,text:"A Ferris wheel: diameter 24 m, centre 13 m above ground, period 30 s. h(t)=12cos(πt/15)+13. When is the rider first exactly 20 m above ground?",opts:["4.52 s","8.93 s","25.48 s","14.08 s"],ans:"A"},
+{id:24,p:2,text:"Concentric circles: radii 15 cm and 6 cm. Arc on larger = 25π cm. Same central angle — arc on smaller circle?",opts:["10π cm","6π cm","2.5π cm","37.5π cm"],ans:"A"},
+{id:25,p:2,text:"Determine all restrictions for <span class='mfrac'><span class='mn'>sin θ + 1</span><span class='md'>sin θ cos θ − cos θ</span></span>",opts:["cos θ ≠ 0","sin θ ≠ 1,  cos θ ≠ 0","cos θ ≠ 0,  sin θ ≠ ±1","sin θ ≠ −1,  cos θ ≠ 0"],ans:"B"},
+{id:26,p:2,text:"The sum of an infinite geometric series is 24 and the first term is 9. Find the common ratio.",opts:["3/8","5/8","8/5","2/3"],ans:"B"},
+{id:27,p:2,text:"The point (−5, 12) lies on the terminal arm of θ. Find sin 2θ.",opts:["−120/169","120/169","−119/169","−60/169"],ans:"A"},
+{id:28,p:2,text:"Simplify: 2 sin(x + π/3) cos(x + π/3)",opts:["sin(2x + 2π/3)","sin(x + π/3)","cos(2x + 2π/3)","2 sin(2x + π/3)"],ans:"A"},
+{id:29,p:2,text:"Evaluate: Σ<sub>k=3</sub><sup>∞</sup> 2(−<span class='mfrac'><span class='mn'>1</span><span class='md'>4</span></span>)<sup>k</sup>",opts:["−1/40","1/40","−3/40","8/5"],ans:"A"},
+{id:30,p:2,text:"In a geometric sequence, t<sub>2</sub> = 18 and t<sub>5</sub> = 2/3. Determine t<sub>8</sub>.",opts:["2/81","2/243","2/729","2/2187"],ans:"A"},
+{id:31,p:2,text:"If x+2, 2x+1, 3x+4 are consecutive geometric terms, find all possible values of the common ratio.",opts:["−1 only","5/3 only","5/3 and −1","3 and −1"],ans:"C"},
+{id:32,p:2,text:"Change to logarithmic form: a<sup>c−2</sup> = b+1",opts:["log<sub>a</sub>(b+1) = c−2","log<sub>b+1</sub>(a) = c−2","log<sub>a</sub>(c−2) = b+1","log<sub>c−2</sub>(b+1) = a"],ans:"A"},
+{id:33,p:2,text:"Substance decays (A = A₀e<sup>−kt</sup>). After 10 years, 60% remains. How long for 15% to remain?",opts:["24.5 years","37.1 years","40.2 years","46.8 years"],ans:"B"},
+{id:34,p:2,text:"Earthquake B is 50× as intense as Earthquake A (magnitude 6.2). Find magnitude of B.",opts:["7.5","7.9","8.1","11.2"],ans:"B"},
+{id:35,p:2,text:"Which values should be tested as possible rational zeros of 6x⁴ + x³ − 2x² − 3x + 2 ?",opts:["±1, ±2, ±½, ±⅓, ±⅔","±1, ±2, ±⅙","±1, ±2, ±½, ±⅓, ±⅙, ±⅔","±1, ±2, ±3, ±6"],ans:"C"},
+{id:36,p:2,text:"Which is a factor of 2x³ + x² − 13x + 6 ?",opts:["x + 1","x − 2","x − 3","2x + 3"],ans:"B"},
+{id:37,p:2,text:"If P(x) = 2x⁴ − 3x³ − 8x² + 3x + 6, which statement is true?",opts:["x−2 is a factor","The y-intercept is −6","x+1 is a factor","P(−2) = 0"],ans:"C"},
+{id:38,p:2,text:"Which statement is true about y = <span class='mfrac'><span class='mn'>3</span><span class='md'>2x+4</span></span> − 1 ?",opts:["The vertical asymptote is x = −4","As |x|→∞, y→3","The x-intercept is x = −½","The y-intercept is 3/4"],ans:"C"},
+{id:39,p:2,text:"Which function is equivalent to y = <span class='mfrac'><span class='mn'>3x+7</span><span class='md'>x−2</span></span> ?",opts:["y = 3/(x−2) + 7","y = 13/(x−2) + 3","y = 3 + 7/(x−2)","y = 7/(x−2) + 3"],ans:"B"},
+{id:40,p:2,text:"For y = <span class='mfrac'><span class='mn'>x²−x−6</span><span class='md'>x²−4x+3</span></span>, which statement is true?",opts:["Vertical asymptotes at x=3 and x=1","Point of discontinuity at (3, 5/2) and vertical asymptote at x=1","The horizontal asymptote is y=0","The y-intercept is 2"],ans:"B"},
+{id:41,p:2,text:"Which rational function has HA y=−2, VA x=3, and x-intercept −1 ?",opts:["y = 8/(x−3) − 2","y = −8/(x−3) − 2","y = −8/(x+3) − 2","y = 8/(x−3) + 2"],ans:"B"},
+{id:42,p:2,text:"Given f(x)=√(x−2) and g(x)=x²+1, find f(g(x)) and its domain.",opts:["√(x²−1),  x≤−1 or x≥1","√(x²−1),  x≥1 only","x²−1,  all real numbers","√(x²+1)−2,  all real numbers"],ans:"A"},
+{id:43,p:2,text:"Given f(x)=x²−3x and g(x)=2x+1, find f(g(x)).",opts:["4x²−2x−2","2x²−6x+1","4x²+4x−2","2x³−5x²−3x"],ans:"A"},
+];
+
+const WRs=[
+{id:"W1",marks:5,title:"Written Response 1",
+ text:"The graph of y=f(x) passes through (−3,0),(0,3),(3,−1),(6,0).<br><br>a) Find the four key points on y = −2f(x/3+1)+3.<br>b) Describe the transformations.",
+ model:"x_new=3x_old−3,  y_new=−2y_old+3\n(−3,0)→(−12,3)  (0,3)→(−3,−3)  (3,−1)→(6,5)  (6,0)→(15,3)\nTransformations: horiz. stretch ×3, shift left 3, vert. stretch ×2, x-axis reflection, shift up 3."},
+{id:"W2",marks:5,title:"Written Response 2",
+ text:"Solve algebraically. Justify rejected values.<br><br><div style='text-align:center;margin:10px 0'>log<sub>2</sub>(x+4)+log<sub>2</sub>(x−2) = log<sub>2</sub>(4x)</div>",
+ model:"(x+4)(x−2)=4x  →  x²−2x−8=0  →  (x−4)(x+2)=0\nx=4 ✓     x=−2 ✗ (rejected — log of negative undefined)\nAnswer: x = 4"},
+{id:"W3",marks:7,title:"Written Response 3",
+ text:"Maximum at (π/3, 8). Nearest minimum at (4π/3, 2).<br><br>a) Find amplitude, period, midline. (3 marks)<br>b) Write equation y = a cos b(x−c)+d. (4 marks)",
+ model:"a) Amplitude=3,  Midline y=5,  Period=2π,  b=1\nb) y = 3cos(x − π/3) + 5\n   Equivalent: y = −3cos(x − 4π/3) + 5"},
+{id:"W4",marks:8,title:"Written Response 4",
+ text:"Graph f(x)=x⁴−5x²+4. Show all zeros with multiplicities, y-intercept, end behaviour, and at least 6 points.",
+ model:"f(x)=(x−1)(x+1)(x−2)(x+2)\nZeros: x=±1, x=±2 (multiplicity 1 — graph crosses x-axis)\ny-intercept: 4\nEnd behaviour: y→+∞ as x→±∞"},
+{id:"W5",marks:10,title:"Written Response 5",
+ text:"Prove (one side only):<br><br><div style='text-align:center;margin:14px 0;font-size:15px'><span class='mfrac'><span class='mn'>cos x</span><span class='md'>1−sin x</span></span> − <span class='mfrac'><span class='mn'>cos x</span><span class='md'>1+sin x</span></span> = 2 tan x</div>",
+ model:"L.S. = [cosx(1+sinx)−cosx(1−sinx)] / (1−sin²x)\n     = cosx[2sinx] / cos²x\n     = 2sinx/cosx = 2tanx = R.S. ✓"},
+];
+
+// ── STATE ─────────────────────────────────────────────────
+let studentName='', studentEmail='', answers={}, wrAnswers={};
+let timeLeft=9000, timerIntvl, usedSeconds=0;
+
+// ── START ─────────────────────────────────────────────────
+function startExam(){
+  const n=document.getElementById('sname').value.trim();
+  const e=document.getElementById('semail').value.trim();
+  let ok=true;
+  if(!n){document.getElementById('sname').classList.add('err');document.getElementById('err-name').style.display='block';ok=false;}
+  else{document.getElementById('sname').classList.remove('err');document.getElementById('err-name').style.display='none';}
+  if(!e||!e.includes('@')){document.getElementById('semail').classList.add('err');document.getElementById('err-email').style.display='block';ok=false;}
+  else{document.getElementById('semail').classList.remove('err');document.getElementById('err-email').style.display='none';}
+  if(!ok)return;
+  studentName=n; studentEmail=e;
+  document.getElementById('splash').style.display='none';
+  document.getElementById('exam-wrap').style.display='block';
+  document.getElementById('hdr-name').textContent=n;
+  buildExam(); startTimer();
+}
+
+// ── BUILD ─────────────────────────────────────────────────
+function buildExam(){
+  let h='';
+  h+=`<div class="part-banner"><div class="part-banner-info"><h2>Multiple-Choice: Part 1</h2><p>Questions 1–20 &nbsp;|&nbsp; 20 marks</p></div><span class="calc-tag no-calc">🚫 NO CALCULATOR</span></div>`;
+  Qs.filter(q=>q.p===1).forEach(q=>{h+=bQ(q);});
+  h+=`<div class="part-banner"><div class="part-banner-info"><h2>Multiple-Choice: Part 2</h2><p>Questions 21–43 &nbsp;|&nbsp; 23 marks</p></div><span class="calc-tag yes-calc">✅ Calculator Permitted</span></div>`;
+  Qs.filter(q=>q.p===2).forEach(q=>{h+=bQ(q);});
+  h+=`<div class="wr-banner"><h2>Written Response</h2><p>Questions W1–W5 &nbsp;|&nbsp; 35 marks &nbsp;|&nbsp; Calculator permitted</p></div>`;
+  WRs.forEach(wr=>{h+=`<div class="wr-card"><h3>${wr.title} <span style="font-weight:400;font-size:13px;color:#9c27b0">(${wr.marks} marks)</span></h3><div class="wr-q">${wr.text}</div><textarea class="wr-ta" id="wr-${wr.id}" placeholder="Write your full solution here..."></textarea></div>`;});
+  h+=`<div class="submit-area"><button class="sub-btn" id="sub-btn" onclick="trySubmit()">Submit Exam</button><p class="sub-note">Your results will be sent to your teacher automatically.</p><p id="warn-msg" style="color:#c62828;font-size:13px;margin-top:10px;display:none">⚠ <span id="uc"></span> unanswered MC question(s). You may still submit.</p></div>`;
+  document.getElementById('exam-body').innerHTML=h;
+}
+
+function bQ(q){
+  const L=['A','B','C','D'];
+  const o=q.opts.map((t,i)=>`<div class="opt" id="q${q.id}-${L[i]}" onclick="pick(${q.id},'${L[i]}')"><div class="opt-ltr">${L[i]}</div><div class="opt-txt">${t}</div></div>`).join('');
+  return `<div class="q-card" id="qc-${q.id}"><div class="q-label">Question ${q.id}</div><div class="q-text">${q.text}</div><div class="opts">${o}</div></div>`;
+}
+
+function pick(qId,letter){
+  ['A','B','C','D'].forEach(l=>{const e=document.getElementById(`q${qId}-${l}`);if(e)e.classList.remove('sel');});
+  document.getElementById(`q${qId}-${letter}`).classList.add('sel');
+  answers[qId]=letter;
+  document.getElementById(`qc-${qId}`).classList.add('answered');
+  document.getElementById('prog-bar').style.width=(Object.keys(answers).length/Qs.length*100)+'%';
+}
+
+function startTimer(){
+  timerIntvl=setInterval(()=>{
+    timeLeft--;usedSeconds++;
+    const m=Math.floor(timeLeft/60),s=timeLeft%60;
+    const el=document.getElementById('timer');
+    el.textContent=String(m).padStart(3,' ')+':'+String(s).padStart(2,'0');
+    if(timeLeft<=900)el.classList.add('warn');
+    if(timeLeft<=0){clearInterval(timerIntvl);submitExam(true);}
+  },1000);
+}
+
+function trySubmit(){
+  const u=Qs.length-Object.keys(answers).length;
+  if(u>0){
+    document.getElementById('uc').textContent=u;
+    document.getElementById('warn-msg').style.display='block';
+    const f=Qs.find(q=>!answers[q.id]);
+    if(f)document.getElementById(`qc-${f.id}`).scrollIntoView({behavior:'smooth',block:'center'});
+    setTimeout(()=>{if(confirm(`You have ${u} unanswered question(s). Submit anyway?`))submitExam(false);},500);
+  } else {
+    if(confirm('Submit your exam? This cannot be undone.'))submitExam(false);
+  }
+}
+
+function submitExam(auto){
+  clearInterval(timerIntvl);
+  const btn=document.getElementById('sub-btn');if(btn)btn.disabled=true;
+  WRs.forEach(wr=>{const ta=document.getElementById(`wr-${wr.id}`);wrAnswers[wr.id]=ta?ta.value.trim():'';});
+
+  let correct=0,wrong=0,blank=0;
+  Qs.forEach(q=>{const a=answers[q.id];if(!a)blank++;else if(a===q.ans)correct++;else wrong++;});
+  const pct=Math.round(correct/Qs.length*100);
+  const mU=Math.floor(usedSeconds/60),sU=usedSeconds%60;
+  const timeStr=String(mU).padStart(2,'0')+':'+String(sU).padStart(2,'0');
+  const L=['A','B','C','D'];
+
+  let aText=`STUDENT: ${studentName}\nEMAIL: ${studentEmail}\nSCORE: ${correct}/${Qs.length} (${pct}%)\nTIME: ${timeStr}\n${'─'.repeat(50)}\nANSWERS:\n`;
+  Qs.forEach(q=>{
+    const ua=answers[q.id]||'—';const ok=ua===q.ans;
+    const tmp=document.createElement('div');tmp.innerHTML=q.text;
+    aText+=`Q${String(q.id).padStart(2,' ')}: ${ua} ${ok?'✓':'✗ (Correct: '+q.ans+')'} | ${tmp.textContent.slice(0,55)}\n`;
+  });
+
+  let wText=`${'─'.repeat(50)}\nWRITTEN RESPONSES:\n`;
+  WRs.forEach(wr=>{wText+=`\n${wr.title} (${wr.marks} marks):\n${wrAnswers[wr.id]||'No response submitted'}\n`;});
+
+  // Show results page
+  document.getElementById('exam-wrap').style.display='none';
+  document.getElementById('results').style.display='block';
+  window.scrollTo(0,0);
+
+  document.getElementById('res-name').textContent=`${studentName} — ${studentEmail}`;
+  document.getElementById('score-frac').innerHTML=`${correct}<small>/${Qs.length}</small>`;
+  document.getElementById('score-pct').textContent=`${pct}% — Multiple Choice`;
+  document.getElementById('bd-correct').textContent=correct;
+  document.getElementById('bd-wrong').textContent=wrong;
+  document.getElementById('bd-blank').textContent=blank;
+  document.getElementById('bd-time').textContent=timeStr;
+  document.getElementById('score-ring').classList.add(pct>=75?'high':pct>=50?'mid':'low');
+
+  let mcH=`<div class="res-section-hdr">📋 Multiple-Choice Results (${correct}/${Qs.length})</div>`;
+  Qs.forEach(q=>{
+    const ua=answers[q.id],ok=ua===q.ans,cls=!ua?'na':ok?'ok':'no',icon=!ua?'⬜':ok?'✅':'❌';
+    let aH=!ua?`<span class="res-correct-only">Correct: ${q.ans}. ${q.opts[L.indexOf(q.ans)]}</span>`:ok?`<span class="res-correct-only">✓ ${q.ans}. ${q.opts[L.indexOf(q.ans)]}</span>`:`<span class="res-yours">Your answer: ${ua}. ${q.opts[L.indexOf(ua)]}</span><span class="res-correct">Correct: ${q.ans}. ${q.opts[L.indexOf(q.ans)]}</span>`;
+    const tmp=document.createElement('div');tmp.innerHTML=q.text;const pl=tmp.textContent;
+    mcH+=`<div class="res-q ${cls}"><div class="res-icon">${icon}</div><div class="res-body"><div class="res-qnum">Question ${q.id}</div><div class="res-qtext">${pl.length>120?pl.slice(0,120)+'…':pl}</div><div class="res-ans">${aH}</div></div></div>`;
+  });
+  document.getElementById('res-mc').innerHTML=mcH;
+
+  let wrH=`<div class="res-section-hdr">✏️ Written Response — Self-Assessment (35 marks)</div><p style="font-size:13px;color:var(--muted);margin-bottom:16px">Compare your work to the model answers below.</p>`;
+  WRs.forEach(wr=>{
+    const y=wrAnswers[wr.id];
+    wrH+=`<div class="res-q na" style="flex-direction:column;gap:10px"><div style="display:flex;align-items:center;gap:12px"><div class="res-icon">✏️</div><div class="res-body"><div class="res-qnum">${wr.title} — ${wr.marks} marks</div></div></div><div class="wr-model"><div class="wr-model-title">Model Answer</div><div class="wr-model-text">${wr.model}</div></div><div class="wr-your"><div class="wr-your-title">Your Response</div>${y?`<div class="wr-your-text">${y.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>`:`<div class="wr-your-empty">No response submitted.</div>`}</div></div>`;
+  });
+  document.getElementById('res-wr').innerHTML=wrH;
+
+  // ── SEND EMAIL ─────────────────────────────────────────
+  emailjs.send('service_vphbrlc','template_dkbk8tg',{
+    student_name: studentName,
+    student_email: studentEmail,
+    reply_to: studentEmail,
+    score: `${correct} / ${Qs.length}`,
+    percentage: `${pct}%`,
+    time_used: timeStr,
+    answers: aText,
+    written: wText
+  }).then(()=>{
+    const el=document.getElementById('email-status');
+    el.className='email-status-card sent';
+    el.innerHTML=`<span style="font-size:22px">✅</span><div><strong>Results sent to your teacher!</strong><br><span style="font-size:12px;opacity:0.85">Your teacher at info@drshreyankeducare.com has received your submission.</span></div>`;
+  }).catch(err=>{
+    const el=document.getElementById('email-status');
+    el.className='email-status-card failed';
+    el.innerHTML=`<span style="font-size:22px">⚠️</span><div><strong>Could not send automatically.</strong><br><span style="font-size:12px">Please screenshot this page and email it to your teacher. (${err.text||JSON.stringify(err)})</span></div>`;
+    console.error('EmailJS error:',err);
+  });
+}
+
+window.addEventListener('beforeunload',e=>{
+  if(document.getElementById('exam-wrap').style.display!=='none'){e.preventDefault();e.returnValue='';}
+});
+</script>
+</body>
+</html>

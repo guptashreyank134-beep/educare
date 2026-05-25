@@ -248,19 +248,15 @@ export const practiceTestData: PracticeTestSectionData = {
   practiceTests: [ 
     {
       label: "Take Exam 1 Online",
-      link: "https://drshreyankeducare.com/Exam/exam_e_online.html"
+      link: "/exams/exam_e_online_2.html"
     },
     {
       label: "Take Exam 2 Online",
-      link: "https://drshreyankeducare.com/Exam/exam_f_online.html"
+      link: "/exams/precalc12_elite_110_wordpress_integrated.html"
     },
     {
       label: "Take Exam 3 Online",
-      link: "https://drshreyankeducare.com/Exam/exam_g_online.html"
-    },
-    {
-      label: "Take Exam 4 Online",
-      link: "https://drshreyankeducare.com/Exam/exam_h_online.html"
+      link: "/exams/precalc12_final_exam_v2.html"
     },
   ],
 };

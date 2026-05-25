@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Calculus 12 – Final Exam | Dr. Shreyanke Educare</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0d1b3e; --navy-mid:#162447; --navy-light:#1f3a6e;
+    --gold:#c9a84c; --gold-light:#e2c97e;
+    --cream:#f5f0e8; --cream-dark:#ede6d6;
+    --text:#1a1a2e; --text-light:#4a4a6a;
+    --correct:#1a6b3c; --correct-bg:#d4edda;
+    --wrong:#842029; --wrong-bg:#f8d7da;
+    --warn-bg:#fff3cd; --warn-fg:#7a5c00;
+    --shadow:0 4px 24px rgba(13,27,62,.13); --radius:10px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--text);min-height:100vh}
+
+  /* HEADER */
+  .site-header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,.35)}
+  .header-inner{max-width:960px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .header-brand .site-name{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.1rem;letter-spacing:.04em;display:block}
+  .header-brand .exam-label{color:var(--cream);font-size:.78rem;opacity:.7;letter-spacing:.08em;text-transform:uppercase;font-weight:300}
+  #timer-display{font-family:'JetBrains Mono',monospace;font-size:1.5rem;color:var(--gold-light);background:rgba(255,255,255,.07);border:1px solid rgba(201,168,76,.3);padding:6px 18px;border-radius:6px;min-width:110px;text-align:center;transition:color .3s}
+  #timer-display.warning{color:#ff7b7b;border-color:rgba(255,100,100,.5)}
+
+  /* WRAP */
+  .exam-wrap{max-width:860px;margin:0 auto;padding:32px 20px 60px}
+
+  /* COVER */
+  #cover-screen{background:var(--navy);border-radius:16px;padding:48px 40px;text-align:center;box-shadow:var(--shadow)}
+  #cover-screen h1{font-family:'Playfair Display',serif;color:var(--gold);font-size:2.2rem;margin-bottom:8px;line-height:1.2}
+  #cover-screen .subtitle{color:var(--cream);opacity:.8;font-size:1rem;margin-bottom:28px;font-weight:300;font-style:italic}
+  .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:28px}
+  .info-card{background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.25);border-radius:10px;padding:14px 10px;text-align:center}
+  .info-card .ic-value{font-family:'JetBrains Mono',monospace;color:var(--gold-light);font-size:1.4rem;font-weight:600;display:block}
+  .info-card .ic-label{color:var(--cream);opacity:.65;font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;font-weight:300}
+  .instructions{background:rgba(255,255,255,.05);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:16px 20px;text-align:left;margin-bottom:28px;color:var(--cream);opacity:.85;font-size:.92rem;line-height:1.7}
+  .instructions li{margin-left:18px;margin-bottom:4px}
+  .btn-start{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;border:none;border-radius:50px;padding:14px 52px;cursor:pointer;letter-spacing:.05em;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 20px rgba(201,168,76,.35)}
+  .btn-start:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.45)}
+
+  /* PROGRESS */
+  .progress-label{text-align:right;font-size:.8rem;color:var(--text-light);margin-bottom:6px;font-family:'JetBrains Mono',monospace}
+  .progress-bar-wrap{background:var(--cream-dark);border-radius:50px;height:7px;margin-bottom:28px;overflow:hidden;border:1px solid rgba(13,27,62,.1)}
+  .progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--navy-light),var(--gold));border-radius:50px;transition:width .4s ease;width:0%}
+
+  /* SECTION HEADER */
+  .section-header{display:flex;align-items:center;gap:14px;margin:38px 0 20px;padding-bottom:12px;border-bottom:2px solid var(--navy-light)}
+  .section-badge{background:var(--navy);color:var(--gold);font-family:'Playfair Display',serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:50px;white-space:nowrap}
+  .section-badge.sa{background:linear-gradient(135deg,#1a3a6e,#0d1b3e);border:1px solid var(--gold)}
+  .section-title{font-family:'Playfair Display',serif;color:var(--navy);font-size:1.3rem}
+  .section-desc{font-size:.85rem;color:var(--text-light);margin-top:4px;font-weight:300;font-style:italic}
+
+  /* Q CARD */
+  .q-card{background:#fff;border-radius:var(--radius);padding:24px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(13,27,62,.07);border:1.5px solid transparent;transition:border-color .2s,box-shadow .2s}
+  .q-card:hover{box-shadow:0 4px 18px rgba(13,27,62,.12)}
+  .q-card.answered{border-color:rgba(26,107,60,.2)}
+  .q-card.revealed.correct-card{border-color:var(--correct);background:#f0fff5}
+  .q-card.revealed.wrong-card{border-color:var(--wrong);background:#fff5f5}
+  .q-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px}
+  .q-number{background:var(--navy);color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:600;min-width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+  .q-number.sa-num{background:linear-gradient(135deg,#1a3a6e,var(--navy-light))}
+  .q-text{font-size:1.02rem;line-height:1.65;color:var(--text)}
+  .math{font-family:'JetBrains Mono',monospace;font-size:.92em;background:rgba(13,27,62,.06);padding:1px 5px;border-radius:4px}
+
+  /* MCQ OPTIONS */
+  .options{display:flex;flex-direction:column;gap:9px;margin-top:4px}
+  .option-label{display:flex;align-items:flex-start;gap:12px;background:var(--cream);border:1.5px solid var(--cream-dark);border-radius:8px;padding:11px 14px;cursor:pointer;transition:background .15s,border-color .15s;line-height:1.55;font-size:.96rem}
+  .option-label:hover{background:#e8e0d0;border-color:var(--navy-light)}
+  .option-label input[type="radio"]{display:none}
+  .option-key{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--navy-light);min-width:20px;flex-shrink:0;font-size:.88rem;margin-top:1px}
+  .option-label.selected{background:#dde8f5;border-color:var(--navy-light)}
+  .option-label.selected .option-key{color:var(--navy)}
+  .option-label.show-correct{background:var(--correct-bg)!important;border-color:var(--correct)!important;color:var(--correct)}
+  .option-label.show-wrong{background:var(--wrong-bg)!important;border-color:var(--wrong)!important;color:var(--wrong)}
+  .option-label.disabled{pointer-events:none}
+
+  /* SHORT ANSWER INPUT */
+  .sa-input-wrap{margin-top:12px}
+  .sa-label{font-size:.82rem;color:var(--text-light);letter-spacing:.05em;text-transform:uppercase;font-weight:600;margin-bottom:7px;display:block;font-family:'Source Serif 4',serif}
+  .sa-input{font-family:'JetBrains Mono',monospace;font-size:1.05rem;color:var(--text);background:var(--cream);border:2px solid var(--cream-dark);border-radius:8px;padding:11px 16px;width:100%;max-width:320px;outline:none;transition:border-color .2s,box-shadow .2s}
+  .sa-input:focus{border-color:var(--navy-light);box-shadow:0 0 0 3px rgba(31,58,110,.12)}
+  .sa-input.answered-input{border-color:rgba(26,107,60,.35);background:#f8fff9}
+  .sa-input:disabled{background:var(--cream-dark);cursor:not-allowed}
+  .sa-hint{font-size:.8rem;color:var(--text-light);margin-top:5px;font-style:italic}
+
+  /* REVEALED SA */
+  .sa-result-box{margin-top:12px;padding:11px 16px;border-radius:8px;font-size:.92rem;display:none}
+  .sa-result-box.correct{background:var(--correct-bg);color:var(--correct);border-left:3px solid var(--correct);display:block}
+  .sa-result-box.wrong{background:var(--wrong-bg);color:var(--wrong);border-left:3px solid var(--wrong);display:block}
+
+  /* FEEDBACK */
+  .q-feedback{display:none;margin-top:12px;padding:10px 14px;border-radius:7px;font-size:.88rem;line-height:1.65}
+  .q-feedback.correct{background:var(--correct-bg);color:var(--correct);border-left:3px solid var(--correct);display:block}
+  .q-feedback.wrong{background:var(--wrong-bg);color:var(--wrong);border-left:3px solid var(--wrong);display:block}
+
+  /* SUBMIT */
+  .submit-wrap{text-align:center;margin-top:40px;padding-top:30px;border-top:2px solid var(--cream-dark)}
+  .btn-submit{background:var(--navy);color:var(--gold);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;border:2px solid var(--gold);border-radius:50px;padding:14px 52px;cursor:pointer;letter-spacing:.05em;transition:all .2s;box-shadow:0 4px 16px rgba(13,27,62,.2)}
+  .btn-submit:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px)}
+  .unanswered-warn{display:none;margin-top:14px;padding:11px 18px;background:var(--warn-bg);border-radius:8px;font-size:.9rem;color:var(--warn-fg);line-height:1.55}
+
+  /* RESULTS */
+  #results-screen{display:none}
+  .results-header{background:var(--navy);border-radius:16px;padding:40px 32px;text-align:center;margin-bottom:28px;box-shadow:var(--shadow)}
+  .results-header h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:2rem;margin-bottom:6px}
+  .score-display{font-family:'JetBrains Mono',monospace;font-size:3.8rem;font-weight:600;color:#fff;line-height:1;margin:14px 0 6px}
+  .score-display span{color:var(--gold-light);font-size:2.4rem}
+  .score-pct{font-family:'JetBrains Mono',monospace;font-size:1.5rem;color:var(--gold-light);margin-bottom:18px}
+  .score-grade{display:inline-block;padding:7px 26px;border-radius:50px;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;letter-spacing:.08em}
+  .grade-A{background:var(--correct-bg);color:var(--correct)}
+  .grade-B{background:#d4e6f1;color:#1a5276}
+  .grade-C{background:var(--warn-bg);color:var(--warn-fg)}
+  .grade-D{background:var(--wrong-bg);color:var(--wrong)}
+  .stats-row{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:20px}
+  .stat-pill{background:rgba(255,255,255,.08);border:1px solid rgba(201,168,76,.2);border-radius:50px;padding:6px 18px;font-size:.87rem;color:var(--cream)}
+  .stat-pill b{color:var(--gold-light);font-family:'JetBrains Mono',monospace}
+  .section-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:24px}
+  .ss-card{background:#fff;border-radius:10px;padding:18px 20px;box-shadow:0 2px 8px rgba(13,27,62,.08);text-align:center}
+  .ss-card .ss-title{font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--text-light);font-weight:300;margin-bottom:6px}
+  .ss-card .ss-score{font-family:'JetBrains Mono',monospace;font-size:1.6rem;font-weight:600;color:var(--navy)}
+  .ss-bar-wrap{background:var(--cream-dark);height:6px;border-radius:50px;margin-top:8px;overflow:hidden}
+  .ss-bar{height:100%;border-radius:50px;background:linear-gradient(90deg,var(--navy-light),var(--gold))}
+  .btn-retry{background:transparent;color:var(--navy);font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;border:2px solid var(--navy);border-radius:50px;padding:12px 38px;cursor:pointer;letter-spacing:.04em;transition:all .2s;margin-top:12px}
+  .btn-retry:hover{background:var(--navy);color:var(--gold)}
+  .review-divider{text-align:center;margin:36px 0 24px;font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);position:relative}
+  .review-divider::before,.review-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:var(--navy-light);opacity:.3}
+  .review-divider::before{left:0}.review-divider::after{right:0}
+  .sa-answer-badge{display:inline-block;font-family:'JetBrains Mono',monospace;background:var(--navy);color:var(--gold);padding:3px 12px;border-radius:4px;font-size:.88rem;margin-left:6px}
+
+  .hidden{display:none!important}
+  @media(max-width:600px){
+    .exam-wrap{padding:20px 12px 48px}
+    #cover-screen{padding:28px 18px}
+    #cover-screen h1{font-size:1.6rem}
+    .score-display{font-size:2.6rem}
+    .section-scores{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <span class="site-name">Dr. Shreyanke Educare</span>
+      <span class="exam-label">Pre-Calculus 12 · Final Exam</span>
+    </div>
+    <div id="timer-display">100:00</div>
+  </div>
+</header>
+
+<div class="exam-wrap">
+
+<!-- ═══════════ COVER ═══════════ -->
+<div id="cover-screen">
+  <h1>Pre-Calculus 12<br>Final Examination</h1>
+  <p class="subtitle">Transformations · Logarithms &amp; Exponentials · Trigonometry</p>
+  <div class="info-grid">
+    <div class="info-card"><span class="ic-value">50</span><span class="ic-label">Multiple Choice</span></div>
+    <div class="info-card"><span class="ic-value">10</span><span class="ic-label">Short Answer</span></div>
+    <div class="info-card"><span class="ic-value">60</span><span class="ic-label">Total Questions</span></div>
+    <div class="info-card"><span class="ic-value">100</span><span class="ic-label">Minutes</span></div>
+  </div>
+  <div class="instructions">
+    <ul>
+      <li><strong>Part 1 (Q1–50):</strong> Multiple choice — select the single best answer.</li>
+      <li><strong>Part 2 (Q51–60):</strong> Short answer — type your numerical answer in the box. Express fractions as decimals unless a fraction is explicitly required.</li>
+      <li>No penalty for guessing. Answer every question.</li>
+      <li>A scientific calculator is permitted throughout.</li>
+      <li>The timer begins when you click <em>Begin Examination</em>.</li>
+      <li>Your full score, section breakdown, and answer review appear on submission.</li>
+    </ul>
+  </div>
+  <button class="btn-start" onclick="startExam()">Begin Examination</button>
+</div>
+
+<!-- ═══════════ EXAM ═══════════ -->
+<div id="exam-screen" class="hidden">
+  <div class="progress-label" id="progress-label">0 of 60 questions answered</div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-bar"></div></div>
+
+  <form id="exam-form" onsubmit="return false;">
+
+    <!-- ── SECTION A ── -->
+    <div class="section-header">
+      <span class="section-badge">Section A</span>
+      <div><div class="section-title">Transformations &amp; Functions</div><div class="section-desc">Questions 1 – 12 · Multiple Choice</div></div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="q-card" id="qc1">
+      <div class="q-header"><div class="q-number">1</div><div class="q-text">Which equation represents the graph of <span class="math">y = √x</span> after it is translated <strong>4 units to the right</strong>?</div></div>
+      <div class="options">
+        <label class="option-label" for="q1a"><input type="radio" id="q1a" name="q1" value="A"><span class="option-key">A</span><span class="math">y = √x − 4</span></label>
+        <label class="option-label" for="q1b"><input type="radio" id="q1b" name="q1" value="B"><span class="option-key">B</span><span class="math">y = √(x − 4)</span></label>
+        <label class="option-label" for="q1c"><input type="radio" id="q1c" name="q1" value="C"><span class="option-key">C</span><span class="math">y = √(x + 4)</span></label>
+        <label class="option-label" for="q1d"><input type="radio" id="q1d" name="q1" value="D"><span class="option-key">D</span><span class="math">y = √x + 4</span></label>
+      </div><div class="q-feedback" id="fb1"></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-card" id="qc2">
+      <div class="q-header"><div class="q-number">2</div><div class="q-text">If <span class="math">f(x) = 5x − 1</span>, determine <span class="math">f⁻¹(x)</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q2a"><input type="radio" id="q2a" name="q2" value="A"><span class="option-key">A</span><span class="math">f⁻¹(x) = 1/(5x−1)</span></label>
+        <label class="option-label" for="q2b"><input type="radio" id="q2b" name="q2" value="B"><span class="option-key">B</span><span class="math">f⁻¹(x) = (1/5)x − 1</span></label>
+        <label class="option-label" for="q2c"><input type="radio" id="q2c" name="q2" value="C"><span class="option-key">C</span><span class="math">f⁻¹(x) = (x + 1)/5</span></label>
+        <label class="option-label" for="q2d"><input type="radio" id="q2d" name="q2" value="D"><span class="option-key">D</span><span class="math">f⁻¹(x) = (x − 1)/5</span></label>
+      </div><div class="q-feedback" id="fb2"></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-card" id="qc3">
+      <div class="q-header"><div class="q-number">3</div><div class="q-text">Given <span class="math">y = f(x)</span>, which represents its <strong>reflection in the y-axis</strong>?</div></div>
+      <div class="options">
+        <label class="option-label" for="q3a"><input type="radio" id="q3a" name="q3" value="A"><span class="option-key">A</span><span class="math">y = f(−x)</span></label>
+        <label class="option-label" for="q3b"><input type="radio" id="q3b" name="q3" value="B"><span class="option-key">B</span><span class="math">y = −f(x)</span></label>
+        <label class="option-label" for="q3c"><input type="radio" id="q3c" name="q3" value="C"><span class="option-key">C</span><span class="math">x = f(y)</span></label>
+        <label class="option-label" for="q3d"><input type="radio" id="q3d" name="q3" value="D"><span class="option-key">D</span><span class="math">y = 1/f(x)</span></label>
+      </div><div class="q-feedback" id="fb3"></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-card" id="qc4">
+      <div class="q-header"><div class="q-number">4</div><div class="q-text">How is the graph of <span class="math">y = (1/7)f(x)</span> related to the graph of <span class="math">y = f(x)</span>?</div></div>
+      <div class="options">
+        <label class="option-label" for="q4a"><input type="radio" id="q4a" name="q4" value="A"><span class="option-key">A</span>Compressed vertically by a factor of 1/7</label>
+        <label class="option-label" for="q4b"><input type="radio" id="q4b" name="q4" value="B"><span class="option-key">B</span>Compressed horizontally by a factor of 1/7</label>
+        <label class="option-label" for="q4c"><input type="radio" id="q4c" name="q4" value="C"><span class="option-key">C</span>Expanded vertically by a factor of 7</label>
+        <label class="option-label" for="q4d"><input type="radio" id="q4d" name="q4" value="D"><span class="option-key">D</span>Expanded horizontally by a factor of 7</label>
+      </div><div class="q-feedback" id="fb4"></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-card" id="qc5">
+      <div class="q-header"><div class="q-number">5</div><div class="q-text">Given <span class="math">f(x) = x³ − 27</span>, determine <span class="math">f⁻¹(x)</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q5a"><input type="radio" id="q5a" name="q5" value="A"><span class="option-key">A</span><span class="math">f⁻¹(x) = ∛(x + 27)</span></label>
+        <label class="option-label" for="q5b"><input type="radio" id="q5b" name="q5" value="B"><span class="option-key">B</span><span class="math">f⁻¹(x) = ∛(x − 27)</span></label>
+        <label class="option-label" for="q5c"><input type="radio" id="q5c" name="q5" value="C"><span class="option-key">C</span><span class="math">f⁻¹(x) = ∛x + 3</span></label>
+        <label class="option-label" for="q5d"><input type="radio" id="q5d" name="q5" value="D"><span class="option-key">D</span><span class="math">f⁻¹(x) = x³ + 27</span></label>
+      </div><div class="q-feedback" id="fb5"></div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q-card" id="qc6">
+      <div class="q-header"><div class="q-number">6</div><div class="q-text">If <span class="math">(a, b)</span> is a point on <span class="math">y = f(x)</span>, determine a point on <span class="math">y = f(x − 2) + 3</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q6a"><input type="radio" id="q6a" name="q6" value="A"><span class="option-key">A</span><span class="math">(a − 2, b + 3)</span></label>
+        <label class="option-label" for="q6b"><input type="radio" id="q6b" name="q6" value="B"><span class="option-key">B</span><span class="math">(a + 2, b + 3)</span></label>
+        <label class="option-label" for="q6c"><input type="radio" id="q6c" name="q6" value="C"><span class="option-key">C</span><span class="math">(a + 2, b − 3)</span></label>
+        <label class="option-label" for="q6d"><input type="radio" id="q6d" name="q6" value="D"><span class="option-key">D</span><span class="math">(a − 2, b − 3)</span></label>
+      </div><div class="q-feedback" id="fb6"></div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q-card" id="qc7">
+      <div class="q-header"><div class="q-number">7</div><div class="q-text">If <span class="math">(4, −3)</span> is on <span class="math">y = f(x)</span>, what point must be on <span class="math">y = f(2x + 10)</span>?</div></div>
+      <div class="options">
+        <label class="option-label" for="q7a"><input type="radio" id="q7a" name="q7" value="A"><span class="option-key">A</span><span class="math">(−8, −3)</span></label>
+        <label class="option-label" for="q7b"><input type="radio" id="q7b" name="q7" value="B"><span class="option-key">B</span><span class="math">(−3, −3)</span></label>
+        <label class="option-label" for="q7c"><input type="radio" id="q7c" name="q7" value="C"><span class="option-key">C</span><span class="math">(3, −3)</span></label>
+        <label class="option-label" for="q7d"><input type="radio" id="q7d" name="q7" value="D"><span class="option-key">D</span><span class="math">(18, −3)</span></label>
+      </div><div class="q-feedback" id="fb7"></div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="q-card" id="qc8">
+      <div class="q-header"><div class="q-number">8</div><div class="q-text">Which equation represents <span class="math">y = f(x)</span> after being <strong>compressed horizontally by 1/2</strong> then <strong>translated 4 units right</strong>?</div></div>
+      <div class="options">
+        <label class="option-label" for="q8a"><input type="radio" id="q8a" name="q8" value="A"><span class="option-key">A</span><span class="math">y = f(2x − 8)</span></label>
+        <label class="option-label" for="q8b"><input type="radio" id="q8b" name="q8" value="B"><span class="option-key">B</span><span class="math">y = f(2x − 4)</span></label>
+        <label class="option-label" for="q8c"><input type="radio" id="q8c" name="q8" value="C"><span class="option-key">C</span><span class="math">y = f((x − 4)/2)</span></label>
+        <label class="option-label" for="q8d"><input type="radio" id="q8d" name="q8" value="D"><span class="option-key">D</span><span class="math">y = f(x/2 − 4)</span></label>
+      </div><div class="q-feedback" id="fb8"></div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="q-card" id="qc9">
+      <div class="q-header"><div class="q-number">9</div><div class="q-text">How is <span class="math">y = f(x) + 3</span> related to <span class="math">y = f(x)</span>?</div></div>
+      <div class="options">
+        <label class="option-label" for="q9a"><input type="radio" id="q9a" name="q9" value="A"><span class="option-key">A</span>Translated 3 units up</label>
+        <label class="option-label" for="q9b"><input type="radio" id="q9b" name="q9" value="B"><span class="option-key">B</span>Translated 3 units down</label>
+        <label class="option-label" for="q9c"><input type="radio" id="q9c" name="q9" value="C"><span class="option-key">C</span>Translated 3 units left</label>
+        <label class="option-label" for="q9d"><input type="radio" id="q9d" name="q9" value="D"><span class="option-key">D</span>Translated 3 units right</label>
+      </div><div class="q-feedback" id="fb9"></div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="q-card" id="qc10">
+      <div class="q-header"><div class="q-number">10</div><div class="q-text">Which equation represents <span class="math">y = f(x)</span> reflected in the line <span class="math">y = x</span>?</div></div>
+      <div class="options">
+        <label class="option-label" for="q10a"><input type="radio" id="q10a" name="q10" value="A"><span class="option-key">A</span><span class="math">x = f(y)</span></label>
+        <label class="option-label" for="q10b"><input type="radio" id="q10b" name="q10" value="B"><span class="option-key">B</span><span class="math">y = f(−x)</span></label>
+        <label class="option-label" for="q10c"><input type="radio" id="q10c" name="q10" value="C"><span class="option-key">C</span><span class="math">y = −f(x)</span></label>
+        <label class="option-label" for="q10d"><input type="radio" id="q10d" name="q10" value="D"><span class="option-key">D</span><span class="math">y = 1/f(x)</span></label>
+      </div><div class="q-feedback" id="fb10"></div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="q-card" id="qc11">
+      <div class="q-header"><div class="q-number">11</div><div class="q-text">If <span class="math">(8, −6)</span> is on <span class="math">y = f(x)</span>, what point is on <span class="math">y = −f(2x) + 3</span>?</div></div>
+      <div class="options">
+        <label class="option-label" for="q11a"><input type="radio" id="q11a" name="q11" value="A"><span class="option-key">A</span><span class="math">(−16, −3)</span></label>
+        <label class="option-label" for="q11b"><input type="radio" id="q11b" name="q11" value="B"><span class="option-key">B</span><span class="math">(−4, −3)</span></label>
+        <label class="option-label" for="q11c"><input type="radio" id="q11c" name="q11" value="C"><span class="option-key">C</span><span class="math">(4, 9)</span></label>
+        <label class="option-label" for="q11d"><input type="radio" id="q11d" name="q11" value="D"><span class="option-key">D</span><span class="math">(16, 9)</span></label>
+      </div><div class="q-feedback" id="fb11"></div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="q-card" id="qc12">
+      <div class="q-header"><div class="q-number">12</div><div class="q-text">The zeros of <span class="math">y = f(x)</span> are −4, 1 and 2. Determine the zeros of <span class="math">y = −f(x − 1)</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q12a"><input type="radio" id="q12a" name="q12" value="A"><span class="option-key">A</span><span class="math">−5, 0, 1</span></label>
+        <label class="option-label" for="q12b"><input type="radio" id="q12b" name="q12" value="B"><span class="option-key">B</span><span class="math">−3, 2, 3</span></label>
+        <label class="option-label" for="q12c"><input type="radio" id="q12c" name="q12" value="C"><span class="option-key">C</span><span class="math">4, −1, −2</span></label>
+        <label class="option-label" for="q12d"><input type="radio" id="q12d" name="q12" value="D"><span class="option-key">D</span><span class="math">−1, 0, 5</span></label>
+      </div><div class="q-feedback" id="fb12"></div>
+    </div>
+
+    <!-- ── SECTION B ── -->
+    <div class="section-header">
+      <span class="section-badge">Section B</span>
+      <div><div class="section-title">Logarithms &amp; Exponential Functions</div><div class="section-desc">Questions 13 – 28 · Multiple Choice</div></div>
+    </div>
+
+    <!-- Q13 -->
+    <div class="q-card" id="qc13">
+      <div class="q-header"><div class="q-number">13</div><div class="q-text">Change <span class="math">p = q^r</span> to logarithmic form.</div></div>
+      <div class="options">
+        <label class="option-label" for="q13a"><input type="radio" id="q13a" name="q13" value="A"><span class="option-key">A</span><span class="math">log_p q = r</span></label>
+        <label class="option-label" for="q13b"><input type="radio" id="q13b" name="q13" value="B"><span class="option-key">B</span><span class="math">log_q p = r</span></label>
+        <label class="option-label" for="q13c"><input type="radio" id="q13c" name="q13" value="C"><span class="option-key">C</span><span class="math">log_r p = q</span></label>
+        <label class="option-label" for="q13d"><input type="radio" id="q13d" name="q13" value="D"><span class="option-key">D</span><span class="math">log_q r = p</span></label>
+      </div><div class="q-feedback" id="fb13"></div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="q-card" id="qc14">
+      <div class="q-header"><div class="q-number">14</div><div class="q-text">Evaluate: <span class="math">log₂ 7.5</span></div></div>
+      <div class="options">
+        <label class="option-label" for="q14a"><input type="radio" id="q14a" name="q14" value="A"><span class="option-key">A</span>0.44</label>
+        <label class="option-label" for="q14b"><input type="radio" id="q14b" name="q14" value="B"><span class="option-key">B</span>0.57</label>
+        <label class="option-label" for="q14c"><input type="radio" id="q14c" name="q14" value="C"><span class="option-key">C</span>2.26</label>
+        <label class="option-label" for="q14d"><input type="radio" id="q14d" name="q14" value="D"><span class="option-key">D</span>2.91</label>
+      </div><div class="q-feedback" id="fb14"></div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="q-card" id="qc15">
+      <div class="q-header"><div class="q-number">15</div><div class="q-text">Determine the <strong>range</strong> of <span class="math">y = 2^(x−3) + 4</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q15a"><input type="radio" id="q15a" name="q15" value="A"><span class="option-key">A</span><span class="math">y > 4</span></label>
+        <label class="option-label" for="q15b"><input type="radio" id="q15b" name="q15" value="B"><span class="option-key">B</span><span class="math">y > −4</span></label>
+        <label class="option-label" for="q15c"><input type="radio" id="q15c" name="q15" value="C"><span class="option-key">C</span><span class="math">y > 3</span></label>
+        <label class="option-label" for="q15d"><input type="radio" id="q15d" name="q15" value="D"><span class="option-key">D</span><span class="math">y > −3</span></label>
+      </div><div class="q-feedback" id="fb15"></div>
+    </div>
+
+    <!-- Q16 -->
+    <div class="q-card" id="qc16">
+      <div class="q-header"><div class="q-number">16</div><div class="q-text">Solve: <span class="math">16^(x+1) = 8^(1−x)</span></div></div>
+      <div class="options">
+        <label class="option-label" for="q16a"><input type="radio" id="q16a" name="q16" value="A"><span class="option-key">A</span><span class="math">−1/3</span></label>
+        <label class="option-label" for="q16b"><input type="radio" id="q16b" name="q16" value="B"><span class="option-key">B</span><span class="math">−1/7</span></label>
+        <label class="option-label" for="q16c"><input type="radio" id="q16c" name="q16" value="C"><span class="option-key">C</span><span class="math">2/7</span></label>
+        <label class="option-label" for="q16d"><input type="radio" id="q16d" name="q16" value="D"><span class="option-key">D</span><span class="math">2/5</span></label>
+      </div><div class="q-feedback" id="fb16"></div>
+    </div>
+
+    <!-- Q17 -->
+    <div class="q-card" id="qc17">
+      <div class="q-header"><div class="q-number">17</div><div class="q-text">Which expression is equivalent to <span class="math">log(100x³/y)</span>?</div></div>
+      <div class="options">
+        <label class="option-label" for="q17a"><input type="radio" id="q17a" name="q17" value="A"><span class="option-key">A</span><span class="math">2 + log(3x − y)</span></label>
+        <label class="option-label" for="q17b"><input type="radio" id="q17b" name="q17" value="B"><span class="option-key">B</span><span class="math">300 log x − log y</span></label>
+        <label class="option-label" for="q17c"><input type="radio" id="q17c" name="q17" value="C"><span class="option-key">C</span><span class="math">2 + 3 log x − log y</span></label>
+        <label class="option-label" for="q17d"><input type="radio" id="q17d" name="q17" value="D"><span class="option-key">D</span><span class="math">log(100 + x³ − y)</span></label>
+      </div><div class="q-feedback" id="fb17"></div>
+    </div>
+
+    <!-- Q18 -->
+    <div class="q-card" id="qc18">
+      <div class="q-header"><div class="q-number">18</div><div class="q-text">Simplify: <span class="math">log_a(1 / a^b)</span></div></div>
+      <div class="options">
+        <label class="option-label" for="q18a"><input type="radio" id="q18a" name="q18" value="A"><span class="option-key">A</span><span class="math">−b</span></label>
+        <label class="option-label" for="q18b"><input type="radio" id="q18b" name="q18" value="B"><span class="option-key">B</span><span class="math">b</span></label>
+        <label class="option-label" for="q18c"><input type="radio" id="q18c" name="q18" value="C"><span class="option-key">C</span><span class="math">a^b</span></label>
+        <label class="option-label" for="q18d"><input type="radio" id="q18d" name="q18" value="D"><span class="option-key">D</span><span class="math">a^(−b)</span></label>
+      </div><div class="q-feedback" id="fb18"></div>
+    </div>
+
+    <!-- Q19 -->
+    <div class="q-card" id="qc19">
+      <div class="q-header"><div class="q-number">19</div><div class="q-text">Light intensity reduces by 2% per metre depth. At what depth is intensity only <strong>10%</strong> of surface intensity?</div></div>
+      <div class="options">
+        <label class="option-label" for="q19a"><input type="radio" id="q19a" name="q19" value="A"><span class="option-key">A</span>5 m</label>
+        <label class="option-label" for="q19b"><input type="radio" id="q19b" name="q19" value="B"><span class="option-key">B</span>18 m</label>
+        <label class="option-label" for="q19c"><input type="radio" id="q19c" name="q19" value="C"><span class="option-key">C</span>98 m</label>
+        <label class="option-label" for="q19d"><input type="radio" id="q19d" name="q19" value="D"><span class="option-key">D</span>114 m</label>
+      </div><div class="q-feedback" id="fb19"></div>
+    </div>
+
+    <!-- Q20 -->
+    <div class="q-card" id="qc20">
+      <div class="q-header"><div class="q-number">20</div><div class="q-text">Solve: <span class="math">5^(x−1) = 125^(3−x)</span></div></div>
+      <div class="options">
+        <label class="option-label" for="q20a"><input type="radio" id="q20a" name="q20" value="A"><span class="option-key">A</span><span class="math">2</span></label>
+        <label class="option-label" for="q20b"><input type="radio" id="q20b" name="q20" value="B"><span class="option-key">B</span><span class="math">5</span></label>
+        <label class="option-label" for="q20c"><input type="radio" id="q20c" name="q20" value="C"><span class="option-key">C</span><span class="math">2/5</span></label>
+        <label class="option-label" for="q20d"><input type="radio" id="q20d" name="q20" value="D"><span class="option-key">D</span><span class="math">5/2</span></label>
+      </div><div class="q-feedback" id="fb20"></div>
+    </div>
+
+    <!-- Q21 -->
+    <div class="q-card" id="qc21">
+      <div class="q-header"><div class="q-number">21</div><div class="q-text">If <span class="math">log_a x = 3</span> and <span class="math">log_a y = 4</span>, evaluate <span class="math">(log_a(1/xy))²</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q21a"><input type="radio" id="q21a" name="q21" value="A"><span class="option-key">A</span><span class="math">1/49</span></label>
+        <label class="option-label" for="q21b"><input type="radio" id="q21b" name="q21" value="B"><span class="option-key">B</span><span class="math">1</span></label>
+        <label class="option-label" for="q21c"><input type="radio" id="q21c" name="q21" value="C"><span class="option-key">C</span><span class="math">14</span></label>
+        <label class="option-label" for="q21d"><input type="radio" id="q21d" name="q21" value="D"><span class="option-key">D</span><span class="math">49</span></label>
+      </div><div class="q-feedback" id="fb21"></div>
+    </div>
+
+    <!-- Q22 -->
+    <div class="q-card" id="qc22">
+      <div class="q-header"><div class="q-number">22</div><div class="q-text">Determine the <strong>domain</strong> of <span class="math">y = log₃(4x − 1) + 3</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q22a"><input type="radio" id="q22a" name="q22" value="A"><span class="option-key">A</span><span class="math">x > 0</span></label>
+        <label class="option-label" for="q22b"><input type="radio" id="q22b" name="q22" value="B"><span class="option-key">B</span><span class="math">x > 1</span></label>
+        <label class="option-label" for="q22c"><input type="radio" id="q22c" name="q22" value="C"><span class="option-key">C</span><span class="math">x > 1/4</span></label>
+        <label class="option-label" for="q22d"><input type="radio" id="q22d" name="q22" value="D"><span class="option-key">D</span>All real numbers</label>
+      </div><div class="q-feedback" id="fb22"></div>
+    </div>
+
+    <!-- Q23 -->
+    <div class="q-card" id="qc23">
+      <div class="q-header"><div class="q-number">23</div><div class="q-text">Turkey measured 7.2 on the Richter scale; Morocco measured 5.8. How many times more intense was Turkey?</div></div>
+      <div class="options">
+        <label class="option-label" for="q23a"><input type="radio" id="q23a" name="q23" value="A"><span class="option-key">A</span>1.24</label>
+        <label class="option-label" for="q23b"><input type="radio" id="q23b" name="q23" value="B"><span class="option-key">B</span>1.4</label>
+        <label class="option-label" for="q23c"><input type="radio" id="q23c" name="q23" value="C"><span class="option-key">C</span>17.43</label>
+        <label class="option-label" for="q23d"><input type="radio" id="q23d" name="q23" value="D"><span class="option-key">D</span>25.12</label>
+      </div><div class="q-feedback" id="fb23"></div>
+    </div>
+
+    <!-- Q24 -->
+    <div class="q-card" id="qc24">
+      <div class="q-header"><div class="q-number">24</div><div class="q-text">If <span class="math">log₃(m + n) = 2</span> and <span class="math">(m + n) > 0</span>, express <span class="math">m</span> in terms of <span class="math">n</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q24a"><input type="radio" id="q24a" name="q24" value="A"><span class="option-key">A</span><span class="math">m = 9 − n</span></label>
+        <label class="option-label" for="q24b"><input type="radio" id="q24b" name="q24" value="B"><span class="option-key">B</span><span class="math">m = 6 − n</span></label>
+        <label class="option-label" for="q24c"><input type="radio" id="q24c" name="q24" value="C"><span class="option-key">C</span><span class="math">m = 9/n</span></label>
+        <label class="option-label" for="q24d"><input type="radio" id="q24d" name="q24" value="D"><span class="option-key">D</span><span class="math">m = 6/n</span></label>
+      </div><div class="q-feedback" id="fb24"></div>
+    </div>
+
+    <!-- Q25 -->
+    <div class="q-card" id="qc25">
+      <div class="q-header"><div class="q-number">25</div><div class="q-text">Determine the equation of the <strong>asymptote</strong> of <span class="math">f(x) = 2^(x−1) + 3</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q25a"><input type="radio" id="q25a" name="q25" value="A"><span class="option-key">A</span><span class="math">y = 2</span></label>
+        <label class="option-label" for="q25b"><input type="radio" id="q25b" name="q25" value="B"><span class="option-key">B</span><span class="math">y = −2</span></label>
+        <label class="option-label" for="q25c"><input type="radio" id="q25c" name="q25" value="C"><span class="option-key">C</span><span class="math">y = 3</span></label>
+        <label class="option-label" for="q25d"><input type="radio" id="q25d" name="q25" value="D"><span class="option-key">D</span><span class="math">y = −3</span></label>
+      </div><div class="q-feedback" id="fb25"></div>
+    </div>
+
+    <!-- Q26 -->
+    <div class="q-card" id="qc26">
+      <div class="q-header"><div class="q-number">26</div><div class="q-text">A radioactive substance decays from 600 g to 105 g in 12 days. Determine the <strong>half-life</strong>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q26a"><input type="radio" id="q26a" name="q26" value="A"><span class="option-key">A</span>4.77 days</label>
+        <label class="option-label" for="q26b"><input type="radio" id="q26b" name="q26" value="B"><span class="option-key">B</span>5.27 days</label>
+        <label class="option-label" for="q26c"><input type="radio" id="q26c" name="q26" value="C"><span class="option-key">C</span>7.43 days</label>
+        <label class="option-label" for="q26d"><input type="radio" id="q26d" name="q26" value="D"><span class="option-key">D</span>30.17 days</label>
+      </div><div class="q-feedback" id="fb26"></div>
+    </div>
+
+    <!-- Q27 -->
+    <div class="q-card" id="qc27">
+      <div class="q-header"><div class="q-number">27</div><div class="q-text">Vancouver earthquake: 3.2 Richter; San Francisco: 5.1 Richter. How many times more intense was San Francisco?</div></div>
+      <div class="options">
+        <label class="option-label" for="q27a"><input type="radio" id="q27a" name="q27" value="A"><span class="option-key">A</span>1.59</label>
+        <label class="option-label" for="q27b"><input type="radio" id="q27b" name="q27" value="B"><span class="option-key">B</span>1.90</label>
+        <label class="option-label" for="q27c"><input type="radio" id="q27c" name="q27" value="C"><span class="option-key">C</span>38.90</label>
+        <label class="option-label" for="q27d"><input type="radio" id="q27d" name="q27" value="D"><span class="option-key">D</span>79.43</label>
+      </div><div class="q-feedback" id="fb27"></div>
+    </div>
+
+    <!-- Q28 -->
+    <div class="q-card" id="qc28">
+      <div class="q-header"><div class="q-number">28</div><div class="q-text">Express as a single logarithm: <span class="math">log A − 3 log B + log C</span></div></div>
+      <div class="options">
+        <label class="option-label" for="q28a"><input type="radio" id="q28a" name="q28" value="A"><span class="option-key">A</span><span class="math">log(AC / 3B)</span></label>
+        <label class="option-label" for="q28b"><input type="radio" id="q28b" name="q28" value="B"><span class="option-key">B</span><span class="math">log(AC / B³)</span></label>
+        <label class="option-label" for="q28c"><input type="radio" id="q28c" name="q28" value="C"><span class="option-key">C</span><span class="math">log(A / B³C)</span></label>
+        <label class="option-label" for="q28d"><input type="radio" id="q28d" name="q28" value="D"><span class="option-key">D</span><span class="math">log(A − 3B + C)</span></label>
+      </div><div class="q-feedback" id="fb28"></div>
+    </div>
+
+    <!-- ── SECTION C ── -->
+    <div class="section-header">
+      <span class="section-badge">Section C</span>
+      <div><div class="section-title">Trigonometry</div><div class="section-desc">Questions 29 – 50 · Multiple Choice</div></div>
+    </div>
+
+    <!-- Q29 -->
+    <div class="q-card" id="qc29">
+      <div class="q-header"><div class="q-number">29</div><div class="q-text">Convert <span class="math">5.3</span> radians to degrees.</div></div>
+      <div class="options">
+        <label class="option-label" for="q29a"><input type="radio" id="q29a" name="q29" value="A"><span class="option-key">A</span>0.09°</label>
+        <label class="option-label" for="q29b"><input type="radio" id="q29b" name="q29" value="B"><span class="option-key">B</span>0.18°</label>
+        <label class="option-label" for="q29c"><input type="radio" id="q29c" name="q29" value="C"><span class="option-key">C</span>151.83°</label>
+        <label class="option-label" for="q29d"><input type="radio" id="q29d" name="q29" value="D"><span class="option-key">D</span>303.67°</label>
+      </div><div class="q-feedback" id="fb29"></div>
+    </div>
+
+    <!-- Q30 -->
+    <div class="q-card" id="qc30">
+      <div class="q-header"><div class="q-number">30</div><div class="q-text">Determine the <strong>period</strong> of <span class="math">y = 6 cos((2π/15)x) + 8</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q30a"><input type="radio" id="q30a" name="q30" value="A"><span class="option-key">A</span><span class="math">2/15</span></label>
+        <label class="option-label" for="q30b"><input type="radio" id="q30b" name="q30" value="B"><span class="option-key">B</span><span class="math">15/2</span></label>
+        <label class="option-label" for="q30c"><input type="radio" id="q30c" name="q30" value="C"><span class="option-key">C</span><span class="math">15</span></label>
+        <label class="option-label" for="q30d"><input type="radio" id="q30d" name="q30" value="D"><span class="option-key">D</span><span class="math">30</span></label>
+      </div><div class="q-feedback" id="fb30"></div>
+    </div>
+
+    <!-- Q31 -->
+    <div class="q-card" id="qc31">
+      <div class="q-header"><div class="q-number">31</div><div class="q-text">Determine the exact value of <span class="math">tan(5π/6)</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q31a"><input type="radio" id="q31a" name="q31" value="A"><span class="option-key">A</span><span class="math">−√3/2</span></label>
+        <label class="option-label" for="q31b"><input type="radio" id="q31b" name="q31" value="B"><span class="option-key">B</span><span class="math">−1/√3</span></label>
+        <label class="option-label" for="q31c"><input type="radio" id="q31c" name="q31" value="C"><span class="option-key">C</span><span class="math">1/√3</span></label>
+        <label class="option-label" for="q31d"><input type="radio" id="q31d" name="q31" value="D"><span class="option-key">D</span><span class="math">√3/2</span></label>
+      </div><div class="q-feedback" id="fb31"></div>
+    </div>
+
+    <!-- Q32 -->
+    <div class="q-card" id="qc32">
+      <div class="q-header"><div class="q-number">32</div><div class="q-text">The point <span class="math">(m, n)</span> is on the unit circle and the terminal arm of θ. Which expression represents <span class="math">sin θ</span>?</div></div>
+      <div class="options">
+        <label class="option-label" for="q32a"><input type="radio" id="q32a" name="q32" value="A"><span class="option-key">A</span><span class="math">m</span></label>
+        <label class="option-label" for="q32b"><input type="radio" id="q32b" name="q32" value="B"><span class="option-key">B</span><span class="math">n</span></label>
+        <label class="option-label" for="q32c"><input type="radio" id="q32c" name="q32" value="C"><span class="option-key">C</span><span class="math">m/n</span></label>
+        <label class="option-label" for="q32d"><input type="radio" id="q32d" name="q32" value="D"><span class="option-key">D</span><span class="math">n/m</span></label>
+      </div><div class="q-feedback" id="fb32"></div>
+    </div>
+
+    <!-- Q33 -->
+    <div class="q-card" id="qc33">
+      <div class="q-header"><div class="q-number">33</div><div class="q-text">Which of the following is an asymptote of <span class="math">y = sec x</span>?</div></div>
+      <div class="options">
+        <label class="option-label" for="q33a"><input type="radio" id="q33a" name="q33" value="A"><span class="option-key">A</span><span class="math">x = 0</span></label>
+        <label class="option-label" for="q33b"><input type="radio" id="q33b" name="q33" value="B"><span class="option-key">B</span><span class="math">x = π/4</span></label>
+        <label class="option-label" for="q33c"><input type="radio" id="q33c" name="q33" value="C"><span class="option-key">C</span><span class="math">x = π/2</span></label>
+        <label class="option-label" for="q33d"><input type="radio" id="q33d" name="q33" value="D"><span class="option-key">D</span><span class="math">x = π</span></label>
+      </div><div class="q-feedback" id="fb33"></div>
+    </div>
+
+    <!-- Q34 -->
+    <div class="q-card" id="qc34">
+      <div class="q-header"><div class="q-number">34</div><div class="q-text">Simplify: <span class="math">sin 2θ / sin θ</span></div></div>
+      <div class="options">
+        <label class="option-label" for="q34a"><input type="radio" id="q34a" name="q34" value="A"><span class="option-key">A</span><span class="math">2</span></label>
+        <label class="option-label" for="q34b"><input type="radio" id="q34b" name="q34" value="B"><span class="option-key">B</span><span class="math">sin θ</span></label>
+        <label class="option-label" for="q34c"><input type="radio" id="q34c" name="q34" value="C"><span class="option-key">C</span><span class="math">cos θ</span></label>
+        <label class="option-label" for="q34d"><input type="radio" id="q34d" name="q34" value="D"><span class="option-key">D</span><span class="math">2 cos θ</span></label>
+      </div><div class="q-feedback" id="fb34"></div>
+    </div>
+
+    <!-- Q35 -->
+    <div class="q-card" id="qc35">
+      <div class="q-header"><div class="q-number">35</div><div class="q-text">Determine the period of <span class="math">y = tan x</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q35a"><input type="radio" id="q35a" name="q35" value="A"><span class="option-key">A</span>1 radian</label>
+        <label class="option-label" for="q35b"><input type="radio" id="q35b" name="q35" value="B"><span class="option-key">B</span><span class="math">π/2</span></label>
+        <label class="option-label" for="q35c"><input type="radio" id="q35c" name="q35" value="C"><span class="option-key">C</span><span class="math">π</span></label>
+        <label class="option-label" for="q35d"><input type="radio" id="q35d" name="q35" value="D"><span class="option-key">D</span><span class="math">2π</span></label>
+      </div><div class="q-feedback" id="fb35"></div>
+    </div>
+
+    <!-- Q36 -->
+    <div class="q-card" id="qc36">
+      <div class="q-header"><div class="q-number">36</div><div class="q-text">Convert <span class="math">210°</span> to radians.</div></div>
+      <div class="options">
+        <label class="option-label" for="q36a"><input type="radio" id="q36a" name="q36" value="A"><span class="option-key">A</span>1.83</label>
+        <label class="option-label" for="q36b"><input type="radio" id="q36b" name="q36" value="B"><span class="option-key">B</span>2.69</label>
+        <label class="option-label" for="q36c"><input type="radio" id="q36c" name="q36" value="C"><span class="option-key">C</span>3.49</label>
+        <label class="option-label" for="q36d"><input type="radio" id="q36d" name="q36" value="D"><span class="option-key">D</span>3.67</label>
+      </div><div class="q-feedback" id="fb36"></div>
+    </div>
+
+    <!-- Q37 -->
+    <div class="q-card" id="qc37">
+      <div class="q-header"><div class="q-number">37</div><div class="q-text">Determine the <strong>range</strong> of <span class="math">y = −2 sin 3x + 4</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q37a"><input type="radio" id="q37a" name="q37" value="A"><span class="option-key">A</span><span class="math">−6 ≤ y ≤ −2</span></label>
+        <label class="option-label" for="q37b"><input type="radio" id="q37b" name="q37" value="B"><span class="option-key">B</span><span class="math">−2 ≤ y ≤ 2</span></label>
+        <label class="option-label" for="q37c"><input type="radio" id="q37c" name="q37" value="C"><span class="option-key">C</span><span class="math">0 ≤ y ≤ 4</span></label>
+        <label class="option-label" for="q37d"><input type="radio" id="q37d" name="q37" value="D"><span class="option-key">D</span><span class="math">2 ≤ y ≤ 6</span></label>
+      </div><div class="q-feedback" id="fb37"></div>
+    </div>
+
+    <!-- Q38 -->
+    <div class="q-card" id="qc38">
+      <div class="q-header"><div class="q-number">38</div><div class="q-text">Solve: <span class="math">2cos²x − 1 = 0</span>, <span class="math">0 ≤ x < 2π</span></div></div>
+      <div class="options">
+        <label class="option-label" for="q38a"><input type="radio" id="q38a" name="q38" value="A"><span class="option-key">A</span><span class="math">π/4, 7π/4</span></label>
+        <label class="option-label" for="q38b"><input type="radio" id="q38b" name="q38" value="B"><span class="option-key">B</span><span class="math">π/3, 5π/3</span></label>
+        <label class="option-label" for="q38c"><input type="radio" id="q38c" name="q38" value="C"><span class="option-key">C</span><span class="math">π/4, 3π/4, 5π/4, 7π/4</span></label>
+        <label class="option-label" for="q38d"><input type="radio" id="q38d" name="q38" value="D"><span class="option-key">D</span><span class="math">π/3, 2π/3, 4π/3, 5π/3</span></label>
+      </div><div class="q-feedback" id="fb38"></div>
+    </div>
+
+    <!-- Q39 -->
+    <div class="q-card" id="qc39">
+      <div class="q-header"><div class="q-number">39</div><div class="q-text">Determine the <strong>amplitude</strong> of <span class="math">y = −5 sin π(x − 3) + 4</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q39a"><input type="radio" id="q39a" name="q39" value="A"><span class="option-key">A</span>−5</label>
+        <label class="option-label" for="q39b"><input type="radio" id="q39b" name="q39" value="B"><span class="option-key">B</span>3</label>
+        <label class="option-label" for="q39c"><input type="radio" id="q39c" name="q39" value="C"><span class="option-key">C</span>4</label>
+        <label class="option-label" for="q39d"><input type="radio" id="q39d" name="q39" value="D"><span class="option-key">D</span>5</label>
+      </div><div class="q-feedback" id="fb39"></div>
+    </div>
+
+    <!-- Q40 -->
+    <div class="q-card" id="qc40">
+      <div class="q-header"><div class="q-number">40</div><div class="q-text">Simplify: <span class="math">(csc²x − 1) / csc²x</span></div></div>
+      <div class="options">
+        <label class="option-label" for="q40a"><input type="radio" id="q40a" name="q40" value="A"><span class="option-key">A</span><span class="math">cos²x</span></label>
+        <label class="option-label" for="q40b"><input type="radio" id="q40b" name="q40" value="B"><span class="option-key">B</span><span class="math">sin²x</span></label>
+        <label class="option-label" for="q40c"><input type="radio" id="q40c" name="q40" value="C"><span class="option-key">C</span><span class="math">−cos²x</span></label>
+        <label class="option-label" for="q40d"><input type="radio" id="q40d" name="q40" value="D"><span class="option-key">D</span><span class="math">−sin²x</span></label>
+      </div><div class="q-feedback" id="fb40"></div>
+    </div>
+
+    <!-- Q41 -->
+    <div class="q-card" id="qc41">
+      <div class="q-header"><div class="q-number">41</div><div class="q-text">A Ferris wheel: radius 18 m, centre 20 m above ground, period 32 s. Passenger boards at the platform (20 m) at <span class="math">t = 0</span>. Determine the sine function for height <span class="math">h</span> (m).</div></div>
+      <div class="options">
+        <label class="option-label" for="q41a"><input type="radio" id="q41a" name="q41" value="A"><span class="option-key">A</span><span class="math">h = 18 sin(π/16 · t) + 20</span></label>
+        <label class="option-label" for="q41b"><input type="radio" id="q41b" name="q41" value="B"><span class="option-key">B</span><span class="math">h = 18 sin(π/32 · t) + 20</span></label>
+        <label class="option-label" for="q41c"><input type="radio" id="q41c" name="q41" value="C"><span class="option-key">C</span><span class="math">h = 20 sin(π/16 · t) + 18</span></label>
+        <label class="option-label" for="q41d"><input type="radio" id="q41d" name="q41" value="D"><span class="option-key">D</span><span class="math">h = 20 sin(π/32 · t) + 18</span></label>
+      </div><div class="q-feedback" id="fb41"></div>
+    </div>
+
+    <!-- Q42 -->
+    <div class="q-card" id="qc42">
+      <div class="q-header"><div class="q-number">42</div><div class="q-text">Convert <span class="math">8π/3</span> radians to degrees.</div></div>
+      <div class="options">
+        <label class="option-label" for="q42a"><input type="radio" id="q42a" name="q42" value="A"><span class="option-key">A</span>60°</label>
+        <label class="option-label" for="q42b"><input type="radio" id="q42b" name="q42" value="B"><span class="option-key">B</span>120°</label>
+        <label class="option-label" for="q42c"><input type="radio" id="q42c" name="q42" value="C"><span class="option-key">C</span>240°</label>
+        <label class="option-label" for="q42d"><input type="radio" id="q42d" name="q42" value="D"><span class="option-key">D</span>480°</label>
+      </div><div class="q-feedback" id="fb42"></div>
+    </div>
+
+    <!-- Q43 -->
+    <div class="q-card" id="qc43">
+      <div class="q-header"><div class="q-number">43</div><div class="q-text">Determine the exact value of <span class="math">sec(5π/4)</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q43a"><input type="radio" id="q43a" name="q43" value="A"><span class="option-key">A</span><span class="math">−√2</span></label>
+        <label class="option-label" for="q43b"><input type="radio" id="q43b" name="q43" value="B"><span class="option-key">B</span><span class="math">−1/√2</span></label>
+        <label class="option-label" for="q43c"><input type="radio" id="q43c" name="q43" value="C"><span class="option-key">C</span><span class="math">1/√2</span></label>
+        <label class="option-label" for="q43d"><input type="radio" id="q43d" name="q43" value="D"><span class="option-key">D</span><span class="math">√2</span></label>
+      </div><div class="q-feedback" id="fb43"></div>
+    </div>
+
+    <!-- Q44 -->
+    <div class="q-card" id="qc44">
+      <div class="q-header"><div class="q-number">44</div><div class="q-text">A wheel: radius 30 cm, centre 36 cm above ground, period 12 s. A point starts at <strong>minimum</strong> height (<span class="math">t = 0</span>). Determine the height equation.</div></div>
+      <div class="options">
+        <label class="option-label" for="q44a"><input type="radio" id="q44a" name="q44" value="A"><span class="option-key">A</span><span class="math">h = −30cos(π/12 · t) + 6</span></label>
+        <label class="option-label" for="q44b"><input type="radio" id="q44b" name="q44" value="B"><span class="option-key">B</span><span class="math">h = −30cos(π/6 · t) + 36</span></label>
+        <label class="option-label" for="q44c"><input type="radio" id="q44c" name="q44" value="C"><span class="option-key">C</span><span class="math">h = 30cos(π/6 · t) + 36</span></label>
+        <label class="option-label" for="q44d"><input type="radio" id="q44d" name="q44" value="D"><span class="option-key">D</span><span class="math">h = 30cos(π/12 · t) + 6</span></label>
+      </div><div class="q-feedback" id="fb44"></div>
+    </div>
+
+    <!-- Q45 -->
+    <div class="q-card" id="qc45">
+      <div class="q-header"><div class="q-number">45</div><div class="q-text">Simplify: <span class="math">sin(2x + π)</span></div></div>
+      <div class="options">
+        <label class="option-label" for="q45a"><input type="radio" id="q45a" name="q45" value="A"><span class="option-key">A</span><span class="math">sin 2x</span></label>
+        <label class="option-label" for="q45b"><input type="radio" id="q45b" name="q45" value="B"><span class="option-key">B</span><span class="math">cos 2x</span></label>
+        <label class="option-label" for="q45c"><input type="radio" id="q45c" name="q45" value="C"><span class="option-key">C</span><span class="math">−sin 2x</span></label>
+        <label class="option-label" for="q45d"><input type="radio" id="q45d" name="q45" value="D"><span class="option-key">D</span><span class="math">−cos 2x</span></label>
+      </div><div class="q-feedback" id="fb45"></div>
+    </div>
+
+    <!-- Q46 -->
+    <div class="q-card" id="qc46">
+      <div class="q-header"><div class="q-number">46</div><div class="q-text">The two smallest positive solutions of <span class="math">sin 3x = 0.4</span> are <span class="math">x = 0.14</span> and <span class="math">x = 0.91</span>. Determine the general solution.</div></div>
+      <div class="options">
+        <label class="option-label" for="q46a"><input type="radio" id="q46a" name="q46" value="A"><span class="option-key">A</span><span class="math">x = 0.14 + 2nπ,  x = 0.91 + 2nπ</span></label>
+        <label class="option-label" for="q46b"><input type="radio" id="q46b" name="q46" value="B"><span class="option-key">B</span><span class="math">x = 0.14 + 6nπ,  x = 0.91 + 6nπ</span></label>
+        <label class="option-label" for="q46c"><input type="radio" id="q46c" name="q46" value="C"><span class="option-key">C</span><span class="math">x = 0.14 + nπ/3,  x = 0.91 + nπ/3</span></label>
+        <label class="option-label" for="q46d"><input type="radio" id="q46d" name="q46" value="D"><span class="option-key">D</span><span class="math">x = 0.14 + 2nπ/3,  x = 0.91 + 2nπ/3</span></label>
+      </div><div class="q-feedback" id="fb46"></div>
+    </div>
+
+    <!-- Q47 -->
+    <div class="q-card" id="qc47">
+      <div class="q-header"><div class="q-number">47</div><div class="q-text">Which expression is equivalent to <span class="math">cos 3x · cos 2x − sin 3x · sin 2x</span>?</div></div>
+      <div class="options">
+        <label class="option-label" for="q47a"><input type="radio" id="q47a" name="q47" value="A"><span class="option-key">A</span><span class="math">sin x</span></label>
+        <label class="option-label" for="q47b"><input type="radio" id="q47b" name="q47" value="B"><span class="option-key">B</span><span class="math">sin 5x</span></label>
+        <label class="option-label" for="q47c"><input type="radio" id="q47c" name="q47" value="C"><span class="option-key">C</span><span class="math">cos x</span></label>
+        <label class="option-label" for="q47d"><input type="radio" id="q47d" name="q47" value="D"><span class="option-key">D</span><span class="math">cos 5x</span></label>
+      </div><div class="q-feedback" id="fb47"></div>
+    </div>
+
+    <!-- Q48 -->
+    <div class="q-card" id="qc48">
+      <div class="q-header"><div class="q-number">48</div><div class="q-text">Solve: <span class="math">2 sin x + 1 = 0</span>, <span class="math">0 ≤ x < 2π</span></div></div>
+      <div class="options">
+        <label class="option-label" for="q48a"><input type="radio" id="q48a" name="q48" value="A"><span class="option-key">A</span><span class="math">π/6,  5π/6</span></label>
+        <label class="option-label" for="q48b"><input type="radio" id="q48b" name="q48" value="B"><span class="option-key">B</span><span class="math">π/6,  11π/6</span></label>
+        <label class="option-label" for="q48c"><input type="radio" id="q48c" name="q48" value="C"><span class="option-key">C</span><span class="math">7π/6,  11π/6</span></label>
+        <label class="option-label" for="q48d"><input type="radio" id="q48d" name="q48" value="D"><span class="option-key">D</span><span class="math">4π/3,  5π/3</span></label>
+      </div><div class="q-feedback" id="fb48"></div>
+    </div>
+
+    <!-- Q49 -->
+    <div class="q-card" id="qc49">
+      <div class="q-header"><div class="q-number">49</div><div class="q-text">The terminal arm of θ passes through <span class="math">(−2, 5)</span>. Determine <span class="math">sec θ</span>.</div></div>
+      <div class="options">
+        <label class="option-label" for="q49a"><input type="radio" id="q49a" name="q49" value="A"><span class="option-key">A</span><span class="math">−√21/2</span></label>
+        <label class="option-label" for="q49b"><input type="radio" id="q49b" name="q49" value="B"><span class="option-key">B</span><span class="math">√21/5</span></label>
+        <label class="option-label" for="q49c"><input type="radio" id="q49c" name="q49" value="C"><span class="option-key">C</span><span class="math">−√29/2</span></label>
+        <label class="option-label" for="q49d"><input type="radio" id="q49d" name="q49" value="D"><span class="option-key">D</span><span class="math">√29/5</span></label>
+      </div><div class="q-feedback" id="fb49"></div>
+    </div>
+
+    <!-- Q50 -->
+    <div class="q-card" id="qc50">
+      <div class="q-header"><div class="q-number">50</div><div class="q-text">A seaport: maximum depth 18 m at 3:00 am, minimum depth 4 m at 9:30 am. Determine the sinusoidal depth equation.</div></div>
+      <div class="options">
+        <label class="option-label" for="q50a"><input type="radio" id="q50a" name="q50" value="A"><span class="option-key">A</span><span class="math">h = 7 cos(2π(t − 3)/6.5) + 11</span></label>
+        <label class="option-label" for="q50b"><input type="radio" id="q50b" name="q50" value="B"><span class="option-key">B</span><span class="math">h = 7 cos(2π(t − 3)/13) + 11</span></label>
+        <label class="option-label" for="q50c"><input type="radio" id="q50c" name="q50" value="C"><span class="option-key">C</span><span class="math">h = 11 cos(2π(t − 3)/6.5) + 7</span></label>
+        <label class="option-label" for="q50d"><input type="radio" id="q50d" name="q50" value="D"><span class="option-key">D</span><span class="math">h = 11 cos(2π(t − 3)/13) + 7</span></label>
+      </div><div class="q-feedback" id="fb50"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         SECTION D – SHORT ANSWER
+    ══════════════════════════════════════ -->
+    <div class="section-header">
+      <span class="section-badge sa">Section D</span>
+      <div>
+        <div class="section-title">Short Answer &amp; Numerical Response</div>
+        <div class="section-desc">Questions 51 – 60 · Type your answer in the box. Fractions may be entered as decimals.</div>
+      </div>
+    </div>
+
+    <!-- Q51 -->
+    <div class="q-card" id="qc51">
+      <div class="q-header"><div class="q-number sa-num">51</div><div class="q-text">If <span class="math">f(x) = 3x + 2</span>, evaluate <span class="math">f⁻¹(11)</span>.</div></div>
+      <div class="sa-input-wrap">
+        <span class="sa-label">Your Answer</span>
+        <input class="sa-input" type="text" id="sa51" placeholder="e.g. 3" autocomplete="off">
+        <div class="sa-hint">Enter a single number.</div>
+      </div>
+      <div class="sa-result-box" id="sfb51"></div>
+    </div>
+
+    <!-- Q52 -->
+    <div class="q-card" id="qc52">
+      <div class="q-header"><div class="q-number sa-num">52</div><div class="q-text">Evaluate: <span class="math">log₃ 243</span></div></div>
+      <div class="sa-input-wrap">
+        <span class="sa-label">Your Answer</span>
+        <input class="sa-input" type="text" id="sa52" placeholder="e.g. 5" autocomplete="off">
+      </div>
+      <div class="sa-result-box" id="sfb52"></div>
+    </div>
+
+    <!-- Q53 -->
+    <div class="q-card" id="qc53">
+      <div class="q-header"><div class="q-number sa-num">53</div><div class="q-text">Solve for <span class="math">x</span>: <span class="math">4^x = 8</span>. Give your answer as a decimal.</div></div>
+      <div class="sa-input-wrap">
+        <span class="sa-label">Your Answer</span>
+        <input class="sa-input" type="text" id="sa53" placeholder="e.g. 1.5" autocomplete="off">
+        <div class="sa-hint">Round to 2 decimal places if needed.</div>
+      </div>
+      <div class="sa-result-box" id="sfb53"></div>
+    </div>
+
+    <!-- Q54 -->
+    <div class="q-card" id="qc54">
+      <div class="q-header"><div class="q-number sa-num">54</div><div class="q-text">A sinusoidal function has a maximum value of <span class="math">7</span> and a minimum value of <span class="math">1</span>. Determine the <strong>amplitude</strong>.</div></div>
+      <div class="sa-input-wrap">
+        <span class="sa-label">Your Answer</span>
+        <input class="sa-input" type="text" id="sa54" placeholder="e.g. 3" autocomplete="off">
+      </div>
+      <div class="sa-result-box" id="sfb54"></div>
+    </div>
+
+    <!-- Q55 -->
+    <div class="q-card" id="qc55">
+      <div class="q-header"><div class="q-number sa-num">55</div><div class="q-text">Convert <span class="math">5π/6</span> radians to degrees.</div></div>
+      <div class="sa-input-wrap">
+        <span class="sa-label">Your Answer (in degrees)</span>
+        <input class="sa-input" type="text" id="sa55" placeholder="e.g. 150" autocomplete="off">
+      </div>
+      <div class="sa-result-box" id="sfb55"></div>
+    </div>
+
+    <!-- Q56 -->
+    <div class="q-card" id="qc56">
+      <div class="q-header"><div class="q-number sa-num">56</div><div class="q-text">Evaluate: <span class="math">log₂(1/8)</span></div></div>
+      <div class="sa-input-wrap">
+        <span class="sa-label">Your Answer</span>
+        <input class="sa-input" type="text" id="sa56" placeholder="e.g. -3" autocomplete="off">
+      </div>
+      <div class="sa-result-box" id="sfb56"></div>
+    </div>
+
+    <!-- Q57 -->
+    <div class="q-card" id="qc57">
+      <div class="q-header"><div class="q-number sa-num">57</div><div class="q-text">The graph of <span class="math">y = f(x)</span> passes through the point <span class="math">(2, 5)</span>. Determine the <span class="math">y</span>-coordinate of the corresponding point on <span class="math">y = 3f(x)</span>.</div></div>
+      <div class="sa-input-wrap">
+        <span class="sa-label">Your Answer</span>
+        <input class="sa-input" type="text" id="sa57" placeholder="e.g. 15" autocomplete="off">
+      </div>
+      <div class="sa-result-box" id="sfb57"></div>
+    </div>
+
+    <!-- Q58 -->
+    <div class="q-card" id="qc58">
+      <div class="q-header"><div class="q-number sa-num">58</div><div class="q-text">Determine the <strong>period</strong> of <span class="math">y = sin(πx/3)</span>.</div></div>
+      <div class="sa-input-wrap">
+        <span class="sa-label">Your Answer</span>
+        <input class="sa-input" type="text" id="sa58" placeholder="e.g. 6" autocomplete="off">
+      </div>
+      <div class="sa-result-box" id="sfb58"></div>
+    </div>
+
+    <!-- Q59 -->
+    <div class="q-card" id="qc59">
+      <div class="q-header"><div class="q-number sa-num">59</div><div class="q-text">Solve: <span class="math">log x + log(x + 3) = 1</span>. (Reject any inadmissible roots.)</div></div>
+      <div class="sa-input-wrap">
+        <span class="sa-label">Your Answer</span>
+        <input class="sa-input" type="text" id="sa59" placeholder="e.g. 2" autocomplete="off">
+      </div>
+      <div class="sa-result-box" id="sfb59"></div>
+    </div>
+
+    <!-- Q60 -->
+    <div class="q-card" id="qc60">
+      <div class="q-header"><div class="q-number sa-num">60</div><div class="q-text">Determine the exact value of <span class="math">tan(3π/4)</span>.</div></div>
+      <div class="sa-input-wrap">
+        <span class="sa-label">Your Answer</span>
+        <input class="sa-input" type="text" id="sa60" placeholder="e.g. -1" autocomplete="off">
+        <div class="sa-hint">Enter exact value (integer or decimal). No need for fractions.</div>
+      </div>
+      <div class="sa-result-box" id="sfb60"></div>
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="submit-wrap">
+      <button class="btn-submit" onclick="submitExam()">Submit Examination</button>
+      <div class="unanswered-warn" id="unanswered-warn"></div>
+    </div>
+  </form>
+</div><!-- end exam-screen -->
+
+<!-- ═══════════ RESULTS ═══════════ -->
+<div id="results-screen">
+  <div class="results-header">
+    <h2>Examination Complete</h2>
+    <div class="score-display" id="score-display">—</div>
+    <div class="score-pct" id="score-pct">—</div>
+    <span class="score-grade" id="score-grade"></span>
+    <div class="stats-row" id="stats-row"></div>
+  </div>
+  <div class="section-scores" id="section-scores-grid"></div>
+  <div style="text-align:center"><button class="btn-retry" onclick="retryExam()">&#8635; Retake Exam</button></div>
+  <div class="review-divider">Full Answer Review</div>
+  <div id="review-area"></div>
+</div>
+
+</div><!-- exam-wrap -->
+
+<script>
+/* ════════════════════════════════════════
+   MCQ ANSWER KEY
+════════════════════════════════════════ */
+const MCQ = {
+  q1:'B',q2:'C',q3:'A',q4:'A',q5:'A',
+  q6:'B',q7:'B',q8:'A',q9:'A',q10:'A',
+  q11:'C',q12:'B',q13:'B',q14:'D',q15:'A',
+  q16:'B',q17:'C',q18:'A',q19:'D',q20:'D',
+  q21:'D',q22:'C',q23:'D',q24:'A',q25:'C',
+  q26:'A',q27:'D',q28:'B',q29:'D',q30:'C',
+  q31:'B',q32:'B',q33:'C',q34:'D',q35:'C',
+  q36:'D',q37:'D',q38:'C',q39:'D',q40:'A',
+  q41:'A',q42:'D',q43:'A',q44:'B',q45:'C',
+  q46:'D',q47:'D',q48:'C',q49:'C',q50:'B'
+};
+
+/* Short-answer: accepted numeric value(s) with tolerance ±0.05
+   accepted is an array of numbers; string entries = exact string match */
+const SA = {
+  sa51: { accepted:[3],          display:'3',         expl:'f(x)=3x+2 → swap: x=3y+2 → y=(x−2)/3. f⁻¹(11)=(11−2)/3=3.' },
+  sa52: { accepted:[5],          display:'5',         expl:'log₃ 243 = log₃(3⁵) = 5.' },
+  sa53: { accepted:[1.5],        display:'1.5',       expl:'4^x=8 → 2^(2x)=2³ → 2x=3 → x=3/2=1.5.' },
+  sa54: { accepted:[3],          display:'3',         expl:'Amplitude = (max − min)/2 = (7−1)/2 = 3.' },
+  sa55: { accepted:[150],        display:'150',       expl:'5π/6 × (180/π) = 5×30 = 150°.' },
+  sa56: { accepted:[-3],         display:'−3',        expl:'log₂(1/8)=log₂(2⁻³)=−3.' },
+  sa57: { accepted:[15],         display:'15',        expl:'y = 3f(x) multiplies every y-value by 3. So 5×3 = 15.' },
+  sa58: { accepted:[6],          display:'6',         expl:'Period = 2π ÷ (π/3) = 2π × 3/π = 6.' },
+  sa59: { accepted:[2],          display:'2',         expl:'x(x+3)=10 → x²+3x−10=0 → (x+5)(x−2)=0. x=−5 rejected (log undefined). x=2.' },
+  sa60: { accepted:[-1],         display:'−1',        expl:'3π/4 is in Q2, reference angle π/4. tan(π/4)=1, negative in Q2: tan(3π/4)=−1.' }
+};
+
+const MCQ_EXPL = {
+  q1:'Translating f(x) right by h gives f(x−h). So √x shifted right 4 → √(x−4).',
+  q2:'Swap x and y: x=5y−1 → y=(x+1)/5. Thus f⁻¹(x)=(x+1)/5.',
+  q3:'Reflection in y-axis: replace x with −x → y=f(−x).',
+  q4:'Multiplying f(x) by 1/7 compresses vertically by factor 1/7.',
+  q5:'Swap: x=y³−27 → y=∛(x+27).',
+  q6:'f(x−2)+3 shifts x right by 2, y up by 3 → (a+2, b+3).',
+  q7:'Set 2x+10=4 → x=−3. y unchanged: (−3,−3).',
+  q8:'Compress ½: replace x→2x. Translate right 4: replace x→x−4. Combined: f(2(x−4))=f(2x−8).',
+  q9:'Adding 3 outside shifts the graph 3 units up.',
+  q10:'Reflecting in y=x swaps x and y → x=f(y).',
+  q11:'2x=8→x=4. y=−f(4)+3=−(−6)+3=9. Point: (4,9).',
+  q12:'Negating f does not change zeros; subtracting 1 inside shifts zeros right by 1: −4+1=−3, 1+1=2, 2+1=3.',
+  q13:'p=q^r → logq(p)=r. Base is q, argument is p, result is r.',
+  q14:'log₂(7.5)=log(7.5)/log(2)≈2.91.',
+  q15:'As x→−∞, 2^(x−3)→0⁺, so y→4⁺. Range: y>4.',
+  q16:'2^(4x+4)=2^(3−3x) → 4x+4=3−3x → 7x=−1 → x=−1/7.',
+  q17:'log(100x³/y)=log100+logx³−logy=2+3logx−logy.',
+  q18:'log_a(a^(−b))=−b.',
+  q19:'0.98^d=0.10 → d=log(0.10)/log(0.98)≈114 m.',
+  q20:'5^(x−1)=5^(9−3x) → x−1=9−3x → 4x=10 → x=5/2.',
+  q21:'log_a(1/xy)=−(3+4)=−7. (−7)²=49.',
+  q22:'4x−1>0 → x>1/4.',
+  q23:'10^(7.2−5.8)=10^1.4≈25.12.',
+  q24:'m+n=3²=9 → m=9−n.',
+  q25:'2^(x−1)→0 as x→−∞, so y→3. Asymptote: y=3.',
+  q26:'(1/2)^(12/N)=105/600=0.175 → N≈4.77 days.',
+  q27:'10^(5.1−3.2)=10^1.9≈79.43.',
+  q28:'logA−3logB+logC=log(AC/B³).',
+  q29:'5.3×(180/π)≈303.67°.',
+  q30:'Period=2π÷(2π/15)=15.',
+  q31:'5π/6 in Q2; tan(π/6)=1/√3, negative in Q2 → −1/√3.',
+  q32:'On unit circle: x=cosθ=m, y=sinθ=n.',
+  q33:'sec x=1/cosx. Asymptotes where cosx=0: x=π/2,3π/2,…',
+  q34:'sin2θ=2sinθcosθ → sin2θ/sinθ=2cosθ.',
+  q35:'Period of tan x is π.',
+  q36:'210×π/180=7π/6≈3.67.',
+  q37:'Amplitude=2, midline=4. Range: [2,6].',
+  q38:'cos²x=1/2 → cosx=±1/√2 → x=π/4,3π/4,5π/4,7π/4.',
+  q39:'Amplitude=|−5|=5.',
+  q40:'1−1/csc²x=1−sin²x=cos²x.',
+  q41:'Period=32→B=2π/32=π/16. Midline=20, amplitude=18. At t=0 at midline: h=18sin(π/16·t)+20.',
+  q42:'8π/3×(180/π)=480°.',
+  q43:'cos(5π/4)=−1/√2 → sec=−√2.',
+  q44:'Period=12→B=π/6. Minimum at t=0: use −cos. h=−30cos(π/6·t)+36.',
+  q45:'sin(2x+π)=sin2x·cosπ+cos2x·sinπ=−sin2x.',
+  q46:'Period of sin3x is 2π/3; add 2nπ/3 to each solution.',
+  q47:'cosAcosB−sinAsinB=cos(A+B) → cos(5x).',
+  q48:'sinx=−1/2 → Q3,Q4: x=7π/6,11π/6.',
+  q49:'r=√(4+25)=√29. secθ=r/x=√29/(−2)=−√29/2.',
+  q50:'Amp=7, midline=11, period=13. Max at t=3: h=7cos(2π(t−3)/13)+11.'
+};
+
+/* ════════════════════════════════════════
+   TIMER
+════════════════════════════════════════ */
+let timerInterval=null, timeLeft=100*60;
+
+function startTimer(){
+  updateTimerDisplay();
+  timerInterval=setInterval(()=>{
+    timeLeft--;
+    updateTimerDisplay();
+    if(timeLeft<=0){clearInterval(timerInterval);submitExam(true);}
+    else if(timeLeft<=600) document.getElementById('timer-display').classList.add('warning');
+  },1000);
+}
+function updateTimerDisplay(){
+  const m=String(Math.floor(timeLeft/60)).padStart(2,'0');
+  const s=String(timeLeft%60).padStart(2,'0');
+  document.getElementById('timer-display').textContent=m+':'+s;
+}
+
+/* ════════════════════════════════════════
+   START
+════════════════════════════════════════ */
+function startExam(){
+  document.getElementById('cover-screen').classList.add('hidden');
+  document.getElementById('exam-screen').classList.remove('hidden');
+  startTimer();
+  // MCQ listeners
+  for(let i=1;i<=50;i++){
+    document.querySelectorAll(`[name="q${i}"]`).forEach(r=>r.addEventListener('change',()=>{
+      highlightMCQ(i,r.value); updateProgress();
+    }));
+  }
+  // SA listeners
+  for(let i=51;i<=60;i++){
+    const inp=document.getElementById(`sa${i}`);
+    inp.addEventListener('input',()=>{
+      const v=inp.value.trim();
+      document.getElementById(`qc${i}`).classList.toggle('answered', v!=='');
+      updateProgress();
+    });
+  }
+}
+
+function highlightMCQ(n,val){
+  document.querySelectorAll(`#qc${n} .option-label`).forEach(l=>l.classList.remove('selected'));
+  const el=document.querySelector(`#q${n}${val.toLowerCase()}`);
+  if(el) el.closest('.option-label').classList.add('selected');
+  document.getElementById(`qc${n}`).classList.add('answered');
+}
+
+function updateProgress(){
+  let ans=0;
+  for(let i=1;i<=50;i++) if(document.querySelector(`[name="q${i}"]:checked`)) ans++;
+  for(let i=51;i<=60;i++) if(document.getElementById(`sa${i}`).value.trim()!=='') ans++;
+  document.getElementById('progress-bar').style.width=(ans/60*100)+'%';
+  document.getElementById('progress-label').textContent=`${ans} of 60 questions answered`;
+}
+
+/* ════════════════════════════════════════
+   SHORT ANSWER GRADING
+════════════════════════════════════════ */
+function gradeSA(qNum){
+  const id=`sa${qNum}`;
+  const raw=document.getElementById(id).value.trim();
+  const key=SA[id];
+  if(!raw) return false;
+  // Try numeric
+  const num=parseFloat(raw.replace(',','.'));
+  if(!isNaN(num)){
+    return key.accepted.some(a=>typeof a==='number' && Math.abs(num-a)<0.051);
+  }
+  // Try string match
+  const lower=raw.toLowerCase().replace(/\s/g,'');
+  return key.accepted.some(a=>typeof a==='string' && a.toLowerCase().replace(/\s/g,'')==lower);
+}
+
+/* ════════════════════════════════════════
+   SUBMIT
+════════════════════════════════════════ */
+let submitAttempts=0;
+function submitExam(forced=false){
+  // count unanswered
+  let unans=[];
+  for(let i=1;i<=50;i++) if(!document.querySelector(`[name="q${i}"]:checked`)) unans.push(i);
+  for(let i=51;i<=60;i++) if(document.getElementById(`sa${i}`).value.trim()==='') unans.push(i);
+
+  if(!forced && unans.length>0){
+    submitAttempts++;
+    const warn=document.getElementById('unanswered-warn');
+    warn.style.display='block';
+    if(submitAttempts<2){
+      warn.innerHTML=`⚠ <strong>${unans.length} question(s) unanswered</strong>: Q${unans.join(', Q')}. <br>Click <em>Submit</em> again to confirm submission.`;
+      return;
+    }
+  }
+  clearInterval(timerInterval);
+
+  let mcqTotal=0, saTotal=0;
+  const secScores={A:0,B:0,C:0,D:0};
+  const secTotals={A:12,B:16,C:22,D:10};
+
+  // Grade MCQ
+  for(let i=1;i<=50;i++){
+    const key=`q${i}`;
+    const sel=document.querySelector(`[name="${key}"]:checked`);
+    const user=sel?sel.value:null;
+    const correct=MCQ[key];
+    const ok=user===correct;
+    if(ok){ mcqTotal++; if(i<=12)secScores.A++; else if(i<=28)secScores.B++; else secScores.C++; }
+    // Reveal
+    const card=document.getElementById(`qc${i}`);
+    card.querySelectorAll('.option-label').forEach(l=>{
+      l.classList.add('disabled');
+      const v=l.querySelector('input').value;
+      if(v===correct) l.classList.add('show-correct');
+      else if(user&&v===user&&!ok) l.classList.add('show-wrong');
+    });
+    card.classList.add('revealed',ok?'correct-card':'wrong-card');
+    const fb=document.getElementById(`fb${i}`);
+    fb.className='q-feedback '+(ok?'correct':'wrong');
+    fb.innerHTML=(ok?'✓ Correct! ':'✗ Incorrect. Correct answer: <strong>'+correct+'</strong>. ')+MCQ_EXPL[key];
+  }
+
+  // Grade SA
+  for(let i=51;i<=60;i++){
+    const ok=gradeSA(i);
+    if(ok){ saTotal++; secScores.D++; }
+    const inp=document.getElementById(`sa${i}`);
+    inp.disabled=true;
+    inp.className='sa-input '+(ok?'answered-input':'');
+    const fb=document.getElementById(`sfb${i}`);
+    const key=SA[`sa${i}`];
+    const userVal=inp.value.trim()||'(blank)';
+    fb.className='sa-result-box '+(ok?'correct':'wrong');
+    fb.innerHTML=(ok?`✓ Correct! Your answer: <strong>${userVal}</strong>`:`✗ Incorrect. Your answer: <strong>${userVal}</strong>. Correct answer: <span class="sa-answer-badge">${key.display}</span>`)+' — '+key.expl;
+    document.getElementById(`qc${i}`).classList.add('revealed',ok?'correct-card':'wrong-card');
+  }
+
+  const total=mcqTotal+saTotal;
+  const pct=Math.round(total/60*100);
+  let grade,gradeClass;
+  if(pct>=86){grade='A — Excellent';gradeClass='grade-A';}
+  else if(pct>=73){grade='B — Good';gradeClass='grade-B';}
+  else if(pct>=60){grade='C — Satisfactory';gradeClass='grade-C';}
+  else{grade='Needs Improvement';gradeClass='grade-D';}
+
+  // Show results
+  document.getElementById('exam-screen').classList.add('hidden');
+  const rs=document.getElementById('results-screen');
+  rs.style.display='block';
+  document.getElementById('score-display').innerHTML=`${total}<span>/60</span>`;
+  document.getElementById('score-pct').textContent=pct+'%';
+  const grEl=document.getElementById('score-grade');
+  grEl.textContent=grade; grEl.className='score-grade '+gradeClass;
+  document.getElementById('stats-row').innerHTML=`
+    <div class="stat-pill">MCQ: <b>${mcqTotal}/50</b></div>
+    <div class="stat-pill">Short Answer: <b>${saTotal}/10</b></div>
+    <div class="stat-pill">Total: <b>${pct}%</b></div>`;
+
+  // Section breakdown
+  const sg=document.getElementById('section-scores-grid');
+  sg.innerHTML='';
+  [['A','Transformations',12],['B','Logarithms & Exp.',16],['C','Trigonometry',22],['D','Short Answer',10]].forEach(([s,lbl,tot])=>{
+    const sc=secScores[s], p=Math.round(sc/tot*100);
+    sg.innerHTML+=`<div class="ss-card">
+      <div class="ss-title">Sec ${s} · ${lbl}</div>
+      <div class="ss-score">${sc}/${tot}</div>
+      <div style="font-size:.8rem;color:var(--text-light);margin-top:2px">${p}%</div>
+      <div class="ss-bar-wrap"><div class="ss-bar" style="width:${p}%"></div></div>
+    </div>`;
+  });
+
+  // Review
+  const ra=document.getElementById('review-area');
+  ra.innerHTML='';
+  for(let i=1;i<=60;i++) ra.appendChild(document.getElementById(`qc${i}`).cloneNode(true));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function retryExam(){ window.location.reload(); }
+</script>
+</body>
+</html>
