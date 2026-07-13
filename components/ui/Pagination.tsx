@@ -11,9 +11,9 @@ interface PaginationProps {
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, basePath }) => {
   if (totalPages <= 1) return null;
 
-  // Helper to build page URL
+  // Helper to build page URL (path-based, SEO-friendly)
   const getPageUrl = (page: number) => {
-    return page === 1 ? basePath : `${basePath}?page=${page}`;
+    return page === 1 ? basePath : `${basePath}/page/${page}`;
   };
 
   // Generate page numbers to display
