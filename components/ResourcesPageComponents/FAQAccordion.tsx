@@ -2,17 +2,68 @@
 
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { PortableText } from "@portabletext/react";
 
 interface FAQItem {
     id?: number | string;
     _key?: string;
     question: string;
-    answer: string;
+    // Rich text (Portable Text blocks) for new answers, or a plain string for
+    // legacy answers that haven't been re-saved in Studio yet.
+    answer: unknown;
 }
 
 interface FAQAccordionProps {
     items: FAQItem[];
 }
+
+// Renders links inside FAQ answers, matching the blog's link styling.
+const faqPortableTextComponents = {
+    block: {
+        normal: ({ children }: any) => (
+            <p className="text-[18px] font-montserrat text-slate leading-7 mb-4 last:mb-0">
+                {children}
+            </p>
+        ),
+    },
+    list: {
+        bullet: ({ children }: any) => (
+            <ul className="list-disc pl-6 mb-4 space-y-2 text-[18px] font-montserrat text-slate leading-7">
+                {children}
+            </ul>
+        ),
+        number: ({ children }: any) => (
+            <ol className="list-decimal pl-6 mb-4 space-y-2 text-[18px] font-montserrat text-slate leading-7">
+                {children}
+            </ol>
+        ),
+    },
+    listItem: {
+        bullet: ({ children }: any) => <li>{children}</li>,
+        number: ({ children }: any) => <li>{children}</li>,
+    },
+    marks: {
+        strong: ({ children }: any) => (
+            <strong className="font-semibold text-slate">{children}</strong>
+        ),
+        em: ({ children }: any) => <em className="italic">{children}</em>,
+        link: ({ children, value }: any) => {
+            const href: string = value?.href || "#";
+            const isExternal =
+                /^https?:\/\//.test(href) && !href.includes("drshreyankeducare.com");
+            return (
+                <a
+                    href={href}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="text-primary underline hover:text-primary/80 transition-colors"
+                >
+                    {children}
+                </a>
+            );
+        },
+    },
+};
 
 const FAQAccordion: React.FC<FAQAccordionProps> = ({ items }) => {
     const [openIds, setOpenIds] = useState<(number | string)[]>([]);
@@ -53,9 +104,18 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ items }) => {
 
                             {isOpen && (
                                 <div className="pb-5 px-0 animate-in fade-in duration-200">
-                                    <p className="text-[18px] font-montserrat text-slate leading-7 whitespace-pre-wrap">
-                                        {item.answer}
-                                    </p>
+                                    {Array.isArray(item.answer) ? (
+                                        <div className="text-[18px] font-montserrat text-slate leading-7">
+                                            <PortableText
+                                                value={item.answer as any}
+                                                components={faqPortableTextComponents}
+                                            />
+                                        </div>
+                                    ) : (
+                                        <p className="text-[18px] font-montserrat text-slate leading-7 whitespace-pre-wrap">
+                                            {item.answer as string}
+                                        </p>
+                                    )}
                                 </div>
                             )}
                         </div>

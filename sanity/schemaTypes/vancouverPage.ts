@@ -26,7 +26,7 @@ export const vancouverPage = defineType({
           type: "object",
           fields: [
             { name: "question", title: "Question", type: "string" },
-            { name: "answer", title: "Answer", type: "text" },
+            { name: "answer", title: "Answer", type: "faqAnswer" },
           ],
         },
       ],

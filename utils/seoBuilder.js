@@ -4,7 +4,8 @@ import { client } from "../sanity/lib/client";
 import { urlFor } from "../sanity/lib/image";
 
 export const getResourcePageData = async () => {
-  const query = `*[_type == "resourcePage" && slug.current == "resources"][0]{
+  try {
+    const query = `*[_type == "resourcePage" && slug.current == "resources"][0]{
   title,
   "slug": slug.current,
 
@@ -71,28 +72,52 @@ export const getResourcePageData = async () => {
     }
   }
 }`;
-  const data = await client.fetch(query);
-  return data;
+    const data = await client.fetch(query);
+    return data;
+  } catch (error) {
+    console.warn("Could not fetch resource page data from Sanity, using defaults");
+    return { title: "Resources", faqs: [] };
+  }
+};
+
+const fallbackPageData = {
+  vancouverPage: {
+    title: "Best Math, Physics, Chemistry & Coding Tutoring In Burnaby And Vancouver!",
+    metaData: {
+      metaTitle: "EduCare - Tutoring Services",
+      metaDescription: "Professional tutoring in Math, Physics, Chemistry and Coding",
+    },
+  },
 };
 
 export const getPageData = async (type) => {
-  const query = `*[_type == "${type}"][0]`;
-  const data = await client.fetch(query);
-  return data;
+  try {
+    const query = `*[_type == "${type}"][0]`;
+    const data = await client.fetch(query);
+    return data;
+  } catch (error) {
+    console.warn(`Could not fetch ${type} from Sanity, using fallback data`);
+    return fallbackPageData[type] || {};
+  }
 };
 
 export const getMetaDataBySlug = async (type, slug) => {
-  const query = `*[_type == "${type}" && slug.current == $slug][0]{
-    title,
-    metaData {
-      metaTitle,
-      metaDescription,
-      metaImage,
-      canonical
-    }
-  }`;
-  const data = await client.fetch(query, { slug });
-  return data;
+  try {
+    const query = `*[_type == "${type}" && slug.current == $slug][0]{
+      title,
+      metaData {
+        metaTitle,
+        metaDescription,
+        metaImage,
+        canonical
+      }
+    }`;
+    const data = await client.fetch(query, { slug });
+    return data;
+  } catch (error) {
+    console.warn(`Could not fetch metadata for ${type}/${slug}, using defaults`);
+    return { title: "Page", metaData: {} };
+  }
 };
 
 export function getMetadata(data, currentUrl = "") {

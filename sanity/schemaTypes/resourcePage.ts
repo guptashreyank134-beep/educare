@@ -34,7 +34,7 @@ export const resourcePage = defineType({
           type: "object",
           fields: [
             { name: "question", type: "string", title: "Question" },
-            { name: "answer", type: "text", title: "Answer" },
+            { name: "answer", type: "faqAnswer", title: "Answer" },
           ],
         },
       ],
