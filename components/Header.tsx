@@ -21,8 +21,13 @@ const navLinks: NavItem[] = [
   {
     label: "University & Professional",
     children: [
+      { href: "/university-professional", label: "University & Professional Overview" },
       { href: "/online-medical-tutoring", label: "Medical Tutoring (USA & Caribbean)" },
-      { href: "/university-professional", label: "Economics, Statistics, Actuarial & R" },
+      { href: "/online-economics-tutor", label: "Economics Tutoring Online" },
+      { href: "/online-statistics-tutor", label: "Statistics Tutoring Online" },
+      { href: "/actuarial-science-tutor", label: "Actuarial Science Tutoring Online" },
+      { href: "/r-programming-tutor", label: "R Programming Tutoring Online" },
+      { href: "/statistics-with-r-tutor", label: "Statistics with R Tutoring" },
     ],
   },
   { href: "/locations", label: "Locations" },

@@ -1,11 +1,13 @@
 import { MetadataRoute } from "next";
 import { client } from "@/sanity/lib/client";
 import { cities, cityPath } from "@/data/cities";
+import { verticalPages, verticalPath } from "@/data/verticalPages";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://drshreyankeducare.com";
 
   const cityRoutes = cities.map((c) => cityPath(c.slug));
+  const verticalRoutes = verticalPages.map((p) => verticalPath(p.slug));
 
   const staticRoutes = [
     "",
@@ -15,8 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/pricing",
     "/privacy",
     "/locations",
-    "/online-medical-tutoring",
-    "/university-professional",
+    ...verticalRoutes,
     ...cityRoutes,
     "/programs",
     "/programs/biology",
