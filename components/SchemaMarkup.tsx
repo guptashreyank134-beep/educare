@@ -72,6 +72,54 @@ export function getPageSchema(data: any, currentUrl: string) {
   return schema;
 }
 
+export function getCityPageSchema(city: any, currentUrl: string): Record<string, any> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: `Dr. Shreyank Educare — Tutoring in ${city.name}`,
+    description:
+      city.metaDescription ||
+      `Math, Physics, Chemistry and Coding tutoring for ${city.name} students.`,
+    url: currentUrl,
+    logo: "https://drshreyankeducare.com/assets/logo.png",
+    telephone: "+1-672-514-7587",
+    email: "info@drshreyankeducare.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "2088 Madison Avenue",
+      addressLocality: "Burnaby",
+      addressRegion: "BC",
+      postalCode: "V5C 6T5",
+      addressCountry: "CA",
+    },
+    areaServed: {
+      "@type": "City",
+      name: `${city.name}, ${city.region || "BC"}`,
+    },
+    sameAs: [
+      "https://www.facebook.com/DrShreyankEducare/",
+      "https://www.instagram.com/drshreyankeducare/",
+    ],
+  };
+}
+
+export function getFAQSchema(
+  faqs: Array<{ question: string; answer: string }>
+): Record<string, any> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (faqs || []).map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
 export function getBlogPostSchema(post: any, currentUrl: string): Record<string, any> {
   if (!post) return {};
 
