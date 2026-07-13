@@ -3,6 +3,21 @@
 import { client } from "@/sanity/lib/client";
 import nodemailer from "nodemailer";
 
+// Route each vertical's lead notifications to its own inbox when configured,
+// falling back to the shared inbox so nothing is ever silently dropped.
+const FALLBACK_LEAD_EMAIL = "guptashreyank134@gmail.com";
+const LEAD_EMAIL_BY_VERTICAL: Record<string, string | undefined> = {
+  "local-k12": process.env.LEAD_EMAIL_LOCAL,
+  medical: process.env.LEAD_EMAIL_MEDICAL,
+  quant: process.env.LEAD_EMAIL_QUANT,
+};
+
+const VERTICAL_LABEL: Record<string, string> = {
+  "local-k12": "Local (K-12)",
+  medical: "Medical",
+  quant: "Quant",
+};
+
 export async function createLead(formData: FormData) {
   const firstName = (formData.get("firstName") as string) || "";
   const lastName = (formData.get("lastName") as string) || "";
@@ -10,6 +25,9 @@ export async function createLead(formData: FormData) {
   const phone = (formData.get("phone") as string) || "";
   const subject = (formData.get("subject") as string) || "Website Contact Form";
   const message = (formData.get("message") as string) || "";
+  const vertical = (formData.get("vertical") as string) || "local-k12";
+  const verticalLabel = VERTICAL_LABEL[vertical] || VERTICAL_LABEL["local-k12"];
+  const recipient = LEAD_EMAIL_BY_VERTICAL[vertical] || FALLBACK_LEAD_EMAIL;
 
   try {
     // Note: We use a write-enabled client for server actions
@@ -21,7 +39,9 @@ export async function createLead(formData: FormData) {
 
     await writeClient.create({
       _type: "lead",
+      vertical,
       name: `${firstName} ${lastName}`.trim(),
+      subject,
       email,
       phone,
       message: `Subject: ${subject}\n\n${message}`,
@@ -42,11 +62,12 @@ export async function createLead(formData: FormData) {
 
       const mailOptions = {
         from: '"Dr. Shreyank Educare" <info@drshreyankeducare.com>',
-        to: "guptashreyank134@gmail.com",
-        subject: `New Lead: ${subject}`,
-        text: `You have received a new message from the website contact form.\n\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`,
+        to: recipient,
+        subject: `New ${verticalLabel} Lead: ${subject}`,
+        text: `You have received a new ${verticalLabel} lead from the website.\n\nVertical: ${verticalLabel}\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`,
         html: `
-          <h2>New Contact Form Submission</h2>
+          <h2>New ${verticalLabel} Lead</h2>
+          <p><strong>Vertical:</strong> ${verticalLabel}</p>
           <p><strong>Name:</strong> ${firstName} ${lastName}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>

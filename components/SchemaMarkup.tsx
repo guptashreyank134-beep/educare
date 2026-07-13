@@ -103,6 +103,38 @@ export function getCityPageSchema(city: any, currentUrl: string): Record<string,
   };
 }
 
+export function getServiceSchema(
+  opts: {
+    name: string;
+    description: string;
+    url: string;
+    areaServed?: string[];
+  }
+): Record<string, any> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Online Tutoring",
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    provider: {
+      "@type": "EducationalOrganization",
+      name: "Dr. Shreyank Educare",
+      url: "https://drshreyankeducare.com",
+      logo: "https://drshreyankeducare.com/assets/logo.png",
+    },
+    ...(opts.areaServed && opts.areaServed.length
+      ? { areaServed: opts.areaServed.map((a) => ({ "@type": "Place", name: a })) }
+      : {}),
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: opts.url,
+      availableLanguage: "en",
+    },
+  };
+}
+
 export function getFAQSchema(
   faqs: Array<{ question: string; answer: string }>
 ): Record<string, any> {

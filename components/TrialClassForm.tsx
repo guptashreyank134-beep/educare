@@ -25,6 +25,7 @@ const TrialClassForm = () => {
     formData.append('email', rawData.get('email') as string)
     formData.append('phone', rawData.get('phone') as string)
     formData.append('subject', 'Trial Class Request - ' + (rawData.get('subject') as string))
+    formData.append('vertical', 'local-k12')
 
     const messageBody = `
 Parent's Name: ${rawData.get('parentName')}
