@@ -4,7 +4,8 @@ import FAQAccordion from '@/components/ResourcesPageComponents/FAQAccordion';
 interface FAQItem {
   _key?: string;
   question: string;
-  answer: string;
+  // Portable Text blocks (rich answers) or a plain string (legacy answers).
+  answer: unknown;
 }
 
 export default function VancouverFAQSection({ faqs }: { faqs?: FAQItem[] }) {
