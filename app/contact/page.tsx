@@ -26,7 +26,11 @@ const fallbackContactCards: ContactCard[] = [
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("page", "contact");
-  return getMetadata(data, "https://drshreyankeducare.com/contact");
+  return getMetadata(data, "https://drshreyankeducare.com/contact", {
+    title: "Contact Dr. Shreyank Educare | Tutoring in Burnaby & Vancouver",
+    description:
+      "Get in touch with Dr. Shreyank Educare for tutoring in Burnaby & Vancouver. Call, email or book a free 30-minute consultation — we usually reply within 24 hours.",
+  });
 }
 
 const ContactPage = async () => {
@@ -66,6 +70,66 @@ const ContactPage = async () => {
             </div>
 
             <ContactInfoCards cards={contactCards} />
+          </div>
+
+          {/* Supporting content — how we help + FAQ */}
+          <div className="mt-16 max-w-3xl mx-auto space-y-10">
+            <div className="space-y-4 text-[16px] font-montserrat text-slate leading-7">
+              <h2 className="text-[26px] font-bricolage font-medium text-slate">
+                How We Can Help
+              </h2>
+              <p>
+                Dr. Shreyank Educare provides PhD-led tutoring in Math, Physics,
+                Chemistry and Coding for students in Grades 6–12 and university,
+                along with advanced University &amp; Professional and Medical
+                tutoring. When you get in touch, we start by understanding your
+                goals — catching up, keeping up, exam preparation, or getting
+                ahead — and recommend the right program and tutor for you.
+              </p>
+              <p>
+                The fastest way to begin is a free 30-minute consultation. During
+                that call we assess your current level, discuss timelines and
+                targets, and outline a personalised plan. There is no obligation,
+                and you will leave with a clear next step. We typically respond to
+                enquiries within 24 hours on business days.
+              </p>
+              <p>
+                We offer both in-person sessions at our Burnaby centre and flexible
+                online tutoring across Metro Vancouver — including Vancouver,
+                Coquitlam, the North Shore, Surrey, Richmond and beyond — as well as
+                fully online tutoring for university and professional learners
+                worldwide.
+              </p>
+            </div>
+
+            <div className="space-y-5">
+              <h2 className="text-[26px] font-bricolage font-medium text-slate">
+                Frequently Asked Questions
+              </h2>
+              {[
+                {
+                  q: "How quickly will you respond?",
+                  a: "We usually reply to calls, emails and form enquiries within 24 hours on business days.",
+                },
+                {
+                  q: "Is the first consultation really free?",
+                  a: "Yes. Your initial 30-minute consultation is completely free and comes with no obligation.",
+                },
+                {
+                  q: "Do you offer online and in-person tutoring?",
+                  a: "Both. We tutor in person at our Burnaby centre and online across Metro Vancouver and worldwide.",
+                },
+                {
+                  q: "Which subjects and levels do you cover?",
+                  a: "Math, Physics, Chemistry and Coding for Grades 6–12 and university, plus University & Professional (Economics, Statistics, Actuarial, R) and MD-led Medical tutoring.",
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="text-[16px] font-montserrat text-slate leading-7">
+                  <p className="font-medium">{item.q}</p>
+                  <p className="opacity-90">{item.a}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

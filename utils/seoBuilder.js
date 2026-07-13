@@ -120,21 +120,26 @@ export const getMetaDataBySlug = async (type, slug) => {
   }
 };
 
-export function getMetadata(data, currentUrl = "") {
+export function getMetadata(data, currentUrl = "", fallback = {}) {
   const seo = data?.metaData;
   // Use provided URL or default to homepage
   const canonicalUrl = currentUrl || "https://drshreyankeducare.com/";
 
+  // Page-specific fallbacks prevent the generic default title/description from
+  // being duplicated across pages when a page has no Sanity metadata set.
+  const defaultTitle = fallback.title || "Dr. Shreyank Educare";
+  const defaultDescription =
+    fallback.description ||
+    "Expert academic tutoring, coding classes, and test preparation to help students excel in their educational journey.";
+
   const metadata = {
-    title: "Dr. Shreyank Educare",
-    description:
-      "Expert academic tutoring, coding classes, and test preparation to help students excel in their educational journey.",
+    title: defaultTitle,
+    description: defaultDescription,
     openGraph: { images: "/assets/logo.png" },
     twitter: {
       card: "summary_large_image",
-      title: "Dr. Shreyank Educare",
-      description:
-        "Expert academic tutoring, coding classes, and test preparation to help students excel in their educational journey.",
+      title: defaultTitle,
+      description: defaultDescription,
       image: "/assets/logo.png",
     },
     alternates: {
