@@ -17,7 +17,11 @@ import { getPageData, getMetadata } from "@/utils/seoBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("vancouverPage");
-  return getMetadata(data, "https://drshreyankeducare.com/");
+  return getMetadata(data, "https://drshreyankeducare.com/", {
+    title: "Top Tutoring in Burnaby & Vancouver | Dr. Shreyank Educare",
+    description:
+      "PhD-led tutoring in Math, Physics, Chemistry & Coding for Grades 6–12 and university across Burnaby & Vancouver. 5★ rated. Book a free 30-minute consultation.",
+  });
 }
 
 const metrics = [

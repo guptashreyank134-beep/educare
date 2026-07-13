@@ -24,9 +24,14 @@ export async function generateMetadata({ searchParams }: PageProps) {
   const baseMeta = getMetadata(data, "https://drshreyankeducare.com/blog/");
 
   if (baseMeta && baseMeta.title) {
+    // Unique title AND description per page so paginated pages aren't flagged
+    // as duplicates.
+    const descSuffix =
+      !isNaN(pageNum) && pageNum > 1 ? ` (Page ${pageNum})` : "";
     return {
       ...baseMeta,
       title: `${baseMeta.title}${suffix}`,
+      description: `${baseMeta.description}${descSuffix}`,
       alternates: {
         canonical: pageNum > 1 ? `https://drshreyankeducare.com/blog/?page=${pageNum}` : `https://drshreyankeducare.com/blog/`,
       },

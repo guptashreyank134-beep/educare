@@ -18,7 +18,11 @@ import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "finance");
-  return getMetadata(data, "https://drshreyankeducare.com/programs/finance");
+  return getMetadata(data, "https://drshreyankeducare.com/programs/finance", {
+    title: "Finance Tutor in Burnaby & Vancouver | Accounting & CFA Help",
+    description:
+      "Expert finance and accounting tutoring in Burnaby & Vancouver — high school, university and professional (CFA, CSC) support. Book a free consultation today.",
+  });
 }
 
 const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (

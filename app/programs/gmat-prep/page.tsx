@@ -168,6 +168,62 @@ export default async function GmatPrepProgramPage() {
                   </div>
                 ))}
               </div>
+
+              <SectionHeader icon={FileText} title="Why Prepare With Dr. Shreyank Educare" />
+              <div className="ml-11 space-y-4 text-[16px] leading-[24px] font-montserrat text-slate mb-8">
+                <p>
+                  The GMAT Focus Edition rewards accuracy under time pressure far
+                  more than raw content knowledge. Our coaching is built around
+                  that reality: we diagnose exactly where you lose points — pacing,
+                  careless errors, or specific question types — and rebuild your
+                  approach so every minute in the exam counts. You work one-on-one
+                  or in small groups with experienced quantitative and verbal
+                  tutors who have helped applicants reach competitive scores for
+                  top business schools.
+                </p>
+                <p>
+                  Every plan starts with a full-length diagnostic mock, followed by
+                  a week-by-week schedule mapped to your test date. We alternate
+                  focused concept sessions with timed practice and detailed review,
+                  so you are constantly converting weaknesses into reliable points.
+                  Progress analytics keep the plan honest — you always know your
+                  current standing and what to work on next.
+                </p>
+                <p>
+                  Whether you are aiming for a top MBA program, retaking the exam to
+                  push past a plateau, or balancing preparation with a full-time
+                  job, we tailor the intensity and format to your goals and
+                  timeline. The result is a calmer, more strategic test day and a
+                  score that strengthens your application.
+                </p>
+              </div>
+
+              <SectionHeader icon={Sparkles} title="Frequently Asked Questions" />
+              <div className="ml-11 space-y-5 mb-4">
+                {[
+                  {
+                    q: "How long does GMAT preparation usually take?",
+                    a: "Most students prepare over 8–12 weeks, though we build the schedule around your target score and test date. Intensive plans can compress this when needed.",
+                  },
+                  {
+                    q: "Do you cover the GMAT Focus Edition and Data Insights?",
+                    a: "Yes. Our coaching is fully aligned to the current GMAT Focus Edition, including the Data Insights section, with dedicated strategy and practice for each area.",
+                  },
+                  {
+                    q: "Are sessions online or in person?",
+                    a: "Both. We offer flexible online sessions as well as in-person coaching at our Burnaby centre, whichever suits you best.",
+                  },
+                  {
+                    q: "Can you help if I've already taken the GMAT before?",
+                    a: "Absolutely. For retakers we start with a diagnostic to pinpoint the exact gaps holding your score back, then target them directly.",
+                  },
+                ].map((item, idx) => (
+                  <div key={idx} className="text-[16px] font-montserrat text-slate">
+                    <p className="font-medium mb-1">{item.q}</p>
+                    <p className="font-normal opacity-90 leading-[24px]">{item.a}</p>
+                  </div>
+                ))}
+              </div>
             </section>
           </div>
 

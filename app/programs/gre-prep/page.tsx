@@ -168,6 +168,61 @@ export default async function GrePrepProgramPage() {
                   </div>
                 ))}
               </div>
+
+              <SectionHeader icon={FileText} title="Why Prepare With Dr. Shreyank Educare" />
+              <div className="ml-11 space-y-4 text-[16px] leading-[24px] font-montserrat text-slate mb-8">
+                <p>
+                  A strong GRE score can open doors to competitive graduate and
+                  PhD programs, and it rewards preparation that is precise rather
+                  than generic. Our coaching pinpoints exactly where you lose marks
+                  — quant pacing, vocabulary gaps, or analytical writing structure —
+                  and rebuilds each area with proven, repeatable methods. You work
+                  directly with experienced verbal and quantitative tutors who know
+                  the exam inside out.
+                </p>
+                <p>
+                  We begin with a full diagnostic and a week-by-week plan mapped to
+                  your target score and test date, alternating focused concept work
+                  with timed section practice and detailed review. For the
+                  Analytical Writing tasks, you receive personalised feedback on
+                  real essays, so your Issue and Argument responses become sharper
+                  and better structured with each attempt.
+                </p>
+                <p>
+                  Whether you are applying to graduate or doctoral programs, or
+                  retaking the GRE to strengthen your application, we adapt the
+                  intensity and format — online or in person at our Burnaby centre —
+                  to your goals and schedule, so you walk into the exam prepared and
+                  confident.
+                </p>
+              </div>
+
+              <SectionHeader icon={Sparkles} title="Frequently Asked Questions" />
+              <div className="ml-11 space-y-5 mb-4">
+                {[
+                  {
+                    q: "How long should I prepare for the GRE?",
+                    a: "Most students prepare over 8–12 weeks, but we tailor the schedule to your target score and test date, including intensive options when time is short.",
+                  },
+                  {
+                    q: "Do you help with the Analytical Writing (AWA) section?",
+                    a: "Yes. You receive individual feedback on real Issue and Argument essays so your writing score improves steadily.",
+                  },
+                  {
+                    q: "Are sessions online or in person?",
+                    a: "Both. We offer flexible online sessions and in-person coaching at our Burnaby centre.",
+                  },
+                  {
+                    q: "Can you help me improve a previous GRE score?",
+                    a: "Definitely. For retakers we run a diagnostic to identify the exact gaps limiting your score, then target them with a focused plan.",
+                  },
+                ].map((item, idx) => (
+                  <div key={idx} className="text-[16px] font-montserrat text-slate">
+                    <p className="font-medium mb-1">{item.q}</p>
+                    <p className="font-normal opacity-90 leading-[24px]">{item.a}</p>
+                  </div>
+                ))}
+              </div>
             </section>
           </div>
 
