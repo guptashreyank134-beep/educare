@@ -6,8 +6,28 @@ export const lead = defineType({
   type: "document",
   fields: [
     defineField({
+      name: "vertical",
+      title: "Vertical",
+      type: "string",
+      description: "Which tutoring vertical this lead came from",
+      options: {
+        list: [
+          { title: "Local (K-12)", value: "local-k12" },
+          { title: "Medical", value: "medical" },
+          { title: "Quant", value: "quant" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "local-k12",
+    }),
+    defineField({
       name: "name",
       title: "Name",
+      type: "string",
+    }),
+    defineField({
+      name: "subject",
+      title: "Subject / Interest",
       type: "string",
     }),
     defineField({

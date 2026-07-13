@@ -122,6 +122,50 @@ export default async function Home() {
       <VancouverExploreSubjectsSection />
       <VancouverFlexibleProgramsSection />
       <VancouverLocationsSection />
+
+      {/* University & Professional / Medical — advanced tutoring verticals */}
+      <section className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20">
+        <div className="text-center mb-10">
+          <h2 className="text-[28px] sm:text-[36px] font-bricolage font-medium text-slate mb-3">
+            Beyond School: University, Professional &amp; Medical Tutoring
+          </h2>
+          <p className="text-[16px] font-montserrat text-slate/80 max-w-2xl mx-auto">
+            We also support university students and professionals worldwide with
+            advanced, expert-led online tutoring.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Link
+            href="/university-professional"
+            className="group flex items-center justify-between bg-white rounded-2xl p-8 border border-[#F1F5F9] shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:-translate-y-1 hover:shadow-md transition-all"
+          >
+            <div>
+              <p className="text-[22px] font-bricolage font-medium text-slate mb-1">
+                University &amp; Professional
+              </p>
+              <p className="text-[15px] font-montserrat text-slate/70">
+                Economics, Statistics, Actuarial Science &amp; R — UK, USA &amp; worldwide
+              </p>
+            </div>
+            <ArrowRight className="w-6 h-6 text-slate/40 group-hover:text-primary transition-colors shrink-0 ml-4" />
+          </Link>
+          <Link
+            href="/online-medical-tutoring"
+            className="group flex items-center justify-between bg-white rounded-2xl p-8 border border-[#F1F5F9] shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:-translate-y-1 hover:shadow-md transition-all"
+          >
+            <div>
+              <p className="text-[22px] font-bricolage font-medium text-slate mb-1">
+                Medical Tutoring
+              </p>
+              <p className="text-[15px] font-montserrat text-slate/70">
+                MD-led online tutoring for USA &amp; Caribbean medical students
+              </p>
+            </div>
+            <ArrowRight className="w-6 h-6 text-slate/40 group-hover:text-primary transition-colors shrink-0 ml-4" />
+          </Link>
+        </div>
+      </section>
+
       <TrustedBrands />
       <Reviews />
       <VancouverCTABanner />
