@@ -58,6 +58,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }`
     );
     dynamicRoutes = posts.map((post) => `/blog/${post.slug}`);
+
+    // Path-based blog pagination pages (/blog is page 1; extras are /blog/page/N)
+    const POSTS_PER_PAGE = 9;
+    const totalBlogPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+    for (let p = 2; p <= totalBlogPages; p++) {
+      dynamicRoutes.push(`/blog/page/${p}`);
+    }
   } catch (error) {
     console.error("Error fetching posts for sitemap:", error);
   }
