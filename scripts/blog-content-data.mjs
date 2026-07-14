@@ -1692,4 +1692,250 @@ export const blogContent = {
       "University statistics rewards conceptual clarity, which expert tutoring builds. Our university math tutoring helps UBC and other students master statistics. Book a free consultation to get started.",
     ],
   },
+
+  // ─────────────────────────── BATCH 8 ───────────────────────────
+  "gmat-prep-verbal-quantitative-focus": {
+    excerpt:
+      "The GMAT's verbal and quantitative sections reward reasoning and strategy. This guide explains what each tests and how to prepare for a strong score.",
+    intro: [
+      "The GMAT's Quantitative and Verbal sections test reasoning more than raw knowledge — how well you analyse, not just what you know. Understanding what each section rewards is the key to preparing efficiently for business school.",
+    ],
+    overview: [
+      "The Quantitative section tests problem-solving and data-sufficiency with high-school-level math applied cleverly, while Verbal tests critical reasoning, reading comprehension and sentence correction. Both are adaptive and time-pressured.",
+      "Strong scores come from mastering the specific question types and practising the reasoning under realistic timing.",
+    ],
+    keyConcepts: [
+      "Problem-solving and data-sufficiency (Quant)",
+      "Critical reasoning (Verbal)",
+      "Reading comprehension strategy",
+      "Sentence correction fundamentals",
+      "Adaptive-test time management",
+      "Recognising common question patterns",
+    ],
+    commonMistakes: [
+      "Treating Quant as a math test rather than a reasoning test",
+      "Mismanaging time on the adaptive format",
+      "Ignoring data-sufficiency strategy",
+      "Practising without reviewing why answers are right or wrong",
+    ],
+    studyTips: [
+      "Learn the reasoning behind each question type",
+      "Practise data-sufficiency deliberately — it's unusual",
+      "Do timed, adaptive-style practice",
+      "Review every question thoroughly, not just your score",
+    ],
+    closing: [
+      "The GMAT rewards reasoning and strategy, which focused prep develops. Our test prep tutoring targets the exact skills each section tests. Book a free consultation to build your plan.",
+    ],
+  },
+
+  "gre-prep-analytical-writing-assessment-awa-essays": {
+    excerpt:
+      "The GRE Analytical Writing (AWA) section is very learnable with the right structure. This guide explains how to write high-scoring Issue and Argument essays.",
+    intro: [
+      "The GRE Analytical Writing (AWA) section intimidates many students, but it's one of the most learnable parts of the exam. With a clear structure and some practice, most students can raise their score significantly.",
+    ],
+    overview: [
+      "AWA has two tasks: the Issue essay (present and support your view) and the Argument essay (critique the reasoning in a given argument). Graders reward clear structure, strong reasoning and specific examples — not fancy vocabulary.",
+      "The fastest gains come from learning a reliable template for each task and practising with real prompts under time.",
+    ],
+    keyConcepts: [
+      "The Issue task: taking and supporting a position",
+      "The Argument task: identifying logical flaws",
+      "Essay structure (intro, body, conclusion)",
+      "Using specific, relevant examples",
+      "Clear reasoning over complex wording",
+      "Writing under time pressure",
+    ],
+    commonMistakes: [
+      "Confusing the Issue and Argument tasks",
+      "Writing without a clear structure",
+      "Using vague examples or none at all",
+      "Prioritising fancy vocabulary over clear reasoning",
+    ],
+    studyTips: [
+      "Learn a reliable template for each essay type",
+      "Practise identifying logical flaws for the Argument task",
+      "Write timed essays with real prompts",
+      "Get feedback on structure and reasoning",
+    ],
+    closing: [
+      "The AWA is very coachable, and feedback makes a real difference. Our test prep tutoring provides individual feedback on real Issue and Argument essays. Book a free consultation to get started.",
+    ],
+  },
+
+  "web-development-database-management-mongodb-firebase": {
+    excerpt:
+      "Databases store the data behind every app. This guide explains MongoDB and Firebase, common mistakes, and how to learn database management effectively.",
+    intro: [
+      "Every real web app needs to store data, and databases are where that happens. MongoDB and Firebase are two popular, beginner-friendly options — and understanding how they store and retrieve data is essential to full-stack development.",
+    ],
+    overview: [
+      "MongoDB is a document database that stores flexible, JSON-like records, while Firebase is a platform with a real-time database and built-in services like authentication. Both differ from traditional table-based (SQL) databases, using a more flexible structure.",
+      "The core skills are modelling your data sensibly and reading and writing it efficiently from your application.",
+    ],
+    keyConcepts: [
+      "How databases fit into a web app",
+      "Document databases vs relational databases",
+      "MongoDB collections and documents",
+      "Firebase real-time data and authentication",
+      "Reading and writing data (CRUD)",
+      "Basic data modelling",
+    ],
+    commonMistakes: [
+      "Modelling data poorly, making queries hard later",
+      "Ignoring security rules (especially in Firebase)",
+      "Confusing document and relational database approaches",
+      "Fetching data inefficiently",
+    ],
+    studyTips: [
+      "Learn CRUD operations thoroughly",
+      "Model your data around how the app will use it",
+      "Set up security rules from the start",
+      "Build a small full-stack app to connect frontend, backend and database",
+    ],
+    closing: [
+      "Databases are best learned by building real applications with guidance. Our web development tutoring covers MongoDB, Firebase and full-stack fundamentals. Book a free consultation to get started.",
+    ],
+  },
+
+  "computer-science-logic-building": {
+    excerpt:
+      "Logic building is the core skill behind coding. This guide explains how to develop programming logic and solve problems with confidence.",
+    intro: [
+      "Logic building is the skill that separates people who can follow tutorials from people who can actually solve problems with code. It's the ability to reason step by step toward a solution — and it can be developed with practice.",
+    ],
+    overview: [
+      "Programming logic is about translating a problem into a clear sequence of steps and decisions. It combines conditions, loops and functions with careful reasoning about what should happen and when.",
+      "Strong logic is language-independent — once you have it, picking up any programming language becomes far easier.",
+    ],
+    keyConcepts: [
+      "Breaking problems into steps",
+      "Conditions and decision-making",
+      "Loops and repetition",
+      "Tracing code by hand",
+      "Boolean logic",
+      "Debugging through reasoning",
+    ],
+    commonMistakes: [
+      "Copying solutions without understanding the logic",
+      "Not tracing through code to see what it does",
+      "Overcomplicating simple logic",
+      "Guessing during debugging instead of reasoning",
+    ],
+    studyTips: [
+      "Trace code by hand to build intuition",
+      "Solve logic puzzles and small problems daily",
+      "Plan solutions in plain language before coding",
+      "Start simple, then add complexity",
+    ],
+    closing: [
+      "Logic building is the foundation of programming, and it grows with guided practice. Our coding tutoring develops genuine problem-solving skill, not just syntax. Book a free consultation to get started.",
+    ],
+  },
+
+  "university-finance-bcom-mba-finance": {
+    excerpt:
+      "BCom and MBA finance courses are demanding and career-relevant. This guide covers the core topics, common pitfalls, and how to excel.",
+    intro: [
+      "Finance courses in a BCom or MBA are both demanding and directly relevant to careers in business and investment. They combine quantitative rigour with real-world decision-making — and reward students who understand the reasoning, not just the formulas.",
+    ],
+    overview: [
+      "University finance covers the time value of money, valuation, capital budgeting, risk and return, and corporate financial decisions. MBA courses often add strategic and case-based analysis on top of the fundamentals.",
+      "Success comes from mastering the quantitative tools and connecting them to the decisions they inform.",
+    ],
+    keyConcepts: [
+      "Time value of money and discounting",
+      "Valuation of stocks and bonds",
+      "Capital budgeting (NPV, IRR)",
+      "Risk, return and diversification",
+      "Cost of capital",
+      "Financial statement analysis",
+    ],
+    commonMistakes: [
+      "Applying formulas without understanding the concepts",
+      "Confusing NPV and IRR decision rules",
+      "Neglecting the assumptions behind valuation models",
+      "Struggling with the math instead of the finance",
+    ],
+    studyTips: [
+      "Understand the reasoning behind each formula",
+      "Practise with real numbers and cases",
+      "Master the time value of money — it underlies everything",
+      "Connect quantitative results to business decisions",
+    ],
+    closing: [
+      "University finance rewards understanding tools and decisions together, which expert tutoring builds. Our finance tutoring supports BCom, MBA and professional students. Book a free consultation to get started.",
+    ],
+  },
+
+  "french-reading-writing-listening-practice": {
+    excerpt:
+      "Reading, writing and listening round out French fluency. This guide explains how to practise all three effectively and avoid common plateaus.",
+    intro: [
+      "Real French fluency comes from balancing all the skills — not just speaking, but reading, writing and listening too. Practising these together is what turns classroom French into genuine, confident communication.",
+    ],
+    overview: [
+      "Reading builds vocabulary and grammar in context, writing forces you to produce the language actively, and listening trains your ear to real speech. Neglecting any one of them creates a plateau; practising all three reinforces the others.",
+      "Consistent, varied practice with authentic material is the fastest path to progress.",
+    ],
+    keyConcepts: [
+      "Reading comprehension strategies",
+      "Building vocabulary in context",
+      "Writing clearly and correctly",
+      "Listening to real, natural speech",
+      "Connecting the four skills",
+      "Using authentic French material",
+    ],
+    commonMistakes: [
+      "Focusing on grammar rules at the expense of real practice",
+      "Neglecting listening until it becomes a weakness",
+      "Reading passively without noting new words",
+      "Avoiding writing for fear of mistakes",
+    ],
+    studyTips: [
+      "Practise all four skills, not just the comfortable ones",
+      "Use authentic material (articles, videos, songs)",
+      "Keep a vocabulary log from your reading",
+      "Write a little regularly, even short pieces",
+    ],
+    closing: [
+      "Balanced, guided practice accelerates language learning. Our French tutoring develops reading, writing, listening and speaking together. Book a free consultation to get started.",
+    ],
+  },
+
+  "mcat-prep-psychology-sociology": {
+    excerpt:
+      "The MCAT psychology and sociology section rewards understanding behaviour and society. This guide covers the content, pitfalls, and how to prepare.",
+    intro: [
+      "The MCAT's Psychological, Social, and Biological Foundations of Behavior section — often just called psych/soc — rewards understanding how people think, behave and interact. With focused study, it's one of the more approachable sections to raise.",
+    ],
+    overview: [
+      "This section blends psychology, sociology and some biology, testing concepts through passages and discrete questions. It covers a broad but well-defined set of theories and terms, and it rewards recognising them applied in context.",
+      "Effective preparation combines learning the core content with plenty of passage practice to build application skill.",
+    ],
+    keyConcepts: [
+      "Core psychological theories and concepts",
+      "Sociological concepts and institutions",
+      "Biological bases of behaviour",
+      "Research methods and study design",
+      "Applying concepts to passages",
+      "Key terminology",
+    ],
+    commonMistakes: [
+      "Underestimating the section and under-preparing",
+      "Memorising terms without understanding them in context",
+      "Neglecting research-methods questions",
+      "Skipping passage-based practice",
+    ],
+    studyTips: [
+      "Learn the core theories and terms thoroughly",
+      "Practise applying concepts in MCAT-style passages",
+      "Don't neglect research methods and statistics",
+      "Use spaced repetition for the large vocabulary",
+    ],
+    closing: [
+      "This section rewards understanding applied in context, which structured tutoring supports. Our university-level tutoring helps students prepare for demanding exams. Book a free consultation to get started.",
+    ],
+  },
 };
