@@ -708,4 +708,250 @@ export const blogContent = {
       "DSA is learned by solving problems with guidance, not by memorising. Our computer science tutoring builds genuine problem-solving skill from the fundamentals up. Book a free consultation to get started.",
     ],
   },
+
+  // ─────────────────────────── BATCH 4 ───────────────────────────
+  "physics-tutoring-physics-concepts-problem-solving": {
+    excerpt:
+      "Understanding physics concepts is only half the battle — problem-solving is the other. This guide shows how to turn understanding into marks with a reliable method.",
+    intro: [
+      "Many students understand physics concepts but still lose marks, and the reason is almost always the same: they lack a reliable method for turning understanding into worked solutions. Problem-solving is a skill you can learn deliberately.",
+    ],
+    overview: [
+      "Physics problems reward a consistent process: understand the situation, represent it with a diagram, identify the relevant principles, set up equations, solve, and check. Skipping straight to formulas is where most errors creep in.",
+      "The concepts and the method reinforce each other — deeper understanding makes setup easier, and disciplined setup exposes gaps in understanding.",
+    ],
+    keyConcepts: [
+      "Reading a problem and identifying what's being asked",
+      "Drawing clear diagrams (free-body, motion, circuit)",
+      "Listing knowns and unknowns before choosing equations",
+      "Selecting the right principle (energy, forces, momentum)",
+      "Solving symbolically, then substituting values",
+      "Checking units, magnitude and direction",
+    ],
+    commonMistakes: [
+      "Jumping to equations before understanding the situation",
+      "Skipping the diagram and missing a force or constraint",
+      "Plugging in numbers too early and losing track",
+      "Not checking whether the answer is physically reasonable",
+    ],
+    studyTips: [
+      "Use the same method on every problem until it's automatic",
+      "Redo problems you got wrong, from a blank page",
+      "Explain your solution out loud to expose weak steps",
+      "Practise a variety of problem types, not just one",
+    ],
+    closing: [
+      "A dependable problem-solving method is what separates students who understand physics from those who score well. Our Physics 12 tutoring builds that method with exam-style practice. Book a free consultation to get started.",
+    ],
+  },
+
+  "mathematics-pre-calculus": {
+    excerpt:
+      "Pre-Calculus is the bridge to university math and science. This guide explains what it covers, why it matters, common mistakes, and how to succeed.",
+    intro: [
+      "Pre-Calculus is the bridge between algebra and calculus, and a gateway to university math, science and engineering programs. A strong Pre-Calculus foundation makes everything that follows dramatically easier.",
+    ],
+    overview: [
+      "Pre-Calculus pulls together functions, trigonometry, exponentials and logarithms, and prepares students for the ideas of calculus. It's demanding because it asks you to hold several tools at once and choose the right one.",
+      "Students who treat Pre-Calculus as a coherent toolkit — rather than a list of separate topics — find it far more manageable and are much better prepared for calculus.",
+    ],
+    keyConcepts: [
+      "Functions, transformations and inverses",
+      "Trigonometry and identities",
+      "Exponential and logarithmic functions",
+      "Polynomial and rational functions",
+      "Sequences and series",
+      "Preparing for the ideas of calculus",
+    ],
+    commonMistakes: [
+      "Carrying weak algebra into Pre-Calculus and compounding the difficulty",
+      "Learning topics in isolation instead of as connected tools",
+      "Memorising procedures without understanding them",
+      "Falling behind, since each unit builds on the last",
+    ],
+    studyTips: [
+      "Keep your algebra sharp — Pre-Calculus assumes it",
+      "Connect each topic to the others and to calculus ahead",
+      "Practise consistently rather than cramming before tests",
+      "Focus on understanding, so you can handle unfamiliar problems",
+    ],
+    closing: [
+      "Because Pre-Calculus sets up so much of what follows, getting it right is worth the effort. Our Pre-Calculus 12 tutoring builds a strong, connected foundation and prepares students for the final exam review and university. Book a free consultation to get started.",
+    ],
+  },
+
+  "computer-science-programming-basics": {
+    excerpt:
+      "Every programmer starts with the basics. This guide covers the fundamental building blocks of programming and how to learn them the right way.",
+    intro: [
+      "Every strong programmer, no matter the language, is built on the same handful of fundamentals. Getting these programming basics right — and truly understanding them — makes learning any language much faster.",
+    ],
+    overview: [
+      "Programming basics are the building blocks shared by nearly every language: storing data in variables, making decisions with conditionals, repeating actions with loops, and organising code into functions. Master these and the specific language becomes a detail.",
+      "The real skill isn't syntax — it's learning to break a problem into small, logical steps a computer can follow.",
+    ],
+    keyConcepts: [
+      "Variables and data types",
+      "Conditionals (if / else)",
+      "Loops (for and while)",
+      "Functions and reusability",
+      "Basic input and output",
+      "Breaking problems into steps (algorithmic thinking)",
+    ],
+    commonMistakes: [
+      "Memorising syntax instead of understanding logic",
+      "Writing large chunks of code before testing anything",
+      "Not reading error messages carefully",
+      "Skipping the planning step before coding",
+    ],
+    studyTips: [
+      "Focus on logic first; syntax follows naturally",
+      "Write and run small programs constantly",
+      "Plan your approach in plain language before coding",
+      "Build tiny projects to make the concepts concrete",
+    ],
+    closing: [
+      "Learning to program is far faster with a mentor who focuses on thinking, not just syntax. Our coding tutoring builds strong fundamentals through hands-on practice. Book a free consultation to get started.",
+    ],
+  },
+
+  "javascript-variables-and-data-types": {
+    excerpt:
+      "Variables and data types are the foundation of JavaScript. This beginner's guide explains them clearly, with common mistakes and how to learn them well.",
+    intro: [
+      "Variables and data types are the first things every JavaScript developer learns — and getting them right prevents a huge number of bugs later. They're simple ideas, but understanding them deeply pays off across all your code.",
+    ],
+    overview: [
+      "In JavaScript, variables store data and are declared with let, const or var. Data types describe what kind of value a variable holds — numbers, strings, booleans, objects and arrays — and JavaScript's flexible typing is both powerful and a common source of confusion.",
+      "Understanding how JavaScript handles types (and when it converts them automatically) is key to writing predictable code.",
+    ],
+    keyConcepts: [
+      "Declaring variables with let, const and var",
+      "Primitive types: number, string, boolean, null, undefined",
+      "Objects and arrays",
+      "Type coercion and conversion",
+      "Scope and the difference between let and var",
+      "When to use const vs let",
+    ],
+    commonMistakes: [
+      "Using var instead of let/const and hitting scope bugs",
+      "Confusing '==' (loose) with '===' (strict) equality",
+      "Being surprised by automatic type coercion",
+      "Mutating a const object and misunderstanding what const protects",
+    ],
+    studyTips: [
+      "Prefer const by default, and let when a value must change",
+      "Always use === to avoid coercion surprises",
+      "Experiment in the browser console to see how types behave",
+      "Build small scripts to practise each concept",
+    ],
+    closing: [
+      "JavaScript's fundamentals are best learned by building with guidance. Our web development tutoring covers JavaScript from the ground up, on the way to React and real projects. Book a free consultation to get started.",
+    ],
+  },
+
+  "biology-molecular-biology": {
+    excerpt:
+      "Molecular biology explains life at the level of DNA and proteins. This guide covers the central concepts, common mistakes, and how to study them effectively.",
+    intro: [
+      "Molecular biology zooms in on life at its smallest working scale — DNA, RNA and proteins — and explains how genetic information becomes the molecules that run a cell. It's foundational for Biology 12, university biology and pre-med study.",
+    ],
+    overview: [
+      "At its core, molecular biology follows the flow of genetic information: DNA is replicated, transcribed into RNA, and translated into proteins that carry out cellular functions. This 'central dogma' organises the whole subject.",
+      "Understanding the processes as connected steps — each with a clear purpose — makes the detailed machinery far easier to remember.",
+    ],
+    keyConcepts: [
+      "DNA structure and replication",
+      "Transcription (DNA to RNA)",
+      "Translation (RNA to protein)",
+      "Gene expression and regulation",
+      "The role of enzymes in these processes",
+      "Mutations and their effects",
+    ],
+    commonMistakes: [
+      "Confusing transcription and translation",
+      "Mixing up DNA and RNA structure (e.g. thymine vs uracil)",
+      "Memorising steps without understanding their purpose",
+      "Overlooking how enzymes drive each process",
+    ],
+    studyTips: [
+      "Learn the central dogma as one connected story",
+      "Draw each process step by step",
+      "Keep DNA and RNA differences clearly organised",
+      "Explain why each step happens, not just what happens",
+    ],
+    closing: [
+      "Molecular biology rewards understanding the flow of information, not rote recall. Our science tutor in Burnaby makes these processes clear and memorable — strong preparation for health-science pathways. Book a free consultation to get started.",
+    ],
+  },
+
+  "university-mathematics-linear-algebra-ubc-math-152": {
+    excerpt:
+      "UBC's MATH 152 (linear algebra) is demanding for first-year students. This guide covers the key ideas, common pitfalls, and how to succeed in the course.",
+    intro: [
+      "Linear algebra, such as UBC's MATH 152, is a first-year course that catches many students off guard. It's more abstract than high-school math, but with the right approach — and strong fundamentals — it's very learnable.",
+    ],
+    overview: [
+      "Linear algebra studies vectors, matrices and the linear transformations between them. MATH 152 applies these ideas to systems of equations, geometry and applications, often with a computational component.",
+      "The challenge is the leap to abstraction; the students who thrive keep a firm grip on the concrete computations while building intuition for the ideas behind them.",
+    ],
+    keyConcepts: [
+      "Vectors and vector operations",
+      "Matrices and systems of linear equations",
+      "Matrix operations and inverses",
+      "Determinants",
+      "Linear transformations",
+      "Eigenvalues and eigenvectors",
+    ],
+    commonMistakes: [
+      "Falling behind because the pace is faster than high school",
+      "Doing computations without understanding what they mean",
+      "Struggling with abstraction by not grounding it in examples",
+      "Neglecting practice on the course's specific problem types",
+    ],
+    studyTips: [
+      "Keep up with the fast pace — don't let a week slide",
+      "Ground every abstract idea in a concrete example",
+      "Practise the exact problem types the course assesses",
+      "Use geometric intuition to make concepts stick",
+    ],
+    closing: [
+      "First-year linear algebra is far more manageable with expert support. Our university math tutoring helps UBC and other students master the concepts and the computations. Book a free consultation to get started.",
+    ],
+  },
+
+  "finance-financial-basics": {
+    excerpt:
+      "Financial basics are essential for students of business, economics and finance. This guide covers the core concepts, common mistakes, and how to learn them.",
+    intro: [
+      "Financial literacy is a skill that pays off for life, and for students of business, economics or finance, mastering the basics is the foundation of everything that follows. The core ideas are more intuitive than they first appear.",
+    ],
+    overview: [
+      "Financial basics cover how money works over time, how businesses track performance, and how to make informed decisions with numbers. Concepts like the time value of money and interest underpin almost every financial calculation.",
+      "Understanding the 'why' behind each concept — not just the formula — is what makes finance click and prepares students for more advanced study.",
+    ],
+    keyConcepts: [
+      "The time value of money",
+      "Simple and compound interest",
+      "Budgeting and cash flow",
+      "Financial statements (income statement, balance sheet)",
+      "Risk and return",
+      "Basic investment concepts",
+    ],
+    commonMistakes: [
+      "Applying formulas without understanding what they represent",
+      "Confusing simple and compound interest",
+      "Ignoring the time value of money in decisions",
+      "Misreading financial statements",
+    ],
+    studyTips: [
+      "Understand the reasoning behind each formula, not just the formula",
+      "Work through real examples with actual numbers",
+      "Master compound interest — it underlies most of finance",
+      "Connect concepts to real-world financial decisions",
+    ],
+    closing: [
+      "Finance is best learned by connecting concepts to real decisions, with expert guidance. Our finance tutoring builds strong foundations for high-school, university and professional study. Book a free consultation to get started.",
+    ],
+  },
 };
