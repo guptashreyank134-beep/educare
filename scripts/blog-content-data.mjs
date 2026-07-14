@@ -462,4 +462,250 @@ export const blogContent = {
       "This unit rewards linking algebra to graphs, which is exactly what focused tutoring builds. Our Pre-Calculus 12 tutoring makes polynomial and rational functions intuitive and prepares students for the final exam review. Book a free consultation to get started.",
     ],
   },
+
+  // ─────────────────────────── BATCH 3 ───────────────────────────
+  "chemistry-physical-chemistry": {
+    excerpt:
+      "Physical chemistry connects chemistry with physics and math — thermodynamics, kinetics and equilibrium. Here's a clear overview, common pitfalls, and study tips.",
+    intro: [
+      "Physical chemistry is where chemistry meets physics and mathematics, explaining not just what happens in a reaction but why and how fast. It's conceptually rich, and students who build strong math skills alongside it tend to do best.",
+    ],
+    overview: [
+      "Physical chemistry covers thermodynamics (energy and spontaneity), kinetics (reaction rates) and equilibrium (the balance point of reversible reactions). These ideas explain the driving forces behind chemical change.",
+      "Because the subject is quantitative, comfort with algebra, logarithms and graphs is essential — the chemistry concepts become much clearer when the math isn't a barrier.",
+    ],
+    keyConcepts: [
+      "Enthalpy, entropy and Gibbs free energy",
+      "Spontaneity and the direction of reactions",
+      "Reaction rates and rate laws",
+      "Activation energy and catalysts",
+      "Dynamic equilibrium and Le Chatelier's principle",
+      "Equilibrium constants and calculations",
+    ],
+    commonMistakes: [
+      "Confusing thermodynamic favourability with reaction speed (they're different)",
+      "Misapplying Le Chatelier's principle to changes it doesn't affect",
+      "Struggling with the logarithms in equilibrium and pH calculations",
+      "Memorising equations without understanding what they describe",
+    ],
+    studyTips: [
+      "Strengthen the underlying math (logs, algebra) alongside the chemistry",
+      "Keep thermodynamics and kinetics mentally separate — they answer different questions",
+      "Use ICE tables systematically for equilibrium problems",
+      "Draw energy diagrams to visualise activation energy and catalysis",
+    ],
+    closing: [
+      "Physical chemistry becomes far more approachable with expert help that bridges the chemistry and the math. Our Chemistry 12 tutoring builds both together, so the concepts and calculations click. Book a free consultation to get started.",
+    ],
+  },
+
+  "chemistry-chemical-reactions-bonding": {
+    excerpt:
+      "Chemical bonding and reactions are the core of chemistry. This guide explains bond types, reaction categories, common mistakes, and how to study them effectively.",
+    intro: [
+      "Bonding explains why atoms join together, and reactions describe how those bonds rearrange. These two ideas sit at the centre of all chemistry, so understanding them well pays off across every other topic.",
+    ],
+    overview: [
+      "Chemical bonds — ionic, covalent and metallic — form because atoms are more stable together than apart. Reactions then break and form bonds, and recognising reaction types lets you predict products rather than memorise them.",
+      "The key insight is that both bonding and reactivity come down to electrons and the drive toward stability.",
+    ],
+    keyConcepts: [
+      "Ionic, covalent and metallic bonding",
+      "Lewis structures and electron sharing",
+      "Molecular shapes and polarity (VSEPR)",
+      "Types of reactions: synthesis, decomposition, displacement, combustion",
+      "Balancing chemical equations",
+      "Predicting products of common reactions",
+    ],
+    commonMistakes: [
+      "Confusing ionic and covalent bonding and their properties",
+      "Drawing incorrect Lewis structures (miscounting valence electrons)",
+      "Forgetting to balance equations before using them",
+      "Not recognising reaction types, so products are guessed",
+    ],
+    studyTips: [
+      "Master valence electrons and the octet rule first",
+      "Practise Lewis structures until they're automatic",
+      "Learn to classify reactions by type to predict products",
+      "Always balance equations and check with conservation of mass",
+    ],
+    closing: [
+      "Bonding and reactions are the foundation everything else builds on, so getting them solid early matters. Our science tutor in Burnaby makes these core ideas clear and connected. Book a free consultation to strengthen the fundamentals.",
+    ],
+  },
+
+  "mathematics-trigonometry-coordinate-geometry": {
+    excerpt:
+      "Trigonometry and coordinate geometry link algebra to shapes and angles. This guide covers the essential ideas, common mistakes, and how to master them.",
+    intro: [
+      "Trigonometry and coordinate geometry connect algebra with the geometry of angles, triangles and the plane. They appear throughout Pre-Calculus, Calculus and physics, so a strong grasp here has a long payoff.",
+    ],
+    overview: [
+      "Trigonometry relates the angles and sides of triangles and extends to the unit circle, where sine and cosine describe circular and wave-like behaviour. Coordinate geometry places shapes on the plane so they can be described with equations.",
+      "Together they let you move fluidly between pictures and equations — a skill that unlocks much of higher math.",
+    ],
+    keyConcepts: [
+      "Right-triangle trigonometry (SOH-CAH-TOA)",
+      "The unit circle and radian measure",
+      "Sine and cosine laws for non-right triangles",
+      "Distance, midpoint and slope formulas",
+      "Equations of lines and circles",
+      "Connecting graphs to their equations",
+    ],
+    commonMistakes: [
+      "Mixing up degrees and radians",
+      "Forgetting when to use the sine law versus the cosine law",
+      "Sign errors from the wrong quadrant on the unit circle",
+      "Misremembering the distance or slope formula under pressure",
+    ],
+    studyTips: [
+      "Learn the unit circle thoroughly — it underpins all of trigonometry",
+      "Always note whether a problem uses degrees or radians",
+      "Sketch the triangle or coordinate setup before calculating",
+      "Practise moving between a graph and its equation both ways",
+    ],
+    closing: [
+      "These topics reward connecting pictures to equations, which is exactly what good tutoring develops. Our math tutor in Vancouver makes trigonometry and coordinate geometry intuitive and exam-ready. Book a free consultation to get started.",
+    ],
+  },
+
+  "physics-physics-the-underlying-math": {
+    excerpt:
+      "Most physics struggles are really math struggles. This guide explains the math you need for physics and how strengthening it transforms your results.",
+    intro: [
+      "Here's a truth many students discover too late: most difficulty in physics isn't about the physics — it's about the math underneath it. Strengthening that math is often the fastest way to better physics grades.",
+    ],
+    overview: [
+      "Physics uses algebra to rearrange formulas, trigonometry to resolve vectors, and (at higher levels) calculus to describe change. When these skills are shaky, students who understand the physics conceptually still lose marks in the working.",
+      "Building the underlying math alongside the physics removes that bottleneck and lets your understanding show on the page.",
+    ],
+    keyConcepts: [
+      "Rearranging and solving equations for any variable",
+      "Trigonometry for resolving vectors into components",
+      "Working with units and dimensional analysis",
+      "Graphs: slope and area as physical quantities",
+      "Proportional reasoning and scaling",
+      "Calculus basics for rates and accumulation (senior levels)",
+    ],
+    commonMistakes: [
+      "Understanding the physics but losing marks in the algebra",
+      "Errors resolving vectors because of weak trigonometry",
+      "Ignoring units, leading to wrong answers",
+      "Plugging in numbers too early instead of solving symbolically",
+    ],
+    studyTips: [
+      "Treat the math as a core physics skill, not a side issue",
+      "Solve every problem algebraically first, then substitute numbers",
+      "Drill vector resolution until it's automatic",
+      "Always carry and check units through your working",
+    ],
+    closing: [
+      "Because physics and math are so intertwined, tutoring that strengthens both together produces the biggest gains. Our Physics 12 tutoring builds the underlying math right alongside the concepts. Book a free consultation to get started.",
+    ],
+  },
+
+  "biology-genetics-evolution": {
+    excerpt:
+      "Genetics and evolution explain how traits are inherited and how life changes over time. This guide covers the core ideas, pitfalls, and how to study them.",
+    intro: [
+      "Genetics and evolution are two of biology's biggest ideas — how traits pass from one generation to the next, and how populations change over time. They're deeply connected, and understanding that link makes both far clearer.",
+    ],
+    overview: [
+      "Genetics explains inheritance through DNA, genes and the rules first described by Mendel. Evolution then operates on that genetic variation: natural selection favours traits that improve survival and reproduction, gradually shaping populations.",
+      "Seeing genetics as the source of variation and evolution as the process acting on it ties the whole topic together.",
+    ],
+    keyConcepts: [
+      "DNA, genes and chromosomes",
+      "Mendelian inheritance and Punnett squares",
+      "Dominant, recessive and codominant traits",
+      "Mutations as a source of variation",
+      "Natural selection and adaptation",
+      "Evidence for evolution",
+    ],
+    commonMistakes: [
+      "Confusing genotype (genes) with phenotype (observable traits)",
+      "Setting up Punnett squares incorrectly",
+      "Thinking individuals evolve — populations do, over generations",
+      "Assuming evolution has a goal or direction",
+    ],
+    studyTips: [
+      "Practise Punnett squares until inheritance patterns are automatic",
+      "Keep genotype and phenotype clearly distinct",
+      "Explain natural selection in your own words with real examples",
+      "Connect genetic variation to how evolution acts on it",
+    ],
+    closing: [
+      "Genetics and evolution reward understanding the connections, not memorising facts. Our science tutor in Burnaby helps students see the big picture and the detail. Book a free consultation to get started.",
+    ],
+  },
+
+  "biology-human-physiology": {
+    excerpt:
+      "Human physiology is detail-heavy but rewarding, especially for pre-med students. This guide covers the body's systems, common mistakes, and how to study them.",
+    intro: [
+      "Human physiology explains how the body's systems work and work together. It's content-dense — a favourite of Biology 12 and a cornerstone for anyone heading toward health sciences — but it becomes manageable when you learn systems rather than isolated facts.",
+    ],
+    overview: [
+      "Physiology examines how organ systems — circulatory, respiratory, digestive, nervous and more — carry out the functions that keep us alive, and how they coordinate through feedback and regulation.",
+      "The most effective approach is to understand how each system works as a whole and how they connect, so the many details hang on a coherent framework.",
+    ],
+    keyConcepts: [
+      "The circulatory and respiratory systems",
+      "The digestive and excretory systems",
+      "The nervous and endocrine systems",
+      "Homeostasis and feedback regulation",
+      "How systems interact and coordinate",
+      "Cell and tissue structure underlying function",
+    ],
+    commonMistakes: [
+      "Memorising isolated facts instead of understanding whole systems",
+      "Overlooking how systems interact (e.g. circulatory and respiratory)",
+      "Confusing the nervous and endocrine control mechanisms",
+      "Underestimating the volume of detail and cramming late",
+    ],
+    studyTips: [
+      "Learn each system as a connected whole, then the details",
+      "Draw flow diagrams (e.g. blood flow, feedback loops)",
+      "Use analogies to make mechanisms memorable",
+      "Space your revision — physiology has too much detail to cram",
+    ],
+    closing: [
+      "Physiology rewards a systems-level understanding, which is exactly what good tutoring builds. Our science tutor in Burnaby helps students organise the detail into a clear picture — ideal preparation for health-science pathways. Book a free consultation to get started.",
+    ],
+  },
+
+  "computer-science-data-structures-algorithms": {
+    excerpt:
+      "Data structures and algorithms are the core of computer science. This guide explains the essentials, common mistakes, and how to build real problem-solving skill.",
+    intro: [
+      "Data structures and algorithms (DSA) are the heart of computer science — how we organise data and solve problems efficiently. They're what interviews test and what separates people who can code from people who can engineer solutions.",
+    ],
+    overview: [
+      "Data structures are ways of organising data (arrays, lists, stacks, trees, graphs), and algorithms are step-by-step methods for solving problems (searching, sorting, traversing). The skill is choosing the right structure and algorithm for a given problem.",
+      "Understanding efficiency — how running time grows with input size (Big-O) — is what turns working code into good code.",
+    ],
+    keyConcepts: [
+      "Arrays, linked lists, stacks and queues",
+      "Trees and graphs",
+      "Searching and sorting algorithms",
+      "Recursion and problem decomposition",
+      "Big-O time and space complexity",
+      "Choosing the right structure for a problem",
+    ],
+    commonMistakes: [
+      "Memorising algorithms without understanding why they work",
+      "Ignoring time and space complexity",
+      "Struggling with recursion by not trusting the recursive step",
+      "Jumping to code before thinking through the approach",
+    ],
+    studyTips: [
+      "Implement each data structure yourself, from scratch",
+      "Always analyse the Big-O of your solution",
+      "Practise problems by category (sorting, trees, graphs)",
+      "Plan the approach on paper before writing any code",
+    ],
+    closing: [
+      "DSA is learned by solving problems with guidance, not by memorising. Our computer science tutoring builds genuine problem-solving skill from the fundamentals up. Book a free consultation to get started.",
+    ],
+  },
 };
