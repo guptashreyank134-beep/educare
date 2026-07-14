@@ -1938,4 +1938,250 @@ export const blogContent = {
       "This section rewards understanding applied in context, which structured tutoring supports. Our university-level tutoring helps students prepare for demanding exams. Book a free consultation to get started.",
     ],
   },
+
+  // ─────────────────────────── BATCH 9 ───────────────────────────
+  "python-loops-and-conditionals": {
+    excerpt:
+      "Loops and conditionals give Python programs the power to decide and repeat. This guide explains them clearly, with common mistakes and study tips.",
+    intro: [
+      "Loops and conditionals are what give programs their power — the ability to make decisions and repeat tasks. In Python, they're clean and readable, which makes them the perfect place to build real programming intuition.",
+    ],
+    overview: [
+      "Conditionals (if / elif / else) let a program choose what to do based on data, while loops (for and while) repeat actions efficiently. Combined, they let you handle any amount of data and any number of cases with just a few lines.",
+      "The skill is knowing which loop or condition fits a problem, and combining them cleanly.",
+    ],
+    keyConcepts: [
+      "if, elif and else statements",
+      "Comparison and boolean operators",
+      "for loops and iterating over sequences",
+      "while loops and loop conditions",
+      "break and continue",
+      "Nesting loops and conditionals",
+    ],
+    commonMistakes: [
+      "Off-by-one errors in loop ranges",
+      "Infinite while loops from a condition that never changes",
+      "Confusing '=' with '==' in conditions",
+      "Incorrect indentation breaking the logic",
+    ],
+    studyTips: [
+      "Trace loops by hand to see each iteration",
+      "Choose for loops for known ranges, while for unknown",
+      "Test conditionals with edge cases",
+      "Build small programs that combine both",
+    ],
+    closing: [
+      "Loops and conditionals are the heart of programming logic, best learned by building. Our coding tutoring teaches Python through hands-on practice. Book a free consultation to get started.",
+    ],
+  },
+
+  "web-development-api-development-integration": {
+    excerpt:
+      "APIs let applications talk to each other. This guide explains API development and integration, common mistakes, and how to learn them effectively.",
+    intro: [
+      "APIs are how modern applications talk to each other — from fetching weather data to processing payments. Understanding how to build and integrate them is a core skill for any web developer.",
+    ],
+    overview: [
+      "An API (Application Programming Interface) defines how software components communicate. REST APIs, the most common style, use HTTP requests to send and receive data (usually JSON). Building an API means designing clear endpoints; integrating one means calling it and handling its responses.",
+      "The key skills are understanding the request–response cycle, working with JSON, and handling errors gracefully.",
+    ],
+    keyConcepts: [
+      "What an API is and why apps use them",
+      "REST principles and HTTP methods (GET, POST, PUT, DELETE)",
+      "Working with JSON data",
+      "Building API endpoints",
+      "Consuming third-party APIs (fetch/axios)",
+      "Handling errors and authentication",
+    ],
+    commonMistakes: [
+      "Not handling errors or failed requests",
+      "Misusing HTTP methods for the wrong actions",
+      "Ignoring authentication and API keys",
+      "Mishandling asynchronous responses",
+    ],
+    studyTips: [
+      "Build a simple API and call it from a frontend",
+      "Practise with public APIs to learn integration",
+      "Understand async/await for handling responses",
+      "Always handle the error case, not just success",
+    ],
+    closing: [
+      "APIs are best learned by building and integrating real ones. Our web development tutoring covers API development and full-stack integration. Book a free consultation to get started.",
+    ],
+  },
+
+  "gmat-prep-data-insights": {
+    excerpt:
+      "The GMAT Focus Edition's Data Insights section is new territory for many. This guide explains what it tests and how to prepare for a strong score.",
+    intro: [
+      "The Data Insights section is a defining feature of the GMAT Focus Edition, testing how well you interpret and reason with data — a skill business schools value highly. It's unfamiliar to many test-takers, which makes focused preparation especially valuable.",
+    ],
+    overview: [
+      "Data Insights blends data interpretation, table analysis, graphics interpretation, multi-source reasoning and data sufficiency. It rewards the ability to extract the right information from charts, tables and text, then reason to a conclusion under time pressure.",
+      "Because it's newer, targeted practice on its specific question types pays off quickly.",
+    ],
+    keyConcepts: [
+      "Data sufficiency reasoning",
+      "Interpreting tables and graphs",
+      "Multi-source reasoning",
+      "Two-part analysis",
+      "Extracting relevant information quickly",
+      "Time management across formats",
+    ],
+    commonMistakes: [
+      "Underpreparing because the section is unfamiliar",
+      "Misreading charts and tables under time pressure",
+      "Over-calculating instead of reasoning efficiently",
+      "Neglecting data-sufficiency technique",
+    ],
+    studyTips: [
+      "Practise each Data Insights question type specifically",
+      "Build speed at reading charts and tables",
+      "Master data-sufficiency reasoning",
+      "Do timed sets to handle the format's variety",
+    ],
+    closing: [
+      "The Data Insights section rewards targeted, format-specific prep. Our test prep tutoring is aligned to the current GMAT Focus Edition, including Data Insights. Book a free consultation to get started.",
+    ],
+  },
+
+  "sat-prep-evidence-based-reading-writing": {
+    excerpt:
+      "The SAT's Reading and Writing section rewards evidence-based strategy. This guide explains how to approach it and lift your score.",
+    intro: [
+      "The SAT's Reading and Writing section isn't about how many books you've read — it's about a specific, learnable set of skills: finding evidence, understanding structure, and applying grammar rules efficiently under time.",
+    ],
+    overview: [
+      "This section tests reading comprehension, command of evidence, vocabulary in context, and standard English grammar and conventions. The questions are predictable once you know the patterns, and evidence-based answers can always be justified from the text.",
+      "Effective prep pairs reading strategy with targeted grammar review and timed practice.",
+    ],
+    keyConcepts: [
+      "Reading for main idea and structure",
+      "Command of evidence (supporting answers from the text)",
+      "Vocabulary in context",
+      "Grammar and sentence structure rules",
+      "Punctuation and conventions",
+      "Time management per passage",
+    ],
+    commonMistakes: [
+      "Choosing answers that 'sound right' instead of text-supported ones",
+      "Spending too long on a single passage",
+      "Guessing on grammar instead of applying rules",
+      "Bringing in outside knowledge rather than using the passage",
+    ],
+    studyTips: [
+      "Always justify answers with evidence from the text",
+      "Review the specific grammar rules the SAT tests",
+      "Practise with timed passages",
+      "Learn the recurring question patterns",
+    ],
+    closing: [
+      "The SAT Reading and Writing section is very learnable with the right strategy. Our test prep tutoring builds reading skill and grammar mastery with realistic practice. Book a free consultation to get started.",
+    ],
+  },
+
+  "finance-business-concepts": {
+    excerpt:
+      "Core business concepts underpin finance and entrepreneurship. This guide covers the essentials, common mistakes, and how to build genuine understanding.",
+    intro: [
+      "Understanding core business concepts is the foundation for finance, economics and entrepreneurship. These ideas explain how organisations create value and make decisions — knowledge that's useful far beyond the classroom.",
+    ],
+    overview: [
+      "Business concepts cover how companies are structured, how they generate revenue and profit, and how they make decisions about resources. Grasping how the pieces fit together — from costs and pricing to markets and competition — makes finance and economics far more intuitive.",
+      "The best learning connects each concept to real companies and decisions.",
+    ],
+    keyConcepts: [
+      "Revenue, costs and profit",
+      "Business structures and models",
+      "Supply, demand and pricing",
+      "Markets and competition",
+      "Basic financial statements",
+      "Decision-making with limited resources",
+    ],
+    commonMistakes: [
+      "Memorising definitions without understanding relationships",
+      "Confusing revenue with profit",
+      "Overlooking costs when thinking about pricing",
+      "Not connecting concepts to real examples",
+    ],
+    studyTips: [
+      "Connect every concept to a real company",
+      "Understand how the pieces relate, not just definitions",
+      "Distinguish revenue, costs and profit clearly",
+      "Discuss real business decisions to apply the ideas",
+    ],
+    closing: [
+      "Business concepts click when connected to the real world, which good tutoring provides. Our finance tutoring builds strong foundations for business and economics study. Book a free consultation to get started.",
+    ],
+  },
+
+  "mandarin-reading-writing-vocabulary-building": {
+    excerpt:
+      "Reading, writing and vocabulary — including characters — deepen Mandarin fluency. This guide explains how to build them effectively.",
+    intro: [
+      "Beyond speaking, real Mandarin ability grows through reading, writing and steady vocabulary building — including learning Chinese characters. Approached the right way, even characters become manageable and rewarding.",
+    ],
+    overview: [
+      "Mandarin vocabulary is built from characters, each carrying meaning and sound, which combine into words. Reading reinforces recognition, writing cements memory, and a growing vocabulary unlocks more of the language. Learning characters in patterns (radicals and components) makes them far easier.",
+      "Consistent, structured practice is the key to steady progress.",
+    ],
+    keyConcepts: [
+      "Chinese characters and radicals",
+      "Building vocabulary systematically",
+      "Reading comprehension",
+      "Writing characters and words",
+      "Pinyin as a bridge to characters",
+      "Recognising character patterns",
+    ],
+    commonMistakes: [
+      "Trying to memorise characters without understanding components",
+      "Neglecting writing, which cements memory",
+      "Learning vocabulary in isolation from context",
+      "Skipping regular review, so characters fade",
+    ],
+    studyTips: [
+      "Learn characters through radicals and patterns",
+      "Practise writing to reinforce recognition",
+      "Use spaced repetition for vocabulary",
+      "Read simple texts to see characters in context",
+    ],
+    closing: [
+      "Reading, writing and vocabulary grow fastest with structured, guided practice. Our Mandarin tutoring builds these skills alongside speaking. Book a free consultation to get started.",
+    ],
+  },
+
+  "university-physics-ubc-physics-phys-100-101-107-108": {
+    excerpt:
+      "UBC first-year physics (PHYS 100/101/107/108) is fast-paced and math-heavy. This guide covers the key topics, pitfalls, and how to succeed.",
+    intro: [
+      "UBC's first-year physics courses (PHYS 100, 101, 107 and 108) move quickly and lean heavily on calculus. Many capable students find the pace demanding, but with strong fundamentals and good problem-solving habits, the material is very learnable.",
+    ],
+    overview: [
+      "These courses cover mechanics, waves, electricity and magnetism, and thermodynamics, using calculus throughout. The main challenge is combining conceptual understanding with the mathematical fluency the problems require.",
+      "Students who keep their calculus sharp and use a disciplined problem-solving method tend to do best.",
+    ],
+    keyConcepts: [
+      "Mechanics with calculus",
+      "Waves and oscillations",
+      "Electricity and magnetism",
+      "Thermodynamics",
+      "Problem-solving method",
+      "Applying calculus to physics",
+    ],
+    commonMistakes: [
+      "Falling behind due to the fast university pace",
+      "Weak calculus undermining otherwise-correct physics",
+      "Skipping problem setup and diagrams",
+      "Underestimating the practice required",
+    ],
+    studyTips: [
+      "Keep calculus and algebra sharp alongside the physics",
+      "Use a consistent problem-solving method",
+      "Keep up with problem sets weekly",
+      "Seek help early before small gaps grow",
+    ],
+    closing: [
+      "First-year university physics is far more manageable with expert support. Our university physics tutoring helps UBC students stay ahead in the demanding first year. Book a free consultation to get started.",
+    ],
+  },
 };
