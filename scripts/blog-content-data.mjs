@@ -216,4 +216,250 @@ export const blogContent = {
       "A strong AP Calculus score can shape university options, and focused preparation makes a real difference. Our AP Calculus tutoring combines concept mastery with AP-format practice for both AB and BC. Book a free consultation to build your plan.",
     ],
   },
+
+  // ─────────────────────────── BATCH 2 ───────────────────────────
+  "chemistry-organic-chemistry": {
+    excerpt:
+      "Organic chemistry has a reputation for being hard, but it's really about patterns. This guide explains the core ideas, common mistakes, and how to study it.",
+    intro: [
+      "Organic chemistry earns its tough reputation because students try to memorise it — when it's actually a subject built on a handful of repeating patterns. Once you learn to think in terms of functional groups and mechanisms, it becomes far more manageable.",
+    ],
+    overview: [
+      "Organic chemistry is the study of carbon-based compounds. Carbon's ability to form four bonds and long chains gives rise to millions of molecules, organised into families called functional groups that each behave predictably.",
+      "The real skill isn't memorising every reaction — it's understanding why electrons move the way they do, so you can predict how molecules react rather than recall it.",
+    ],
+    keyConcepts: [
+      "Functional groups and how they determine reactivity",
+      "Nomenclature (IUPAC naming) of organic compounds",
+      "Isomers: structural and stereoisomers",
+      "Reaction mechanisms and the movement of electrons",
+      "Substitution, addition and elimination reactions",
+      "Intermolecular forces and physical properties",
+    ],
+    commonMistakes: [
+      "Memorising reactions instead of understanding the underlying mechanism",
+      "Overlooking stereochemistry and the 3D shape of molecules",
+      "Confusing similar functional groups (e.g. aldehydes vs ketones)",
+      "Skipping practice drawing structures by hand",
+    ],
+    studyTips: [
+      "Learn functional groups first — everything else builds on them",
+      "Practise reaction mechanisms with arrows to show electron movement",
+      "Draw structures constantly; organic chemistry is a visual subject",
+      "Group reactions by type rather than memorising them in isolation",
+    ],
+    closing: [
+      "Organic chemistry rewards pattern-based thinking, which is exactly what good tutoring develops. Our Chemistry 12 tutoring replaces rote memorisation with genuine understanding of mechanisms. Book a free consultation to make organic chemistry click.",
+    ],
+  },
+
+  "mathematics-algebra-functions": {
+    excerpt:
+      "Algebra and functions are the foundation of all higher math. This guide covers the essential ideas, the mistakes that hold students back, and how to master them.",
+    intro: [
+      "Almost every difficulty students face in Pre-Calculus, Calculus and physics traces back to shaky algebra. Strengthening your algebra and understanding of functions is the single highest-leverage thing you can do in high-school math.",
+    ],
+    overview: [
+      "Algebra is the language of mathematics — a system for representing and manipulating relationships between quantities. Functions build on it, describing how one quantity depends on another, and they're the central object of study from Grade 10 onward.",
+      "Fluency here means being able to factor, rearrange and interpret expressions without conscious effort, which frees up mental space for the harder ideas built on top.",
+    ],
+    keyConcepts: [
+      "Simplifying expressions and the order of operations",
+      "Factoring techniques and expanding",
+      "Solving linear, quadratic and rational equations",
+      "Function notation, domain and range",
+      "Transformations of functions (shifts, stretches, reflections)",
+      "Composite and inverse functions",
+    ],
+    commonMistakes: [
+      "Sign errors when distributing or moving terms across the equals sign",
+      "Cancelling terms incorrectly in fractions",
+      "Confusing function notation f(x) with multiplication",
+      "Forgetting to state or restrict the domain",
+    ],
+    studyTips: [
+      "Build algebra fluency to the point it's automatic — speed comes from practice",
+      "Always check solutions by substituting them back in",
+      "Sketch functions to connect the equation with its graph",
+      "Master factoring cold; it unlocks most of the topics that follow",
+    ],
+    closing: [
+      "Strong algebra makes every later math course easier, so it's worth getting right. Our math tutoring in Burnaby builds rock-solid foundations and connects algebra to the courses ahead. Book a free consultation to strengthen the fundamentals.",
+    ],
+  },
+
+  "physics-university-level-physics": {
+    excerpt:
+      "University physics moves fast and combines demanding concepts with heavy math. Here's what to expect, the pitfalls, and how to keep pace and excel.",
+    intro: [
+      "First-year university physics is a step up from high school in both pace and mathematical rigour. Students who thrive treat it as a problem-solving discipline, not a set of facts to memorise.",
+    ],
+    overview: [
+      "University physics typically covers mechanics, electricity and magnetism, thermodynamics and waves, often using calculus throughout. The concepts are deeper than in high school, and problems demand a confident command of the underlying math.",
+      "The most common reason capable students struggle isn't the physics itself — it's gaps in calculus and algebra that surface under exam pressure.",
+    ],
+    keyConcepts: [
+      "Newtonian mechanics with calculus (kinematics, dynamics, energy)",
+      "Electric fields, potential and circuits",
+      "Magnetism and electromagnetic induction",
+      "Thermodynamics and the gas laws",
+      "Oscillations and waves",
+      "Vector calculus fundamentals as used in physics",
+    ],
+    commonMistakes: [
+      "Falling behind because of weak calculus, not weak physics",
+      "Plugging numbers in early instead of solving algebraically first",
+      "Ignoring units and dimensional analysis",
+      "Underestimating the volume of practice the course requires",
+    ],
+    studyTips: [
+      "Shore up calculus and algebra alongside the physics",
+      "Do many problems — physics is learned by solving, not reading",
+      "Keep a clean method: diagram, knowns/unknowns, equations, solve, check",
+      "Review lecture problems before attempting the assignment set",
+    ],
+    closing: [
+      "Keeping pace with university physics is far easier with expert support that strengthens both the physics and the math. Our university physics tutoring helps students at UBC, SFU and beyond stay ahead. Book a free consultation to get started.",
+    ],
+  },
+
+  "ib-ap-tutoring-ib-mathematics-analysis-approaches-sl-hl": {
+    excerpt:
+      "IB Math Analysis & Approaches (SL & HL) is rigorous and distinct from the BC curriculum. Here's what it covers, the pitfalls, and how to prepare — including the IA.",
+    intro: [
+      "IB Mathematics: Analysis & Approaches (AA) is one of the most rigorous high-school math courses in the world, especially at HL. It rewards genuine mathematical understanding and clear communication — and it has its own assessment style, including the Internal Assessment.",
+    ],
+    overview: [
+      "AA emphasises algebraic methods, calculus and mathematical reasoning, with HL going considerably deeper than SL into proof, calculus and topics like complex numbers. Assessment blends exam papers (some calculator, some not) with the Internal Assessment, a mathematical exploration.",
+      "Success comes from mastering content, learning to write mathematics the way IB examiners expect, and choosing a strong, focused IA topic.",
+    ],
+    keyConcepts: [
+      "Functions, sequences and series",
+      "Differential and integral calculus",
+      "Trigonometry and identities",
+      "Probability and statistics",
+      "Proof and reasoning (especially HL)",
+      "The Internal Assessment (mathematical exploration)",
+    ],
+    commonMistakes: [
+      "Treating IB like the BC curriculum and missing the different emphasis",
+      "Losing marks by not showing reasoning the way IB rubrics require",
+      "Choosing an IA topic that's too broad or too simple",
+      "Neglecting the non-calculator paper's mental-math demands",
+    ],
+    studyTips: [
+      "Study past IB papers and mark schemes to learn the assessment style",
+      "Practise communicating solutions clearly, not just getting answers",
+      "Start the IA early and pick a focused, personally interesting topic",
+      "Balance calculator and non-calculator practice",
+    ],
+    closing: [
+      "IB Math AA rewards a tutor who knows the programme, not just the math. Our IB Math tutoring covers SL and HL and guides the Internal Assessment from topic to finished exploration. Book a free consultation to build your plan.",
+    ],
+  },
+
+  "python-basic-syntax-and-structure": {
+    excerpt:
+      "Python is the ideal first programming language. This beginner's guide covers the core syntax and structure, common mistakes, and how to learn it effectively.",
+    intro: [
+      "Python is the best first language for a reason: its clean syntax lets beginners focus on how to think like a programmer rather than fighting the language. Getting the basics right sets you up for everything from web development to data science.",
+    ],
+    overview: [
+      "Python programs are built from a few core building blocks: variables that store data, data types like numbers, strings and lists, and control flow that decides what runs when. Indentation — not braces — defines structure, which keeps Python code readable.",
+      "The goal at this stage isn't to memorise syntax but to understand how these pieces fit together to solve problems.",
+    ],
+    keyConcepts: [
+      "Variables and assignment",
+      "Core data types: int, float, string, list, dict",
+      "Conditionals (if / elif / else)",
+      "Loops (for and while)",
+      "Functions and parameters",
+      "Indentation and code structure",
+    ],
+    commonMistakes: [
+      "Inconsistent indentation causing errors",
+      "Confusing '=' (assignment) with '==' (comparison)",
+      "Off-by-one errors in loops and list indices",
+      "Copying code without understanding what each line does",
+    ],
+    studyTips: [
+      "Type out every example yourself — never just read code",
+      "Build tiny projects (a calculator, a quiz) to apply what you learn",
+      "Read error messages carefully; they usually tell you exactly what's wrong",
+      "Learn to break problems into small, testable steps",
+    ],
+    closing: [
+      "Learning to code is far faster with a mentor who explains the 'why' behind each concept. Our coding tutoring teaches Python through hands-on projects, from first steps to real programs. Book a free consultation to get started.",
+    ],
+  },
+
+  "web-development-frontend-development-html-css-react": {
+    excerpt:
+      "Frontend development with HTML, CSS and React is a valuable, in-demand skill. This guide explains how the pieces fit together and how to learn them in the right order.",
+    intro: [
+      "Frontend development is how everything you see on the web gets built. Learning HTML, CSS and React in the right order — structure, then style, then interactivity — turns an overwhelming field into a clear learning path.",
+    ],
+    overview: [
+      "HTML provides the structure of a page, CSS controls how it looks, and JavaScript (via a library like React) makes it interactive. React organises interfaces into reusable components, which is why it powers so much of the modern web.",
+      "Beginners succeed by mastering HTML and CSS first, getting comfortable with JavaScript, and only then adding React — building real projects at every step.",
+    ],
+    keyConcepts: [
+      "HTML structure and semantic elements",
+      "CSS layout with flexbox and grid",
+      "Responsive design for all screen sizes",
+      "JavaScript fundamentals (the foundation of React)",
+      "React components, props and state",
+      "Building and deploying a real project",
+    ],
+    commonMistakes: [
+      "Jumping to React before understanding HTML, CSS and JavaScript",
+      "Neglecting responsive design until the end",
+      "Copying components without understanding state and props",
+      "Learning passively instead of building projects",
+    ],
+    studyTips: [
+      "Learn in order: HTML → CSS → JavaScript → React",
+      "Build a portfolio project as you go, not just tutorials",
+      "Recreate real websites to practise layout and styling",
+      "Understand state and props deeply — they're the heart of React",
+    ],
+    closing: [
+      "Frontend development is best learned by building with guidance. Our web development tutoring takes students from HTML basics to real React projects, step by step. Book a free consultation to start building.",
+    ],
+  },
+
+  "pre-calculus-polynomial-rational-functions": {
+    excerpt:
+      "Polynomial and rational functions are a key Pre-Calculus 12 unit. This guide explains graphs, asymptotes and behaviour, plus common mistakes and study tips.",
+    intro: [
+      "Polynomial and rational functions bring together factoring, graphing and analysis, and they're a major part of Pre-Calculus 12. Understanding how a function's equation reveals the shape of its graph is the key skill here.",
+    ],
+    overview: [
+      "Polynomial functions are smooth curves whose behaviour is governed by their degree and factors, while rational functions are ratios of polynomials that introduce asymptotes and discontinuities. Reading these features straight from the equation is what the unit is really about.",
+      "Once you can connect factors to x-intercepts, degree to end behaviour, and denominators to asymptotes, graphing becomes a logical process rather than guesswork.",
+    ],
+    keyConcepts: [
+      "Degree, leading coefficient and end behaviour",
+      "Finding zeros by factoring and the factor theorem",
+      "Multiplicity and how graphs behave at intercepts",
+      "Vertical, horizontal and slant asymptotes",
+      "Points of discontinuity (holes) in rational functions",
+      "Sketching functions from their equations",
+    ],
+    commonMistakes: [
+      "Confusing a hole (removable discontinuity) with a vertical asymptote",
+      "Ignoring multiplicity, so the graph's behaviour at intercepts is wrong",
+      "Getting end behaviour backwards for odd vs even degree",
+      "Forgetting to fully factor before analysing a rational function",
+    ],
+    studyTips: [
+      "Always factor completely first — everything else follows from the factors",
+      "Connect each algebraic feature to a visual one on the graph",
+      "Practise sketching by hand before relying on a calculator",
+      "Learn the asymptote rules by comparing numerator and denominator degrees",
+    ],
+    closing: [
+      "This unit rewards linking algebra to graphs, which is exactly what focused tutoring builds. Our Pre-Calculus 12 tutoring makes polynomial and rational functions intuitive and prepares students for the final exam review. Book a free consultation to get started.",
+    ],
+  },
 };
