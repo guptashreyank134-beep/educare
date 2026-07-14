@@ -2184,4 +2184,250 @@ export const blogContent = {
       "First-year university physics is far more manageable with expert support. Our university physics tutoring helps UBC students stay ahead in the demanding first year. Book a free consultation to get started.",
     ],
   },
+
+  // ─────────────────────────── BATCH 10 ───────────────────────────
+  "javascript-loops-and-conditionals": {
+    excerpt:
+      "Loops and conditionals give JavaScript its decision-making and repetition. This guide explains them clearly, with common mistakes and study tips.",
+    intro: [
+      "Loops and conditionals are how JavaScript makes decisions and repeats work — the logic that turns static code into programs that actually do something. They're fundamental to everything from simple scripts to complex web apps.",
+    ],
+    overview: [
+      "Conditionals (if / else / switch) choose which code runs based on data, while loops (for, while, forEach) repeat actions over collections or until a condition is met. Together they let you handle any data and any number of cases.",
+      "The skill is picking the right structure for a problem and writing it cleanly.",
+    ],
+    keyConcepts: [
+      "if, else if, else and switch",
+      "Comparison and logical operators",
+      "for and while loops",
+      "Looping over arrays (for...of, forEach)",
+      "break and continue",
+      "Combining loops and conditionals",
+    ],
+    commonMistakes: [
+      "Using '==' instead of '===' and hitting coercion bugs",
+      "Off-by-one errors in loops",
+      "Infinite loops from a condition that never changes",
+      "Overcomplicating logic that could be simplified",
+    ],
+    studyTips: [
+      "Always use === for predictable comparisons",
+      "Trace loops by hand to see each step",
+      "Choose the loop type that fits the data",
+      "Practise with small interactive scripts",
+    ],
+    closing: [
+      "Loops and conditionals are core to JavaScript, best learned by building. Our web development tutoring teaches JavaScript from fundamentals to React. Book a free consultation to get started.",
+    ],
+  },
+
+  "python-variables-and-data-types": {
+    excerpt:
+      "Variables and data types are the first things to learn in Python. This beginner's guide explains them clearly, with common mistakes and study tips.",
+    intro: [
+      "Variables and data types are the very first building blocks of Python. They're simple ideas, but understanding them well prevents a surprising number of bugs and confusion later on.",
+    ],
+    overview: [
+      "A variable is a name that stores a value, and a data type describes what kind of value it holds — a number, text, a list, and so on. Python figures out types automatically, which keeps things simple but makes understanding types even more important.",
+      "Getting comfortable with the core types and how they behave is the foundation for everything else in Python.",
+    ],
+    keyConcepts: [
+      "Variables and assignment",
+      "Numbers (int, float)",
+      "Strings and basic string operations",
+      "Lists and dictionaries",
+      "Booleans and None",
+      "Checking and converting types",
+    ],
+    commonMistakes: [
+      "Confusing strings and numbers (e.g. '5' + 5)",
+      "Mutating a list unexpectedly",
+      "Using a variable before assigning it",
+      "Confusing '=' (assignment) with '==' (comparison)",
+    ],
+    studyTips: [
+      "Experiment in the Python shell to see how types behave",
+      "Print variables often to check their values and types",
+      "Practise converting between types",
+      "Write tiny programs using each type",
+    ],
+    closing: [
+      "Python's fundamentals are best learned hands-on with guidance. Our coding tutoring teaches Python from first steps to real projects. Book a free consultation to get started.",
+    ],
+  },
+
+  "gre-prep-verbal-vocabulary-systems": {
+    excerpt:
+      "The GRE Verbal section rewards strong vocabulary and reasoning. This guide explains smart vocabulary systems and strategies for a higher score.",
+    intro: [
+      "The GRE Verbal section leans heavily on vocabulary and careful reasoning. Building a smart system for learning words — rather than cramming endless lists — is the difference between a frustrating slog and steady score gains.",
+    ],
+    overview: [
+      "GRE Verbal tests reading comprehension, text completion and sentence equivalence, all of which reward a strong vocabulary and the ability to reason from context. The most efficient learners use spaced repetition and word roots rather than brute-force memorisation.",
+      "Pairing vocabulary work with reading and reasoning practice produces the best results.",
+    ],
+    keyConcepts: [
+      "High-frequency GRE vocabulary",
+      "Word roots, prefixes and suffixes",
+      "Text completion strategy",
+      "Sentence equivalence technique",
+      "Reading comprehension reasoning",
+      "Using context to infer meaning",
+    ],
+    commonMistakes: [
+      "Cramming word lists without a review system",
+      "Ignoring context clues in the passage",
+      "Memorising definitions but not usage",
+      "Neglecting reading-comprehension strategy",
+    ],
+    studyTips: [
+      "Use spaced repetition (flashcards) for vocabulary",
+      "Learn word roots to decode unfamiliar words",
+      "Study words in example sentences, not in isolation",
+      "Practise text completion and sentence equivalence sets",
+    ],
+    closing: [
+      "GRE Verbal rewards a smart, systematic approach, which focused prep provides. Our test prep tutoring builds vocabulary and reasoning together. Book a free consultation to get started.",
+    ],
+  },
+
+  "french-conversational-french-pronunciation": {
+    excerpt:
+      "Conversational French and clear pronunciation are the goals of most learners. This guide explains how to build them with confidence.",
+    intro: [
+      "For most learners, the goal is to actually speak French — confidently and with good pronunciation. Building conversational ability from the start, rather than waiting until you 'know enough', is the fastest path there.",
+    ],
+    overview: [
+      "Conversational French combines useful vocabulary, everyday phrases and clear pronunciation. French pronunciation has its own patterns — nasal sounds, liaisons, silent letters — that become natural with practice and listening.",
+      "The most effective approach is speaking early and often, even imperfectly, alongside plenty of listening.",
+    ],
+    keyConcepts: [
+      "French sounds and pronunciation patterns",
+      "Nasal vowels and liaisons",
+      "Everyday conversational phrases",
+      "Listening to natural speech",
+      "Building sentences for real situations",
+      "Cultural context in conversation",
+    ],
+    commonMistakes: [
+      "Waiting until 'ready' instead of speaking early",
+      "Ignoring pronunciation patterns and liaisons",
+      "Translating word-for-word from English",
+      "Practising silently instead of aloud",
+    ],
+    studyTips: [
+      "Speak aloud from day one, even simple phrases",
+      "Listen to native speakers daily to train your ear",
+      "Learn pronunciation patterns, not just individual words",
+      "Practise real conversations, not just exercises",
+    ],
+    closing: [
+      "Confident speaking comes from guided, active practice. Our French tutoring builds conversation and pronunciation from the start. Book a free consultation to get started.",
+    ],
+  },
+
+  "university-biology-general-biology": {
+    excerpt:
+      "University general biology is broad and fast-paced. This guide covers the key themes, common pitfalls, and how to succeed in first-year biology.",
+    intro: [
+      "First-year general biology is a sweeping introduction to life science, from molecules to ecosystems. Its breadth is the main challenge — the key is to organise the material around a few big themes rather than drowning in detail.",
+    ],
+    overview: [
+      "General biology typically covers cell biology, genetics, evolution, physiology and ecology at an introductory university level. The pace is faster than high school, and exams reward understanding concepts and connections, not just memorised facts.",
+      "Students who tie the material to unifying themes — like evolution and energy flow — find it far more coherent.",
+    ],
+    keyConcepts: [
+      "Cell structure and function",
+      "Genetics and molecular biology",
+      "Evolution as a unifying theme",
+      "Energy and metabolism",
+      "Physiology basics",
+      "Ecology and interactions",
+    ],
+    commonMistakes: [
+      "Memorising facts without connecting them to themes",
+      "Falling behind due to the breadth and pace",
+      "Neglecting the conceptual 'why' behind processes",
+      "Cramming instead of spacing out the volume",
+    ],
+    studyTips: [
+      "Organise the material around big unifying themes",
+      "Use active recall and spaced repetition",
+      "Draw diagrams to connect concepts",
+      "Keep up weekly — the volume is too large to cram",
+    ],
+    closing: [
+      "General biology rewards organised, concept-focused study. Our university-level science tutoring helps students master the breadth efficiently. Book a free consultation to get started.",
+    ],
+  },
+
+  "finance-practical-application-of-finance": {
+    excerpt:
+      "Finance is most powerful when applied to real decisions. This guide shows how core finance concepts work in practice, with common mistakes and tips.",
+    intro: [
+      "Finance really comes alive when you apply it — to budgets, investments and business decisions. Understanding how the concepts work in practice, not just on paper, is what makes finance genuinely useful.",
+    ],
+    overview: [
+      "Practical finance takes core ideas like the time value of money, risk and return, and financial analysis, and uses them to make real decisions: whether to invest, how to budget, or how a business should allocate resources.",
+      "The skill is connecting each concept to the decision it informs, so the numbers actually guide action.",
+    ],
+    keyConcepts: [
+      "Applying the time value of money",
+      "Personal budgeting and planning",
+      "Evaluating investments (risk and return)",
+      "Interpreting financial statements",
+      "Capital budgeting decisions",
+      "Turning analysis into decisions",
+    ],
+    commonMistakes: [
+      "Learning formulas without applying them to decisions",
+      "Ignoring risk when evaluating returns",
+      "Overlooking the time value of money",
+      "Treating finance as abstract rather than practical",
+    ],
+    studyTips: [
+      "Apply every concept to a real decision or scenario",
+      "Work through case studies with actual numbers",
+      "Connect analysis to the choice it should inform",
+      "Practise interpreting, not just calculating",
+    ],
+    closing: [
+      "Finance is best learned by applying it to real decisions, with expert guidance. Our finance tutoring connects concepts to practice for school, university and beyond. Book a free consultation to get started.",
+    ],
+  },
+
+  "university-mathematics-linear-algebra-langara-math-2362": {
+    excerpt:
+      "Langara's MATH 2362 (linear algebra) challenges many students. This guide covers the key ideas, common pitfalls, and how to succeed in the course.",
+    intro: [
+      "Linear algebra, such as Langara's MATH 2362, introduces a new level of abstraction that catches many students off guard. With the right approach — grounding abstract ideas in concrete examples — it becomes very learnable.",
+    ],
+    overview: [
+      "MATH 2362 covers vectors, matrices, systems of equations, and the transformations between vector spaces, often with applications and some computation. The leap to abstraction is the main hurdle.",
+      "Students who keep a firm grip on the concrete computations while building intuition for the concepts tend to do best.",
+    ],
+    keyConcepts: [
+      "Vectors and vector operations",
+      "Matrices and systems of equations",
+      "Matrix operations and inverses",
+      "Determinants",
+      "Vector spaces and linear transformations",
+      "Eigenvalues and eigenvectors",
+    ],
+    commonMistakes: [
+      "Doing computations without understanding their meaning",
+      "Struggling with abstraction by not using examples",
+      "Falling behind the course's pace",
+      "Neglecting the specific problem types assessed",
+    ],
+    studyTips: [
+      "Ground every abstract idea in a concrete example",
+      "Use geometric intuition to make concepts stick",
+      "Practise the exact problem types the course tests",
+      "Keep up with the material week by week",
+    ],
+    closing: [
+      "Linear algebra is far more manageable with expert support. Our university math tutoring helps Langara and other students master the concepts and computations. Book a free consultation to get started.",
+    ],
+  },
 };
