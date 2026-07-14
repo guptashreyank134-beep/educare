@@ -1,9 +1,10 @@
 /**
- * One-time SEO migration: shorten blog post titles that exceed 65 characters
- * so they don't get truncated in search results.
+ * One-time SEO migration: shorten titles that exceed 65 characters so they
+ * don't get truncated in search results. Covers blog posts AND page /
+ * programPage documents (whose metaData.metaTitle drives the <title>).
  *
  * The rendered <title> uses metaData.metaTitle when present, otherwise the
- * post title. This script shortens whichever field drives the title.
+ * document title. This script shortens whichever field drives the title.
  *
  * Shortening rule (applied in order until <= 65 chars):
  *   1. Drop a leading "Mastering " prefix.
@@ -70,7 +71,7 @@ async function run() {
   console.log(`Mode: ${commit ? "COMMIT (writing changes)" : "DRY RUN (no changes written)"}`);
 
   const posts = await client.fetch(
-    `*[_type == "post"]{ _id, title, "metaTitle": metaData.metaTitle }`
+    `*[_type in ["post", "page", "programPage"]]{ _id, _type, title, "metaTitle": metaData.metaTitle }`
   );
 
   let changed = 0;

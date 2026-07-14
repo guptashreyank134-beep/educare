@@ -2,12 +2,14 @@ import { MetadataRoute } from "next";
 import { client } from "@/sanity/lib/client";
 import { cities, cityPath } from "@/data/cities";
 import { verticalPages, verticalPath } from "@/data/verticalPages";
+import { seoPages, seoPagePath } from "@/data/seoPages";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://drshreyankeducare.com";
 
   const cityRoutes = cities.map((c) => cityPath(c.slug));
   const verticalRoutes = verticalPages.map((p) => verticalPath(p.slug));
+  const seoRoutes = seoPages.map((p) => seoPagePath(p.slug));
 
   const staticRoutes = [
     "",
@@ -19,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/locations",
     ...verticalRoutes,
     ...cityRoutes,
+    ...seoRoutes,
     "/programs",
     "/programs/biology",
     "/programs/burnaby-stem-tutoring",
