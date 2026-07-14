@@ -100,14 +100,23 @@ const FALLBACKS = [
   { anchor: "science tutoring", href: "/science-tutor-burnaby" },
 ];
 
-function topicAnchors(article) {
-  const text = [...(article.intro || []), ...(article.overview || []), ...(article.keyConcepts || []), ...(article.closing || [])].join(" ");
+function topicAnchors(article, slug, title) {
+  // The article's SUBJECT (slug + title) is the source of truth for the primary
+  // links — a physics post must not lead with a "Calculus 12" link just because
+  // its prose happens to mention calculus. Pass 1 matches the subject (so the
+  // first/most-prominent anchors are always on-topic); pass 2 adds genuinely
+  // related cross-links found only in the body; pass 3 fills from fallbacks.
+  const subject = (slug.replace(/-/g, " ") + " " + (title || "")).toLowerCase();
+  const bodyText = [...(article.intro || []), ...(article.overview || []), ...(article.keyConcepts || []), ...(article.closing || [])].join(" ");
   const picked = [];
   const seen = new Set();
-  for (const r of RELATED) {
-    if (picked.length >= 4) break;
-    if (r.re.test(text) && !seen.has(r.href)) { picked.push({ anchor: r.anchor, href: r.href }); seen.add(r.href); }
-  }
+  const take = (r) => {
+    if (picked.length >= 4 || seen.has(r.href)) return;
+    picked.push({ anchor: r.anchor, href: r.href });
+    seen.add(r.href);
+  };
+  for (const r of RELATED) if (r.re.test(subject)) take(r);
+  for (const r of RELATED) if (picked.length < 4 && r.re.test(bodyText)) take(r);
   for (const f of FALLBACKS) {
     if (picked.length >= 4) break;
     if (!seen.has(f.href)) { picked.push(f); seen.add(f.href); }
@@ -175,8 +184,8 @@ function joinPoints(points) {
   return items.slice(0, -1).join("; ") + "; and " + items[items.length - 1] + ".";
 }
 
-function buildBody(article, slug) {
-  const t = topicAnchors(article);
+function buildBody(article, slug, title) {
+  const t = topicAnchors(article, slug, title);
   const at = (i) => t[i % t.length];
   const blocks = [];
   const usedHrefs = new Set();
@@ -298,7 +307,7 @@ async function run() {
     const post = bySlug.get(slug);
     if (!post) { console.log(`  ! No published post found for slug "${slug}" — skipped.`); continue; }
     const article = blogContent[slug];
-    const { blocks, usedHrefs } = buildBody(article, slug);
+    const { blocks, usedHrefs } = buildBody(article, slug, post.title);
     const inline = linkBody(blocks, usedHrefs);
     const linkCount = usedHrefs.length + inline;
     totalLinks += linkCount;
