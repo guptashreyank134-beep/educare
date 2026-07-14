@@ -2430,4 +2430,250 @@ export const blogContent = {
       "Linear algebra is far more manageable with expert support. Our university math tutoring helps Langara and other students master the concepts and computations. Book a free consultation to get started.",
     ],
   },
+
+  // ─────────────────────────── BATCH 11 ───────────────────────────
+  "burnaby-stem-tutoring-physics-11-12": {
+    excerpt:
+      "Physics 11 and 12 in the BC curriculum build toward university science. This guide maps the progression, the pitfalls, and how STEM tutoring helps.",
+    intro: [
+      "Physics 11 and 12 are pivotal STEM courses in the BC curriculum, and they build directly on each other. A strong Grade 11 makes Grade 12 far smoother, and both open doors to university science and engineering.",
+    ],
+    overview: [
+      "Physics 11 introduces motion, forces, energy and waves, while Physics 12 goes deeper into vector dynamics, circular motion, and electricity and magnetism. The step up in Grade 12 catches students who didn't fully solidify Grade 11.",
+      "Effective STEM tutoring keeps the foundations strong and pairs conceptual understanding with the problem-solving method physics rewards.",
+    ],
+    keyConcepts: [
+      "Physics 11: kinematics, forces, energy, waves",
+      "Physics 12: vector dynamics and circular motion",
+      "Electricity and magnetism (Grade 12)",
+      "The math foundations physics relies on",
+      "A consistent problem-solving method",
+      "Provincial and final exam preparation",
+    ],
+    commonMistakes: [
+      "Carrying weak Grade 11 foundations into Grade 12",
+      "Understanding concepts but losing marks in the setup",
+      "Weak algebra and trigonometry undermining physics",
+      "Underestimating how much Grade 12 builds on Grade 11",
+    ],
+    studyTips: [
+      "Solidify Grade 11 before Grade 12 builds on it",
+      "Use a consistent method: diagram, knowns/unknowns, solve, check",
+      "Keep the underlying math sharp",
+      "Practise widely and review mistakes",
+    ],
+    closing: [
+      "STEM success comes from strong, connected foundations across the grades. Our Physics 12 tutoring builds understanding and exam technique for Burnaby students. Book a free consultation to get started.",
+    ],
+  },
+
+  "burnaby-stem-tutoring-chemistry-11-12": {
+    excerpt:
+      "Chemistry 11 and 12 form a connected sequence toward university science. This guide maps the progression, common pitfalls, and how STEM tutoring helps.",
+    intro: [
+      "Chemistry 11 and 12 are core STEM courses in the BC curriculum, and Grade 12 leans heavily on foundations laid in Grade 11. Getting the early concepts solid makes the demanding Grade 12 units far more approachable.",
+    ],
+    overview: [
+      "Chemistry 11 builds the essentials — the mole, stoichiometry, bonding and reactions — while Chemistry 12 tackles kinetics, equilibrium, solubility and acid-base chemistry. The Grade 12 units are calculation-heavy and build directly on Grade 11 skills.",
+      "Good STEM tutoring keeps those foundations strong and turns the toughest Grade 12 topics into clear, repeatable methods.",
+    ],
+    keyConcepts: [
+      "Chemistry 11: the mole, stoichiometry, bonding",
+      "Chemistry 12: kinetics and equilibrium",
+      "Solubility and acid-base chemistry (Grade 12)",
+      "Quantitative problem-solving",
+      "Connecting Grade 11 skills to Grade 12",
+      "Exam preparation",
+    ],
+    commonMistakes: [
+      "Weak stoichiometry from Grade 11 surfacing in Grade 12",
+      "Struggling with equilibrium and acid-base calculations",
+      "Memorising instead of understanding",
+      "Setting up ICE tables incorrectly",
+    ],
+    studyTips: [
+      "Master the mole concept and stoichiometry early",
+      "Use ICE tables systematically for equilibrium",
+      "Connect Grade 11 foundations to Grade 12 topics",
+      "Practise calculation-heavy problems until routine",
+    ],
+    closing: [
+      "STEM chemistry rewards strong foundations across both grades. Our Chemistry 12 tutoring makes the toughest units clear for Burnaby students. Book a free consultation to get started.",
+    ],
+  },
+
+  "burnaby-stem-tutoring-biology-11-12": {
+    excerpt:
+      "Biology 11 and 12 progress from broad life science to detailed human physiology. This guide maps the journey and how STEM tutoring supports it.",
+    intro: [
+      "Biology 11 and 12 are important STEM courses, especially for students heading toward health sciences. They progress from a broad survey of life to the detailed human physiology of Grade 12 — a real step up in depth.",
+    ],
+    overview: [
+      "Biology 11 covers cells, genetics, evolution and biodiversity, giving a broad foundation, while Biology 12 focuses on human anatomy, physiology and biochemistry in far greater detail. Grade 12's density is the main challenge.",
+      "STEM tutoring helps students organise the detail into connected systems and build the study habits the volume demands.",
+    ],
+    keyConcepts: [
+      "Biology 11: cells, genetics, evolution, ecology",
+      "Biology 12: human anatomy and physiology",
+      "Biochemistry (Grade 12)",
+      "Organ systems and how they connect",
+      "Study strategies for content-heavy material",
+      "Exam preparation",
+    ],
+    commonMistakes: [
+      "Memorising isolated facts instead of systems",
+      "Underestimating Grade 12's volume of detail",
+      "Cramming rather than spacing study",
+      "Overlooking how systems interact",
+    ],
+    studyTips: [
+      "Learn each system as a connected whole",
+      "Use diagrams and active recall",
+      "Space out revision — the detail is too much to cram",
+      "Connect Grade 11 concepts to Grade 12 detail",
+    ],
+    closing: [
+      "STEM biology rewards organised, systems-level study. Our science tutor in Burnaby helps students master both grades — strong preparation for health sciences. Book a free consultation to get started.",
+    ],
+  },
+
+  "burnaby-stem-tutoring-computer-science-programming": {
+    excerpt:
+      "Computer science and programming are increasingly essential STEM skills. This guide explains what students learn and how tutoring builds real ability.",
+    intro: [
+      "Computer science and programming are among the most valuable STEM skills a student can build today — for university, careers, and problem-solving in general. Starting with strong fundamentals makes the whole field far more approachable.",
+    ],
+    overview: [
+      "Learning to program means building logical thinking, understanding core concepts (variables, loops, functions), and applying them to real problems. Computer science adds the deeper ideas — data structures, algorithms and computational thinking — that turn coders into problem-solvers.",
+      "Hands-on, project-based tutoring builds genuine skill far faster than passive tutorials.",
+    ],
+    keyConcepts: [
+      "Programming fundamentals (Python, Java)",
+      "Logical and computational thinking",
+      "Data structures and algorithms",
+      "Problem decomposition",
+      "Debugging and testing",
+      "Building real projects",
+    ],
+    commonMistakes: [
+      "Copying code without understanding it",
+      "Learning syntax before logic",
+      "Not building real projects",
+      "Debugging by guessing rather than reasoning",
+    ],
+    studyTips: [
+      "Focus on logic and problem-solving first",
+      "Build projects, not just follow tutorials",
+      "Practise breaking problems into steps",
+      "Debug systematically",
+    ],
+    closing: [
+      "Programming is best learned by building with guidance. Our computer science tutoring develops real problem-solving skill from the fundamentals. Book a free consultation to get started.",
+    ],
+  },
+
+  "physics-tutoring-high-school-physics": {
+    excerpt:
+      "The right physics tutor can transform a student's results. This guide explains how high-school physics tutoring works and what to look for.",
+    intro: [
+      "High-school physics is a subject where the right support makes an outsized difference. A good physics tutor doesn't just re-explain the textbook — they build the problem-solving method and confidence that turn understanding into marks.",
+    ],
+    overview: [
+      "Effective high-school physics tutoring diagnoses exactly where a student loses marks — often in the setup or the underlying math — and rebuilds those skills. It pairs clear conceptual teaching with lots of guided problem practice.",
+      "The goal is independence: a student who can approach any physics problem with a reliable method.",
+    ],
+    keyConcepts: [
+      "Diagnosing where marks are lost",
+      "Building a consistent problem-solving method",
+      "Strengthening the underlying math",
+      "Clear conceptual teaching",
+      "Guided, exam-style practice",
+      "Building confidence and independence",
+    ],
+    commonMistakes: [
+      "Choosing a tutor who only re-explains rather than builds method",
+      "Focusing on concepts while ignoring problem setup",
+      "Neglecting the math physics depends on",
+      "Passive learning instead of guided practice",
+    ],
+    studyTips: [
+      "Look for a tutor who teaches a repeatable method",
+      "Practise problems actively with feedback",
+      "Address math gaps alongside the physics",
+      "Aim to become independent, not dependent on help",
+    ],
+    closing: [
+      "The right physics tutor builds method, understanding and confidence together. Our Physics 12 tutoring helps high-school students turn understanding into marks. Book a free consultation to get started.",
+    ],
+  },
+
+  "physics-tutoring-university-physics": {
+    excerpt:
+      "University physics is a big step up from high school. This guide explains the transition and how tutoring helps students keep pace and excel.",
+    intro: [
+      "The jump from high-school to university physics surprises many strong students — the pace is faster, the math is heavier, and the problems are harder. Tutoring can smooth that transition and help students keep pace from the start.",
+    ],
+    overview: [
+      "University physics uses calculus throughout and moves quickly through mechanics, electricity and magnetism, and more. Students who thrive treat it as a problem-solving discipline and keep their calculus and algebra sharp.",
+      "Good university physics tutoring fills gaps quickly, reinforces the underlying math, and builds the disciplined method the harder problems demand.",
+    ],
+    keyConcepts: [
+      "The high-school to university transition",
+      "Calculus-based mechanics",
+      "Electricity and magnetism",
+      "The heavier math demands",
+      "A disciplined problem-solving method",
+      "Keeping pace with a fast course",
+    ],
+    commonMistakes: [
+      "Underestimating the step up in pace and rigour",
+      "Weak calculus undermining otherwise-strong physics",
+      "Falling behind early and never catching up",
+      "Skipping problem practice",
+    ],
+    studyTips: [
+      "Keep calculus and algebra sharp",
+      "Keep pace with problem sets week by week",
+      "Use a consistent problem-solving method",
+      "Get help early, before gaps compound",
+    ],
+    closing: [
+      "The transition to university physics is far smoother with expert support. Our university physics tutoring helps students at UBC, SFU and beyond keep pace and excel. Book a free consultation to get started.",
+    ],
+  },
+
+  "university-biology-molecular-biology": {
+    excerpt:
+      "University molecular biology goes deep into DNA, RNA and proteins. This guide covers the core processes, common pitfalls, and how to succeed.",
+    intro: [
+      "University molecular biology explores life at the level of molecules — how DNA, RNA and proteins carry out the processes of life. It's detailed and fast-paced, but organising it around the flow of genetic information makes it far more coherent.",
+    ],
+    overview: [
+      "At its heart, molecular biology follows the central dogma: DNA replication, transcription into RNA, and translation into proteins, along with how these processes are regulated. University courses go deeper into the mechanisms, techniques and regulation than high school.",
+      "Understanding each process as a purposeful, connected step is the key to managing the detail.",
+    ],
+    keyConcepts: [
+      "DNA replication in depth",
+      "Transcription and RNA processing",
+      "Translation and protein synthesis",
+      "Gene regulation",
+      "Molecular techniques (PCR, gel electrophoresis)",
+      "Mutations and their effects",
+    ],
+    commonMistakes: [
+      "Memorising steps without understanding their purpose",
+      "Confusing transcription and translation details",
+      "Underestimating the depth versus high school",
+      "Neglecting the lab techniques that are tested",
+    ],
+    studyTips: [
+      "Learn the central dogma as one connected story",
+      "Understand the purpose of each step and enzyme",
+      "Study molecular techniques and their applications",
+      "Use diagrams and active recall for the detail",
+    ],
+    closing: [
+      "Molecular biology rewards understanding the flow of information, not rote recall. Our university-level science tutoring helps students master the depth. Book a free consultation to get started.",
+    ],
+  },
 };
