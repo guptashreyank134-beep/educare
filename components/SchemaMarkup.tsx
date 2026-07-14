@@ -55,6 +55,23 @@ export function getOrganizationSchema() {
       addressCountry: "CA",
     },
     areaServed: AREAS_SERVED.map((name) => ({ "@type": "City", name })),
+    priceRange: "$$",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "09:00",
+        closes: "20:00",
+      },
+    ],
     sameAs: [
       "https://www.facebook.com/DrShreyankEducare/",
       "https://www.instagram.com/drshreyankeducare/",
