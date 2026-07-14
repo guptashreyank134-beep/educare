@@ -57,34 +57,35 @@ const linkedBullet = (label, href) => {
   };
 };
 
-// ── Topic-based "Related Tutoring" links (accurate per article) ──
+// ── Topic-based contextual links (accurate per article; short anchors) ──
 const RELATED = [
-  { re: /pre-calculus/i, label: "Pre-Calculus 12 Tutoring in Burnaby", href: "/pre-calculus-12-tutor-burnaby" },
-  { re: /\bcalculus\b/i, label: "Calculus 12 Tutoring in Burnaby", href: "/calculus-12-tutor-burnaby" },
-  { re: /university (math|calculus|linear algebra)|linear algebra|differential equations/i, label: "University Math Tutoring in Vancouver", href: "/university-math-tutor-vancouver" },
-  { re: /chemistr/i, label: "Chemistry 12 Tutoring in Burnaby", href: "/chemistry-12-tutor-burnaby" },
-  { re: /university physics|first-year physics/i, label: "University Physics Tutoring in Vancouver", href: "/university-physics-tutor-vancouver" },
-  { re: /physics/i, label: "Physics 12 Tutoring in Burnaby", href: "/physics-12-tutor-burnaby" },
-  { re: /biology|physiology|molecular|genetics|ecology/i, label: "Science Tutoring in Burnaby", href: "/science-tutor-burnaby" },
-  { re: /IB Math|IB Mathematics/i, label: "IB Math Tutoring in Vancouver", href: "/ib-math-tutor-vancouver" },
-  { re: /\bIB\b/i, label: "IB & AP Tutoring", href: "/programs/ib-ap-tutoring" },
-  { re: /AP Calculus/i, label: "AP Calculus Tutoring in Burnaby", href: "/ap-calculus-tutor-burnaby" },
-  { re: /AP (Chemistry|Physics|Biology|Statistics)/i, label: "AP Tutoring in Vancouver", href: "/ap-tutor-vancouver" },
-  { re: /statistic/i, label: "Online Statistics Tutoring", href: "/online-statistics-tutor" },
-  { re: /econ|finance|CFA|MBA|business/i, label: "University & Professional Tutoring", href: "/university-professional" },
-  { re: /python|javascript|programming|coding|computer science|data structures|web development|DOM|API|database/i, label: "Coding & Computer Science Tutoring", href: "/computer-science-tutor-vancouver" },
-  { re: /french/i, label: "French Tutoring", href: "/programs/french" },
-  { re: /mandarin|chinese/i, label: "Mandarin Tutoring", href: "/programs/mandarin" },
-  { re: /SAT|GRE|GMAT|MCAT|exam prep|test prep|final exam|provincial/i, label: "Exam & Final-Review Tutoring", href: "/final-exam-review-tutoring-burnaby" },
-  { re: /word problem|problem-solving|problem solving/i, label: "Problem-Solving & Word Problems Tutoring", href: "/math-word-problems-tutor" },
-  { re: /algebra|functions|grade|elementary|middle school|high school math/i, label: "Math Tutoring in Burnaby", href: "/math-tutor-burnaby" },
+  { re: /pre-calculus/i, anchor: "Pre-Calculus 12", href: "/pre-calculus-12-tutor-burnaby" },
+  { re: /\bcalculus\b/i, anchor: "Calculus 12", href: "/calculus-12-tutor-burnaby" },
+  { re: /university (math|calculus|linear algebra)|linear algebra|differential equations/i, anchor: "university math", href: "/university-math-tutor-vancouver" },
+  { re: /chemistr/i, anchor: "Chemistry 12", href: "/chemistry-12-tutor-burnaby" },
+  { re: /university physics|first-year physics/i, anchor: "university physics", href: "/university-physics-tutor-vancouver" },
+  { re: /physics/i, anchor: "Physics 12", href: "/physics-12-tutor-burnaby" },
+  { re: /biology|physiology|molecular|genetics|ecology/i, anchor: "science tutoring", href: "/science-tutor-burnaby" },
+  { re: /IB Math|IB Mathematics/i, anchor: "IB Math", href: "/ib-math-tutor-vancouver" },
+  { re: /\bIB\b|\bAP\b/i, anchor: "IB and AP tutoring", href: "/programs/ib-ap-tutoring" },
+  { re: /AP Calculus/i, anchor: "AP Calculus", href: "/ap-calculus-tutor-burnaby" },
+  { re: /statistic/i, anchor: "statistics tutoring", href: "/online-statistics-tutor" },
+  { re: /econ|finance|CFA|MBA|business/i, anchor: "university and professional tutoring", href: "/university-professional" },
+  { re: /python|javascript|programming|coding|computer science|data structures|web development|DOM|API|database/i, anchor: "coding and computer science", href: "/computer-science-tutor-vancouver" },
+  { re: /french/i, anchor: "French tutoring", href: "/programs/french" },
+  { re: /mandarin|chinese/i, anchor: "Mandarin tutoring", href: "/programs/mandarin" },
+  { re: /SAT|GRE|GMAT|MCAT|exam prep|test prep|final exam|provincial/i, anchor: "exam preparation", href: "/final-exam-review-tutoring-burnaby" },
+  { re: /word problem|problem.solving/i, anchor: "word problems", href: "/math-word-problems-tutor" },
+  { re: /algebra|functions|grade|elementary|middle school|high school math/i, anchor: "math tutoring in Burnaby", href: "/math-tutor-burnaby" },
 ];
-const FALLBACK_LINKS = [
-  { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
-  { label: "Tutoring Locations Across Metro Vancouver", href: "/locations" },
+const FALLBACKS = [
+  { anchor: "math tutoring in Burnaby", href: "/math-tutor-burnaby" },
+  { anchor: "math tutoring in Vancouver", href: "/math-tutor-vancouver" },
+  { anchor: "IB and AP tutoring", href: "/programs/ib-ap-tutoring" },
+  { anchor: "science tutoring in Burnaby", href: "/science-tutor-burnaby" },
 ];
 
-function relatedLinks(article) {
+function relatedAnchors(article) {
   const text = [
     ...(article.intro || []),
     ...(article.overview || []),
@@ -94,18 +95,38 @@ function relatedLinks(article) {
   const picked = [];
   const seen = new Set();
   for (const r of RELATED) {
-    if (picked.length >= 5) break;
+    if (picked.length >= 4) break;
     if (r.re.test(text) && !seen.has(r.href)) {
-      picked.push({ label: r.label, href: r.href });
+      picked.push({ anchor: r.anchor, href: r.href });
       seen.add(r.href);
     }
   }
-  for (const f of FALLBACK_LINKS) {
-    if (picked.length >= 5) break;
+  // Pad to 4 so every post has a solid set of contextual links.
+  for (const f of FALLBACKS) {
+    if (picked.length >= 4) break;
     if (!seen.has(f.href)) { picked.push(f); seen.add(f.href); }
   }
-  picked.push({ label: "Book a Free Consultation", href: "/contact" });
   return picked;
+}
+
+// A natural closing paragraph with the topic links woven inline (not a list).
+function ctaParagraph(topics) {
+  const markDefs = [];
+  const children = [];
+  const text = (t) => children.push(span(t));
+  const link = (t, href) => { const lk = key(); markDefs.push({ _key: lk, _type: "link", href }); children.push(span(t, [lk])); };
+
+  text("If your student needs focused, one-on-one help, explore our ");
+  topics.forEach((t, i) => {
+    link(t.anchor, t.href);
+    if (i < topics.length - 2) text(", ");
+    else if (i === topics.length - 2) text(" and ");
+    else text(" tutoring");
+  });
+  text(" — PhD-led and tailored to their goals. Ready to start? Book a ");
+  link("free consultation", "/contact");
+  text(" today.");
+  return blk("normal", children, markDefs);
 }
 
 // ── Inline keyword linking within body prose ──
@@ -115,26 +136,34 @@ const KEYWORD_LINKS = [
   ["math tutor in Vancouver", "/math-tutor-vancouver"],
   ["Pre-Calculus 12", "/pre-calculus-12-tutor-burnaby"],
   ["Pre-Calculus 11", "/pre-calculus-11-tutor-burnaby"],
+  ["Pre-Calculus", "/pre-calculus-12-tutor-burnaby"],
   ["Calculus 12", "/calculus-12-tutor-burnaby"],
+  ["university calculus", "/university-calculus-tutor-vancouver"],
+  ["Calculus", "/calculus-12-tutor-burnaby"],
   ["Chemistry 12", "/chemistry-12-tutor-burnaby"],
   ["Chemistry 11", "/chemistry-11-tutor-burnaby"],
+  ["Chemistry", "/chemistry-12-tutor-burnaby"],
   ["Physics 12", "/physics-12-tutor-burnaby"],
   ["Physics 11", "/physics-11-tutor-burnaby"],
+  ["Physics", "/physics-12-tutor-burnaby"],
+  ["Biology", "/science-tutor-burnaby"],
   ["AP Calculus", "/ap-calculus-tutor-burnaby"],
   ["IB Math", "/ib-math-tutor-vancouver"],
-  ["university calculus", "/university-calculus-tutor-vancouver"],
   ["linear algebra", "/linear-algebra-tutor-online-canada"],
+  ["statistics", "/online-statistics-tutor"],
+  ["trigonometry", "/pre-calculus-12-tutor-burnaby"],
+  ["algebra", "/math-tutor-burnaby"],
   ["word problems", "/math-word-problems-tutor"],
-  ["final exam review", "/final-exam-review-tutoring-burnaby"],
+  ["final exam", "/final-exam-review-tutoring-burnaby"],
   ["Python", "/python-tutor-burnaby"],
   ["computer science", "/computer-science-tutor-vancouver"],
 ];
-const CONTACT_PHRASES = ["free consultation", "book a consultation", "contact us"];
+const CONTACT_PHRASES = ["free consultation", "book a consultation"];
 const TARGETS = [
   ...KEYWORD_LINKS.map(([phrase, href]) => ({ phrase, href })),
   ...CONTACT_PHRASES.map((phrase) => ({ phrase, href: "/contact" })),
 ].sort((a, b) => b.phrase.length - a.phrase.length);
-const MAX_INLINE = 6;
+const MAX_INLINE = 5;
 
 function linkBody(body, skipHrefs) {
   const used = new Set(skipHrefs);
@@ -222,12 +251,11 @@ function buildBody(article) {
   blocks.push(heading("How Dr. Shreyank Educare Can Help"));
   (article.closing || []).forEach((p) => blocks.push(para(p)));
 
-  // Related internal links (topic-based, always present)
-  const links = relatedLinks(article);
-  blocks.push(heading("Related Tutoring & Resources"));
-  links.forEach((l) => blocks.push(linkedBullet(l.label, l.href)));
+  // Weave topic links into a natural closing paragraph (in-prose, not a list)
+  const topics = relatedAnchors(article);
+  blocks.push(ctaParagraph(topics));
 
-  return { blocks, relatedHrefs: links.map((l) => l.href) };
+  return { blocks, relatedHrefs: [...topics.map((t) => t.href), "/contact"] };
 }
 
 async function run() {
