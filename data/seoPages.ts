@@ -1796,6 +1796,3663 @@ export const seoPages: SeoPage[] = [
       { label: "Physics 12 Final Exam Review", href: "/physics-12-final-exam-review" },
     ],
   },
+
+  // ─────────────── CORE LOCAL (remaining) ───────────────
+  {
+    slug: "tutoring-burnaby",
+    cluster: "Core Local",
+    location: "Burnaby",
+    metaTitle: "Tutoring in Burnaby | Math, Science & Coding | 5★ Rated",
+    metaDescription:
+      "PhD-led tutoring in Burnaby for Grades 6–12 and university — Math, Science and Coding. In person or online, 5★ rated. Book a free consultation.",
+    h1: "Tutoring in Burnaby",
+    heroSubheading:
+      "A trusted Burnaby tutoring centre for Math, Science and Coding — one-on-one, PhD-led, and built around each student's goals.",
+    intro: [
+      "Families across Burnaby come to Dr. Shreyank Educare for tutoring that actually moves the needle: clear teaching, personalised plans, and honest progress. We cover Math, Physics, Chemistry and Coding for Grades 6–12 and university.",
+      "As a local, Burnaby-based centre, we offer genuine in-person sessions alongside flexible online options.",
+    ],
+    sections: [
+      {
+        heading: "Subjects We Tutor in Burnaby",
+        points: [
+          "Math (Grades 6–12 & university)",
+          "Physics 11 & 12",
+          "Chemistry 11 & 12",
+          "Pre-Calculus & Calculus",
+          "IB, AP & BC curriculum",
+          "Coding & computer science",
+        ],
+      },
+      {
+        heading: "Why Local Families Choose Us",
+        body: [
+          "Every plan is tailored to your child's class, and every session is one-on-one with a PhD-led tutor.",
+          "We keep parents informed with honest progress updates throughout.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What subjects do you tutor in Burnaby?",
+        answer:
+          "Math, Physics, Chemistry and Coding for Grades 6–12 and university, including IB, AP and the BC curriculum.",
+      },
+      {
+        question: "Do you offer in-person tutoring?",
+        answer: "Yes — in person at our Burnaby centre, plus online options.",
+      },
+      {
+        question: "How do I start?",
+        answer: "Book a free 30-minute consultation to discuss goals and build a plan.",
+      },
+    ],
+    related: [
+      { label: "Best Math Tutor in Burnaby", href: "/best-math-tutor-burnaby" },
+      { label: "Science Tutor in Burnaby", href: "/science-tutor-burnaby" },
+      { label: "Tutoring in Vancouver", href: "/tutoring-vancouver" },
+    ],
+  },
+  {
+    slug: "tutoring-vancouver",
+    cluster: "Core Local",
+    location: "Vancouver",
+    metaTitle: "Tutoring in Vancouver | Math, Science & Coding | 5★ Rated",
+    metaDescription:
+      "Expert tutoring in Vancouver for Grades 6–12 and university — Math, Science and Coding. Online across the city or nearby in Burnaby. Free consultation.",
+    h1: "Tutoring in Vancouver",
+    heroSubheading:
+      "Flexible, expert tutoring for Vancouver students in Math, Science and Coding — online across the city or in person nearby in Burnaby.",
+    intro: [
+      "Vancouver families choose Dr. Shreyank Educare for PhD-led tutoring that fits busy schedules and delivers real results. We help students across Math, Physics, Chemistry and Coding, from Grade 6 through university.",
+      "Most Vancouver students learn with us online, with in-person options at our nearby Burnaby centre.",
+    ],
+    sections: [
+      {
+        heading: "Subjects We Tutor",
+        points: [
+          "Math (Grades 6–12 & university)",
+          "Physics & Chemistry 11–12",
+          "Pre-Calculus & Calculus",
+          "IB & AP",
+          "Coding & computer science",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Online & Flexible",
+        body: [
+          "Live one-on-one online sessions make expert tutoring convenient for Vancouver families.",
+          "We align every lesson to the BC curriculum and your student's coursework.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is online tutoring effective for Vancouver students?",
+        answer:
+          "Yes — live, one-on-one online sessions with a shared whiteboard are highly effective and convenient.",
+      },
+      {
+        question: "Which subjects do you cover?",
+        answer: "Math, Physics, Chemistry and Coding for Grades 6–12 and university.",
+      },
+      {
+        question: "Do you offer in-person options?",
+        answer: "Yes, at our Burnaby centre.",
+      },
+    ],
+    related: [
+      { label: "Best Math Tutor in Vancouver", href: "/best-math-tutor-vancouver" },
+      { label: "STEM Tutor in Vancouver", href: "/stem-tutor-vancouver" },
+      { label: "Tutoring in Burnaby", href: "/tutoring-burnaby" },
+    ],
+  },
+  {
+    slug: "science-tutoring-vancouver",
+    cluster: "Core Local",
+    location: "Vancouver",
+    metaTitle: "Science Tutoring in Vancouver | Physics, Chemistry & Biology",
+    metaDescription:
+      "Science tutoring in Vancouver — Physics, Chemistry and Biology for Grades 6–12 and university. PhD-led, online or nearby in Burnaby. Free consultation.",
+    h1: "Science Tutoring in Vancouver",
+    heroSubheading:
+      "Concept-first Physics, Chemistry and Biology tutoring for Vancouver students — online across the city or in person nearby in Burnaby.",
+    intro: [
+      "Vancouver students master science fastest when they understand the underlying mechanisms. Our science tutoring teaches Physics, Chemistry and Biology that way — building reasoning, not memorisation.",
+      "Sessions are online across Vancouver, or in person at our Burnaby centre, aligned to the BC curriculum.",
+    ],
+    sections: [
+      {
+        heading: "Sciences We Cover",
+        points: [
+          "Physics 11 & 12",
+          "Chemistry 11 & 12",
+          "Biology 11 & 12",
+          "Grades 6–10 science",
+          "University sciences",
+          "Exam & lab prep",
+        ],
+      },
+      {
+        heading: "Understanding First",
+        body: [
+          "We connect each concept to principles and problem-solving, so knowledge transfers across topics and exams.",
+          "Clear diagrams and step-by-step working make even tough units approachable.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Which sciences do you tutor?",
+        answer: "Physics, Chemistry and Biology for Grades 6–12 and university.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Online across Vancouver, with in-person options in Burnaby.",
+      },
+      {
+        question: "Do you help before exams?",
+        answer: "Yes — targeted exam and lab preparation.",
+      },
+    ],
+    related: [
+      { label: "Science Tutor in Burnaby", href: "/science-tutor-burnaby" },
+      { label: "Chemistry 12 Tutor in Burnaby", href: "/chemistry-12-tutor-burnaby" },
+      { label: "STEM Tutor in Vancouver", href: "/stem-tutor-vancouver" },
+    ],
+  },
+  {
+    slug: "stem-tutoring-burnaby",
+    cluster: "Core Local",
+    location: "Burnaby",
+    metaTitle: "STEM Tutoring in Burnaby | Math, Science & Coding",
+    metaDescription:
+      "STEM tutoring in Burnaby — Math, Physics, Chemistry and Coding for Grades 6–12 and university. PhD-led, in person or online. Book a free consultation.",
+    h1: "STEM Tutoring in Burnaby",
+    heroSubheading:
+      "One expert team for Math, Science and Coding — connected STEM tutoring in Burnaby that builds transferable skills.",
+    intro: [
+      "STEM subjects reinforce each other, and our Burnaby STEM tutoring joins the dots between strong math, clear physics and logical coding.",
+      "In-person at our Burnaby centre or online, we help Grades 6–12 and university students build skills that carry across math, science and computer science.",
+    ],
+    sections: [
+      {
+        heading: "STEM Areas We Cover",
+        points: [
+          "Mathematics",
+          "Physics 11 & 12",
+          "Chemistry 11 & 12",
+          "Coding & computer science",
+          "IB & AP STEM",
+          "Problem solving",
+        ],
+      },
+      {
+        heading: "A Connected Approach",
+        body: [
+          "Because one team covers math, science and coding, we strengthen the shared foundations that underpin STEM success.",
+          "That integrated view lifts students who are strong in one area across the others.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is STEM tutoring?",
+        answer: "Math, Physics, Chemistry and Coding for Grades 6–12 and university.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+      {
+        question: "Can one team cover multiple STEM subjects?",
+        answer: "Yes — our connected approach strengthens shared foundations.",
+      },
+    ],
+    related: [
+      { label: "STEM Tutor in Vancouver", href: "/stem-tutor-vancouver" },
+      { label: "Science Tutor in Burnaby", href: "/science-tutor-burnaby" },
+      { label: "Coding Tutor in Burnaby", href: "/coding-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "math-tutor-near-me",
+    cluster: "Near Me",
+    metaTitle: "Math Tutor Near Me | Burnaby & Vancouver | 5★ Rated",
+    metaDescription:
+      "Looking for a math tutor near you in Burnaby or Vancouver? PhD-led, 5★-rated one-on-one math tutoring, in person or online. Book a free consultation.",
+    h1: "Math Tutor Near Me — Burnaby & Vancouver",
+    heroSubheading:
+      "Searching for a math tutor near you? If you're in Burnaby, Vancouver or nearby, Dr. Shreyank Educare offers expert, 5★-rated help in person and online.",
+    intro: [
+      "When you search for a \"math tutor near me\" in the Burnaby–Vancouver area, you want someone genuinely expert, conveniently located, and proven. Dr. Shreyank Educare is a Burnaby-based, PhD-led centre serving students across Metro Vancouver.",
+      "Attend in person at our Burnaby centre or learn online from anywhere nearby — either way you get the same expert, one-on-one teaching.",
+    ],
+    sections: [
+      {
+        heading: "Convenient for Metro Vancouver",
+        points: [
+          "In-person centre in Burnaby",
+          "Online across Metro Vancouver",
+          "Flexible scheduling",
+          "Grades 6–12 & university",
+          "Pre-Calculus & Calculus",
+          "5★ parent reviews",
+        ],
+      },
+      {
+        heading: "Find Us on Google",
+        body: [
+          "You can find our reviews and location on our Google Business Profile, making it easy to see we're the trusted local choice.",
+          "Book a free consultation and we'll recommend the best format for your family.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Where are you located?",
+        answer:
+          "Our centre is in Burnaby, and we serve students across Metro Vancouver in person and online.",
+      },
+      {
+        question: "Do you offer in-person tutoring near me?",
+        answer:
+          "If you're in or near Burnaby, yes — plus online tutoring anywhere in the region.",
+      },
+      {
+        question: "What math levels do you cover?",
+        answer: "Grades 6–12 through Pre-Calculus, Calculus and university math.",
+      },
+    ],
+    related: [
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+      { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
+      { label: "Tutoring Locations", href: "/locations" },
+    ],
+  },
+
+  // ─────────────── EXAM PREP (remaining) ───────────────
+  {
+    slug: "exam-prep-tutor-vancouver",
+    cluster: "Exam Prep",
+    location: "Vancouver",
+    metaTitle: "Exam Prep Tutor in Vancouver | Math & Science",
+    metaDescription:
+      "Exam prep tutoring in Vancouver for Math, Physics and Chemistry — targeted, high-yield review and timed practice. Online or nearby in Burnaby. Free consultation.",
+    h1: "Exam Prep Tutor in Vancouver",
+    heroSubheading:
+      "Make your study time count with focused, high-yield exam preparation for Vancouver students in Math and Science.",
+    intro: [
+      "Great exam results come from studying smart, not just long. Our Vancouver exam-prep tutoring targets the highest-value topics and your specific weak spots across Math, Physics and Chemistry.",
+      "Sessions combine targeted review with timed, exam-format practice, online or in person nearby in Burnaby.",
+    ],
+    sections: [
+      {
+        heading: "What We Prepare You For",
+        points: [
+          "Provincial & final exams",
+          "Pre-Calculus & Calculus",
+          "Chemistry & Physics 11–12",
+          "IB & AP exams",
+          "Timed practice",
+          "Exam technique",
+        ],
+      },
+      {
+        heading: "Diagnose, Prioritise, Practise",
+        body: [
+          "We find where you lose marks, focus review there, and build pacing with timed practice.",
+          "Plans are mapped to your exam date for steady, confident preparation.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Which exams do you prepare students for?",
+        answer:
+          "Provincial and final exams in Math, Physics and Chemistry, plus IB and AP exams.",
+      },
+      {
+        question: "How early should we start?",
+        answer: "Earlier is better, but even focused short-term prep helps significantly.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available for Vancouver students.",
+      },
+    ],
+    related: [
+      { label: "Final Exam Review Tutoring in Burnaby", href: "/final-exam-review-tutoring-burnaby" },
+      { label: "AP Calculus Exam Prep in Vancouver", href: "/ap-calculus-exam-prep-vancouver" },
+      { label: "IB Math Exam Preparation in Vancouver", href: "/ib-math-exam-preparation-vancouver" },
+    ],
+  },
+  {
+    slug: "ap-calculus-exam-prep-vancouver",
+    cluster: "Exam Prep",
+    location: "Vancouver",
+    metaTitle: "AP Calculus Exam Prep in Vancouver | AB & BC",
+    metaDescription:
+      "AP Calculus AB & BC exam prep in Vancouver — targeted review, FRQ practice and exam strategy for a top score. Online or nearby in Burnaby. Free consultation.",
+    h1: "AP Calculus Exam Prep in Vancouver",
+    heroSubheading:
+      "Score higher on the AP Calculus AB or BC exam with focused, format-specific preparation for Vancouver students.",
+    intro: [
+      "The AP Calculus exam rewards accuracy under time pressure and clear free-response work. Our Vancouver AP Calculus exam prep targets exactly those skills for both AB and BC.",
+      "We combine high-yield topic review with AP-format multiple-choice and free-response practice, paced to your exam date.",
+    ],
+    sections: [
+      {
+        heading: "Exam-Prep Focus",
+        points: [
+          "Derivatives & applications",
+          "Integrals & the FTC",
+          "Series (BC)",
+          "Free-response technique",
+          "Multiple-choice strategy",
+          "Timed practice",
+        ],
+      },
+      {
+        heading: "Format-Specific Practice",
+        body: [
+          "We practise AP-style questions and coach the work-showing graders expect, so you capture every earned mark.",
+          "Sessions build steadily toward exam day.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you prep for both AB and BC?",
+        answer: "Yes, matched to your exam.",
+      },
+      {
+        question: "Do you use real AP-format questions?",
+        answer: "Yes — multiple-choice and free-response in the AP format.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available.",
+      },
+    ],
+    related: [
+      { label: "AP Calculus Tutor in Vancouver", href: "/ap-calculus-tutor-vancouver" },
+      { label: "Exam Prep Tutor in Vancouver", href: "/exam-prep-tutor-vancouver" },
+      CONTACT,
+    ],
+  },
+  {
+    slug: "ib-math-exam-preparation-vancouver",
+    cluster: "Exam Prep",
+    location: "Vancouver",
+    metaTitle: "IB Math Exam Preparation in Vancouver | AA & AI",
+    metaDescription:
+      "IB Math exam preparation in Vancouver — AA & AI, SL & HL. Targeted review, paper practice and exam technique. Online or nearby in Burnaby. Free consultation.",
+    h1: "IB Math Exam Preparation in Vancouver",
+    heroSubheading:
+      "Prepare for IB Math Paper 1, 2 and 3 with specialist, exam-focused tutoring for Vancouver students across AA and AI.",
+    intro: [
+      "IB Math exams demand command of both content and IB technique. Our Vancouver IB Math exam preparation covers AA and AI at SL and HL, with paper-specific practice.",
+      "We target the command terms and question styles the IB uses, so students earn the marks their understanding deserves.",
+    ],
+    sections: [
+      {
+        heading: "IB Exam-Prep Focus",
+        points: [
+          "Paper 1, 2 & 3 technique",
+          "Calculus & functions",
+          "Statistics & probability",
+          "Command-term practice",
+          "Calculator skills",
+          "Timed past papers",
+        ],
+      },
+      {
+        heading: "Built for the IB",
+        body: [
+          "We drill IB past papers and mark schemes so students know exactly what examiners want.",
+          "Plans are paced to the IB exam timetable.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you cover AA and AI?",
+        answer: "Yes — both, at SL and HL.",
+      },
+      {
+        question: "Do you use IB past papers?",
+        answer: "Yes — timed past-paper practice with mark-scheme feedback.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available for Vancouver students.",
+      },
+    ],
+    related: [
+      { label: "IB Math Tutor in Vancouver", href: "/ib-math-tutor-vancouver" },
+      { label: "IB Math HL Tutor in Vancouver", href: "/ib-math-hl-tutor-vancouver" },
+      { label: "Exam Prep Tutor in Vancouver", href: "/exam-prep-tutor-vancouver" },
+    ],
+  },
+  {
+    slug: "crash-course-pre-calculus-12",
+    cluster: "Exam Prep",
+    metaTitle: "Crash Course Pre-Calculus 12 | Intensive Exam Prep",
+    metaDescription:
+      "Intensive Pre-Calculus 12 crash course — cover the highest-yield topics fast before your exam. PhD-led, online or in Burnaby. Book a free consultation.",
+    h1: "Pre-Calculus 12 Crash Course",
+    heroSubheading:
+      "Short on time before the exam? An intensive Pre-Calculus 12 crash course focused on the topics that matter most.",
+    intro: [
+      "When the exam is close, an intensive crash course beats scattered self-study. We compress Pre-Calculus 12 into focused sessions on the highest-yield topics and your weak spots.",
+      "It's fast, targeted, and built to lift your score quickly.",
+    ],
+    sections: [
+      {
+        heading: "Crash-Course Coverage",
+        points: [
+          "Trig identities & equations",
+          "Logarithms & exponentials",
+          "Transformations",
+          "Polynomial & rational functions",
+          "Sequences & series",
+          "Rapid timed practice",
+        ],
+      },
+      {
+        heading: "Fast and Focused",
+        body: [
+          "We prioritise ruthlessly — the topics with the most marks and your specific gaps.",
+          "Expect concentrated review plus quick, exam-style practice.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How short can a crash course be?",
+        answer:
+          "We tailor it to your timeline — even a few intensive sessions can make a real difference.",
+      },
+      {
+        question: "Is it just for exams?",
+        answer: "Yes — it's designed for fast, exam-focused improvement.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available.",
+      },
+    ],
+    related: [
+      { label: "Pre-Calculus 12 Final Exam Review", href: "/pre-calculus-12-final-exam-review" },
+      { label: "Pre-Calculus 12 Tutor in Burnaby", href: "/pre-calculus-12-tutor-burnaby" },
+      CONTACT,
+    ],
+  },
+  {
+    slug: "test-prep-tutor-burnaby",
+    cluster: "Exam Prep",
+    location: "Burnaby",
+    metaTitle: "Test Prep Tutor in Burnaby | Exams, Provincials & More",
+    metaDescription:
+      "Test prep tutoring in Burnaby for school exams, provincial assessments and standardized tests. PhD-led, targeted and effective. Book a free consultation.",
+    h1: "Test Prep Tutor in Burnaby",
+    heroSubheading:
+      "Focused test preparation in Burnaby — school exams, provincial assessments and beyond, with a proven, targeted method.",
+    intro: [
+      "Test prep is about strategy as much as content. Our Burnaby test-prep tutoring builds both — mastering the material and the exam technique that turns knowledge into marks.",
+      "We tailor preparation to the specific test, from school finals to provincial numeracy assessments.",
+    ],
+    sections: [
+      {
+        heading: "Tests We Prepare For",
+        points: [
+          "School midterms & finals",
+          "Provincial numeracy assessment",
+          "Math & science subject tests",
+          "IB & AP exams",
+          "Timed practice",
+          "Test-taking strategy",
+        ],
+      },
+      {
+        heading: "Strategy + Content",
+        body: [
+          "We diagnose gaps, review high-value topics, and drill exam technique with timed practice.",
+          "Plans are built around each test's format and your timeline.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Which tests do you prepare students for?",
+        answer:
+          "School exams, provincial assessments, and IB/AP exams in Math and Science.",
+      },
+      {
+        question: "Do you teach test-taking strategy?",
+        answer: "Yes — pacing, question selection and technique alongside content.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Final Exam Review Tutoring in Burnaby", href: "/final-exam-review-tutoring-burnaby" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+      CONTACT,
+    ],
+  },
+
+  // ─────────────── SEASONAL ───────────────
+  {
+    slug: "summer-math-tutoring-burnaby",
+    cluster: "Seasonal",
+    location: "Burnaby",
+    metaTitle: "Summer Math Tutoring in Burnaby | Get Ahead for Fall",
+    metaDescription:
+      "Summer math tutoring in Burnaby — close gaps or get ahead for next year with PhD-led, one-on-one sessions. In person or online. Book a free consultation.",
+    h1: "Summer Math Tutoring in Burnaby",
+    heroSubheading:
+      "Use the summer to close gaps or get ahead. Focused, flexible summer math tutoring in Burnaby for Grades 6–12.",
+    intro: [
+      "Summer is the ideal time to catch up on last year's gaps or preview next year's math — without the pressure of daily homework. Our Burnaby summer math tutoring makes the most of the break.",
+      "Whether your child needs to solidify Pre-Calculus foundations or jump ahead, we build a summer plan around their goals.",
+    ],
+    sections: [
+      {
+        heading: "Summer Options",
+        points: [
+          "Catch-up on gaps",
+          "Preview next year's math",
+          "Pre-Calculus readiness",
+          "Foundations & problem solving",
+          "Flexible summer scheduling",
+          "In person or online",
+        ],
+      },
+      {
+        heading: "A Head Start for Fall",
+        body: [
+          "Students who tutor over summer often start the school year more confident and ahead of the curve.",
+          "We keep it engaging and focused, not overwhelming.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is summer tutoring worth it?",
+        answer:
+          "Yes — it's a low-pressure way to close gaps or get ahead, and students start fall more confident.",
+      },
+      {
+        question: "How often should we meet in summer?",
+        answer: "It's flexible; we tailor frequency to your goals.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Summer Tutoring in Burnaby", href: "/summer-tutoring-burnaby" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+      { label: "Pre-Calculus 11 Tutor in Burnaby", href: "/pre-calculus-11-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "summer-tutoring-burnaby",
+    cluster: "Seasonal",
+    location: "Burnaby",
+    metaTitle: "Summer Tutoring in Burnaby | Math, Science & Coding",
+    metaDescription:
+      "Summer tutoring in Burnaby — Math, Science and Coding for Grades 6–12. Close gaps or get ahead with PhD-led sessions. In person or online. Free consultation.",
+    h1: "Summer Tutoring in Burnaby",
+    heroSubheading:
+      "Make summer count with flexible tutoring in Math, Science and Coding — catch up, keep sharp, or get ahead.",
+    intro: [
+      "The long break is a chance to turn last year's weak spots into strengths, or to preview next year across Math, Science and Coding. Our Burnaby summer tutoring is flexible and focused.",
+      "We build a relaxed but productive summer plan around each student's goals.",
+    ],
+    sections: [
+      {
+        heading: "Summer Subjects",
+        points: [
+          "Math (Grades 6–12)",
+          "Physics & Chemistry",
+          "Coding & computer science",
+          "Pre-Calculus readiness",
+          "Study skills",
+          "Flexible scheduling",
+        ],
+      },
+      {
+        heading: "Relaxed but Productive",
+        body: [
+          "Summer sessions keep skills sharp and confidence high without the school-year pressure.",
+          "Students return in fall ready to hit the ground running.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What can we tutor over summer?",
+        answer: "Math, Science and Coding — catch-up or getting ahead.",
+      },
+      {
+        question: "Is scheduling flexible?",
+        answer: "Yes, summer scheduling is flexible around your plans.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Summer Math Tutoring in Burnaby", href: "/summer-math-tutoring-burnaby" },
+      { label: "Tutoring in Burnaby", href: "/tutoring-burnaby" },
+      CONTACT,
+    ],
+  },
+  {
+    slug: "summer-pre-calculus-course-burnaby",
+    cluster: "Seasonal",
+    location: "Burnaby",
+    metaTitle: "Summer Pre-Calculus Course in Burnaby | Get Exam-Ready",
+    metaDescription:
+      "Summer Pre-Calculus course in Burnaby — build a strong foundation for Pre-Calculus 11/12 before the school year. PhD-led. In person or online. Free consultation.",
+    h1: "Summer Pre-Calculus Course in Burnaby",
+    heroSubheading:
+      "Get ahead in Pre-Calculus over the summer — a focused course that builds the foundations for a strong year.",
+    intro: [
+      "Pre-Calculus 11 and 12 are demanding, and a summer head start makes the school year far smoother. Our Burnaby summer Pre-Calculus course front-loads the key foundations.",
+      "Students arrive in September already comfortable with topics that trip up their peers.",
+    ],
+    sections: [
+      {
+        heading: "Course Focus",
+        points: [
+          "Factoring & functions",
+          "Trigonometry foundations",
+          "Exponentials & logarithms",
+          "Transformations",
+          "Problem-solving technique",
+          "Readiness for the school year",
+        ],
+      },
+      {
+        heading: "Why a Summer Head Start",
+        body: [
+          "Previewing Pre-Calculus over summer means students spend the school year deepening understanding rather than scrambling to keep up.",
+          "It's one of the highest-ROI ways to use the break.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is the summer Pre-Calculus course for?",
+        answer:
+          "Students heading into Pre-Calculus 11 or 12 who want a strong head start.",
+      },
+      {
+        question: "Is it one-on-one?",
+        answer: "Yes — personalised, one-on-one sessions.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Pre-Calculus 11 Tutor in Burnaby", href: "/pre-calculus-11-tutor-burnaby" },
+      { label: "Summer Math Tutoring in Burnaby", href: "/summer-math-tutoring-burnaby" },
+      CONTACT,
+    ],
+  },
+
+  // ─────────────── BIOLOGY ───────────────
+  {
+    slug: "biology-11-tutor-burnaby",
+    cluster: "Biology",
+    location: "Burnaby",
+    metaTitle: "Biology 11 Tutor in Burnaby | BC Curriculum Help",
+    metaDescription:
+      "Biology 11 tutoring in Burnaby — cells, genetics and ecology explained clearly by an expert tutor. In person or online. Book a free consultation.",
+    h1: "Biology 11 Tutor in Burnaby",
+    heroSubheading:
+      "Make Biology 11 click — clear, one-on-one tutoring in Burnaby covering cells, genetics, evolution and ecology.",
+    intro: [
+      "Biology 11 covers a broad sweep of life science, from cell biology to ecology. Strong understanding here sets students up for Biology 12 and pre-med pathways.",
+      "Our Burnaby Biology 11 tutoring makes the concepts clear and memorable, aligned to the BC curriculum.",
+    ],
+    sections: [
+      {
+        heading: "Biology 11 Topics",
+        points: [
+          "Cell biology",
+          "Genetics & heredity",
+          "Evolution",
+          "Ecology",
+          "Biological diversity",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Clear and Memorable",
+        body: [
+          "We use diagrams and real-world examples to make biology stick, not just memorised.",
+          "Every session aligns to your child's Biology 11 class.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What does Biology 11 cover?",
+        answer: "Cells, genetics, evolution, ecology and biological diversity.",
+      },
+      {
+        question: "Does this help for Biology 12 or pre-med?",
+        answer: "Yes — a strong Biology 11 foundation supports both.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Biology 12 Tutor in Burnaby", href: "/biology-12-tutor-burnaby" },
+      { label: "Science Tutor in Burnaby", href: "/science-tutor-burnaby" },
+      CONTACT,
+    ],
+  },
+  {
+    slug: "biology-12-tutor-burnaby",
+    cluster: "Biology",
+    location: "Burnaby",
+    metaTitle: "Biology 12 Tutor in Burnaby | Anatomy & Physiology",
+    metaDescription:
+      "Biology 12 tutoring in Burnaby — human anatomy, physiology and biochemistry made clear. Great for pre-med pathways. In person or online. Free consultation.",
+    h1: "Biology 12 Tutor in Burnaby",
+    heroSubheading:
+      "Master the detail-heavy Biology 12 curriculum — human anatomy, physiology and biochemistry — with clear tutoring in Burnaby.",
+    intro: [
+      "Biology 12 is content-dense, focusing on human anatomy, physiology and biochemistry — and it's a key course for students heading toward health sciences.",
+      "Our Burnaby Biology 12 tutoring organises the detail into understandable systems and prepares students thoroughly for exams.",
+    ],
+    sections: [
+      {
+        heading: "Biology 12 Topics",
+        points: [
+          "Cell biology & biochemistry",
+          "Digestive & circulatory systems",
+          "Respiratory & excretory systems",
+          "Nervous & endocrine systems",
+          "Reproduction",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Systems, Not Just Facts",
+        body: [
+          "We teach how the body's systems connect, so the volume of detail becomes a coherent picture rather than a memorisation marathon.",
+          "This approach pays off on exams and in later health-science study.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is Biology 12 good for pre-med?",
+        answer:
+          "Yes — its focus on human anatomy and physiology is excellent preparation for health-science pathways.",
+      },
+      {
+        question: "How do you handle the heavy content?",
+        answer:
+          "We teach the systems and connections so detail becomes coherent, not overwhelming.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Biology 11 Tutor in Burnaby", href: "/biology-11-tutor-burnaby" },
+      { label: "Chemistry 12 Tutor in Burnaby", href: "/chemistry-12-tutor-burnaby" },
+      { label: "University Biology Tutor", href: "/programs/university-biology" },
+    ],
+  },
+
+  // ─────────────── BC CURRICULUM ───────────────
+  {
+    slug: "foundations-of-math-11-tutor-burnaby",
+    cluster: "BC Curriculum",
+    location: "Burnaby",
+    metaTitle: "Foundations of Math 11 Tutor in Burnaby | BC Curriculum",
+    metaDescription:
+      "Foundations of Math 11 tutoring in Burnaby — statistics, geometry and reasoning made clear for the BC curriculum. In person or online. Free consultation.",
+    h1: "Foundations of Math 11 Tutor in Burnaby",
+    heroSubheading:
+      "Clear, practical tutoring for Foundations of Math 11 in Burnaby — the applied BC math pathway.",
+    intro: [
+      "Foundations of Math 11 takes an applied, real-world approach to mathematics — statistics, geometry, and reasoning — and suits students heading toward arts, social sciences and many college programs.",
+      "Our Burnaby tutoring makes each topic clear and connects it to practical use.",
+    ],
+    sections: [
+      {
+        heading: "Foundations of Math 11 Topics",
+        points: [
+          "Statistics & probability",
+          "Geometry & trigonometry",
+          "Systems of equations",
+          "Financial mathematics",
+          "Logical reasoning",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Applied and Clear",
+        body: [
+          "We connect the math to real situations, which makes it more intuitive and easier to remember.",
+          "Sessions align to your child's Foundations of Math 11 class.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How is Foundations of Math different from Pre-Calculus?",
+        answer:
+          "Foundations is more applied and statistics-focused; Pre-Calculus is more abstract and university-STEM-focused. We tutor both.",
+      },
+      {
+        question: "Who takes Foundations of Math 11?",
+        answer:
+          "Students heading toward arts, social sciences and many college programs.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Workplace Math Tutor in Burnaby", href: "/workplace-math-tutor-burnaby" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+      { label: "Pre-Calculus 11 Tutor in Burnaby", href: "/pre-calculus-11-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "workplace-math-tutor-burnaby",
+    cluster: "BC Curriculum",
+    location: "Burnaby",
+    metaTitle: "Workplace Math Tutor in Burnaby | BC Curriculum Help",
+    metaDescription:
+      "Workplace Math tutoring in Burnaby — practical, real-world math for the BC curriculum. Clear, patient, one-on-one help. In person or online. Free consultation.",
+    h1: "Workplace Math Tutor in Burnaby",
+    heroSubheading:
+      "Practical, real-world math support for the Workplace Math pathway — clear and patient tutoring in Burnaby.",
+    intro: [
+      "Workplace Mathematics focuses on the practical numeracy used in trades and everyday life. For students on this pathway, clear and patient support makes all the difference.",
+      "Our Burnaby Workplace Math tutoring builds confidence with real-world, applied teaching.",
+    ],
+    sections: [
+      {
+        heading: "Workplace Math Topics",
+        points: [
+          "Measurement & geometry",
+          "Proportional reasoning",
+          "Financial literacy",
+          "Data & statistics",
+          "Trades-related math",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Practical and Supportive",
+        body: [
+          "We tie every topic to real situations, which makes the math meaningful and easier to grasp.",
+          "Sessions are patient, encouraging and aligned to the BC curriculum.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Who takes Workplace Math?",
+        answer:
+          "Students on the applied/trades pathway who want practical, real-world numeracy.",
+      },
+      {
+        question: "Can you help build confidence?",
+        answer:
+          "Yes — our patient, applied approach is designed to build confidence.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Foundations of Math 11 Tutor in Burnaby", href: "/foundations-of-math-11-tutor-burnaby" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+      CONTACT,
+    ],
+  },
+
+  // ─────────────── BEST / TOP ───────────────
+  {
+    slug: "best-chemistry-tutor-burnaby",
+    cluster: "Best/Top",
+    location: "Burnaby",
+    metaTitle: "Best Chemistry Tutor in Burnaby | PhD-Led, 5★ Rated",
+    metaDescription:
+      "The best chemistry tutor in Burnaby — PhD-led, 5★-rated help with Chemistry 11 & 12 and university chemistry. In person or online. Free consultation.",
+    h1: "Best Chemistry Tutor in Burnaby",
+    heroSubheading:
+      "PhD-led, 5★-rated chemistry tutoring in Burnaby — from Chemistry 11 foundations to Chemistry 12 and university.",
+    intro: [
+      "The best chemistry tutor combines genuine subject depth with the patience to make abstract concepts concrete. Dr. Shreyank Educare delivers both, with PhD-led teaching and 5★ reviews.",
+      "We help Burnaby students master the trickiest units — equilibrium, acids and bases, stoichiometry — with clear, methodical teaching.",
+    ],
+    sections: [
+      {
+        heading: "Why We're a Top Choice",
+        points: [
+          "PhD-qualified chemistry expertise",
+          "Chemistry 11 & 12",
+          "University chemistry",
+          "Clear, methodical teaching",
+          "Strong exam preparation",
+          "5★ parent reviews",
+        ],
+      },
+      {
+        heading: "Concept-First Chemistry",
+        body: [
+          "We make abstract chemistry concrete with clear explanations and worked examples.",
+          "Every plan is tailored to your student's class and goals.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What chemistry levels do you tutor?",
+        answer: "Chemistry 11 & 12 and university chemistry.",
+      },
+      {
+        question: "Do you help before exams?",
+        answer: "Yes — targeted final-exam preparation.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Chemistry 12 Tutor in Burnaby", href: "/chemistry-12-tutor-burnaby" },
+      { label: "Chemistry 11 Tutor in Burnaby", href: "/chemistry-11-tutor-burnaby" },
+      { label: "Science Tutor in Burnaby", href: "/science-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "best-physics-tutor-burnaby",
+    cluster: "Best/Top",
+    location: "Burnaby",
+    metaTitle: "Best Physics Tutor in Burnaby | PhD-Led, 5★ Rated",
+    metaDescription:
+      "The best physics tutor in Burnaby — PhD-led, 5★-rated help with Physics 11 & 12 and university physics. In person or online. Book a free consultation.",
+    h1: "Best Physics Tutor in Burnaby",
+    heroSubheading:
+      "PhD-led, 5★-rated physics tutoring in Burnaby — clear concepts and reliable problem-solving from Physics 11 to university.",
+    intro: [
+      "Physics rewards students who understand the concepts and can solve problems systematically. The best physics tutor builds both — and that's exactly our focus.",
+      "Burnaby students trust us for clear teaching of mechanics, electricity and more, plus the math skills physics demands.",
+    ],
+    sections: [
+      {
+        heading: "Why We're a Top Choice",
+        points: [
+          "PhD-qualified physics expertise",
+          "Physics 11 & 12",
+          "University physics",
+          "Concept + problem-solving",
+          "Strong exam preparation",
+          "5★ parent reviews",
+        ],
+      },
+      {
+        heading: "Concept + Technique",
+        body: [
+          "We teach the physics deeply and drill a reliable problem-solving method.",
+          "Plans are tailored to each student's class and exam timeline.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What physics levels do you tutor?",
+        answer: "Physics 11 & 12 and university physics.",
+      },
+      {
+        question: "My child understands concepts but loses marks — can you help?",
+        answer:
+          "Yes — usually it's the setup or math; we fix that with a reliable method.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Physics 12 Tutor in Burnaby", href: "/physics-12-tutor-burnaby" },
+      { label: "Physics 11 Tutor in Burnaby", href: "/physics-11-tutor-burnaby" },
+      { label: "Science Tutor in Burnaby", href: "/science-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "best-ib-math-tutor-burnaby",
+    cluster: "Best/Top",
+    location: "Burnaby",
+    metaTitle: "Best IB Math Tutor in Burnaby | AA & AI, SL & HL",
+    metaDescription:
+      "The best IB Math tutor in Burnaby — specialist help with AA & AI, SL & HL, and the IA. PhD-led, in person or online. Book a free consultation.",
+    h1: "Best IB Math Tutor in Burnaby",
+    heroSubheading:
+      "Specialist, top-rated IB Math tutoring in Burnaby across AA and AI, SL and HL — including the Internal Assessment.",
+    intro: [
+      "The best IB Math tutor understands the IB itself — its streams, assessment style and IA — not just the mathematics. That's our specialty.",
+      "Burnaby IB students rely on us for AA and AI at SL and HL, taught to the IB's exact requirements.",
+    ],
+    sections: [
+      {
+        heading: "Why We're a Top Choice",
+        points: [
+          "AA & AI, SL & HL",
+          "IB assessment expertise",
+          "Internal Assessment support",
+          "Command-term teaching",
+          "Exam preparation",
+          "5★ reviews",
+        ],
+      },
+      {
+        heading: "IB-Specific Mastery",
+        body: [
+          "We teach to IB mark schemes and command terms so students earn every mark.",
+          "For the IA, we guide topic choice and rigorous execution.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you tutor IB Math HL?",
+        answer: "Yes — AA and AI at HL and SL.",
+      },
+      {
+        question: "Do you help with the IA?",
+        answer: "Yes, from topic to finished exploration.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "IB Math Tutor in Burnaby", href: "/ib-math-tutor-burnaby" },
+      { label: "IB Math HL Tutor in Vancouver", href: "/ib-math-hl-tutor-vancouver" },
+      { label: "IB & AP Tutoring", href: "/programs/ib-ap-tutoring" },
+    ],
+  },
+  {
+    slug: "top-math-tutor-vancouver",
+    cluster: "Best/Top",
+    location: "Vancouver",
+    metaTitle: "Top Math Tutor in Vancouver | PhD-Led, 5★ Rated",
+    metaDescription:
+      "A top-rated math tutor in Vancouver — PhD-led, 5★-rated one-on-one help for Grades 6–12 and university. Online or nearby in Burnaby. Free consultation.",
+    h1: "Top Math Tutor in Vancouver",
+    heroSubheading:
+      "Among Vancouver's most trusted math tutors — PhD-led, 5★-rated, and proven to lift grades and confidence.",
+    intro: [
+      "A top math tutor in Vancouver should deliver genuine expertise, personalised teaching and results. Dr. Shreyank Educare offers all three, with flexible online sessions across the city.",
+      "From Grade 6 through Pre-Calculus, Calculus and university math, we help students reach their potential.",
+    ],
+    sections: [
+      {
+        heading: "Why Students Rank Us Highly",
+        points: [
+          "PhD-qualified expertise",
+          "One-on-one, curriculum-aligned",
+          "IB & AP experience",
+          "Flexible online sessions",
+          "Proven results",
+          "5★ reviews",
+        ],
+      },
+      {
+        heading: "Results-Focused",
+        body: [
+          "We focus on understanding, which produces improvement that lasts well beyond the next test.",
+          "Plans are tailored to each student's class and goals.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you tutor Vancouver students online?",
+        answer: "Yes — online across Vancouver, with in-person options in Burnaby.",
+      },
+      {
+        question: "What levels do you cover?",
+        answer: "Grades 6–12 through Pre-Calculus, Calculus and university math.",
+      },
+      {
+        question: "Do you cover IB and AP?",
+        answer: "Yes.",
+      },
+    ],
+    related: [
+      { label: "Best Math Tutor in Vancouver", href: "/best-math-tutor-vancouver" },
+      { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
+      { label: "Top Chemistry Tutor in Vancouver", href: "/top-chemistry-tutor-vancouver" },
+    ],
+  },
+  {
+    slug: "top-chemistry-tutor-vancouver",
+    cluster: "Best/Top",
+    location: "Vancouver",
+    metaTitle: "Top Chemistry Tutor in Vancouver | PhD-Led, 5★ Rated",
+    metaDescription:
+      "A top chemistry tutor in Vancouver — PhD-led help with Chemistry 11 & 12 and university chemistry. Online or nearby in Burnaby. Book a free consultation.",
+    h1: "Top Chemistry Tutor in Vancouver",
+    heroSubheading:
+      "Top-rated chemistry tutoring for Vancouver students — Chemistry 11, 12 and university, taught clearly and methodically.",
+    intro: [
+      "Chemistry rewards clear, methodical teaching, especially in its trickiest units. Our top-rated Vancouver chemistry tutoring makes equilibrium, acids and bases, and stoichiometry genuinely understandable.",
+      "Sessions are online across Vancouver, or in person nearby in Burnaby.",
+    ],
+    sections: [
+      {
+        heading: "Why Students Rank Us Highly",
+        points: [
+          "PhD-qualified chemistry expertise",
+          "Chemistry 11 & 12",
+          "University chemistry",
+          "Methodical, clear teaching",
+          "Exam preparation",
+          "5★ reviews",
+        ],
+      },
+      {
+        heading: "Clear and Methodical",
+        body: [
+          "We break the hardest units into clear steps and reliable methods.",
+          "Plans are tailored to each student's course and exams.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What chemistry levels do you tutor?",
+        answer: "Chemistry 11 & 12 and university chemistry.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Online across Vancouver, with in-person options in Burnaby.",
+      },
+      {
+        question: "Do you prepare for exams?",
+        answer: "Yes — targeted exam preparation.",
+      },
+    ],
+    related: [
+      { label: "Top Math Tutor in Vancouver", href: "/top-math-tutor-vancouver" },
+      { label: "Chemistry 12 Tutor in Burnaby", href: "/chemistry-12-tutor-burnaby" },
+      { label: "Science Tutoring in Vancouver", href: "/science-tutoring-vancouver" },
+    ],
+  },
+  {
+    slug: "top-physics-tutor-vancouver",
+    cluster: "Best/Top",
+    location: "Vancouver",
+    metaTitle: "Top Physics Tutor in Vancouver | PhD-Led, 5★ Rated",
+    metaDescription:
+      "A top physics tutor in Vancouver — PhD-led help with Physics 11 & 12 and university physics. Online or nearby in Burnaby. Book a free consultation.",
+    h1: "Top Physics Tutor in Vancouver",
+    heroSubheading:
+      "Top-rated physics tutoring for Vancouver students — clear concepts and reliable problem-solving from Physics 11 to university.",
+    intro: [
+      "The best physics tutoring builds deep conceptual understanding and systematic problem-solving. Our top-rated Vancouver physics tutors do exactly that.",
+      "We help students across mechanics, electricity and more, online across Vancouver or in person nearby in Burnaby.",
+    ],
+    sections: [
+      {
+        heading: "Why Students Rank Us Highly",
+        points: [
+          "PhD-qualified physics expertise",
+          "Physics 11 & 12",
+          "University physics",
+          "Concept + problem-solving",
+          "Exam preparation",
+          "5★ reviews",
+        ],
+      },
+      {
+        heading: "Concept + Technique",
+        body: [
+          "We teach the physics deeply and drill a reliable problem-solving method that wins marks.",
+          "Plans are tailored to each student's course and exams.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What physics levels do you tutor?",
+        answer: "Physics 11 & 12 and university physics.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Online across Vancouver, with in-person options in Burnaby.",
+      },
+      {
+        question: "Do you help with exam problem-solving?",
+        answer: "Yes — a reliable method plus timed practice.",
+      },
+    ],
+    related: [
+      { label: "Top Math Tutor in Vancouver", href: "/top-math-tutor-vancouver" },
+      { label: "Physics 12 Tutor in Burnaby", href: "/physics-12-tutor-burnaby" },
+      { label: "Science Tutoring in Vancouver", href: "/science-tutoring-vancouver" },
+    ],
+  },
+
+  // ─────────────── IB / AP (remaining) ───────────────
+  {
+    slug: "ap-chemistry-tutor-vancouver",
+    cluster: "IB/AP",
+    location: "Vancouver",
+    metaTitle: "AP Chemistry Tutor in Vancouver | Exam Prep",
+    metaDescription:
+      "AP Chemistry tutoring in Vancouver — thermodynamics, equilibrium and kinetics mastered for a top score. Online or nearby in Burnaby. Free consultation.",
+    h1: "AP Chemistry Tutor in Vancouver",
+    heroSubheading:
+      "Expert AP Chemistry tutoring for Vancouver students — deep concepts plus AP-format practice for a strong score.",
+    intro: [
+      "AP Chemistry is demanding, spanning thermodynamics, equilibrium, kinetics and electrochemistry. Our Vancouver AP Chemistry tutoring builds the conceptual depth and exam technique the College Board rewards.",
+      "Sessions are online across Vancouver, or in person nearby in Burnaby, and paced to your exam date.",
+    ],
+    sections: [
+      {
+        heading: "AP Chemistry Coverage",
+        points: [
+          "Atomic structure & bonding",
+          "Thermodynamics",
+          "Chemical equilibrium",
+          "Kinetics",
+          "Acids, bases & electrochemistry",
+          "AP exam technique & FRQs",
+        ],
+      },
+      {
+        heading: "Built for the AP Exam",
+        body: [
+          "We combine concept mastery with AP-format multiple-choice and free-response practice.",
+          "Sessions build steadily toward a confident exam day.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you tutor AP Chemistry online?",
+        answer: "Yes — for Vancouver students, with in-person options in Burnaby.",
+      },
+      {
+        question: "How do you prepare for the exam?",
+        answer: "Concept mastery plus AP-format multiple-choice and free-response practice.",
+      },
+      {
+        question: "When should we start?",
+        answer: "Earlier is better, but we build effective plans for any timeline.",
+      },
+    ],
+    related: [
+      { label: "AP Chemistry Tutor in Burnaby", href: "/ap-chemistry-tutor-burnaby" },
+      { label: "Chemistry 12 Tutor in Burnaby", href: "/chemistry-12-tutor-burnaby" },
+      { label: "AP Calculus Tutor in Vancouver", href: "/ap-calculus-tutor-vancouver" },
+    ],
+  },
+  {
+    slug: "ap-chemistry-tutor-burnaby",
+    cluster: "IB/AP",
+    location: "Burnaby",
+    metaTitle: "AP Chemistry Tutor in Burnaby | Exam Prep",
+    metaDescription:
+      "AP Chemistry tutoring in Burnaby — equilibrium, thermodynamics and kinetics mastered for a top score. In person or online. Book a free consultation.",
+    h1: "AP Chemistry Tutor in Burnaby",
+    heroSubheading:
+      "Expert AP Chemistry tutoring in Burnaby — deep concepts plus AP-format practice for a strong score.",
+    intro: [
+      "AP Chemistry packs a lot into one year, and mastering equilibrium, thermodynamics and kinetics needs clear teaching. Our Burnaby AP Chemistry tutoring builds both understanding and exam technique.",
+      "Attend in person at our Burnaby centre or online, with sessions paced to your exam date.",
+    ],
+    sections: [
+      {
+        heading: "AP Chemistry Coverage",
+        points: [
+          "Atomic structure & bonding",
+          "Thermodynamics",
+          "Equilibrium & kinetics",
+          "Acids & bases",
+          "Electrochemistry",
+          "AP exam technique",
+        ],
+      },
+      {
+        heading: "Concept + Exam Skill",
+        body: [
+          "We make the hardest AP Chemistry units clear, then drill AP-format practice.",
+          "Plans are tailored to your exam timeline.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you tutor AP Chemistry in Burnaby?",
+        answer: "Yes — in person at our centre or online.",
+      },
+      {
+        question: "Which units are hardest?",
+        answer: "Equilibrium, thermodynamics and kinetics; we make them clear.",
+      },
+      {
+        question: "Do you use AP-format questions?",
+        answer: "Yes — multiple-choice and free-response practice.",
+      },
+    ],
+    related: [
+      { label: "AP Chemistry Tutor in Vancouver", href: "/ap-chemistry-tutor-vancouver" },
+      { label: "Chemistry 12 Tutor in Burnaby", href: "/chemistry-12-tutor-burnaby" },
+      { label: "AP Calculus Tutor in Burnaby", href: "/ap-calculus-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "ap-physics-tutor-vancouver",
+    cluster: "IB/AP",
+    location: "Vancouver",
+    metaTitle: "AP Physics Tutor in Vancouver | 1, 2 & C Exam Prep",
+    metaDescription:
+      "AP Physics tutoring in Vancouver — Physics 1, 2 and C, with concept mastery and AP exam technique. Online or nearby in Burnaby. Free consultation.",
+    h1: "AP Physics Tutor in Vancouver",
+    heroSubheading:
+      "Expert AP Physics tutoring for Vancouver students across Physics 1, 2 and C — concepts and exam technique for a top score.",
+    intro: [
+      "AP Physics rewards genuine conceptual understanding and confident problem-solving, especially in the calculus-based C courses. Our Vancouver AP Physics tutoring builds both.",
+      "We cover Physics 1, 2 and C online across Vancouver, or in person nearby in Burnaby, paced to your exam.",
+    ],
+    sections: [
+      {
+        heading: "AP Physics Coverage",
+        points: [
+          "Mechanics",
+          "Electricity & magnetism",
+          "Waves & optics",
+          "Calculus-based Physics C",
+          "Free-response technique",
+          "Timed practice",
+        ],
+      },
+      {
+        heading: "Concept + Technique",
+        body: [
+          "We teach the physics deeply and drill AP-format free-response and multiple-choice questions.",
+          "Sessions are paced to your exam date.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you cover AP Physics C?",
+        answer: "Yes — including the calculus-based Physics C courses, plus 1 and 2.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Online across Vancouver, with in-person options in Burnaby.",
+      },
+      {
+        question: "Do you use AP-format practice?",
+        answer: "Yes — free-response and multiple-choice.",
+      },
+    ],
+    related: [
+      { label: "AP Physics Tutor in Burnaby", href: "/ap-physics-tutor-burnaby" },
+      { label: "Physics 12 Tutor in Burnaby", href: "/physics-12-tutor-burnaby" },
+      { label: "AP Calculus Tutor in Vancouver", href: "/ap-calculus-tutor-vancouver" },
+    ],
+  },
+  {
+    slug: "ap-physics-tutor-burnaby",
+    cluster: "IB/AP",
+    location: "Burnaby",
+    metaTitle: "AP Physics Tutor in Burnaby | 1, 2 & C Exam Prep",
+    metaDescription:
+      "AP Physics tutoring in Burnaby — Physics 1, 2 and C, concepts and AP exam technique for a top score. In person or online. Book a free consultation.",
+    h1: "AP Physics Tutor in Burnaby",
+    heroSubheading:
+      "Expert AP Physics tutoring in Burnaby across Physics 1, 2 and C — concepts and exam technique for a top score.",
+    intro: [
+      "From mechanics to electromagnetism, AP Physics demands real understanding and strong problem-solving. Our Burnaby AP Physics tutoring covers Physics 1, 2 and the calculus-based C courses.",
+      "Attend in person at our Burnaby centre or online, paced to your exam date.",
+    ],
+    sections: [
+      {
+        heading: "AP Physics Coverage",
+        points: [
+          "Mechanics",
+          "Electricity & magnetism",
+          "Waves & optics",
+          "Calculus-based Physics C",
+          "Free-response technique",
+          "Timed practice",
+        ],
+      },
+      {
+        heading: "Concept + Technique",
+        body: [
+          "We build deep understanding and a reliable problem-solving method, then practise AP-format questions.",
+          "Plans are tailored to your exam timeline.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you tutor AP Physics C?",
+        answer: "Yes — the calculus-based C courses, plus Physics 1 and 2.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+      {
+        question: "Do you use AP-format practice?",
+        answer: "Yes.",
+      },
+    ],
+    related: [
+      { label: "AP Physics Tutor in Vancouver", href: "/ap-physics-tutor-vancouver" },
+      { label: "Physics 12 Tutor in Burnaby", href: "/physics-12-tutor-burnaby" },
+      { label: "AP Calculus Tutor in Burnaby", href: "/ap-calculus-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "ap-tutor-vancouver",
+    cluster: "IB/AP",
+    location: "Vancouver",
+    metaTitle: "AP Tutor in Vancouver | Calculus, Physics, Chemistry & More",
+    metaDescription:
+      "AP tutoring in Vancouver across Calculus, Physics, Chemistry, Biology and Statistics — expert exam prep for top scores. Online or nearby in Burnaby. Free consultation.",
+    h1: "AP Tutor in Vancouver",
+    heroSubheading:
+      "One expert team for your AP subjects — Calculus, Physics, Chemistry, Biology and Statistics — for Vancouver students.",
+    intro: [
+      "AP courses reward students who master content and exam technique. Our Vancouver AP tutoring spans the STEM APs, with concept depth and format-specific practice for each.",
+      "Sessions are online across Vancouver, or in person nearby in Burnaby.",
+    ],
+    sections: [
+      {
+        heading: "AP Subjects We Tutor",
+        points: [
+          "AP Calculus AB & BC",
+          "AP Physics 1, 2 & C",
+          "AP Chemistry",
+          "AP Biology",
+          "AP Statistics",
+          "AP exam strategy",
+        ],
+      },
+      {
+        heading: "One Team, Multiple APs",
+        body: [
+          "Students taking several APs benefit from a coordinated, consistent approach across subjects.",
+          "We pace every subject to its exam date.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Which AP subjects do you tutor?",
+        answer: "AP Calculus, Physics, Chemistry, Biology and Statistics.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Online across Vancouver, with in-person options in Burnaby.",
+      },
+      {
+        question: "Can one tutor help with multiple APs?",
+        answer: "Yes — our team coordinates across your AP subjects.",
+      },
+    ],
+    related: [
+      { label: "AP Calculus Tutor in Vancouver", href: "/ap-calculus-tutor-vancouver" },
+      { label: "AP Chemistry Tutor in Vancouver", href: "/ap-chemistry-tutor-vancouver" },
+      { label: "AP Physics Tutor in Vancouver", href: "/ap-physics-tutor-vancouver" },
+    ],
+  },
+  {
+    slug: "ib-chemistry-tutor-vancouver",
+    cluster: "IB/AP",
+    location: "Vancouver",
+    metaTitle: "IB Chemistry Tutor in Vancouver | SL & HL",
+    metaDescription:
+      "IB Chemistry tutoring in Vancouver — SL & HL, with IA support and exam technique. Online or nearby in Burnaby. Book a free consultation.",
+    h1: "IB Chemistry Tutor in Vancouver",
+    heroSubheading:
+      "Specialist IB Chemistry tutoring for Vancouver students at SL and HL — including Internal Assessment support.",
+    intro: [
+      "IB Chemistry has its own depth, assessment style and Internal Assessment. Our Vancouver IB Chemistry tutoring is tailored to SL and HL and to the IB's exact requirements.",
+      "We help students master the content and earn marks the IB way.",
+    ],
+    sections: [
+      {
+        heading: "IB Chemistry Coverage",
+        points: [
+          "Stoichiometry & bonding",
+          "Energetics & kinetics",
+          "Equilibrium & acids/bases",
+          "Organic chemistry",
+          "Internal Assessment support",
+          "Exam technique",
+        ],
+      },
+      {
+        heading: "Built for the IB",
+        body: [
+          "We teach to IB command terms and mark schemes, and guide the IA from design to execution.",
+          "Sessions cover both SL and HL depth.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you tutor IB Chemistry HL?",
+        answer: "Yes — SL and HL, for Vancouver students online or in Burnaby.",
+      },
+      {
+        question: "Do you help with the IA?",
+        answer: "Yes, from topic to finished write-up.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available.",
+      },
+    ],
+    related: [
+      { label: "IB Physics Tutor in Vancouver", href: "/ib-physics-tutor-vancouver" },
+      { label: "Chemistry 12 Tutor in Burnaby", href: "/chemistry-12-tutor-burnaby" },
+      { label: "IB & AP Tutoring", href: "/programs/ib-ap-tutoring" },
+    ],
+  },
+  {
+    slug: "ib-physics-tutor-vancouver",
+    cluster: "IB/AP",
+    location: "Vancouver",
+    metaTitle: "IB Physics Tutor in Vancouver | SL & HL",
+    metaDescription:
+      "IB Physics tutoring in Vancouver — SL & HL, with IA support and exam technique. Online or nearby in Burnaby. Book a free consultation.",
+    h1: "IB Physics Tutor in Vancouver",
+    heroSubheading:
+      "Specialist IB Physics tutoring for Vancouver students at SL and HL — including Internal Assessment support.",
+    intro: [
+      "IB Physics blends conceptual depth with mathematical rigour and its own assessment style. Our Vancouver IB Physics tutoring is tailored to SL and HL.",
+      "We build understanding and exam technique, and support the Internal Assessment.",
+    ],
+    sections: [
+      {
+        heading: "IB Physics Coverage",
+        points: [
+          "Mechanics",
+          "Thermal & waves",
+          "Electricity & magnetism",
+          "Fields & modern physics",
+          "Internal Assessment support",
+          "Exam technique",
+        ],
+      },
+      {
+        heading: "Built for the IB",
+        body: [
+          "We teach to IB mark schemes and command terms, and guide the IA experiment and analysis.",
+          "Sessions cover both SL and HL depth.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you tutor IB Physics HL?",
+        answer: "Yes — SL and HL.",
+      },
+      {
+        question: "Do you help with the IA?",
+        answer: "Yes, from experiment design to analysis.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available for Vancouver students.",
+      },
+    ],
+    related: [
+      { label: "IB Chemistry Tutor in Vancouver", href: "/ib-chemistry-tutor-vancouver" },
+      { label: "Physics 12 Tutor in Burnaby", href: "/physics-12-tutor-burnaby" },
+      { label: "IB & AP Tutoring", href: "/programs/ib-ap-tutoring" },
+    ],
+  },
+  {
+    slug: "ib-math-sl-tutor-vancouver",
+    cluster: "IB/AP",
+    location: "Vancouver",
+    metaTitle: "IB Math SL Tutor in Vancouver | AA & AI SL",
+    metaDescription:
+      "IB Math SL tutoring in Vancouver — Analysis & Approaches and Applications & Interpretation SL, with IA support. Online or nearby in Burnaby. Free consultation.",
+    h1: "IB Math SL Tutor in Vancouver",
+    heroSubheading:
+      "Clear IB Math SL tutoring for Vancouver students across AA SL and AI SL — including Internal Assessment support.",
+    intro: [
+      "IB Math SL still demands solid command of functions, calculus and statistics, plus IB exam technique. Our Vancouver IB Math SL tutoring covers both AA and AI at SL.",
+      "We make the content clear and guide the Internal Assessment.",
+    ],
+    sections: [
+      {
+        heading: "IB Math SL Coverage",
+        points: [
+          "Functions & algebra",
+          "Calculus (SL)",
+          "Trigonometry",
+          "Statistics & probability",
+          "Internal Assessment support",
+          "Exam technique",
+        ],
+      },
+      {
+        heading: "SL-Focused Teaching",
+        body: [
+          "We target the SL syllabus precisely, so time is spent where it counts.",
+          "IA guidance helps students produce a strong exploration.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you cover AA SL and AI SL?",
+        answer: "Yes — both SL streams.",
+      },
+      {
+        question: "Do you help with the IA?",
+        answer: "Yes.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available.",
+      },
+    ],
+    related: [
+      { label: "IB Math Tutor in Vancouver", href: "/ib-math-tutor-vancouver" },
+      { label: "IB Math HL Tutor in Vancouver", href: "/ib-math-hl-tutor-vancouver" },
+      { label: "IB & AP Tutoring", href: "/programs/ib-ap-tutoring" },
+    ],
+  },
+  {
+    slug: "ib-tutor-vancouver",
+    cluster: "IB/AP",
+    location: "Vancouver",
+    metaTitle: "IB Tutor in Vancouver | Math, Physics & Chemistry",
+    metaDescription:
+      "IB tutoring in Vancouver across Math, Physics and Chemistry — SL & HL, with IA support and exam prep. Online or nearby in Burnaby. Free consultation.",
+    h1: "IB Tutor in Vancouver",
+    heroSubheading:
+      "One specialist team for your IB subjects — Math, Physics and Chemistry, SL and HL — for Vancouver students.",
+    intro: [
+      "The IB is rigorous and distinct, with its own assessment style, IAs and exam technique. Our Vancouver IB tutoring spans Math, Physics and Chemistry at SL and HL.",
+      "Students juggling multiple IB subjects benefit from a coordinated, IB-savvy approach.",
+    ],
+    sections: [
+      {
+        heading: "IB Subjects We Tutor",
+        points: [
+          "IB Math (AA & AI, SL & HL)",
+          "IB Physics (SL & HL)",
+          "IB Chemistry (SL & HL)",
+          "Internal Assessment support",
+          "Command-term technique",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "IB-Savvy Support",
+        body: [
+          "We know the IB's requirements and teach to them, across every subject.",
+          "IA guidance and exam technique are built in.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Which IB subjects do you tutor?",
+        answer: "IB Math, Physics and Chemistry at SL and HL.",
+      },
+      {
+        question: "Do you help with IAs?",
+        answer: "Yes, across subjects.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Online across Vancouver, with in-person options in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "IB Tutor in Burnaby", href: "/ib-tutor-burnaby" },
+      { label: "IB Math Tutor in Vancouver", href: "/ib-math-tutor-vancouver" },
+      { label: "IB & AP Tutoring", href: "/programs/ib-ap-tutoring" },
+    ],
+  },
+  {
+    slug: "ib-tutor-burnaby",
+    cluster: "IB/AP",
+    location: "Burnaby",
+    metaTitle: "IB Tutor in Burnaby | Math, Physics & Chemistry",
+    metaDescription:
+      "IB tutoring in Burnaby across Math, Physics and Chemistry — SL & HL, with IA support and exam prep. In person or online. Book a free consultation.",
+    h1: "IB Tutor in Burnaby",
+    heroSubheading:
+      "One specialist team for your IB subjects — Math, Physics and Chemistry, SL and HL — for Burnaby students.",
+    intro: [
+      "IB students in Burnaby need tutoring that understands the programme, not just the subject. Our IB tutoring covers Math, Physics and Chemistry at SL and HL, taught to IB requirements.",
+      "Attend in person at our Burnaby centre or online, with IA and exam support built in.",
+    ],
+    sections: [
+      {
+        heading: "IB Subjects We Tutor",
+        points: [
+          "IB Math (AA & AI, SL & HL)",
+          "IB Physics (SL & HL)",
+          "IB Chemistry (SL & HL)",
+          "Internal Assessment support",
+          "Command-term technique",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "IB-Savvy Support",
+        body: [
+          "We teach to the IB's mark schemes and command terms across every subject.",
+          "IA guidance and exam technique are included.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Which IB subjects do you tutor in Burnaby?",
+        answer: "IB Math, Physics and Chemistry at SL and HL.",
+      },
+      {
+        question: "Do you help with IAs?",
+        answer: "Yes.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "IB Tutor in Vancouver", href: "/ib-tutor-vancouver" },
+      { label: "IB Math Tutor in Burnaby", href: "/ib-math-tutor-burnaby" },
+      { label: "IB & AP Tutoring", href: "/programs/ib-ap-tutoring" },
+    ],
+  },
+
+  // ─────────────── UNIVERSITY ───────────────
+  {
+    slug: "university-math-tutor-vancouver",
+    cluster: "University",
+    location: "Vancouver",
+    metaTitle: "University Math Tutor in Vancouver | Calculus & Algebra",
+    metaDescription:
+      "University math tutoring in Vancouver — calculus, linear algebra and more for UBC, SFU and Langara students. Online or nearby in Burnaby. Free consultation.",
+    h1: "University Math Tutor in Vancouver",
+    heroSubheading:
+      "Expert help with first- and second-year university math — calculus, linear algebra and more — for Vancouver students.",
+    intro: [
+      "University math moves fast and assumes strong foundations. Our Vancouver university math tutoring supports UBC, SFU and Langara students through calculus, linear algebra and related courses.",
+      "We bridge gaps quickly and make demanding material manageable, online or in person nearby in Burnaby.",
+    ],
+    sections: [
+      {
+        heading: "Courses We Support",
+        points: [
+          "Differential & integral calculus",
+          "Multivariable calculus",
+          "Linear algebra",
+          "Differential equations",
+          "Discrete math",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Fast, Foundational Help",
+        body: [
+          "We shore up the foundations university courses assume, then tackle the current material.",
+          "Sessions are paced to your course and assessments.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Which universities do you support?",
+        answer: "UBC, SFU, Langara and others, plus general first- and second-year math.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Online across Vancouver, with in-person options in Burnaby.",
+      },
+      {
+        question: "Can you help before a midterm?",
+        answer: "Yes — focused, exam-paced support.",
+      },
+    ],
+    related: [
+      { label: "University Calculus Tutor in Vancouver", href: "/university-calculus-tutor-vancouver" },
+      { label: "University & Professional Tutoring", href: "/university-professional" },
+      { label: "Linear Algebra Tutor Online", href: "/linear-algebra-tutor-online-canada" },
+    ],
+  },
+  {
+    slug: "university-calculus-tutor-vancouver",
+    cluster: "University",
+    location: "Vancouver",
+    metaTitle: "University Calculus Tutor in Vancouver | UBC, SFU & More",
+    metaDescription:
+      "University calculus tutoring in Vancouver — limits, derivatives, integrals and series for UBC, SFU and Langara students. Online or nearby in Burnaby. Free consultation.",
+    h1: "University Calculus Tutor in Vancouver",
+    heroSubheading:
+      "Expert first- and second-year university calculus tutoring for Vancouver students at UBC, SFU, Langara and beyond.",
+    intro: [
+      "University calculus (Calculus I, II and beyond) is a common hurdle for STEM, commerce and science students. Our Vancouver university calculus tutoring makes it manageable.",
+      "We clarify the concepts and drill the problem-solving that exams demand.",
+    ],
+    sections: [
+      {
+        heading: "Calculus Topics",
+        points: [
+          "Limits & continuity",
+          "Derivatives & applications",
+          "Integration techniques",
+          "Sequences & series",
+          "Multivariable basics",
+          "Midterm & final prep",
+        ],
+      },
+      {
+        heading: "Concept + Practice",
+        body: [
+          "We connect the intuition to the techniques, so you can handle unfamiliar problems.",
+          "Sessions are paced to your course schedule.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you support UBC and SFU calculus?",
+        answer: "Yes — first- and second-year calculus at UBC, SFU, Langara and others.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Online across Vancouver, with in-person options in Burnaby.",
+      },
+      {
+        question: "Can you help with integration techniques?",
+        answer: "Yes — a common sticking point we cover thoroughly.",
+      },
+    ],
+    related: [
+      { label: "Calculus 1 Tutor Online", href: "/calculus-1-tutor-online" },
+      { label: "University Math Tutor in Vancouver", href: "/university-math-tutor-vancouver" },
+      { label: "University & Professional Tutoring", href: "/university-professional" },
+    ],
+  },
+  {
+    slug: "university-physics-tutor-vancouver",
+    cluster: "University",
+    location: "Vancouver",
+    metaTitle: "University Physics Tutor in Vancouver | UBC & Langara",
+    metaDescription:
+      "University physics tutoring in Vancouver — mechanics, E&M and thermodynamics for UBC, SFU and Langara students. Online or nearby in Burnaby. Free consultation.",
+    h1: "University Physics Tutor in Vancouver",
+    heroSubheading:
+      "Expert first-year university physics tutoring for Vancouver students at UBC, SFU, Langara and beyond.",
+    intro: [
+      "First-year university physics combines demanding concepts with heavy math. Our Vancouver university physics tutoring helps students keep pace and excel.",
+      "We strengthen both the physics and the underlying calculus and algebra.",
+    ],
+    sections: [
+      {
+        heading: "Physics Topics",
+        points: [
+          "Mechanics",
+          "Electricity & magnetism",
+          "Thermodynamics",
+          "Waves & optics",
+          "Problem-solving method",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Physics + Math Together",
+        body: [
+          "Many university physics struggles are really math struggles; we strengthen both.",
+          "Sessions are paced to your course and exams.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you support UBC and Langara physics?",
+        answer: "Yes — first-year university physics at UBC, SFU, Langara and others.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Online across Vancouver, with in-person options in Burnaby.",
+      },
+      {
+        question: "Do you help with the math too?",
+        answer: "Yes — we strengthen the calculus and algebra physics relies on.",
+      },
+    ],
+    related: [
+      { label: "University Physics Tutor", href: "/programs/university-physics" },
+      { label: "Physics 1 Tutor Online", href: "/physics-1-tutor-online" },
+      { label: "University & Professional Tutoring", href: "/university-professional" },
+    ],
+  },
+  {
+    slug: "calculus-1-tutor-online",
+    cluster: "University",
+    metaTitle: "Calculus 1 Tutor Online | University Calculus Help",
+    metaDescription:
+      "Online Calculus 1 tutoring — limits, derivatives and integration made clear for university students across Canada. PhD-led. Book a free consultation.",
+    h1: "Calculus 1 Tutor Online",
+    heroSubheading:
+      "Online, one-on-one Calculus 1 tutoring for university students anywhere in Canada — limits, derivatives and integrals made clear.",
+    intro: [
+      "Calculus 1 is a make-or-break course for many university programs. Our online Calculus 1 tutoring gives students across Canada expert, one-on-one help on their schedule.",
+      "We turn the core ideas — limits, derivatives, integration — into clear, reliable technique.",
+    ],
+    sections: [
+      {
+        heading: "Calculus 1 Topics",
+        points: [
+          "Limits & continuity",
+          "Derivatives & rules",
+          "Applications of derivatives",
+          "Introduction to integration",
+          "Related rates & optimization",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Online & Flexible",
+        body: [
+          "Live online sessions with a shared whiteboard make working through problems together easy.",
+          "Sessions are paced to your course and midterms.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is online Calculus 1 tutoring for?",
+        answer: "University students across Canada taking first-semester calculus.",
+      },
+      {
+        question: "How do online sessions work?",
+        answer: "Live one-on-one over video with a shared whiteboard.",
+      },
+      {
+        question: "Can you help before a midterm?",
+        answer: "Yes — focused, exam-paced support.",
+      },
+    ],
+    related: [
+      { label: "Calculus 2 Tutor Online", href: "/calculus-2-tutor-online" },
+      { label: "University Calculus Tutor in Vancouver", href: "/university-calculus-tutor-vancouver" },
+      { label: "University & Professional Tutoring", href: "/university-professional" },
+    ],
+  },
+  {
+    slug: "calculus-2-tutor-online",
+    cluster: "University",
+    metaTitle: "Calculus 2 Tutor Online | Integration & Series Help",
+    metaDescription:
+      "Online Calculus 2 tutoring — integration techniques, sequences and series made clear for university students across Canada. PhD-led. Free consultation.",
+    h1: "Calculus 2 Tutor Online",
+    heroSubheading:
+      "Online, one-on-one Calculus 2 tutoring for university students across Canada — integration techniques and series made clear.",
+    intro: [
+      "Calculus 2 is notoriously tricky, with integration techniques, sequences and series that demand real fluency. Our online Calculus 2 tutoring builds that fluency.",
+      "Students across Canada get expert, one-on-one help on their schedule.",
+    ],
+    sections: [
+      {
+        heading: "Calculus 2 Topics",
+        points: [
+          "Integration techniques",
+          "Applications of integration",
+          "Sequences & series",
+          "Convergence tests",
+          "Power & Taylor series",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Fluency Through Practice",
+        body: [
+          "We teach the methods and drill enough practice that they become automatic.",
+          "Sessions are paced to your course and exams.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why is Calculus 2 so hard?",
+        answer:
+          "Integration techniques and series require fluency and pattern recognition; we build both with practice.",
+      },
+      {
+        question: "Is it online?",
+        answer: "Yes — live one-on-one for students across Canada.",
+      },
+      {
+        question: "Do you cover series convergence?",
+        answer: "Yes — a common sticking point we cover thoroughly.",
+      },
+    ],
+    related: [
+      { label: "Calculus 1 Tutor Online", href: "/calculus-1-tutor-online" },
+      { label: "University Math Tutor in Vancouver", href: "/university-math-tutor-vancouver" },
+      { label: "Differential Equations Tutor Online", href: "/differential-equations-tutor-online-canada" },
+    ],
+  },
+  {
+    slug: "linear-algebra-tutor-online-canada",
+    cluster: "University",
+    metaTitle: "Linear Algebra Tutor Online Canada | University Help",
+    metaDescription:
+      "Online linear algebra tutoring for university students across Canada — matrices, vector spaces and eigenvalues made clear. PhD-led. Free consultation.",
+    h1: "Linear Algebra Tutor Online (Canada)",
+    heroSubheading:
+      "Online, one-on-one linear algebra tutoring for university students across Canada — from matrices to eigenvalues.",
+    intro: [
+      "Linear algebra is abstract, and many students hit a wall with vector spaces and eigenvalues. Our online linear algebra tutoring makes the abstraction concrete.",
+      "University students across Canada get expert, one-on-one help on their schedule.",
+    ],
+    sections: [
+      {
+        heading: "Linear Algebra Topics",
+        points: [
+          "Matrices & systems",
+          "Vector spaces & subspaces",
+          "Linear transformations",
+          "Determinants",
+          "Eigenvalues & eigenvectors",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Making Abstraction Concrete",
+        body: [
+          "We use clear geometric and computational intuition to make abstract ideas tangible.",
+          "Sessions are paced to your course and assessments.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is this for?",
+        answer: "University students across Canada taking linear algebra.",
+      },
+      {
+        question: "Do you cover eigenvalues and vector spaces?",
+        answer: "Yes — the topics students find most abstract, made concrete.",
+      },
+      {
+        question: "Is it online?",
+        answer: "Yes — live one-on-one.",
+      },
+    ],
+    related: [
+      { label: "Calculus 2 Tutor Online", href: "/calculus-2-tutor-online" },
+      { label: "University Math Tutor in Vancouver", href: "/university-math-tutor-vancouver" },
+      { label: "University & Professional Tutoring", href: "/university-professional" },
+    ],
+  },
+  {
+    slug: "differential-equations-tutor-online-canada",
+    cluster: "University",
+    metaTitle: "Differential Equations Tutor Online Canada | ODE Help",
+    metaDescription:
+      "Online differential equations tutoring for university students across Canada — first-order, second-order and systems of ODEs made clear. Free consultation.",
+    h1: "Differential Equations Tutor Online (Canada)",
+    heroSubheading:
+      "Online, one-on-one differential equations tutoring for university students across Canada — ODEs made manageable.",
+    intro: [
+      "Differential equations pull together calculus, algebra and modelling, which is why they challenge so many students. Our online tutoring makes the methods clear and systematic.",
+      "University students across Canada get expert, one-on-one help on their schedule.",
+    ],
+    sections: [
+      {
+        heading: "Topics We Cover",
+        points: [
+          "First-order ODEs",
+          "Second-order linear ODEs",
+          "Systems of ODEs",
+          "Laplace transforms",
+          "Applications & modelling",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Systematic Methods",
+        body: [
+          "We teach a clear method for identifying and solving each type of equation.",
+          "Sessions are paced to your course and exams.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is this for?",
+        answer: "University students across Canada taking a differential equations course.",
+      },
+      {
+        question: "Do you cover Laplace transforms?",
+        answer: "Yes.",
+      },
+      {
+        question: "Is it online?",
+        answer: "Yes — live one-on-one.",
+      },
+    ],
+    related: [
+      { label: "Calculus 2 Tutor Online", href: "/calculus-2-tutor-online" },
+      { label: "Linear Algebra Tutor Online", href: "/linear-algebra-tutor-online-canada" },
+      { label: "Engineering Math Tutor", href: "/engineering-statics-tutor" },
+    ],
+  },
+  {
+    slug: "engineering-statics-tutor",
+    cluster: "University",
+    metaTitle: "Engineering Statics Tutor Online | University Help",
+    metaDescription:
+      "Online engineering statics tutoring — equilibrium, trusses, friction and moments made clear for first-year engineering students. PhD-led. Free consultation.",
+    h1: "Engineering Statics Tutor",
+    heroSubheading:
+      "Online, one-on-one statics tutoring for first-year engineering students — equilibrium, trusses and moments made clear.",
+    intro: [
+      "Statics is a foundational engineering course, and getting free-body diagrams and equilibrium right early makes everything after it easier. Our online statics tutoring builds that foundation.",
+      "First-year engineering students get expert, one-on-one help on their schedule.",
+    ],
+    sections: [
+      {
+        heading: "Statics Topics",
+        points: [
+          "Force systems & vectors",
+          "Equilibrium & free-body diagrams",
+          "Trusses & frames",
+          "Friction",
+          "Moments & couples",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Free-Body Mastery",
+        body: [
+          "We drill the free-body-diagram method that underpins every statics problem.",
+          "Sessions are paced to your course and exams.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is statics tutoring for?",
+        answer: "First-year engineering students taking a statics course.",
+      },
+      {
+        question: "Do you cover trusses and friction?",
+        answer: "Yes — with a clear, repeatable method.",
+      },
+      {
+        question: "Is it online?",
+        answer: "Yes — live one-on-one.",
+      },
+    ],
+    related: [
+      { label: "Engineering Dynamics Tutor", href: "/engineering-dynamics-tutor" },
+      { label: "First-Year Engineering Tutor", href: "/first-year-engineering-tutor" },
+      { label: "University & Professional Tutoring", href: "/university-professional" },
+    ],
+  },
+  {
+    slug: "engineering-dynamics-tutor",
+    cluster: "University",
+    metaTitle: "Engineering Dynamics Tutor Online | University Help",
+    metaDescription:
+      "Online engineering dynamics tutoring — kinematics, kinetics and work-energy made clear for engineering students. PhD-led. Book a free consultation.",
+    h1: "Engineering Dynamics Tutor",
+    heroSubheading:
+      "Online, one-on-one dynamics tutoring for engineering students — kinematics, kinetics and work-energy methods made clear.",
+    intro: [
+      "Dynamics builds on statics and calculus, adding motion and time. It's a demanding course where a clear method matters. Our online dynamics tutoring provides exactly that.",
+      "Engineering students get expert, one-on-one help on their schedule.",
+    ],
+    sections: [
+      {
+        heading: "Dynamics Topics",
+        points: [
+          "Particle kinematics",
+          "Particle kinetics (Newton's 2nd law)",
+          "Work & energy methods",
+          "Impulse & momentum",
+          "Rigid-body dynamics",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Method Over Memorisation",
+        body: [
+          "We teach when to use each method — Newton's laws, work-energy, impulse-momentum — so problems become approachable.",
+          "Sessions are paced to your course and exams.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is dynamics tutoring for?",
+        answer: "Engineering students taking a dynamics course.",
+      },
+      {
+        question: "Do you cover work-energy and momentum methods?",
+        answer: "Yes — and when to use each.",
+      },
+      {
+        question: "Is it online?",
+        answer: "Yes — live one-on-one.",
+      },
+    ],
+    related: [
+      { label: "Engineering Statics Tutor", href: "/engineering-statics-tutor" },
+      { label: "First-Year Engineering Tutor", href: "/first-year-engineering-tutor" },
+      { label: "Physics 1 Tutor Online", href: "/physics-1-tutor-online" },
+    ],
+  },
+  {
+    slug: "first-year-engineering-tutor",
+    cluster: "University",
+    metaTitle: "First-Year Engineering Tutor Online | Math & Physics",
+    metaDescription:
+      "Online first-year engineering tutoring — calculus, physics, statics and dynamics in one place. PhD-led help for engineering students. Free consultation.",
+    h1: "First-Year Engineering Tutor",
+    heroSubheading:
+      "One expert tutor for the toughest first-year engineering courses — calculus, physics, statics and dynamics.",
+    intro: [
+      "First-year engineering is a demanding mix of calculus, physics, statics and dynamics — often all at once. Our online first-year engineering tutoring supports the whole load with a connected approach.",
+      "Students get expert, one-on-one help across their core courses, on their schedule.",
+    ],
+    sections: [
+      {
+        heading: "Courses We Support",
+        points: [
+          "Engineering calculus",
+          "Engineering physics",
+          "Statics",
+          "Dynamics",
+          "Linear algebra",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "A Connected Approach",
+        body: [
+          "Because these courses share foundations, one tutor across them reinforces the whole picture.",
+          "Sessions are paced to your course load and exams.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Can one tutor cover multiple engineering courses?",
+        answer: "Yes — calculus, physics, statics and dynamics share foundations we reinforce together.",
+      },
+      {
+        question: "Is it online?",
+        answer: "Yes — live one-on-one for students across Canada.",
+      },
+      {
+        question: "Can you help before finals?",
+        answer: "Yes — focused, exam-paced support.",
+      },
+    ],
+    related: [
+      { label: "Engineering Statics Tutor", href: "/engineering-statics-tutor" },
+      { label: "Engineering Dynamics Tutor", href: "/engineering-dynamics-tutor" },
+      { label: "Calculus 1 Tutor Online", href: "/calculus-1-tutor-online" },
+    ],
+  },
+  {
+    slug: "physics-1-tutor-online",
+    cluster: "University",
+    metaTitle: "Physics 1 Tutor Online | University Mechanics Help",
+    metaDescription:
+      "Online Physics 1 tutoring for university students across Canada — mechanics, energy and momentum made clear. PhD-led. Book a free consultation.",
+    h1: "Physics 1 Tutor Online",
+    heroSubheading:
+      "Online, one-on-one Physics 1 tutoring for university students across Canada — mechanics made clear.",
+    intro: [
+      "University Physics 1 focuses on mechanics and demands both conceptual clarity and strong calculus. Our online Physics 1 tutoring builds both.",
+      "Students across Canada get expert, one-on-one help on their schedule.",
+    ],
+    sections: [
+      {
+        heading: "Physics 1 Topics",
+        points: [
+          "Kinematics",
+          "Newton's laws & dynamics",
+          "Work & energy",
+          "Momentum",
+          "Rotational motion",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Physics + Math",
+        body: [
+          "We strengthen the calculus and vectors that university physics relies on, alongside the concepts.",
+          "Sessions are paced to your course and exams.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Physics 1 tutoring for?",
+        answer: "University students across Canada taking first-semester mechanics.",
+      },
+      {
+        question: "Is it online?",
+        answer: "Yes — live one-on-one.",
+      },
+      {
+        question: "Do you help with the math too?",
+        answer: "Yes — the calculus and vectors physics relies on.",
+      },
+    ],
+    related: [
+      { label: "University Physics Tutor in Vancouver", href: "/university-physics-tutor-vancouver" },
+      { label: "Engineering Dynamics Tutor", href: "/engineering-dynamics-tutor" },
+      { label: "Calculus 1 Tutor Online", href: "/calculus-1-tutor-online" },
+    ],
+  },
+
+  // ─────────────── ONLINE CANADA ───────────────
+  {
+    slug: "online-math-tutor-canada",
+    cluster: "Online Canada",
+    metaTitle: "Online Math Tutor Canada | Grades 6–12 & University",
+    metaDescription:
+      "Online math tutoring for students across Canada — Grades 6–12 and university, PhD-led and one-on-one. Flexible scheduling. Book a free consultation.",
+    h1: "Online Math Tutor (Canada)",
+    heroSubheading:
+      "Expert, one-on-one online math tutoring for students anywhere in Canada — from Grade 6 foundations to university calculus.",
+    intro: [
+      "Great math tutoring shouldn't depend on your postal code. Our online math tutoring brings PhD-led, one-on-one help to students across Canada, on a schedule that fits.",
+      "We align to your provincial curriculum or university course and teach for genuine understanding.",
+    ],
+    sections: [
+      {
+        heading: "What We Cover Online",
+        points: [
+          "Grades 6–12 math",
+          "Pre-Calculus & Calculus",
+          "University calculus & algebra",
+          "IB & AP math",
+          "Problem solving",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "How Online Tutoring Works",
+        body: [
+          "Live one-on-one sessions over video with a shared whiteboard make it easy to work through problems together.",
+          "It's convenient, effective, and available across Canada.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is online math tutoring effective?",
+        answer:
+          "Yes — live one-on-one online sessions are just as effective as in person, and far more flexible.",
+      },
+      {
+        question: "Do you follow provincial curricula?",
+        answer: "Yes — we align to your provincial curriculum or university course.",
+      },
+      {
+        question: "Who can you tutor?",
+        answer: "Students across Canada, Grades 6–12 and university.",
+      },
+    ],
+    related: [
+      { label: "Online High School Math Tutor (BC)", href: "/online-high-school-math-tutor-bc" },
+      { label: "Online IB Math Tutor (Canada)", href: "/online-ib-math-tutor-canada" },
+      { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
+    ],
+  },
+  {
+    slug: "online-high-school-math-tutor-bc",
+    cluster: "Online Canada",
+    metaTitle: "Online High School Math Tutor BC | BC Curriculum",
+    metaDescription:
+      "Online high school math tutoring for BC students — Pre-Calculus, Calculus and Foundations, aligned to the BC curriculum. PhD-led. Free consultation.",
+    h1: "Online High School Math Tutor (BC)",
+    heroSubheading:
+      "Online, one-on-one high school math tutoring for BC students — fully aligned to the BC curriculum.",
+    intro: [
+      "BC's high school math has its own pathways — Pre-Calculus, Foundations and Workplace — and effective tutoring aligns to them precisely. Our online BC math tutoring does exactly that.",
+      "Students anywhere in BC get expert, one-on-one help on their schedule.",
+    ],
+    sections: [
+      {
+        heading: "BC Math Pathways",
+        points: [
+          "Pre-Calculus 11 & 12",
+          "Calculus 12",
+          "Foundations of Math",
+          "Workplace Math",
+          "Grades 8–10 math",
+          "Provincial & final exam prep",
+        ],
+      },
+      {
+        heading: "Aligned to BC",
+        body: [
+          "We match tutoring to your exact BC course and teacher's material.",
+          "Sessions build toward provincial and final assessments.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you follow the BC curriculum?",
+        answer: "Yes — precisely, across all high school math pathways.",
+      },
+      {
+        question: "Can you tutor anywhere in BC?",
+        answer: "Yes — online, one-on-one.",
+      },
+      {
+        question: "Do you prepare for provincial assessments?",
+        answer: "Yes.",
+      },
+    ],
+    related: [
+      { label: "Online Math Tutor (Canada)", href: "/online-math-tutor-canada" },
+      { label: "Pre-Calculus 12 Tutor in Vancouver", href: "/pre-calculus-12-tutor-vancouver" },
+      { label: "Foundations of Math 11 Tutor", href: "/foundations-of-math-11-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "online-ib-math-tutor-canada",
+    cluster: "Online Canada",
+    metaTitle: "Online IB Math Tutor Canada | AA & AI, SL & HL",
+    metaDescription:
+      "Online IB Math tutoring for students across Canada — AA & AI, SL & HL, with IA support and exam prep. PhD-led. Book a free consultation.",
+    h1: "Online IB Math Tutor (Canada)",
+    heroSubheading:
+      "Specialist online IB Math tutoring for students across Canada — AA and AI, SL and HL, plus IA support.",
+    intro: [
+      "IB Math is consistent worldwide, which makes it ideal for online tutoring. Our online IB Math tutoring supports students across Canada in both AA and AI at SL and HL.",
+      "We teach to the IB's assessment style and guide the Internal Assessment.",
+    ],
+    sections: [
+      {
+        heading: "IB Math We Cover",
+        points: [
+          "AA SL & HL",
+          "AI SL & HL",
+          "Calculus & functions",
+          "Statistics & probability",
+          "Internal Assessment support",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Online & IB-Savvy",
+        body: [
+          "Live online sessions suit the demanding IB schedule and work anywhere in Canada.",
+          "We teach to command terms and mark schemes.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you tutor IB Math HL online?",
+        answer: "Yes — AA and AI at HL and SL, for students across Canada.",
+      },
+      {
+        question: "Do you help with the IA?",
+        answer: "Yes.",
+      },
+      {
+        question: "Is online effective for IB?",
+        answer: "Yes — live one-on-one works well for IB Math.",
+      },
+    ],
+    related: [
+      { label: "IB Math Tutor in Vancouver", href: "/ib-math-tutor-vancouver" },
+      { label: "Online Math Tutor (Canada)", href: "/online-math-tutor-canada" },
+      { label: "IB & AP Tutoring", href: "/programs/ib-ap-tutoring" },
+    ],
+  },
+  {
+    slug: "online-chemistry-tutor-canada",
+    cluster: "Online Canada",
+    metaTitle: "Online Chemistry Tutor Canada | High School & University",
+    metaDescription:
+      "Online chemistry tutoring for students across Canada — high school and university chemistry made clear. PhD-led, one-on-one. Book a free consultation.",
+    h1: "Online Chemistry Tutor (Canada)",
+    heroSubheading:
+      "Expert, one-on-one online chemistry tutoring for students across Canada — high school through university.",
+    intro: [
+      "Chemistry's toughest topics — equilibrium, stoichiometry, acids and bases — become clear with the right teaching. Our online chemistry tutoring brings that to students across Canada.",
+      "We align to your course and teach concept-first for lasting understanding.",
+    ],
+    sections: [
+      {
+        heading: "What We Cover Online",
+        points: [
+          "Chemistry 11 & 12",
+          "Stoichiometry & equilibrium",
+          "Acids, bases & kinetics",
+          "Organic chemistry",
+          "University chemistry",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Concept-First, Online",
+        body: [
+          "Live sessions with a shared whiteboard make mechanisms and calculations easy to follow.",
+          "We align to your provincial curriculum or university course.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What chemistry do you tutor online?",
+        answer: "High school (Chemistry 11 & 12) and university chemistry.",
+      },
+      {
+        question: "Is online chemistry tutoring effective?",
+        answer: "Yes — live one-on-one with a shared whiteboard.",
+      },
+      {
+        question: "Who can you tutor?",
+        answer: "Students across Canada.",
+      },
+    ],
+    related: [
+      { label: "Online Physics Tutor (Canada)", href: "/online-physics-tutor-canada" },
+      { label: "Chemistry 12 Tutor in Burnaby", href: "/chemistry-12-tutor-burnaby" },
+      { label: "Online Math Tutor (Canada)", href: "/online-math-tutor-canada" },
+    ],
+  },
+  {
+    slug: "online-physics-tutor-canada",
+    cluster: "Online Canada",
+    metaTitle: "Online Physics Tutor Canada | High School & University",
+    metaDescription:
+      "Online physics tutoring for students across Canada — high school and university physics made clear. PhD-led, one-on-one. Book a free consultation.",
+    h1: "Online Physics Tutor (Canada)",
+    heroSubheading:
+      "Expert, one-on-one online physics tutoring for students across Canada — high school through university.",
+    intro: [
+      "Physics rewards clear concepts and systematic problem-solving. Our online physics tutoring builds both for students across Canada, high school through university.",
+      "We strengthen the math physics relies on alongside the concepts.",
+    ],
+    sections: [
+      {
+        heading: "What We Cover Online",
+        points: [
+          "Physics 11 & 12",
+          "Mechanics & dynamics",
+          "Electricity & magnetism",
+          "Waves & optics",
+          "University physics",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Concept + Technique, Online",
+        body: [
+          "Live sessions with a shared whiteboard are ideal for diagrams and worked problems.",
+          "We teach a reliable problem-solving method.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What physics do you tutor online?",
+        answer: "High school (Physics 11 & 12) and university physics.",
+      },
+      {
+        question: "Is online physics tutoring effective?",
+        answer: "Yes — live one-on-one with a shared whiteboard.",
+      },
+      {
+        question: "Who can you tutor?",
+        answer: "Students across Canada.",
+      },
+    ],
+    related: [
+      { label: "Online Chemistry Tutor (Canada)", href: "/online-chemistry-tutor-canada" },
+      { label: "Physics 12 Tutor in Burnaby", href: "/physics-12-tutor-burnaby" },
+      { label: "Physics 1 Tutor Online", href: "/physics-1-tutor-online" },
+    ],
+  },
+  {
+    slug: "online-pre-calculus-tutor-canada",
+    cluster: "Online Canada",
+    metaTitle: "Online Pre-Calculus Tutor Canada | 11 & 12 Help",
+    metaDescription:
+      "Online Pre-Calculus tutoring for students across Canada — Pre-Calculus 11 & 12 made clear with a PhD-led tutor. Book a free consultation.",
+    h1: "Online Pre-Calculus Tutor (Canada)",
+    heroSubheading:
+      "Expert, one-on-one online Pre-Calculus tutoring for students across Canada — Pre-Calculus 11 and 12 made clear.",
+    intro: [
+      "Pre-Calculus is a key gateway to university math and science, and it's demanding. Our online Pre-Calculus tutoring makes trig identities, logarithms and functions clear for students across Canada.",
+      "We align to your course and prepare thoroughly for exams.",
+    ],
+    sections: [
+      {
+        heading: "What We Cover Online",
+        points: [
+          "Functions & transformations",
+          "Trigonometric identities",
+          "Exponentials & logarithms",
+          "Polynomial & rational functions",
+          "Sequences & series",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Clear and Exam-Ready",
+        body: [
+          "Live sessions make identity proofs and log equations easy to work through together.",
+          "We prepare students specifically for their Pre-Calculus exams.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you tutor Pre-Calculus 11 and 12 online?",
+        answer: "Yes — both, for students across Canada.",
+      },
+      {
+        question: "Is online effective?",
+        answer: "Yes — live one-on-one with a shared whiteboard.",
+      },
+      {
+        question: "Do you help before exams?",
+        answer: "Yes — focused exam preparation.",
+      },
+    ],
+    related: [
+      { label: "Online Math Tutor (Canada)", href: "/online-math-tutor-canada" },
+      { label: "Pre-Calculus 12 Tutor in Vancouver", href: "/pre-calculus-12-tutor-vancouver" },
+      { label: "Online AP Calculus Tutor (Canada)", href: "/online-ap-calculus-tutor-canada" },
+    ],
+  },
+  {
+    slug: "online-ap-calculus-tutor-canada",
+    cluster: "Online Canada",
+    metaTitle: "Online AP Calculus Tutor Canada | AB & BC Exam Prep",
+    metaDescription:
+      "Online AP Calculus tutoring for students across Canada — AB & BC, concept mastery and AP exam technique. PhD-led. Book a free consultation.",
+    h1: "Online AP Calculus Tutor (Canada)",
+    heroSubheading:
+      "Expert online AP Calculus AB & BC tutoring for students across Canada — concepts and exam technique for a top score.",
+    intro: [
+      "AP exams are the same across the country, making AP Calculus ideal for online tutoring. Our online AP Calculus tutoring covers AB and BC for students anywhere in Canada.",
+      "We combine concept mastery with AP-format practice, paced to your exam date.",
+    ],
+    sections: [
+      {
+        heading: "AP Calculus Coverage",
+        points: [
+          "Limits & derivatives",
+          "Integrals & the FTC",
+          "Applications",
+          "Series (BC)",
+          "Free-response technique",
+          "Timed practice",
+        ],
+      },
+      {
+        heading: "Online AP Prep",
+        body: [
+          "Live sessions with a shared whiteboard are ideal for working AP free-response questions.",
+          "Plans are paced to your exam timeline.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you cover AB and BC online?",
+        answer: "Yes — both, for students across Canada.",
+      },
+      {
+        question: "Do you use AP-format practice?",
+        answer: "Yes — multiple-choice and free-response.",
+      },
+      {
+        question: "Is online effective for AP?",
+        answer: "Yes — live one-on-one works well.",
+      },
+    ],
+    related: [
+      { label: "AP Calculus Tutor in Vancouver", href: "/ap-calculus-tutor-vancouver" },
+      { label: "Online Pre-Calculus Tutor (Canada)", href: "/online-pre-calculus-tutor-canada" },
+      { label: "Online Math Tutor (Canada)", href: "/online-math-tutor-canada" },
+    ],
+  },
+
+  // ─────────────── CODING ───────────────
+  {
+    slug: "coding-tutor-burnaby",
+    cluster: "Coding",
+    location: "Burnaby",
+    metaTitle: "Coding Tutor in Burnaby | Python, Java & More for Teens",
+    metaDescription:
+      "Coding tutoring in Burnaby for teens and high schoolers — Python, Java and computer science fundamentals. In person or online. Book a free consultation.",
+    h1: "Coding Tutor in Burnaby",
+    heroSubheading:
+      "Hands-on coding tutoring in Burnaby for teens and high schoolers — Python, Java and real computer science fundamentals.",
+    intro: [
+      "Coding is a skill best learned by building, with a mentor to explain the why. Our Burnaby coding tutoring teaches Python, Java and computer science fundamentals through hands-on projects.",
+      "Sessions suit beginners and students looking to go deeper, in person at our Burnaby centre or online.",
+    ],
+    sections: [
+      {
+        heading: "What We Teach",
+        points: [
+          "Python programming",
+          "Java programming",
+          "Logic & problem solving",
+          "Data structures basics",
+          "Web development intro",
+          "Project-based learning",
+        ],
+      },
+      {
+        heading: "Hands-On & Mentored",
+        body: [
+          "Students write and run real code with a tutor who explains each step.",
+          "We keep it engaging with projects that build genuine skill.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What languages do you teach?",
+        answer: "Python and Java mainly, plus computer science fundamentals and intro web development.",
+      },
+      {
+        question: "Is it good for beginners?",
+        answer: "Yes — we start from the basics and build up with projects.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Python Tutor in Burnaby", href: "/python-tutor-burnaby" },
+      { label: "Computer Science Tutor in Vancouver", href: "/computer-science-tutor-vancouver" },
+      { label: "Computer Science Program", href: "/programs/computer-science" },
+    ],
+  },
+  {
+    slug: "python-tutor-burnaby",
+    cluster: "Coding",
+    location: "Burnaby",
+    metaTitle: "Python Tutor in Burnaby | Beginner to Advanced",
+    metaDescription:
+      "Python tutoring in Burnaby for teens and students — from basics to projects and problem solving. In person or online. Book a free consultation.",
+    h1: "Python Tutor in Burnaby",
+    heroSubheading:
+      "Learn Python properly in Burnaby — from first steps to real projects — with hands-on, mentored tutoring.",
+    intro: [
+      "Python is the ideal first language: readable, powerful and everywhere. Our Burnaby Python tutoring takes students from the basics to real projects and problem-solving.",
+      "Sessions are hands-on and tailored to each student's level and goals.",
+    ],
+    sections: [
+      {
+        heading: "Python Skills",
+        points: [
+          "Syntax & data types",
+          "Loops & conditionals",
+          "Functions & logic",
+          "Data structures",
+          "Small projects",
+          "Problem solving",
+        ],
+      },
+      {
+        heading: "Learn by Building",
+        body: [
+          "Students write real Python code with a tutor explaining each concept as it's used.",
+          "Projects keep learning engaging and practical.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is Python good for beginners?",
+        answer: "Yes — it's the ideal first language, and we start from the basics.",
+      },
+      {
+        question: "Do you do project-based learning?",
+        answer: "Yes — students build real projects as they learn.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Python Tutor in Vancouver", href: "/python-tutor-vancouver" },
+      { label: "Coding Tutor in Burnaby", href: "/coding-tutor-burnaby" },
+      { label: "Computer Science Program", href: "/programs/computer-science" },
+    ],
+  },
+  {
+    slug: "python-tutor-vancouver",
+    cluster: "Coding",
+    location: "Vancouver",
+    metaTitle: "Python Tutor in Vancouver | Beginner to Advanced",
+    metaDescription:
+      "Python tutoring in Vancouver for teens and students — from basics to projects and problem solving. Online or nearby in Burnaby. Book a free consultation.",
+    h1: "Python Tutor in Vancouver",
+    heroSubheading:
+      "Learn Python properly in Vancouver — from first steps to real projects — with hands-on, mentored online tutoring.",
+    intro: [
+      "Python opens doors from web apps to data science, and it's the perfect place to start coding. Our Vancouver Python tutoring takes students from basics to projects.",
+      "Sessions are online across Vancouver, or in person nearby in Burnaby, and tailored to each student.",
+    ],
+    sections: [
+      {
+        heading: "Python Skills",
+        points: [
+          "Syntax & data types",
+          "Loops & conditionals",
+          "Functions & logic",
+          "Data structures",
+          "Small projects",
+          "Problem solving",
+        ],
+      },
+      {
+        heading: "Learn by Building",
+        body: [
+          "Students write real Python with a mentor explaining each step.",
+          "Projects make learning practical and engaging.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you teach Python online?",
+        answer: "Yes — online across Vancouver, with in-person options in Burnaby.",
+      },
+      {
+        question: "Is it good for beginners?",
+        answer: "Yes — we start from the basics.",
+      },
+      {
+        question: "Do you build projects?",
+        answer: "Yes — project-based learning throughout.",
+      },
+    ],
+    related: [
+      { label: "Python Tutor in Burnaby", href: "/python-tutor-burnaby" },
+      { label: "Computer Science Tutor in Vancouver", href: "/computer-science-tutor-vancouver" },
+      { label: "Computer Science Program", href: "/programs/computer-science" },
+    ],
+  },
+  {
+    slug: "computer-science-tutor-vancouver",
+    cluster: "Coding",
+    location: "Vancouver",
+    metaTitle: "Computer Science Tutor in Vancouver | CS & Programming",
+    metaDescription:
+      "Computer science tutoring in Vancouver — programming, data structures and algorithms for high school and university. Online or nearby in Burnaby. Free consultation.",
+    h1: "Computer Science Tutor in Vancouver",
+    heroSubheading:
+      "Expert computer science tutoring for Vancouver students — programming, data structures and algorithms, high school through university.",
+    intro: [
+      "Computer science is more than coding — it's problem-solving, data structures and algorithms. Our Vancouver CS tutoring builds real understanding for high school and university students.",
+      "Sessions are online across Vancouver, or in person nearby in Burnaby.",
+    ],
+    sections: [
+      {
+        heading: "What We Cover",
+        points: [
+          "Programming (Python, Java)",
+          "Data structures",
+          "Algorithms",
+          "Computational thinking",
+          "AP Computer Science",
+          "University CS courses",
+        ],
+      },
+      {
+        heading: "Understanding, Not Just Syntax",
+        body: [
+          "We teach the thinking behind the code, so students can solve new problems, not just copy patterns.",
+          "Sessions are tailored to each student's course and level.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you tutor university CS?",
+        answer: "Yes — plus high school and AP Computer Science.",
+      },
+      {
+        question: "Do you cover data structures and algorithms?",
+        answer: "Yes — core CS topics we teach for genuine understanding.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Online across Vancouver, with in-person options in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "AP Computer Science Tutor in Vancouver", href: "/ap-computer-science-tutor-vancouver" },
+      { label: "Python Tutor in Vancouver", href: "/python-tutor-vancouver" },
+      { label: "Computer Science Program", href: "/programs/computer-science" },
+    ],
+  },
+  {
+    slug: "ap-computer-science-tutor-vancouver",
+    cluster: "Coding",
+    location: "Vancouver",
+    metaTitle: "AP Computer Science Tutor in Vancouver | A & Principles",
+    metaDescription:
+      "AP Computer Science tutoring in Vancouver — CS A (Java) and CS Principles, with exam prep. Online or nearby in Burnaby. Book a free consultation.",
+    h1: "AP Computer Science Tutor in Vancouver",
+    heroSubheading:
+      "Expert AP Computer Science tutoring for Vancouver students — CS A (Java) and CS Principles, with exam preparation.",
+    intro: [
+      "AP Computer Science comes in two flavours — CS A (Java-focused) and CS Principles (broader). Our Vancouver AP CS tutoring covers both, with the concepts and exam technique for a top score.",
+      "Sessions are online across Vancouver, or in person nearby in Burnaby.",
+    ],
+    sections: [
+      {
+        heading: "AP CS Coverage",
+        points: [
+          "Java programming (CS A)",
+          "Object-oriented design",
+          "Data structures & algorithms",
+          "CS Principles concepts",
+          "Free-response & MCQ practice",
+          "Exam strategy",
+        ],
+      },
+      {
+        heading: "Built for the AP Exam",
+        body: [
+          "We teach the material and drill AP-format practice for both CS A and Principles.",
+          "Plans are paced to your exam date.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you cover CS A and CS Principles?",
+        answer: "Yes — both AP Computer Science courses.",
+      },
+      {
+        question: "Which language is AP CS A?",
+        answer: "Java — which we teach from fundamentals to exam level.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Online across Vancouver, with in-person options in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Computer Science Tutor in Vancouver", href: "/computer-science-tutor-vancouver" },
+      { label: "Python Tutor in Vancouver", href: "/python-tutor-vancouver" },
+      { label: "Computer Science Program", href: "/programs/computer-science" },
+    ],
+  },
+
+  // ─────────────── PROBLEM SOLVING (differentiator) ───────────────
+  {
+    slug: "math-word-problems-tutor",
+    cluster: "Problem Solving",
+    metaTitle: "Math Word Problems Tutor | Turn Confusion into Method",
+    metaDescription:
+      "Struggle with math word problems? Learn a reliable method to translate words into math and solve with confidence. PhD-led, online or in Burnaby. Free consultation.",
+    h1: "Math Word Problems Tutor",
+    heroSubheading:
+      "Word problems are where many students freeze. We teach a reliable method to turn any word problem into math you can solve.",
+    intro: [
+      "Word problems test whether a student truly understands math — not just whether they can follow a procedure. That's exactly why they're so common on exams, and so frustrating.",
+      "Our tutoring focuses on a repeatable method: read carefully, identify what's known and unknown, translate into equations, solve, and check. With practice, word problems stop being scary.",
+    ],
+    sections: [
+      {
+        heading: "Our Word-Problem Method",
+        points: [
+          "Read & identify the goal",
+          "List knowns & unknowns",
+          "Translate words to equations",
+          "Choose the right approach",
+          "Solve & check the answer",
+          "Practise across problem types",
+        ],
+      },
+      {
+        heading: "Why This Matters",
+        body: [
+          "Once students can reliably translate words into math, they can tackle unfamiliar problems — the real test of understanding.",
+          "This skill transfers across math, physics and beyond, and it's exactly what exams reward.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why does my child freeze on word problems?",
+        answer:
+          "Usually it's not knowing how to translate the words into math. We teach a step-by-step method that removes the guesswork.",
+      },
+      {
+        question: "Which subjects have word problems?",
+        answer:
+          "Math especially, plus physics and chemistry. Our method transfers across all of them.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available.",
+      },
+    ],
+    related: [
+      { label: "Math Word Problem Help", href: "/math-word-problem-help" },
+      { label: "Problem-Solving Tutor in Vancouver", href: "/problem-solving-tutor-vancouver" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "math-word-problem-help",
+    cluster: "Problem Solving",
+    metaTitle: "Math Word Problem Help | Step-by-Step Strategies",
+    metaDescription:
+      "Get help with math word problems — step-by-step strategies to translate, set up and solve any word problem. PhD-led tutoring, online or in Burnaby. Free consultation.",
+    h1: "Math Word Problem Help",
+    heroSubheading:
+      "Practical, step-by-step help with the word problems students find hardest — from setup to solution.",
+    intro: [
+      "Many students can do the calculations but stumble the moment a problem is written in words. The gap is a method for setting problems up — and that's exactly what we teach.",
+      "We work through real word problems together, building the confidence to approach any question systematically.",
+    ],
+    sections: [
+      {
+        heading: "Strategies We Teach",
+        points: [
+          "Underlining key information",
+          "Drawing diagrams",
+          "Defining variables clearly",
+          "Setting up equations",
+          "Estimating & checking",
+          "Recognising problem types",
+        ],
+      },
+      {
+        heading: "Confidence Through Practice",
+        body: [
+          "We build a toolkit of strategies and practise them until they feel natural.",
+          "Students come away able to tackle word problems they'd previously have skipped.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How do you help with word problems?",
+        answer:
+          "We teach concrete strategies — diagrams, defining variables, setting up equations — and practise them on real problems.",
+      },
+      {
+        question: "What ages is this for?",
+        answer: "Grades 6–12; the method scales with the difficulty of the math.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available.",
+      },
+    ],
+    related: [
+      { label: "Math Word Problems Tutor", href: "/math-word-problems-tutor" },
+      { label: "Pre-Calculus Word Problems Help", href: "/pre-calculus-word-problems-help" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "problem-solving-tutor-vancouver",
+    cluster: "Problem Solving",
+    location: "Vancouver",
+    metaTitle: "Problem-Solving Tutor in Vancouver | Math & Science",
+    metaDescription:
+      "A problem-solving tutor in Vancouver who teaches the thinking, not just the answer — for math and science. Online or nearby in Burnaby. Free consultation.",
+    h1: "Problem-Solving Tutor in Vancouver",
+    heroSubheading:
+      "Learn to think like a problem-solver. Vancouver tutoring that builds the reasoning behind math and science, not just the answers.",
+    intro: [
+      "The students who thrive aren't the ones who memorise the most — they're the ones who can reason their way through unfamiliar problems. That skill can be taught, and it's our specialty.",
+      "Our Vancouver problem-solving tutoring builds transferable reasoning across math and science, so students can handle whatever an exam throws at them.",
+    ],
+    sections: [
+      {
+        heading: "What We Build",
+        points: [
+          "Structured problem-solving method",
+          "Translating problems into math",
+          "Multi-step problem strategy",
+          "Checking & sense-making",
+          "Transfer across subjects",
+          "Exam application questions",
+        ],
+      },
+      {
+        heading: "Reasoning Over Recall",
+        body: [
+          "We deliberately practise unfamiliar problems, coaching the thinking process rather than handing over answers.",
+          "This is the skill that separates top students, and it's exactly what harder exam questions test.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Can problem-solving really be taught?",
+        answer:
+          "Yes — with a structured method and deliberate practice on unfamiliar problems, students genuinely improve.",
+      },
+      {
+        question: "Which subjects?",
+        answer: "Math and science, where the reasoning transfers across topics.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Online across Vancouver, with in-person options in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Math Word Problems Tutor", href: "/math-word-problems-tutor" },
+      { label: "Physics Problem-Solving Tutor", href: "/physics-problem-solving-tutor" },
+      { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
+    ],
+  },
+  {
+    slug: "physics-problem-solving-tutor",
+    cluster: "Problem Solving",
+    metaTitle: "Physics Problem-Solving Tutor | Method That Works",
+    metaDescription:
+      "Physics problem-solving tutoring — learn the systematic method top students use to set up and solve any physics problem. PhD-led. Book a free consultation.",
+    h1: "Physics Problem-Solving Tutor",
+    heroSubheading:
+      "Most physics marks are lost in the setup, not the concept. We teach the systematic method that wins them back.",
+    intro: [
+      "In physics, understanding a concept isn't enough — you have to set up and solve the problem correctly under time pressure. That setup is where most students lose marks.",
+      "We teach a systematic problem-solving method: identify the physics, draw the diagram, choose the equations, solve, and check — until it becomes second nature.",
+    ],
+    sections: [
+      {
+        heading: "Our Physics Method",
+        points: [
+          "Identify the physics at play",
+          "Draw free-body / motion diagrams",
+          "List knowns & unknowns",
+          "Choose the right equations",
+          "Solve algebraically, then plug in",
+          "Check units & reasonableness",
+        ],
+      },
+      {
+        heading: "From Concept to Marks",
+        body: [
+          "Students who understand physics but lose marks almost always have a setup problem — which this method fixes.",
+          "We practise across mechanics, energy and electricity until the process is automatic.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why does my child understand physics but lose marks?",
+        answer:
+          "Almost always it's the problem setup, not the concept. Our systematic method fixes exactly that.",
+      },
+      {
+        question: "Which physics topics?",
+        answer: "Mechanics, energy, momentum and electricity — the method transfers across all.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available.",
+      },
+    ],
+    related: [
+      { label: "Problem-Solving Tutor in Vancouver", href: "/problem-solving-tutor-vancouver" },
+      { label: "Physics 12 Tutor in Burnaby", href: "/physics-12-tutor-burnaby" },
+      { label: "Math Word Problems Tutor", href: "/math-word-problems-tutor" },
+    ],
+  },
+  {
+    slug: "pre-calculus-word-problems-help",
+    cluster: "Problem Solving",
+    metaTitle: "Pre-Calculus Word Problems Help | Application Questions",
+    metaDescription:
+      "Help with Pre-Calculus word and application problems — trig, exponential and function modelling made solvable. PhD-led tutoring. Book a free consultation.",
+    h1: "Pre-Calculus Word Problems Help",
+    heroSubheading:
+      "Pre-Calculus application questions trip up even strong students. We teach the method to model and solve them.",
+    intro: [
+      "Pre-Calculus application questions — modelling with exponential functions, trig, and sequences — are among the hardest marks on the course. They demand translating a real situation into the right function.",
+      "We teach exactly that translation skill, so application questions become a source of marks rather than lost ones.",
+    ],
+    sections: [
+      {
+        heading: "Application Types We Cover",
+        points: [
+          "Exponential growth & decay",
+          "Trigonometric modelling (e.g. Ferris wheels)",
+          "Logarithmic applications",
+          "Sequence & series problems",
+          "Rate & mixture problems",
+          "Exam-style application questions",
+        ],
+      },
+      {
+        heading: "Model, Then Solve",
+        body: [
+          "We teach students to identify which function models the situation, then set up and solve it.",
+          "This is where Pre-Calculus 12 marks are often won or lost.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why are Pre-Calculus application questions so hard?",
+        answer:
+          "They require translating a real situation into the right function — a skill we teach directly.",
+      },
+      {
+        question: "Do you cover trig and exponential modelling?",
+        answer: "Yes — including classic problems like Ferris wheels and growth/decay.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available.",
+      },
+    ],
+    related: [
+      { label: "Pre-Calculus 12 Tutor in Burnaby", href: "/pre-calculus-12-tutor-burnaby" },
+      { label: "Math Word Problem Help", href: "/math-word-problem-help" },
+      { label: "Problem-Solving Tutor in Vancouver", href: "/problem-solving-tutor-vancouver" },
+    ],
+  },
+
+  // ─────────────── PARENT PAIN (top-of-funnel) ───────────────
+  {
+    slug: "my-child-is-failing-math-what-should-i-do",
+    cluster: "Parent Pain",
+    metaTitle: "My Child Is Failing Math — What Should I Do?",
+    metaDescription:
+      "Is your child failing math? Here's a calm, practical plan to turn it around — how to find the real problem and the right support. Free consultation available.",
+    h1: "My Child Is Failing Math — What Should I Do?",
+    heroSubheading:
+      "First, don't panic. Failing grades are usually a sign of a fixable gap, not a lack of ability. Here's how to turn it around.",
+    intro: [
+      "When a child brings home a failing math grade, it's stressful for the whole family. But in our experience, it almost always signals a specific, fixable gap — a missed foundation that's quietly undermining everything built on top of it.",
+      "The key is to find the real root cause rather than just drilling the current topic. Below is the practical approach we use.",
+    ],
+    sections: [
+      {
+        heading: "A Practical Plan",
+        points: [
+          "Stay calm — it's usually fixable",
+          "Find the root gap, not just the symptom",
+          "Rebuild foundations first",
+          "Restore confidence with early wins",
+          "Align help to the current class",
+          "Track progress honestly",
+        ],
+      },
+      {
+        heading: "How We Help",
+        body: [
+          "We start with a diagnostic to find where understanding actually broke down — often one or two grades earlier than the current struggle.",
+          "Then we rebuild those foundations and reconnect them to today's class, so grades and confidence recover together.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why is my child suddenly failing math?",
+        answer:
+          "Usually an earlier gap has caught up with them. New topics build on old ones, so a missed foundation eventually shows up as failing grades.",
+      },
+      {
+        question: "Can it be turned around?",
+        answer:
+          "Almost always — with the right diagnosis and support, students recover both grades and confidence.",
+      },
+      {
+        question: "What's the first step?",
+        answer:
+          "A free consultation and diagnostic to find the real root cause.",
+      },
+    ],
+    related: [
+      { label: "Math Tutor for Anxious Students", href: "/math-anxiety-help-for-students" },
+      { label: "How to Choose a Math Tutor in Burnaby", href: "/how-to-choose-a-math-tutor-in-burnaby" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "math-anxiety-help-for-students",
+    cluster: "Parent Pain",
+    metaTitle: "Math Anxiety Help for Students | Rebuild Confidence",
+    metaDescription:
+      "Help for students with math anxiety — a patient, confidence-first approach that replaces panic with understanding. PhD-led tutoring. Book a free consultation.",
+    h1: "Math Anxiety Help for Students",
+    heroSubheading:
+      "Math anxiety is real — and it's beatable. A patient, confidence-first approach replaces panic with genuine understanding.",
+    intro: [
+      "Math anxiety creates a vicious cycle: stress makes it harder to think, poor results deepen the stress, and students start to believe they're \"just not a math person.\" None of that is true — and it can be reversed.",
+      "Our approach lowers the pressure, rebuilds understanding from a comfortable level, and stacks up small wins until confidence returns.",
+    ],
+    sections: [
+      {
+        heading: "Our Confidence-First Approach",
+        points: [
+          "Patient, judgement-free teaching",
+          "Start from a comfortable level",
+          "Small, frequent wins",
+          "Understanding over speed",
+          "Low-pressure practice",
+          "Rebuilding self-belief",
+        ],
+      },
+      {
+        heading: "Breaking the Cycle",
+        body: [
+          "We deliberately remove the time pressure and fear that fuel math anxiety, focusing on understanding rather than performance.",
+          "As students experience success, the anxiety fades and real progress follows.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is math anxiety common?",
+        answer:
+          "Very — and it has nothing to do with ability. With patient, confidence-first tutoring, students overcome it.",
+      },
+      {
+        question: "How do you reduce the anxiety?",
+        answer:
+          "We remove time pressure, start from a comfortable level, and build confidence with small wins.",
+      },
+      {
+        question: "Online or in person?",
+        answer: "Both are available.",
+      },
+    ],
+    related: [
+      { label: "My Child Is Failing Math — What to Do", href: "/my-child-is-failing-math-what-should-i-do" },
+      { label: "One-on-One Math Tutor in Burnaby", href: "/one-on-one-math-tutor-burnaby" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "how-to-choose-a-math-tutor-in-burnaby",
+    cluster: "Parent Pain",
+    location: "Burnaby",
+    metaTitle: "How to Choose a Math Tutor in Burnaby | Parent's Guide",
+    metaDescription:
+      "A parent's guide to choosing the right math tutor in Burnaby — what to look for, questions to ask, and red flags to avoid. Free consultation available.",
+    h1: "How to Choose a Math Tutor in Burnaby",
+    heroSubheading:
+      "Not all tutoring is equal. Here's how to choose a Burnaby math tutor who will actually make a difference.",
+    intro: [
+      "Choosing a tutor is a real decision — the wrong fit wastes time and money, while the right one transforms a student's confidence and grades. As a parent, it helps to know what actually matters.",
+      "Here's what we'd tell any parent weighing up math tutors in Burnaby, whether or not they choose us.",
+    ],
+    sections: [
+      {
+        heading: "What to Look For",
+        points: [
+          "Genuine subject expertise",
+          "One-on-one, personalised teaching",
+          "Alignment to your child's class",
+          "Real, verifiable reviews",
+          "Honest progress tracking",
+          "A no-pressure trial or consultation",
+        ],
+      },
+      {
+        heading: "Questions to Ask",
+        body: [
+          "Ask about the tutor's qualifications, how they personalise sessions, and how they measure progress.",
+          "Be wary of vague promises — a good tutor will happily explain their approach and offer a free consultation so you can judge the fit.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What matters most in a math tutor?",
+        answer:
+          "Genuine expertise, personalised one-on-one teaching, alignment to your child's class, and honest progress tracking.",
+      },
+      {
+        question: "Should I ask for a trial?",
+        answer:
+          "Yes — a free consultation or trial lets you judge the fit before committing.",
+      },
+      {
+        question: "What are red flags?",
+        answer:
+          "Vague promises, no personalisation, and no clear way to measure progress.",
+      },
+    ],
+    related: [
+      { label: "Best Math Tutor in Burnaby", href: "/best-math-tutor-burnaby" },
+      { label: "My Child Is Failing Math — What to Do", href: "/my-child-is-failing-math-what-should-i-do" },
+      { label: "Dr. Shreyank Educare Reviews", href: "/dr-shreyank-educare-reviews" },
+    ],
+  },
+  {
+    slug: "child-struggling-with-math-burnaby",
+    cluster: "Parent Pain",
+    location: "Burnaby",
+    metaTitle: "Child Struggling With Math in Burnaby? Here's Help",
+    metaDescription:
+      "Is your child struggling with math in Burnaby? Learn the common causes and a practical path forward, with patient, PhD-led support. Free consultation.",
+    h1: "Is Your Child Struggling With Math? (Burnaby)",
+    heroSubheading:
+      "Struggling with math rarely means a lack of ability — usually it's a fixable gap. Here's how to help your Burnaby student.",
+    intro: [
+      "If your child is struggling with math, you're not alone, and it's rarely about ability. Most struggles trace back to a specific missed concept that makes everything after it harder.",
+      "The path forward is to find that gap, rebuild it, and restore confidence — which is exactly what our Burnaby tutoring does.",
+    ],
+    sections: [
+      {
+        heading: "Common Causes",
+        points: [
+          "A missed earlier foundation",
+          "Gaps from remote-learning years",
+          "Fast-paced class coverage",
+          "Low confidence or math anxiety",
+          "Weak problem-solving method",
+          "Not enough one-on-one help",
+        ],
+      },
+      {
+        heading: "A Practical Path Forward",
+        body: [
+          "We diagnose the real cause, rebuild the foundations, and reconnect them to your child's current class.",
+          "With patient, one-on-one support, struggling students steadily regain both skills and confidence.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why is my child struggling with math?",
+        answer:
+          "Most often a missed earlier concept has made current topics harder. We find and fix that gap.",
+      },
+      {
+        question: "Does struggling mean a lack of ability?",
+        answer:
+          "No — it's almost always a fixable gap, not a limit on ability.",
+      },
+      {
+        question: "How do we start?",
+        answer: "With a free consultation and diagnostic in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "My Child Is Failing Math — What to Do", href: "/my-child-is-failing-math-what-should-i-do" },
+      { label: "Math Anxiety Help for Students", href: "/math-anxiety-help-for-students" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+    ],
+  },
+
+  // ─────────────── GRADE-LEVEL (representative set) ───────────────
+  {
+    slug: "grade-11-math-tutor-burnaby",
+    cluster: "Grade-Level",
+    location: "Burnaby",
+    metaTitle: "Grade 11 Math Tutor in Burnaby | Pre-Calc & Foundations",
+    metaDescription:
+      "Grade 11 math tutoring in Burnaby — Pre-Calculus 11 and Foundations of Math 11, aligned to the BC curriculum. In person or online. Free consultation.",
+    h1: "Grade 11 Math Tutor in Burnaby",
+    heroSubheading:
+      "Grade 11 is a pivotal year for math. Clear, one-on-one tutoring in Burnaby across the Pre-Calculus and Foundations pathways.",
+    intro: [
+      "Grade 11 is where BC math splits into pathways — Pre-Calculus and Foundations — and where the foundations for Grade 12 and university are set. A strong Grade 11 makes everything after it smoother.",
+      "Our Burnaby Grade 11 math tutoring is tailored to your child's pathway and class.",
+    ],
+    sections: [
+      {
+        heading: "Grade 11 Math We Cover",
+        points: [
+          "Pre-Calculus 11",
+          "Foundations of Math 11",
+          "Quadratics & functions",
+          "Trigonometry",
+          "Systems & sequences",
+          "Exam preparation",
+        ],
+      },
+      {
+        heading: "Set Up for Grade 12",
+        body: [
+          "We make sure the Grade 11 foundations are solid, because Grade 12 and university math build directly on them.",
+          "Sessions align to your child's exact course and teacher.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Which Grade 11 math pathways do you cover?",
+        answer: "Both Pre-Calculus 11 and Foundations of Math 11.",
+      },
+      {
+        question: "Why is Grade 11 math important?",
+        answer:
+          "It sets the foundation for Grade 12 and university math, and splits into pathways that affect future options.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Pre-Calculus 11 Tutor in Burnaby", href: "/pre-calculus-11-tutor-burnaby" },
+      { label: "Grade 12 Math Tutor in Burnaby", href: "/grade-12-math-tutor-burnaby" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+    ],
+  },
+  {
+    slug: "grade-12-math-tutor-burnaby",
+    cluster: "Grade-Level",
+    location: "Burnaby",
+    metaTitle: "Grade 12 Math Tutor in Burnaby | Pre-Calc & Calculus",
+    metaDescription:
+      "Grade 12 math tutoring in Burnaby — Pre-Calculus 12 and Calculus 12, aligned to the BC curriculum and university prep. In person or online. Free consultation.",
+    h1: "Grade 12 Math Tutor in Burnaby",
+    heroSubheading:
+      "Grade 12 math shapes university options. Expert, one-on-one tutoring in Burnaby for Pre-Calculus 12 and Calculus 12.",
+    intro: [
+      "Grade 12 math — Pre-Calculus 12 and Calculus 12 — is demanding and directly affects university admission and readiness. Strong grades here matter.",
+      "Our Burnaby Grade 12 math tutoring makes these courses clear and prepares students thoroughly for finals and university.",
+    ],
+    sections: [
+      {
+        heading: "Grade 12 Math We Cover",
+        points: [
+          "Pre-Calculus 12",
+          "Calculus 12",
+          "Trig identities & logarithms",
+          "Limits & derivatives",
+          "University-prep foundations",
+          "Final exam preparation",
+        ],
+      },
+      {
+        heading: "University-Ready",
+        body: [
+          "We connect Grade 12 math to what university programs expect, so students arrive prepared.",
+          "Sessions align to your child's exact course and finals.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Which Grade 12 math do you tutor?",
+        answer: "Pre-Calculus 12 and Calculus 12.",
+      },
+      {
+        question: "Does Grade 12 math affect university?",
+        answer:
+          "Yes — it's a common admission and readiness factor for STEM and commerce programs.",
+      },
+      {
+        question: "In person or online?",
+        answer: "Both are available in Burnaby.",
+      },
+    ],
+    related: [
+      { label: "Pre-Calculus 12 Tutor in Burnaby", href: "/pre-calculus-12-tutor-burnaby" },
+      { label: "Calculus 12 Tutor in Burnaby", href: "/calculus-12-tutor-burnaby" },
+      { label: "Grade 11 Math Tutor in Burnaby", href: "/grade-11-math-tutor-burnaby" },
+    ],
+  },
 ];
 
 export const getSeoPageBySlug = (slug: string): SeoPage | undefined =>
