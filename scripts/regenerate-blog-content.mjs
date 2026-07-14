@@ -1,15 +1,15 @@
 /**
  * Rewrite thin blog post bodies with substantive, keyword-aligned content and
- * strong internal linking.
+ * internal links woven CONTEXTUALLY THROUGHOUT the article (distributed across
+ * the intro and each section's lead-in, not bunched at the end).
  *
  * Reads structured articles from scripts/blog-content-data.mjs (keyed by slug),
  * assembles them into Portable Text (headings, paragraphs, bullet lists, an
- * FAQ), adds inline keyword + /contact hyperlinks, and appends a topic-based
- * "Related Tutoring" section of 5-6 relevant internal links per post so every
- * article is well linked.
+ * FAQ), and places one topic-relevant internal link in the intro bridge and in
+ * each section lead-in, plus inline links on subject terms in the prose.
  *
- * Content is real subject matter (concepts, mistakes, study tips, FAQ) — not
- * keyword-stuffed filler, which Google penalizes.
+ * Content is real subject matter — not keyword-stuffed filler, which Google
+ * penalizes.
  *
  * Usage:
  *   1. Editor token in .env.local as SANITY_API_WRITE_TOKEN (+ real project id).
@@ -48,44 +48,52 @@ const para = (text) => blk("normal", [span(text)]);
 const heading = (text) => blk("h2", [span(text)]);
 const strongPara = (text) => blk("normal", [span(text, ["strong"])]);
 const bullet = (text) => ({ ...blk("normal", [span(text)]), listItem: "bullet", level: 1 });
-const linkedBullet = (label, href) => {
-  const lk = key();
-  return {
-    _type: "block", _key: key(), style: "normal", listItem: "bullet", level: 1,
-    markDefs: [{ _key: lk, _type: "link", href }],
-    children: [span(label, [lk])],
-  };
+
+// A paragraph built from mixed plain-text and {text, href} link parts.
+const linkedPara = (parts) => {
+  const markDefs = [];
+  const children = [];
+  for (const p of parts) {
+    if (typeof p === "string") {
+      children.push(span(p));
+    } else {
+      const lk = key();
+      markDefs.push({ _key: lk, _type: "link", href: p.href });
+      children.push(span(p.text, [lk]));
+    }
+  }
+  return blk("normal", children, markDefs);
 };
 
-// ── Topic-based contextual links (accurate per article; short anchors) ──
+// ── Topic-based contextual links (accurate per article; full-phrase anchors) ──
 const RELATED = [
-  { re: /pre-calculus/i, anchor: "Pre-Calculus 12", href: "/pre-calculus-12-tutor-burnaby" },
-  { re: /\bcalculus\b/i, anchor: "Calculus 12", href: "/calculus-12-tutor-burnaby" },
-  { re: /university (math|calculus|linear algebra)|linear algebra|differential equations/i, anchor: "university math", href: "/university-math-tutor-vancouver" },
-  { re: /chemistr/i, anchor: "Chemistry 12", href: "/chemistry-12-tutor-burnaby" },
-  { re: /university physics|first-year physics/i, anchor: "university physics", href: "/university-physics-tutor-vancouver" },
-  { re: /physics/i, anchor: "Physics 12", href: "/physics-12-tutor-burnaby" },
+  { re: /pre-calculus/i, anchor: "Pre-Calculus 12 tutoring", href: "/pre-calculus-12-tutor-burnaby" },
+  { re: /\bcalculus\b/i, anchor: "Calculus 12 tutoring", href: "/calculus-12-tutor-burnaby" },
+  { re: /university (math|calculus|linear algebra)|linear algebra|differential equations/i, anchor: "university math tutoring", href: "/university-math-tutor-vancouver" },
+  { re: /chemistr/i, anchor: "Chemistry 12 tutoring", href: "/chemistry-12-tutor-burnaby" },
+  { re: /university physics|first-year physics/i, anchor: "university physics tutoring", href: "/university-physics-tutor-vancouver" },
+  { re: /physics/i, anchor: "Physics 12 tutoring", href: "/physics-12-tutor-burnaby" },
   { re: /biology|physiology|molecular|genetics|ecology/i, anchor: "science tutoring", href: "/science-tutor-burnaby" },
-  { re: /IB Math|IB Mathematics/i, anchor: "IB Math", href: "/ib-math-tutor-vancouver" },
+  { re: /IB Math|IB Mathematics/i, anchor: "IB Math tutoring", href: "/ib-math-tutor-vancouver" },
   { re: /\bIB\b|\bAP\b/i, anchor: "IB and AP tutoring", href: "/programs/ib-ap-tutoring" },
-  { re: /AP Calculus/i, anchor: "AP Calculus", href: "/ap-calculus-tutor-burnaby" },
+  { re: /AP Calculus/i, anchor: "AP Calculus tutoring", href: "/ap-calculus-tutor-burnaby" },
   { re: /statistic/i, anchor: "statistics tutoring", href: "/online-statistics-tutor" },
   { re: /econ|finance|CFA|MBA|business/i, anchor: "university and professional tutoring", href: "/university-professional" },
-  { re: /python|javascript|programming|coding|computer science|data structures|web development|DOM|API|database/i, anchor: "coding and computer science", href: "/computer-science-tutor-vancouver" },
+  { re: /python|javascript|programming|coding|computer science|data structures|web development|DOM|API|database/i, anchor: "coding and computer science tutoring", href: "/computer-science-tutor-vancouver" },
   { re: /french/i, anchor: "French tutoring", href: "/programs/french" },
   { re: /mandarin|chinese/i, anchor: "Mandarin tutoring", href: "/programs/mandarin" },
-  { re: /SAT|GRE|GMAT|MCAT|exam prep|test prep|final exam|provincial/i, anchor: "exam preparation", href: "/final-exam-review-tutoring-burnaby" },
-  { re: /word problem|problem.solving/i, anchor: "word problems", href: "/math-word-problems-tutor" },
+  { re: /SAT|GRE|GMAT|MCAT|exam prep|test prep|final exam|provincial/i, anchor: "exam-prep tutoring", href: "/final-exam-review-tutoring-burnaby" },
+  { re: /word problem|problem.solving/i, anchor: "problem-solving support", href: "/math-word-problems-tutor" },
   { re: /algebra|functions|grade|elementary|middle school|high school math/i, anchor: "math tutoring in Burnaby", href: "/math-tutor-burnaby" },
 ];
 const FALLBACKS = [
   { anchor: "math tutoring in Burnaby", href: "/math-tutor-burnaby" },
   { anchor: "math tutoring in Vancouver", href: "/math-tutor-vancouver" },
   { anchor: "IB and AP tutoring", href: "/programs/ib-ap-tutoring" },
-  { anchor: "science tutoring in Burnaby", href: "/science-tutor-burnaby" },
+  { anchor: "science tutoring", href: "/science-tutor-burnaby" },
 ];
 
-function relatedAnchors(article) {
+function topicAnchors(article) {
   const text = [
     ...(article.intro || []),
     ...(article.overview || []),
@@ -101,7 +109,6 @@ function relatedAnchors(article) {
       seen.add(r.href);
     }
   }
-  // Pad to 4 so every post has a solid set of contextual links.
   for (const f of FALLBACKS) {
     if (picked.length >= 4) break;
     if (!seen.has(f.href)) { picked.push(f); seen.add(f.href); }
@@ -109,61 +116,118 @@ function relatedAnchors(article) {
   return picked;
 }
 
-// A natural closing paragraph with the topic links woven inline (not a list).
-function ctaParagraph(topics) {
-  const markDefs = [];
-  const children = [];
-  const text = (t) => children.push(span(t));
-  const link = (t, href) => { const lk = key(); markDefs.push({ _key: lk, _type: "link", href }); children.push(span(t, [lk])); };
+// Section lead-in sentences, each embedding one distributed topic link.
+const BRIDGE = (a) => [
+  "Below we break down the key concepts, common mistakes and study tips for this topic — the same clear, step-by-step method our ",
+  { text: a.anchor, href: a.href },
+  " uses with every student.",
+];
+const KEY_LEAD = (a) => [
+  "These core ideas are the foundation everything else builds on, and where our ",
+  { text: a.anchor, href: a.href },
+  " focuses first — make sure each one is solid:",
+];
+const MISTAKE_LEAD = (a) => [
+  "These are the pitfalls that cost students the most marks — exactly the ones our ",
+  { text: a.anchor, href: a.href },
+  " helps eliminate:",
+];
+const TIP_LEAD = (a) => [
+  "A few focused habits make the biggest difference, and they are built into our ",
+  { text: a.anchor, href: a.href },
+  ":",
+];
 
-  text("If your student needs focused, one-on-one help, explore our ");
-  topics.forEach((t, i) => {
-    link(t.anchor, t.href);
-    if (i < topics.length - 2) text(", ");
-    else if (i === topics.length - 2) text(" and ");
-    else text(" tutoring");
-  });
-  text(" — PhD-led and tailored to their goals. Ready to start? Book a ");
-  link("free consultation", "/contact");
-  text(" today.");
-  return blk("normal", children, markDefs);
+function joinPoints(points) {
+  if (!points || !points.length) return "";
+  const items = points.map((p) => p.charAt(0).toLowerCase() + p.slice(1));
+  if (items.length === 1) return items[0] + ".";
+  return items.slice(0, -1).join("; ") + "; and " + items[items.length - 1] + ".";
 }
 
-// ── Inline keyword linking within body prose ──
+function buildBody(article) {
+  const t = topicAnchors(article);
+  const at = (i) => t[i % t.length];
+  const blocks = [];
+  const usedHrefs = new Set();
+  const use = (a) => { usedHrefs.add(a.href); return a; };
+
+  // Intro + a bridging sentence with the first distributed link
+  (article.intro || []).forEach((p) => blocks.push(para(p)));
+  blocks.push(linkedPara(BRIDGE(use(at(0)))));
+
+  if (article.overview?.length) {
+    blocks.push(heading("What This Topic Covers"));
+    article.overview.forEach((p) => blocks.push(para(p)));
+  }
+  if (article.keyConcepts?.length) {
+    blocks.push(heading("Key Concepts to Master"));
+    blocks.push(linkedPara(KEY_LEAD(use(at(1)))));
+    article.keyConcepts.forEach((c) => blocks.push(bullet(c)));
+  }
+  if (article.commonMistakes?.length) {
+    blocks.push(heading("Common Mistakes to Avoid"));
+    blocks.push(linkedPara(MISTAKE_LEAD(use(at(2)))));
+    article.commonMistakes.forEach((m) => blocks.push(bullet(m)));
+  }
+  if (article.studyTips?.length) {
+    blocks.push(heading("Study Tips That Actually Work"));
+    blocks.push(linkedPara(TIP_LEAD(use(at(3)))));
+    article.studyTips.forEach((tp) => blocks.push(bullet(tp)));
+  }
+
+  // FAQ built from the article's real content
+  blocks.push(heading("Frequently Asked Questions"));
+  if (article.commonMistakes?.length) {
+    blocks.push(strongPara("What are the most common mistakes to avoid?"));
+    blocks.push(para("The pitfalls that cost the most marks are " + joinPoints(article.commonMistakes)));
+  }
+  if (article.studyTips?.length) {
+    blocks.push(strongPara("What's the best way to study this topic?"));
+    blocks.push(para("Focus on a few high-impact habits: " + joinPoints(article.studyTips)));
+  }
+  blocks.push(strongPara("Can a tutor really make a difference?"));
+  blocks.push(
+    linkedPara([
+      "Yes. One-on-one, PhD-led tutoring diagnoses exactly where a student struggles, rebuilds the foundations, and builds the confidence and method to improve — far faster than studying alone. Book a ",
+      { text: "free consultation", href: "/contact" },
+      " to see how we can help.",
+    ])
+  );
+  usedHrefs.add("/contact");
+
+  blocks.push(heading("How Dr. Shreyank Educare Can Help"));
+  (article.closing || []).forEach((p) => blocks.push(para(p)));
+
+  return { blocks, usedHrefs: [...usedHrefs] };
+}
+
+// ── Inline keyword linking within body prose (adds a few more, distributed) ──
 const KEYWORD_LINKS = [
   ["math tutoring in Burnaby", "/math-tutoring-burnaby"],
-  ["math tutor in Burnaby", "/math-tutor-burnaby"],
-  ["math tutor in Vancouver", "/math-tutor-vancouver"],
   ["Pre-Calculus 12", "/pre-calculus-12-tutor-burnaby"],
   ["Pre-Calculus 11", "/pre-calculus-11-tutor-burnaby"],
   ["Pre-Calculus", "/pre-calculus-12-tutor-burnaby"],
   ["Calculus 12", "/calculus-12-tutor-burnaby"],
-  ["university calculus", "/university-calculus-tutor-vancouver"],
   ["Calculus", "/calculus-12-tutor-burnaby"],
   ["Chemistry 12", "/chemistry-12-tutor-burnaby"],
-  ["Chemistry 11", "/chemistry-11-tutor-burnaby"],
   ["Chemistry", "/chemistry-12-tutor-burnaby"],
   ["Physics 12", "/physics-12-tutor-burnaby"],
-  ["Physics 11", "/physics-11-tutor-burnaby"],
   ["Physics", "/physics-12-tutor-burnaby"],
   ["Biology", "/science-tutor-burnaby"],
   ["AP Calculus", "/ap-calculus-tutor-burnaby"],
   ["IB Math", "/ib-math-tutor-vancouver"],
   ["linear algebra", "/linear-algebra-tutor-online-canada"],
   ["statistics", "/online-statistics-tutor"],
-  ["trigonometry", "/pre-calculus-12-tutor-burnaby"],
-  ["algebra", "/math-tutor-burnaby"],
   ["word problems", "/math-word-problems-tutor"],
   ["final exam", "/final-exam-review-tutoring-burnaby"],
   ["Python", "/python-tutor-burnaby"],
   ["computer science", "/computer-science-tutor-vancouver"],
 ];
-const CONTACT_PHRASES = ["free consultation", "book a consultation"];
-const TARGETS = [
-  ...KEYWORD_LINKS.map(([phrase, href]) => ({ phrase, href })),
-  ...CONTACT_PHRASES.map((phrase) => ({ phrase, href: "/contact" })),
-].sort((a, b) => b.phrase.length - a.phrase.length);
-const MAX_INLINE = 5;
+const TARGETS = KEYWORD_LINKS.map(([phrase, href]) => ({ phrase, href })).sort(
+  (a, b) => b.phrase.length - a.phrase.length
+);
+const MAX_INLINE = 4;
 
 function linkBody(body, skipHrefs) {
   const used = new Set(skipHrefs);
@@ -173,7 +237,7 @@ function linkBody(body, skipHrefs) {
     if (block._type !== "block" || block.style === "h2" || block.listItem) continue;
     for (const t of TARGETS) {
       if (added >= MAX_INLINE) break;
-      if (used.has(t.phrase.toLowerCase()) || used.has(t.href)) continue;
+      if (used.has(t.href)) continue;
       for (let i = 0; i < block.children.length; i++) {
         const s = block.children[i];
         if (s._type !== "span" || (s.marks && s.marks.length)) continue;
@@ -189,7 +253,6 @@ function linkBody(body, skipHrefs) {
         ns.push(span(match, [lk]));
         if (after) ns.push(span(after));
         block.children = [...block.children.slice(0, i), ...ns, ...block.children.slice(i + 1)];
-        used.add(t.phrase.toLowerCase());
         used.add(t.href);
         added++;
         break;
@@ -197,65 +260,6 @@ function linkBody(body, skipHrefs) {
     }
   }
   return added;
-}
-
-// ── FAQ derived from the article's real content ──
-function joinPoints(points) {
-  if (!points || !points.length) return "";
-  const items = points.map((p) => p.charAt(0).toLowerCase() + p.slice(1));
-  if (items.length === 1) return items[0] + ".";
-  return items.slice(0, -1).join("; ") + "; and " + items[items.length - 1] + ".";
-}
-
-function buildBody(article) {
-  const blocks = [];
-  (article.intro || []).forEach((p) => blocks.push(para(p)));
-
-  if (article.overview?.length) {
-    blocks.push(heading("What This Topic Covers"));
-    article.overview.forEach((p) => blocks.push(para(p)));
-  }
-  if (article.keyConcepts?.length) {
-    blocks.push(heading("Key Concepts to Master"));
-    blocks.push(para("These are the core ideas everything else builds on — make sure each one is solid:"));
-    article.keyConcepts.forEach((c) => blocks.push(bullet(c)));
-  }
-  if (article.commonMistakes?.length) {
-    blocks.push(heading("Common Mistakes to Avoid"));
-    blocks.push(para("These are the pitfalls that cost students the most marks:"));
-    article.commonMistakes.forEach((m) => blocks.push(bullet(m)));
-  }
-  if (article.studyTips?.length) {
-    blocks.push(heading("Study Tips That Actually Work"));
-    blocks.push(para("A few focused habits make the biggest difference:"));
-    article.studyTips.forEach((t) => blocks.push(bullet(t)));
-  }
-
-  // FAQ built from the article's own content (real, not filler)
-  blocks.push(heading("Frequently Asked Questions"));
-  if (article.commonMistakes?.length) {
-    blocks.push(strongPara("What are the most common mistakes to avoid?"));
-    blocks.push(para("The pitfalls that cost the most marks are " + joinPoints(article.commonMistakes)));
-  }
-  if (article.studyTips?.length) {
-    blocks.push(strongPara("What's the best way to study this topic?"));
-    blocks.push(para("Focus on a few high-impact habits: " + joinPoints(article.studyTips)));
-  }
-  blocks.push(strongPara("Can a tutor really make a difference?"));
-  blocks.push(
-    para(
-      "Yes. One-on-one, PhD-led tutoring diagnoses exactly where a student struggles, rebuilds the foundations, and builds the confidence and method to improve — far faster than studying alone."
-    )
-  );
-
-  blocks.push(heading("How Dr. Shreyank Educare Can Help"));
-  (article.closing || []).forEach((p) => blocks.push(para(p)));
-
-  // Weave topic links into a natural closing paragraph (in-prose, not a list)
-  const topics = relatedAnchors(article);
-  blocks.push(ctaParagraph(topics));
-
-  return { blocks, relatedHrefs: [...topics.map((t) => t.href), "/contact"] };
 }
 
 async function run() {
@@ -277,13 +281,13 @@ async function run() {
       continue;
     }
     const article = blogContent[slug];
-    const { blocks, relatedHrefs } = buildBody(article);
-    const inline = linkBody(blocks, relatedHrefs);
-    const linkCount = relatedHrefs.length + inline;
+    const { blocks, usedHrefs } = buildBody(article);
+    const inline = linkBody(blocks, usedHrefs);
+    const linkCount = usedHrefs.length + inline;
     totalLinks += linkCount;
     changed++;
     console.log(`\n  ${post.title || slug}`);
-    console.log(`    ${blocks.length} blocks, ${linkCount} internal links (${relatedHrefs.length} related + ${inline} inline)`);
+    console.log(`    ${blocks.length} blocks, ${linkCount} links distributed through the article`);
     if (commit) {
       const patch = { body: blocks };
       if (article.excerpt) patch.excerpt = article.excerpt;
