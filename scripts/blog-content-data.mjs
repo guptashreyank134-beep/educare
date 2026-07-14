@@ -2887,4 +2887,215 @@ export const blogContent = {
       "Balanced, guided practice accelerates language learning. Our Mandarin tutoring develops grammar, listening and cultural understanding alongside speaking. Book a free consultation to get started.",
     ],
   },
+
+  // ─────────────────────────── BATCH 13 (gap fill) ───────────────────────────
+  "vancouver-math-tutoring-calculus-linear-algebra": {
+    excerpt:
+      "Calculus and linear algebra are foundational for university STEM. This guide explains what they cover, common pitfalls, and how to master them.",
+    intro: [
+      "Calculus and linear algebra are two of the most important mathematics courses for university science, engineering and commerce. They're different in flavour — one about change, the other about structure — but together they form the backbone of quantitative study.",
+    ],
+    overview: [
+      "Calculus studies rates of change and accumulation through limits, derivatives and integrals. Linear algebra studies vectors, matrices and the transformations between them. Many university programs require both, and strong high-school foundations make each far more approachable.",
+      "The key is to build genuine understanding — the intuition behind the methods — rather than memorising procedures.",
+    ],
+    keyConcepts: [
+      "Limits, derivatives and integrals (calculus)",
+      "Applications of derivatives and integrals",
+      "Vectors and matrices (linear algebra)",
+      "Systems of linear equations",
+      "Linear transformations",
+      "Eigenvalues and eigenvectors",
+    ],
+    commonMistakes: [
+      "Carrying weak algebra into calculus and linear algebra",
+      "Memorising procedures instead of understanding them",
+      "Struggling with linear algebra's abstraction",
+      "Falling behind the fast university pace",
+    ],
+    studyTips: [
+      "Build strong algebra foundations first",
+      "Focus on the intuition behind each method",
+      "Ground abstract linear-algebra ideas in examples",
+      "Practise the specific problem types your course tests",
+    ],
+    closing: [
+      "Calculus and linear algebra reward genuine understanding, which expert tutoring builds. Our university math tutoring in Vancouver helps students master both. Book a free consultation to get started.",
+    ],
+  },
+
+  "ib-ap-tutoring-ap-physics-1-2-c": {
+    excerpt:
+      "AP Physics 1, 2 and C cover a wide range from algebra-based to calculus-based physics. This guide explains each and how to prepare for a top score.",
+    intro: [
+      "AP Physics comes in several flavours — the algebra-based Physics 1 and 2, and the calculus-based Physics C. Knowing which you're taking, and what each demands, is the first step to preparing effectively.",
+    ],
+    overview: [
+      "AP Physics 1 and 2 are algebra-based and cover mechanics, electricity, waves and modern physics conceptually, while Physics C (Mechanics and E&M) is calculus-based and more mathematically demanding. All reward deep understanding plus disciplined exam technique.",
+      "The free-response sections especially reward clear, well-justified work — not just correct final answers.",
+    ],
+    keyConcepts: [
+      "Mechanics (all courses)",
+      "Electricity and magnetism",
+      "Waves and optics (Physics 2)",
+      "Calculus-based methods (Physics C)",
+      "Free-response technique",
+      "Timed exam practice",
+    ],
+    commonMistakes: [
+      "Not knowing which AP Physics course you're preparing for",
+      "Weak math (algebra or calculus) undermining the physics",
+      "Losing free-response marks for missing justification",
+      "Skipping the problem setup and diagrams",
+    ],
+    studyTips: [
+      "Confirm your course (1, 2 or C) and target its exam",
+      "Keep the relevant math sharp",
+      "Practise AP-format free-response with justification",
+      "Do full, timed past papers",
+    ],
+    closing: [
+      "AP Physics rewards understanding plus exam technique. Our AP Physics tutoring covers Physics 1, 2 and C with format-specific practice. Book a free consultation to build your plan.",
+    ],
+  },
+
+  "ib-ap-tutoring-ap-chemistry-biology": {
+    excerpt:
+      "AP Chemistry and AP Biology are demanding, content-rich courses. This guide explains what they cover, common pitfalls, and how to earn a top score.",
+    intro: [
+      "AP Chemistry and AP Biology are two of the most content-rich AP sciences, valued by universities and demanding in their own ways. Both reward deep, applied understanding rather than memorisation, tested through challenging exams.",
+    ],
+    overview: [
+      "AP Chemistry covers atomic structure, bonding, thermodynamics, equilibrium and kinetics with heavy problem-solving, while AP Biology emphasises big ideas — evolution, energy, information and systems — applied to experimental scenarios. Both blend multiple-choice and free-response questions.",
+      "Success comes from strong fundamentals plus lots of practice applying concepts to unfamiliar, passage-based questions.",
+    ],
+    keyConcepts: [
+      "AP Chemistry: equilibrium, thermodynamics, kinetics",
+      "AP Biology: evolution, energy, information, systems",
+      "Experimental design and data analysis",
+      "Applying concepts to novel scenarios",
+      "Free-response technique",
+      "Timed exam practice",
+    ],
+    commonMistakes: [
+      "Memorising facts instead of building applicable understanding",
+      "Neglecting experimental-design and data questions",
+      "Losing free-response marks for weak justification",
+      "Underestimating the volume of content",
+    ],
+    studyTips: [
+      "Prioritise understanding you can apply, not rote recall",
+      "Practise data-analysis and experimental questions",
+      "Do AP-format free-response with clear reasoning",
+      "Use timed past papers to build stamina",
+    ],
+    closing: [
+      "AP sciences reward applied understanding and exam technique. Our AP Chemistry and science tutoring builds both for a top score. Book a free consultation to get started.",
+    ],
+  },
+
+  "ib-ap-tutoring-ap-statistics": {
+    excerpt:
+      "AP Statistics rewards understanding data and reasoning, not heavy math. This guide explains the course, common mistakes, and how to score well.",
+    intro: [
+      "AP Statistics is unusual among AP maths — it's less about computation and more about reasoning with data. That makes it accessible, but it rewards clear thinking and careful communication, which is where many students lose marks.",
+    ],
+    overview: [
+      "AP Statistics covers exploring data, designing studies, probability, and statistical inference. The exam heavily rewards interpreting results and justifying conclusions in context — not just calculating numbers.",
+      "Students succeed by understanding what each method means and practising the specific way the AP exam expects answers to be communicated.",
+    ],
+    keyConcepts: [
+      "Exploring and describing data",
+      "Sampling and experimental design",
+      "Probability and distributions",
+      "Confidence intervals",
+      "Hypothesis testing",
+      "Interpreting results in context",
+    ],
+    commonMistakes: [
+      "Calculating correctly but interpreting incorrectly",
+      "Not stating conclusions in context",
+      "Confusing correlation and causation",
+      "Ignoring the conditions/assumptions for each test",
+    ],
+    studyTips: [
+      "Focus on interpretation and communication, not just math",
+      "Learn the AP exam's expected answer format",
+      "Always state conclusions in context",
+      "Practise free-response with the scoring rubric in mind",
+    ],
+    closing: [
+      "AP Statistics rewards reasoning and clear communication, which focused tutoring builds. Our AP and statistics tutoring helps students score well. Book a free consultation to get started.",
+    ],
+  },
+
+  "ib-ap-tutoring-ib-mathematics-applications-interpretation": {
+    excerpt:
+      "IB Math Applications & Interpretation (SL & HL) emphasises real-world modelling and technology. This guide explains what it covers and how to succeed.",
+    intro: [
+      "IB Mathematics: Applications & Interpretation (AI) is the more applied of the two IB math streams, emphasising real-world modelling, statistics and the use of technology. It suits students heading toward fields where math is a practical tool.",
+    ],
+    overview: [
+      "AI covers functions, statistics, probability, and applied calculus, with a strong emphasis on modelling real situations and using technology (like a graphing calculator) effectively. HL goes considerably deeper than SL. Assessment includes exams and the Internal Assessment.",
+      "Success comes from understanding the concepts, applying them to real contexts, and communicating clearly the IB way.",
+    ],
+    keyConcepts: [
+      "Functions and modelling",
+      "Statistics and probability",
+      "Applied calculus",
+      "Using technology effectively",
+      "Interpreting real-world data",
+      "The Internal Assessment (exploration)",
+    ],
+    commonMistakes: [
+      "Treating AI like a pure-math course rather than applied",
+      "Underusing the graphing calculator",
+      "Losing marks by not interpreting results in context",
+      "Choosing a weak or overly broad IA topic",
+    ],
+    studyTips: [
+      "Practise modelling and interpreting real data",
+      "Master your graphing calculator's tools",
+      "Learn the IB assessment style and command terms",
+      "Start the IA early with a focused, applied topic",
+    ],
+    closing: [
+      "IB Math AI rewards applied understanding and clear communication. Our IB Math tutoring covers AI at SL and HL, including the Internal Assessment. Book a free consultation to build your plan.",
+    ],
+  },
+
+  "ib-ap-tutoring-ib-physics-chemistry-biology-sl-hl": {
+    excerpt:
+      "IB Physics, Chemistry and Biology (SL & HL) are rigorous and distinct from the BC curriculum. This guide explains the approach and how to succeed.",
+    intro: [
+      "The IB sciences — Physics, Chemistry and Biology at SL and HL — are rigorous, inquiry-based courses with their own assessment style and Internal Assessment. Doing well means understanding the science deeply and mastering the IB way of demonstrating it.",
+    ],
+    overview: [
+      "Each IB science combines conceptual understanding, practical work and the Internal Assessment (an independent investigation). HL goes considerably deeper than SL. Exams reward applying concepts and using IB command terms precisely.",
+      "Students juggling multiple IB sciences benefit most from a coordinated, IB-savvy approach across subjects.",
+    ],
+    keyConcepts: [
+      "Core concepts across Physics, Chemistry and Biology",
+      "The distinction between SL and HL depth",
+      "Practical work and data analysis",
+      "The Internal Assessment (investigation)",
+      "IB command terms and assessment style",
+      "Exam technique",
+    ],
+    commonMistakes: [
+      "Treating IB like the BC curriculum",
+      "Losing marks by not using IB command terms",
+      "Choosing weak Internal Assessment topics",
+      "Underestimating HL depth",
+    ],
+    studyTips: [
+      "Learn the IB assessment style and command terms",
+      "Practise past IB papers and mark schemes",
+      "Start the IA early with a focused research question",
+      "Balance conceptual study with practical skills",
+    ],
+    closing: [
+      "IB sciences reward a tutor who knows the programme, not just the subject. Our IB tutoring covers Physics, Chemistry and Biology at SL and HL, including the IA. Book a free consultation to get started.",
+    ],
+  },
 };
