@@ -1446,4 +1446,250 @@ export const blogContent = {
       "MCAT science rewards applied understanding, which expert tutoring helps build efficiently. Our university-level science tutoring supports students preparing for demanding exams. Book a free consultation to get started.",
     ],
   },
+
+  // ─────────────────────────── BATCH 7 ───────────────────────────
+  "university-finance-cfa-csc-ifc-certifications": {
+    excerpt:
+      "The CFA, CSC and IFC are key finance certifications. This guide explains what each involves, common pitfalls, and how to prepare effectively.",
+    intro: [
+      "Professional finance certifications like the CFA, CSC and IFC can open doors in banking, investment and wealth management. Each is demanding in its own way, and understanding what each requires is the first step to passing efficiently.",
+    ],
+    overview: [
+      "The CFA (Chartered Financial Analyst) is a rigorous, multi-level qualification covering investment analysis and portfolio management. The CSC (Canadian Securities Course) and IFC (Investment Funds in Canada) are Canadian licensing courses that open specific roles in the securities and mutual-fund industries.",
+      "Success on any of them comes from consistent study, mastering the specific curriculum, and lots of practice questions under exam-like conditions.",
+    ],
+    keyConcepts: [
+      "CFA curriculum: ethics, investments, portfolio management",
+      "CSC: Canadian securities regulation and products",
+      "IFC: mutual funds and suitability",
+      "Financial analysis and valuation fundamentals",
+      "Exam structure and question styles",
+      "Time-efficient study planning",
+    ],
+    commonMistakes: [
+      "Underestimating the study hours these exams require",
+      "Passive reading instead of active practice questions",
+      "Neglecting ethics (heavily weighted on the CFA)",
+      "Cramming rather than spacing study over months",
+    ],
+    studyTips: [
+      "Build a realistic, spaced study schedule early",
+      "Do large volumes of practice questions",
+      "Master the specific curriculum, not general finance",
+      "Simulate exam conditions before the real thing",
+    ],
+    closing: [
+      "Professional finance exams reward structured, efficient preparation. Our finance tutoring supports students and professionals pursuing certifications and university finance. Book a free consultation to get started.",
+    ],
+  },
+
+  "french-grammar-vocabulary-sentence-formation": {
+    excerpt:
+      "Grammar, vocabulary and sentence formation are the building blocks of French. This guide explains how to learn them effectively and avoid common mistakes.",
+    intro: [
+      "Grammar, vocabulary and sentence formation are the foundation of learning French. Built in the right way — steadily and with plenty of use — they turn isolated words into the ability to communicate confidently.",
+    ],
+    overview: [
+      "French grammar provides the rules (verb conjugations, genders, agreement), vocabulary provides the words, and sentence formation combines them into meaning. The key is to learn grammar in context and use new vocabulary actively, not just memorise lists.",
+      "Consistent, low-pressure practice — especially speaking and writing — is what makes the pieces come together.",
+    ],
+    keyConcepts: [
+      "Verb conjugation and key tenses",
+      "Noun gender and adjective agreement",
+      "Sentence structure and word order",
+      "Core, high-frequency vocabulary",
+      "Common expressions and connectors",
+      "Building sentences from patterns",
+    ],
+    commonMistakes: [
+      "Memorising vocabulary lists without using the words",
+      "Ignoring gender and agreement rules",
+      "Translating word-for-word from English",
+      "Avoiding speaking for fear of mistakes",
+    ],
+    studyTips: [
+      "Learn grammar in context, through real sentences",
+      "Use new vocabulary actively in speaking and writing",
+      "Practise a little every day rather than in long bursts",
+      "Don't fear mistakes — they're how you improve",
+    ],
+    closing: [
+      "Language learning accelerates with regular, guided practice. Our French tutoring builds grammar, vocabulary and confidence through active use. Book a free consultation to get started.",
+    ],
+  },
+
+  "mandarin-conversational-mandarin-pronunciation": {
+    excerpt:
+      "Conversational Mandarin and pronunciation, including tones, are the heart of speaking Chinese. This guide explains how to build them with confidence.",
+    intro: [
+      "Speaking Mandarin confidently starts with pronunciation — especially the tones that give Chinese its music and meaning. Getting these foundations right early makes everything that follows far easier.",
+    ],
+    overview: [
+      "Mandarin uses four main tones (plus a neutral one), and the tone can completely change a word's meaning. Alongside tones, the Pinyin system helps learners read and pronounce sounds. Building conversational ability means practising listening and speaking from the start.",
+      "The most effective approach pairs solid pronunciation with lots of real conversation practice.",
+    ],
+    keyConcepts: [
+      "The four tones and neutral tone",
+      "Pinyin and Mandarin sounds",
+      "Common conversational phrases",
+      "Listening comprehension",
+      "Building sentences for everyday situations",
+      "Cultural context in communication",
+    ],
+    commonMistakes: [
+      "Neglecting tones, which changes word meanings",
+      "Learning to read characters before mastering sounds",
+      "Practising silently instead of speaking aloud",
+      "Avoiding conversation until 'ready' (start early instead)",
+    ],
+    studyTips: [
+      "Master tones early — they're essential to meaning",
+      "Speak aloud and record yourself to check pronunciation",
+      "Practise listening to native speakers daily",
+      "Use new phrases in real conversation quickly",
+    ],
+    closing: [
+      "Speaking a language confidently comes from guided, active practice. Our Mandarin tutoring builds pronunciation and conversation skills from the start. Book a free consultation to get started.",
+    ],
+  },
+
+  "gre-prep-quantitative-reasoning-shortcuts": {
+    excerpt:
+      "The GRE quantitative section rewards smart strategy. This guide shares time-saving approaches, common mistakes, and how to prepare for a strong score.",
+    intro: [
+      "The GRE Quantitative Reasoning section tests fairly basic math in tricky, time-pressured ways. Smart strategy — knowing when to calculate, estimate or skip — often matters as much as the math itself.",
+    ],
+    overview: [
+      "GRE quant covers arithmetic, algebra, geometry and data analysis, but the challenge is applying them quickly under time pressure. Techniques like plugging in numbers, estimating, and recognising answer patterns can save valuable time.",
+      "Effective prep pairs a solid content refresher with lots of timed, strategy-focused practice.",
+    ],
+    keyConcepts: [
+      "Arithmetic and number properties",
+      "Algebra and word problems",
+      "Geometry essentials",
+      "Data interpretation",
+      "Plugging in numbers and back-solving",
+      "Estimation and time management",
+    ],
+    commonMistakes: [
+      "Doing full calculations when estimation would be faster",
+      "Spending too long on one hard question",
+      "Making careless arithmetic errors under pressure",
+      "Practising untimed and struggling with pace on test day",
+    ],
+    studyTips: [
+      "Learn shortcuts like plugging in and back-solving",
+      "Practise under strict time limits",
+      "Refresh core math content first, then drill strategy",
+      "Review errors to spot recurring traps",
+    ],
+    closing: [
+      "GRE quant rewards content plus strategy, and focused prep builds both. Our test prep tutoring combines a math refresher with timed, strategy-driven practice. Book a free consultation to get started.",
+    ],
+  },
+
+  "javascript-dom-manipulation": {
+    excerpt:
+      "DOM manipulation is how JavaScript changes web pages dynamically. This guide explains the essentials, common mistakes, and how to use it well.",
+    intro: [
+      "DOM manipulation is where JavaScript starts changing what users see — updating text, styles and elements on the fly. It's the skill that turns a static page into a dynamic, interactive experience.",
+    ],
+    overview: [
+      "The DOM (Document Object Model) is a live representation of the page that JavaScript can read and change. By selecting elements and modifying their content, attributes or styles — often in response to events — you make pages respond to users in real time.",
+      "Understanding how to select elements and update them efficiently is the foundation for all interactive web development.",
+    ],
+    keyConcepts: [
+      "Selecting elements (querySelector, getElementById)",
+      "Changing text and HTML content",
+      "Modifying styles and classes",
+      "Creating and removing elements",
+      "Responding to events",
+      "Updating the DOM efficiently",
+    ],
+    commonMistakes: [
+      "Running scripts before the DOM has loaded",
+      "Selecting elements incorrectly and getting null",
+      "Manipulating the DOM inefficiently in loops",
+      "Mixing up textContent and innerHTML",
+    ],
+    studyTips: [
+      "Practise selecting and changing elements on real pages",
+      "Combine DOM manipulation with event listeners",
+      "Understand when the DOM is ready before running scripts",
+      "Build small interactive features to apply the concepts",
+    ],
+    closing: [
+      "Interactive web pages are best learned by building them. Our web development tutoring covers DOM manipulation, events and the path to React. Book a free consultation to get started.",
+    ],
+  },
+
+  "university-biology-anatomy-and-physiology": {
+    excerpt:
+      "University anatomy and physiology is detail-rich and vital for health-science students. This guide covers the approach, pitfalls, and how to succeed.",
+    intro: [
+      "University anatomy and physiology is a cornerstone for nursing, kinesiology, medicine and many health-science programs. It's famously detail-heavy, but a systems-based approach makes the volume manageable.",
+    ],
+    overview: [
+      "Anatomy studies the body's structures while physiology explains how they function, and university courses cover both in depth across every organ system. The sheer amount of detail is the main challenge.",
+      "Students succeed by learning each system as an integrated whole — structure linked to function — rather than memorising disconnected facts.",
+    ],
+    keyConcepts: [
+      "The musculoskeletal system",
+      "The cardiovascular and respiratory systems",
+      "The nervous and endocrine systems",
+      "The digestive and urinary systems",
+      "Homeostasis and regulation",
+      "Structure–function relationships",
+    ],
+    commonMistakes: [
+      "Memorising facts without linking structure to function",
+      "Cramming instead of spacing out the large volume",
+      "Overlooking how systems interact",
+      "Neglecting terminology, which is heavily tested",
+    ],
+    studyTips: [
+      "Learn structure and function together, system by system",
+      "Use diagrams, models and active recall",
+      "Space your studying — the volume is too large to cram",
+      "Master the terminology early",
+    ],
+    closing: [
+      "Anatomy and physiology reward organised, systems-level study. Our university-level science tutoring helps health-science students master the material efficiently. Book a free consultation to get started.",
+    ],
+  },
+
+  "university-mathematics-statistics-ubc-stat-200-203-241-251": {
+    excerpt:
+      "UBC's introductory statistics courses (STAT 200/203/241/251) challenge many students. This guide covers the key ideas, pitfalls, and how to succeed.",
+    intro: [
+      "UBC's introductory statistics courses (STAT 200, 203, 241 and 251) serve students across many programs and can be surprisingly challenging. The concepts are intuitive when understood, but easy to misapply when memorised.",
+    ],
+    overview: [
+      "These courses cover descriptive statistics, probability, distributions and inference — the tools for drawing reliable conclusions from data. Depending on the course, there's often a computational or software component.",
+      "The key to success is understanding what each method does and when to use it, rather than plugging numbers into formulas.",
+    ],
+    keyConcepts: [
+      "Descriptive statistics and data summaries",
+      "Probability and distributions",
+      "Sampling and the sampling distribution",
+      "Confidence intervals",
+      "Hypothesis testing",
+      "Interpreting results correctly",
+    ],
+    commonMistakes: [
+      "Applying formulas without checking assumptions",
+      "Misinterpreting p-values and confidence intervals",
+      "Confusing correlation and causation",
+      "Neglecting the conceptual meaning behind calculations",
+    ],
+    studyTips: [
+      "Focus on interpretation, not just computation",
+      "Understand the assumptions behind each test",
+      "Practise the specific problem types your course assesses",
+      "Work with real data and software where required",
+    ],
+    closing: [
+      "University statistics rewards conceptual clarity, which expert tutoring builds. Our university math tutoring helps UBC and other students master statistics. Book a free consultation to get started.",
+    ],
+  },
 };
