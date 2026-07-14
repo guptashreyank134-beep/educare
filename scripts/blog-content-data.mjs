@@ -954,4 +954,250 @@ export const blogContent = {
       "Finance is best learned by connecting concepts to real decisions, with expert guidance. Our finance tutoring builds strong foundations for high-school, university and professional study. Book a free consultation to get started.",
     ],
   },
+
+  // ─────────────────────────── BATCH 5 ───────────────────────────
+  "physics-high-school-physics": {
+    excerpt:
+      "High-school physics builds the foundation for science and engineering. This guide covers the core topics, common mistakes, and how to study physics effectively.",
+    intro: [
+      "High-school physics is where students first learn to describe the physical world with mathematics. It has a reputation for being hard, but most of the difficulty comes from method, not the ideas themselves — and method can be taught.",
+    ],
+    overview: [
+      "High-school physics spans mechanics, energy, waves, electricity and more, using algebra and trigonometry throughout. Each topic builds a way of thinking: model the situation, apply the right principle, and solve carefully.",
+      "Students succeed when they treat physics as a problem-solving discipline and keep their supporting math sharp.",
+    ],
+    keyConcepts: [
+      "Kinematics and dynamics (motion and forces)",
+      "Work, energy and power",
+      "Momentum and collisions",
+      "Waves and sound",
+      "Electricity and circuits",
+      "Problem-solving method",
+    ],
+    commonMistakes: [
+      "Relying on memorised formulas instead of understanding",
+      "Weak algebra and trigonometry undermining correct physics",
+      "Skipping diagrams and problem setup",
+      "Not checking units and the reasonableness of answers",
+    ],
+    studyTips: [
+      "Learn a consistent problem-solving method and use it every time",
+      "Keep your math skills sharp alongside the physics",
+      "Draw a diagram for every problem",
+      "Practise widely and review your mistakes",
+    ],
+    closing: [
+      "High-school physics becomes far more approachable with expert, one-on-one support. Our Physics 12 tutoring builds understanding and a reliable problem-solving method. Book a free consultation to get started.",
+    ],
+  },
+
+  "burnaby-stem-tutoring-mathematics-grades-8-12": {
+    excerpt:
+      "Math from Grade 8 to 12 builds toward university readiness. This guide maps the journey, the common gaps, and how strong tutoring keeps students on track.",
+    intro: [
+      "The math journey from Grade 8 to Grade 12 is a carefully connected sequence, where each year lays the groundwork for the next. Small gaps early on tend to grow, which is why steady support across these years matters so much.",
+    ],
+    overview: [
+      "Grades 8–10 build the algebra, proportional reasoning and foundational skills that Grades 11–12 depend on. By Grade 11 the paths split into Pre-Calculus and Foundations, leading to Calculus 12 and university readiness.",
+      "Because the sequence is cumulative, the most effective approach is to keep each year's foundations solid rather than patching problems later.",
+    ],
+    keyConcepts: [
+      "Grades 8–10 algebra and number sense",
+      "Proportional reasoning and functions",
+      "Grade 11 pathways (Pre-Calculus and Foundations)",
+      "Trigonometry and advanced functions",
+      "Calculus 12 and university preparation",
+      "Problem-solving across all years",
+    ],
+    commonMistakes: [
+      "Letting early gaps (e.g. fractions, algebra) go unaddressed",
+      "Choosing the wrong Grade 11 pathway for future goals",
+      "Cramming instead of building cumulative understanding",
+      "Underestimating how much Grade 12 depends on Grade 11",
+    ],
+    studyTips: [
+      "Fix foundational gaps early, before they compound",
+      "Choose the Grade 11 pathway that fits university plans",
+      "Keep skills current — math is cumulative",
+      "Build understanding, not just procedures",
+    ],
+    closing: [
+      "Consistent support across the school years keeps students on track and confident. Our math tutoring in Burnaby covers Grades 6–12 with a plan tailored to each student's goals. Book a free consultation to get started.",
+    ],
+  },
+
+  "burnaby-stem-tutoring-statistics-data-analysis": {
+    excerpt:
+      "Statistics and data analysis are increasingly essential skills. This guide covers the core ideas, common mistakes, and how to build genuine understanding.",
+    intro: [
+      "Statistics and data analysis are among the most useful skills a student can build — for school, university and almost any career. The concepts are intuitive when taught well, but easy to misuse when memorised.",
+    ],
+    overview: [
+      "Statistics is about drawing reliable conclusions from data despite uncertainty. It covers describing data, understanding probability and distributions, and using samples to make inferences about larger populations.",
+      "The goal isn't just to compute values but to interpret them correctly — knowing what a result does and doesn't tell you.",
+    ],
+    keyConcepts: [
+      "Descriptive statistics (mean, median, mode, spread)",
+      "Probability fundamentals",
+      "Distributions, including the normal distribution",
+      "Sampling and sampling variability",
+      "Hypothesis testing basics",
+      "Interpreting results correctly",
+    ],
+    commonMistakes: [
+      "Confusing correlation with causation",
+      "Misreading what a statistical result actually means",
+      "Applying formulas without checking assumptions",
+      "Confusing the mean, median and mode and when to use each",
+    ],
+    studyTips: [
+      "Focus on interpretation, not just calculation",
+      "Work with real data sets to make ideas concrete",
+      "Always ask what a result does and doesn't tell you",
+      "Understand the assumptions behind each method",
+    ],
+    closing: [
+      "Statistics rewards genuine understanding over memorisation, which is what good tutoring builds. Our STEM tutor in Vancouver helps students master statistics and data analysis for school and beyond. Book a free consultation to get started.",
+    ],
+  },
+
+  "computer-science-computational-thinking": {
+    excerpt:
+      "Computational thinking is the problem-solving mindset behind computer science. This guide explains its core skills and how to develop them.",
+    intro: [
+      "Computational thinking is the real skill behind computer science — a way of approaching problems that works whether or not you're writing code. It's what lets programmers break down hard problems and design solutions.",
+    ],
+    overview: [
+      "Computational thinking has four pillars: decomposition (breaking a problem into parts), pattern recognition (spotting similarities), abstraction (focusing on what matters), and algorithm design (creating step-by-step solutions).",
+      "These skills transfer far beyond coding — they make students better problem-solvers in math, science and everyday reasoning.",
+    ],
+    keyConcepts: [
+      "Decomposition: breaking problems into smaller parts",
+      "Pattern recognition",
+      "Abstraction: focusing on the essentials",
+      "Algorithm design",
+      "Logical reasoning",
+      "Debugging as systematic problem-solving",
+    ],
+    commonMistakes: [
+      "Trying to solve a whole problem at once instead of decomposing it",
+      "Getting lost in detail instead of abstracting",
+      "Jumping to code before designing an approach",
+      "Debugging by guessing rather than reasoning",
+    ],
+    studyTips: [
+      "Practise breaking big problems into small steps",
+      "Look for patterns you can reuse",
+      "Plan an algorithm before writing code",
+      "Debug systematically, testing one idea at a time",
+    ],
+    closing: [
+      "Computational thinking is the foundation of programming, and it's teachable. Our computer science tutoring develops these problem-solving skills through hands-on practice. Book a free consultation to get started.",
+    ],
+  },
+
+  "javascript-functions-and-events": {
+    excerpt:
+      "Functions and events make JavaScript interactive. This guide explains how they work, common mistakes, and how to use them to build responsive web pages.",
+    intro: [
+      "Functions and events are what make web pages interactive — they're how JavaScript responds to clicks, input and everything a user does. Understanding them well is the step where static pages come to life.",
+    ],
+    overview: [
+      "A function is a reusable block of code that performs a task, and events are signals (like a click or keypress) that your code can respond to. Connecting the two — running a function when an event happens — is the core of interactive web development.",
+      "Mastering how functions receive input, return output, and get attached to events is essential before moving on to frameworks like React.",
+    ],
+    keyConcepts: [
+      "Declaring and calling functions",
+      "Parameters and return values",
+      "Arrow functions",
+      "Event listeners (click, input, submit)",
+      "The event object",
+      "Callbacks and event-driven code",
+    ],
+    commonMistakes: [
+      "Calling a function immediately instead of passing it to an event listener",
+      "Forgetting to return a value from a function",
+      "Misunderstanding scope inside functions",
+      "Attaching event listeners before the element exists",
+    ],
+    studyTips: [
+      "Practise writing small functions with clear inputs and outputs",
+      "Build interactive demos (buttons, forms) to use events",
+      "Understand the difference between calling and referencing a function",
+      "Read the event object to see what information it carries",
+    ],
+    closing: [
+      "Interactivity is where web development gets exciting, and it's best learned by building. Our web development tutoring covers JavaScript functions, events and beyond, up to React. Book a free consultation to get started.",
+    ],
+  },
+
+  "python-functions-logic-building": {
+    excerpt:
+      "Functions and logic are where Python programming really begins. This guide explains how to structure code and build problem-solving skill.",
+    intro: [
+      "Once you know Python's basics, functions and logic are where real programming begins — organising code into reusable pieces and combining conditions to solve genuine problems. This is the leap from writing lines to building programs.",
+    ],
+    overview: [
+      "Functions let you package a task so it can be reused and reasoned about, while logic — conditions, comparisons and boolean operators — lets your program make decisions. Together they're the tools for turning an idea into working code.",
+      "The key skill here is decomposition: breaking a problem into small functions, each doing one clear job.",
+    ],
+    keyConcepts: [
+      "Defining functions with parameters and return values",
+      "Scope (local vs global)",
+      "Boolean logic and comparison operators",
+      "Combining conditions (and, or, not)",
+      "Breaking problems into small functions",
+      "Writing readable, reusable code",
+    ],
+    commonMistakes: [
+      "Writing one giant block instead of small functions",
+      "Forgetting to return a value from a function",
+      "Confusing '=' with '==' in conditions",
+      "Overcomplicating logic that could be simplified",
+    ],
+    studyTips: [
+      "Give each function one clear job",
+      "Practise translating word problems into logic",
+      "Test each function on its own before combining",
+      "Refactor working code to make it cleaner",
+    ],
+    closing: [
+      "Structuring code with functions and logic is the heart of programming, and it's best learned with guidance. Our coding tutoring builds these skills through real Python projects. Book a free consultation to get started.",
+    ],
+  },
+
+  "university-chemistry-ubc-chemistry-chem-111-121-123": {
+    excerpt:
+      "UBC first-year chemistry (CHEM 111/121/123) is fast-paced and demanding. This guide covers the key topics, common pitfalls, and how to succeed.",
+    intro: [
+      "UBC's first-year chemistry courses (CHEM 111, 121 and 123) move quickly and expect strong foundations. Many capable students find the pace challenging, but with the right support the material is very manageable.",
+    ],
+    overview: [
+      "These courses build on high-school chemistry with greater depth in atomic structure, bonding, thermodynamics, equilibrium and kinetics, often with a significant problem-solving and lab component.",
+      "Success comes from keeping up with the pace, mastering the problem types, and shoring up any high-school gaps before they cause trouble.",
+    ],
+    keyConcepts: [
+      "Atomic structure and quantum concepts",
+      "Chemical bonding and molecular structure",
+      "Thermodynamics",
+      "Chemical equilibrium",
+      "Reaction kinetics",
+      "Quantitative problem-solving",
+    ],
+    commonMistakes: [
+      "Falling behind due to the faster university pace",
+      "Weak high-school foundations (stoichiometry, moles) surfacing",
+      "Memorising instead of understanding problem types",
+      "Underestimating the volume of practice required",
+    ],
+    studyTips: [
+      "Keep pace with lectures and problem sets weekly",
+      "Reinforce high-school foundations early",
+      "Practise the specific problem types the course tests",
+      "Use office hours and tutoring before small gaps grow",
+    ],
+    closing: [
+      "First-year university chemistry is far more manageable with expert help that fills gaps and builds problem-solving skill. Our Chemistry 12 tutoring and university support keep UBC students on track. Book a free consultation to get started.",
+    ],
+  },
 };
