@@ -9,6 +9,10 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WhatsAppFloating from "../components/WhatsAppFloating";
+import {
+  GoogleTagManagerScript,
+  GoogleTagManagerNoScript,
+} from "../components/GoogleTagManager";
 import { JsonLd, getOrganizationSchema } from "../components/SchemaMarkup";
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -49,6 +53,8 @@ export default function RootLayout({
       className={`${bricolageGrotesque.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col pt-20">
+        <GoogleTagManagerNoScript />
+        <GoogleTagManagerScript />
         <JsonLd schema={getOrganizationSchema()} />
         <Header />
         {children}
