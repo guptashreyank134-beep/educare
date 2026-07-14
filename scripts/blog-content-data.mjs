@@ -1200,4 +1200,250 @@ export const blogContent = {
       "First-year university chemistry is far more manageable with expert help that fills gaps and builds problem-solving skill. Our Chemistry 12 tutoring and university support keep UBC students on track. Book a free consultation to get started.",
     ],
   },
+
+  // ─────────────────────────── BATCH 6 ───────────────────────────
+  "university-physics-electromagnetism-thermodynamics": {
+    excerpt:
+      "University electromagnetism and thermodynamics are conceptually demanding. This guide explains the core ideas, common pitfalls, and how to master them.",
+    intro: [
+      "Electromagnetism and thermodynamics are two of the most conceptually rich topics in university physics. They reward students who build strong intuition and stay comfortable with the vector calculus and algebra underneath.",
+    ],
+    overview: [
+      "Electromagnetism describes electric and magnetic fields and how they interact with charges and currents, culminating in the elegant relationships captured by Maxwell's equations. Thermodynamics describes energy, heat and the direction of processes through its laws.",
+      "Both subjects become far clearer when you focus on the physical meaning first and treat the mathematics as a tool for expressing it.",
+    ],
+    keyConcepts: [
+      "Electric fields, potential and Gauss's law",
+      "Magnetic fields and forces on currents",
+      "Electromagnetic induction",
+      "The laws of thermodynamics",
+      "Entropy and the direction of processes",
+      "Heat engines and efficiency",
+    ],
+    commonMistakes: [
+      "Manipulating equations without grasping the physical meaning",
+      "Struggling with the vector calculus rather than the physics",
+      "Confusing the different thermodynamic processes",
+      "Losing track of sign conventions for work and heat",
+    ],
+    studyTips: [
+      "Build physical intuition before diving into the math",
+      "Keep vector calculus and algebra sharp",
+      "Draw field diagrams and process diagrams",
+      "Work many problems — these topics are learned by doing",
+    ],
+    closing: [
+      "These demanding topics are far more approachable with expert guidance that connects the physics and the math. Our university physics tutoring supports students at UBC, SFU and beyond. Book a free consultation to get started.",
+    ],
+  },
+
+  "university-chemistry-chemical-kinetics-equilibrium": {
+    excerpt:
+      "Kinetics and equilibrium are central to university chemistry. This guide explains reaction rates and dynamic balance, with common mistakes and study tips.",
+    intro: [
+      "Chemical kinetics and equilibrium answer two of chemistry's biggest questions: how fast does a reaction go, and where does it settle? They're central to university chemistry, and understanding how they differ is the first step to mastering both.",
+    ],
+    overview: [
+      "Kinetics studies reaction rates and the factors that affect them, including the mechanism by which a reaction proceeds. Equilibrium describes the balance point of a reversible reaction, where forward and reverse rates are equal.",
+      "The key is to keep these two ideas distinct — one is about speed, the other about the final balance — while seeing how they connect.",
+    ],
+    keyConcepts: [
+      "Reaction rates and rate laws",
+      "Activation energy and catalysts",
+      "Reaction mechanisms",
+      "Dynamic equilibrium",
+      "Equilibrium constants and Le Chatelier's principle",
+      "ICE tables and equilibrium calculations",
+    ],
+    commonMistakes: [
+      "Confusing rate (kinetics) with extent (equilibrium)",
+      "Misapplying Le Chatelier's principle",
+      "Setting up ICE tables incorrectly",
+      "Assuming a catalyst changes the equilibrium position (it doesn't)",
+    ],
+    studyTips: [
+      "Keep kinetics and equilibrium mentally separate",
+      "Use ICE tables systematically for equilibrium problems",
+      "Draw energy diagrams for kinetics",
+      "Practise Le Chatelier predictions with varied scenarios",
+    ],
+    closing: [
+      "Kinetics and equilibrium reward clear conceptual understanding, which expert tutoring builds. Our Chemistry 12 and university chemistry tutoring makes these topics click. Book a free consultation to get started.",
+    ],
+  },
+
+  "biology-ecology-biotechnology": {
+    excerpt:
+      "Ecology and biotechnology connect biology to the real world. This guide covers ecosystems and modern biotech, with common mistakes and study strategies.",
+    intro: [
+      "Ecology explains how living things interact with each other and their environment, while biotechnology applies biological knowledge to solve real problems. Together they show biology at its most relevant and forward-looking.",
+    ],
+    overview: [
+      "Ecology examines ecosystems, energy flow, nutrient cycles and the relationships between organisms. Biotechnology uses tools like genetic engineering and biotechnology techniques to develop medicines, improve crops and more.",
+      "Both topics reward connecting concepts to real-world examples, which makes them more memorable and more interesting.",
+    ],
+    keyConcepts: [
+      "Ecosystems and energy flow",
+      "Food chains, food webs and trophic levels",
+      "Nutrient cycles (carbon, nitrogen)",
+      "Population dynamics",
+      "Genetic engineering and biotechnology tools",
+      "Applications in medicine and agriculture",
+    ],
+    commonMistakes: [
+      "Confusing energy flow with nutrient cycling",
+      "Mixing up trophic levels and food-web relationships",
+      "Memorising biotech terms without understanding the processes",
+      "Overlooking real-world applications that make concepts stick",
+    ],
+    studyTips: [
+      "Connect every concept to a real ecosystem or application",
+      "Draw food webs and nutrient cycles",
+      "Understand biotech processes, not just definitions",
+      "Use current examples (e.g. medicine, agriculture) to remember ideas",
+    ],
+    closing: [
+      "Ecology and biotechnology come alive when linked to the real world, which is how good tutoring teaches them. Our science tutor in Burnaby makes these topics clear and engaging. Book a free consultation to get started.",
+    ],
+  },
+
+  "vancouver-math-tutoring-elementary-middle-school-math": {
+    excerpt:
+      "Elementary and middle-school math sets the foundation for everything later. This guide explains the essential skills and how to build them with confidence.",
+    intro: [
+      "The math skills built in elementary and middle school are the foundation for all the math that follows. Getting these years right — with strong number sense and early confidence — makes high-school math far easier.",
+    ],
+    overview: [
+      "These years develop number sense, operations with fractions and decimals, early algebra, and problem-solving. Crucially, they're also where students form their attitude toward math — confidence built here pays off for years.",
+      "The best support combines mastering the skills with keeping math positive and approachable.",
+    ],
+    keyConcepts: [
+      "Number sense and place value",
+      "Fractions, decimals and percentages",
+      "Operations and mental math",
+      "Introduction to algebra and variables",
+      "Ratios and proportional reasoning",
+      "Early problem-solving skills",
+    ],
+    commonMistakes: [
+      "Weak fraction skills that cause trouble for years",
+      "Memorising procedures without understanding",
+      "Developing math anxiety from early struggles",
+      "Rushing ahead before foundations are solid",
+    ],
+    studyTips: [
+      "Build genuine understanding, not just answers",
+      "Master fractions thoroughly — they matter enormously later",
+      "Keep math positive and low-pressure",
+      "Practise mental math to build number sense",
+    ],
+    closing: [
+      "Strong, confident foundations in these years set students up for success. Our math tutor in Vancouver makes early math clear and enjoyable, building skills and confidence together. Book a free consultation to get started.",
+    ],
+  },
+
+  "web-development-backend-development-node-js-express": {
+    excerpt:
+      "Backend development with Node.js and Express powers the web behind the scenes. This guide explains how it works and how to learn it effectively.",
+    intro: [
+      "Backend development is the engine behind every web app — handling data, logic and security that users never see. Node.js and Express are a popular, approachable way to learn it, especially if you already know JavaScript.",
+    ],
+    overview: [
+      "The backend runs on a server, responding to requests from the frontend, working with databases, and enforcing rules. Node.js lets you write server code in JavaScript, and Express is a lightweight framework that makes building web servers and APIs straightforward.",
+      "Understanding the request–response cycle and how the backend connects to a database is the core of it all.",
+    ],
+    keyConcepts: [
+      "The client–server model and request–response cycle",
+      "Node.js runtime fundamentals",
+      "Express routes and middleware",
+      "Building REST APIs",
+      "Connecting to a database",
+      "Handling errors and basic security",
+    ],
+    commonMistakes: [
+      "Learning backend before solid JavaScript fundamentals",
+      "Confusing frontend and backend responsibilities",
+      "Not handling errors or edge cases",
+      "Ignoring security basics from the start",
+    ],
+    studyTips: [
+      "Get comfortable with JavaScript first",
+      "Build a simple API and grow it step by step",
+      "Understand the request–response cycle deeply",
+      "Connect a real database to practise full-stack flow",
+    ],
+    closing: [
+      "Backend development is best learned by building real projects with guidance. Our web development tutoring covers Node.js, Express and full-stack fundamentals. Book a free consultation to get started.",
+    ],
+  },
+
+  "sat-prep-test-taking-hacks-strategies": {
+    excerpt:
+      "Smart strategy can add real points on the SAT. This guide shares proven test-taking approaches, common mistakes, and how to prepare effectively.",
+    intro: [
+      "The SAT tests strategy as much as knowledge. Two students with the same ability can score very differently based on pacing, question selection and technique — which is exactly why smart preparation pays off.",
+    ],
+    overview: [
+      "The SAT is a timed, predictable exam, and its predictability is your advantage. Knowing the question types, managing time, and using strategies like elimination and educated guessing can add meaningful points on top of your content knowledge.",
+      "Effective prep combines content review with focused strategy practice under timed conditions.",
+    ],
+    keyConcepts: [
+      "Understanding the SAT structure and scoring",
+      "Time management and pacing per section",
+      "Process of elimination on multiple choice",
+      "Educated guessing (no penalty for wrong answers)",
+      "Reading and evidence-based question strategy",
+      "Full-length timed practice",
+    ],
+    commonMistakes: [
+      "Spending too long on hard questions and running out of time",
+      "Leaving answers blank (there's no wrong-answer penalty)",
+      "Practising untimed and being surprised by exam pace",
+      "Focusing only on content and ignoring strategy",
+    ],
+    studyTips: [
+      "Take full-length, timed practice tests regularly",
+      "Learn the format cold so nothing surprises you on test day",
+      "Answer every question — guess when unsure",
+      "Review every mistake to find patterns",
+    ],
+    closing: [
+      "Strategy and content together produce the best SAT scores, and focused prep makes a real difference. Our test prep tutoring combines both with realistic practice. Book a free consultation to get started.",
+    ],
+  },
+
+  "mcat-prep-biology-biochemistry": {
+    excerpt:
+      "MCAT biology and biochemistry demand deep understanding and application. This guide covers the key content areas, pitfalls, and how to prepare.",
+    intro: [
+      "The MCAT's biology and biochemistry section rewards deep, applied understanding — not memorisation. It integrates concepts across topics and tests your ability to reason through unfamiliar, passage-based questions.",
+    ],
+    overview: [
+      "This section covers cellular and molecular biology, biochemistry, physiology and genetics, all tested through dense passages that require application. Success comes from strong fundamentals plus lots of practice reading and reasoning through MCAT-style passages.",
+      "The best preparation builds a solid conceptual base and then drills the specific skill of applying it under exam conditions.",
+    ],
+    keyConcepts: [
+      "Cellular and molecular biology",
+      "Biochemistry (amino acids, enzymes, metabolism)",
+      "Genetics and the central dogma",
+      "Physiology of major organ systems",
+      "Interpreting experimental passages",
+      "Applying concepts to novel scenarios",
+    ],
+    commonMistakes: [
+      "Memorising facts instead of building applicable understanding",
+      "Underestimating the volume of biochemistry",
+      "Not practising with passage-based questions",
+      "Neglecting timed, full-length practice",
+    ],
+    studyTips: [
+      "Prioritise understanding you can apply, not rote recall",
+      "Drill MCAT-style passages, not just content review",
+      "Master biochemistry — it's heavily represented",
+      "Simulate real exam conditions with timed practice",
+    ],
+    closing: [
+      "MCAT science rewards applied understanding, which expert tutoring helps build efficiently. Our university-level science tutoring supports students preparing for demanding exams. Book a free consultation to get started.",
+    ],
+  },
 };
