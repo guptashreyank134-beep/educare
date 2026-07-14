@@ -52,17 +52,17 @@ const BRAND_SUFFIX = /\s*[|\-–—]\s*Dr\.?\s*Shreyank\s*Educare\s*$/i;
 
 function shorten(title) {
   let t = String(title).trim();
-  if (t.length <= MAX) return t;
 
-  // 1. Drop "Mastering " prefix
+  // SEO-align: always drop the weak "Mastering " opener so the keyword leads
+  // the title (applies even when the title is already under the length limit).
   t = t.replace(/^Mastering\s+/i, "").trim();
   if (t.length <= MAX) return t;
 
-  // 2. Drop the brand suffix
+  // Too long: drop the brand suffix.
   t = t.replace(BRAND_SUFFIX, "").trim();
   if (t.length <= MAX) return t;
 
-  // 3. Truncate at a word boundary
+  // Still too long: truncate at a word boundary.
   t = t.slice(0, MAX).replace(/\s+\S*$/, "").trim();
   return t;
 }
@@ -76,27 +76,36 @@ async function run() {
 
   let changed = 0;
   for (const post of posts) {
-    // The <title> prefers metaTitle; shorten whichever field is the source.
-    const usesMeta = typeof post.metaTitle === "string" && post.metaTitle.length > 0;
-    const current = usesMeta ? post.metaTitle : post.title;
-    if (typeof current !== "string" || current.length <= MAX) continue;
+    // SEO-align BOTH the visible title AND the SEO metaTitle so they match
+    // and lead with the keyword.
+    const set = {};
+    const diffs = [];
 
-    const next = shorten(current);
-    if (next === current) continue;
+    if (typeof post.metaTitle === "string" && post.metaTitle.length > 0) {
+      const next = shorten(post.metaTitle);
+      if (next !== post.metaTitle) {
+        set["metaData.metaTitle"] = next;
+        diffs.push(["metaTitle", post.metaTitle, next]);
+      }
+    }
+    if (typeof post.title === "string" && post.title.length > 0) {
+      const next = shorten(post.title);
+      if (next !== post.title) {
+        set["title"] = next;
+        diffs.push(["title", post.title, next]);
+      }
+    }
 
+    if (diffs.length === 0) continue;
     changed++;
-    console.log(`\n  ${current.length}→${next.length} chars`);
-    console.log(`    - ${current}`);
-    console.log(`    + ${next}`);
+    for (const [field, from, to] of diffs) {
+      console.log(`\n  [${field}] ${from.length}→${to.length} chars`);
+      console.log(`    - ${from}`);
+      console.log(`    + ${to}`);
+    }
 
     if (commit) {
-      const patch = client.patch(post._id);
-      if (usesMeta) {
-        patch.set({ "metaData.metaTitle": next });
-      } else {
-        patch.set({ title: next });
-      }
-      await patch.commit();
+      await client.patch(post._id).set(set).commit();
     }
   }
 
