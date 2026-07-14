@@ -8,14 +8,14 @@ import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("page", "programs");
-  return getMetadata(data, "https://drshreyankeducare.com/programs");
+  return getMetadata(data, "https://www.drshreyankeducare.com/programs");
 }
 
 const ProgramsPage = async () => {
   const data = await getMetaDataBySlug("page", "programs");
   return (
     <>
-      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/programs")} />
+      <JsonLd schema={getPageSchema(data, "https://www.drshreyankeducare.com/programs")} />
       <GeneralHeroSection
         {...ProgramsHeroSectionContent}
         breadcrumb={<Breadcrumbs />}

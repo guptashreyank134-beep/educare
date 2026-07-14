@@ -75,7 +75,7 @@ export default async function BlogListingView({ page }: { page: number }) {
 
   return (
     <>
-      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/blog/")} />
+      <JsonLd schema={getPageSchema(data, "https://www.drshreyankeducare.com/blog/")} />
       <GeneralHeroSection {...BlogsHeroSectionContent} breadcrumb={<Breadcrumbs />} />
 
       <main className="min-h-screen py-16">

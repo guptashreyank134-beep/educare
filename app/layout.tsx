@@ -26,9 +26,37 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://drshreyankeducare.com"),
-  title: "Educare - Personalized Learning",
-  description: "Personalized Learning, That Works At Every Level!",
+  metadataBase: new URL("https://www.drshreyankeducare.com"),
+  title:
+    "Dr. Shreyank Educare — Math, Physics, Chemistry & Coding Tutoring in Burnaby & Vancouver",
+  description:
+    "PhD-led, 5-star-rated tutoring in Math, Physics, Chemistry and Coding for Grades 6–12 and university across Burnaby & Vancouver — in person and online. Book a free consultation.",
+  applicationName: "Dr. Shreyank Educare",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/assets/logo.png",
+  },
+  manifest: "/manifest.webmanifest",
+  openGraph: {
+    type: "website",
+    siteName: "Dr. Shreyank Educare",
+    locale: "en_CA",
+    url: "https://www.drshreyankeducare.com",
+    title:
+      "Dr. Shreyank Educare — Math, Physics, Chemistry & Coding Tutoring in Burnaby & Vancouver",
+    description:
+      "PhD-led, 5-star-rated tutoring in Math, Physics, Chemistry and Coding for Grades 6–12 and university across Burnaby & Vancouver — in person and online.",
+    images: "/assets/logo.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Dr. Shreyank Educare — Tutoring in Burnaby & Vancouver",
+    description:
+      "PhD-led tutoring in Math, Physics, Chemistry and Coding for Grades 6–12 and university.",
+    images: "/assets/logo.png",
+  },
   robots: {
     index: true,
     follow: true,

@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/studio/"],
     },
-    sitemap: "https://drshreyankeducare.com/sitemap.xml",
+    sitemap: "https://www.drshreyankeducare.com/sitemap.xml",
   };
 }

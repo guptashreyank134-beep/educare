@@ -18,7 +18,7 @@ import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "finance");
-  return getMetadata(data, "https://drshreyankeducare.com/programs/finance", {
+  return getMetadata(data, "https://www.drshreyankeducare.com/programs/finance", {
     title: "Finance Tutor in Burnaby & Vancouver | Accounting & CFA Help",
     description:
       "Expert finance and accounting tutoring in Burnaby & Vancouver — high school, university and professional (CFA, CSC) support. Book a free consultation today.",
@@ -60,7 +60,7 @@ export default async function FinanceProgramPage() {
 
   return (
     <>
-      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/programs/finance")} />
+      <JsonLd schema={getPageSchema(data, "https://www.drshreyankeducare.com/programs/finance")} />
       <main className="relative min-h-screen bg-bg-grey overflow-hidden">
       {/* Background Grid Pattern */}
       <div

@@ -3,7 +3,7 @@ import { verticalPages, verticalUrl } from "@/data/verticalPages";
 import { seoPages, seoPageUrl } from "@/data/seoPages";
 import { client } from "@/sanity/lib/client";
 
-const BASE = "https://drshreyankeducare.com";
+const BASE = "https://www.drshreyankeducare.com";
 
 /**
  * Serves /llms.txt — an llmstxt.org-style overview of the site so AI systems

@@ -47,7 +47,7 @@ export interface City {
   faqs: CityFAQ[];
 }
 
-export const BASE_URL = "https://drshreyankeducare.com";
+export const BASE_URL = "https://www.drshreyankeducare.com";
 
 /** Canonical path for a city page (no trailing slash). */
 export const cityPath = (slug: string) => `/math-tutor-${slug}`;

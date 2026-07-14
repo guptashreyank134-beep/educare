@@ -10,13 +10,36 @@ export function JsonLd({ schema }: { schema: Record<string, any> }) {
   );
 }
 
+// Metro-Vancouver areas we serve — kept in sync with the city landing pages.
+const AREAS_SERVED = [
+  "Burnaby",
+  "Vancouver",
+  "North Vancouver",
+  "West Vancouver",
+  "Coquitlam",
+  "Port Moody",
+  "Port Coquitlam",
+  "Surrey",
+  "Richmond",
+  "New Westminster",
+  "Delta",
+];
+
 export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
+    // Multi-typed so the same entity is eligible as both an education provider
+    // and a local business (local-pack / "near me" signals).
+    "@type": ["EducationalOrganization", "LocalBusiness"],
+    "@id": "https://www.drshreyankeducare.com/#organization",
     name: "Dr. Shreyank Educare",
-    url: "https://drshreyankeducare.com",
-    logo: "https://drshreyankeducare.com/assets/logo.png",
+    url: "https://www.drshreyankeducare.com",
+    logo: "https://www.drshreyankeducare.com/assets/logo.png",
+    image: "https://www.drshreyankeducare.com/assets/logo.png",
+    description:
+      "PhD-led, 5-star-rated tutoring in Math, Physics, Chemistry and Coding for Grades 6–12 and university across Burnaby & Vancouver — in person and online.",
+    telephone: "+1-672-514-7587",
+    email: "info@drshreyankeducare.com",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+1-672-514-7587",
@@ -31,6 +54,7 @@ export function getOrganizationSchema() {
       postalCode: "V5C 6T5",
       addressCountry: "CA",
     },
+    areaServed: AREAS_SERVED.map((name) => ({ "@type": "City", name })),
     sameAs: [
       "https://www.facebook.com/DrShreyankEducare/",
       "https://www.instagram.com/drshreyankeducare/",
@@ -81,7 +105,7 @@ export function getCityPageSchema(city: any, currentUrl: string): Record<string,
       city.metaDescription ||
       `Math, Physics, Chemistry and Coding tutoring for ${city.name} students.`,
     url: currentUrl,
-    logo: "https://drshreyankeducare.com/assets/logo.png",
+    logo: "https://www.drshreyankeducare.com/assets/logo.png",
     telephone: "+1-672-514-7587",
     email: "info@drshreyankeducare.com",
     address: {
@@ -121,8 +145,8 @@ export function getServiceSchema(
     provider: {
       "@type": "EducationalOrganization",
       name: "Dr. Shreyank Educare",
-      url: "https://drshreyankeducare.com",
-      logo: "https://drshreyankeducare.com/assets/logo.png",
+      url: "https://www.drshreyankeducare.com",
+      logo: "https://www.drshreyankeducare.com/assets/logo.png",
     },
     ...(opts.areaServed && opts.areaServed.length
       ? { areaServed: opts.areaServed.map((a) => ({ "@type": "Place", name: a })) }
@@ -159,7 +183,7 @@ export function getBlogPostSchema(post: any, currentUrl: string): Record<string,
   const title = seo?.metaTitle || post?.title || "Blog Post";
   const description = seo?.metaDescription || post?.excerpt || "Expert academic tutoring, coding classes, and test preparation.";
 
-  let imageUrl = "https://drshreyankeducare.com/assets/logo.png";
+  let imageUrl = "https://www.drshreyankeducare.com/assets/logo.png";
   if (post?.mainImage) {
     try {
       imageUrl = urlFor(post.mainImage).url();
@@ -179,16 +203,21 @@ export function getBlogPostSchema(post: any, currentUrl: string): Record<string,
     "description": description,
     "image": imageUrl,
     "author": {
-      "@type": "Organization",
-      "name": "Dr. Shreyank Educare",
-      "url": "https://drshreyankeducare.com",
+      "@type": "Person",
+      "name": "Dr. Shreyank Gupta",
+      "jobTitle": "PhD, Founder & Lead Tutor",
+      "worksFor": {
+        "@type": "EducationalOrganization",
+        "name": "Dr. Shreyank Educare",
+      },
+      "url": "https://www.drshreyankeducare.com/about",
     },
     "publisher": {
       "@type": "EducationalOrganization",
       "name": "Dr. Shreyank Educare",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://drshreyankeducare.com/assets/logo.png",
+        "url": "https://www.drshreyankeducare.com/assets/logo.png",
       },
     },
     "datePublished": post.publishedAt || new Date().toISOString(),

@@ -18,7 +18,7 @@ import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "chemistry");
-  return getMetadata(data, "https://drshreyankeducare.com/programs/chemistry");
+  return getMetadata(data, "https://www.drshreyankeducare.com/programs/chemistry");
 }
 
 const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
@@ -56,7 +56,7 @@ export default async function ChemistryProgramPage() {
 
   return (
     <>
-      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/programs/chemistry")} />
+      <JsonLd schema={getPageSchema(data, "https://www.drshreyankeducare.com/programs/chemistry")} />
       <main className="relative min-h-screen bg-bg-grey overflow-hidden">
       <div
         className="absolute h-[1568px] inset-0 z-0 pointer-events-none"

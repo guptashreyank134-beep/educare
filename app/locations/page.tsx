@@ -4,7 +4,7 @@ import { ArrowUpRight, MapPin } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { cities, cityPath } from "@/data/cities";
 
-const PAGE_URL = "https://drshreyankeducare.com/locations";
+const PAGE_URL = "https://www.drshreyankeducare.com/locations";
 
 export function generateMetadata(): Metadata {
   const title = "Tutoring Locations Across Metro Vancouver | Dr. Shreyank Educare";

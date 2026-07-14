@@ -12,7 +12,7 @@ interface BreadcrumbsProps {
   items?: BreadcrumbItem[];
 }
 
-const SITE_ORIGIN = "https://drshreyankeducare.com";
+const SITE_ORIGIN = "https://www.drshreyankeducare.com";
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
   const pathname = usePathname();

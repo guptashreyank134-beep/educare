@@ -42,7 +42,7 @@ export interface SeoPage {
   related: SeoRelated[];
 }
 
-export const SEO_BASE_URL = "https://drshreyankeducare.com";
+export const SEO_BASE_URL = "https://www.drshreyankeducare.com";
 export const seoPagePath = (slug: string) => `/${slug}`;
 export const seoPageUrl = (slug: string) => `${SEO_BASE_URL}/${slug}`;
 

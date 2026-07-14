@@ -123,7 +123,7 @@ export const getMetaDataBySlug = async (type, slug) => {
 export function getMetadata(data, currentUrl = "", fallback = {}) {
   const seo = data?.metaData;
   // Use provided URL or default to homepage
-  const canonicalUrl = currentUrl || "https://drshreyankeducare.com/";
+  const canonicalUrl = currentUrl || "https://www.drshreyankeducare.com/";
 
   // Page-specific fallbacks prevent the generic default title/description from
   // being duplicated across pages when a page has no Sanity metadata set.
@@ -135,16 +135,22 @@ export function getMetadata(data, currentUrl = "", fallback = {}) {
   const metadata = {
     title: defaultTitle,
     description: defaultDescription,
-    openGraph: { images: "/assets/logo.png" },
+    openGraph: {
+      type: "website",
+      siteName: "Dr. Shreyank Educare",
+      locale: "en_CA",
+      url: canonicalUrl,
+      images: "/assets/logo.png",
+    },
     twitter: {
       card: "summary_large_image",
       title: defaultTitle,
       description: defaultDescription,
-      image: "/assets/logo.png",
+      images: "/assets/logo.png",
     },
     alternates: {
       languages: {
-        "en-US": "https://drshreyankeducare.com/",
+        "en-CA": "https://www.drshreyankeducare.com/",
       },
       canonical: canonicalUrl,
     },
@@ -166,8 +172,8 @@ export function getMetadata(data, currentUrl = "", fallback = {}) {
   }
   if (seo.metaImage) {
     const imageUrl = urlFor(seo.metaImage).url() ?? "/assets/logo.png";
-    metadata.openGraph = { images: imageUrl };
-    metadata.twitter.image = imageUrl;
+    metadata.openGraph.images = imageUrl;
+    metadata.twitter.images = imageUrl;
   }
 
   if (seo.canonical) {

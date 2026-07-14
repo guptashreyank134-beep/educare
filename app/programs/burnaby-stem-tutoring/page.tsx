@@ -19,7 +19,7 @@ import type { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
   try {
     const data = await getMetaDataBySlug("programPage", "burnaby-stem-tutoring");
-    return getMetadata(data, "https://drshreyankeducare.com/programs/burnaby-stem-tutoring");
+    return getMetadata(data, "https://www.drshreyankeducare.com/programs/burnaby-stem-tutoring");
   } catch {
     return {
       title: "Burnaby STEM Tutoring | Dr. Shreyank Educare",
@@ -68,7 +68,7 @@ export default async function BurnabySTEMTutoringPage() {
 
   return (
     <>
-      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/programs/burnaby-stem-tutoring")} />
+      <JsonLd schema={getPageSchema(data, "https://www.drshreyankeducare.com/programs/burnaby-stem-tutoring")} />
       <main className="relative min-h-screen bg-bg-grey overflow-hidden">
         <div
           className="absolute h-[1568px] inset-0 z-0 pointer-events-none"

@@ -48,7 +48,7 @@ export interface VerticalPage {
   leadSubjectPlaceholder?: string;
 }
 
-export const VERTICAL_BASE_URL = "https://drshreyankeducare.com";
+export const VERTICAL_BASE_URL = "https://www.drshreyankeducare.com";
 export const verticalPath = (slug: string) => `/${slug}`;
 export const verticalUrl = (slug: string) => `${VERTICAL_BASE_URL}/${slug}`;
 

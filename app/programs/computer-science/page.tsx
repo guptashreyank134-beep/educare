@@ -18,7 +18,7 @@ import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "computer-science");
-  return getMetadata(data, "https://drshreyankeducare.com/programs/computer-science");
+  return getMetadata(data, "https://www.drshreyankeducare.com/programs/computer-science");
 }
 
 const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
@@ -56,7 +56,7 @@ export default async function ComputerScienceProgramPage() {
 
   return (
     <>
-      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/programs/computer-science")} />
+      <JsonLd schema={getPageSchema(data, "https://www.drshreyankeducare.com/programs/computer-science")} />
       <main className="relative min-h-screen bg-bg-grey overflow-hidden">
       {/* Background Grid Pattern */}
       <div

@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
  * On-demand revalidation webhook for Sanity.
  *
  * Configure a webhook in Sanity (Manage > API > Webhooks):
- *   - URL:        https://drshreyankeducare.com/api/revalidate
+ *   - URL:        https://www.drshreyankeducare.com/api/revalidate
  *   - Trigger on: Create, Update, Delete
  *   - HTTP method: POST
  *   - HTTP header: Authorization: Bearer <SANITY_REVALIDATE_SECRET>

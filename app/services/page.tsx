@@ -6,7 +6,7 @@ import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("page", "services");
-  return getMetadata(data, "https://drshreyankeducare.com/services");
+  return getMetadata(data, "https://www.drshreyankeducare.com/services");
 }
 import LearningProgramsSection from '@/components/servicesPageComponents/LearningProgramsSection';
 import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
@@ -15,7 +15,7 @@ const page = async () => {
   const data = await getMetaDataBySlug("page", "services");
   return (
     <>
-      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/services")} />
+      <JsonLd schema={getPageSchema(data, "https://www.drshreyankeducare.com/services")} />
       <GeneralHeroSection
         {...ServicesHeroSectionContent}
         breadcrumb={<Breadcrumbs />}

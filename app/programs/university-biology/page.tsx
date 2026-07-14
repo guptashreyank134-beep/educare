@@ -18,7 +18,7 @@ import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "university-biology");
-  return getMetadata(data, "https://drshreyankeducare.com/programs/university-biology");
+  return getMetadata(data, "https://www.drshreyankeducare.com/programs/university-biology");
 }
 
 const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
@@ -56,7 +56,7 @@ export default async function UniversityBiologyPage() {
 
   return (
     <>
-      <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/programs/university-biology")} />
+      <JsonLd schema={getPageSchema(data, "https://www.drshreyankeducare.com/programs/university-biology")} />
       <main className="relative min-h-screen bg-bg-grey overflow-hidden">
       {/* Background Grid Pattern */}
       <div

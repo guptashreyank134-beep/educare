@@ -7,7 +7,7 @@ import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 export async function generateMetadata() {
     try {
         const data = await getMetaDataBySlug("page", "terms");
-        return getMetadata(data, "https://drshreyankeducare.com/terms");
+        return getMetadata(data, "https://www.drshreyankeducare.com/terms");
     } catch {
         return {
             title: "Terms and Conditions | Dr. Shreyank Educare",
@@ -24,7 +24,7 @@ const TermsPage = async () => {
     
     return (
         <>
-            <JsonLd schema={getPageSchema(data, "https://drshreyankeducare.com/terms")} />
+            <JsonLd schema={getPageSchema(data, "https://www.drshreyankeducare.com/terms")} />
             <main className="min-h-screen max-w-7xl px-4 sm:px-6 m-auto bg-white pt-20">
                 <div className="space-y-8 pt-22">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6">
