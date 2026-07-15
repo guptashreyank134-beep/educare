@@ -324,16 +324,34 @@ const ReadAboutTutors = () => {
                   : "bg-white hover:bg-[#7C9FE3]"
                 }`}
             >
-              <h3 className="text-xl font-medium underline decoration-yellow-light underline-offset-6">{tutor.name}</h3>
+              {/* Thumbnail + name. The list previously showed names only, so a
+                  visitor had to click each tutor to see who they were. */}
+              <div className="flex items-start gap-3">
+                <span className="relative shrink-0 w-12 h-12 rounded-full overflow-hidden bg-gray-100 ring-2 ring-yellow-light/60">
+                  <Image
+                    src={tutor.image}
+                    alt={`${tutor.name} — ${tutor.role}`}
+                    fill
+                    sizes="48px"
+                    className="object-cover object-top"
+                  />
+                </span>
 
-              <p
-                className={`mt-2 text-[16px] group-hover:text-white ${activeTutor.id === tutor.id
-                  ? "text-gray-20 "
-                  : "text-gray-600"
-                  }`}
-              >
-                {tutor.role}
-              </p>
+                <span className="min-w-0">
+                  <h3 className="text-xl font-medium underline decoration-yellow-light underline-offset-6">
+                    {tutor.name}
+                  </h3>
+
+                  <p
+                    className={`mt-2 text-[16px] group-hover:text-white ${activeTutor.id === tutor.id
+                      ? "text-gray-20 "
+                      : "text-gray-600"
+                      }`}
+                  >
+                    {tutor.role}
+                  </p>
+                </span>
+              </div>
             </button>
           ))}
         </div>
