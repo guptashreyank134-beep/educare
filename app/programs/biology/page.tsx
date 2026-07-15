@@ -16,6 +16,7 @@ import {
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
 import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
+import ProgramNextSteps from "@/components/ProgramNextSteps";
 import { getProgramFaqs } from "@/sanity/lib/faqs";
 
 export async function generateMetadata() {
@@ -249,6 +250,11 @@ export default async function BiologyProgramPage() {
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
+      
+        <ProgramNextSteps
+          subject="Biology"
+          relatedLinks={[{ label: "Biology 12 tutoring in Burnaby", href: "/biology-12-tutor-burnaby" }]}
+        />
       </main>
     </>
   );

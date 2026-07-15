@@ -89,11 +89,14 @@ export default function ExplorePrograms() {
                   {program.description}
                 </p>
 
+                {/* Descriptive link text: "Learn more" tells neither a reader
+                    nor a search engine what is on the other side, and every card
+                    rendered the identical phrase. */}
                 <Link
                   href={program.href}
                   className="inline-flex items-center text-primary hover:text-primary/80 font-sans text-[18px] font-medium transition-colors"
                 >
-                  Learn more <ArrowUpRight className="ml-1" size={18} />
+                  Explore {program.title} <ArrowUpRight className="ml-1 shrink-0" size={18} />
                 </Link>
               </div>
             );

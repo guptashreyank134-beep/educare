@@ -85,13 +85,16 @@ function ProgramCard({
               <p className="text-[15px] sm:text-[16px] font-montserrat text-slate leading-relaxed mb-[18px]">
                 {program.expectedOutcome}
               </p>
+              {/* Descriptive link text. Every card previously said "Learn more",
+                  which describes nothing and gives search engines no signal about
+                  the destination. */}
               {program.learnMoreHref && (
                 <Link
                   href={program.learnMoreHref}
                   className="inline-flex items-center gap-1 text-[15px] sm:text-[18px] font-montserrat font-medium text-primary hover:underline transition-all"
                 >
-                  Learn more
-                  <ArrowUpRight className="w-[18px] sm:w-[22px] h-[18px] sm:h-[22px]" />
+                  Explore our {program.title}
+                  <ArrowUpRight className="w-[18px] sm:w-[22px] h-[18px] sm:h-[22px] shrink-0" />
                 </Link>
               )}
             </div>
