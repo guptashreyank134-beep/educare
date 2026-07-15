@@ -120,10 +120,25 @@ export const getMetaDataBySlug = async (type, slug) => {
   }
 };
 
+/**
+ * Force a canonical onto the www host.
+ *
+ * The site is served from www and every other signal (sitemap, schema,
+ * metadataBase) points there. A non-www canonical names a URL that only
+ * redirects, which contradicts those signals — so normalise it here rather than
+ * trusting whatever host happens to be saved in Studio.
+ */
+function normalizeCanonical(url) {
+  if (typeof url !== "string" || !url.trim()) return url;
+  return url
+    .trim()
+    .replace(/^https?:\/\/(www\.)?drshreyankeducare\.com/i, "https://www.drshreyankeducare.com");
+}
+
 export function getMetadata(data, currentUrl = "", fallback = {}) {
   const seo = data?.metaData;
   // Use provided URL or default to homepage
-  const canonicalUrl = currentUrl || "https://www.drshreyankeducare.com/";
+  const canonicalUrl = normalizeCanonical(currentUrl) || "https://www.drshreyankeducare.com/";
 
   // Page-specific fallbacks prevent the generic default title/description from
   // being duplicated across pages when a page has no Sanity metadata set.
@@ -150,7 +165,10 @@ export function getMetadata(data, currentUrl = "", fallback = {}) {
     },
     alternates: {
       languages: {
-        "en-CA": "https://www.drshreyankeducare.com/",
+        // Self-referential: the alternate for THIS page is this page. It was
+        // hardcoded to the homepage, so every page claimed the homepage was its
+        // en-CA equivalent.
+        "en-CA": canonicalUrl,
       },
       canonical: canonicalUrl,
     },
@@ -177,7 +195,9 @@ export function getMetadata(data, currentUrl = "", fallback = {}) {
   }
 
   if (seo.canonical) {
-    metadata.alternates.canonical = seo.canonical;
+    // Normalised: a canonical saved as non-www would otherwise override the
+    // correct www URL and point at a redirect.
+    metadata.alternates.canonical = normalizeCanonical(seo.canonical);
   }
 
   metadata.openGraph.title = metadata.title;
