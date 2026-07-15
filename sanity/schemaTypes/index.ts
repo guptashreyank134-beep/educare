@@ -7,7 +7,8 @@ import { resourcePage } from './resourcePage'
 import { lead } from './lead'
 import { post } from './post'
 import { vancouverPage } from './vancouverPage'
+import { pageFaq } from './pageFaq'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [metaData, faqAnswer, page, programPage, resourcePage, lead, post, vancouverPage],
+  types: [metaData, faqAnswer, page, programPage, resourcePage, lead, post, vancouverPage, pageFaq],
 }

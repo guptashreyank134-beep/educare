@@ -7,6 +7,7 @@ import { ArrowRight, Check, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import LeadForm from "@/components/LeadForm";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
+import { getPageFaqs } from "@/sanity/lib/faqs";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
 import TrustedBrands from "@/components/TrustedBrands";
 import Reviews from "@/components/Reviews";
@@ -44,13 +45,15 @@ export function verticalMetadata(slug: string): Metadata {
   };
 }
 
-export default function VerticalLandingPage({ slug }: { slug: string }) {
+export default async function VerticalLandingPage({ slug }: { slug: string }) {
   const page = getVerticalPageBySlug(slug);
   if (!page) {
     notFound();
   }
 
   const url = verticalUrl(slug);
+  // FAQs are editable in Sanity; fall back to the code-defined list.
+  const faqs = (await getPageFaqs(slug)) ?? page.faqs;
 
   return (
     <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
@@ -62,7 +65,7 @@ export default function VerticalLandingPage({ slug }: { slug: string }) {
           areaServed: page.regionsServed,
         })}
       />
-      <JsonLd schema={getFAQSchema(page.faqs)} />
+      <JsonLd schema={getFAQSchema(faqs)} />
 
       {/* Yellow Grid Background */}
       <div
@@ -208,7 +211,7 @@ export default function VerticalLandingPage({ slug }: { slug: string }) {
       <TrustedBrands />
       <Reviews />
       <VancouverCTABanner />
-      <VancouverFAQSection faqs={page.faqs} />
+      <VancouverFAQSection faqs={faqs} />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { urlFor } from "@/sanity/lib/image";
+import { faqAnswerToPlainText } from "@/sanity/lib/faqs";
 
 export function JsonLd({ schema }: { schema: Record<string, any> }) {
   return (
@@ -177,7 +178,8 @@ export function getServiceSchema(
 }
 
 export function getFAQSchema(
-  faqs: Array<{ question: string; answer: string }>
+  // Answers may be plain strings (code data) or Portable Text blocks (Sanity).
+  faqs: Array<{ question: string; answer: unknown }>
 ): Record<string, any> {
   return {
     "@context": "https://schema.org",
@@ -187,7 +189,7 @@ export function getFAQSchema(
       name: faq.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answer,
+        text: faqAnswerToPlainText(faq.answer),
       },
     })),
   };

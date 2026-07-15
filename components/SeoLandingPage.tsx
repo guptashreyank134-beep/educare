@@ -7,6 +7,7 @@ import { ArrowRight, Check, Link2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import TrialClassForm from "@/components/TrialClassForm";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
+import { getPageFaqs } from "@/sanity/lib/faqs";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
 import TrustedBrands from "@/components/TrustedBrands";
 import Reviews from "@/components/Reviews";
@@ -50,13 +51,15 @@ export function seoPageMetadata(slug: string): Metadata {
   };
 }
 
-export default function SeoLandingPage({ slug }: { slug: string }) {
+export default async function SeoLandingPage({ slug }: { slug: string }) {
   const page = getSeoPageBySlug(slug);
   if (!page) {
     notFound();
   }
 
   const url = seoPageUrl(slug);
+  // FAQs are editable in Sanity; fall back to the code-defined list.
+  const faqs = (await getPageFaqs(slug)) ?? page.faqs;
 
   return (
     <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
@@ -68,7 +71,7 @@ export default function SeoLandingPage({ slug }: { slug: string }) {
           areaServed: page.location ? [`${page.location}, BC`] : ["Burnaby, BC", "Vancouver, BC"],
         })}
       />
-      <JsonLd schema={getFAQSchema(page.faqs)} />
+      <JsonLd schema={getFAQSchema(faqs)} />
 
       {/* Yellow Grid Background */}
       <div
@@ -215,7 +218,7 @@ export default function SeoLandingPage({ slug }: { slug: string }) {
       <TrustedBrands />
       <Reviews />
       <VancouverCTABanner />
-      <VancouverFAQSection faqs={page.faqs} />
+      <VancouverFAQSection faqs={faqs} />
     </div>
   );
 }

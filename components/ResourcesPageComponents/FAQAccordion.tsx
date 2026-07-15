@@ -102,22 +102,30 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ items }) => {
                                 </div>
                             </button>
 
-                            {isOpen && (
-                                <div className="pb-5 px-0 animate-in fade-in duration-200">
-                                    {Array.isArray(item.answer) ? (
-                                        <div className="text-[18px] font-montserrat text-slate leading-7">
-                                            <PortableText
-                                                value={item.answer as any}
-                                                components={faqPortableTextComponents}
-                                            />
-                                        </div>
-                                    ) : (
-                                        <p className="text-[18px] font-montserrat text-slate leading-7 whitespace-pre-wrap">
-                                            {item.answer as string}
-                                        </p>
-                                    )}
-                                </div>
-                            )}
+                            {/*
+                              * Always rendered, hidden with CSS when collapsed, rather than
+                              * conditionally mounted. Answers (and the internal links inside
+                              * them) must exist in the HTML for crawlers to see them — a
+                              * conditionally-mounted answer is invisible to search engines,
+                              * which would make FAQ internal linking worthless for SEO.
+                              */}
+                            <div
+                                hidden={!isOpen}
+                                className="pb-5 px-0 animate-in fade-in duration-200"
+                            >
+                                {Array.isArray(item.answer) ? (
+                                    <div className="text-[18px] font-montserrat text-slate leading-7">
+                                        <PortableText
+                                            value={item.answer as any}
+                                            components={faqPortableTextComponents}
+                                        />
+                                    </div>
+                                ) : (
+                                    <p className="text-[18px] font-montserrat text-slate leading-7 whitespace-pre-wrap">
+                                        {item.answer as string}
+                                    </p>
+                                )}
+                            </div>
                         </div>
                     );
                 })}
