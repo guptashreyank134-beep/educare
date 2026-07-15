@@ -32,7 +32,9 @@ const navLinks: NavItem[] = [
   },
   { href: "/locations", label: "Locations" },
   { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+  // "Contact" is deliberately not a nav link: the "Contact Us" button beside
+  // this nav points at /contact already, and two links to one page cost the
+  // width that made the bar wrap.
 ];
 
 export default function Header() {
@@ -63,12 +65,12 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden xl:flex items-center gap-x-5 min-w-0">
             {navLinks.map((link) =>
               link.children ? (
                 <div key={link.label} className="relative group">
                   <button
-                    className="flex items-center gap-1 text-slate hover:text-primary font-display text-[17px] transition-colors duration-200 cursor-pointer"
+                    className="flex items-center gap-1 text-slate hover:text-primary font-montserrat text-[15px] whitespace-nowrap transition-colors duration-200 cursor-pointer"
                     aria-haspopup="true"
                   >
                     {link.label}
@@ -81,7 +83,7 @@ export default function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-4 py-2.5 text-[15px] font-display text-slate hover:text-primary hover:bg-slate-50 transition-colors"
+                          className="block px-4 py-2.5 text-[15px] font-montserrat text-slate hover:text-primary hover:bg-slate-50 transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -93,7 +95,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href!}
-                  className="text-slate hover:text-primary font-display text-[17px] transition-colors duration-200"
+                  className="text-slate hover:text-primary font-montserrat text-[15px] whitespace-nowrap transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
@@ -102,14 +104,14 @@ export default function Header() {
           </nav>
 
           {/* Desktop Contact Button */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden xl:flex items-center">
             <Link href="/contact">
               <Button iconRight={ArrowRight}>Contact Us</Button>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center">
+          <div className="xl:hidden flex items-center">
             <button
               onClick={() => setIsOpen((v) => !v)}
               className="text-slate hover:text-primary p-2 focus:outline-none focus:ring-2 focus:ring-primary/20 rounded-lg transition-colors cursor-pointer"
@@ -131,7 +133,7 @@ export default function Header() {
       <div
         inert={!isOpen}
         aria-hidden={!isOpen}
-        className={`lg:hidden absolute top-20 left-0 right-0 bg-white border-b border-gray-100 shadow-xl transition-all duration-300 ease-in-out origin-top ${
+        className={`xl:hidden absolute top-20 left-0 right-0 bg-white border-b border-gray-100 shadow-xl transition-all duration-300 ease-in-out origin-top ${
           isOpen
             ? "opacity-100 scale-y-100 translate-y-0"
             : "opacity-0 scale-y-0 -translate-y-4 pointer-events-none"
@@ -145,7 +147,7 @@ export default function Header() {
                   onClick={() =>
                     setOpenSubmenu((cur) => (cur === link.label ? null : link.label))
                   }
-                  className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-base font-display text-[18px] text-slate hover:text-primary hover:bg-slate-50 transition-all"
+                  className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-base font-montserrat text-[17px] text-slate hover:text-primary hover:bg-slate-50 transition-all"
                   aria-expanded={openSubmenu === link.label}
                 >
                   {link.label}
@@ -162,7 +164,7 @@ export default function Header() {
                         key={child.href}
                         href={child.href}
                         onClick={closeMobile}
-                        className="block px-3 py-2 rounded-lg text-[15px] font-display text-slate/90 hover:text-primary hover:bg-slate-50 transition-all"
+                        className="block px-3 py-2 rounded-lg text-[15px] font-montserrat text-slate/90 hover:text-primary hover:bg-slate-50 transition-all"
                       >
                         {child.label}
                       </Link>
@@ -175,7 +177,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href!}
                 onClick={closeMobile}
-                className="block px-3 py-2.5 rounded-xl text-base font-display text-[18px] text-slate hover:text-primary hover:bg-slate-50 transition-all duration-200"
+                className="block px-3 py-2.5 rounded-xl text-base font-montserrat text-[17px] text-slate hover:text-primary hover:bg-slate-50 transition-all duration-200"
               >
                 {link.label}
               </Link>
