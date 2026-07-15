@@ -198,6 +198,7 @@ const navLinks = [
   { label: "Medical Tutoring", href: "/online-medical-tutoring" },
   { label: "University & Professional", href: "/university-professional" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Blog", href: "/blog" },
   { label: "Resources", href: "/resources" },
   { label: "FAQ", href: "/resources#faq" },
   { label: "Terms & Conditions", href: "/terms" },

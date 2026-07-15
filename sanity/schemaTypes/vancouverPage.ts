@@ -2,22 +2,20 @@ import { defineField, defineType } from "sanity";
 
 export const vancouverPage = defineType({
   name: "vancouverPage",
-  // Studio label: this document drives the HOMEPAGE (its FAQs + SEO meta).
-  // The legacy "Vancouver Page" name made it undiscoverable for editors.
-  title: "Homepage (FAQs & SEO)",
+  // Studio label: this document holds the HOMEPAGE's FAQs. The legacy
+  // "Vancouver Page" name made it undiscoverable for editors.
+  // NOTE: the homepage's SEO title/description live on the "Home" document
+  // under Pages — the same place every other page keeps its SEO. This document
+  // deliberately has no SEO panel so there is only ONE place to edit it.
+  title: "Homepage FAQs",
   type: "document",
   fields: [
     defineField({
       name: "title",
       title: "Internal Title",
       type: "string",
-      initialValue: "Vancouver Math Tutor Page",
+      initialValue: "Homepage",
       description: "For internal reference only",
-    }),
-    defineField({
-      name: "metaData",
-      title: "Page Meta Data",
-      type: "metaData",
     }),
     defineField({
       name: "faqs",

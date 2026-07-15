@@ -31,6 +31,7 @@ const navLinks: NavItem[] = [
     ],
   },
   { href: "/locations", label: "Locations" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 

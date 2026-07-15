@@ -13,10 +13,13 @@ import VancouverFAQSection from "@/components/VancouverFAQSection";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
 import TrustedBrands from "@/components/TrustedBrands";
 import Reviews from "@/components/Reviews";
-import { getPageData, getMetadata } from "@/utils/seoBuilder";
+import { getPageData, getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
 
 export async function generateMetadata() {
-  const data = await getPageData("vancouverPage");
+  // SEO metadata lives on the "home" page document — the same place every other
+  // page reads it from (Studio > Pages > Home). It previously read from
+  // vancouverPage, which has no metaData, so edits in Studio never showed up.
+  const data = await getMetaDataBySlug("page", "home");
   return getMetadata(data, "https://www.drshreyankeducare.com/", {
     title: "Top Tutoring in Burnaby & Vancouver | Dr. Shreyank Educare",
     description:
