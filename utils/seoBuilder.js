@@ -107,7 +107,10 @@ export const getPageData = async (type) => {
 
 export const getMetaDataBySlug = async (type, slug) => {
   try {
+    // _type must be projected: getPageSchema uses it to decide Course vs
+    // WebPage, and without it every programPage silently emitted WebPage.
     const query = `*[_type == "${type}" && slug.current == $slug][0]{
+      _type,
       title,
       metaData {
         metaTitle,

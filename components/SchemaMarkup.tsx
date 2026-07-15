@@ -263,3 +263,40 @@ export function getBlogPostSchema(post: any, currentUrl: string): Record<string,
   };
 }
 
+
+/**
+ * Person markup for the tutors shown on the About page.
+ *
+ * Google's guidance is to show who is behind the teaching, and the site names
+ * seven tutors with real credentials but emitted no Person markup at all.
+ * `knowsAbout` states each tutor's subjects, which is the machine-readable
+ * version of "tutor profile -> subjects taught".
+ *
+ * Only fields the site genuinely displays are included — no invented awards,
+ * ratings or affiliations.
+ */
+export function getTutorsSchema(
+  tutors: Array<{ name: string; role: string; education?: string[]; strengths?: string[] }>
+): Record<string, any> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Tutors at Dr. Shreyank Educare",
+    itemListElement: (tutors || []).map((t, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Person",
+        name: t.name,
+        jobTitle: t.role,
+        worksFor: {
+          "@type": "EducationalOrganization",
+          name: "Dr. Shreyank Educare",
+          url: "https://www.drshreyankeducare.com",
+        },
+        ...(t.education?.length ? { description: t.education.join(" · ") } : {}),
+        ...(t.role ? { knowsAbout: t.role } : {}),
+      },
+    })),
+  };
+}
