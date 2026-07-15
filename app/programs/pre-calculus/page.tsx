@@ -12,7 +12,9 @@ import {
   Zap,
 } from "lucide-react";
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
-import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
+import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
+import VancouverFAQSection from "@/components/VancouverFAQSection";
+import { getProgramFaqs } from "@/sanity/lib/faqs";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -54,6 +56,8 @@ const ListItems = ({ items }: { items: string[] }) => (
 );
 
 export default async function PreCalculusProgramPage() {
+  // FAQs are managed in Studio > Program Pages; empty means no section is shown.
+  const faqs = await getProgramFaqs("pre-calculus");
   let data;
   try {
     data = await getMetaDataBySlug("programPage", "pre-calculus");
@@ -260,6 +264,13 @@ export default async function PreCalculusProgramPage() {
             </div>
           </section>
         </div>
+      
+        {faqs.length > 0 && (
+          <>
+            <JsonLd schema={getFAQSchema(faqs)} />
+            <VancouverFAQSection faqs={faqs} />
+          </>
+        )}
       </main>
     </>
   );

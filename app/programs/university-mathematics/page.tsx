@@ -14,7 +14,9 @@ import {
 } from "lucide-react";
 
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
-import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
+import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
+import VancouverFAQSection from "@/components/VancouverFAQSection";
+import { getProgramFaqs } from "@/sanity/lib/faqs";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "university-mathematics");
@@ -48,6 +50,8 @@ const ListItems = ({ items }: { items: string[] }) => (
 
 export default async function UniversityMathematicsPage() {
   const data = await getMetaDataBySlug("programPage", "university-mathematics");
+  // FAQs are managed in Studio > Program Pages; empty means no section is shown.
+  const faqs = await getProgramFaqs("university-mathematics");
   const breadcrumbItems = [
     { label: "Programs", href: "/programs" },
     { label: "University Courses", href: "/programs" },
@@ -287,7 +291,14 @@ export default async function UniversityMathematicsPage() {
           </div>
         </section>
       </div>
-    </main>
+    
+        {faqs.length > 0 && (
+          <>
+            <JsonLd schema={getFAQSchema(faqs)} />
+            <VancouverFAQSection faqs={faqs} />
+          </>
+        )}
+      </main>
     </>
   );
 }

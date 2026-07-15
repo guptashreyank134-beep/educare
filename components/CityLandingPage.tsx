@@ -12,7 +12,7 @@ import VancouverWhyChooseSection from "@/components/VancouverWhyChooseSection";
 import VancouverExploreSubjectsSection from "@/components/VancouverExploreSubjectsSection";
 import VancouverFlexibleProgramsSection from "@/components/VancouverFlexibleProgramsSection";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
-import { getPageFaqs } from "@/sanity/lib/faqs";
+import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
 import TrustedBrands from "@/components/TrustedBrands";
 import Reviews from "@/components/Reviews";
@@ -32,25 +32,30 @@ const metrics = [
 ];
 
 /** Build Next.js metadata for a city page. Used by each route's generateMetadata. */
-export function cityMetadata(slug: string): Metadata {
+export async function cityMetadata(slug: string): Promise<Metadata> {
   const city = getCityBySlug(slug);
   if (!city) return {};
 
+  // Editors can override the title/description in Studio; empty falls back.
+  const content = await getLandingContent(slug);
+  const metaTitle = orFallback(content?.metaTitle, city.metaTitle);
+  const metaDescription = orFallback(content?.metaDescription, city.metaDescription);
+
   const url = cityUrl(slug);
   return {
-    title: city.metaTitle,
-    description: city.metaDescription,
+    title: metaTitle,
+    description: metaDescription,
     alternates: { canonical: url },
     openGraph: {
-      title: city.metaTitle,
-      description: city.metaDescription,
+      title: metaTitle,
+      description: metaDescription,
       url,
       images: "/assets/logo.png",
     },
     twitter: {
       card: "summary_large_image",
-      title: city.metaTitle,
-      description: city.metaDescription,
+      title: metaTitle,
+      description: metaDescription,
       images: "/assets/logo.png",
     },
   };
@@ -64,8 +69,12 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
 
   const url = cityUrl(slug);
   const breadcrumbItems = [{ label: `Math Tutor in ${city.name}` }];
-  // FAQs are editable in Sanity; fall back to the code-defined list.
-  const faqs = (await getPageFaqs(slug)) ?? city.faqs;
+  // Content is editable in Sanity; each field falls back to the code value.
+  const content = await getLandingContent(slug);
+  const heroHeading = orFallback(content?.heading, city.heroHeading);
+  const heroSubheading = orFallback(content?.heroSubheading, city.heroSubheading);
+  const intro = orFallback(content?.intro, city.intro);
+  const faqs = orFallback(content?.faqs, city.faqs);
 
   return (
     <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
@@ -91,10 +100,10 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
           {/* Left Column: Content & Images */}
           <div className="flex flex-col">
             <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
-              {city.heroHeading}
+              {heroHeading}
             </h1>
             <p className="text-[#64748B] text-[16px] leading-relaxed max-w-[500px] mb-8">
-              {city.heroSubheading}
+              {heroSubheading}
             </p>
 
             <div className="flex flex-wrap gap-4 mb-16">
@@ -164,7 +173,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
           Math, Physics, Chemistry &amp; Coding Tutoring in {city.name}
         </h2>
         <div className="space-y-5">
-          {city.intro.map((paragraph, index) => (
+          {intro.map((paragraph, index) => (
             <p
               key={index}
               className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed"

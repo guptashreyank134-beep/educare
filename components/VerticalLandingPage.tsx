@@ -7,7 +7,7 @@ import { ArrowRight, Check, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import LeadForm from "@/components/LeadForm";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
-import { getPageFaqs } from "@/sanity/lib/faqs";
+import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
 import TrustedBrands from "@/components/TrustedBrands";
 import Reviews from "@/components/Reviews";
@@ -21,25 +21,30 @@ import {
 import { getVerticalPageBySlug, verticalUrl } from "@/data/verticalPages";
 
 /** Build Next.js metadata for a vertical page. Used by each route's generateMetadata. */
-export function verticalMetadata(slug: string): Metadata {
+export async function verticalMetadata(slug: string): Promise<Metadata> {
   const page = getVerticalPageBySlug(slug);
   if (!page) return {};
 
+  // Editors can override the title/description in Studio; empty falls back.
+  const content = await getLandingContent(slug);
+  const metaTitle = orFallback(content?.metaTitle, page.metaTitle);
+  const metaDescription = orFallback(content?.metaDescription, page.metaDescription);
+
   const url = verticalUrl(slug);
   return {
-    title: page.metaTitle,
-    description: page.metaDescription,
+    title: metaTitle,
+    description: metaDescription,
     alternates: { canonical: url },
     openGraph: {
-      title: page.metaTitle,
-      description: page.metaDescription,
+      title: metaTitle,
+      description: metaDescription,
       url,
       images: "/assets/logo.png",
     },
     twitter: {
       card: "summary_large_image",
-      title: page.metaTitle,
-      description: page.metaDescription,
+      title: metaTitle,
+      description: metaDescription,
       images: "/assets/logo.png",
     },
   };
@@ -52,14 +57,19 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
   }
 
   const url = verticalUrl(slug);
-  // FAQs are editable in Sanity; fall back to the code-defined list.
-  const faqs = (await getPageFaqs(slug)) ?? page.faqs;
+  // Content is editable in Sanity; each field falls back to the code value.
+  const content = await getLandingContent(slug);
+  const heroHeading = orFallback(content?.heading, page.heroHeading);
+  const heroSubheading = orFallback(content?.heroSubheading, page.heroSubheading);
+  const intro = orFallback(content?.intro, page.intro);
+  const sections = orFallback(content?.sections, page.sections);
+  const faqs = orFallback(content?.faqs, page.faqs);
 
   return (
     <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
       <JsonLd
         schema={getServiceSchema({
-          name: page.heroHeading,
+          name: heroHeading,
           description: page.metaDescription,
           url,
           areaServed: page.regionsServed,
@@ -79,7 +89,7 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 pt-32 pb-20">
         <div className="mb-8">
-          <Breadcrumbs items={[{ label: page.heroHeading }]} />
+          <Breadcrumbs items={[{ label: heroHeading }]} />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-start">
@@ -90,10 +100,10 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
               Serving: {page.regionsServed.join(" · ")}
             </span>
             <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
-              {page.heroHeading}
+              {heroHeading}
             </h1>
             <p className="text-[#64748B] text-[16px] sm:text-[18px] leading-relaxed max-w-[560px] mb-8">
-              {page.heroSubheading}
+              {heroSubheading}
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -127,7 +137,7 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
       {/* Intro */}
       <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pb-8">
         <div className="space-y-5">
-          {page.intro.map((paragraph, index) => (
+          {intro.map((paragraph, index) => (
             <p
               key={index}
               className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed"
@@ -140,7 +150,7 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
 
       {/* Content sections */}
       <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-12">
-        {page.sections.map((section, i) => (
+        {sections.map((section, i) => (
           <div key={i}>
             <h2 className="text-[24px] sm:text-[30px] font-bricolage font-medium text-slate mb-5">
               {section.heading}

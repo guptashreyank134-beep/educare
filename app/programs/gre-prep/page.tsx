@@ -14,7 +14,9 @@ import {
 } from "lucide-react";
 
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
-import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
+import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
+import VancouverFAQSection from "@/components/VancouverFAQSection";
+import { getProgramFaqs } from "@/sanity/lib/faqs";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "gre-prep");
@@ -48,6 +50,8 @@ const ListItems = ({ items }: { items: string[] }) => (
 
 export default async function GrePrepProgramPage() {
   const data = await getMetaDataBySlug("programPage", "gre-prep");
+  // FAQs are managed in Studio > Program Pages; empty means no section is shown.
+  const faqs = await getProgramFaqs("gre-prep");
   const breadcrumbItems = [
     { label: "Programs", href: "/programs" },
     { label: "Test Prep", href: "/programs" },
@@ -252,7 +256,14 @@ export default async function GrePrepProgramPage() {
           </div>
         </div>
       </div>
-    </main>
+    
+        {faqs.length > 0 && (
+          <>
+            <JsonLd schema={getFAQSchema(faqs)} />
+            <VancouverFAQSection faqs={faqs} />
+          </>
+        )}
+      </main>
     </>
   );
 }
