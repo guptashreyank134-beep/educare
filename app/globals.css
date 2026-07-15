@@ -10,6 +10,15 @@
   --color-foreground: var(--foreground);
   --font-montserrat: var(--font-montserrat);
   --font-bricolage: var(--font-bricolage);
+
+  /* `font-display` and `font-sans` are used ~76 times across the site but were
+     never defined, so both silently fell through to the browser's default
+     sans-serif — most visibly in the header nav, which uses font-display alone.
+     Mapping them to the intended families: 30 of the font-display usages are
+     written as "font-bricolage font-display", which is what settles display =
+     Bricolage. Body copy is Montserrat, as font-montserrat's 296 usages imply. */
+  --font-display: var(--font-bricolage);
+  --font-sans: var(--font-montserrat);
   
   --color-primary: #3A5A98;
   --color-slate: #1F2937;
