@@ -16,7 +16,10 @@ export const EXPERT = {
   name: "Dr. Shreyank Gupta",
   credentials: "PhD",
   role: "Founder & Lead Tutor, Dr. Shreyank Educare",
-  bio: "Dr. Shreyank Gupta holds a PhD and has taught Math, Physics and Chemistry for over 10 years, working with students across Burnaby and Vancouver from Grade 6 through university.",
+  // A specific, checkable credential is a far stronger expertise signal than a
+  // bare "PhD" — and ultrasound/signal processing is applied math and physics,
+  // which is exactly what he teaches.
+  bio: "Dr. Shreyank Gupta holds a PhD in ultrasound and signal processing from the University of Quebec — applied mathematics and physics in practice. He has taught Math, Physics and Chemistry for over 10 years, working with students across Burnaby and Vancouver from Grade 6 through university.",
   url: "/about",
 };
 
