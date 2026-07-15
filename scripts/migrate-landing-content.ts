@@ -15,6 +15,7 @@
  */
 
 import { createClient } from "@sanity/client";
+import { randomUUID } from "node:crypto";
 import { cities } from "../data/cities.ts";
 import { seoPages } from "../data/seoPages.ts";
 import { verticalPages } from "../data/verticalPages.ts";
@@ -77,6 +78,9 @@ const entries: Content[] = [
 const clean = <T extends Record<string, any>>(o: T): T =>
   Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined)) as T;
 
+/** Every object inside a Sanity array needs a _key, or the list becomes uneditable. */
+const key = () => randomUUID().replace(/-/g, "").slice(0, 12);
+
 async function run() {
   console.log(`Mode: ${commit ? "COMMIT (writing to Sanity)" : "DRY RUN (no changes written)"}`);
 
@@ -103,7 +107,7 @@ async function run() {
     if (!doc.heroSubheading && e.heroSubheading) set.heroSubheading = e.heroSubheading;
     if (!doc.intro?.length && e.intro?.length) set.intro = e.intro;
     if (!doc.sections?.length && e.sections?.length) {
-      set.sections = e.sections.map((s) => clean({ _type: "object", ...clean(s) }));
+      set.sections = e.sections.map((s) => clean({ _type: "object", _key: key(), ...clean(s) }));
     }
 
     if (!Object.keys(set).length) {

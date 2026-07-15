@@ -5453,6 +5453,381 @@ export const seoPages: SeoPage[] = [
       { label: "Grade 11 Math Tutor in Burnaby", href: "/grade-11-math-tutor-burnaby" },
     ],
   },
+
+  // ── Vancouver grade-level science pages ──────────────────────────────
+  // Burnaby already has grade-level pages for Physics/Chemistry/Biology 11 & 12;
+  // Vancouver had none, so these fill a real structural gap rather than
+  // duplicating existing coverage. Each targets a distinct grade+subject query
+  // and is written from a different angle — deliberately NOT a city-swap of the
+  // Burnaby copy, which would be duplicate content.
+  {
+    slug: "physics-11-tutor-vancouver",
+    cluster: "Physics",
+    location: "Vancouver",
+    metaTitle: "Physics 11 Tutor in Vancouver | PhD-Led Help",
+    metaDescription:
+      "Physics 11 tutoring for Vancouver students — build the problem-solving habits Physics 12 assumes. Online citywide or in person in Burnaby. Free consultation.",
+    h1: "Physics 11 Tutor in Vancouver",
+    heroSubheading:
+      "Physics 11 is where memorising formulas stops working. We build the habits that make Physics 12 manageable — online across Vancouver or in person nearby in Burnaby.",
+    intro: [
+      "Physics 11 is the year the strategy changes. In earlier science, recognising the question type was usually enough to find the right formula. Physics 11 starts describing situations and expects you to work out which principle applies — and that is a different skill, one nobody explicitly teaches.",
+      "We work with students from Lord Byng, Prince of Wales, Eric Hamber and schools across Kitsilano, Dunbar and the East Side. Sessions run online anywhere in Vancouver, or in person at our Burnaby centre, a straightforward SkyTrain trip for most families.",
+    ],
+    sections: [
+      {
+        heading: "What Physics 11 Covers",
+        points: [
+          "Kinematics and graphing motion",
+          "Forces and Newton's laws",
+          "Work, energy and power",
+          "Momentum and collisions",
+          "Waves, sound and light",
+          "Introductory electricity",
+        ],
+      },
+      {
+        heading: "Why Physics 11 Decides How Physics 12 Goes",
+        body: [
+          "Physics 12 does not revisit the fundamentals — it assumes them. Students who arrive able to draw a free-body diagram without thinking find Physics 12 demanding but fair. Students carrying gaps find it relentless, because every new topic taxes the thing they never quite got.",
+          "That is why we spend Physics 11 building method rather than answers: read the situation, draw it, name the principle, then calculate. It feels slower for a fortnight and pays off for two years.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "My child did well in Science 10 but is struggling in Physics 11. Why?",
+        answer:
+          "This is the single most common pattern we see, and it is not a sign of falling behind. Science 10 largely rewards recall; Physics 11 rewards choosing the right principle for an unfamiliar situation. It is a genuinely new skill, and most students need it taught explicitly rather than absorbed.",
+      },
+      {
+        question: "Is Physics 11 worth taking if my child is unsure about Physics 12?",
+        answer:
+          "Yes — it keeps the door open. Physics 12 is a prerequisite for many engineering and science programs, and it is far harder to add later than to carry forward. A solid Physics 11 preserves the option cheaply.",
+      },
+      {
+        question: "Do Vancouver students have to travel to Burnaby?",
+        answer:
+          "No. Most Vancouver families choose online sessions, which work well for physics because we share a whiteboard and work problems together in real time. In-person sessions are available at our Burnaby centre if you prefer, and it is an easy SkyTrain trip.",
+      },
+    ],
+    related: [
+      { label: "Physics 12 Tutor in Vancouver", href: "/physics-12-tutor-vancouver" },
+      { label: "Top Physics Tutor in Vancouver", href: "/top-physics-tutor-vancouver" },
+      { label: "Science Tutoring in Vancouver", href: "/science-tutoring-vancouver" },
+    ],
+  },
+
+  {
+    slug: "physics-12-tutor-vancouver",
+    cluster: "Physics",
+    location: "Vancouver",
+    metaTitle: "Physics 12 Tutor in Vancouver | Exam & UBC Prep",
+    metaDescription:
+      "Physics 12 tutoring for Vancouver students — vectors, dynamics and fields made clear, with the exam technique marks depend on. Free 30-minute consultation.",
+    h1: "Physics 12 Tutor in Vancouver",
+    heroSubheading:
+      "Vectors, dynamics, circular motion and fields — taught so the reasoning is visible, not just the answer. Online across Vancouver or in person in Burnaby.",
+    intro: [
+      "Physics 12 carries weight beyond the grade. It is a prerequisite for engineering and most physical-science programs at UBC and SFU, which means a Vancouver student's options for two years out are partly decided in this course.",
+      "It is also the course where partial credit changes character. Examiners are marking a line of reasoning, so an answer that appears with no visible argument earns little — even when it is right. We teach the physics and the way it has to be shown.",
+    ],
+    sections: [
+      {
+        heading: "Physics 12 Units We Cover",
+        points: [
+          "Vector kinematics in two dimensions",
+          "Dynamics and equilibrium",
+          "Circular motion and gravitation",
+          "Momentum, work and energy",
+          "Electrostatics and circuits",
+          "Magnetism and electromagnetic induction",
+        ],
+      },
+      {
+        heading: "Where Physics 12 Actually Goes Wrong",
+        body: [
+          "Almost never at the algebra. It goes wrong at the setup — a vector resolved along the wrong axis, a force left off the diagram, a sign convention chosen halfway through. The arithmetic then faithfully produces a confident wrong answer.",
+          "So we spend our time where the marks are lost. Diagram first, axes named, every force accounted for, and only then any equation. Students find their accuracy improves before their speed does, which is the right order.",
+        ],
+      },
+      {
+        heading: "Learning With Us in Vancouver",
+        body: [
+          "Sessions run online across Kitsilano, Kerrisdale, Point Grey, Oakridge, Downtown and East Vancouver, or in person at our Burnaby centre via SkyTrain. Work is aligned to the BC curriculum, and can be pointed at a final exam or a specific unit that has stopped making sense.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does Physics 12 matter for UBC or SFU?",
+        answer:
+          "For engineering and most physical-science programs it is a prerequisite, not a bonus — and the grade is part of a competitive admission average. It is also assumed knowledge in first-year physics, so a shaky Physics 12 tends to resurface in first term.",
+      },
+      {
+        question: "My child understands the concepts but loses marks on tests. What's happening?",
+        answer:
+          "Usually the reasoning is happening in their head and never reaching the page, so there is nothing for an examiner to award. It is a fixable presentation problem rather than a physics problem, and it is one of the fastest improvements we see.",
+      },
+      {
+        question: "Can you help with just one difficult unit?",
+        answer:
+          "Yes. Plenty of Vancouver students come to us for circular motion or electromagnetism specifically, having been fine everywhere else. There is no requirement to commit to the whole course.",
+      },
+    ],
+    related: [
+      { label: "Physics 11 Tutor in Vancouver", href: "/physics-11-tutor-vancouver" },
+      { label: "AP Physics Tutor in Vancouver", href: "/ap-physics-tutor-vancouver" },
+      { label: "University Physics Tutor in Vancouver", href: "/university-physics-tutor-vancouver" },
+      { label: "Physics 12 Final Exam Review", href: "/physics-12-final-exam-review" },
+    ],
+  },
+
+  {
+    slug: "chemistry-11-tutor-vancouver",
+    cluster: "Chemistry",
+    location: "Vancouver",
+    metaTitle: "Chemistry 11 Tutor in Vancouver | Moles Made Clear",
+    metaDescription:
+      "Chemistry 11 tutoring for Vancouver students — get the mole and stoichiometry genuinely solid before Chemistry 12 assumes them. Free consultation.",
+    h1: "Chemistry 11 Tutor in Vancouver",
+    heroSubheading:
+      "Almost every Chemistry 11 difficulty traces back to one idea: the mole. Get that right and the year opens up. Online across Vancouver or in person in Burnaby.",
+    intro: [
+      "There is a single concept that decides how Chemistry 11 goes, and it arrives early: the mole. It is the bridge between what you can weigh and what is actually reacting, and almost everything afterwards leans on it.",
+      "Students who half-understand it can still pass the unit — which is precisely the trap. The gap stays hidden until stoichiometry, then solutions, then gas laws, each one quietly harder than it should be. We would rather fix it in October than in April.",
+    ],
+    sections: [
+      {
+        heading: "Chemistry 11 Topics",
+        points: [
+          "The mole and molar mass",
+          "Stoichiometry and limiting reactants",
+          "Atomic structure and periodic trends",
+          "Chemical bonding and nomenclature",
+          "Solutions and concentration",
+          "Gases and gas laws",
+        ],
+      },
+      {
+        heading: "The Mole Is Not a Formula to Memorise",
+        body: [
+          "Students who treat n = m/M as a formula to apply get stuck the moment a question does not announce which quantity it wants. Students who understand a mole as a counting unit — a way to count particles by weighing them — can reason their way through anything the course asks.",
+          "So we teach it as an idea before it is arithmetic. It is slower for one session and it removes a term's worth of confusion.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "My child passed the mole unit but is now lost in stoichiometry. Why?",
+        answer:
+          "Because the mole unit can be passed by pattern-matching, and stoichiometry cannot. This is the most predictable sequence in Chemistry 11, and the fix is to go back and rebuild the mole conceptually — which usually takes far less time than parents expect.",
+      },
+      {
+        question: "Is Chemistry 11 enough preparation for Chemistry 12?",
+        answer:
+          "Only if the foundations are genuinely solid rather than just passed. Chemistry 12 does not revisit moles or stoichiometry — it assumes them and moves straight into equilibrium and acid-base chemistry. Gaps carried forward compound quickly.",
+      },
+      {
+        question: "How do Vancouver students attend sessions?",
+        answer:
+          "Online across the city is the most popular option and works well for chemistry, since we can work problems together on a shared whiteboard. In-person sessions at our Burnaby centre are available and reachable by SkyTrain.",
+      },
+    ],
+    related: [
+      { label: "Chemistry 12 Tutor in Vancouver", href: "/chemistry-12-tutor-vancouver" },
+      { label: "Top Chemistry Tutor in Vancouver", href: "/top-chemistry-tutor-vancouver" },
+      { label: "Chemistry 11 Tutor in Burnaby", href: "/chemistry-11-tutor-burnaby" },
+    ],
+  },
+
+  {
+    slug: "chemistry-12-tutor-vancouver",
+    cluster: "Chemistry",
+    location: "Vancouver",
+    metaTitle: "Chemistry 12 Tutor in Vancouver | Equilibrium Help",
+    metaDescription:
+      "Chemistry 12 tutoring for Vancouver students — equilibrium, acids and bases explained so the reasoning makes sense. Online or in person. Free consultation.",
+    h1: "Chemistry 12 Tutor in Vancouver",
+    heroSubheading:
+      "Equilibrium and acid-base chemistry ask you to predict, not recall. We teach that reasoning — online across Vancouver or in person in Burnaby.",
+    intro: [
+      "Chemistry 12 asks a different kind of question than Chemistry 11. Instead of \"calculate this\", it asks \"what happens if we change that, and why\" — and no amount of memorised reactions answers it.",
+      "Equilibrium is where students feel this most sharply. It is a genuinely strange idea: a reaction that never stops, sitting at a balance you can deliberately push around. Once that picture lands, Le Chatelier's principle stops being a rule to recite and becomes something you can reason with.",
+    ],
+    sections: [
+      {
+        heading: "Chemistry 12 Units",
+        points: [
+          "Reaction kinetics and rate",
+          "Chemical equilibrium and Le Chatelier's principle",
+          "Solubility equilibria",
+          "Acids, bases and pH",
+          "Titrations and buffers",
+          "Oxidation-reduction and electrochemistry",
+        ],
+      },
+      {
+        heading: "Why Equilibrium Feels Impossible (And Then Doesn't)",
+        body: [
+          "Nothing before Chemistry 12 prepares students for a reaction that runs in both directions at once. The instinct is to memorise which way the arrow shifts in each scenario — a strategy that works for a quiz and collapses on an unfamiliar question.",
+          "We build the mental picture first: a dynamic balance, and a system that responds to being disturbed. From there, predictions become something a student derives rather than recalls, which is exactly what the exam is testing.",
+        ],
+      },
+      {
+        heading: "Sessions for Vancouver Students",
+        body: [
+          "We work with students across Vancouver online, and in person at our Burnaby centre for families who prefer it. Support can cover the full course or target a single unit — equilibrium and electrochemistry are the two we are asked for most.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why is Chemistry 12 such a jump from Chemistry 11?",
+        answer:
+          "Chemistry 11 mostly asks you to calculate; Chemistry 12 asks you to predict and justify. Students who succeeded by memorising problem types often hit a wall at equilibrium, because there is no template to apply — the question is genuinely new each time.",
+      },
+      {
+        question: "Do you help with the Chemistry 12 final exam specifically?",
+        answer:
+          "Yes. We run targeted final-exam review that works through the units most commonly examined, focused on the reasoning that earns marks rather than re-reading notes.",
+      },
+      {
+        question: "Is Chemistry 12 required for health programs?",
+        answer:
+          "It is a prerequisite for many health and life-science pathways, and it is assumed in first-year university chemistry. It is worth learning properly rather than passing, because the next course does not revisit it.",
+      },
+    ],
+    related: [
+      { label: "Chemistry 11 Tutor in Vancouver", href: "/chemistry-11-tutor-vancouver" },
+      { label: "IB Chemistry Tutor in Vancouver", href: "/ib-chemistry-tutor-vancouver" },
+      { label: "AP Chemistry Tutor in Vancouver", href: "/ap-chemistry-tutor-vancouver" },
+      { label: "Chemistry 12 Final Exam Review", href: "/chemistry-12-final-exam-review" },
+    ],
+  },
+
+  {
+    slug: "biology-11-tutor-vancouver",
+    cluster: "Biology",
+    location: "Vancouver",
+    metaTitle: "Biology 11 Tutor in Vancouver | Beyond Memorising",
+    metaDescription:
+      "Biology 11 tutoring for Vancouver students — turn a wall of terminology into systems that make sense. Online citywide or in person in Burnaby. Free consultation.",
+    h1: "Biology 11 Tutor in Vancouver",
+    heroSubheading:
+      "Biology 11 looks like memorisation and isn't. We teach the systems behind the vocabulary — online across Vancouver or in person in Burnaby.",
+    intro: [
+      "Biology 11 has a reputation as the science you get through by memorising, and it is the reason a lot of capable students underperform in it. The vocabulary is genuinely large, so flashcards feel like the obvious strategy — right up until a question asks you to explain why something happens.",
+      "The terminology is not the subject. It is the labelling on top of a small number of systems that make sense once you see how they fit together, and that is far less to hold in your head than a list of definitions.",
+    ],
+    sections: [
+      {
+        heading: "Biology 11 Topics",
+        points: [
+          "Cell structure and function",
+          "Biological molecules and enzymes",
+          "DNA, genetics and inheritance",
+          "Evolution and natural selection",
+          "Taxonomy and the diversity of life",
+          "Ecology and ecosystems",
+        ],
+      },
+      {
+        heading: "Memorising Is the Slow Way to Do Biology",
+        body: [
+          "A student who has memorised the stages of mitosis can label a diagram. A student who understands why a cell must copy its DNA before dividing can answer a question they have never seen — and, incidentally, finds the labels much easier to remember.",
+          "Understanding is not the harder path here; it is the shorter one. We work on the why, and the vocabulary largely takes care of itself.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "My child studies for hours and still does poorly. What's wrong?",
+        answer:
+          "Usually the studying is re-reading and memorising, which builds recognition rather than understanding — so the material feels familiar in the moment and vanishes under an unfamiliar question. Changing how they study typically matters more than adding hours.",
+      },
+      {
+        question: "Is Biology 11 needed for Biology 12?",
+        answer:
+          "It is the foundation Biology 12 builds on. Biology 12 goes deep into human physiology and assumes cells, molecules and genetics are already understood rather than dimly recalled.",
+      },
+      {
+        question: "How do sessions work for Vancouver students?",
+        answer:
+          "Online across the city, or in person at our Burnaby centre. Online works particularly well for biology, since diagrams and processes can be built up on screen together rather than copied from a textbook.",
+      },
+    ],
+    related: [
+      { label: "Biology 12 Tutor in Vancouver", href: "/biology-12-tutor-vancouver" },
+      { label: "Biology 11 Tutor in Burnaby", href: "/biology-11-tutor-burnaby" },
+      { label: "Science Tutoring in Vancouver", href: "/science-tutoring-vancouver" },
+    ],
+  },
+
+  {
+    slug: "biology-12-tutor-vancouver",
+    cluster: "Biology",
+    location: "Vancouver",
+    metaTitle: "Biology 12 Tutor in Vancouver | Physiology Help",
+    metaDescription:
+      "Biology 12 tutoring for Vancouver students — human physiology explained as connected systems, not lists. Online or in person in Burnaby. Free consultation.",
+    h1: "Biology 12 Tutor in Vancouver",
+    heroSubheading:
+      "Biology 12 is human physiology in real depth — and a common prerequisite for health programs. Online across Vancouver or in person in Burnaby.",
+    intro: [
+      "Biology 12 narrows from the whole living world down to one organism, and then goes deep. It is a favourite course for students heading toward health sciences, nursing, kinesiology and medicine — which also means the grade often carries admission weight.",
+      "The depth is what surprises people. It is not enough to know that the kidney filters blood; you are expected to follow a substance through each stage and explain what happens to it and why. That is a level of detail Biology 11 never asked for.",
+    ],
+    sections: [
+      {
+        heading: "Biology 12 Units",
+        points: [
+          "Cell biology, membranes and transport",
+          "DNA replication, protein synthesis and biotechnology",
+          "The digestive and circulatory systems",
+          "The respiratory and excretory systems",
+          "The nervous and endocrine systems",
+          "Homeostasis and system interactions",
+        ],
+      },
+      {
+        heading: "Systems, Not Chapters",
+        body: [
+          "Biology 12 is taught unit by unit, and students often study it that way too — which is exactly where marks are lost. The exam likes questions that cross systems, because homeostasis is the point: the circulatory system is only interesting in terms of what it delivers and removes.",
+          "We deliberately study across the boundaries. Trace oxygen from the air to a working muscle and back out as carbon dioxide, and three units connect into one story that is far harder to forget.",
+        ],
+      },
+      {
+        heading: "For Vancouver Students Heading to Health Programs",
+        body: [
+          "Many of the Vancouver students we work with are aiming at health-science pathways at UBC or elsewhere, where Biology 12 is both a prerequisite and part of a competitive average. First-year courses also assume this material, so learning it for retention is worth more than learning it for the exam.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why is Biology 12 harder than Biology 11 if it covers less?",
+        answer:
+          "Because it trades breadth for depth. Biology 11 asks what a system does; Biology 12 asks you to explain each step of how, and to connect it to the systems around it. Less material, examined far more demandingly.",
+      },
+      {
+        question: "Does Biology 12 matter for nursing or health-science programs?",
+        answer:
+          "It is a prerequisite for many of them, and the grade usually forms part of a competitive admission average. It is also assumed background in first-year physiology, so gaps tend to reappear at a costly moment.",
+      },
+      {
+        question: "Can you help with one system, like the nervous system?",
+        answer:
+          "Yes. The nervous and endocrine systems are the two we are asked about most, and plenty of students book targeted help for a single unit rather than the whole course.",
+      },
+    ],
+    related: [
+      { label: "Biology 11 Tutor in Vancouver", href: "/biology-11-tutor-vancouver" },
+      { label: "Biology 12 Tutor in Burnaby", href: "/biology-12-tutor-burnaby" },
+      { label: "University Biology Tutoring", href: "/programs/university-biology" },
+      { label: "MCAT Prep", href: "/programs/mcat-prep" },
+    ],
+  },
 ];
 
 export const getSeoPageBySlug = (slug: string): SeoPage | undefined =>
