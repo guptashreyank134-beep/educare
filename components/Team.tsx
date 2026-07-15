@@ -34,6 +34,27 @@ const teamMembers = [
     credentials: "Ph.D. in Applied Mathematics",
     image: "/assets/team-5.png",
   },
+  {
+    id: 6,
+    name: "Dr. Sabiha Arshed",
+    role: "Health Sciences & Medical Tutor",
+    credentials: "MD, MSc in Health Sciences",
+    image: "/assets/tutors/sabiha.webp",
+  },
+  {
+    id: 7,
+    name: "Aanchal Kanotra",
+    role: "Actuarial, Economics & School Subjects Tutor",
+    credentials: "Actuarial Exam Coach — CM1, CB1, CB2, CS1, CS2 & more",
+    image: "/assets/tutors/aanchal.webp",
+  },
+  {
+    id: 8,
+    name: "Dr. Vishal Sehgal",
+    role: "Physician & Healthcare Education Tutor",
+    credentials: "Physician & Healthcare Educator",
+    image: "/assets/tutors/vishal.webp",
+  },
 ];
 
 export default function Team() {
