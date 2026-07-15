@@ -216,7 +216,7 @@ export default async function GmatPrepProgramPage() {
                   },
                   {
                     q: "Are sessions online or in person?",
-                    a: "Both. We offer flexible online sessions as well as in-person coaching at our Burnaby centre, whichever suits you best.",
+                    a: "Both. We offer flexible online sessions as well as in-person coaching in person in Burnaby, whichever suits you best.",
                   },
                   {
                     q: "Can you help if I've already taken the GMAT before?",

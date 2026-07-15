@@ -196,7 +196,7 @@ export default async function GrePrepProgramPage() {
                 <p>
                   Whether you are applying to graduate or doctoral programs, or
                   retaking the GRE to strengthen your application, we adapt the
-                  intensity and format — online or in person at our Burnaby centre —
+                  intensity and format — online or in person in Burnaby —
                   to your goals and schedule, so you walk into the exam prepared and
                   confident.
                 </p>
@@ -215,7 +215,7 @@ export default async function GrePrepProgramPage() {
                   },
                   {
                     q: "Are sessions online or in person?",
-                    a: "Both. We offer flexible online sessions and in-person coaching at our Burnaby centre.",
+                    a: "Both. We offer flexible online sessions and in-person coaching in person in Burnaby.",
                   },
                   {
                     q: "Can you help me improve a previous GRE score?",

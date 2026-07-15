@@ -47,8 +47,8 @@ const PricingPage = async () => {
                                 These rates apply wherever you learn with us
                             </h2>
                             <p className="text-[16px] font-montserrat text-slate/80 leading-relaxed mb-6">
-                                The same pricing covers in-person sessions at our Burnaby
-                                centre and online tutoring across Metro Vancouver — there is
+                                The same pricing covers in-person sessions in Burnaby
+                                and online tutoring across Metro Vancouver — there is
                                 no premium for either.
                             </p>
                             <div className="flex flex-wrap gap-x-6 gap-y-3">

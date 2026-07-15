@@ -94,7 +94,7 @@ const ContactPage = async () => {
                 enquiries within 24 hours on business days.
               </p>
               <p>
-                We offer both in-person sessions at our Burnaby centre and flexible
+                We offer both in-person sessions in Burnaby and flexible
                 online tutoring across Metro Vancouver — including Vancouver,
                 Coquitlam, the North Shore, Surrey, Richmond and beyond — as well as
                 fully online tutoring for university and professional learners
@@ -117,7 +117,7 @@ const ContactPage = async () => {
                 },
                 {
                   q: "Do you offer online and in-person tutoring?",
-                  a: "Both. We tutor in person at our Burnaby centre and online across Metro Vancouver and worldwide.",
+                  a: "Both. We tutor in person in Burnaby and online across Metro Vancouver and worldwide.",
                 },
                 {
                   q: "Which subjects and levels do you cover?",

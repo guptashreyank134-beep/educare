@@ -47,7 +47,7 @@ export default function LocationsPage() {
           </h1>
           <p className="text-[#64748B] text-[16px] sm:text-[18px] leading-relaxed">
             Expert, PhD-led tutoring in Math, Physics, Chemistry and Coding for
-            Grades 6–12 and university — in person at our Burnaby centre and
+            Grades 6–12 and university — in person in Burnaby and
             online across Metro Vancouver. Choose your city to learn more.
           </p>
         </div>

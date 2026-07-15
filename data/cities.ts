@@ -63,9 +63,9 @@ export const cities: City[] = [
       "Top-rated Burnaby math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book a free consultation.",
     heroHeading: "Top-Rated Math Tutor in Burnaby",
     heroSubheading:
-      "PhD-led tutoring in Math, Physics, Chemistry and Coding for Burnaby students in Grades 6–12 and university — in person at our Burnaby centre or online.",
+      "PhD-led tutoring in Math, Physics, Chemistry and Coding for Burnaby students in Grades 6–12 and university — in person in Burnaby or online.",
     intro: [
-      "Dr. Shreyank Educare is a Burnaby-based tutoring centre helping local students master Math, Physics, Chemistry and Coding. Because we are based in Burnaby, students across the city get in-person, one-on-one sessions built around the BC curriculum and their exact classroom material.",
+      "Dr. Shreyank Educare is a Burnaby-based tutoring service helping local students master Math, Physics, Chemistry and Coding. Because we are based in Burnaby, students across the city get in-person, one-on-one sessions built around the BC curriculum and their exact classroom material.",
       "From Grade 6 fundamentals to Pre-Calculus 12, AP and university-level courses, our tutors close gaps quickly with clear, step-by-step teaching. Whether your child needs to catch up, keep up, or get ahead for provincial and final exams, we tailor every session to their goals.",
     ],
     neighborhoods: [
@@ -86,12 +86,12 @@ export const cities: City[] = [
       "Alpha Secondary",
     ],
     availability:
-      "In-person tutoring is available at our Burnaby centre, with online sessions offered for families who prefer to learn from home.",
+      "In-person tutoring is available in person in Burnaby, with online sessions offered for families who prefer to learn from home.",
     faqs: [
       {
         question: "Do you offer in-person math tutoring in Burnaby?",
         answer:
-          "Yes. Our tutoring centre is located in Burnaby, so students across Metrotown, Brentwood, Lougheed and surrounding neighbourhoods attend in-person one-on-one sessions. Online tutoring is also available if you prefer.",
+          "Yes. We teach in person in Burnaby, so students across Metrotown, Brentwood, Lougheed and surrounding neighbourhoods attend in-person one-on-one sessions. Online tutoring is also available if you prefer.",
       },
       {
         question: "Which Burnaby schools do your students attend?",
@@ -116,7 +116,7 @@ export const cities: City[] = [
     heroSubheading:
       "Personalized Math, Physics, Chemistry and Coding tutoring for Vancouver students in Grades 6–12 and university — online across the city or in person nearby in Burnaby.",
     intro: [
-      "Dr. Shreyank Educare helps Vancouver students build confidence and improve grades in Math, Physics, Chemistry and Coding. We offer flexible online tutoring across Vancouver, plus in-person sessions at our nearby Burnaby centre — an easy hop along the SkyTrain for many families.",
+      "Dr. Shreyank Educare helps Vancouver students build confidence and improve grades in Math, Physics, Chemistry and Coding. We offer flexible online tutoring across Vancouver, plus in-person sessions in person nearby in Burnaby — an easy hop along the SkyTrain for many families.",
       "Our PhD-led team works with students from Kitsilano to Kerrisdale and the East Side, tailoring each session to the BC curriculum, IB and AP coursework. From Grade 6 basics through Pre-Calculus 12, Calculus and first-year university math, we turn difficult concepts into clear, repeatable steps.",
     ],
     neighborhoods: [
@@ -137,12 +137,12 @@ export const cities: City[] = [
       "University of British Columbia (UBC)",
     ],
     availability:
-      "Vancouver students learn with us online across the city, or in person at our Burnaby centre, easily reached via SkyTrain.",
+      "Vancouver students learn with us online across the city, or in person in Burnaby, easily reached via SkyTrain.",
     faqs: [
       {
         question: "Do you tutor Vancouver students online or in person?",
         answer:
-          "Both. Most Vancouver families choose flexible online sessions, while others attend in person at our Burnaby centre, which is a short SkyTrain ride from many Vancouver neighbourhoods.",
+          "Both. Most Vancouver families choose flexible online sessions, while others attend in person in Burnaby, which is a short SkyTrain ride from many Vancouver neighbourhoods.",
       },
       {
         question: "Can you help with IB and AP courses in Vancouver?",
@@ -187,12 +187,12 @@ export const cities: City[] = [
       "Windsor Secondary",
     ],
     availability:
-      "North Vancouver students learn with us through flexible online tutoring, with in-person sessions available at our Burnaby centre.",
+      "North Vancouver students learn with us through flexible online tutoring, with in-person sessions available in person in Burnaby.",
     faqs: [
       {
         question: "Do you offer tutoring in North Vancouver?",
         answer:
-          "Yes. We provide flexible online tutoring for North Vancouver students across Lonsdale, Lynn Valley, Deep Cove and Edgemont, so there's no need to cross the bridge. In-person sessions are available at our Burnaby centre.",
+          "Yes. We provide flexible online tutoring for North Vancouver students across Lonsdale, Lynn Valley, Deep Cove and Edgemont, so there's no need to cross the bridge. In-person sessions are available in person in Burnaby.",
       },
       {
         question: "Which North Vancouver schools do you support?",
@@ -237,12 +237,12 @@ export const cities: City[] = [
       "Mulgrave School",
     ],
     availability:
-      "West Vancouver students learn through flexible online tutoring, with in-person sessions available at our Burnaby centre.",
+      "West Vancouver students learn through flexible online tutoring, with in-person sessions available in person in Burnaby.",
     faqs: [
       {
         question: "Do you tutor West Vancouver students?",
         answer:
-          "Yes. We offer flexible online tutoring for West Vancouver students across Ambleside, Dundarave, the British Properties and Caulfeild, with in-person sessions available at our Burnaby centre.",
+          "Yes. We offer flexible online tutoring for West Vancouver students across Ambleside, Dundarave, the British Properties and Caulfeild, with in-person sessions available in person in Burnaby.",
       },
       {
         question: "Can you support IB students in West Vancouver?",
@@ -286,12 +286,12 @@ export const cities: City[] = [
       "Heritage Woods Secondary",
     ],
     availability:
-      "Coquitlam students learn with us through flexible online tutoring, with in-person sessions available at our nearby Burnaby centre.",
+      "Coquitlam students learn with us through flexible online tutoring, with in-person sessions available in person nearby in Burnaby.",
     faqs: [
       {
         question: "Do you offer math tutoring in Coquitlam?",
         answer:
-          "Yes. We provide flexible online tutoring for Coquitlam students across Town Centre, Burke Mountain, Maillardville and Austin Heights, plus in-person sessions at our nearby Burnaby centre.",
+          "Yes. We provide flexible online tutoring for Coquitlam students across Town Centre, Burke Mountain, Maillardville and Austin Heights, plus in-person sessions in person nearby in Burnaby.",
       },
       {
         question: "Which Coquitlam schools do your students attend?",
@@ -333,12 +333,12 @@ export const cities: City[] = [
       "Moody Middle School",
     ],
     availability:
-      "Port Moody students learn through flexible online tutoring, with in-person sessions available at our Burnaby centre.",
+      "Port Moody students learn through flexible online tutoring, with in-person sessions available in person in Burnaby.",
     faqs: [
       {
         question: "Do you tutor students in Port Moody?",
         answer:
-          "Yes. We offer flexible online tutoring for Port Moody students across Heritage Mountain, Klahanie and Newport Village, with in-person sessions available at our Burnaby centre.",
+          "Yes. We offer flexible online tutoring for Port Moody students across Heritage Mountain, Klahanie and Newport Village, with in-person sessions available in person in Burnaby.",
       },
       {
         question: "Which Port Moody schools do your students attend?",
@@ -380,12 +380,12 @@ export const cities: City[] = [
       "Archbishop Carney Regional",
     ],
     availability:
-      "Port Coquitlam students learn through flexible online tutoring, with in-person sessions available at our nearby Burnaby centre.",
+      "Port Coquitlam students learn through flexible online tutoring, with in-person sessions available in person nearby in Burnaby.",
     faqs: [
       {
         question: "Do you offer tutoring in Port Coquitlam?",
         answer:
-          "Yes. We provide flexible online tutoring for Port Coquitlam students across Citadel Heights, Birchland and central PoCo, plus in-person sessions at our nearby Burnaby centre.",
+          "Yes. We provide flexible online tutoring for Port Coquitlam students across Citadel Heights, Birchland and central PoCo, plus in-person sessions in person nearby in Burnaby.",
       },
       {
         question: "Which Port Coquitlam schools do your students attend?",
@@ -431,12 +431,12 @@ export const cities: City[] = [
       "Sullivan Heights Secondary",
     ],
     availability:
-      "Surrey students learn with us through flexible online tutoring, with in-person sessions available at our Burnaby centre.",
+      "Surrey students learn with us through flexible online tutoring, with in-person sessions available in person in Burnaby.",
     faqs: [
       {
         question: "Do you offer math tutoring in Surrey?",
         answer:
-          "Yes. We provide flexible online tutoring for Surrey students across Guildford, Fleetwood, Newton, Cloverdale and South Surrey, with in-person sessions available at our Burnaby centre.",
+          "Yes. We provide flexible online tutoring for Surrey students across Guildford, Fleetwood, Newton, Cloverdale and South Surrey, with in-person sessions available in person in Burnaby.",
       },
       {
         question: "Which Surrey schools do your students attend?",
@@ -481,12 +481,12 @@ export const cities: City[] = [
       "Hugh Boyd Secondary",
     ],
     availability:
-      "Richmond students learn with us through flexible online tutoring, with in-person sessions available at our Burnaby centre.",
+      "Richmond students learn with us through flexible online tutoring, with in-person sessions available in person in Burnaby.",
     faqs: [
       {
         question: "Do you tutor Richmond students online or in person?",
         answer:
-          "Both. Most Richmond families choose flexible online sessions across Steveston, Brighouse and City Centre, while others attend in person at our Burnaby centre.",
+          "Both. Most Richmond families choose flexible online sessions across Steveston, Brighouse and City Centre, while others attend in person in Burnaby.",
       },
       {
         question: "Which Richmond schools do your students attend?",
@@ -511,7 +511,7 @@ export const cities: City[] = [
     heroSubheading:
       "Personalized Math, Physics, Chemistry and Coding tutoring for New Westminster students in Grades 6–12 and university — in person nearby in Burnaby or online.",
     intro: [
-      "Dr. Shreyank Educare helps New Westminster students master Math, Physics, Chemistry and Coding with PhD-led, one-on-one tutoring. Because New Westminster borders our Burnaby centre, local students enjoy easy in-person access, plus the option of flexible online sessions.",
+      "Dr. Shreyank Educare helps New Westminster students master Math, Physics, Chemistry and Coding with PhD-led, one-on-one tutoring. Because New Westminster borders our Burnaby location, local students enjoy easy in-person access, plus the option of flexible online sessions.",
       "We align every lesson with New Westminster classrooms and the BC curriculum, guiding students from Grade 6 through Pre-Calculus 12, AP and university courses. From Sapperton to Queensborough and the Quayside, students build the skills and confidence to excel.",
     ],
     neighborhoods: [
@@ -529,12 +529,12 @@ export const cities: City[] = [
       "École Qayqayt Elementary",
     ],
     availability:
-      "New Westminster borders Burnaby, so students easily attend in-person sessions at our Burnaby centre, with online tutoring also available.",
+      "New Westminster borders Burnaby, so students easily attend in-person sessions in Burnaby, with online tutoring also available.",
     faqs: [
       {
         question: "Do you offer in-person tutoring for New Westminster students?",
         answer:
-          "Yes. New Westminster borders Burnaby, so local students easily attend in-person one-on-one sessions at our Burnaby centre. Flexible online tutoring is also available.",
+          "Yes. New Westminster borders Burnaby, so local students easily attend in-person one-on-one sessions in person in Burnaby. Flexible online tutoring is also available.",
       },
       {
         question: "Which New Westminster schools do your students attend?",
@@ -578,12 +578,12 @@ export const cities: City[] = [
       "South Delta Secondary",
     ],
     availability:
-      "Delta students learn with us through flexible online tutoring, with in-person sessions available at our Burnaby centre.",
+      "Delta students learn with us through flexible online tutoring, with in-person sessions available in person in Burnaby.",
     faqs: [
       {
         question: "Do you offer tutoring in Delta?",
         answer:
-          "Yes. We provide flexible online tutoring for Delta students across Ladner, Tsawwassen and North Delta, so there's no long commute. In-person sessions are available at our Burnaby centre.",
+          "Yes. We provide flexible online tutoring for Delta students across Ladner, Tsawwassen and North Delta, so there's no long commute. In-person sessions are available in person in Burnaby.",
       },
       {
         question: "Which Delta schools do your students attend?",
