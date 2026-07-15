@@ -21,9 +21,9 @@ export async function generateMetadata() {
   // vancouverPage, which has no metaData, so edits in Studio never showed up.
   const data = await getMetaDataBySlug("page", "home");
   return getMetadata(data, "https://www.drshreyankeducare.com/", {
-    title: "Top Tutoring in Burnaby & Vancouver | Dr. Shreyank Educare",
+    title: "Math & Science Tutoring in Burnaby & Vancouver | Dr. Shreyank",
     description:
-      "PhD-led tutoring in Math, Physics, Chemistry & Coding for Grades 6–12 and university across Burnaby & Vancouver. 5★ rated. Book a free 30-minute consultation.",
+      "PhD-led tutoring in Burnaby and Vancouver for Math, Physics, Chemistry and Coding. Grades 6–12 and university. Book a free 30-minute consultation.",
   });
 }
 
@@ -52,9 +52,11 @@ export default async function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
           {/* Left Column: Content & Images */}
           <div className="flex flex-col">
+            {/* "Best" was an unsupportable superlative; "PhD-Led" states a fact
+                we can stand behind and still leads with the subjects + locations. */}
             <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
-              Best Math, Physics, Chemistry & Coding Tutoring In Burnaby And
-              Vancouver!
+              PhD-Led Math, Physics, Chemistry &amp; Coding Tutoring in Burnaby
+              and Vancouver
             </h1>
             <p className="text-[#64748B] text-[16px] leading-relaxed max-w-[500px] mb-8">
               Personalized tutoring that helps students build confidence, master

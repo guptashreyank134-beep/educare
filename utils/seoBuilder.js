@@ -80,12 +80,16 @@ export const getResourcePageData = async () => {
   }
 };
 
+// Last-resort values used only if Sanity is unreachable. Kept consistent with
+// the live copy: no "Best" superlative, and a title that names the subjects and
+// locations rather than just the brand.
 const fallbackPageData = {
   vancouverPage: {
-    title: "Best Math, Physics, Chemistry & Coding Tutoring In Burnaby And Vancouver!",
+    title: "PhD-Led Math, Physics, Chemistry & Coding Tutoring in Burnaby and Vancouver",
     metaData: {
-      metaTitle: "EduCare - Tutoring Services",
-      metaDescription: "Professional tutoring in Math, Physics, Chemistry and Coding",
+      metaTitle: "Math & Science Tutoring in Burnaby & Vancouver | Dr. Shreyank",
+      metaDescription:
+        "PhD-led tutoring in Burnaby and Vancouver for Math, Physics, Chemistry and Coding. Grades 6–12 and university. Book a free 30-minute consultation.",
     },
   },
 };
