@@ -15,16 +15,18 @@ export const structure: StructureResolver = (S) =>
       ),
       S.divider(),
       S.listItem()
-        .title('Page FAQs')
+        // These documents hold each landing page's SEO, copy AND FAQs — the old
+        // "Page FAQs" label hid the location pages from editors looking for them.
+        .title('Landing Pages (Locations & SEO)')
         .child(
           S.list()
-            .title('Page FAQs')
+            .title('Landing Pages')
             .items([
               S.listItem()
-                .title('City Pages')
+                .title('Location / City Pages')
                 .child(
                   S.documentList()
-                    .title('City Pages')
+                    .title('Location / City Pages')
                     .filter('_type == "pageFaq" && pageType == "city"')
                     .defaultOrdering([{field: 'title', direction: 'asc'}])
                 ),
@@ -46,10 +48,10 @@ export const structure: StructureResolver = (S) =>
                 ),
               S.divider(),
               S.listItem()
-                .title('All Page FAQs')
+                .title('All Landing Pages')
                 .child(
                   S.documentList()
-                    .title('All Page FAQs')
+                    .title('All Landing Pages')
                     .filter('_type == "pageFaq"')
                     .defaultOrdering([{field: 'title', direction: 'asc'}])
                 ),
