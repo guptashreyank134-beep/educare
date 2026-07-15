@@ -22,7 +22,7 @@ export default function VancouverCTABanner() {
             <div className="relative w-[320px] sm:w-[360px] aspect-[1/1] rounded-[16px] overflow-hidden shadow-2xl">
               <Image
                 src="/assets/ctaImage.jpg"
-                alt="Free Trial Tutoring Session"
+                alt="Book a free 30-minute tutoring consultation"
                 fill
                 className="object-cover"
               />
@@ -37,7 +37,7 @@ export default function VancouverCTABanner() {
           {/* Right Column: Content */}
           <div className="w-full md:w-[600px]">
             <h2 className="text-[32px] sm:text-[38px] font-bricolage font-normal leading-[1.2] mb-4">
-              Book A Free Trial With Us Today!
+              Book Free Consultation With Us Today!
             </h2>
 
             <p className="text-[16px] font-montserrat font-normal text-white/90 leading-relaxed mb-8 max-w-[500px]">
@@ -49,7 +49,7 @@ export default function VancouverCTABanner() {
                 <Zap className="w-5 h-5 fill-current" />
               </div>
               <h3 className="text-[20px] font-bricolage font-medium">
-                What The Free Trial Covers
+                What The Free Consultation Covers
               </h3>
             </div>
 
@@ -64,7 +64,7 @@ export default function VancouverCTABanner() {
 
             <div className="flex flex-wrap gap-4">
               <Link href="/contact">
-                <Button className='border border-white' iconRight={ArrowRight}>Get A Free Consultation</Button>
+                <Button className='border border-white' iconRight={ArrowRight}>Book Free Consultation</Button>
               </Link>
               <a
                 href="https://wa.me/16725147587"

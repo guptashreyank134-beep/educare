@@ -24,7 +24,7 @@ const TrialClassForm = () => {
     formData.append('lastName', '') // Optional in backend
     formData.append('email', rawData.get('email') as string)
     formData.append('phone', rawData.get('phone') as string)
-    formData.append('subject', 'Trial Class Request - ' + (rawData.get('subject') as string))
+    formData.append('subject', 'Consultation Request - ' + (rawData.get('subject') as string))
     formData.append('vertical', 'local-k12')
 
     const messageBody = `
@@ -81,7 +81,7 @@ Preferred Mode Of Classes: ${rawData.get('mode')}
                 <Loader2 className="w-5 h-5 animate-spin" />
                 Submitting...
               </span>
-            ) : 'Get My Free Trial Class'}
+            ) : 'Book Free Consultation'}
           </Button>
         </div>
       </form>

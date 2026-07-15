@@ -75,7 +75,7 @@ export default function VancouverFlexibleProgramsSection() {
         <div className="flex justify-center">
           <Link href="/contact">
             <Button iconRight={ArrowRight} className="px-8 py-4 text-[16px]">
-              Get A Free Consultation
+              Book Free Consultation
             </Button>
           </Link>
         </div>

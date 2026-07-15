@@ -27,10 +27,10 @@ interface LeadFormProps {
  */
 const LeadForm: React.FC<LeadFormProps> = ({
   vertical,
-  heading = "Book a Free Consultation",
+  heading = "Book a Free 30-Minute Consultation",
   subjectLabel = "Subject / Course of Interest",
   subjectPlaceholder = "e.g. USMLE Step 1, Statistics, Actuarial exams",
-  submitLabel = "Request a Free Consultation",
+  submitLabel = "Book Free Consultation",
 }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<{

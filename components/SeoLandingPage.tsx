@@ -110,7 +110,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
 
             <div className="flex flex-wrap gap-4 mb-16">
               <Link href="/contact">
-                <Button iconRight={ArrowRight}>Get A Free Consultation</Button>
+                <Button iconRight={ArrowRight}>Book Free Consultation</Button>
               </Link>
               <a
                 href="https://wa.me/16725147587"
@@ -125,9 +125,13 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
 
           {/* Right: lead form */}
           <div className="relative mt-4 lg:mt-0">
-            <h2 className="text-[28px] font-bricolage font-medium text-slate text-center mb-6">
-              Book Your Free <span className="text-primary">30-Minute</span> Consultation
+            <h2 className="text-[28px] font-bricolage font-medium text-slate text-center mb-3">
+              Book a Free <span className="text-primary">30-Minute</span>{" "}
+              Consultation
             </h2>
+            <p className="text-[15px] font-montserrat text-slate/70 text-center mb-6 leading-relaxed">
+              Meet with our team, discuss your child's current challenges and receive a recommended tutoring plan.
+            </p>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[110%] bg-white/40 blur-3xl rounded-full -z-10" />
             <TrialClassForm />
           </div>

@@ -41,7 +41,7 @@ export default function HomeBanner() {
               </Link>
               <Link href="/contact">
                 <Button variant="ghost" iconRight={ArrowRight}>
-                  Get A Free Consultation
+                  Book Free Consultation
                 </Button>
               </Link>
             </div>

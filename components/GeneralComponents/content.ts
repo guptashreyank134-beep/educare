@@ -57,7 +57,7 @@ export const ProgramsHeroSectionContent = {
   heading: "Find A Program,\nThat Works Best For You!",
   description:
     "Build strong academic foundations with personalized tutoring designed\nto simplify concepts, improve problem-solving, and boost performance\nacross school and university levels.",
-  buttonText: "Get A Free Consultation",
+  buttonText: "Book Free Consultation",
   buttonVisiblity: true,
   image: {
     src: "programsHeroImage.jpg",
@@ -70,7 +70,7 @@ export const ChemistryHeroSectionContent = {
   heading: "Master Chemistry with\nExpert Personalized Tutoring",
   description:
     "Unlock your potential in Chemistry with Dr. Shreyank Educare. Our specialized tutoring simplifies complex concepts, from atomic structures to advanced organic reactions, helping you achieve top grades and exam success.",
-  buttonText: "Book Your Free Trial",
+  buttonText: "Book Free Consultation",
   buttonVisiblity: true,
   image: {
     src: "chemistryHeroImg.png",

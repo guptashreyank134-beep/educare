@@ -183,9 +183,12 @@ const ANCHORS = {
     "Physics 11 tutoring", "our Physics 11 programme", "help with Physics 11",
     "Physics 11 support", "Physics 11 tutors",
   ],
+  // Varied phrasing for SEO (no exact-match repetition), but every variant names
+  // the SAME offer — a consultation. "trial"/"session" wording is deliberately
+  // absent: it implied a different service and confused parents.
   "/contact": [
     "free consultation", "free 30-minute consultation", "no-obligation consultation",
-    "free intro session", "complimentary consultation", "free first session",
+    "complimentary consultation", "free initial consultation", "book a consultation",
   ],
 };
 

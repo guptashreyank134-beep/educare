@@ -43,7 +43,7 @@ export const pricingSectionContent: {
       price: 75,
       oldPrice: 100,
       priceCaption: "based on subject and level",
-      ctaText: "Book A Free Session",
+      ctaText: "Book Free Consultation",
     },
     {
       icon: Rocket,

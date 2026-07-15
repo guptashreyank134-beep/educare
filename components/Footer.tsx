@@ -93,9 +93,9 @@ function ContactForm() {
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         {/* Heading */}
         <h2 className="text-[32px] font-bricolage font-normal text-slate leading-tight mb-3">
-          Sign-Up For Your 30-Minute{" "}
-          <span className="text-primary font-semibold">FREE Consultation</span>{" "}
-          Today!
+          Book a Free{" "}
+          <span className="text-primary font-semibold">30-Minute</span>{" "}
+          Consultation
         </h2>
         <p className="text-[16px] font-montserrat text-slate mb-10">
           Use the form below and a member of our team will respond within the
