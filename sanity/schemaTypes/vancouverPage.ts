@@ -2,7 +2,9 @@ import { defineField, defineType } from "sanity";
 
 export const vancouverPage = defineType({
   name: "vancouverPage",
-  title: "Vancouver Page",
+  // Studio label: this document drives the HOMEPAGE (its FAQs + SEO meta).
+  // The legacy "Vancouver Page" name made it undiscoverable for editors.
+  title: "Homepage (FAQs & SEO)",
   type: "document",
   fields: [
     defineField({
