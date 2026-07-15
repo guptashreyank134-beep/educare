@@ -15,6 +15,7 @@
  */
 
 import { createClient } from "@sanity/client";
+import katex from "katex";
 import { randomUUID } from "node:crypto";
 
 const commit = process.argv.includes("--commit");
@@ -37,6 +38,14 @@ const h2 = (t) => blk("h2", [span(t)]);
 const h3 = (t) => blk("h3", [span(t)]);
 const strong = (t) => blk("normal", [span(t, ["strong"])]);
 const li = (t) => ({ ...blk("normal", [span(t)]), listItem: "bullet", level: 1 });
+/** Display equation (KaTeX). Write plain LaTeX, no delimiters. */
+const math = (latex) => ({ _type: "mathBlock", _key: key(), latex });
+/** Inline equation inside a sentence. */
+const im = (latex) => ({ _type: "mathInline", _key: key(), latex });
+/** Paragraph mixing text and inline equations: parts are strings or im(). */
+const mp = (parts) =>
+  blk("normal", parts.map((x) => (typeof x === "string" ? span(x) : x)));
+
 /** Paragraph with links: parts are strings or {text, href}. */
 const linked = (parts) => {
   const markDefs = [], children = [];
@@ -62,93 +71,94 @@ const body = [
   linked(["Each one comes with a worked example showing exactly where the reasoning breaks. If any of them look familiar, they are the fastest things to fix — and they are the kind of thing ", { text: "one-on-one Pre-Calculus 12 help", href: "/pre-calculus-12-tutor-burnaby" }, " is well suited to, because a tutor can see the wrong step as it happens rather than in red pen a week later."]),
 
   h2("1. Reading a horizontal transformation without factoring first"),
-  p("Given y = f(2x − 6), the most common answer is \"shift right 6\". It is wrong, and it is wrong in a way that looks right."),
+  mp(["Given ", im(String.raw`y = f(2x - 6)`), ", the most common answer is \"shift right 6\". It is wrong, and it is wrong in a way that looks right."]),
   strong("The fix: factor the coefficient out of the bracket first."),
-  p("2x − 6 = 2(x − 3), so y = f(2(x − 3)): a horizontal compression by a factor of 1/2, and a shift right 3 — not 6."),
+  math(String.raw`y = f(2x - 6) = f\bigl(2(x - 3)\bigr)`),
+  mp(["That is a horizontal compression by a factor of ", im(String.raw`\tfrac{1}{2}`), " and a shift right ", im(String.raw`3`), " — not ", im(String.raw`6`), "."]),
   h3("Worked example"),
-  p("Take f(x) = x², so y = f(2x − 6) = (2x − 6)²."),
-  p("The vertex sits where the bracket equals zero: 2x − 6 = 0, so x = 3. The vertex has moved from (0, 0) to (3, 0) — a shift of 3, not 6."),
+  mp(["Take ", im(String.raw`f(x) = x^2`), ", so ", im(String.raw`y = (2x-6)^2`), ". The vertex sits where the bracket is zero:"]),
+  math(String.raw`2x - 6 = 0 \;\Longrightarrow\; x = 3`),
+  mp(["The vertex has moved from ", im(String.raw`(0,0)`), " to ", im(String.raw`(3,0)`), " — a shift of 3, not 6."]),
   p("This is worth sitting with, because the reason is not obvious: the compression happens to the shift as well. Shifting right 6 and then compressing by 1/2 lands you at 3. Both descriptions reach the same graph; only one of them gives the right number when the question asks how far the graph moved."),
 
   h2("2. Splitting a logarithm across addition"),
-  p("log(a + b) is not log a + log b. The law is about multiplication: log(ab) = log a + log b."),
+  mp([im(String.raw`\log(a+b)`), " is not ", im(String.raw`\log a + \log b`), ". The law is about multiplication:"]),
+  math(String.raw`\log(ab) = \log a + \log b`),
   h3("Worked example"),
   p("Test it with numbers that are easy to check:"),
-  li("log₂(8 + 8) = log₂ 16 = 4"),
-  li("log₂ 8 + log₂ 8 = 3 + 3 = 6"),
-  p("4 ≠ 6, so the two expressions are not the same thing. Whenever a log law feels uncertain, substituting powers of 2 settles it in about ten seconds — a habit worth having in an exam."),
+  math(String.raw`\log_2(8 + 8) = \log_2 16 = 4`),
+  math(String.raw`\log_2 8 + \log_2 8 = 3 + 3 = 6`),
+  mp(["Since ", im(String.raw`4 \neq 6`), ", the two expressions are not the same thing. Whenever a log law feels uncertain, substituting powers of 2 settles it in about ten seconds — a habit worth having in an exam."]),
 
   h2("3. Solving a log equation without checking the domain"),
   p("Log equations produce solutions that satisfy the algebra but not the original equation. They are not optional to check; the check is part of the question."),
   h3("Worked example"),
-  p("Solve log₂(x) + log₂(x − 2) = 3."),
-  li("Combine: log₂(x(x − 2)) = 3"),
-  li("Convert: x(x − 2) = 2³ = 8"),
-  li("Rearrange: x² − 2x − 8 = 0, so (x − 4)(x + 2) = 0"),
-  li("Algebraic solutions: x = 4 and x = −2"),
-  p("Now the part that carries the marks. log₂(x) needs x > 0, and log₂(x − 2) needs x > 2. So the domain is x > 2, and x = −2 is rejected — you cannot take the log of a negative number."),
-  p("Check x = 4: log₂ 4 + log₂ 2 = 2 + 1 = 3. ✓ The answer is x = 4 only."),
+  mp(["Solve ", im(String.raw`\log_2(x) + \log_2(x-2) = 3`), "."]),
+  math(String.raw`\log_2\bigl(x(x-2)\bigr) = 3 \;\Longrightarrow\; x(x-2) = 2^3 = 8`),
+  math(String.raw`x^2 - 2x - 8 = 0 \;\Longrightarrow\; (x-4)(x+2) = 0`),
+  mp(["The algebra gives ", im(String.raw`x = 4`), " and ", im(String.raw`x = -2`), ". Now the part that carries the marks: ", im(String.raw`\log_2(x)`), " needs ", im(String.raw`x > 0`), ", and ", im(String.raw`\log_2(x-2)`), " needs ", im(String.raw`x > 2`), ". So the domain is ", im(String.raw`x > 2`), ", and ", im(String.raw`x = -2`), " is rejected — you cannot take the log of a negative number."]),
+  math(String.raw`\text{Check } x=4:\quad \log_2 4 + \log_2 2 = 2 + 1 = 3 \quad \checkmark`),
+  mp(["The answer is ", im(String.raw`x = 4`), " only."]),
 
   h2("4. Dividing by a trig function — and deleting solutions"),
   p("This one is costly because the work looks clean and the answer looks finished. Dividing both sides by sin x quietly assumes sin x ≠ 0, and throws away every solution where it is."),
   h3("Worked example"),
-  p("Solve 2 sin x cos x = sin x for 0 ≤ x < 2π."),
-  strong("The tempting route:"),
-  p("Divide both sides by sin x → 2 cos x = 1 → cos x = 1/2 → x = π/3, 5π/3. Two solutions."),
-  strong("The correct route: move everything to one side and factor."),
-  li("2 sin x cos x − sin x = 0"),
-  li("sin x (2 cos x − 1) = 0"),
-  li("sin x = 0 → x = 0, π"),
-  li("cos x = 1/2 → x = π/3, 5π/3"),
-  p("There are four solutions: 0, π/3, π, 5π/3. Dividing deleted x = 0 and x = π. Check x = π: the left side is 2(0)(−1) = 0 and the right side is sin π = 0, so it satisfies the equation perfectly — it was simply removed by the method."),
+  mp(["Solve ", im(String.raw`2\sin x \cos x = \sin x`), " for ", im(String.raw`0 \le x < 2\pi`), "."]),
+  strong("The tempting route — divide by sin x:"),
+  math(String.raw`2\cos x = 1 \;\Longrightarrow\; \cos x = \tfrac{1}{2} \;\Longrightarrow\; x = \tfrac{\pi}{3},\ \tfrac{5\pi}{3}`),
+  strong("The correct route — move everything to one side and factor:"),
+  math(String.raw`2\sin x \cos x - \sin x = 0 \;\Longrightarrow\; \sin x\,(2\cos x - 1) = 0`),
+  math(String.raw`\sin x = 0 \;\Longrightarrow\; x = 0,\ \pi \qquad \cos x = \tfrac{1}{2} \;\Longrightarrow\; x = \tfrac{\pi}{3},\ \tfrac{5\pi}{3}`),
+  mp(["There are four solutions: ", im(String.raw`0,\ \tfrac{\pi}{3},\ \pi,\ \tfrac{5\pi}{3}`), ". Dividing deleted ", im(String.raw`x = 0`), " and ", im(String.raw`x = \pi`), ". Check ", im(String.raw`x = \pi`), ": the left side is ", im(String.raw`2(0)(-1) = 0`), " and the right side is ", im(String.raw`\sin \pi = 0`), ", so it satisfies the equation perfectly — it was simply removed by the method."]),
   p("The rule worth carrying: never divide by something that can be zero. Factor instead."),
 
   h2("5. Cancelling in a rational function and losing the hole"),
-  p("Simplifying (x² − 4)/(x − 2) to x + 2 is algebraically correct — and it silently changes the function."),
+  mp(["Simplifying ", im(String.raw`\frac{x^2-4}{x-2}`), " to ", im(String.raw`x+2`), " is algebraically correct — and it silently changes the function."]),
   h3("Worked example"),
-  p("(x² − 4)/(x − 2) = (x − 2)(x + 2)/(x − 2) = x + 2, but only where x ≠ 2."),
-  p("At x = 2 the original function is 0/0, which is undefined. The simplified version cheerfully returns 4. So the graph is the line y = x + 2 with a hole at (2, 4)."),
+  math(String.raw`\frac{x^2 - 4}{x - 2} = \frac{(x-2)(x+2)}{x-2} = x + 2, \quad x \neq 2`),
+  mp(["At ", im(String.raw`x = 2`), " the original function is ", im(String.raw`\tfrac{0}{0}`), ", which is undefined. The simplified version cheerfully returns 4. So the graph is the line ", im(String.raw`y = x+2`), " with a hole at ", im(String.raw`(2, 4)`), "."]),
   p("Writing \"= x + 2\" with no restriction loses that hole, and the hole is usually exactly what the question is testing. The cancelled factor is not gone — it left a mark."),
 
   h2("6. Confusing the inverse with the reciprocal"),
   p("f⁻¹(x) and 1/f(x) are different objects. The notation invites the mistake, and the exam knows it."),
   h3("Worked example"),
-  p("Let f(x) = 2x + 3."),
-  li("Inverse: swap and solve. x = 2y + 3 → y = (x − 3)/2, so f⁻¹(x) = (x − 3)/2"),
-  li("Reciprocal: 1/f(x) = 1/(2x + 3)"),
-  p("These agree nowhere. The check that an inverse is right is composition: f(f⁻¹(x)) = 2·((x − 3)/2) + 3 = (x − 3) + 3 = x. ✓ An inverse undoes the function; a reciprocal divides one by it."),
+  mp(["Let ", im(String.raw`f(x) = 2x + 3`), ". Swap and solve for the inverse:"]),
+  math(String.raw`x = 2y + 3 \;\Longrightarrow\; f^{-1}(x) = \frac{x-3}{2}`),
+  p("The reciprocal is a completely different object:"),
+  math(String.raw`f^{-1}(x) = \frac{x-3}{2} \neq \frac{1}{f(x)} = \frac{1}{2x+3}`),
+  p("These agree nowhere. The check that an inverse is right is composition:"),
+  math(String.raw`f\bigl(f^{-1}(x)\bigr) = 2\left(\frac{x-3}{2}\right) + 3 = x \quad \checkmark`),
+  p("An inverse undoes the function; a reciprocal divides one by it."),
 
   h2("7. Using the infinite geometric sum when the series doesn't converge"),
-  p("S = a/(1 − r) holds only when |r| < 1. Applied outside that condition it returns a number, and the number is meaningless."),
+  p("The infinite sum formula carries a condition, and the condition is the whole point:"),
+  math(String.raw`S_\infty = \frac{a}{1-r}, \quad \text{valid only when } |r| < 1`),
   h3("Worked example"),
-  p("Consider 2 + 6 + 18 + 54 + … , where a = 2 and r = 3."),
-  p("Applying the formula anyway: S = 2/(1 − 3) = 2/(−2) = −1."),
+  mp(["Consider ", im(String.raw`2 + 6 + 18 + 54 + \cdots`), ", where ", im(String.raw`a = 2`), " and ", im(String.raw`r = 3`), ". Applying the formula anyway:"]),
+  math(String.raw`S = \frac{2}{1-3} = \frac{2}{-2} = -1`),
   p("Look at what that claims: adding infinitely many positive, growing numbers gives −1. The series diverges — it has no sum. The formula did not fail quietly; it produced an answer that is visibly absurd, which is the useful part. If a sum of positive terms comes out negative, the condition was never checked."),
 
   h2("Practice problems"),
   p("Work these before reading the solutions. Getting one wrong is more informative than getting three right."),
-  strong("1. Describe the transformations of y = f(3x + 9) relative to y = f(x)."),
-  strong("2. Solve log₅(x) + log₅(x − 4) = 1."),
-  strong("3. Solve 2cos²x = cos x for 0 ≤ x < 2π."),
+  mp([span("1. Describe the transformations of ", ["strong"]), im(String.raw`y = f(3x + 9)`), span(" relative to ", ["strong"]), im(String.raw`y = f(x)`), span(".", ["strong"])]),
+  mp([span("2. Solve ", ["strong"]), im(String.raw`\log_5(x) + \log_5(x-4) = 1`), span(".", ["strong"])]),
+  mp([span("3. Solve ", ["strong"]), im(String.raw`2\cos^2 x = \cos x`), span(" for ", ["strong"]), im(String.raw`0 \le x < 2\pi`), span(".", ["strong"])]),
 
   h2("Solutions"),
-  h3("1. Transformations of y = f(3x + 9)"),
-  p("Factor first: 3x + 9 = 3(x + 3), so y = f(3(x + 3))."),
-  p("Horizontal compression by a factor of 1/3, then a shift LEFT 3 — not left 9. Check: the bracket is zero at 3x + 9 = 0, so x = −3. ✓"),
-  h3("2. log₅(x) + log₅(x − 4) = 1"),
-  li("Combine: log₅(x(x − 4)) = 1"),
-  li("Convert: x(x − 4) = 5¹ = 5"),
-  li("Rearrange: x² − 4x − 5 = 0, so (x − 5)(x + 1) = 0"),
-  li("Algebraic solutions: x = 5 and x = −1"),
-  p("Domain: x > 0 and x − 4 > 0, so x > 4. That rejects x = −1."),
-  p("Check x = 5: log₅ 5 + log₅ 1 = 1 + 0 = 1. ✓ The answer is x = 5."),
-  h3("3. 2cos²x = cos x"),
-  p("Do not divide by cos x — that would delete solutions (mistake 4)."),
-  li("2cos²x − cos x = 0"),
-  li("cos x (2 cos x − 1) = 0"),
-  li("cos x = 0 → x = π/2, 3π/2"),
-  li("cos x = 1/2 → x = π/3, 5π/3"),
-  p("Four solutions: π/3, π/2, 3π/2, 5π/3. Check x = π/2: 2(0)² = 0 and cos(π/2) = 0. ✓ Dividing by cos x would have lost both x = π/2 and x = 3π/2."),
+  h3("1. Transformations"),
+  p("Factor first:"),
+  math(String.raw`y = f(3x + 9) = f\bigl(3(x + 3)\bigr)`),
+  mp(["Horizontal compression by a factor of ", im(String.raw`\tfrac{1}{3}`), ", then a shift LEFT 3 — not left 9. Check: the bracket is zero at ", im(String.raw`3x + 9 = 0`), ", so ", im(String.raw`x = -3`), ". ✓"]),
+  h3("2. The log equation"),
+  math(String.raw`\log_5\bigl(x(x-4)\bigr) = 1 \;\Longrightarrow\; x(x-4) = 5`),
+  math(String.raw`x^2 - 4x - 5 = 0 \;\Longrightarrow\; (x-5)(x+1) = 0`),
+  mp(["The algebra gives ", im(String.raw`x = 5`), " and ", im(String.raw`x = -1`), ". The domain needs ", im(String.raw`x > 0`), " and ", im(String.raw`x - 4 > 0`), ", so ", im(String.raw`x > 4`), " — which rejects ", im(String.raw`x = -1`), "."]),
+  math(String.raw`\text{Check } x=5:\quad \log_5 5 + \log_5 1 = 1 + 0 = 1 \quad \checkmark`),
+  h3("3. The trig equation"),
+  mp(["Do not divide by ", im(String.raw`\cos x`), " — that would delete solutions (mistake 4). Factor instead:"]),
+  math(String.raw`2\cos^2 x - \cos x = 0 \;\Longrightarrow\; \cos x\,(2\cos x - 1) = 0`),
+  math(String.raw`\cos x = 0 \;\Longrightarrow\; x = \tfrac{\pi}{2},\ \tfrac{3\pi}{2} \qquad \cos x = \tfrac{1}{2} \;\Longrightarrow\; x = \tfrac{\pi}{3},\ \tfrac{5\pi}{3}`),
+  mp(["Four solutions: ", im(String.raw`\tfrac{\pi}{3},\ \tfrac{\pi}{2},\ \tfrac{3\pi}{2},\ \tfrac{5\pi}{3}`), ". Check ", im(String.raw`x = \tfrac{\pi}{2}`), ": ", im(String.raw`2(0)^2 = 0`), " and ", im(String.raw`\cos\tfrac{\pi}{2} = 0`), ". ✓ Dividing by ", im(String.raw`\cos x`), " would have lost both ", im(String.raw`x = \tfrac{\pi}{2}`), " and ", im(String.raw`x = \tfrac{3\pi}{2}`), "."]),
 
   h2("Why these matter beyond the report card"),
   p("Pre-Calculus 12 is the prerequisite for first-year calculus at UBC and SFU, and those courses do not revisit it — they assume it. Every mistake above is one that reappears in calculus wearing different clothes: the transformation error resurfaces in curve sketching, the log domain error in solving, the trig factoring error everywhere."),
@@ -160,8 +170,35 @@ const body = [
   linked(["Sessions run in person at our Burnaby centre or online across Metro Vancouver, aligned to the BC curriculum. ", { text: "Book a free 30-minute consultation", href: "/contact" }, " and we will talk through where the marks are actually going."]),
 ];
 
+/** Every equation must compile, or it renders as red error text on the page. */
+function verifyLatex(blocks) {
+  const found = [];
+  for (const b of blocks) {
+    if (b._type === "mathBlock") found.push([b.latex, true]);
+    for (const c of b.children || []) if (c._type === "mathInline") found.push([c.latex, false]);
+  }
+  let bad = 0;
+  for (const [latex, display] of found) {
+    try {
+      const html = katex.renderToString(latex, { displayMode: display, throwOnError: true, output: "html", strict: false });
+      if (/katex-error/.test(html)) throw new Error("rendered as error");
+    } catch (e) {
+      bad++;
+      console.error(`  ✗ BAD LATEX: ${latex}
+      ${(e.message || e).slice(0, 80)}`);
+    }
+  }
+  return { total: found.length, bad };
+}
+
 async function run() {
   console.log(`Mode: ${commit ? "COMMIT (creating draft)" : "DRY RUN"}`);
+  const { total, bad } = verifyLatex(body);
+  console.log(`  LaTeX  : ${total} equation(s), ${bad} invalid`);
+  if (bad) {
+    console.error("\n✗ Refusing to continue — fix the LaTeX first.");
+    process.exit(1);
+  }
   const wordCount = body
     .flatMap((b) => (b.children || []).map((c) => c.text || ""))
     .join(" ")

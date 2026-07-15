@@ -1,3 +1,5 @@
+import katex from "katex";
+import "katex/dist/katex.min.css";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
@@ -50,8 +52,43 @@ function getReadingTime(text: string): string {
   return `${minutes} min read`;
 }
 
+/**
+ * Typeset LaTeX with KaTeX at render time (this is a server component), so the
+ * maths is in the HTML — no client-side layout shift, and crawlers see it.
+ * throwOnError:false means a malformed equation shows in red rather than
+ * breaking the whole article.
+ */
+function renderMath(latex: string, displayMode: boolean): string {
+  try {
+    return katex.renderToString(latex, {
+      displayMode,
+      throwOnError: false,
+      output: "html",
+      strict: false,
+    });
+  } catch {
+    return "";
+  }
+}
+
 const portableTextComponents = {
   types: {
+    mathBlock: ({ value }: any) => {
+      if (!value?.latex) return null;
+      return (
+        <div
+          className="my-8 overflow-x-auto text-center"
+          // KaTeX output is generated from our own LaTeX, not user input.
+          dangerouslySetInnerHTML={{ __html: renderMath(value.latex, true) }}
+        />
+      );
+    },
+    mathInline: ({ value }: any) => {
+      if (!value?.latex) return null;
+      return (
+        <span dangerouslySetInnerHTML={{ __html: renderMath(value.latex, false) }} />
+      );
+    },
     htmlBlock: ({ value }: any) => {
       if (!value || !value.html) return null;
       return (

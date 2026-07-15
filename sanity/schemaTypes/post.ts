@@ -65,8 +65,12 @@ export const post = defineType({
       type: "array",
       description: "Write content using standard rich text blocks or add raw HTML/embed code blocks.",
       of: [
+        // Display equations sit between paragraphs.
+        { type: "mathBlock" },
         {
           type: "block",
+          // Inline equations sit inside a sentence.
+          of: [{ type: "mathInline" }],
           styles: [
             { title: "Normal", value: "normal" },
             { title: "H1", value: "h1" },
