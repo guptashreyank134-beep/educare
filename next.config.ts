@@ -166,6 +166,21 @@ const redirectPairs: [string, string][] = [
   ["/mastering-calculus-12-ap-prep-burnaby-bc", "/programs/ib-ap-tutoring"],
   ["/why-bc-students-need-structured-math-support", "/blog/importance-of-high-school-mathematics"],
 
+  // Consolidated thin blog posts (2026-07): each was a ~400-word generic
+  // overview of a topic a dedicated page already covers properly, so it split
+  // ranking signals with the page that should win. Content is backed up in
+  // scripts/backups/consolidated-posts.json if any needs restoring.
+  ["/blog/physics-high-school-physics", "/physics-12-tutor-burnaby"],
+  ["/blog/physics-tutoring-high-school-physics", "/physics-12-tutor-burnaby"],
+  ["/blog/physics-tutoring-university-physics", "/university-physics-tutor-vancouver"],
+  ["/blog/physics-university-level-physics", "/university-physics-tutor-vancouver"],
+  ["/blog/physics-tutoring-physics-concepts-problem-solving", "/physics-problem-solving-tutor"],
+  ["/blog/mathematics-pre-calculus", "/pre-calculus-12-tutor-burnaby"],
+  ["/blog/burnaby-stem-tutoring-physics-11-12", "/physics-12-tutor-burnaby"],
+  ["/blog/burnaby-stem-tutoring-chemistry-11-12", "/chemistry-12-tutor-burnaby"],
+  ["/blog/burnaby-stem-tutoring-biology-11-12", "/biology-12-tutor-burnaby"],
+  ["/blog/burnaby-stem-tutoring-mathematics-grades-8-12", "/math-tutor-burnaby"],
+
   // Additional redirects (Turn 2)
   ["/how-to-solve-differential-equations", "/programs/university-mathematics"],
   ["/how-to-choose-the-right-math-tutor-in-burnaby-a-parents-complete-guide", "/services"],

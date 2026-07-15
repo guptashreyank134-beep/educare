@@ -1,0 +1,6382 @@
+[
+  {
+    "_createdAt": "2026-05-20T08:33:11Z",
+    "_id": "blog-post-burnaby-stem-tutoring-biology-11-12",
+    "_rev": "Ghv0vRm8LV3rkQJ86BY9no",
+    "_type": "post",
+    "_updatedAt": "2026-07-15T16:36:25Z",
+    "body": [
+      {
+        "_key": "c967abcb5f88",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "90c41dd32990",
+            "_type": "span",
+            "marks": [],
+            "text": "Biology 11 and 12 are important STEM courses, especially for students heading toward health sciences. They progress from a broad survey of life to the detailed human physiology of Grade 12 — a real step up in depth."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f88b161a5bb1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "12538a559c42",
+            "_type": "span",
+            "marks": [],
+            "text": "Let's make this topic click, using the same techniques our "
+          },
+          {
+            "_key": "404818b4342e",
+            "_type": "span",
+            "marks": [
+              "93a870fefb92"
+            ],
+            "text": "help with school science"
+          },
+          {
+            "_key": "16fa1f0e856e",
+            "_type": "span",
+            "marks": [],
+            "text": " uses with students every week."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "93a870fefb92",
+            "_type": "link",
+            "href": "/science-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "b9d0d800f94c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e05af7e6a6e7",
+            "_type": "span",
+            "marks": [],
+            "text": "Understanding the Essentials"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "667597ad3d62",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8b541891337b",
+            "_type": "span",
+            "marks": [],
+            "text": "Biology 11 covers cells, genetics, evolution and biodiversity, giving a broad foundation, while Biology 12 focuses on human anatomy, physiology and biochemistry in far greater detail. Grade 12's density is the main challenge."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "57ee11fd2668",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e4f1113e9d52",
+            "_type": "span",
+            "marks": [],
+            "text": "STEM tutoring helps students organise the detail into connected systems and build the study habits the volume demands."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d9fc250feeb5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "11ae02d81189",
+            "_type": "span",
+            "marks": [],
+            "text": "What You Need to Understand"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "ba4b1f037dcc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "037c0b708797",
+            "_type": "span",
+            "marks": [],
+            "text": "Get these core ideas right and the rest follows; they're where our "
+          },
+          {
+            "_key": "020535cf22a8",
+            "_type": "span",
+            "marks": [
+              "a3fd4d7cab1e"
+            ],
+            "text": "one-on-one Chemistry 12 help"
+          },
+          {
+            "_key": "bff0bdeb51ea",
+            "_type": "span",
+            "marks": [],
+            "text": " starts:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "a3fd4d7cab1e",
+            "_type": "link",
+            "href": "/chemistry-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "52d1474e3062",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e33a107bdb0f",
+            "_type": "span",
+            "marks": [],
+            "text": "Biology 11: cells, genetics, evolution, ecology"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d2529bc08524",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "efdad6fb45c2",
+            "_type": "span",
+            "marks": [],
+            "text": "Biology 12: human anatomy and physiology"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ef33606e9359",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "26b85d4d4945",
+            "_type": "span",
+            "marks": [],
+            "text": "Biochemistry (Grade 12)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "70b0772b02e4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f8d50a26ec0d",
+            "_type": "span",
+            "marks": [],
+            "text": "Organ systems and how they connect"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "cf8f9c47f042",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49b70731e265",
+            "_type": "span",
+            "marks": [],
+            "text": "Study strategies for content-heavy material"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f636bf2037a7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d8fea450aec4",
+            "_type": "span",
+            "marks": [],
+            "text": "Exam preparation"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "4fb943039b78",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6cace21dfec4",
+            "_type": "span",
+            "marks": [],
+            "text": "Common Mistakes to Avoid"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "43529a0ef3b8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "dbb0f509f0f2",
+            "_type": "span",
+            "marks": [],
+            "text": "Watch out for these pitfalls; eliminating them is a big part of our "
+          },
+          {
+            "_key": "a88c80959baa",
+            "_type": "span",
+            "marks": [
+              "bc82f6ffd617"
+            ],
+            "text": "our final-exam review programme"
+          },
+          {
+            "_key": "15885e2e389f",
+            "_type": "span",
+            "marks": [],
+            "text": ":"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "bc82f6ffd617",
+            "_type": "link",
+            "href": "/final-exam-review-tutoring-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "ab098be10e10",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c44099f94d4f",
+            "_type": "span",
+            "marks": [],
+            "text": "Memorising isolated facts instead of systems"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "78f17eab48bb",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d906dd545b56",
+            "_type": "span",
+            "marks": [],
+            "text": "Underestimating Grade 12's volume of detail"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e750d147124d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6694af7254b6",
+            "_type": "span",
+            "marks": [],
+            "text": "Cramming rather than spacing study"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "15bb398867cc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4e7bcd9004b2",
+            "_type": "span",
+            "marks": [],
+            "text": "Overlooking how systems interact"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "11ae2449dd54",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "09583e1b8f3e",
+            "_type": "span",
+            "marks": [],
+            "text": "Getting the Most From Your Study Time"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "02ef45510a6d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "88f75b21fe04",
+            "_type": "span",
+            "marks": [],
+            "text": "Put these techniques to work — they're how our "
+          },
+          {
+            "_key": "0606cd083e74",
+            "_type": "span",
+            "marks": [
+              "65839f62a245"
+            ],
+            "text": "our Burnaby math programme"
+          },
+          {
+            "_key": "ea87e7d42f91",
+            "_type": "span",
+            "marks": [],
+            "text": " gets results:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "65839f62a245",
+            "_type": "link",
+            "href": "/math-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "b424645f28cd",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "52d15a4f0727",
+            "_type": "span",
+            "marks": [],
+            "text": "Learn each system as a connected whole"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8653d1b5ca5a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "00debb978c67",
+            "_type": "span",
+            "marks": [],
+            "text": "Use diagrams and active recall"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "23de12820140",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bfd8c25b887a",
+            "_type": "span",
+            "marks": [],
+            "text": "Space out revision — the detail is too much to cram"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6f29c8eb37b6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c807c8755507",
+            "_type": "span",
+            "marks": [],
+            "text": "Connect Grade 11 concepts to Grade 12 detail"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "907aa87ad817",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "34038c5f743c",
+            "_type": "span",
+            "marks": [],
+            "text": "Frequently Asked Questions"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "af929ccac47d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bd2b142a463e",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "What mistakes should I watch out for?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "bb19493fffb0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b17335396a48",
+            "_type": "span",
+            "marks": [],
+            "text": "The most frequent slip-ups include memorising isolated facts instead of systems; underestimating Grade 12's volume of detail; cramming rather than spacing study; and overlooking how systems interact."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6c53a7645225",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3f670c169149",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "How can I study this topic well?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "74b301f4f2d4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c203dfceebc5",
+            "_type": "span",
+            "marks": [],
+            "text": "Prioritise these habits: learn each system as a connected whole; use diagrams and active recall; space out revision — the detail is too much to cram; and connect Grade 11 concepts to Grade 12 detail."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3feaa1e8fa5f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5a0a432330be",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Can one-on-one help improve my grade?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "84373111468c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "851797ae4b16",
+            "_type": "span",
+            "marks": [],
+            "text": "Yes — for most students, one-on-one support is the fastest route to real improvement. A "
+          },
+          {
+            "_key": "99de9d6ac040",
+            "_type": "span",
+            "marks": [
+              "b2f7d9ddca2c"
+            ],
+            "text": "free initial consultation"
+          },
+          {
+            "_key": "8bd99f994c0a",
+            "_type": "span",
+            "marks": [],
+            "text": " is a no-obligation way to start."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "b2f7d9ddca2c",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "7590286ac25a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f78d98a8d6cd",
+            "_type": "span",
+            "marks": [],
+            "text": "Getting Expert Support"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "6d992931ea27",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "867204fc27a2",
+            "_type": "span",
+            "marks": [],
+            "text": "STEM biology rewards organised, systems-level study. Our science tutor in Burnaby helps students master both grades — strong preparation for health sciences. Book a free consultation to get started."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "excerpt": "Biology 11 and 12 progress from broad life science to detailed human physiology. This guide maps the journey and how STEM tutoring supports it.",
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/burnaby-stem-tutoring-biology-11-12",
+      "metaDescription": "Biology 11 and 12 progress from broad life science to detailed human physiology. This guide maps the journey and how STEM tutoring supports it.",
+      "metaTitle": "Biology 11 & 12 in Burnaby STEM Tutoring | Dr. Shreyank Educare"
+    },
+    "publishedAt": "2026-05-20T10:49:00.265Z",
+    "slug": {
+      "_type": "slug",
+      "current": "burnaby-stem-tutoring-biology-11-12"
+    },
+    "title": "Biology 11 & 12 in Burnaby STEM Tutoring"
+  },
+  {
+    "_createdAt": "2026-05-20T08:33:10Z",
+    "_id": "blog-post-burnaby-stem-tutoring-chemistry-11-12",
+    "_rev": "eY4ovYvWryRutBbihHSB4l",
+    "_type": "post",
+    "_updatedAt": "2026-07-15T16:36:26Z",
+    "body": [
+      {
+        "_key": "40dd712ff758",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "84b47f7f6464",
+            "_type": "span",
+            "marks": [],
+            "text": "Chemistry 11 and 12 are core STEM courses in the BC curriculum, and Grade 12 leans heavily on foundations laid in Grade 11. Getting the early concepts solid makes the demanding Grade 12 units far more approachable."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "4dfcd5b30ce8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "71241645bf23",
+            "_type": "span",
+            "marks": [],
+            "text": "What follows is a focused breakdown, drawn from how our "
+          },
+          {
+            "_key": "9a2b61032f89",
+            "_type": "span",
+            "marks": [
+              "ec6ef6d0e33c"
+            ],
+            "text": "Chemistry 12 tutors in Burnaby"
+          },
+          {
+            "_key": "48b96cfc6072",
+            "_type": "span",
+            "marks": [],
+            "text": " approaches it."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "ec6ef6d0e33c",
+            "_type": "link",
+            "href": "/chemistry-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "4585c4bbff35",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "340c1c27a560",
+            "_type": "span",
+            "marks": [],
+            "text": "Understanding the Essentials"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "94ae78a1c007",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "198a340cd3ac",
+            "_type": "span",
+            "marks": [],
+            "text": "Chemistry 11 builds the essentials — the mole, stoichiometry, bonding and reactions — while Chemistry 12 tackles kinetics, equilibrium, solubility and acid-base chemistry. The Grade 12 units are calculation-heavy and build directly on Grade 11 skills."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "68034177a98e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3d7a85cc3e2f",
+            "_type": "span",
+            "marks": [],
+            "text": "Good STEM tutoring keeps those foundations strong and turns the toughest Grade 12 topics into clear, repeatable methods."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d46a4117633f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b8ce60283f14",
+            "_type": "span",
+            "marks": [],
+            "text": "What You Need to Understand"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "63fefd9deab3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b48354a85df7",
+            "_type": "span",
+            "marks": [],
+            "text": "Everything builds on these fundamentals, which our "
+          },
+          {
+            "_key": "5703f7c05457",
+            "_type": "span",
+            "marks": [
+              "d877062b538d"
+            ],
+            "text": "help preparing for finals"
+          },
+          {
+            "_key": "6be18f2fdbf0",
+            "_type": "span",
+            "marks": [],
+            "text": " reinforces first:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "d877062b538d",
+            "_type": "link",
+            "href": "/final-exam-review-tutoring-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "2bbb52984280",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5f60f7820409",
+            "_type": "span",
+            "marks": [],
+            "text": "Chemistry 11: the mole, stoichiometry, bonding"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f22f7d4f469b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b7789f43028b",
+            "_type": "span",
+            "marks": [],
+            "text": "Chemistry 12: kinetics and equilibrium"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c0460d03c417",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "10cdc5d5479f",
+            "_type": "span",
+            "marks": [],
+            "text": "Solubility and acid-base chemistry (Grade 12)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3a81c8d3ad5a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bd4e3d22dd3e",
+            "_type": "span",
+            "marks": [],
+            "text": "Quantitative problem-solving"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0c42ee606018",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7f115fba812b",
+            "_type": "span",
+            "marks": [],
+            "text": "Connecting Grade 11 skills to Grade 12"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "382d017d1a63",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fd6c77337946",
+            "_type": "span",
+            "marks": [],
+            "text": "Exam preparation"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f846f8278d77",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4b0aa8a1d210",
+            "_type": "span",
+            "marks": [],
+            "text": "Common Mistakes to Avoid"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "6b7a3420952f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c34df7762cab",
+            "_type": "span",
+            "marks": [],
+            "text": "Students lose the most marks to these mistakes, which our "
+          },
+          {
+            "_key": "b6dbe9b2c8d7",
+            "_type": "span",
+            "marks": [
+              "74e1e555f4ff"
+            ],
+            "text": "problem-solving practice"
+          },
+          {
+            "_key": "69bd4173b7f2",
+            "_type": "span",
+            "marks": [],
+            "text": " helps prevent:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "74e1e555f4ff",
+            "_type": "link",
+            "href": "/math-word-problems-tutor"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "4e93592f0793",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d1139e586aab",
+            "_type": "span",
+            "marks": [],
+            "text": "Weak stoichiometry from Grade 11 surfacing in Grade 12"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d8428168a183",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "360bb81c627b",
+            "_type": "span",
+            "marks": [],
+            "text": "Struggling with equilibrium and acid-base calculations"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6d7045e5ce78",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f77e38178942",
+            "_type": "span",
+            "marks": [],
+            "text": "Memorising instead of understanding"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "52ec493354af",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7c6146c52f39",
+            "_type": "span",
+            "marks": [],
+            "text": "Setting up ICE tables incorrectly"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "50bf6052b894",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "986bf8b8266b",
+            "_type": "span",
+            "marks": [],
+            "text": "How to Study This Effectively"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "d94f2416de00",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5f2c4598c26f",
+            "_type": "span",
+            "marks": [],
+            "text": "The habits that work best are here, and our "
+          },
+          {
+            "_key": "311fb50242ce",
+            "_type": "span",
+            "marks": [
+              "95bf0d5c6c30"
+            ],
+            "text": "one-on-one math help in Burnaby"
+          },
+          {
+            "_key": "56eac860057c",
+            "_type": "span",
+            "marks": [],
+            "text": " puts them into practice:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "95bf0d5c6c30",
+            "_type": "link",
+            "href": "/math-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "975704e4086d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bce71ebe6691",
+            "_type": "span",
+            "marks": [],
+            "text": "Master the mole concept and stoichiometry early"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "dedc059f30c8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "44bf779cdf12",
+            "_type": "span",
+            "marks": [],
+            "text": "Use ICE tables systematically for equilibrium"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8afb79dec223",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7414fa5636b7",
+            "_type": "span",
+            "marks": [],
+            "text": "Connect Grade 11 foundations to Grade 12 topics"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6598d7ea7a83",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d2e6e388aa0c",
+            "_type": "span",
+            "marks": [],
+            "text": "Practise calculation-heavy problems until routine"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e4222b90bddb",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "14f350563c0e",
+            "_type": "span",
+            "marks": [],
+            "text": "Your Questions, Answered"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "27420671b0e1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7749072569eb",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "What trips students up most?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0584a78c4aef",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "dbe9d8baf117",
+            "_type": "span",
+            "marks": [],
+            "text": "Common errors to avoid are weak stoichiometry from Grade 11 surfacing in Grade 12; struggling with equilibrium and acid-base calculations; memorising instead of understanding; and setting up ICE tables incorrectly."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a7aac273c8df",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a11c36846e10",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "What's the best way to prepare?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3e989804872a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "af6ceba1e9c3",
+            "_type": "span",
+            "marks": [],
+            "text": "What works best is to master the mole concept and stoichiometry early; use ICE tables systematically for equilibrium; connect Grade 11 foundations to Grade 12 topics; and practise calculation-heavy problems until routine."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "144e723ffde5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c1eef6173e75",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Can a tutor really help?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "013559ae4323",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "781067099532",
+            "_type": "span",
+            "marks": [],
+            "text": "Yes. One-on-one, PhD-led tutoring pinpoints exactly where a student struggles and rebuilds the foundations — far faster than studying alone. Book a "
+          },
+          {
+            "_key": "1a03d3ff6da0",
+            "_type": "span",
+            "marks": [
+              "1ba2d1708375"
+            ],
+            "text": "book a consultation"
+          },
+          {
+            "_key": "e5b2a99ae9b1",
+            "_type": "span",
+            "marks": [],
+            "text": " to see how we can help."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "1ba2d1708375",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "d83c0304deb4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3d0c74ef64d5",
+            "_type": "span",
+            "marks": [],
+            "text": "How We Can Help"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "1e51d5260668",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "925557b7d570",
+            "_type": "span",
+            "marks": [],
+            "text": "STEM chemistry rewards strong foundations across both grades. Our Chemistry 12 tutoring makes the toughest units clear for Burnaby students. Book a free consultation to get started."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "excerpt": "Chemistry 11 and 12 form a connected sequence toward university science. This guide maps the progression, common pitfalls, and how STEM tutoring helps.",
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/burnaby-stem-tutoring-chemistry-11-12",
+      "metaDescription": "Chemistry 11 and 12 form a connected sequence toward university science. This guide maps the progression, common pitfalls, and how STEM tutoring helps.",
+      "metaTitle": "Chemistry 11 & 12 in Burnaby STEM Tutoring | Dr. Shreyank Educare"
+    },
+    "publishedAt": "2026-05-20T10:48:59.258Z",
+    "slug": {
+      "_type": "slug",
+      "current": "burnaby-stem-tutoring-chemistry-11-12"
+    },
+    "title": "Chemistry 11 & 12 in Burnaby STEM Tutoring"
+  },
+  {
+    "_createdAt": "2026-05-20T08:33:08Z",
+    "_id": "blog-post-burnaby-stem-tutoring-mathematics-grades-8-12",
+    "_rev": "Ghv0vRm8LV3rkQJ86BYA4u",
+    "_type": "post",
+    "_updatedAt": "2026-07-15T16:36:28Z",
+    "body": [
+      {
+        "_key": "3a66a757a124",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fb435fcd3215",
+            "_type": "span",
+            "marks": [],
+            "text": "The math journey from Grade 8 to Grade 12 is a carefully connected sequence, where each year lays the groundwork for the next. Small gaps early on tend to grow, which is why steady support across these years matters so much."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e0d6f852f9aa",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "addcda5d6ebd",
+            "_type": "span",
+            "marks": [],
+            "text": "Read on for the key ideas, common traps and study strategies — exactly what our "
+          },
+          {
+            "_key": "8d7cb14c7104",
+            "_type": "span",
+            "marks": [
+              "10ca95218e18"
+            ],
+            "text": "one-on-one math help in Burnaby"
+          },
+          {
+            "_key": "d96a30e82b6c",
+            "_type": "span",
+            "marks": [],
+            "text": " covers."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "10ca95218e18",
+            "_type": "link",
+            "href": "/math-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "6ea3883afe34",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c3d482858e8d",
+            "_type": "span",
+            "marks": [],
+            "text": "What You'll Learn Here"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "175b17420aad",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "aefd78de166c",
+            "_type": "span",
+            "marks": [],
+            "text": "Grades 8–10 build the algebra, proportional reasoning and foundational skills that Grades 11–12 depend on. By Grade 11 the paths split into Pre-Calculus and Foundations, leading to Calculus 12 and university readiness."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a6305a126a10",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "54995627f5fe",
+            "_type": "span",
+            "marks": [],
+            "text": "Because the sequence is cumulative, the most effective approach is to keep each year's foundations solid rather than patching problems later."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d51641b8f0d7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3b46a8c89e47",
+            "_type": "span",
+            "marks": [],
+            "text": "What You Need to Understand"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "21fe34348847",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ad2c0501b29c",
+            "_type": "span",
+            "marks": [],
+            "text": "Understand the essentials below; our "
+          },
+          {
+            "_key": "ef7b1dd2fd20",
+            "_type": "span",
+            "marks": [
+              "234734c4b731"
+            ],
+            "text": "one-on-one Pre-Calculus 12 help"
+          },
+          {
+            "_key": "e38483452d52",
+            "_type": "span",
+            "marks": [],
+            "text": " returns to them again and again:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "234734c4b731",
+            "_type": "link",
+            "href": "/pre-calculus-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "6b3898d48a41",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "45106d8d327c",
+            "_type": "span",
+            "marks": [],
+            "text": "Grades 8–10 algebra and number sense"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6b2c7b94dbae",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ebc255c57b5c",
+            "_type": "span",
+            "marks": [],
+            "text": "Proportional reasoning and functions"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "9db4d0c854ef",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7ec6c241c2b0",
+            "_type": "span",
+            "marks": [],
+            "text": "Grade 11 pathways (Pre-Calculus and Foundations)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "093cdfd6f6ca",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5b1bc49de626",
+            "_type": "span",
+            "marks": [],
+            "text": "Trigonometry and advanced functions"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "de0ff9d6b3d2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8d882090d0e8",
+            "_type": "span",
+            "marks": [],
+            "text": "Calculus 12 and university preparation"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8b2d983ad3f3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5c91cd15bc06",
+            "_type": "span",
+            "marks": [],
+            "text": "Problem-solving across all years"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6cce217dad86",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "97abca792b51",
+            "_type": "span",
+            "marks": [],
+            "text": "Where Students Slip Up"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "93e431cb1397",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0f0d740a3449",
+            "_type": "span",
+            "marks": [],
+            "text": "Watch out for these pitfalls; eliminating them is a big part of our "
+          },
+          {
+            "_key": "c4e18293b0bc",
+            "_type": "span",
+            "marks": [
+              "e2142cef0fe9"
+            ],
+            "text": "Calculus 12 tutoring"
+          },
+          {
+            "_key": "e587a50ff758",
+            "_type": "span",
+            "marks": [],
+            "text": ":"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "e2142cef0fe9",
+            "_type": "link",
+            "href": "/calculus-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "376587fce0f4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9890beff74fd",
+            "_type": "span",
+            "marks": [],
+            "text": "Letting early gaps (e.g. fractions, algebra) go unaddressed"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b90e81c1dd1b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5f02d42f6081",
+            "_type": "span",
+            "marks": [],
+            "text": "Choosing the wrong Grade 11 pathway for future goals"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c5005040f5aa",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "16fa6ff2d0bf",
+            "_type": "span",
+            "marks": [],
+            "text": "Cramming instead of building cumulative understanding"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e1e59c5c7c0b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c8e0bf01dbdd",
+            "_type": "span",
+            "marks": [],
+            "text": "Underestimating how much Grade 12 depends on Grade 11"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d9d6590b4e74",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3f1068f787f8",
+            "_type": "span",
+            "marks": [],
+            "text": "How to Study This Effectively"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "053d6042cf81",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ef3de30db032",
+            "_type": "span",
+            "marks": [],
+            "text": "A handful of smart habits go a long way — the same ones our "
+          },
+          {
+            "_key": "d3235b3a1d4b",
+            "_type": "span",
+            "marks": [
+              "e3a80ccfd71f"
+            ],
+            "text": "help with word problems"
+          },
+          {
+            "_key": "18199b9b1c49",
+            "_type": "span",
+            "marks": [],
+            "text": " builds in:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "e3a80ccfd71f",
+            "_type": "link",
+            "href": "/math-word-problems-tutor"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "d5f460152773",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d3ea0de65ca1",
+            "_type": "span",
+            "marks": [],
+            "text": "Fix foundational gaps early, before they compound"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "7c8da20e7a46",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3752ca6336b3",
+            "_type": "span",
+            "marks": [],
+            "text": "Choose the Grade 11 pathway that fits university plans"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "87c7cca8a4db",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0b270fe08a80",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep skills current — math is cumulative"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "aca9c1c50b74",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f64a2e3c4488",
+            "_type": "span",
+            "marks": [],
+            "text": "Build understanding, not just procedures"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d804f88f9b66",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d144efc965a6",
+            "_type": "span",
+            "marks": [],
+            "text": "Frequently Asked Questions"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "60a80563dcd7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9b31cadc78f9",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "What mistakes should I watch out for?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ca7b0d167c42",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "046a230570b1",
+            "_type": "span",
+            "marks": [],
+            "text": "The most frequent slip-ups include letting early gaps (e.g. fractions, algebra) go unaddressed; choosing the wrong Grade 11 pathway for future goals; cramming instead of building cumulative understanding; and underestimating how much Grade 12 depends on Grade 11."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "25e012fa191f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "cdd351640d2a",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "How can I study this topic well?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b91444d25966",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ccdaf28bbd84",
+            "_type": "span",
+            "marks": [],
+            "text": "Prioritise these habits: fix foundational gaps early, before they compound; choose the Grade 11 pathway that fits university plans; keep skills current — math is cumulative; and build understanding, not just procedures."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1ab2f16b3745",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "636b9e540b06",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Can one-on-one help improve my grade?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2d5f99ca0af0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fa758d591b5e",
+            "_type": "span",
+            "marks": [],
+            "text": "Yes — for most students, one-on-one support is the fastest route to real improvement. A "
+          },
+          {
+            "_key": "86d54ae23929",
+            "_type": "span",
+            "marks": [
+              "28ddbf299206"
+            ],
+            "text": "free consultation"
+          },
+          {
+            "_key": "f90a6b0c47d1",
+            "_type": "span",
+            "marks": [],
+            "text": " is a no-obligation way to start."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "28ddbf299206",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "b7734d56d965",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "728879dad758",
+            "_type": "span",
+            "marks": [],
+            "text": "Getting Expert Support"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "a811cbd91913",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "421b495828d7",
+            "_type": "span",
+            "marks": [],
+            "text": "Consistent support across the school years keeps students on track and confident. Our "
+          },
+          {
+            "_key": "894dbc89c9e4",
+            "_type": "span",
+            "marks": [
+              "fc142abccc98"
+            ],
+            "text": "math tutoring in Burnaby"
+          },
+          {
+            "_key": "893e91041ab7",
+            "_type": "span",
+            "marks": [],
+            "text": " covers Grades 6–12 with a plan tailored to each student's goals. Book a free consultation to get started."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "fc142abccc98",
+            "_type": "link",
+            "href": "/math-tutoring-burnaby"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "excerpt": "Math from Grade 8 to 12 builds toward university readiness. This guide maps the journey, the common gaps, and how strong tutoring keeps students on track.",
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/burnaby-stem-tutoring-mathematics-grades-8-12",
+      "metaDescription": "Math from Grade 8 to 12 builds toward university readiness. This guide maps the journey, the common gaps, and how strong tutoring keeps students on track.",
+      "metaTitle": "Mathematics (Grades 8–12) in Burnaby STEM Tutoring"
+    },
+    "publishedAt": "2026-05-20T10:48:57.230Z",
+    "slug": {
+      "_type": "slug",
+      "current": "burnaby-stem-tutoring-mathematics-grades-8-12"
+    },
+    "title": "Mathematics (Grades 8–12) in Burnaby STEM Tutoring"
+  },
+  {
+    "_createdAt": "2026-05-20T08:33:09Z",
+    "_id": "blog-post-burnaby-stem-tutoring-physics-11-12",
+    "_rev": "XfZx1DUkwYhtZQHgJgL73A",
+    "_type": "post",
+    "_updatedAt": "2026-07-15T16:36:29Z",
+    "body": [
+      {
+        "_key": "21ef35dbd609",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c09b0f205ba0",
+            "_type": "span",
+            "marks": [],
+            "text": "Physics 11 and 12 are pivotal STEM courses in the BC curriculum, and they build directly on each other. A strong Grade 11 makes Grade 12 far smoother, and both open doors to university science and engineering."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d1f12e5cd096",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "767fbe23f53b",
+            "_type": "span",
+            "marks": [],
+            "text": "Read on for the key ideas, common traps and study strategies — exactly what our "
+          },
+          {
+            "_key": "99ca5e79e04b",
+            "_type": "span",
+            "marks": [
+              "e0f6875a5b8f"
+            ],
+            "text": "Physics 12 support"
+          },
+          {
+            "_key": "845cbc66bf2f",
+            "_type": "span",
+            "marks": [],
+            "text": " covers."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "e0f6875a5b8f",
+            "_type": "link",
+            "href": "/physics-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "49be51e0562b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f2e18fec5b85",
+            "_type": "span",
+            "marks": [],
+            "text": "Understanding the Essentials"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "30feb771d541",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bb1fb5b35801",
+            "_type": "span",
+            "marks": [],
+            "text": "Physics 11 introduces motion, forces, energy and waves, while Physics 12 goes deeper into vector dynamics, circular motion, and electricity and magnetism. The step up in Grade 12 catches students who didn't fully solidify Grade 11."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "95ab662f83a3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6762e2cfb7ee",
+            "_type": "span",
+            "marks": [],
+            "text": "Effective STEM tutoring keeps the foundations strong and pairs conceptual understanding with the problem-solving method physics rewards."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f854ef91e33b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "eb55f2839eac",
+            "_type": "span",
+            "marks": [],
+            "text": "The Core Ideas"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "3a868ad5502e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6a7c2ba9ba5d",
+            "_type": "span",
+            "marks": [],
+            "text": "Get these core ideas right and the rest follows; they're where our "
+          },
+          {
+            "_key": "8e61b0ab76f4",
+            "_type": "span",
+            "marks": [
+              "da8462893d0b"
+            ],
+            "text": "exam preparation support"
+          },
+          {
+            "_key": "c3e70ea2d75d",
+            "_type": "span",
+            "marks": [],
+            "text": " starts:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "da8462893d0b",
+            "_type": "link",
+            "href": "/final-exam-review-tutoring-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "bd0dd1dbb7ee",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "29ac7cbe5ed2",
+            "_type": "span",
+            "marks": [],
+            "text": "Physics 11: kinematics, forces, energy, waves"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "97718b081c0b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a6a1c9348f72",
+            "_type": "span",
+            "marks": [],
+            "text": "Physics 12: vector dynamics and circular motion"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "4b5cab19d8eb",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "05e3c2dee379",
+            "_type": "span",
+            "marks": [],
+            "text": "Electricity and magnetism (Grade 12)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "664037f98f28",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b53d457179f3",
+            "_type": "span",
+            "marks": [],
+            "text": "The math foundations physics relies on"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2f8018e44b07",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b81c7b15e074",
+            "_type": "span",
+            "marks": [],
+            "text": "A consistent problem-solving method"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0a22034a8d61",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fda1a5817520",
+            "_type": "span",
+            "marks": [],
+            "text": "Provincial and final exam preparation"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a8ddef7c63c7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "48d76caf4e68",
+            "_type": "span",
+            "marks": [],
+            "text": "Traps to Avoid"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "8270ba9b1483",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "40d818e59629",
+            "_type": "span",
+            "marks": [],
+            "text": "Steer clear of the slip-ups below; our "
+          },
+          {
+            "_key": "9e0a464d0ff7",
+            "_type": "span",
+            "marks": [
+              "7916c3989841"
+            ],
+            "text": "our problem-solving coaching"
+          },
+          {
+            "_key": "74fe0f968853",
+            "_type": "span",
+            "marks": [],
+            "text": " trains students to catch them early:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "7916c3989841",
+            "_type": "link",
+            "href": "/math-word-problems-tutor"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "188cb35703ef",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "544496f80978",
+            "_type": "span",
+            "marks": [],
+            "text": "Carrying weak Grade 11 foundations into Grade 12"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e4d5648d3eaf",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1554d5d45fef",
+            "_type": "span",
+            "marks": [],
+            "text": "Understanding concepts but losing marks in the setup"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2109d26e9b11",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a5599492cc6a",
+            "_type": "span",
+            "marks": [],
+            "text": "Weak algebra and trigonometry undermining physics"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d187ba6e9f5c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4b4c879ef827",
+            "_type": "span",
+            "marks": [],
+            "text": "Underestimating how much Grade 12 builds on Grade 11"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "acbbcc550cf1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6084232a5cf0",
+            "_type": "span",
+            "marks": [],
+            "text": "How to Study This Effectively"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "e3ed37e0e8dd",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "cc95fdecf181",
+            "_type": "span",
+            "marks": [],
+            "text": "Study smarter with the approaches below, drawn from our "
+          },
+          {
+            "_key": "a552a2a086ff",
+            "_type": "span",
+            "marks": [
+              "857718438dda"
+            ],
+            "text": "math support for Burnaby students"
+          },
+          {
+            "_key": "93b180c9f154",
+            "_type": "span",
+            "marks": [],
+            "text": ":"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "857718438dda",
+            "_type": "link",
+            "href": "/math-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "57e165d6730c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "cfe46ff5eeb5",
+            "_type": "span",
+            "marks": [],
+            "text": "Solidify Grade 11 before Grade 12 builds on it"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ad1469f01514",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "86013e52d46b",
+            "_type": "span",
+            "marks": [],
+            "text": "Use a consistent method: diagram, knowns/unknowns, solve, check"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b773fb5b0a3a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3d8f0812c9fd",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep the underlying math sharp"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "dcb3c47e5c37",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "55d359b35392",
+            "_type": "span",
+            "marks": [],
+            "text": "Practise widely and review mistakes"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c2394d107d43",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a2eccbb8f3c1",
+            "_type": "span",
+            "marks": [],
+            "text": "Questions Students Ask"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "c8c8432f9a2e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "310226fe9562",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Where do students usually go wrong?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b4f9cb2b9e29",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e2508d8e41b3",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep an eye out for carrying weak Grade 11 foundations into Grade 12; understanding concepts but losing marks in the setup; weak algebra and trigonometry undermining physics; and underestimating how much Grade 12 builds on Grade 11."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "952659d01282",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6843ba32f41e",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "How should I study this effectively?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "44783d7f3d1f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e22ff91332e2",
+            "_type": "span",
+            "marks": [],
+            "text": "Focus on a few high-impact habits: solidify Grade 11 before Grade 12 builds on it; use a consistent method: diagram, knowns/unknowns, solve, check; keep the underlying math sharp; and practise widely and review mistakes."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3c19527e8a08",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "013a41249762",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Is tutoring worth it for this?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "461ebb5d39e4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fd615bca17ee",
+            "_type": "span",
+            "marks": [],
+            "text": "Absolutely. A dedicated tutor adapts to your child in real time, closes gaps quickly and rebuilds confidence. Start with a "
+          },
+          {
+            "_key": "411606d008d0",
+            "_type": "span",
+            "marks": [
+              "2579929b1c4a"
+            ],
+            "text": "free consultation"
+          },
+          {
+            "_key": "41f5e57424b1",
+            "_type": "span",
+            "marks": [],
+            "text": "."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "2579929b1c4a",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "fe9e115afede",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c1114fdaf4d4",
+            "_type": "span",
+            "marks": [],
+            "text": "How Dr. Shreyank Educare Can Help"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "ec30a73b444c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "551161f5a47c",
+            "_type": "span",
+            "marks": [],
+            "text": "STEM success comes from strong, connected foundations across the grades. Our Physics 12 tutoring builds understanding and exam technique for Burnaby students. Book a free consultation to get started."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "excerpt": "Physics 11 and 12 in the BC curriculum build toward university science. This guide maps the progression, the pitfalls, and how STEM tutoring helps.",
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/burnaby-stem-tutoring-physics-11-12",
+      "metaDescription": "Physics 11 and 12 in the BC curriculum build toward university science. This guide maps the progression, the pitfalls, and how STEM tutoring helps.",
+      "metaTitle": "Physics 11 & 12 in Burnaby STEM Tutoring | Dr. Shreyank Educare"
+    },
+    "publishedAt": "2026-05-20T10:48:58.247Z",
+    "slug": {
+      "_type": "slug",
+      "current": "burnaby-stem-tutoring-physics-11-12"
+    },
+    "title": "Physics 11 & 12 in Burnaby STEM Tutoring"
+  },
+  {
+    "_createdAt": "2026-05-20T08:31:58Z",
+    "_id": "blog-post-mathematics-pre-calculus",
+    "_rev": "Ghv0vRm8LV3rkQJ86BYQPt",
+    "_type": "post",
+    "_updatedAt": "2026-07-15T16:37:11Z",
+    "body": [
+      {
+        "_key": "99cb02da5224",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "55d8aed5f299",
+            "_type": "span",
+            "marks": [],
+            "text": "Pre-Calculus is the bridge between algebra and calculus, and a gateway to university math, science and engineering programs. A strong Pre-Calculus foundation makes everything that follows dramatically easier."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "cb2740b12644",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c84211b09f07",
+            "_type": "span",
+            "marks": [],
+            "text": "Here's a practical guide to mastering it, built on the methods our "
+          },
+          {
+            "_key": "b220b67e8e14",
+            "_type": "span",
+            "marks": [
+              "5d7b0ccce2de"
+            ],
+            "text": "help with Pre-Calculus 12"
+          },
+          {
+            "_key": "3dc0bc3c6077",
+            "_type": "span",
+            "marks": [],
+            "text": " relies on."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "5d7b0ccce2de",
+            "_type": "link",
+            "href": "/pre-calculus-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "0621b52239f1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "443a9d35d8f7",
+            "_type": "span",
+            "marks": [],
+            "text": "An Overview"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "2ba3199b370c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b186822af896",
+            "_type": "span",
+            "marks": [],
+            "text": "Pre-Calculus pulls together functions, trigonometry, exponentials and logarithms, and prepares students for the ideas of calculus. It's demanding because it asks you to hold several tools at once and choose the right one."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8c491303b4cb",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3e6f41f07a10",
+            "_type": "span",
+            "marks": [],
+            "text": "Students who treat Pre-Calculus as a coherent toolkit — rather than a list of separate topics — find it far more manageable and are much better prepared for calculus."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "5fa12408834b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "856ad9af6cb2",
+            "_type": "span",
+            "marks": [],
+            "text": "Key Concepts to Master"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "f2c8686ee5f7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "682f4cd53f0a",
+            "_type": "span",
+            "marks": [],
+            "text": "Get these core ideas right and the rest follows; they're where our "
+          },
+          {
+            "_key": "248bc71ca116",
+            "_type": "span",
+            "marks": [
+              "de806c00b5ba"
+            ],
+            "text": "help with Calculus 12"
+          },
+          {
+            "_key": "483c309c10f3",
+            "_type": "span",
+            "marks": [],
+            "text": " starts:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "de806c00b5ba",
+            "_type": "link",
+            "href": "/calculus-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "219a4d023ba9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f4087985d63f",
+            "_type": "span",
+            "marks": [],
+            "text": "Functions, transformations and inverses"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "bdfe88dd4235",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "52be0b70d2f5",
+            "_type": "span",
+            "marks": [],
+            "text": "Trigonometry and identities"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6000b0c4955f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4541c82d1aca",
+            "_type": "span",
+            "marks": [],
+            "text": "Exponential and logarithmic functions"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e3265b0b45b2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9cde856a101a",
+            "_type": "span",
+            "marks": [],
+            "text": "Polynomial and rational functions"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d4f0c5b44307",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2d68cf8f02ef",
+            "_type": "span",
+            "marks": [],
+            "text": "Sequences and series"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "305a0003044f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6e26e5c94a29",
+            "_type": "span",
+            "marks": [],
+            "text": "Preparing for the ideas of calculus"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "7f836843cb9a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9b043d5c1374",
+            "_type": "span",
+            "marks": [],
+            "text": "Mistakes That Cost Marks"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "494a5e842d6d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "209905e7bcd5",
+            "_type": "span",
+            "marks": [],
+            "text": "Watch out for these pitfalls; eliminating them is a big part of our "
+          },
+          {
+            "_key": "c9745e3128b2",
+            "_type": "span",
+            "marks": [
+              "e53e620cf128"
+            ],
+            "text": "degree-level math support"
+          },
+          {
+            "_key": "bdc5cde29915",
+            "_type": "span",
+            "marks": [],
+            "text": ":"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "e53e620cf128",
+            "_type": "link",
+            "href": "/university-math-tutor-vancouver"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "9f2a08ca1c42",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "634649c47d83",
+            "_type": "span",
+            "marks": [],
+            "text": "Carrying weak algebra into Pre-Calculus and compounding the difficulty"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "348bfb5e7cec",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "23b438943d3e",
+            "_type": "span",
+            "marks": [],
+            "text": "Learning topics in isolation instead of as connected tools"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f2492764608f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1432a264a739",
+            "_type": "span",
+            "marks": [],
+            "text": "Memorising procedures without understanding them"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "fe6ebb10a753",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "56364f5499de",
+            "_type": "span",
+            "marks": [],
+            "text": "Falling behind, since each unit builds on the last"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "38bf55461053",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "625cd5055b5d",
+            "_type": "span",
+            "marks": [],
+            "text": "Study Strategies That Help"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "318b3e44d255",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ec4609c13f20",
+            "_type": "span",
+            "marks": [],
+            "text": "A handful of smart habits go a long way — the same ones our "
+          },
+          {
+            "_key": "7306a4cae4dd",
+            "_type": "span",
+            "marks": [
+              "43cad7ffba48"
+            ],
+            "text": "final-exam review sessions"
+          },
+          {
+            "_key": "a17fff513b0b",
+            "_type": "span",
+            "marks": [],
+            "text": " builds in:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "43cad7ffba48",
+            "_type": "link",
+            "href": "/final-exam-review-tutoring-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "baa74746adb4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7d6c54163803",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep your algebra sharp — Pre-Calculus assumes it"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b5dfa6d0aa10",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "cf0c64f4f02a",
+            "_type": "span",
+            "marks": [],
+            "text": "Connect each topic to the others and to calculus ahead"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "964f0ce01997",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1a6062d05e59",
+            "_type": "span",
+            "marks": [],
+            "text": "Practise consistently rather than cramming before tests"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "73d5a77ac48c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f417056331f8",
+            "_type": "span",
+            "marks": [],
+            "text": "Focus on understanding, so you can handle unfamiliar problems"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0a8159954376",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d889f4332525",
+            "_type": "span",
+            "marks": [],
+            "text": "Questions Students Ask"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "8d879553b51a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4b9145d8ba9e",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Where do students usually go wrong?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "18595aa89ce0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ddfc11e2a6b9",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep an eye out for carrying weak algebra into Pre-Calculus and compounding the difficulty; learning topics in isolation instead of as connected tools; memorising procedures without understanding them; and falling behind, since each unit builds on the last."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "78d137fc2585",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ee8b447770d2",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "How should I study this effectively?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "00f836078c6c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a967e6e40c3",
+            "_type": "span",
+            "marks": [],
+            "text": "Focus on a few high-impact habits: keep your algebra sharp — Pre-Calculus assumes it; connect each topic to the others and to calculus ahead; practise consistently rather than cramming before tests; and focus on understanding, so you can handle unfamiliar problems."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "22d5101d1384",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "eb2dd28ce4b7",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Is tutoring worth it for this?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "36a7d38933c8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bfe8c112e8b2",
+            "_type": "span",
+            "marks": [],
+            "text": "Absolutely. A dedicated tutor adapts to your child in real time, closes gaps quickly and rebuilds confidence. Start with a "
+          },
+          {
+            "_key": "620dc6f965db",
+            "_type": "span",
+            "marks": [
+              "66d9cbc171ff"
+            ],
+            "text": "free consultation"
+          },
+          {
+            "_key": "9ce9f4243889",
+            "_type": "span",
+            "marks": [],
+            "text": "."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "66d9cbc171ff",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "e5abf33963dc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f354375a113c",
+            "_type": "span",
+            "marks": [],
+            "text": "How Dr. Shreyank Educare Can Help"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "67a1234a47ca",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4f54662a0482",
+            "_type": "span",
+            "marks": [],
+            "text": "Because Pre-Calculus sets up so much of what follows, getting it right is worth the effort. Our Pre-Calculus 12 tutoring builds a strong, connected foundation and prepares students for the final exam review and university. Book a free consultation to get started."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "excerpt": "Pre-Calculus is the bridge to university math and science. This guide explains what it covers, why it matters, common mistakes, and how to succeed.",
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/mathematics-pre-calculus",
+      "metaDescription": "Pre-Calculus is the bridge to university math and science. This guide explains what it covers, why it matters, common mistakes, and how to succeed.",
+      "metaTitle": "Pre-Calculus in Mathematics Tutoring | Dr. Shreyank Educare"
+    },
+    "publishedAt": "2026-05-20T10:47:29.187Z",
+    "slug": {
+      "_type": "slug",
+      "current": "mathematics-pre-calculus"
+    },
+    "title": "Pre-Calculus in Mathematics Tutoring"
+  },
+  {
+    "_createdAt": "2026-05-20T08:31:59Z",
+    "_id": "blog-post-physics-high-school-physics",
+    "_rev": "XfZx1DUkwYhtZQHgJgLGNg",
+    "_type": "post",
+    "_updatedAt": "2026-07-15T16:37:18Z",
+    "body": [
+      {
+        "_key": "dd50a942ea8e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4ab425c78939",
+            "_type": "span",
+            "marks": [],
+            "text": "High-school physics is where students first learn to describe the physical world with mathematics. It has a reputation for being hard, but most of the difficulty comes from method, not the ideas themselves — and method can be taught."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "fad1d6ff64a0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f26cf081ed3e",
+            "_type": "span",
+            "marks": [],
+            "text": "Let's make this topic click, using the same techniques our "
+          },
+          {
+            "_key": "f97d27bf706a",
+            "_type": "span",
+            "marks": [
+              "8a1a03078285"
+            ],
+            "text": "Physics 12 support"
+          },
+          {
+            "_key": "59fa225af9bd",
+            "_type": "span",
+            "marks": [],
+            "text": " uses with students every week."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "8a1a03078285",
+            "_type": "link",
+            "href": "/physics-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "ef25d7d3a9e0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "88b602a69d3e",
+            "_type": "span",
+            "marks": [],
+            "text": "An Overview"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "c70acfa6e28a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "cdc72dd9a355",
+            "_type": "span",
+            "marks": [],
+            "text": "High-school physics spans mechanics, energy, waves, electricity and more, using algebra and trigonometry throughout. Each topic builds a way of thinking: model the situation, apply the right principle, and solve carefully."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "41d76a13821f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e2b9cab65e45",
+            "_type": "span",
+            "marks": [],
+            "text": "Students succeed when they treat physics as a problem-solving discipline and keep their supporting math sharp."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8c2b3a90303c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a5304c7ed9e3",
+            "_type": "span",
+            "marks": [],
+            "text": "Concepts That Matter Most"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "fff54bb78b3f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "07fd827d8405",
+            "_type": "span",
+            "marks": [],
+            "text": "The ideas that matter most are here, and our "
+          },
+          {
+            "_key": "5fb41cb25ae6",
+            "_type": "span",
+            "marks": [
+              "f6544ce18262"
+            ],
+            "text": "problem-solving support"
+          },
+          {
+            "_key": "79eac2b2957c",
+            "_type": "span",
+            "marks": [],
+            "text": " makes sure each one clicks:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "f6544ce18262",
+            "_type": "link",
+            "href": "/math-word-problems-tutor"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "bebf9ab0bff1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c52a78d3fbfa",
+            "_type": "span",
+            "marks": [],
+            "text": "Kinematics and dynamics (motion and forces)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2ebac42ff660",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9d46d88f8cc4",
+            "_type": "span",
+            "marks": [],
+            "text": "Work, energy and power"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1bb172995349",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "496dba02292b",
+            "_type": "span",
+            "marks": [],
+            "text": "Momentum and collisions"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1f1d6d829255",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1f9239de0778",
+            "_type": "span",
+            "marks": [],
+            "text": "Waves and sound"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e1c3edb19c69",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "31c2b36cf400",
+            "_type": "span",
+            "marks": [],
+            "text": "Electricity and circuits"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "976b8beae346",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "456034414307",
+            "_type": "span",
+            "marks": [],
+            "text": "Problem-solving method"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b57d31a64c8d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "13598e73b1d0",
+            "_type": "span",
+            "marks": [],
+            "text": "Mistakes That Cost Marks"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "66b6f134c47b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "24dd20886c26",
+            "_type": "span",
+            "marks": [],
+            "text": "Steer clear of the slip-ups below; our "
+          },
+          {
+            "_key": "5cc559b6cfd7",
+            "_type": "span",
+            "marks": [
+              "b7e658315997"
+            ],
+            "text": "one-on-one math help in Burnaby"
+          },
+          {
+            "_key": "a06310cef63d",
+            "_type": "span",
+            "marks": [],
+            "text": " trains students to catch them early:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "b7e658315997",
+            "_type": "link",
+            "href": "/math-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "5f0f8f37b39b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a984a6ae6076",
+            "_type": "span",
+            "marks": [],
+            "text": "Relying on memorised formulas instead of understanding"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "9fe2173a89af",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6f20f648b3a7",
+            "_type": "span",
+            "marks": [],
+            "text": "Weak algebra and trigonometry undermining correct physics"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ab067d2e5798",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a9234f3b5d15",
+            "_type": "span",
+            "marks": [],
+            "text": "Skipping diagrams and problem setup"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f8ae6aae3f09",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "79c071093e64",
+            "_type": "span",
+            "marks": [],
+            "text": "Not checking units and the reasonableness of answers"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8acfe4bc8fc1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4e5eb170b811",
+            "_type": "span",
+            "marks": [],
+            "text": "Study Strategies That Help"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "e2572c17e1f2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5e84bffcc450",
+            "_type": "span",
+            "marks": [],
+            "text": "Put these techniques to work — they're how our "
+          },
+          {
+            "_key": "aab77c0836b2",
+            "_type": "span",
+            "marks": [
+              "4710a3135577"
+            ],
+            "text": "our Vancouver math programme"
+          },
+          {
+            "_key": "9874064bb6cd",
+            "_type": "span",
+            "marks": [],
+            "text": " gets results:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "4710a3135577",
+            "_type": "link",
+            "href": "/math-tutor-vancouver"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "1878270e490d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "28a4540fda52",
+            "_type": "span",
+            "marks": [],
+            "text": "Learn a consistent problem-solving method and use it every time"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ee8ec3450c43",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5733e6a56c63",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep your math skills sharp alongside the physics"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "5d8016000ec1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "952a9defc2cf",
+            "_type": "span",
+            "marks": [],
+            "text": "Draw a diagram for every problem"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f0f5ad12f5f8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7f18f503b458",
+            "_type": "span",
+            "marks": [],
+            "text": "Practise widely and review your mistakes"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f6f9547ab033",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f53706c81617",
+            "_type": "span",
+            "marks": [],
+            "text": "Questions Students Ask"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "ff4a3f45b75f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6caa7c74891d",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Where do students usually go wrong?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6ac345c0e365",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "830d9d8e9737",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep an eye out for relying on memorised formulas instead of understanding; weak algebra and trigonometry undermining correct physics; skipping diagrams and problem setup; and not checking units and the reasonableness of answers."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6990d6149901",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7fdaaaefe0c1",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "How should I study this effectively?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a6dce0d305e5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "84b206057168",
+            "_type": "span",
+            "marks": [],
+            "text": "Focus on a few high-impact habits: learn a consistent problem-solving method and use it every time; keep your math skills sharp alongside the physics; draw a diagram for every problem; and practise widely and review your mistakes."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "7086aa5d2010",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e6f53ceb9fb3",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Is tutoring worth it for this?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "00470181b5da",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "255ee96ba599",
+            "_type": "span",
+            "marks": [],
+            "text": "Absolutely. A dedicated tutor adapts to your child in real time, closes gaps quickly and rebuilds confidence. Start with a "
+          },
+          {
+            "_key": "33db812ede4e",
+            "_type": "span",
+            "marks": [
+              "1733bb2a417b"
+            ],
+            "text": "free initial consultation"
+          },
+          {
+            "_key": "ebe68d0d4f19",
+            "_type": "span",
+            "marks": [],
+            "text": "."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "1733bb2a417b",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "b6fb781721ef",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d527a6b8aac0",
+            "_type": "span",
+            "marks": [],
+            "text": "How Dr. Shreyank Educare Can Help"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "fc599268f392",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "28e6559bb745",
+            "_type": "span",
+            "marks": [],
+            "text": "High-school physics becomes far more approachable with expert, one-on-one support. Our Physics 12 tutoring builds understanding and a reliable problem-solving method. Book a free consultation to get started."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "excerpt": "High-school physics builds the foundation for science and engineering. This guide covers the core topics, common mistakes, and how to study physics effectively.",
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/physics-high-school-physics",
+      "metaDescription": "High-school physics builds the foundation for science and engineering. This guide covers the core topics, common mistakes, and how to study physics effectively.",
+      "metaTitle": "High-school Physics in Physics Tutoring | Dr. Shreyank Educare"
+    },
+    "publishedAt": "2026-05-20T10:47:30.794Z",
+    "slug": {
+      "_type": "slug",
+      "current": "physics-high-school-physics"
+    },
+    "title": "High-school Physics in Physics Tutoring"
+  },
+  {
+    "_createdAt": "2026-05-20T08:33:21Z",
+    "_id": "blog-post-physics-tutoring-high-school-physics",
+    "_rev": "XfZx1DUkwYhtZQHgJgLIFr",
+    "_type": "post",
+    "_updatedAt": "2026-07-15T16:37:21Z",
+    "body": [
+      {
+        "_key": "43edf0e538bc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "33448a63cd4c",
+            "_type": "span",
+            "marks": [],
+            "text": "High-school physics is a subject where the right support makes an outsized difference. A good physics tutor doesn't just re-explain the textbook — they build the problem-solving method and confidence that turn understanding into marks."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b82b8db28bc9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "50071fcc0ebf",
+            "_type": "span",
+            "marks": [],
+            "text": "This guide walks through what matters most, the way our "
+          },
+          {
+            "_key": "c018562ba1f3",
+            "_type": "span",
+            "marks": [
+              "709e2f36d230"
+            ],
+            "text": "Physics 12 tutoring"
+          },
+          {
+            "_key": "6423dcda298f",
+            "_type": "span",
+            "marks": [],
+            "text": " teaches it one-on-one."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "709e2f36d230",
+            "_type": "link",
+            "href": "/physics-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "5ca6877e5b84",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "32952cdd5a03",
+            "_type": "span",
+            "marks": [],
+            "text": "Understanding the Essentials"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "b18252ee6ccc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "453b07ab51b6",
+            "_type": "span",
+            "marks": [],
+            "text": "Effective high-school physics tutoring diagnoses exactly where a student loses marks — often in the setup or the underlying math — and rebuilds those skills. It pairs clear conceptual teaching with lots of guided problem practice."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1598c58051c6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8510b41ccc81",
+            "_type": "span",
+            "marks": [],
+            "text": "The goal is independence: a student who can approach any physics problem with a reliable method."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c90ee10efa5e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "eb2000407fd4",
+            "_type": "span",
+            "marks": [],
+            "text": "What You Need to Understand"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "cc48eef8ce2e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9538868c0ab9",
+            "_type": "span",
+            "marks": [],
+            "text": "Everything builds on these fundamentals, which our "
+          },
+          {
+            "_key": "4a10018382de",
+            "_type": "span",
+            "marks": [
+              "dfcb567add1e"
+            ],
+            "text": "problem-solving practice"
+          },
+          {
+            "_key": "8bc055b2aa7a",
+            "_type": "span",
+            "marks": [],
+            "text": " reinforces first:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "dfcb567add1e",
+            "_type": "link",
+            "href": "/math-word-problems-tutor"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "10695add9b4c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b13288a1ff13",
+            "_type": "span",
+            "marks": [],
+            "text": "Diagnosing where marks are lost"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b268c7268943",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "98ea958392c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Building a consistent problem-solving method"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2e5e3ee87bf9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2293d6bb9fa8",
+            "_type": "span",
+            "marks": [],
+            "text": "Strengthening the underlying math"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b495461d25a8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9198abb91c32",
+            "_type": "span",
+            "marks": [],
+            "text": "Clear conceptual teaching"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "7b5a4eeba583",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4c2d19c4e948",
+            "_type": "span",
+            "marks": [],
+            "text": "Guided, exam-style practice"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "dcb0039658fd",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "456bc67ae8eb",
+            "_type": "span",
+            "marks": [],
+            "text": "Building confidence and independence"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ab3d1bdb6dc0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f7f63cb81aa8",
+            "_type": "span",
+            "marks": [],
+            "text": "Common Mistakes to Avoid"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "c6204b78909b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "247ec9eed0b1",
+            "_type": "span",
+            "marks": [],
+            "text": "These are the traps that catch students out, and where our "
+          },
+          {
+            "_key": "d234779d6786",
+            "_type": "span",
+            "marks": [
+              "1405f4bff4d1"
+            ],
+            "text": "Burnaby math tutors"
+          },
+          {
+            "_key": "81cdb589aa99",
+            "_type": "span",
+            "marks": [],
+            "text": " makes the difference:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "1405f4bff4d1",
+            "_type": "link",
+            "href": "/math-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "c983e7984dfd",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "065cb2d32db6",
+            "_type": "span",
+            "marks": [],
+            "text": "Choosing a tutor who only re-explains rather than builds method"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "fdf5312a600f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a4279879d900",
+            "_type": "span",
+            "marks": [],
+            "text": "Focusing on concepts while ignoring problem setup"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "81378a737605",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fe45f83c5c23",
+            "_type": "span",
+            "marks": [],
+            "text": "Neglecting the math physics depends on"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "7ef1ac859392",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "05132b529d69",
+            "_type": "span",
+            "marks": [],
+            "text": "Passive learning instead of guided practice"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0857d234485f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4c66a85ab6b7",
+            "_type": "span",
+            "marks": [],
+            "text": "Study Tips That Actually Work"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "106164686886",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "88270ca11785",
+            "_type": "span",
+            "marks": [],
+            "text": "These strategies make the biggest difference, and they're central to our "
+          },
+          {
+            "_key": "738b3cedddcc",
+            "_type": "span",
+            "marks": [
+              "68fc0e6a821c"
+            ],
+            "text": "one-on-one math help in Vancouver"
+          },
+          {
+            "_key": "a9e5b79f90fa",
+            "_type": "span",
+            "marks": [],
+            "text": ":"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "68fc0e6a821c",
+            "_type": "link",
+            "href": "/math-tutor-vancouver"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "f22d75bae5f1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5623473188c4",
+            "_type": "span",
+            "marks": [],
+            "text": "Look for a tutor who teaches a repeatable method"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "97230ce1b12d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "31107b4a1eae",
+            "_type": "span",
+            "marks": [],
+            "text": "Practise problems actively with feedback"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2da00d0fcc42",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "056e18bb984e",
+            "_type": "span",
+            "marks": [],
+            "text": "Address math gaps alongside the physics"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b496db6f2929",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bf7f30eea5af",
+            "_type": "span",
+            "marks": [],
+            "text": "Aim to become independent, not dependent on help"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f0c7dc331f89",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1f7b125c3029",
+            "_type": "span",
+            "marks": [],
+            "text": "Your Questions, Answered"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "115559d1f797",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e1c64792b2b6",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "What trips students up most?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1ee482a2ef02",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c985752e2100",
+            "_type": "span",
+            "marks": [],
+            "text": "Common errors to avoid are choosing a tutor who only re-explains rather than builds method; focusing on concepts while ignoring problem setup; neglecting the math physics depends on; and passive learning instead of guided practice."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "33a7729d9ffc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ce71c0b3bf03",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "What's the best way to prepare?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c816a70a1bb8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "12f06bdf1668",
+            "_type": "span",
+            "marks": [],
+            "text": "What works best is to look for a tutor who teaches a repeatable method; practise problems actively with feedback; address math gaps alongside the physics; and aim to become independent, not dependent on help."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ed72847d5d42",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3aba1887d8f1",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Can a tutor really help?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "bcdc5a6f94db",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4a6843bd718b",
+            "_type": "span",
+            "marks": [],
+            "text": "Yes. One-on-one, PhD-led tutoring pinpoints exactly where a student struggles and rebuilds the foundations — far faster than studying alone. Book a "
+          },
+          {
+            "_key": "5a41fc631be8",
+            "_type": "span",
+            "marks": [
+              "1092673feb42"
+            ],
+            "text": "book a consultation"
+          },
+          {
+            "_key": "f52641cbd515",
+            "_type": "span",
+            "marks": [],
+            "text": " to see how we can help."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "1092673feb42",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "2ed287f4a62c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c756c606ff78",
+            "_type": "span",
+            "marks": [],
+            "text": "How We Can Help"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "3ade6730e61e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0584bc94344a",
+            "_type": "span",
+            "marks": [],
+            "text": "The right physics tutor builds method, understanding and confidence together. Our Physics 12 tutoring helps high-school students turn understanding into marks. Book a free consultation to get started."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "excerpt": "The right physics tutor can transform a student's results. This guide explains how high-school physics tutoring works and what to look for.",
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/physics-tutoring-high-school-physics",
+      "metaDescription": "The right physics tutor can transform a student's results. This guide explains how high-school physics tutoring works and what to look for.",
+      "metaTitle": "High School Physics in Physics Tutoring | Dr. Shreyank Educare"
+    },
+    "publishedAt": "2026-05-20T10:49:10.983Z",
+    "slug": {
+      "_type": "slug",
+      "current": "physics-tutoring-high-school-physics"
+    },
+    "title": "High School Physics in Physics Tutoring"
+  },
+  {
+    "_createdAt": "2026-05-20T08:33:23Z",
+    "_id": "blog-post-physics-tutoring-physics-concepts-problem-solving",
+    "_rev": "Ghv0vRm8LV3rkQJ86BYRre",
+    "_type": "post",
+    "_updatedAt": "2026-07-15T16:37:22Z",
+    "body": [
+      {
+        "_key": "71f2a16c1d2f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6fefa0acab40",
+            "_type": "span",
+            "marks": [],
+            "text": "Many students understand physics concepts but still lose marks, and the reason is almost always the same: they lack a reliable method for turning understanding into worked solutions. Problem-solving is a skill you can learn deliberately."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c06747430f98",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9f883a84f63e",
+            "_type": "span",
+            "marks": [],
+            "text": "Read on for the key ideas, common traps and study strategies — exactly what our "
+          },
+          {
+            "_key": "cff11261835a",
+            "_type": "span",
+            "marks": [
+              "c3347727a759"
+            ],
+            "text": "Physics 12 tutors in Burnaby"
+          },
+          {
+            "_key": "fc2ce2c2b352",
+            "_type": "span",
+            "marks": [],
+            "text": " covers."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "c3347727a759",
+            "_type": "link",
+            "href": "/physics-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "ebc1992e3af3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "386cc88e571e",
+            "_type": "span",
+            "marks": [],
+            "text": "An Overview"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "39438c175d8a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0c2bec86d422",
+            "_type": "span",
+            "marks": [],
+            "text": "Physics problems reward a consistent process: understand the situation, represent it with a diagram, identify the relevant principles, set up equations, solve, and check. Skipping straight to formulas is where most errors creep in."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e7576cf27eac",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7ccf1a4f3eed",
+            "_type": "span",
+            "marks": [],
+            "text": "The concepts and the method reinforce each other — deeper understanding makes setup easier, and disciplined setup exposes gaps in understanding."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e43ff9ad1f9f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ba4b487f297a",
+            "_type": "span",
+            "marks": [],
+            "text": "Concepts That Matter Most"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "7f287261874e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1e23e9189b1c",
+            "_type": "span",
+            "marks": [],
+            "text": "Understand the essentials below; our "
+          },
+          {
+            "_key": "6565de2a5a38",
+            "_type": "span",
+            "marks": [
+              "07a813a9e895"
+            ],
+            "text": "support for tricky word problems"
+          },
+          {
+            "_key": "06e1e3c1f81d",
+            "_type": "span",
+            "marks": [],
+            "text": " returns to them again and again:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "07a813a9e895",
+            "_type": "link",
+            "href": "/math-word-problems-tutor"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "ef8c78312bab",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "40a0526f9824",
+            "_type": "span",
+            "marks": [],
+            "text": "Reading a problem and identifying what's being asked"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ceeaad8926af",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b20df89a2b70",
+            "_type": "span",
+            "marks": [],
+            "text": "Drawing clear diagrams (free-body, motion, circuit)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f8e6cfc57602",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a516931f3fed",
+            "_type": "span",
+            "marks": [],
+            "text": "Listing knowns and unknowns before choosing equations"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "bdd798d85ef3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5a18810c8442",
+            "_type": "span",
+            "marks": [],
+            "text": "Selecting the right principle (energy, forces, momentum)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d884e0ea6d93",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a61bd2c776ba",
+            "_type": "span",
+            "marks": [],
+            "text": "Solving symbolically, then substituting values"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "94d17599988c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7a43ed636df6",
+            "_type": "span",
+            "marks": [],
+            "text": "Checking units, magnitude and direction"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2ad78e7b969a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b780483dc35a",
+            "_type": "span",
+            "marks": [],
+            "text": "Traps to Avoid"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "83d29396bfd4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a69480e03491",
+            "_type": "span",
+            "marks": [],
+            "text": "Steer clear of the slip-ups below; our "
+          },
+          {
+            "_key": "688ddb277f5b",
+            "_type": "span",
+            "marks": [
+              "837b05e63d3d"
+            ],
+            "text": "one-on-one science help"
+          },
+          {
+            "_key": "ff6d06bedebd",
+            "_type": "span",
+            "marks": [],
+            "text": " trains students to catch them early:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "837b05e63d3d",
+            "_type": "link",
+            "href": "/science-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "b7d3098e97bc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0c144a096976",
+            "_type": "span",
+            "marks": [],
+            "text": "Jumping to equations before understanding the situation"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "9166d247e309",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "20affcb0207d",
+            "_type": "span",
+            "marks": [],
+            "text": "Skipping the diagram and missing a force or constraint"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "247b54712855",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e9da631d77fb",
+            "_type": "span",
+            "marks": [],
+            "text": "Plugging in numbers too early and losing track"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f9c71bd20f99",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6bd773873e41",
+            "_type": "span",
+            "marks": [],
+            "text": "Not checking whether the answer is physically reasonable"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8850dc2bbecf",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "46bc5c223578",
+            "_type": "span",
+            "marks": [],
+            "text": "Getting the Most From Your Study Time"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "5e043f1fb7ea",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3da15e228bc1",
+            "_type": "span",
+            "marks": [],
+            "text": "A handful of smart habits go a long way — the same ones our "
+          },
+          {
+            "_key": "d9fa2695f5be",
+            "_type": "span",
+            "marks": [
+              "13fcdd28cd7a"
+            ],
+            "text": "help preparing for finals"
+          },
+          {
+            "_key": "0fe68d8b7a2a",
+            "_type": "span",
+            "marks": [],
+            "text": " builds in:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "13fcdd28cd7a",
+            "_type": "link",
+            "href": "/final-exam-review-tutoring-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "c5c132d17db2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3e5709a850bf",
+            "_type": "span",
+            "marks": [],
+            "text": "Use the same method on every problem until it's automatic"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2c0936c5ad34",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "aa56fe3f5d45",
+            "_type": "span",
+            "marks": [],
+            "text": "Redo problems you got wrong, from a blank page"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "afecf48c5a67",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8fcc1d04c08a",
+            "_type": "span",
+            "marks": [],
+            "text": "Explain your solution out loud to expose weak steps"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "714b5ffb392e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1e95dc3f6ef1",
+            "_type": "span",
+            "marks": [],
+            "text": "Practise a variety of problem types, not just one"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "eff1772dee1b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "56f5045e4d36",
+            "_type": "span",
+            "marks": [],
+            "text": "Frequently Asked Questions"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "615fd083d90a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "26f558733c97",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "What mistakes should I watch out for?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "230563ab7342",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "eb28cd81fe60",
+            "_type": "span",
+            "marks": [],
+            "text": "The most frequent slip-ups include jumping to equations before understanding the situation; skipping the diagram and missing a force or constraint; plugging in numbers too early and losing track; and not checking whether the answer is physically reasonable."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0d6f5a41c5b4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "869ffa40e463",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "How can I study this topic well?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "bb53003f0a04",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "99558517d318",
+            "_type": "span",
+            "marks": [],
+            "text": "Prioritise these habits: use the same method on every problem until it's automatic; redo problems you got wrong, from a blank page; explain your solution out loud to expose weak steps; and practise a variety of problem types, not just one."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "283b0a60d788",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "95626703ba79",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Can one-on-one help improve my grade?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "95308d70e1cc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6352aaab0a24",
+            "_type": "span",
+            "marks": [],
+            "text": "Yes — for most students, one-on-one support is the fastest route to real improvement. A "
+          },
+          {
+            "_key": "7a84e879b05c",
+            "_type": "span",
+            "marks": [
+              "4a6cf75e9b07"
+            ],
+            "text": "free initial consultation"
+          },
+          {
+            "_key": "daf7a4122926",
+            "_type": "span",
+            "marks": [],
+            "text": " is a no-obligation way to start."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "4a6cf75e9b07",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "7ea6bd3286d4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "63a284a55aaa",
+            "_type": "span",
+            "marks": [],
+            "text": "Getting Expert Support"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "dbeccdc98677",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "66f793bf63a8",
+            "_type": "span",
+            "marks": [],
+            "text": "A dependable problem-solving method is what separates students who understand physics from those who score well. Our Physics 12 tutoring builds that method with exam-style practice. Book a free consultation to get started."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "excerpt": "Understanding physics concepts is only half the battle — problem-solving is the other. This guide shows how to turn understanding into marks with a reliable method.",
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/physics-tutoring-physics-concepts-problem-solving",
+      "metaDescription": "Understanding physics concepts is only half the battle — problem-solving is the other. This guide shows how to turn understanding into marks with a reliable method.",
+      "metaTitle": "Physics Concepts & Problem Solving in Physics Tutoring"
+    },
+    "publishedAt": "2026-05-20T10:49:14.033Z",
+    "slug": {
+      "_type": "slug",
+      "current": "physics-tutoring-physics-concepts-problem-solving"
+    },
+    "title": "Physics Concepts & Problem Solving in Physics Tutoring"
+  },
+  {
+    "_createdAt": "2026-05-20T08:33:22Z",
+    "_id": "blog-post-physics-tutoring-university-physics",
+    "_rev": "Ghv0vRm8LV3rkQJ86BYSD1",
+    "_system": {
+      "base": {
+        "id": "blog-post-physics-tutoring-university-physics",
+        "rev": "YaIZHdH8q4wcGB79HP2Dok"
+      }
+    },
+    "_type": "post",
+    "_updatedAt": "2026-07-15T16:37:23Z",
+    "body": [
+      {
+        "_key": "fc760e7b201d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b9261c67baee",
+            "_type": "span",
+            "marks": [],
+            "text": "The jump from high-school to university physics surprises many strong students — the pace is faster, the math is heavier, and the problems are harder. Tutoring can smooth that transition and help students keep pace from the start."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "481527c78e2a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6a441b1ae3e1",
+            "_type": "span",
+            "marks": [],
+            "text": "Read on for the key ideas, common traps and study strategies — exactly what our "
+          },
+          {
+            "_key": "302ac634c440",
+            "_type": "span",
+            "marks": [
+              "050c264cf624"
+            ],
+            "text": "help with university physics"
+          },
+          {
+            "_key": "828acb606630",
+            "_type": "span",
+            "marks": [],
+            "text": " covers."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "050c264cf624",
+            "_type": "link",
+            "href": "/university-physics-tutor-vancouver"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "67bf22f192b8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "87b9f71754f3",
+            "_type": "span",
+            "marks": [],
+            "text": "What You'll Learn Here"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "36bdca165be8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5dbebbb2c9e1",
+            "_type": "span",
+            "marks": [],
+            "text": "University physics uses calculus throughout and moves quickly through mechanics, electricity and magnetism, and more. Students who thrive treat it as a problem-solving discipline and keep their calculus and algebra sharp."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "bf08826b1a21",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "86c50742131d",
+            "_type": "span",
+            "marks": [],
+            "text": "Good university physics tutoring fills gaps quickly, reinforces the underlying math, and builds the disciplined method the harder problems demand."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "fe79fbfc3d93",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c0fc4af88e6b",
+            "_type": "span",
+            "marks": [],
+            "text": "Key Concepts to Master"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "65bd34b2afb5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7c7727c4e404",
+            "_type": "span",
+            "marks": [],
+            "text": "The ideas that matter most are here, and our "
+          },
+          {
+            "_key": "9d372a5e473d",
+            "_type": "span",
+            "marks": [
+              "995958a39dc8"
+            ],
+            "text": "Physics 12 tutors in Burnaby"
+          },
+          {
+            "_key": "61a49d7eb8ed",
+            "_type": "span",
+            "marks": [],
+            "text": " makes sure each one clicks:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "995958a39dc8",
+            "_type": "link",
+            "href": "/physics-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "69ae2b9ce847",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c80c952494f7",
+            "_type": "span",
+            "marks": [],
+            "text": "The high-school to university transition"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a246909300ec",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b337fb786ec2",
+            "_type": "span",
+            "marks": [],
+            "text": "Calculus-based mechanics"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "18acf6954963",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "01913a7701aa",
+            "_type": "span",
+            "marks": [],
+            "text": "Electricity and magnetism"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ac9432c2b7db",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9d2fd803e53c",
+            "_type": "span",
+            "marks": [],
+            "text": "The heavier math demands"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ff230e3ab889",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "29354dcc42ad",
+            "_type": "span",
+            "marks": [],
+            "text": "A disciplined problem-solving method"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "425d4b5bd38c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c16fc674fc12",
+            "_type": "span",
+            "marks": [],
+            "text": "Keeping pace with a fast course"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "90b326b3572c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c2101245e01a",
+            "_type": "span",
+            "marks": [],
+            "text": "Pitfalls to Watch For"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "d5741cca7711",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "38d959609314",
+            "_type": "span",
+            "marks": [],
+            "text": "Steer clear of the slip-ups below; our "
+          },
+          {
+            "_key": "a125c13bc69a",
+            "_type": "span",
+            "marks": [
+              "54872c0e80e1"
+            ],
+            "text": "Calculus 12 tutoring"
+          },
+          {
+            "_key": "9bbbd6dbc3f6",
+            "_type": "span",
+            "marks": [],
+            "text": " trains students to catch them early:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "54872c0e80e1",
+            "_type": "link",
+            "href": "/calculus-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "6b5220bf9fcd",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4cfff11827e9",
+            "_type": "span",
+            "marks": [],
+            "text": "Underestimating the step up in pace and rigour"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0e039cf6c95e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2bafd514c1f1",
+            "_type": "span",
+            "marks": [],
+            "text": "Weak calculus undermining otherwise-strong physics"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "fc568c11c6ff",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a3d2990b2691",
+            "_type": "span",
+            "marks": [],
+            "text": "Falling behind early and never catching up"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "4be00bec7017",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c915a94d9493",
+            "_type": "span",
+            "marks": [],
+            "text": "Skipping problem practice"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a20c7703397b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "84c2ec992984",
+            "_type": "span",
+            "marks": [],
+            "text": "Study Strategies That Help"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "35d930d687ce",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "057626da7274",
+            "_type": "span",
+            "marks": [],
+            "text": "Study smarter with the approaches below, drawn from our "
+          },
+          {
+            "_key": "b4526e046139",
+            "_type": "span",
+            "marks": [
+              "c358fd81943d"
+            ],
+            "text": "word-problem strategies"
+          },
+          {
+            "_key": "724a44d558be",
+            "_type": "span",
+            "marks": [],
+            "text": ":"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "c358fd81943d",
+            "_type": "link",
+            "href": "/math-word-problems-tutor"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "1a3061909c84",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "00fdf365c5d4",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep calculus and algebra sharp"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ed86f2fe1940",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2645ebb0cf49",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep pace with problem sets week by week"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "89154567cfb1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "67a25c3a5d16",
+            "_type": "span",
+            "marks": [],
+            "text": "Use a consistent problem-solving method"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "50db37fb3739",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "210050b1320e",
+            "_type": "span",
+            "marks": [],
+            "text": "Get help early, before gaps compound"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "5d10b9931d0c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2ad8e95fd01b",
+            "_type": "span",
+            "marks": [],
+            "text": "Questions Students Ask"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "6530f6fb6703",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "04ccb913abbc",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Where do students usually go wrong?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ffd7a29a6c82",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0e16a66ea862",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep an eye out for underestimating the step up in pace and rigour; weak calculus undermining otherwise-strong physics; falling behind early and never catching up; and skipping problem practice."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "dfe82565b236",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2cbafc5a8b09",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "How should I study this effectively?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "31462d18e918",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fb5632ce5260",
+            "_type": "span",
+            "marks": [],
+            "text": "Focus on a few high-impact habits: keep calculus and algebra sharp; keep pace with problem sets week by week; use a consistent problem-solving method; and get help early, before gaps compound."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b914a191bf41",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8aed150d8b92",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Is tutoring worth it for this?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "38e933d4eb32",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7d4cc2110d23",
+            "_type": "span",
+            "marks": [],
+            "text": "Absolutely. A dedicated tutor adapts to your child in real time, closes gaps quickly and rebuilds confidence. Start with a "
+          },
+          {
+            "_key": "f2406170e3a1",
+            "_type": "span",
+            "marks": [
+              "13d522381988"
+            ],
+            "text": "free initial consultation"
+          },
+          {
+            "_key": "d07dc00fa37a",
+            "_type": "span",
+            "marks": [],
+            "text": "."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "13d522381988",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "b03b705096bf",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "cdcda441f7eb",
+            "_type": "span",
+            "marks": [],
+            "text": "How Dr. Shreyank Educare Can Help"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "55e1f1edf0b1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b923ddf1a4c1",
+            "_type": "span",
+            "marks": [],
+            "text": "The transition to university physics is far smoother with expert support. Our university physics tutoring helps students at UBC, SFU and beyond keep pace and excel. Book a free consultation to get started."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "excerpt": "University physics is a big step up from high school. This guide explains the transition and how tutoring helps students keep pace and excel.",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-757928e3af22770c3c9f1c706c57604d6a9a2da2-1007x572-png",
+        "_type": "reference"
+      }
+    },
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/physics-tutoring-university-physics",
+      "metaDescription": "University physics is a big step up from high school. This guide explains the transition and how tutoring helps students keep pace and excel.",
+      "metaImage": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-757928e3af22770c3c9f1c706c57604d6a9a2da2-1007x572-png",
+          "_type": "reference"
+        }
+      },
+      "metaTitle": "University Physics Tutor Vancouver: Master Your Physics Exams"
+    },
+    "publishedAt": "2026-06-20T12:49:00.000Z",
+    "slug": {
+      "_type": "slug",
+      "current": "physics-tutoring-university-physics"
+    },
+    "title": "University Physics Tutor Vancouver: Master Your Physics Exams"
+  },
+  {
+    "_createdAt": "2026-05-20T08:32:01Z",
+    "_id": "blog-post-physics-university-level-physics",
+    "_rev": "eY4ovYvWryRutBbihHSLhL",
+    "_system": {
+      "base": {
+        "id": "blog-post-physics-university-level-physics",
+        "rev": "DfMdD41LolcxDYQXffgikW"
+      }
+    },
+    "_type": "post",
+    "_updatedAt": "2026-07-15T16:37:25Z",
+    "body": [
+      {
+        "_key": "f4c1964a09e7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f8c6242a752c",
+            "_type": "span",
+            "marks": [],
+            "text": "First-year university physics is a step up from high school in both pace and mathematical rigour. Students who thrive treat it as a problem-solving discipline, not a set of facts to memorise."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3f1d27a390e1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5230357534f7",
+            "_type": "span",
+            "marks": [],
+            "text": "Let's make this topic click, using the same techniques our "
+          },
+          {
+            "_key": "76006b206f9a",
+            "_type": "span",
+            "marks": [
+              "60b0cb1c527d"
+            ],
+            "text": "university physics tutors"
+          },
+          {
+            "_key": "7243801f0e2d",
+            "_type": "span",
+            "marks": [],
+            "text": " uses with students every week."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "60b0cb1c527d",
+            "_type": "link",
+            "href": "/university-physics-tutor-vancouver"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "76d20f10a9f8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8eb3f148c69c",
+            "_type": "span",
+            "marks": [],
+            "text": "Understanding the Essentials"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "4a90b77c776a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ba0adbc8a782",
+            "_type": "span",
+            "marks": [],
+            "text": "University physics typically covers mechanics, electricity and magnetism, thermodynamics and waves, often using calculus throughout. The concepts are deeper than in high school, and problems demand a confident command of the underlying math."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3783abb54ff9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d35612ddcd11",
+            "_type": "span",
+            "marks": [],
+            "text": "The most common reason capable students struggle isn't the physics itself — it's gaps in calculus and algebra that surface under exam pressure."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "678b47859759",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3b618c795378",
+            "_type": "span",
+            "marks": [],
+            "text": "What You Need to Understand"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "98ecf64e62ae",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "20db3fea7e0d",
+            "_type": "span",
+            "marks": [],
+            "text": "Get these core ideas right and the rest follows; they're where our "
+          },
+          {
+            "_key": "18479b72cfb5",
+            "_type": "span",
+            "marks": [
+              "d1e61d8946d9"
+            ],
+            "text": "our Physics 12 programme"
+          },
+          {
+            "_key": "26a28d1c3249",
+            "_type": "span",
+            "marks": [],
+            "text": " starts:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "d1e61d8946d9",
+            "_type": "link",
+            "href": "/physics-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "8171898801cc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4a87f1de2eb5",
+            "_type": "span",
+            "marks": [],
+            "text": "Newtonian mechanics with calculus (kinematics, dynamics, energy)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f73c16d7f829",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7ec8b79eba9e",
+            "_type": "span",
+            "marks": [],
+            "text": "Electric fields, potential and circuits"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "26d9b836b4ff",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "155e842f7bc9",
+            "_type": "span",
+            "marks": [],
+            "text": "Magnetism and electromagnetic induction"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d19d93a46e94",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "adfd42e881cb",
+            "_type": "span",
+            "marks": [],
+            "text": "Thermodynamics and the gas laws"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "142b4d4dc5da",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5aa7c1f55811",
+            "_type": "span",
+            "marks": [],
+            "text": "Oscillations and waves"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e9670c885a73",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f71be5f14bdc",
+            "_type": "span",
+            "marks": [],
+            "text": "Vector calculus fundamentals as used in physics"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8ece1dd02448",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b5d9375e60a0",
+            "_type": "span",
+            "marks": [],
+            "text": "Common Mistakes to Avoid"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "21b24857b29d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "677ad924d73f",
+            "_type": "span",
+            "marks": [],
+            "text": "Steer clear of the slip-ups below; our "
+          },
+          {
+            "_key": "5eb043ae88a7",
+            "_type": "span",
+            "marks": [
+              "10ee6a09c6b6"
+            ],
+            "text": "help with Calculus 12"
+          },
+          {
+            "_key": "fb6f2b215d32",
+            "_type": "span",
+            "marks": [],
+            "text": " trains students to catch them early:"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "10ee6a09c6b6",
+            "_type": "link",
+            "href": "/calculus-12-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "ec28d27134e8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c79b6147d924",
+            "_type": "span",
+            "marks": [],
+            "text": "Falling behind because of weak calculus, not weak physics"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "798d92e79463",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "642d2928b9b3",
+            "_type": "span",
+            "marks": [],
+            "text": "Plugging numbers in early instead of solving algebraically first"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b2690419d4d7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2c67309d7201",
+            "_type": "span",
+            "marks": [],
+            "text": "Ignoring units and dimensional analysis"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "bb242db7ee3d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a03f29ea729a",
+            "_type": "span",
+            "marks": [],
+            "text": "Underestimating the volume of practice the course requires"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1653c7b41f9e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7650549d973b",
+            "_type": "span",
+            "marks": [],
+            "text": "Study Strategies That Help"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "c007d4d1ba02",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e09470be861e",
+            "_type": "span",
+            "marks": [],
+            "text": "Study smarter with the approaches below, drawn from our "
+          },
+          {
+            "_key": "59128ff82446",
+            "_type": "span",
+            "marks": [
+              "b3710f27dd0a"
+            ],
+            "text": "help with word problems"
+          },
+          {
+            "_key": "774cc365529c",
+            "_type": "span",
+            "marks": [],
+            "text": ":"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "b3710f27dd0a",
+            "_type": "link",
+            "href": "/math-word-problems-tutor"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "14afe7a3f637",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "85ec41394b90",
+            "_type": "span",
+            "marks": [],
+            "text": "Shore up calculus and algebra alongside the physics"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "5fbecb038b60",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "506e09d1539f",
+            "_type": "span",
+            "marks": [],
+            "text": "Do many problems — physics is learned by solving, not reading"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ecc2ebd8badc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "02780051fc00",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep a clean method: diagram, knowns/unknowns, equations, solve, check"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0eef047ddf54",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6e0889ec8910",
+            "_type": "span",
+            "marks": [],
+            "text": "Review lecture problems before attempting the assignment set"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "790c4c20a5c5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bd9f9a28c4b5",
+            "_type": "span",
+            "marks": [],
+            "text": "Frequently Asked Questions"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "e8a1b9046de9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "125ca6f95f03",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "What mistakes should I watch out for?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c22997efc8b5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8cca57a5616c",
+            "_type": "span",
+            "marks": [],
+            "text": "The most frequent slip-ups include falling behind because of weak calculus, not weak physics; plugging numbers in early instead of solving algebraically first; ignoring units and dimensional analysis; and underestimating the volume of practice the course requires."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "37e877b415ad",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5e28eb50ed3d",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "How can I study this topic well?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "59935a1c78eb",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "048c4f705a24",
+            "_type": "span",
+            "marks": [],
+            "text": "Prioritise these habits: shore up calculus and algebra alongside the physics; do many problems — physics is learned by solving, not reading; keep a clean method: diagram, knowns/unknowns, equations, solve, check; and review lecture problems before attempting the assignment set."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d06bb37ea132",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ca985a56b251",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Can one-on-one help improve my grade?"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8815eb447923",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f127efcd16a3",
+            "_type": "span",
+            "marks": [],
+            "text": "Yes — for most students, one-on-one support is the fastest route to real improvement. A "
+          },
+          {
+            "_key": "4cfc638f9ace",
+            "_type": "span",
+            "marks": [
+              "c8222fdcb387"
+            ],
+            "text": "free consultation"
+          },
+          {
+            "_key": "14c6a0b70c5d",
+            "_type": "span",
+            "marks": [],
+            "text": " is a no-obligation way to start."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "c8222fdcb387",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "0415277881fc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ba01c26b7aac",
+            "_type": "span",
+            "marks": [],
+            "text": "Getting Expert Support"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "8ea43ae099d0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "20288c64ebe3",
+            "_type": "span",
+            "marks": [],
+            "text": "Keeping pace with university physics is far easier with expert support that strengthens both the physics and the math. Our university physics tutoring helps students at UBC, SFU and beyond stay ahead. Book a free consultation to get started."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "excerpt": "University physics moves fast and combines demanding concepts with heavy math. Here's what to expect, the pitfalls, and how to keep pace and excel.",
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-6f715f0ae847f3f0a15ebbcfc6ddd8ada837d4a3-1260x768-png",
+        "_type": "reference"
+      }
+    },
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/physics-university-level-physics",
+      "metaDescription": "University physics moves fast and combines demanding concepts with heavy math. Here's what to expect, the pitfalls, and how to keep pace and excel.",
+      "metaImage": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-6f715f0ae847f3f0a15ebbcfc6ddd8ada837d4a3-1260x768-png",
+          "_type": "reference"
+        }
+      },
+      "metaTitle": "The Complete Guide to Surviving University Physics: Mechanics,"
+    },
+    "publishedAt": "2026-07-08T02:55:00.000Z",
+    "slug": {
+      "_type": "slug",
+      "current": "physics-university-level-physics"
+    },
+    "title": "University Physics Tutoring in Vancouver & Burnaby: The Complete"
+  }
+]
