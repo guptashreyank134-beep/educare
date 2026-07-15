@@ -9,7 +9,8 @@ export interface PricingCardProps {
     subtitle: string;
     features: string[];
     price: number;
-    oldPrice?: number;
+    /** Top of the price range, e.g. $75–$100. NOT a former price. */
+    priceMax?: number;
     priceCaption: string;
     ctaText: string;
     ctaHref?: string;
@@ -22,7 +23,7 @@ const PricingCard = ({
     subtitle,
     features,
     price,
-    oldPrice,
+    priceMax,
     priceCaption,
     ctaText,
     ctaHref,
@@ -69,11 +70,16 @@ const PricingCard = ({
                     {/* Price Section */}
                     <div className="flex flex-col">
                         <div className="flex items-baseline gap-3">
+                            {/* A range, not a discount: `priceMax` is the top of the
+                                price band (e.g. $75–$100 by subject and level), so it
+                                must never be rendered as a struck-through "was" price. */}
                             <span className="text-[24px] leading-1 font-bricolage font-display font-semibold text-slate">
                                 ${price}
-                                <span className="text-[14px] leading-8 font-bricolage font-display font-normal text-slate">
-                                {oldPrice ? ` -$${oldPrice}` : ""}
-                            </span>
+                                {priceMax ? (
+                                    <span className="text-[24px] font-bricolage font-display font-semibold text-slate">
+                                        –${priceMax}
+                                    </span>
+                                ) : null}
                             </span>
                         </div>
                         <p className="text-[12px] leading-4 font-montserrat font-normal text-slate opacity-70">

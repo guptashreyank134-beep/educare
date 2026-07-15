@@ -40,7 +40,7 @@ interface PricingSectionProps {
                             subtitle={card.subtitle}
                             features={card.features}
                             price={card.price}
-                            oldPrice={card.oldPrice}
+                            priceMax={card.priceMax}
                             priceCaption={card.priceCaption}
                             ctaText={card.ctaText}
                         />
