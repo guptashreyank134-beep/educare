@@ -121,8 +121,16 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile Navigation Drawer.
+          `inert` when closed: pointer-events-none only stops the mouse, so
+          without this every link in here stayed in the tab order and the
+          accessibility tree — duplicating the whole main nav for keyboard and
+          screen-reader users, on every page, even on desktop where the drawer
+          can never be opened. `inert` removes the subtree from both while
+          leaving the CSS transition intact. */}
       <div
+        inert={!isOpen}
+        aria-hidden={!isOpen}
         className={`lg:hidden absolute top-20 left-0 right-0 bg-white border-b border-gray-100 shadow-xl transition-all duration-300 ease-in-out origin-top ${
           isOpen
             ? "opacity-100 scale-y-100 translate-y-0"

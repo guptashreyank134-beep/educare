@@ -50,14 +50,16 @@ const PricingCard = ({
                     </div>
 
                     {/* Features List */}
-                    <ul className="flex flex-col gap-2">
+                    {/* CSS marker, not a literal bullet character — the character
+                        was text, so features extracted as "•Fully personalized
+                        sessions". */}
+                    <ul className="flex flex-col gap-2 list-disc pl-5 marker:text-primary">
                         {features.map((feature, index) => (
                             <li
                                 key={index}
-                                className="text-[16px] leading-5 font-montserrat font-normal text-slate opacity-80 flex items-start gap-2"
+                                className="text-[16px] leading-5 font-montserrat font-normal text-slate opacity-80 pl-1"
                             >
-                                <span className="text-primary mt-0.5 flex">•</span>
-                                <span>{feature}</span>
+                                {feature}
                             </li>
                         ))}
                     </ul>

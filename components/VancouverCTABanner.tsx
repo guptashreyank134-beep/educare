@@ -53,11 +53,14 @@ export default function VancouverCTABanner() {
               </h3>
             </div>
 
-            <ul className="space-y-3 font-montserrat mb-10">
+            {/* CSS marker rather than a literal "•" element: the character was
+                part of the text, so the content extracted as "•Understand your
+                child's current level" and screen readers announced "bullet"
+                before each item on top of the list semantics. */}
+            <ul className="space-y-3 font-montserrat mb-10 list-disc pl-5 marker:text-white/60">
               {trialPoints.map((point, idx) => (
-                <li key={idx} className="flex items-start text-[15px] leading-relaxed text-white/90">
-                  <span className="mr-3 text-[14px] opacity-70 mt-1.5">•</span>
-                  <span>{point}</span>
+                <li key={idx} className="text-[15px] leading-relaxed text-white/90 pl-1">
+                  {point}
                 </li>
               ))}
             </ul>

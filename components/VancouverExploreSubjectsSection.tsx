@@ -100,11 +100,10 @@ export default function VancouverExploreSubjectsSection() {
                   </h3>
                 </div>
 
-                <ul className="space-y-2 flex-grow">
+                <ul className="space-y-2 flex-grow list-disc pl-5 marker:text-slate/40">
                   {subject.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start text-[14px] text-slate/70 font-montserrat leading-snug">
-                      <span className="mr-2 text-slate/40 text-[18px] leading-[18px]">•</span>
-                      <span>{item}</span>
+                    <li key={idx} className="text-[14px] text-slate/70 font-montserrat leading-snug pl-1">
+                      {item}
                     </li>
                   ))}
                 </ul>
