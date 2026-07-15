@@ -27,6 +27,26 @@ export const post = defineType({
       type: "datetime",
       validation: (Rule) => Rule.required(),
     }),
+    // ── Authorship ──────────────────────────────────────────────────────────
+    // Google's guidance is to show first-hand expertise. A named expert byline
+    // only signals that honestly if the named expert has actually read the
+    // article — so the byline credits Dr. Shreyank ONLY when this is ticked.
+    // Until then the page and its structured data credit the organisation.
+    defineField({
+      name: "reviewedByExpert",
+      title: "Reviewed by Dr. Shreyank",
+      type: "boolean",
+      initialValue: false,
+      description:
+        "Tick this ONLY after Dr. Shreyank has read the article and is happy to put his name to it. Until then the byline reads 'Dr. Shreyank Educare' — we don't credit a named expert for teaching he hasn't reviewed.",
+    }),
+    defineField({
+      name: "reviewedAt",
+      title: "Reviewed On",
+      type: "date",
+      description: "The date the review happened. Shown in the author box as 'Reviewed on …'.",
+      hidden: ({ document }) => !document?.reviewedByExpert,
+    }),
     defineField({
       name: "mainImage",
       title: "Main Image",

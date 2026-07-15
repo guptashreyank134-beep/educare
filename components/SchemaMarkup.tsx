@@ -221,16 +221,35 @@ export function getBlogPostSchema(post: any, currentUrl: string): Record<string,
     "headline": title,
     "description": description,
     "image": imageUrl,
-    "author": {
-      "@type": "Person",
-      "name": "Dr. Shreyank Gupta",
-      "jobTitle": "PhD, Founder & Lead Tutor",
-      "worksFor": {
-        "@type": "EducationalOrganization",
-        "name": "Dr. Shreyank Educare",
-      },
-      "url": "https://www.drshreyankeducare.com/about",
-    },
+    // Credit the named expert ONLY on articles he has actually reviewed —
+    // claiming a person's authorship in structured data is a claim about
+    // first-hand expertise, and it should be true. Unreviewed posts are
+    // credited to the organisation instead.
+    "author": post?.reviewedByExpert
+      ? {
+          "@type": "Person",
+          "name": "Dr. Shreyank Gupta",
+          "jobTitle": "PhD, Founder & Lead Tutor",
+          "worksFor": {
+            "@type": "EducationalOrganization",
+            "name": "Dr. Shreyank Educare",
+          },
+          "url": "https://www.drshreyankeducare.com/about",
+        }
+      : {
+          "@type": "Organization",
+          "name": "Dr. Shreyank Educare",
+          "url": "https://www.drshreyankeducare.com",
+        },
+    ...(post?.reviewedByExpert
+      ? {
+          "reviewedBy": {
+            "@type": "Person",
+            "name": "Dr. Shreyank Gupta",
+            "jobTitle": "PhD, Founder & Lead Tutor",
+          },
+        }
+      : {}),
     "publisher": {
       "@type": "EducationalOrganization",
       "name": "Dr. Shreyank Educare",

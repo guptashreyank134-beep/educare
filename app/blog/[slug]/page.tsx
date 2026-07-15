@@ -7,6 +7,7 @@ import { Calendar, Clock, ArrowLeft, CalendarDays } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { JsonLd, getBlogPostSchema } from "@/components/SchemaMarkup";
+import AuthorBox from "@/components/AuthorBox";
 import { PortableText } from "@portabletext/react";
 
 interface PageProps {
@@ -150,7 +151,9 @@ export default async function BlogPostPage({ params }: PageProps) {
     excerpt,
     body,
     mainImage,
-    metaData
+    metaData,
+    reviewedByExpert,
+    reviewedAt
   }`;
 
   const post = await client.fetch(query, { slug });
@@ -265,6 +268,13 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <div dangerouslySetInnerHTML={{ __html: post.body || "" }} />
                 )}
               </div>
+
+              <AuthorBox
+                reviewedByExpert={post.reviewedByExpert}
+                reviewedAt={post.reviewedAt}
+                publishedAt={post.publishedAt}
+                updatedAt={post._updatedAt}
+              />
             </div>
           </div>
         </article>
