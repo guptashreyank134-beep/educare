@@ -39,15 +39,19 @@ const client = createClient({ projectId, dataset, apiVersion, token, useCdn: fal
 
 const key = () => randomUUID().replace(/-/g, "").slice(0, 12);
 
-// Deterministic per-slug variant picker (idempotent; different salt per slot).
-function pick(pool, slug, salt) {
-  const s = slug + "|" + salt;
+// FNV-1a hash — deterministic, so every run produces the same choices.
+function fnv(s) {
   let h = 2166136261;
   for (let i = 0; i < s.length; i++) {
     h ^= s.charCodeAt(i);
     h = Math.imul(h, 16777619) >>> 0;
   }
-  return pool[h % pool.length];
+  return h;
+}
+
+// Deterministic per-slug variant picker (idempotent; different salt per slot).
+function pick(pool, slug, salt) {
+  return pool[fnv(slug + "|" + salt) % pool.length];
 }
 
 // ── Portable Text builders ───────────────────────────────
@@ -72,32 +76,160 @@ const linkedPara = (parts) => {
 };
 const L = (a) => ({ text: a.anchor, href: a.href });
 
+// ── Anchor-text pools ────────────────────────────────────
+// Linking 77 posts to the same page with the SAME exact-match anchor reads as
+// over-optimisation and cannibalises the term. Each destination therefore has a
+// pool of natural variations (long-tail, partial-match, synonym), chosen
+// deterministically per post so the same page is reached by varied phrasing.
+const ANCHORS = {
+  "/pre-calculus-12-tutor-burnaby": [
+    "Pre-Calculus 12 tutoring", "our Pre-Calculus 12 programme", "one-on-one Pre-Calculus 12 help",
+    "Pre-Calculus 12 support in Burnaby", "help with Pre-Calculus 12", "Pre-Calculus 12 tutors",
+  ],
+  "/calculus-12-tutor-burnaby": [
+    "Calculus 12 tutoring", "our Calculus 12 programme", "one-on-one Calculus 12 help",
+    "Calculus 12 support", "help with Calculus 12", "Calculus 12 tutors in Burnaby",
+  ],
+  "/university-math-tutor-vancouver": [
+    "university math tutoring", "first-year university math support", "help with university-level math",
+    "our university math programme", "university math tutors in Vancouver", "degree-level math support",
+  ],
+  "/chemistry-12-tutor-burnaby": [
+    "Chemistry 12 tutoring", "our Chemistry 12 programme", "one-on-one Chemistry 12 help",
+    "Chemistry 12 support", "help with Chemistry 12", "Chemistry 12 tutors in Burnaby",
+  ],
+  "/university-physics-tutor-vancouver": [
+    "university physics tutoring", "first-year physics support", "help with university physics",
+    "our university physics programme", "university physics tutors", "degree-level physics support",
+  ],
+  "/physics-12-tutor-burnaby": [
+    "Physics 12 tutoring", "our Physics 12 programme", "one-on-one Physics 12 help",
+    "Physics 12 support", "help with Physics 12", "Physics 12 tutors in Burnaby",
+  ],
+  "/science-tutor-burnaby": [
+    "science tutoring", "our science programme", "one-on-one science help",
+    "science support for Grades 6–12", "help with school science", "science tutors in Burnaby",
+  ],
+  "/ib-math-tutor-vancouver": [
+    "IB Math tutoring", "our IB Mathematics programme", "help with IB Math",
+    "IB Math AA and AI support", "one-on-one IB Math help", "IB Math tutors in Vancouver",
+  ],
+  "/programs/ib-ap-tutoring": [
+    "IB and AP tutoring", "our IB and AP programme", "help with IB and AP courses",
+    "IB and AP exam support", "one-on-one IB/AP help", "IB and AP subject tutors",
+  ],
+  "/ap-calculus-tutor-burnaby": [
+    "AP Calculus tutoring", "our AP Calculus programme", "AP Calculus AB and BC support",
+    "help with AP Calculus", "one-on-one AP Calculus help", "AP Calculus tutors",
+  ],
+  "/online-statistics-tutor": [
+    "statistics tutoring", "our online statistics programme", "help with statistics",
+    "one-on-one statistics support", "statistics tutors online", "university statistics help",
+  ],
+  "/university-professional": [
+    "university and professional tutoring", "our university & professional programme",
+    "support for university and professional courses", "degree and professional-level help",
+    "university and professional tutors", "help for university and professional students",
+  ],
+  "/computer-science-tutor-vancouver": [
+    "coding and computer science tutoring", "our computer science programme", "help with coding",
+    "one-on-one programming support", "computer science tutors", "coding help for students",
+  ],
+  "/programs/french": [
+    "French tutoring", "our French programme", "help with French", "one-on-one French support",
+    "French tutors", "French language help",
+  ],
+  "/programs/mandarin": [
+    "Mandarin tutoring", "our Mandarin programme", "help with Mandarin", "one-on-one Mandarin support",
+    "Mandarin tutors", "Mandarin language help",
+  ],
+  "/final-exam-review-tutoring-burnaby": [
+    "exam-prep tutoring", "our final-exam review programme", "help preparing for finals",
+    "targeted exam preparation", "final-exam review sessions", "exam preparation support",
+  ],
+  "/math-word-problems-tutor": [
+    "problem-solving support", "help with word problems", "our problem-solving coaching",
+    "word-problem strategies", "support for tricky word problems", "problem-solving practice",
+  ],
+  "/math-tutor-burnaby": [
+    "math tutoring in Burnaby", "Burnaby math tutors", "one-on-one math help in Burnaby",
+    "our Burnaby math programme", "in-person math tutoring in Burnaby", "math support for Burnaby students",
+  ],
+  "/math-tutor-vancouver": [
+    "math tutoring in Vancouver", "Vancouver math tutors", "one-on-one math help in Vancouver",
+    "our Vancouver math programme", "math support for Vancouver students", "math help across Vancouver",
+  ],
+  "/best-math-tutor-burnaby": [
+    "top-rated math tutors in Burnaby", "our highest-rated math help", "Burnaby's PhD-led math tutoring",
+    "5-star math tutoring in Burnaby", "our best-reviewed math programme",
+  ],
+  "/private-math-tutor-burnaby": [
+    "private math tutoring", "a private math tutor in Burnaby", "individual math tuition",
+    "private one-to-one math sessions", "personal math tutoring",
+  ],
+  "/stem-tutor-vancouver": [
+    "STEM tutoring in Vancouver", "our STEM programme", "science and math support in Vancouver",
+    "STEM tutors", "help across STEM subjects",
+  ],
+  "/pre-calculus-11-tutor-burnaby": [
+    "Pre-Calculus 11 tutoring", "our Pre-Calculus 11 programme", "help with Pre-Calculus 11",
+    "Pre-Calculus 11 support", "Pre-Calculus 11 tutors",
+  ],
+  "/chemistry-11-tutor-burnaby": [
+    "Chemistry 11 tutoring", "our Chemistry 11 programme", "help with Chemistry 11",
+    "Chemistry 11 support", "Chemistry 11 tutors",
+  ],
+  "/physics-11-tutor-burnaby": [
+    "Physics 11 tutoring", "our Physics 11 programme", "help with Physics 11",
+    "Physics 11 support", "Physics 11 tutors",
+  ],
+  "/contact": [
+    "free consultation", "free 30-minute consultation", "no-obligation consultation",
+    "free intro session", "complimentary consultation", "free first session",
+  ],
+};
+
+// Pick a varied anchor for a destination; salt keeps different slots on one page distinct.
+function anchorFor(href, slug, salt) {
+  const pool = ANCHORS[href];
+  if (!pool || !pool.length) return href;
+  return pick(pool, slug, `anchor|${href}|${salt}`);
+}
+
 // ── Topic-based contextual links (accurate per article) ──
 const RELATED = [
-  { re: /pre-calculus/i, anchor: "Pre-Calculus 12 tutoring", href: "/pre-calculus-12-tutor-burnaby" },
-  { re: /\bcalculus\b/i, anchor: "Calculus 12 tutoring", href: "/calculus-12-tutor-burnaby" },
-  { re: /university (math|calculus|linear algebra)|linear algebra|differential equations/i, anchor: "university math tutoring", href: "/university-math-tutor-vancouver" },
-  { re: /chemistr/i, anchor: "Chemistry 12 tutoring", href: "/chemistry-12-tutor-burnaby" },
-  { re: /university physics|first-year physics/i, anchor: "university physics tutoring", href: "/university-physics-tutor-vancouver" },
-  { re: /physics/i, anchor: "Physics 12 tutoring", href: "/physics-12-tutor-burnaby" },
-  { re: /biology|physiology|molecular|genetics|ecology/i, anchor: "science tutoring", href: "/science-tutor-burnaby" },
-  { re: /IB Math|IB Mathematics/i, anchor: "IB Math tutoring", href: "/ib-math-tutor-vancouver" },
-  { re: /\bIB\b|\bAP\b/i, anchor: "IB and AP tutoring", href: "/programs/ib-ap-tutoring" },
-  { re: /AP Calculus/i, anchor: "AP Calculus tutoring", href: "/ap-calculus-tutor-burnaby" },
-  { re: /statistic/i, anchor: "statistics tutoring", href: "/online-statistics-tutor" },
-  { re: /econ|finance|CFA|MBA|business/i, anchor: "university and professional tutoring", href: "/university-professional" },
-  { re: /python|javascript|programming|coding|computer science|data structures|web development|DOM|API|database/i, anchor: "coding and computer science tutoring", href: "/computer-science-tutor-vancouver" },
-  { re: /french/i, anchor: "French tutoring", href: "/programs/french" },
-  { re: /mandarin|chinese/i, anchor: "Mandarin tutoring", href: "/programs/mandarin" },
-  { re: /SAT|GRE|GMAT|MCAT|exam prep|test prep|final exam|provincial/i, anchor: "exam-prep tutoring", href: "/final-exam-review-tutoring-burnaby" },
-  { re: /word problem|problem.solving/i, anchor: "problem-solving support", href: "/math-word-problems-tutor" },
-  { re: /algebra|functions|grade|elementary|middle school|high school math/i, anchor: "math tutoring in Burnaby", href: "/math-tutor-burnaby" },
+  { re: /pre-calculus/i, href: "/pre-calculus-12-tutor-burnaby" },
+  { re: /\bcalculus\b/i, href: "/calculus-12-tutor-burnaby" },
+  { re: /university (math|calculus|linear algebra)|linear algebra|differential equations/i, href: "/university-math-tutor-vancouver" },
+  { re: /chemistr/i, href: "/chemistry-12-tutor-burnaby" },
+  { re: /university physics|first-year physics/i, href: "/university-physics-tutor-vancouver" },
+  { re: /physics/i, href: "/physics-12-tutor-burnaby" },
+  { re: /biology|physiology|molecular|genetics|ecology/i, href: "/science-tutor-burnaby" },
+  { re: /IB Math|IB Mathematics/i, href: "/ib-math-tutor-vancouver" },
+  { re: /\bIB\b|\bAP\b/i, href: "/programs/ib-ap-tutoring" },
+  { re: /AP Calculus/i, href: "/ap-calculus-tutor-burnaby" },
+  { re: /statistic/i, href: "/online-statistics-tutor" },
+  { re: /econ|finance|CFA|MBA|business/i, href: "/university-professional" },
+  { re: /python|javascript|programming|coding|computer science|data structures|web development|DOM|API|database/i, href: "/computer-science-tutor-vancouver" },
+  { re: /french/i, href: "/programs/french" },
+  { re: /mandarin|chinese/i, href: "/programs/mandarin" },
+  { re: /SAT|GRE|GMAT|MCAT|exam prep|test prep|final exam|provincial/i, href: "/final-exam-review-tutoring-burnaby" },
+  { re: /word problem|problem.solving/i, href: "/math-word-problems-tutor" },
+  { re: /algebra|functions|grade|elementary|middle school|high school math/i, href: "/math-tutor-burnaby" },
 ];
-const FALLBACKS = [
-  { anchor: "math tutoring in Burnaby", href: "/math-tutor-burnaby" },
-  { anchor: "math tutoring in Vancouver", href: "/math-tutor-vancouver" },
-  { anchor: "IB and AP tutoring", href: "/programs/ib-ap-tutoring" },
-  { anchor: "science tutoring", href: "/science-tutor-burnaby" },
+
+// Rotated per slug so link equity spreads across many pages instead of piling
+// onto the same two hubs on every post.
+const FALLBACK_POOL = [
+  "/math-tutor-burnaby",
+  "/math-tutor-vancouver",
+  "/programs/ib-ap-tutoring",
+  "/science-tutor-burnaby",
+  "/final-exam-review-tutoring-burnaby",
+  "/best-math-tutor-burnaby",
+  "/private-math-tutor-burnaby",
+  "/stem-tutor-vancouver",
+  "/math-word-problems-tutor",
 ];
 
 function topicAnchors(article, slug, title) {
@@ -105,21 +237,24 @@ function topicAnchors(article, slug, title) {
   // links — a physics post must not lead with a "Calculus 12" link just because
   // its prose happens to mention calculus. Pass 1 matches the subject (so the
   // first/most-prominent anchors are always on-topic); pass 2 adds genuinely
-  // related cross-links found only in the body; pass 3 fills from fallbacks.
+  // related cross-links found only in the body; pass 3 fills from fallbacks,
+  // rotated per slug so the same hubs aren't linked from every single post.
   const subject = (slug.replace(/-/g, " ") + " " + (title || "")).toLowerCase();
   const bodyText = [...(article.intro || []), ...(article.overview || []), ...(article.keyConcepts || []), ...(article.closing || [])].join(" ");
   const picked = [];
   const seen = new Set();
-  const take = (r) => {
-    if (picked.length >= 4 || seen.has(r.href)) return;
-    picked.push({ anchor: r.anchor, href: r.href });
-    seen.add(r.href);
+  const take = (href) => {
+    if (picked.length >= 4 || seen.has(href)) return;
+    picked.push(href);
+    seen.add(href);
   };
-  for (const r of RELATED) if (r.re.test(subject)) take(r);
-  for (const r of RELATED) if (picked.length < 4 && r.re.test(bodyText)) take(r);
-  for (const f of FALLBACKS) {
-    if (picked.length >= 4) break;
-    if (!seen.has(f.href)) { picked.push(f); seen.add(f.href); }
+  for (const r of RELATED) if (r.re.test(subject)) take(r.href);
+  for (const r of RELATED) if (picked.length < 4 && r.re.test(bodyText)) take(r.href);
+
+  // Rotate the fallback order by slug so link equity is distributed.
+  const start = fnv(slug + "|fallback") % FALLBACK_POOL.length;
+  for (let i = 0; i < FALLBACK_POOL.length && picked.length < 4; i++) {
+    take(FALLBACK_POOL[(start + i) % FALLBACK_POOL.length]);
   }
   return picked;
 }
@@ -189,10 +324,15 @@ function buildBody(article, slug, title) {
   const at = (i) => t[i % t.length];
   const blocks = [];
   const usedHrefs = new Set();
-  const use = (a) => { usedHrefs.add(a.href); return a; };
+  // Resolve a destination into a link with a VARIED anchor. The salt differs per
+  // slot, so neither this post nor its siblings reuse the same phrasing.
+  const link = (href, salt) => {
+    usedHrefs.add(href);
+    return { anchor: anchorFor(href, slug, salt), href };
+  };
 
   (article.intro || []).forEach((p) => blocks.push(para(p)));
-  blocks.push(linkedPara(pick(BRIDGES, slug, "bridge")(use(at(0)))));
+  blocks.push(linkedPara(pick(BRIDGES, slug, "bridge")(link(at(0), "bridge"))));
 
   if (article.overview?.length) {
     blocks.push(heading(pick(H_OVERVIEW, slug, "ho")));
@@ -200,17 +340,17 @@ function buildBody(article, slug, title) {
   }
   if (article.keyConcepts?.length) {
     blocks.push(heading(pick(H_KEY, slug, "hk")));
-    blocks.push(linkedPara(pick(KEY_LEADS, slug, "kl")(use(at(1)))));
+    blocks.push(linkedPara(pick(KEY_LEADS, slug, "kl")(link(at(1), "kl"))));
     article.keyConcepts.forEach((c) => blocks.push(bullet(c)));
   }
   if (article.commonMistakes?.length) {
     blocks.push(heading(pick(H_MISTAKE, slug, "hm")));
-    blocks.push(linkedPara(pick(MISTAKE_LEADS, slug, "ml")(use(at(2)))));
+    blocks.push(linkedPara(pick(MISTAKE_LEADS, slug, "ml")(link(at(2), "ml"))));
     article.commonMistakes.forEach((m) => blocks.push(bullet(m)));
   }
   if (article.studyTips?.length) {
     blocks.push(heading(pick(H_TIP, slug, "ht")));
-    blocks.push(linkedPara(pick(TIP_LEADS, slug, "tl")(use(at(3)))));
+    blocks.push(linkedPara(pick(TIP_LEADS, slug, "tl")(link(at(3), "tl"))));
     article.studyTips.forEach((tp) => blocks.push(bullet(tp)));
   }
 
@@ -224,8 +364,7 @@ function buildBody(article, slug, title) {
     blocks.push(para(pick(A_STUDY_LEAD, slug, "as") + joinPoints(article.studyTips)));
   }
   blocks.push(strongPara(pick(Q_TUTOR, slug, "qt")));
-  blocks.push(linkedPara(pick(A_TUTOR, slug, "at")({ text: "free consultation", href: "/contact" })));
-  usedHrefs.add("/contact");
+  blocks.push(linkedPara(pick(A_TUTOR, slug, "at")(L(link("/contact", "cta")))));
 
   blocks.push(heading(pick(H_HELP, slug, "hh")));
   (article.closing || []).forEach((p) => blocks.push(para(p)));
