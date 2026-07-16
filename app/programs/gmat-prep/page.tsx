@@ -81,7 +81,7 @@ export default async function GmatPrepProgramPage() {
           {/* Left Column: Content */}
           <div>
             <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
-              GMAT Prep Program
+              GMAT Prep & Coaching in Burnaby & Vancouver
             </h1>
 
             <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">

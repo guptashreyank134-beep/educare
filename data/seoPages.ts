@@ -1805,7 +1805,7 @@ export const seoPages: SeoPage[] = [
     metaTitle: "Tutoring in Burnaby | Math, Science & Coding | 5★ Rated",
     metaDescription:
       "PhD-led tutoring in Burnaby for Grades 6–12 and university — Math, Science and Coding. In person or online, 5★ rated. Book a free consultation.",
-    h1: "Tutoring in Burnaby",
+    h1: "Tutoring in Burnaby — Math, Science & More",
     heroSubheading:
       "A trusted Burnaby tutoring service for Math, Science and Coding — one-on-one, PhD-led, and built around each student's goals.",
     intro: [
@@ -3559,7 +3559,7 @@ export const seoPages: SeoPage[] = [
     metaTitle: "IB Tutor in Burnaby | Math, Physics & Chemistry",
     metaDescription:
       "IB tutoring in Burnaby across Math, Physics and Chemistry — SL & HL, with IA support and exam prep. In person or online. Book a free consultation.",
-    h1: "IB Tutor in Burnaby",
+    h1: "IB Tutor in Burnaby — Math, Physics & Chemistry",
     heroSubheading:
       "One specialist team for your IB subjects — Math, Physics and Chemistry, SL and HL — for Burnaby students.",
     intro: [
@@ -4629,48 +4629,48 @@ export const seoPages: SeoPage[] = [
     slug: "python-tutor-burnaby",
     cluster: "Coding",
     location: "Burnaby",
-    metaTitle: "Python Tutor in Burnaby | Beginner to Advanced",
+    metaTitle: "Python Tutor in Burnaby | High School & Beginners",
     metaDescription:
-      "Python tutoring in Burnaby for teens and students — from basics to projects and problem solving. In person or online. Book a free consultation.",
+      "In-person Python tutoring in Burnaby for high-school students and beginners — syntax, logic, projects and coding-course support. Free consultation.",
     h1: "Python Tutor in Burnaby",
     heroSubheading:
-      "Learn Python properly in Burnaby — from first steps to real projects — with hands-on, mentored tutoring.",
+      "Python tutoring in Burnaby for high-school students and first-time coders — hands-on, in person, from first line to first project.",
     intro: [
-      "Python is the ideal first language: readable, powerful and everywhere. Our Burnaby Python tutoring takes students from the basics to real projects and problem-solving.",
-      "Sessions are hands-on and tailored to each student's level and goals.",
+      "Python is the ideal first language for a young coder: readable, forgiving and everywhere. Our in-person Burnaby Python tutoring takes high-school students and complete beginners from their first line of code to real, working projects.",
+      "Sessions run one-on-one in Burnaby, matched to your child's grade, their school coding course and the pace that suits them.",
     ],
     sections: [
       {
-        heading: "Python Skills",
+        heading: "What Beginners & High-Schoolers Learn",
         points: [
           "Syntax & data types",
           "Loops & conditionals",
           "Functions & logic",
-          "Data structures",
-          "Small projects",
-          "Problem solving",
+          "Lists & dictionaries",
+          "School-project support",
+          "Debugging basics",
         ],
       },
       {
-        heading: "Learn by Building",
+        heading: "Hands-On, In Person in Burnaby",
         body: [
-          "Students write real Python code with a tutor explaining each concept as it's used.",
-          "Projects keep learning engaging and practical.",
+          "Students write real Python beside a tutor who explains each concept as it is used — no passive lectures.",
+          "We also support school coding assignments and computer-studies coursework, so classroom results follow the confidence.",
         ],
       },
     ],
     faqs: [
       {
-        question: "Is Python good for beginners?",
-        answer: "Yes — it's the ideal first language, and we start from the basics.",
+        question: "Is Python good for a complete beginner?",
+        answer: "Yes — it's the ideal first language, and we start from the very basics at a beginner's pace.",
       },
       {
-        question: "Do you do project-based learning?",
-        answer: "Yes — students build real projects as they learn.",
+        question: "Can you help with school coding assignments?",
+        answer: "Yes — we support computer-studies coursework and assignments alongside the fundamentals.",
       },
       {
-        question: "In person or online?",
-        answer: "Both are available in Burnaby.",
+        question: "Do you tutor in person in Burnaby?",
+        answer: "Yes — in-person one-on-one sessions in Burnaby, with online as an option.",
       },
     ],
     related: [
@@ -4683,48 +4683,48 @@ export const seoPages: SeoPage[] = [
     slug: "python-tutor-vancouver",
     cluster: "Coding",
     location: "Vancouver",
-    metaTitle: "Python Tutor in Vancouver | Beginner to Advanced",
+    metaTitle: "Python Tutor in Vancouver | University & Data Science",
     metaDescription:
-      "Python tutoring in Vancouver for teens and students — from basics to projects and problem solving. Online or nearby in Burnaby. Book a free consultation.",
+      "Online Python tutoring in Vancouver for university students and career-changers — data science, automation, assignments and interview prep. Free consultation.",
     h1: "Python Tutor in Vancouver",
     heroSubheading:
-      "Learn Python properly in Vancouver — from first steps to real projects — with hands-on, mentored online tutoring.",
+      "Python tutoring in Vancouver for university students and career-changers — data science, automation and applied, real-world code, online.",
     intro: [
-      "Python opens doors from web apps to data science, and it's the perfect place to start coding. Our Vancouver Python tutoring takes students from basics to projects.",
-      "Sessions are online across Vancouver, or in person nearby in Burnaby, and tailored to each student.",
+      "Python runs data science, web backends and automation, which is why it's the language to know at university and in the job market. Our Vancouver Python tutoring helps university students and career-changers move from the fundamentals to applied, real-world code.",
+      "Sessions are online across Metro Vancouver, or in person nearby in Burnaby, and built around your course, project or career goal.",
     ],
     sections: [
       {
-        heading: "Python Skills",
+        heading: "From Fundamentals to Applied Python",
         points: [
-          "Syntax & data types",
-          "Loops & conditionals",
-          "Functions & logic",
-          "Data structures",
-          "Small projects",
-          "Problem solving",
+          "Core syntax & data structures",
+          "Functions & object-oriented Python",
+          "NumPy & pandas for data",
+          "Automation & scripting",
+          "University assignment help",
+          "Coding-interview practice",
         ],
       },
       {
-        heading: "Learn by Building",
+        heading: "Applied to Your Goals",
         body: [
-          "Students write real Python with a mentor explaining each step.",
-          "Projects make learning practical and engaging.",
+          "Whether it's a UBC or SFU assignment, a data-analysis project or an upcoming interview, we work on real Python that maps to exactly what you need.",
+          "Sessions run online across Metro Vancouver, with in-person options nearby in Burnaby.",
         ],
       },
     ],
     faqs: [
       {
-        question: "Do you teach Python online?",
-        answer: "Yes — online across Vancouver, with in-person options in Burnaby.",
+        question: "Can you help with university Python courses?",
+        answer: "Yes — we support UBC, SFU and college coursework, assignments and projects in Python.",
       },
       {
-        question: "Is it good for beginners?",
-        answer: "Yes — we start from the basics.",
+        question: "Do you teach data science with Python?",
+        answer: "Yes — including NumPy, pandas and the applied workflow behind data analysis.",
       },
       {
-        question: "Do you build projects?",
-        answer: "Yes — project-based learning throughout.",
+        question: "Are sessions online?",
+        answer: "Yes — online across Metro Vancouver, with in-person options in Burnaby.",
       },
     ],
     related: [
