@@ -150,6 +150,7 @@ const hs = [
   mli(["Treat Pre-Calculus 12 as the high-stakes gateway it is."]),
   mli(["Build genuine understanding as the material grows abstract."]),
   mli(["Get targeted help at the pressure points, not just generic extra work."]),
+  mli(["Remember current struggles often trace to a gap from an earlier year."]),
 
   h2("Keep your options open with strong high-school maths"),
   linked(["If high-school maths is a struggle — whether it is a current course or a transition looming — timely, targeted help keeps the university and career doors that maths gatekeeps firmly open. Our ", { text: "high-school math tutoring in Burnaby and across Vancouver", href: MB }, " finds and fixes the real gaps, prepares students for the transitions, and builds the understanding the gateway courses reward."]),
