@@ -1,0 +1,956 @@
+[
+  {
+    "_createdAt": "2026-07-15T17:30:44Z",
+    "_id": "drafts.concept-gap-or-practice-gap-parents-guide",
+    "_rev": "Ghv0vRm8LV3rkQJ86CkcHB",
+    "_system": {
+      "base": {
+        "id": "concept-gap-or-practice-gap-parents-guide",
+        "rev": "Ghv0vRm8LV3rkQJ86BsGlQ"
+      }
+    },
+    "_type": "post",
+    "_updatedAt": "2026-07-15T20:08:21Z",
+    "body": [
+      {
+        "_key": "e707ab9dca5a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "10695516e108",
+            "_type": "span",
+            "marks": [],
+            "text": "\"He understands it when we go through it, but then he gets them wrong on the test.\" Almost every parent who contacts a tutor says some version of this, and it is the single most useful sentence to unpack — because it describes two completely different problems that need opposite treatments."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "eb6aaa4052bb",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9b1a4daa002a",
+            "_type": "span",
+            "marks": [],
+            "text": "Get the diagnosis wrong and months disappear. A student with a concept gap given more practice questions simply practises the misunderstanding until it is permanent. A student with a practice gap given more explanation sits through lessons they already understand, gets bored, and still runs out of time in the exam."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3bbc98d90cc1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "af54052f2d1a",
+            "_type": "span",
+            "marks": [],
+            "text": "The distinction is not subtle once you know what to look for, and you can test it at the kitchen table in about ten minutes."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b4ee07c1eb84",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "12015b5be77f",
+            "_type": "span",
+            "marks": [],
+            "text": "The two failure modes"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "7ca4803c1c0d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d63e57773c08",
+            "_type": "span",
+            "marks": [],
+            "text": "A concept gap"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "0754dadf8025",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fbedd84ebe63",
+            "_type": "span",
+            "marks": [],
+            "text": "The student does not understand what the mathematics means. They may still get answers right — by mimicking a worked example closely enough — which is exactly what makes this hard to spot from a report card."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "44441662de05",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5c67cf8d1121",
+            "_type": "span",
+            "marks": [],
+            "text": "It looks like:"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "4c0103aae712",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c3b1b80a8122",
+            "_type": "span",
+            "marks": [],
+            "text": "They can do a question that matches an example, but stall completely when the wording changes"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "bb2f2230b19a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fbdb8b2eb8de",
+            "_type": "span",
+            "marks": [],
+            "text": "They cannot say why a step is done, only that it comes next"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "dc2c9ffcbec6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7cdeae001f7f",
+            "_type": "span",
+            "marks": [],
+            "text": "Wrong answers are wrong in strange ways — not close, but structurally off"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "164b0c2aabb6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "dff9510a6e9d",
+            "_type": "span",
+            "marks": [],
+            "text": "They ask \"what do I do here?\" rather than \"did I do this right?\""
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8ed7c00a404f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1211f3817053",
+            "_type": "span",
+            "marks": [],
+            "text": "Progress collapses whenever a topic builds on the shaky one"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "bacb3d098453",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "baaab5d784da",
+            "_type": "span",
+            "marks": [],
+            "text": "A practice gap"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "4ddfd581a544",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5f6656d47e27",
+            "_type": "span",
+            "marks": [],
+            "text": "The student understands the material. The knowledge is simply not fast or automatic enough to survive a timed test."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "45153fcd8b99",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c550e72696e3",
+            "_type": "span",
+            "marks": [],
+            "text": "It looks like:"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6effa2fd82da",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "130d84d86f2e",
+            "_type": "span",
+            "marks": [],
+            "text": "They can explain the method correctly, out loud, without notes"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "672b75b47c7a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3af52cdabf5d",
+            "_type": "span",
+            "marks": [],
+            "text": "Mistakes are arithmetic slips, dropped signs, copying errors — \"silly mistakes\""
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a25e18ec877d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0e74723fbaa6",
+            "_type": "span",
+            "marks": [],
+            "text": "They run out of time, or rush the last questions"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a9226e6cf3a1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "75b5d94b5f25",
+            "_type": "span",
+            "marks": [],
+            "text": "Homework is fine; tests are not"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "27cc5075836f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e09d1ff1e5d8",
+            "_type": "span",
+            "marks": [],
+            "text": "Shown the mistake, they immediately see it — no explanation needed"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "9a29d25b622a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9914711c277c",
+            "_type": "span",
+            "marks": [],
+            "text": "The ten-minute test"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "5eb934417d75",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "779abf01f672",
+            "_type": "span",
+            "marks": [],
+            "text": "Here is the diagnostic, and it works because it separates knowing from doing."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "4c8cf00eaf3f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "37c3c1dd4350",
+            "_type": "span",
+            "marks": [],
+            "text": "Take a question they got wrong. Do not ask them to solve it. Ask them to explain how they would solve it — out loud, without writing anything and without touching the numbers."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "5cf8d1cd16a2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "133189a0e178",
+            "_type": "span",
+            "marks": [],
+            "text": "If they can talk you through the method confidently and only fall apart when executing it — that is a practice gap."
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f9b26ae78d64",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e000337f1464",
+            "_type": "span",
+            "marks": [],
+            "text": "If the explanation is vague, circular, or reaches for the textbook — that is a concept gap, regardless of what their homework marks look like."
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "fc41560ee986",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "afcf595dff85",
+            "_type": "span",
+            "marks": [],
+            "text": "The reason this works: explaining requires understanding, while doing can be faked by pattern-matching. Most school assessment rewards doing, so a concept gap can stay hidden for a long time — often until the course builds on it and everything appears to collapse at once."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "cf79ded8fa73",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "03a7a84b45f4",
+            "_type": "span",
+            "marks": [],
+            "text": "A second, blunter version: ask \"why does that step work?\" A practice-gap student answers, sometimes impatiently. A concept-gap student explains what the step is again, more slowly. Watch for that substitution — it is the tell."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f21b7106971b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6a6b3f8cc0b9",
+            "_type": "span",
+            "marks": [],
+            "text": "Why they need opposite treatments"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "61148bc0987d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "054b0399b1f0",
+            "_type": "span",
+            "marks": [],
+            "text": "A concept gap needs rebuilding, not repetition"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "d6506f38479c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "94ff83c43d0c",
+            "_type": "span",
+            "marks": [],
+            "text": "More questions will not help, and can actively harm. Every repetition of a misunderstood method makes it more automatic and harder to dislodge. The fix is to go back — often further back than feels reasonable — find the idea that never landed, and rebuild from there."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "dd9f329e8933",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1df6e936cfcb",
+            "_type": "span",
+            "marks": [],
+            "text": "This feels like losing ground. Parents often resist it, because the student is behind and going backwards seems like the opposite of catching up. But a concept gap is load-bearing: everything stacked on it is unstable, and time spent stacking higher is time wasted."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f5d19fc2a38e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3f5b836c3519",
+            "_type": "span",
+            "marks": [],
+            "text": "A practice gap needs volume and timing"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "8d3c834fe746",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "59b25151aa86",
+            "_type": "span",
+            "marks": [],
+            "text": "Explanation is not the constraint — the student already understands. What they need is enough repetition that the method becomes automatic, and enough timed practice that exam conditions stop being a separate skill."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "66b716f8a61b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8105a9416b12",
+            "_type": "span",
+            "marks": [],
+            "text": "Re-teaching a practice-gap student is a common and expensive mistake. They already know it. What they cannot yet do is retrieve it in ninety seconds with a clock running, and no amount of further explanation builds that."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c18d82925ba5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bdfb02b15c90",
+            "_type": "span",
+            "marks": [],
+            "text": "The trap: \"silly mistakes\""
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "8ff5aed3dad7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1c27ac70426e",
+            "_type": "span",
+            "marks": [],
+            "text": "This phrase hides both problems, which is why it is worth interrogating."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "063303d1e9d9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "cbc14b98ce8f",
+            "_type": "span",
+            "marks": [],
+            "text": "Sometimes a silly mistake really is one: a dropped minus sign, a misread digit. That is a practice gap, and repetition fixes it."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2e855659361b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5fab3b192ad2",
+            "_type": "span",
+            "marks": [],
+            "text": "But often \"silly mistake\" is what a student calls an error they cannot explain. If they consistently make the same silly mistake in the same place, it is not carelessness — it is a misunderstanding wearing a friendlier name. The test is whether they can tell you why it was wrong. If they can only tell you that it was wrong, look closer."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c90391722ccf",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4419d30fc60a",
+            "_type": "span",
+            "marks": [],
+            "text": "Both at once"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "3be8354825aa",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bfe1687bfcd0",
+            "_type": "span",
+            "marks": [],
+            "text": "The honest complication: it is often both. A concept gap in one topic, and a practice gap everywhere else. The order matters — fix the concept first, then build the speed, because drilling an idea that is not yet understood cements the wrong version."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "01b0b7138442",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3776ac8335bd",
+            "_type": "span",
+            "marks": [],
+            "text": "It also changes over a term. A student who started with a concept gap and has had it repaired will look, for a few weeks, exactly like a student with a practice gap — because that is now what they are. The diagnosis is not permanent, and it is worth re-running."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "31534707b3da",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9c24648f5138",
+            "_type": "span",
+            "marks": [],
+            "text": "What this means for choosing help"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "fe35986294e2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d89e8f44ca7b",
+            "_type": "span",
+            "marks": [],
+            "text": "It is worth knowing which problem you are buying help for, because they look identical from the outside and cost the same."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "7c5cfa830f46",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f11f8bd35d81",
+            "_type": "span",
+            "marks": [],
+            "text": "A homework club or worksheet service is practice. Useful for a practice gap; nearly useless for a concept gap"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0b233b587ba4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2fc22d3fa14c",
+            "_type": "span",
+            "marks": [],
+            "text": "A group class re-explains the curriculum. Useful if the explanation is the constraint; not if the student needs volume"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "35e7959d45d9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "458fb624f67a",
+            "_type": "span",
+            "marks": [],
+            "text": "One-on-one tutoring can do either — but only if the tutor diagnoses first rather than starting from page one"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "785ec46fa6a2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c479cb01f686",
+            "_type": "span",
+            "marks": [],
+            "text": "This is the reason our "
+          },
+          {
+            "_key": "043d0f34c429",
+            "_type": "span",
+            "marks": [
+              "9e73355f06ee"
+            ],
+            "text": "free 30-minute consultation"
+          },
+          {
+            "_key": "961e36e1b253",
+            "_type": "span",
+            "marks": [],
+            "text": " is a conversation rather than a lesson: the diagnosis genuinely determines what we would do, and getting it wrong wastes your money as well as your child's term."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "9e73355f06ee",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "b5ea56234987",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b0381d00d32e",
+            "_type": "span",
+            "marks": [],
+            "text": "What to do this week"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "2b438af8fb63",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "25e5a1550644",
+            "_type": "span",
+            "marks": [],
+            "text": "Take one wrong answer from a recent test — not a homework question."
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a53e66a4d0f6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b9ec9e83740f",
+            "_type": "span",
+            "marks": [],
+            "text": "Ask them to explain the method out loud, without writing or touching the numbers."
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c3e372cf76a6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2cbef3f5dc4c",
+            "_type": "span",
+            "marks": [],
+            "text": "Listen for whether they explain WHY, or only re-describe WHAT."
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "5dd0f52e7db8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "05834617de70",
+            "_type": "span",
+            "marks": [],
+            "text": "If they can explain it: practice gap. Give them volume and a timer."
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c2a0d4524ead",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49819c9712a7",
+            "_type": "span",
+            "marks": [],
+            "text": "If they cannot: concept gap. Stop the practice, go back, and rebuild."
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "24725c679456",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1cf6e204d60c",
+            "_type": "span",
+            "marks": [],
+            "text": "That is a real diagnosis, and it costs ten minutes. It is worth considerably more than another purchased workbook — because the workbook is only the right treatment for one of the two problems, and you now know which."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a0c57b651d78",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9963a6fca8d6",
+            "_type": "span",
+            "marks": [],
+            "text": "If you would like a second opinion"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "4af1cbd09251",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5ed71959a50b",
+            "_type": "span",
+            "marks": [],
+            "text": "We do this diagnosis at the start of every relationship, because starting to teach before you know which problem you are solving is guesswork. Our "
+          },
+          {
+            "_key": "d6cf58f31f0d",
+            "_type": "span",
+            "marks": [
+              "9c6c5a9c0b92"
+            ],
+            "text": "one-on-one math tutoring in Burnaby"
+          },
+          {
+            "_key": "c72ed0349fad",
+            "_type": "span",
+            "marks": [],
+            "text": " and science support work the same way, whether the answer turns out to be a concept gap, a practice gap, or the usual mix of both."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "9c6c5a9c0b92",
+            "_type": "link",
+            "href": "/math-tutor-burnaby"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "c21a7cba5bee",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8561ef8c4ec0",
+            "_type": "span",
+            "marks": [],
+            "text": "Sessions run in person in Burnaby or online across Metro Vancouver. "
+          },
+          {
+            "_key": "57de94fc73bc",
+            "_type": "span",
+            "marks": [
+              "7f66848b5017"
+            ],
+            "text": "Book a free 30-minute consultation"
+          },
+          {
+            "_key": "832b6e3385ce",
+            "_type": "span",
+            "marks": [],
+            "text": " — we will work through a recent test together and tell you honestly which of the two you are dealing with, even if the answer is that no tutoring is needed yet."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "7f66848b5017",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "excerpt": "\"He understands it, then gets it wrong on the test\" describes two opposite problems needing opposite fixes. A ten-minute diagnostic any parent can run at home.",
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/concept-gap-or-practice-gap-parents-guide",
+      "metaDescription": "Your child understands it but fails the test — is it a concept gap or a practice gap? They need opposite fixes. A ten-minute diagnostic parents can run at home.",
+      "metaTitle": "Concept Gap or Practice Gap? A Parent's 10-Minute Test"
+    },
+    "publishedAt": "2026-07-15T17:28:19.633Z",
+    "reviewedByExpert": true,
+    "slug": {
+      "_type": "slug",
+      "current": "concept-gap-or-practice-gap-parents-guide"
+    },
+    "title": "How Parents Can Tell Whether a Student Has a Concept Gap or a Practice Gap"
+  },
+  {
+    "_createdAt": "2026-05-19T07:34:38Z",
+    "_id": "drafts.post-importance-of-high-school-mathematics",
+    "_rev": "98eb2d5d-0196-4ed6-b252-d8e70ae7cc95",
+    "_system": {
+      "base": {
+        "id": "post-importance-of-high-school-mathematics",
+        "rev": "XQg5Uoa3hJ7UWt9XmiQ42m"
+      }
+    },
+    "_type": "post",
+    "_updatedAt": "2026-07-15T17:43:13Z",
+    "excerpt": "Why high school math is the foundation for future STEM fields and analytical problem-solving skills.",
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/importance-of-high-school-mathematics",
+      "metaDescription": "Why high school math is the foundation for future STEM fields and analytical problem-solving skills.",
+      "metaTitle": "The Critical Importance of High School Mathematics | Educare"
+    },
+    "publishedAt": "2026-05-19T07:34:38.013Z",
+    "reviewedByExpert": true,
+    "slug": {
+      "_type": "slug",
+      "current": "importance-of-high-school-mathematics"
+    },
+    "title": "The Critical Importance of High School Mathematics"
+  }
+]
