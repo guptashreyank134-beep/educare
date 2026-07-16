@@ -124,6 +124,62 @@ export function verifyLatex(blocks) {
   return { total: found.length, bad };
 }
 
+const shingles7 = (s) => {
+  const w = s.toLowerCase().replace(/[^a-z0-9 ]/g, "").split(/\s+/).filter(Boolean);
+  const o = new Set();
+  for (let i = 0; i + 7 <= w.length; i++) o.add(w.slice(i, i + 7).join(" "));
+  return o;
+};
+
+/**
+ * The full flagship gate + apply, so an upgrade script is just {slug, body}.
+ * Runs: LaTeX check, dead-link check, 1,500-word floor (a REFUSAL), optional
+ * sibling-overlap check, and — after writing — reads the count back from Sanity
+ * so "done" means the live post is actually >=1,500, not that the script exited.
+ */
+export async function applyPost({ slug, body, was = 0, siblingSlugs = [], maxOverlap = 0.03 }) {
+  const text = body.flatMap((b) => (b.children || []).map((c) => c.text || "")).join(" ");
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  const links = [...new Set(body.flatMap((b) => (b.markDefs || []).map((m) => m.href)))].filter(Boolean);
+  const { total, bad } = verifyLatex(body);
+  const svgs = body.filter((b) => b._type === "htmlBlock").length;
+
+  console.log(`Mode: ${commit ? "COMMIT" : "DRY RUN"}`);
+  console.log(`  /blog/${slug}`);
+  console.log(`  words     : ${words}  (was ${was})`);
+  console.log(`  equations : ${total} (${bad} invalid) | diagrams: ${svgs}`);
+  console.log(`  links     : ${links.join(", ") || "none"}`);
+
+  if (bad) { console.error("  ✗ refusing — invalid LaTeX."); process.exit(1); }
+  if (links.some((l) => l === "#")) { console.error("  ✗ placeholder link."); process.exit(1); }
+  const dead = await deadLinks(links);
+  if (dead.length) { console.error(`  ✗ dead link(s): ${dead.join(", ")}`); process.exit(1); }
+  if (links.length) console.log(`  links ok  : all ${links.length} resolve ✓`);
+
+  if (siblingSlugs.length) {
+    const sib = await client.fetch(`*[_type=="post" && slug.current in $s].body[].children[].text`, { s: siblingSlugs });
+    const a = shingles7(text), b = shingles7((sib || []).join(" "));
+    const shared = [...a].filter((x) => b.has(x)).length;
+    const overlap = shared / Math.min(a.size, b.size || 1);
+    console.log(`  siblings  : ${(overlap * 100).toFixed(2)}% 7-word overlap`);
+    if (overlap > maxOverlap) { console.error(`  ✗ too similar to siblings (>${maxOverlap * 100}%).`); process.exit(1); }
+  }
+
+  if (words < 1500) { console.error(`  ✗ under the 1,500-word floor by ${1500 - words} — refusing.`); process.exit(1); }
+
+  const doc = await client.fetch(`*[_type=="post" && slug.current==$s && !(_id in path("drafts.**"))][0]{_id}`, { s: slug });
+  if (!doc) { console.error("  ✗ published post not found"); process.exit(1); }
+
+  if (!commit) { console.log("\n  Re-run with --commit to apply."); return; }
+  await client.patch(doc._id).set({ body }).commit();
+
+  // Verify the LIVE state, not the in-memory body.
+  const live = await client.fetch(`*[_id==$id][0].body[].children[].text`, { id: doc._id });
+  const liveWords = (live || []).join(" ").trim().split(/\s+/).filter(Boolean).length;
+  if (liveWords < 1500) { console.error(`  ✗ POST-WRITE CHECK FAILED: live is ${liveWords} words`); process.exit(1); }
+  console.log(`  ✓ upgraded (live) — verified ${liveWords} words in Sanity`);
+}
+
 /** Create one article as a draft, after verifying its maths. */
 export async function createArticle({ slug, title, excerpt, metaTitle, metaDescription, body }) {
   const { total, bad } = verifyLatex(body);
