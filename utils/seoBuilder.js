@@ -137,9 +137,14 @@ export const getMetaDataBySlug = async (type, slug) => {
  */
 function normalizeCanonical(url) {
   if (typeof url !== "string" || !url.trim()) return url;
-  return url
+  const onWww = url
     .trim()
     .replace(/^https?:\/\/(www\.)?drshreyankeducare\.com/i, "https://www.drshreyankeducare.com");
+  // Drop a trailing slash from any deeper path. The site serves slash-less
+  // canonicals (trailingSlash:false), so "/blog/x/" only redirects — a canonical
+  // or hreflang pointing there is a redirect loop / self-alternate mismatch.
+  // The bare origin keeps its slash.
+  return onWww.replace(/^(https:\/\/www\.drshreyankeducare\.com)\/(.+?)\/$/i, "$1/$2");
 }
 
 export function getMetadata(data, currentUrl = "", fallback = {}) {
@@ -205,6 +210,10 @@ export function getMetadata(data, currentUrl = "", fallback = {}) {
     // Normalised: a canonical saved as non-www would otherwise override the
     // correct www URL and point at a redirect.
     metadata.alternates.canonical = normalizeCanonical(seo.canonical);
+    // Keep the self-referential hreflang in step with the canonical. Otherwise a
+    // Studio-set canonical leaves the en-CA alternate pointing at the passed-in
+    // URL, so the page has "no alternate link pointing to itself" (Seobility).
+    metadata.alternates.languages["en-CA"] = metadata.alternates.canonical;
   }
 
   metadata.openGraph.title = metadata.title;

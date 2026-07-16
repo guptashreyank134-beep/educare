@@ -75,9 +75,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allRoutes = [...staticRoutes, ...dynamicRoutes];
 
   return allRoutes.map((route) => {
-    const suffix = route.endsWith("/") ? "" : "/";
+    // The site serves canonical URLs WITHOUT a trailing slash (Next default
+    // trailingSlash:false). Emitting "/about/" here made every sitemap entry a
+    // 301 to its slash-less form, which Seobility flagged as 266 internal
+    // redirects. Match the canonical form: root keeps its slash, nothing else.
+    const normalized = route.replace(/\/+$/, "");
     return {
-      url: `${baseUrl}${route}${suffix}`,
+      url: normalized === "" ? `${baseUrl}/` : `${baseUrl}${normalized}`,
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: route === "" ? 1 : 0.8,

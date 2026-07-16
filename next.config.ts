@@ -203,6 +203,10 @@ const redirectPairs: [string, string][] = [
   ["/demo-videos", "/resources"],
   ["/practice-materials", "/resources"],
 
+  // Blog pagination: the bare /blog/page (no number) has no route and 404s when
+  // a crawler truncates /blog/page/N. Send it to the listing.
+  ["/blog/page", "/blog"],
+
   // Category pages
   ["/category/biology", "/programs/biology"],
   ["/category/blog", "/blog"],

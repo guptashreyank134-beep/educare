@@ -19,7 +19,7 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const data = await getMetaDataBySlug("post", slug);
-  return getMetadata(data, `https://www.drshreyankeducare.com/blog/${slug}/`);
+  return getMetadata(data, `https://www.drshreyankeducare.com/blog/${slug}`);
 }
 
 // Helper to extract plain text from Portable Text blocks
@@ -234,7 +234,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <>
-      <JsonLd schema={getBlogPostSchema(post, `https://www.drshreyankeducare.com/blog/${slug}/`)} />
+      <JsonLd schema={getBlogPostSchema(post, `https://www.drshreyankeducare.com/blog/${slug}`)} />
       {/* Blog Detail Main Wrapper */}
       <main className="min-h-screen bg-slate-50 relative pb-24 font-sans">
         {/* Background Decorative Accents */}

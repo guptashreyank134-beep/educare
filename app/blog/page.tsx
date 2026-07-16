@@ -8,10 +8,10 @@ interface PageProps {
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("page", "blog");
-  const baseMeta = getMetadata(data, "https://www.drshreyankeducare.com/blog/");
+  const baseMeta = getMetadata(data, "https://www.drshreyankeducare.com/blog");
   return {
     ...baseMeta,
-    alternates: { canonical: "https://www.drshreyankeducare.com/blog/" },
+    alternates: { canonical: "https://www.drshreyankeducare.com/blog" },
   };
 }
 

@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: PageProps) {
   const pageNum = parseInt(page, 10);
 
   const data = await getMetaDataBySlug("page", "blog");
-  const baseMeta = getMetadata(data, "https://www.drshreyankeducare.com/blog/");
-  const canonical = `https://www.drshreyankeducare.com/blog/page/${pageNum}/`;
+  const baseMeta = getMetadata(data, "https://www.drshreyankeducare.com/blog");
+  const canonical = `https://www.drshreyankeducare.com/blog/page/${pageNum}`;
 
   if (baseMeta && baseMeta.title) {
     return {
