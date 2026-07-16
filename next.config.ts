@@ -203,6 +203,115 @@ const redirectPairs: [string, string][] = [
   ["/demo-videos", "/resources"],
   ["/practice-materials", "/resources"],
 
+  // ------------------------------------------------------------------
+  // Consolidated stub blog posts (2026-07-15).
+  //
+  // Each was a ~400-word auto-generated overview of a topic that a dedicated
+  // programme page already covers properly, so it split ranking signals with
+  // the page that should win. Several were on subjects outside the practice's
+  // expertise. Consolidated rather than expanded on purpose: 65 more long
+  // articles on Mandarin and React under a physics PhD's byline is precisely
+  // what Google's helpful-content system demotes.
+  //
+  // Every post is backed up in
+  // scripts/backups/all-posts-before-consolidation.json and can be restored.
+  // Redirects were added BEFORE the posts were deleted, so no URL ever 404s.
+  // ------------------------------------------------------------------
+  // biology
+  ["/blog/biology-cell-biology", "/programs/biology"],
+  ["/blog/biology-ecology-biotechnology", "/programs/biology"],
+  ["/blog/biology-genetics-evolution", "/programs/biology"],
+  ["/blog/biology-human-physiology", "/programs/biology"],
+  ["/blog/biology-molecular-biology", "/programs/biology"],
+  // burnaby-stem-tutoring
+  ["/blog/burnaby-stem-tutoring-computer-science-programming", "/programs/burnaby-stem-tutoring"],
+  ["/blog/burnaby-stem-tutoring-statistics-data-analysis", "/programs/burnaby-stem-tutoring"],
+  // chemistry
+  ["/blog/chemistry-chemical-reactions-bonding", "/programs/chemistry"],
+  ["/blog/chemistry-organic-chemistry", "/programs/chemistry"],
+  ["/blog/chemistry-physical-chemistry", "/programs/chemistry"],
+  // computer-science
+  ["/blog/computer-science-computational-thinking", "/programs/computer-science"],
+  ["/blog/computer-science-data-structures-algorithms", "/programs/computer-science"],
+  ["/blog/computer-science-logic-building", "/programs/computer-science"],
+  ["/blog/computer-science-programming-basics", "/programs/computer-science"],
+  // finance
+  ["/blog/finance-business-concepts", "/programs/finance"],
+  ["/blog/finance-financial-basics", "/programs/finance"],
+  ["/blog/finance-practical-application-of-finance", "/programs/finance"],
+  // french
+  ["/blog/french-conversational-french-pronunciation", "/programs/french"],
+  ["/blog/french-grammar-vocabulary-sentence-formation", "/programs/french"],
+  ["/blog/french-reading-writing-listening-practice", "/programs/french"],
+  // gmat-prep
+  ["/blog/gmat-prep-data-insights", "/programs/gmat-prep"],
+  ["/blog/gmat-prep-ir-mini-mocks-strategies", "/programs/gmat-prep"],
+  ["/blog/gmat-prep-verbal-quantitative-focus", "/programs/gmat-prep"],
+  // gre-prep
+  ["/blog/gre-prep-analytical-writing-assessment-awa-essays", "/programs/gre-prep"],
+  ["/blog/gre-prep-quantitative-reasoning-shortcuts", "/programs/gre-prep"],
+  ["/blog/gre-prep-verbal-vocabulary-systems", "/programs/gre-prep"],
+  // ib-ap-tutoring
+  ["/blog/ib-ap-tutoring-ap-calculus-ab-bc", "/programs/ib-ap-tutoring"],
+  ["/blog/ib-ap-tutoring-ap-chemistry-biology", "/programs/ib-ap-tutoring"],
+  ["/blog/ib-ap-tutoring-ap-physics-1-2-c", "/programs/ib-ap-tutoring"],
+  ["/blog/ib-ap-tutoring-ap-statistics", "/programs/ib-ap-tutoring"],
+  ["/blog/ib-ap-tutoring-ib-mathematics-analysis-approaches-sl-hl", "/programs/ib-ap-tutoring"],
+  ["/blog/ib-ap-tutoring-ib-mathematics-applications-interpretation", "/programs/ib-ap-tutoring"],
+  ["/blog/ib-ap-tutoring-ib-physics-chemistry-biology-sl-hl", "/programs/ib-ap-tutoring"],
+  // javascript
+  ["/blog/javascript-dom-manipulation", "/programs/javascript"],
+  ["/blog/javascript-functions-and-events", "/programs/javascript"],
+  ["/blog/javascript-loops-and-conditionals", "/programs/javascript"],
+  ["/blog/javascript-variables-and-data-types", "/programs/javascript"],
+  // mandarin
+  ["/blog/mandarin-conversational-mandarin-pronunciation", "/programs/mandarin"],
+  ["/blog/mandarin-grammar-listening-cultural-understanding", "/programs/mandarin"],
+  ["/blog/mandarin-reading-writing-vocabulary-building", "/programs/mandarin"],
+  // mathematics
+  ["/blog/mathematics-algebra-functions", "/programs/mathematics"],
+  ["/blog/mathematics-trigonometry-coordinate-geometry", "/programs/mathematics"],
+  // mcat-prep
+  ["/blog/mcat-prep-biology-biochemistry", "/programs/mcat-prep"],
+  ["/blog/mcat-prep-cars-drills", "/programs/mcat-prep"],
+  ["/blog/mcat-prep-chemistry-physics", "/programs/mcat-prep"],
+  ["/blog/mcat-prep-psychology-sociology", "/programs/mcat-prep"],
+  // physics
+  ["/blog/physics-physics-the-underlying-math", "/programs/physics"],
+  // pre-calculus
+  ["/blog/pre-calculus-polynomial-rational-functions", "/pre-calculus-12-tutor-burnaby"],
+  // python
+  ["/blog/python-basic-syntax-and-structure", "/programs/python"],
+  ["/blog/python-functions-logic-building", "/programs/python"],
+  ["/blog/python-loops-and-conditionals", "/programs/python"],
+  ["/blog/python-variables-and-data-types", "/programs/python"],
+  // sat-prep
+  ["/blog/sat-prep-evidence-based-reading-writing", "/programs/sat-prep"],
+  ["/blog/sat-prep-sat-mathematics", "/programs/sat-prep"],
+  ["/blog/sat-prep-test-taking-hacks-strategies", "/programs/sat-prep"],
+  // university-biology
+  ["/blog/university-biology-anatomy-and-physiology", "/programs/university-biology"],
+  ["/blog/university-biology-general-biology", "/programs/university-biology"],
+  ["/blog/university-biology-molecular-biology", "/programs/university-biology"],
+  // university-chemistry
+  ["/blog/university-chemistry-chemical-kinetics-equilibrium", "/programs/university-chemistry"],
+  // university-finance
+  ["/blog/university-finance-bcom-mba-finance", "/programs/university-finance"],
+  ["/blog/university-finance-cfa-csc-ifc-certifications", "/programs/university-finance"],
+  ["/blog/university-finance-msc-phd-finance-studies", "/programs/university-finance"],
+  // university-mathematics
+  // university-physics
+  ["/blog/university-physics-electromagnetism-thermodynamics", "/programs/university-physics"],
+  // vancouver-math-tutoring
+  ["/blog/vancouver-math-tutoring-calculus-linear-algebra", "/programs/mathematics"],
+  ["/blog/vancouver-math-tutoring-elementary-middle-school-math", "/programs/mathematics"],
+  ["/blog/vancouver-math-tutoring-high-school-math-grades-8-12", "/programs/mathematics"],
+  // web-development
+  ["/blog/web-development-api-development-integration", "/programs/web-development"],
+  ["/blog/web-development-backend-development-node-js-express", "/programs/web-development"],
+  ["/blog/web-development-database-management-mongodb-firebase", "/programs/web-development"],
+  ["/blog/web-development-frontend-development-html-css-react", "/programs/web-development"],
+
   // Category pages
   ["/category/biology", "/programs/biology"],
   ["/category/blog", "/blog"],
