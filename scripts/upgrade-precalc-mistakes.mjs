@@ -139,7 +139,7 @@ async function run() {
 
   if (bad) { console.error("  ✗ refusing to write — fix the LaTeX."); process.exit(1); }
   if (links.some((l) => !l || l === "#")) { console.error("  ✗ placeholder link found."); process.exit(1); }
-  if (words < 1500) { console.log(`  ! under the 1,500-word floor by ${1500 - words}`); }
+  if (words < 1500) { console.error(`  ✗ under the 1,500-word floor by ${1500 - words} — refusing to write.`); process.exit(1); }
 
   const doc = await client.fetch(`*[_type == "post" && slug.current == $s && !(_id in path("drafts.**"))][0]{_id}`, { s: SLUG });
   if (!doc) { console.error("  ✗ published post not found"); process.exit(1); }

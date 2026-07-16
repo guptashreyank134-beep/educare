@@ -59,6 +59,50 @@ export const linked = (parts) => {
   return blk("normal", children, markDefs);
 };
 
+/**
+ * Every internal link must resolve to a route that exists.
+ *
+ * The old check only rejected "" and "#", which let a link to a page that was
+ * never built pass straight through to a live article. Routes come from three
+ * places: static folders under app/, data-driven slugs in data/, and blog posts
+ * in Sanity.
+ *
+ * Returns the list of dead links (empty when all resolve).
+ */
+export async function deadLinks(hrefs) {
+  const { readdirSync, statSync, readFileSync, existsSync } = await import("node:fs");
+  const { join } = await import("node:path");
+  const routes = new Set(["/"]);
+
+  // 1. static routes: any app/**/page.tsx
+  const walk = (dir, base = "") => {
+    for (const entry of readdirSync(dir)) {
+      const full = join(dir, entry);
+      if (!statSync(full).isDirectory()) continue;
+      if (entry.startsWith("_") || entry.startsWith("(") || entry.startsWith("[")) continue;
+      const route = `${base}/${entry}`;
+      if (existsSync(join(full, "page.tsx"))) routes.add(route);
+      walk(full, route);
+    }
+  };
+  if (existsSync("app")) walk("app");
+
+  // 2. data-driven slugs
+  if (existsSync("data")) {
+    for (const f of readdirSync("data")) {
+      if (!f.endsWith(".ts")) continue;
+      const src = readFileSync(join("data", f), "utf8");
+      for (const m of src.matchAll(/slug:\s*"([a-z0-9-]+)"/g)) routes.add(`/${m[1]}`);
+    }
+  }
+
+  // 3. blog posts
+  const slugs = await client.fetch(`*[_type == "post" && defined(slug.current)].slug.current`);
+  for (const s of slugs) routes.add(`/blog/${s}`);
+
+  return hrefs.filter((h) => h && h.startsWith("/") && !routes.has(h.split(/[?#]/)[0].replace(/\/$/, "") || "/"));
+}
+
 /** Every equation must compile, or it shows as red error text on the page. */
 export function verifyLatex(blocks) {
   const found = [];

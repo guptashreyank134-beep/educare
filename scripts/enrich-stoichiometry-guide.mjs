@@ -134,7 +134,7 @@ async function run() {
   console.log(`  blocks    : ${doc.body.length} -> ${body.length}`);
 
   if (bad) { console.error("  ✗ refusing to write — fix the LaTeX."); process.exit(1); }
-  if (words < 1500) console.log(`  ! under the 1,500-word floor by ${1500 - words}`);
+  if (words < 1500) { console.error(`  ✗ under the 1,500-word floor by ${1500 - words} — refusing to write.`); process.exit(1); }
 
   if (commit) {
     await client.patch(doc._id).set({ body }).commit();

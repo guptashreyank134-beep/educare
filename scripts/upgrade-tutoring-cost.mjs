@@ -149,7 +149,7 @@ async function run() {
   const hit = BANNED.filter((re) => re.test(text));
   if (hit.length) { console.error(`  ✗ unsourced market claim reintroduced: ${hit}`); process.exit(1); }
   console.log(`  sourcing  : no market/competitor figures (all prices trace to app/pricing/content.ts)`);
-  if (words < 1500) console.log(`  ! under the 1,500-word floor by ${1500 - words}`);
+  if (words < 1500) { console.error(`  ✗ under the 1,500-word floor by ${1500 - words} — refusing to write.`); process.exit(1); }
 
   const doc = await client.fetch(`*[_type == "post" && slug.current == $s && !(_id in path("drafts.**"))][0]{_id}`, { s: SLUG });
   if (!doc) { console.error("  ✗ published post not found"); process.exit(1); }
