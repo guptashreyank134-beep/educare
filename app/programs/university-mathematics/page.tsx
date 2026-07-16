@@ -302,7 +302,12 @@ export default async function UniversityMathematicsPage() {
       
         <ProgramNextSteps
           subject="University Math"
-          relatedLinks={[{ label: "University math tutoring", href: "/university-math-tutor-vancouver" }]}
+          relatedLinks={[
+            { label: "University math tutoring", href: "/university-math-tutor-vancouver" },
+            { label: "Calculus 1 tutor online", href: "/calculus-1-tutor-online" },
+            { label: "Calculus 2 tutor online", href: "/calculus-2-tutor-online" },
+            { label: "Differential equations tutor", href: "/differential-equations-tutor-online-canada" },
+          ]}
         />
       </main>
     </>

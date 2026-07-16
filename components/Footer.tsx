@@ -187,22 +187,73 @@ function ContactForm() {
 
 // ─── Footer Bar ───────────────────────────────────────────────────────────────
 
-const navLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Programs", href: "/programs" },
-  { label: "Services", href: "/services" },
-  { label: "Locations", href: "/locations" },
-  { label: "Best Math Tutor Burnaby", href: "/best-math-tutor-burnaby" },
-  { label: "Pre-Calculus 12 Tutor", href: "/pre-calculus-12-tutor-burnaby" },
-  { label: "IB Math Tutor", href: "/ib-math-tutor-vancouver" },
-  { label: "Medical Tutoring", href: "/online-medical-tutoring" },
-  { label: "University & Professional", href: "/university-professional" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Blog", href: "/blog" },
-  { label: "Resources", href: "/resources" },
-  { label: "FAQ", href: "/resources#faq" },
-  { label: "Terms & Conditions", href: "/terms" },
-  { label: "Privacy Policy", href: "/privacy" },
+// Footer sitemap. Columns keep the deeper program/service/Vancouver pages one
+// click from every page (they were 5+ clicks from the homepage), and funnel
+// internal link equity to the Vancouver pages that rank on page 2–3.
+const footerColumns = [
+  {
+    title: "Programs",
+    links: [
+      { label: "Math Tutoring", href: "/programs/mathematics" },
+      { label: "Physics Tutoring", href: "/programs/physics" },
+      { label: "Chemistry Tutoring", href: "/programs/chemistry" },
+      { label: "Biology Tutoring", href: "/programs/biology" },
+      { label: "Computer Science", href: "/programs/computer-science" },
+      { label: "IB & AP Tutoring", href: "/programs/ib-ap-tutoring" },
+      { label: "Pre-Calculus", href: "/programs/pre-calculus" },
+    ],
+  },
+  {
+    title: "Coding & Test Prep",
+    links: [
+      { label: "Python", href: "/programs/python" },
+      { label: "JavaScript", href: "/programs/javascript" },
+      { label: "Web Development", href: "/programs/web-development" },
+      { label: "Coding Tutor Burnaby", href: "/coding-tutor-burnaby" },
+      { label: "SAT Prep", href: "/programs/sat-prep" },
+      { label: "GRE Prep", href: "/programs/gre-prep" },
+      { label: "GMAT Prep", href: "/programs/gmat-prep" },
+      { label: "MCAT Prep", href: "/programs/mcat-prep" },
+    ],
+  },
+  {
+    title: "Vancouver & University",
+    links: [
+      { label: "Math Tutoring in Vancouver", href: "/math-tutoring-vancouver" },
+      { label: "Computer Science Tutor", href: "/computer-science-tutor-vancouver" },
+      { label: "University Calculus Tutor", href: "/university-calculus-tutor-vancouver" },
+      { label: "University Physics Tutor", href: "/university-physics-tutor-vancouver" },
+      { label: "IB Math Tutor Vancouver", href: "/ib-math-tutor-vancouver" },
+      { label: "Engineering Statics Tutor", href: "/engineering-statics-tutor" },
+      { label: "University & Professional", href: "/university-professional" },
+      { label: "Online Medical Tutoring", href: "/online-medical-tutoring" },
+    ],
+  },
+  {
+    title: "Locations",
+    links: [
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+      { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
+      { label: "North Vancouver", href: "/math-tutor-north-vancouver" },
+      { label: "Coquitlam", href: "/math-tutor-coquitlam" },
+      { label: "Surrey", href: "/math-tutor-surrey" },
+      { label: "Richmond", href: "/math-tutor-richmond" },
+      { label: "All Locations", href: "/locations" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About Us", href: "/about" },
+      { label: "Services", href: "/services" },
+      { label: "All Programs", href: "/programs" },
+      { label: "Pricing", href: "/pricing" },
+      { label: "Blog", href: "/blog" },
+      { label: "Resources", href: "/resources" },
+      { label: "Terms & Conditions", href: "/terms" },
+      { label: "Privacy Policy", href: "/privacy" },
+    ],
+  },
 ];
 
 function FooterBar() {
@@ -271,15 +322,25 @@ function FooterBar() {
             </div>
           </div>
         </div>
-        <nav className="flex flex-wrap justify-between gap-x-5 gap-y-2 mt-14">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-[16px] font-semibold font-montserrat text-bg-white transition-colors"
-            >
-              {link.label}
-            </Link>
+        <nav className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8 mt-14">
+          {footerColumns.map((col) => (
+            <div key={col.title}>
+              <p className="text-[13px] font-montserrat font-semibold text-white/50 uppercase tracking-widest mb-3">
+                {col.title}
+              </p>
+              <ul className="space-y-2">
+                {col.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-[14px] font-montserrat text-bg-white/80 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </nav>
 
