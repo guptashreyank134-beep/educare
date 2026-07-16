@@ -80,9 +80,11 @@ const LeadForm: React.FC<LeadFormProps> = ({
   return (
     <div className="bg-white rounded-[24px] shadow-[0_20px_80px_rgba(0,0,0,0.08)] p-8 border border-[#F1F5F9]">
       {heading && (
-        <h3 className="text-[24px] font-bricolage font-medium text-slate text-center mb-6">
+        // Form-widget label, not a content heading — kept as <p> so it stays
+        // out of the heading outline (avoids duplicate-heading across pages).
+        <p className="text-[24px] font-bricolage font-medium text-slate text-center mb-6">
           {heading}
-        </h3>
+        </p>
       )}
       <form onSubmit={handleSubmit} className="space-y-6">
         <Input

@@ -92,10 +92,12 @@ export default async function Home() {
           {/* Right Column: Lead Form */}
           <div className="relative mt-12 lg:mt-0">
             {/* Decorative glow behind form */}
-            <h3 className="text-[32px] font-bricolage font-medium text-slate text-center mb-3">
+            {/* Form-widget label, not a content heading — kept as <p> so it
+                stays out of the heading outline (avoids duplicate-heading). */}
+            <p className="text-[32px] font-bricolage font-medium text-slate text-center mb-3">
               Book a Free <span className="text-primary">30-Minute</span>{" "}
               Consultation
-            </h3>
+            </p>
             <p className="text-[15px] font-montserrat text-slate/70 text-center mb-6 leading-relaxed">
               Meet with our team, discuss your child's current challenges and receive a recommended tutoring plan.
             </p>

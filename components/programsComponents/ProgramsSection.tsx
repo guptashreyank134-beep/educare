@@ -51,9 +51,11 @@ function ProgramCard({
           <div className="border-t border-[#F8F5F5] pt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Core Targets */}
             <div>
-              <h3 className="text-[15px] sm:text-[18px] font-montserrat font-medium text-primary mb-3 sm:mb-[18px] uppercase">
+              {/* Card field label, not a content heading — <p> keeps it out of
+                  the heading outline (same label repeats in every program card). */}
+              <p className="text-[15px] sm:text-[18px] font-montserrat font-medium text-primary mb-3 sm:mb-[18px] uppercase">
                 Core Targets
-              </h3>
+              </p>
               <ul className="space-y-1.5">
                 {program.coreTargets.map((item) => (
                   <li
@@ -69,9 +71,9 @@ function ProgramCard({
 
             {/* Ideal For */}
             <div>
-              <h3 className="text-[15px] sm:text-[18px] font-montserrat font-medium text-primary mb-3 sm:mb-[18px] uppercase">
+              <p className="text-[15px] sm:text-[18px] font-montserrat font-medium text-primary mb-3 sm:mb-[18px] uppercase">
                 Ideal For
-              </h3>
+              </p>
               <p className="text-[15px] sm:text-[16px] font-montserrat text-slate leading-relaxed">
                 {program.idealFor}
               </p>
@@ -79,9 +81,9 @@ function ProgramCard({
 
             {/* Expected Outcome */}
             <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-[15px] sm:text-[18px] font-montserrat font-medium text-primary mb-3 sm:mb-[18px] uppercase">
+              <p className="text-[15px] sm:text-[18px] font-montserrat font-medium text-primary mb-3 sm:mb-[18px] uppercase">
                 Expected Outcome
-              </h3>
+              </p>
               <p className="text-[15px] sm:text-[16px] font-montserrat text-slate leading-relaxed mb-[18px]">
                 {program.expectedOutcome}
               </p>

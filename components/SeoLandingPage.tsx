@@ -125,10 +125,12 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
 
           {/* Right: lead form */}
           <div className="relative mt-4 lg:mt-0">
-            <h2 className="text-[28px] font-bricolage font-medium text-slate text-center mb-3">
+            {/* Form-widget label, not a content heading — kept as <p> so it
+                stays out of the heading outline (avoids duplicate-heading). */}
+            <p className="text-[28px] font-bricolage font-medium text-slate text-center mb-3">
               Book a Free <span className="text-primary">30-Minute</span>{" "}
               Consultation
-            </h2>
+            </p>
             <p className="text-[15px] font-montserrat text-slate/70 text-center mb-6 leading-relaxed">
               Meet with our team, discuss your child's current challenges and receive a recommended tutoring plan.
             </p>

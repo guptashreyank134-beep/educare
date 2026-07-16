@@ -152,9 +152,11 @@ const ReadAboutTutors = () => {
                 </span>
 
                 <span className="min-w-0">
-                  <h3 className="text-xl font-medium underline decoration-yellow-light underline-offset-6">
+                  {/* Selector-button label (navigation), not a content heading —
+                      block <span> keeps the look but leaves the heading outline. */}
+                  <span className="block text-xl font-medium underline decoration-yellow-light underline-offset-6">
                     {tutor.name}
-                  </h3>
+                  </span>
 
                   <p
                     className={`mt-2 text-[16px] group-hover:text-white ${activeTutor.id === tutor.id
