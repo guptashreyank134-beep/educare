@@ -110,6 +110,7 @@ const langara = [
   mli(["Understand acid strength as degree of dissociation, and the equilibria of weak acids."]),
   mli(["Master oxidation and reduction, and the anode-cathode roles in a cell."]),
   mli(["Practise balancing redox reactions by conserving both mass and charge."]),
+  mli(["Remember spontaneity depends on both energy and entropy, not enthalpy alone."]),
 
   h2("Master the energy side of chemistry"),
   linked(["If thermochemistry, acids and bases, or electrochemistry are the topics standing between you and a strong chemistry grade, understanding their principles turns the calculations from daunting into routine. Our ", { text: "university chemistry tutoring in Burnaby and online", href: UC }, " builds that understanding from your own course and past exams, for science and engineering students."]),
