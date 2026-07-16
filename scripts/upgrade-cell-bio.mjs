@@ -73,6 +73,10 @@ const body = [
   p("The other high-frequency comparison. The headline is usually \"eukaryotes have a nucleus\", but the deeper idea is compartmentalisation. Eukaryotic cells wall off incompatible chemistry into separate membrane-bound rooms — the acidic digestion of the lysosome kept apart from the delicate synthesis elsewhere — which lets them run far more sophisticated processes at once."),
   p("Prokaryotes, without those internal walls, keep it simple and stay small and fast. Framing it as \"membranes create rooms, and rooms allow specialisation\" makes every organelle difference fall into place, rather than being a table of features to recite."),
 
+  h2("The nucleus runs the cell without leaving the room"),
+  p("One more structural idea that ties the others together. The nucleus holds the DNA, but DNA never leaves — it is too valuable to risk in the cell's traffic. Instead the cell copies the relevant instructions into messenger RNA, which passes out through the nuclear pores to the ribosomes, where proteins are built. The master copy stays protected; only working copies travel."),
+  p("This explains the nuclear envelope's double membrane and its pores in one stroke: a barrier strong enough to protect the genome, perforated enough to export instructions on demand. It also connects cell biology to genetics and to protein synthesis, which is why examiners like it — a single well-understood structure lets them ask questions that span three topics at once."),
+
   h2("Where biology marks are actually lost"),
   mli(["Memorising structures without their function. The exam asks \"why\", and a name with no reason attached earns nothing."]),
   mli(["Treating the membrane as a passive wall rather than a selective, energy-spending gatekeeper."]),
