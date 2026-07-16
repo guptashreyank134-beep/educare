@@ -70,12 +70,15 @@ const PricingCard = ({
                     <div className="h-0.5 w-full bg-yellow-light opacity-60" />
 
                     {/* Price Section */}
-                    <div className="flex flex-col">
+                    <div className="flex flex-col gap-1">
                         <div className="flex items-baseline gap-3">
                             {/* A range, not a discount: `priceMax` is the top of the
                                 price band (e.g. $75–$100 by subject and level), so it
                                 must never be rendered as a struck-through "was" price. */}
-                            <span className="text-[24px] leading-1 font-bricolage font-display font-semibold text-slate">
+                            {/* leading-none (line-height:1), NOT leading-1 — under
+                                Tailwind v4 leading-1 = 0.25rem (4px), which crushed the
+                                price's line box and made it overlap the caption below. */}
+                            <span className="text-[24px] leading-none font-bricolage font-display font-semibold text-slate">
                                 ${price}
                                 {priceMax ? (
                                     <span className="text-[24px] font-bricolage font-display font-semibold text-slate">
