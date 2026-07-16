@@ -7,9 +7,9 @@ import { cities, cityPath } from "@/data/cities";
 const PAGE_URL = "https://www.drshreyankeducare.com/locations";
 
 export function generateMetadata(): Metadata {
-  const title = "Tutoring Locations Across Metro Vancouver | Dr. Shreyank Educare";
+  const title = "Tutoring Locations Across Metro Vancouver";
   const description =
-    "Find expert math, physics, chemistry and coding tutoring near you across Metro Vancouver — Burnaby, Vancouver, the North Shore, Tri-Cities, Surrey, Richmond and more.";
+    "Expert math, physics, chemistry and coding tutoring across Metro Vancouver — Burnaby, Vancouver, the North Shore, Tri-Cities, Surrey and Richmond.";
   return {
     title,
     description,

@@ -1467,7 +1467,7 @@ export const seoPages: SeoPage[] = [
     location: "Vancouver",
     metaTitle: "IB Math Tutor in Vancouver | AA & AI, SL & HL",
     metaDescription:
-      "IB Math tutoring in Vancouver — Analysis & Approaches and Applications & Interpretation, SL & HL, plus IA support. Online or nearby in Burnaby. Free consultation.",
+      "IB Math tutoring in Vancouver — Analysis & Approaches and Applications & Interpretation (SL & HL), plus IA support. Free consultation.",
     h1: "IB Math Tutor in Vancouver",
     heroSubheading:
       "Specialist IB Math tutoring for Vancouver students across AA and AI, SL and HL — online or in person nearby in Burnaby.",

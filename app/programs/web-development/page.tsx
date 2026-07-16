@@ -307,7 +307,7 @@ export default async function WebDevelopmentProgramPage() {
       
         <ProgramNextSteps
           subject="Web Development"
-          relatedLinks={[{ label: "Computer science tutoring", href: "/computer-science-tutor-vancouver" }]}
+          relatedLinks={[{ label: "Computer Science Tutoring in Vancouver", href: "/computer-science-tutor-vancouver" }]}
         />
       </main>
     </>

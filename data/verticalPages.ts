@@ -353,7 +353,7 @@ export const verticalPages: VerticalPage[] = [
     metaTitle:
       "Online Pathology Tutor | USA & Caribbean | MD-Led",
     metaDescription:
-      "MD-led online pathology tutoring for USA and Caribbean medical students. One-on-one help with general and systemic pathology and board prep. Free consultation.",
+      "MD-led online pathology tutoring for USA & Caribbean students — general and systemic pathology and board prep. Free consultation.",
     heroHeading: "Online Pathology Tutor — USA & Caribbean",
     heroSubheading:
       "MD-led, one-on-one online pathology tutoring for USA and Caribbean medical students — connecting mechanisms of disease to diagnosis.",
@@ -419,7 +419,7 @@ export const verticalPages: VerticalPage[] = [
     metaTitle:
       "Online Pharmacology Tutor | USA & Caribbean | MD-Led",
     metaDescription:
-      "MD-led online pharmacology tutoring for USA and Caribbean medical students. One-on-one help with drug classes, mechanisms and board prep. Free consultation.",
+      "MD-led online pharmacology tutoring for USA & Caribbean students — drug classes, mechanisms and board prep. Free consultation.",
     heroHeading: "Online Pharmacology Tutor — USA & Caribbean",
     heroSubheading:
       "MD-led, one-on-one online pharmacology tutoring for USA and Caribbean medical students — drug mechanisms, classes and clinical use made memorable.",
