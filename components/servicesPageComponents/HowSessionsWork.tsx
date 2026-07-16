@@ -12,6 +12,12 @@ import { MapPin, Monitor, Phone } from "lucide-react";
  * free consultation, and if it suits them they come to the tutor's home in
  * Burnaby for sessions. Parking is free. Nothing is embellished — in
  * particular this does NOT imply a teaching facility, because there isn't one.
+ *
+ * Both formats are named here because both are real and sold: one-to-one, and
+ * the Monthly Program's small group of 6-8 (app/pricing/content.ts). An earlier
+ * version of this file called the service "one-to-one" full stop and described
+ * "one student" at the table, which contradicted the pricing page and a dozen
+ * programme pages. Keep the two in step.
  */
 export default function HowSessionsWork() {
   return (
@@ -21,9 +27,15 @@ export default function HowSessionsWork() {
           How sessions work
         </h2>
         <p className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed mb-4">
-          It is one service — one-to-one, PhD-led tutoring — and you choose how it
-          is delivered. The teaching, the tutor and the price are the same either
-          way; only the room changes.
+          It is one service — PhD-led tutoring — in two formats. One-to-one, when
+          something specific is broken and needs finding. Or the Monthly Program,
+          two sessions a week in a small group of six to eight, when the need is
+          steady practice across a term.
+        </p>
+        <p className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed mb-4">
+          Either way you choose how it is delivered — in person in Burnaby or
+          online. The teaching, the tutor and the price are the same whichever
+          room you pick; only the room changes.
         </p>
         <p className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed mb-10">
           Most families start by calling to ask about rates, then book a free
@@ -45,13 +57,14 @@ export default function HowSessionsWork() {
           </div>
           <p className="text-[16px] font-montserrat text-slate/80 leading-relaxed mb-4">
             Sessions take place at Dr. Shreyank&apos;s home study in Burnaby — a
-            quiet table, one student, no distractions. It is not a classroom or a
-            learning centre, and that is deliberate: the point is undivided
-            attention from the person who actually does the teaching.
+            quiet table, no distractions. It is a study rather than a storefront
+            learning centre, and that is deliberate: even in the small group, the
+            teaching is done by the person whose name is on the door.
           </p>
           <ul className="list-disc pl-5 marker:text-primary space-y-2">
             <li className="text-[16px] font-montserrat text-slate/80 pl-1">
-              One-to-one at our Burnaby location, 2088 Madison Avenue
+              One-to-one or small-group sessions at our Burnaby location, 2088
+              Madison Avenue
             </li>
             <li className="text-[16px] font-montserrat text-slate/80 pl-1">
               Free parking — no need to circle the block
