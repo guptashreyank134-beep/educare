@@ -52,10 +52,10 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="shrink-0 flex items-center">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center" aria-label="Dr. Shreyank Educare — Home">
               <Image
                 src="/assets/logo.png"
-                alt="DSE Logo"
+                alt="Dr. Shreyank Educare Logo"
                 width={150}
                 height={50}
                 className="h-12 w-auto"

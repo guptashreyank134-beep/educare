@@ -387,7 +387,7 @@ export const seoPages: SeoPage[] = [
     related: [
       { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
       { label: "Private Math Tutor in Burnaby", href: "/private-math-tutor-burnaby" },
-      { label: "Math Tutoring in Burnaby", href: "/math-tutoring-burnaby" },
+      { label: "Math Tutoring in Burnaby", href: "/math-tutor-burnaby" },
     ],
   },
   {
@@ -443,7 +443,7 @@ export const seoPages: SeoPage[] = [
     ],
     related: [
       { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
-      { label: "Math Tutoring in Vancouver", href: "/math-tutoring-vancouver" },
+      { label: "Vancouver Math Tutoring (All Levels)", href: "/math-tutoring-vancouver" },
       CONTACT,
     ],
   },
@@ -1850,7 +1850,7 @@ export const seoPages: SeoPage[] = [
     related: [
       { label: "Best Math Tutor in Burnaby", href: "/best-math-tutor-burnaby" },
       { label: "Science Tutor in Burnaby", href: "/science-tutor-burnaby" },
-      { label: "Tutoring in Vancouver", href: "/tutoring-vancouver" },
+      { label: "All-Subject Tutoring in Vancouver", href: "/tutoring-vancouver" },
     ],
   },
   {
@@ -1905,7 +1905,7 @@ export const seoPages: SeoPage[] = [
     related: [
       { label: "Best Math Tutor in Vancouver", href: "/best-math-tutor-vancouver" },
       { label: "STEM Tutor in Vancouver", href: "/stem-tutor-vancouver" },
-      { label: "Tutoring in Burnaby", href: "/tutoring-burnaby" },
+      { label: "All-Subject Tutoring in Burnaby", href: "/tutoring-burnaby" },
     ],
   },
   {
@@ -2452,7 +2452,7 @@ export const seoPages: SeoPage[] = [
     ],
     related: [
       { label: "Summer Math Tutoring in Burnaby", href: "/summer-math-tutoring-burnaby" },
-      { label: "Tutoring in Burnaby", href: "/tutoring-burnaby" },
+      { label: "All-Subject Tutoring in Burnaby", href: "/tutoring-burnaby" },
       CONTACT,
     ],
   },

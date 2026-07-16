@@ -212,7 +212,7 @@ function FooterBar() {
         <div className="flex flex-col md:flex-row items-start justify-center gap-10 md:gap-16 lg:gap-[104px]">
           {/* Logo */}
           <div className="shrink-0">
-            <Link href="/">
+            <Link href="/" aria-label="Dr. Shreyank Educare — Home">
               <Image
                 src="/assets/logo.png"
                 alt="Dr. Shreyank Educare Logo"
