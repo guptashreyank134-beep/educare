@@ -58,7 +58,7 @@ export const cities: City[] = [
     slug: "burnaby",
     name: "Burnaby",
     region: "BC",
-    metaTitle: "Math Tutor in Burnaby | Physics, Chemistry & Coding — Dr. Shreyank Educare",
+    metaTitle: "Math Tutor in Burnaby | Physics, Chemistry & Coding",
     metaDescription:
       "Top-rated Burnaby math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book a free consultation.",
     heroHeading: "Top-Rated Math Tutor in Burnaby",
@@ -109,7 +109,7 @@ export const cities: City[] = [
     slug: "vancouver",
     name: "Vancouver",
     region: "BC",
-    metaTitle: "Math Tutor in Vancouver | Physics, Chemistry & Coding — Dr. Shreyank Educare",
+    metaTitle: "Math Tutor in Vancouver | Physics, Chemistry & Coding",
     metaDescription:
       "Expert Vancouver math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Free 30-minute consultation.",
     heroHeading: "Trusted Math Tutor in Vancouver",
@@ -160,7 +160,7 @@ export const cities: City[] = [
     slug: "north-vancouver",
     name: "North Vancouver",
     region: "BC",
-    metaTitle: "Math Tutor in North Vancouver | Physics & Chemistry — Dr. Shreyank Educare",
+    metaTitle: "Math Tutor in North Vancouver | Physics & Chemistry",
     metaDescription:
       "North Vancouver math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book a free consultation today.",
     heroHeading: "Expert Math Tutor in North Vancouver",
@@ -210,7 +210,7 @@ export const cities: City[] = [
     slug: "west-vancouver",
     name: "West Vancouver",
     region: "BC",
-    metaTitle: "Math Tutor in West Vancouver | Physics & Chemistry — Dr. Shreyank Educare",
+    metaTitle: "Math Tutor in West Vancouver | Physics & Chemistry",
     metaDescription:
       "West Vancouver math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC & IB curriculum. Free 30-minute consultation.",
     heroHeading: "Trusted Math Tutor in West Vancouver",
@@ -260,7 +260,7 @@ export const cities: City[] = [
     slug: "coquitlam",
     name: "Coquitlam",
     region: "BC",
-    metaTitle: "Math Tutor in Coquitlam | Physics, Chemistry & Coding — Dr. Shreyank Educare",
+    metaTitle: "Math Tutor in Coquitlam | Physics, Chemistry & Coding",
     metaDescription:
       "Coquitlam math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book your free consultation today.",
     heroHeading: "Expert Math Tutor in Coquitlam",
@@ -309,7 +309,7 @@ export const cities: City[] = [
     slug: "port-moody",
     name: "Port Moody",
     region: "BC",
-    metaTitle: "Math Tutor in Port Moody | Physics & Chemistry — Dr. Shreyank Educare",
+    metaTitle: "Math Tutor in Port Moody | Physics & Chemistry",
     metaDescription:
       "Port Moody math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Free 30-minute consultation.",
     heroHeading: "Trusted Math Tutor in Port Moody",
@@ -356,7 +356,7 @@ export const cities: City[] = [
     slug: "port-coquitlam",
     name: "Port Coquitlam",
     region: "BC",
-    metaTitle: "Math Tutor in Port Coquitlam | Physics & Chemistry — Dr. Shreyank Educare",
+    metaTitle: "Math Tutor in Port Coquitlam | Physics & Chemistry",
     metaDescription:
       "Port Coquitlam math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book a free consultation.",
     heroHeading: "Expert Math Tutor in Port Coquitlam",
@@ -403,7 +403,7 @@ export const cities: City[] = [
     slug: "surrey",
     name: "Surrey",
     region: "BC",
-    metaTitle: "Math Tutor in Surrey | Physics, Chemistry & Coding — Dr. Shreyank Educare",
+    metaTitle: "Math Tutor in Surrey | Physics, Chemistry & Coding",
     metaDescription:
       "Surrey math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book your free consultation today.",
     heroHeading: "Expert Math Tutor in Surrey",
@@ -454,7 +454,7 @@ export const cities: City[] = [
     slug: "richmond",
     name: "Richmond",
     region: "BC",
-    metaTitle: "Math Tutor in Richmond | Physics, Chemistry & Coding — Dr. Shreyank Educare",
+    metaTitle: "Math Tutor in Richmond | Physics, Chemistry & Coding",
     metaDescription:
       "Richmond math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Free 30-minute consultation.",
     heroHeading: "Trusted Math Tutor in Richmond",
@@ -504,7 +504,7 @@ export const cities: City[] = [
     slug: "new-westminster",
     name: "New Westminster",
     region: "BC",
-    metaTitle: "Math Tutor in New Westminster | Physics & Chemistry — Dr. Shreyank Educare",
+    metaTitle: "Math Tutor in New Westminster | Physics & Chemistry",
     metaDescription:
       "New Westminster math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book a free consultation.",
     heroHeading: "Expert Math Tutor in New Westminster",
@@ -552,7 +552,7 @@ export const cities: City[] = [
     slug: "delta",
     name: "Delta",
     region: "BC",
-    metaTitle: "Math Tutor in Delta | Physics, Chemistry & Coding — Dr. Shreyank Educare",
+    metaTitle: "Math Tutor in Delta | Physics, Chemistry & Coding",
     metaDescription:
       "Delta math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Free 30-minute consultation.",
     heroHeading: "Trusted Math Tutor in Delta",

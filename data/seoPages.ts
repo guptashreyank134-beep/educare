@@ -53,9 +53,9 @@ export const seoPages: SeoPage[] = [
   {
     slug: "dr-shreyank-educare",
     cluster: "Brand",
-    metaTitle: "Dr. Shreyank Educare | PhD-Led Tutoring in Burnaby & Vancouver",
+    metaTitle: "Dr. Shreyank Educare | PhD Tutoring, Burnaby & Vancouver",
     metaDescription:
-      "Dr. Shreyank Educare offers PhD-led Math, Physics, Chemistry & Coding tutoring in Burnaby & Vancouver for Grades 6–12 and university. 5★ rated. Free consultation.",
+      "PhD-led Math, Physics, Chemistry & Coding tutoring in Burnaby & Vancouver for Grades 6–12 and university. 5★ rated. Free consultation.",
     h1: "Dr. Shreyank Educare — PhD-Led Tutoring in Burnaby & Vancouver",
     heroSubheading:
       "Personalized, results-driven tutoring in Math, Physics, Chemistry and Coding, led by Dr. Shreyank Gupta and trusted by families across Burnaby and Vancouver.",
@@ -111,7 +111,7 @@ export const seoPages: SeoPage[] = [
     cluster: "Brand",
     metaTitle: "Dr. Shreyank Educare Reviews | 5★ Rated Tutoring in BC",
     metaDescription:
-      "See why parents rate Dr. Shreyank Educare 5★ for Math, Physics & Chemistry tutoring in Burnaby & Vancouver. Read what families say and book a free consultation.",
+      "See why parents rate Dr. Shreyank Educare 5★ for Math, Physics & Chemistry tutoring in Burnaby & Vancouver. Book a free consultation.",
     h1: "Dr. Shreyank Educare Reviews",
     heroSubheading:
       "Parents and students across Burnaby and Vancouver consistently rate Dr. Shreyank Educare 5 stars. Here's what stands behind that reputation.",
@@ -168,7 +168,7 @@ export const seoPages: SeoPage[] = [
     location: "Burnaby",
     metaTitle: "Dr. Shreyank Educare Burnaby | In-Person & Online Tutoring",
     metaDescription:
-      "Dr. Shreyank Educare in Burnaby: PhD-led Math, Physics & Chemistry tutoring for Grades 6–12 and university, in person at our Burnaby location or online. Free consultation.",
+      "Dr. Shreyank Educare in Burnaby: PhD-led Math, Physics & Chemistry tutoring for Grades 6–12 and university, in person or online. Free consultation.",
     h1: "Dr. Shreyank Educare in Burnaby",
     heroSubheading:
       "Our home base. In-person, one-on-one tutoring in person in Burnaby in Math, Physics, Chemistry and Coding, plus flexible online sessions.",
@@ -224,7 +224,7 @@ export const seoPages: SeoPage[] = [
     cluster: "Brand",
     metaTitle: "Dr. Shreyank Gupta | PhD Math & Science Tutor in BC",
     metaDescription:
-      "Meet Dr. Shreyank Gupta — PhD-qualified Math, Physics & Chemistry tutor with 10+ years' experience, serving Burnaby & Vancouver students. Book a free consultation.",
+      "Meet Dr. Shreyank Gupta — PhD-qualified Math, Physics & Chemistry tutor with 10+ years' experience in Burnaby & Vancouver. Free consultation.",
     h1: "Dr. Shreyank Gupta — PhD Math & Science Tutor",
     heroSubheading:
       "Ten-plus years of teaching experience and a PhD behind every lesson. Learn directly from an expert who makes hard concepts genuinely click.",
@@ -278,7 +278,7 @@ export const seoPages: SeoPage[] = [
   {
     slug: "dr-shreyank-math-tutor",
     cluster: "Brand",
-    metaTitle: "Dr. Shreyank Math Tutor | Expert Math Help in Burnaby & Vancouver",
+    metaTitle: "Dr. Shreyank Math Tutor | Burnaby & Vancouver",
     metaDescription:
       "Expert math tutoring from Dr. Shreyank — Pre-Calculus, Calculus and Grades 6–12 math in Burnaby & Vancouver, in person or online. 5★ rated. Free consultation.",
     h1: "Dr. Shreyank — Expert Math Tutor",
@@ -2079,7 +2079,7 @@ export const seoPages: SeoPage[] = [
     location: "Vancouver",
     metaTitle: "Exam Prep Tutor in Vancouver | Math & Science",
     metaDescription:
-      "Exam prep tutoring in Vancouver for Math, Physics and Chemistry — targeted, high-yield review and timed practice. Online or nearby in Burnaby. Free consultation.",
+      "Exam prep tutoring in Vancouver for Math, Physics and Chemistry — high-yield review and timed practice. Online or in Burnaby. Free consultation.",
     h1: "Exam Prep Tutor in Vancouver",
     heroSubheading:
       "Make your study time count with focused, high-yield exam preparation for Vancouver students in Math and Science.",
@@ -2462,7 +2462,7 @@ export const seoPages: SeoPage[] = [
     location: "Burnaby",
     metaTitle: "Summer Pre-Calculus Course in Burnaby | Get Exam-Ready",
     metaDescription:
-      "Summer Pre-Calculus course in Burnaby — build a strong foundation for Pre-Calculus 11/12 before the school year. PhD-led. In person or online. Free consultation.",
+      "Summer Pre-Calculus course in Burnaby — build a strong foundation for Pre-Calculus 11/12 before the school year. PhD-led. Free consultation.",
     h1: "Summer Pre-Calculus Course in Burnaby",
     heroSubheading:
       "Get ahead in Pre-Calculus over the summer — a focused course that builds the foundations for a strong year.",
@@ -3288,7 +3288,7 @@ export const seoPages: SeoPage[] = [
     location: "Vancouver",
     metaTitle: "AP Tutor in Vancouver | Calculus, Physics, Chemistry & More",
     metaDescription:
-      "AP tutoring in Vancouver across Calculus, Physics, Chemistry, Biology and Statistics — expert exam prep for top scores. Online or nearby in Burnaby. Free consultation.",
+      "AP tutoring in Vancouver across Calculus, Physics, Chemistry, Biology & Statistics — exam prep for top scores. Online or in Burnaby. Free consultation.",
     h1: "AP Tutor in Vancouver",
     heroSubheading:
       "One expert team for your AP subjects — Calculus, Physics, Chemistry, Biology and Statistics — for Vancouver students.",
@@ -3668,7 +3668,7 @@ export const seoPages: SeoPage[] = [
     location: "Vancouver",
     metaTitle: "University Calculus Tutor in Vancouver | UBC, SFU & More",
     metaDescription:
-      "University calculus tutoring in Vancouver — limits, derivatives, integrals and series for UBC, SFU and Langara students. Online or nearby in Burnaby. Free consultation.",
+      "University calculus tutoring in Vancouver — limits, derivatives, integrals and series for UBC, SFU & Langara students. Free consultation.",
     h1: "University Calculus Tutor in Vancouver",
     heroSubheading:
       "Expert first- and second-year university calculus tutoring for Vancouver students at UBC, SFU, Langara and beyond.",
@@ -3722,7 +3722,7 @@ export const seoPages: SeoPage[] = [
     location: "Vancouver",
     metaTitle: "University Physics Tutor in Vancouver | UBC & Langara",
     metaDescription:
-      "University physics tutoring in Vancouver — mechanics, E&M and thermodynamics for UBC, SFU and Langara students. Online or nearby in Burnaby. Free consultation.",
+      "University physics tutoring in Vancouver — mechanics, E&M and thermodynamics for UBC, SFU & Langara students. Free consultation.",
     h1: "University Physics Tutor in Vancouver",
     heroSubheading:
       "Expert first-year university physics tutoring for Vancouver students at UBC, SFU, Langara and beyond.",
@@ -4739,7 +4739,7 @@ export const seoPages: SeoPage[] = [
     location: "Vancouver",
     metaTitle: "Computer Science Tutor in Vancouver | CS & Programming",
     metaDescription:
-      "Computer science tutoring in Vancouver — programming, data structures and algorithms for high school and university. Online or nearby in Burnaby. Free consultation.",
+      "Computer science tutoring in Vancouver — programming, data structures and algorithms for high school and university. Free consultation.",
     h1: "Computer Science Tutor in Vancouver",
     heroSubheading:
       "Expert computer science tutoring for Vancouver students — programming, data structures and algorithms, high school through university.",
@@ -4848,7 +4848,7 @@ export const seoPages: SeoPage[] = [
     cluster: "Problem Solving",
     metaTitle: "Math Word Problems Tutor | Turn Confusion into Method",
     metaDescription:
-      "Struggle with math word problems? Learn a reliable method to translate words into math and solve with confidence. PhD-led, online or in Burnaby. Free consultation.",
+      "Struggle with math word problems? Learn a reliable method to translate words into math and solve with confidence. PhD-led. Free consultation.",
     h1: "Math Word Problems Tutor",
     heroSubheading:
       "Word problems are where many students freeze. We teach a reliable method to turn any word problem into math you can solve.",
@@ -4903,7 +4903,7 @@ export const seoPages: SeoPage[] = [
     cluster: "Problem Solving",
     metaTitle: "Math Word Problem Help | Step-by-Step Strategies",
     metaDescription:
-      "Get help with math word problems — step-by-step strategies to translate, set up and solve any word problem. PhD-led tutoring, online or in Burnaby. Free consultation.",
+      "Get help with math word problems — step-by-step strategies to translate, set up and solve any word problem. PhD-led tutoring. Free consultation.",
     h1: "Math Word Problem Help",
     heroSubheading:
       "Practical, step-by-step help with the word problems students find hardest — from setup to solution.",
