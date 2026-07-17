@@ -76,7 +76,54 @@ export function getOrganizationSchema() {
     sameAs: [
       "https://www.facebook.com/DrShreyankEducare/",
       "https://www.instagram.com/drshreyankeducare/",
+      "https://www.tiktok.com/@drshreyankeducare",
     ],
+    // Machine-readable statement of the subjects this provider is authoritative
+    // on — helps AI answer engines match the entity to subject queries.
+    knowsAbout: [
+      "Mathematics tutoring",
+      "Pre-Calculus",
+      "Calculus",
+      "Physics tutoring",
+      "Chemistry tutoring",
+      "Biology tutoring",
+      "Computer Science",
+      "Python programming",
+      "IB and AP courses",
+      "SAT preparation",
+      "GRE preparation",
+      "GMAT preparation",
+      "MCAT preparation",
+      "University mathematics",
+      "Statistics",
+      "Finance",
+    ],
+    // Founder entity with real, on-site credentials (see About page / AuthorBox).
+    // Strengthens E-E-A-T and the knowledge-graph link between the person and
+    // the organization — a strong signal for AI answer engines.
+    founder: {
+      "@type": "Person",
+      "@id": "https://www.drshreyankeducare.com/#founder",
+      name: "Dr. Shreyank Gupta",
+      jobTitle: "Founder & Director",
+      description:
+        "Founder and director of Dr. Shreyank Educare, with a PhD in Ultrasound Signal & Image Processing and over 10 years of teaching experience.",
+      alumniOf: { "@type": "CollegeOrUniversity", name: "University of Quebec" },
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        educationalLevel: "PhD",
+        name: "PhD in Ultrasound Signal & Image Processing",
+      },
+      knowsAbout: [
+        "Mathematics",
+        "Physics",
+        "Chemistry",
+        "Biology",
+        "Computer Science",
+      ],
+      worksFor: { "@id": "https://www.drshreyankeducare.com/#organization" },
+    },
   };
 }
 
