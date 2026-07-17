@@ -1,12 +1,17 @@
 'use client'
 
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { ArrowRight, Loader2 } from 'lucide-react'
 import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 import { createLead } from '@/app/actions/lead'
 
-const TrialClassForm = () => {
+// On success we redirect here (a distinct URL + dataLayer event) so bookings can
+// be measured as a conversion in GTM/GA4/Google Ads. Pass redirectTo={null} to
+// keep the old inline-confirmation behaviour instead.
+const TrialClassForm = ({ redirectTo = '/thank-you' }: { redirectTo?: string | null }) => {
+  const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [feedback, setFeedback] = useState<{ success: boolean; message: string } | null>(null)
 
@@ -41,11 +46,23 @@ Preferred Mode Of Classes: ${rawData.get('mode')}
     const result = await createLead(formData)
 
     setIsSubmitting(false)
-    setFeedback(result)
 
     if (result.success) {
       formElement.reset()
+      // Fire a conversion signal for GTM (create a Custom Event trigger on
+      // "generate_lead" and attach your GA4 / Google Ads conversion tag).
+      if (typeof window !== 'undefined') {
+        const w = window as unknown as { dataLayer?: Record<string, unknown>[] }
+        w.dataLayer = w.dataLayer || []
+        w.dataLayer.push({ event: 'generate_lead', form: 'consultation' })
+      }
+      if (redirectTo) {
+        router.push(redirectTo)
+        return
+      }
     }
+
+    setFeedback(result)
   }
 
   return (
