@@ -66,7 +66,7 @@ export default function VancouverCTABanner() {
             </ul>
 
             <div className="flex flex-wrap gap-4">
-              <Link href="/contact">
+              <Link href="/book">
                 <Button className='border border-white' iconRight={ArrowRight}>Book Free Consultation</Button>
               </Link>
               <a

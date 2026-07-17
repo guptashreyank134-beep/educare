@@ -34,7 +34,7 @@ export default function ProgramNextSteps({
 
         <div className="flex flex-wrap gap-x-6 gap-y-3">
           <Link
-            href="/contact"
+            href="/book"
             className="text-[16px] font-montserrat font-medium text-primary underline hover:text-primary/80 transition-colors"
           >
             Book a free 30-minute {subject} consultation

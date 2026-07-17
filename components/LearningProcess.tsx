@@ -66,7 +66,7 @@ export default function LearningProcess() {
 
         {/* CTA */}
         <div className="flex justify-center">
-          <Link href="/contact">
+          <Link href="/book">
             <Button iconRight={ArrowRight}>Book Free Consultation</Button>
           </Link>
         </div>

@@ -73,7 +73,7 @@ export default function VancouverFlexibleProgramsSection() {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <Link href="/contact">
+          <Link href="/book">
             <Button iconRight={ArrowRight} className="px-8 py-4 text-[16px]">
               Book Free Consultation
             </Button>

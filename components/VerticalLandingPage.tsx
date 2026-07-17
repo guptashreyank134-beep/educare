@@ -107,7 +107,7 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Link href="/contact">
+              <Link href="/book">
                 <Button iconRight={ArrowRight}>Book Free Consultation</Button>
               </Link>
               <a

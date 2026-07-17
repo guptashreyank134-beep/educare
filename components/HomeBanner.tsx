@@ -39,7 +39,7 @@ export default function HomeBanner() {
               <Link href="/programs">
                 <Button iconRight={ArrowRight}>Explore Our Programs</Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/book">
                 <Button variant="ghost" iconRight={ArrowRight}>
                   Book Free Consultation
                 </Button>

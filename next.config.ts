@@ -207,6 +207,10 @@ const redirectPairs: [string, string][] = [
   // a crawler truncates /blog/page/N. Send it to the listing.
   ["/blog/page", "/blog"],
 
+  // Booking aliases -> the single-action /book page.
+  ["/free-assessment", "/book"],
+  ["/book-a-free-assessment", "/book"],
+
   // Category pages
   ["/category/biology", "/programs/biology"],
   ["/category/blog", "/blog"],
