@@ -124,6 +124,55 @@ export function getOrganizationSchema() {
       ],
       worksFor: { "@id": "https://www.drshreyankeducare.com/#organization" },
     },
+    // Genuine Google review rating shown on the site (Reviews.tsx pulls the live
+    // count from the Google Places API). Update reviewCount as it grows.
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: 41,
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+}
+
+/**
+ * Dedicated Person entity for the founder, rendered on the About page. It shares
+ * the same @id as the Organization's `founder`, so search engines and AI answer
+ * engines reconcile both references into a single well-described person — a
+ * strong knowledge-graph / E-E-A-T signal. Only facts the site publishes.
+ */
+export function getFounderSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.drshreyankeducare.com/#founder",
+    name: "Dr. Shreyank Gupta",
+    honorificPrefix: "Dr.",
+    jobTitle: "Founder & Director",
+    image: "https://www.drshreyankeducare.com/assets/drShreyank.webp",
+    url: "https://www.drshreyankeducare.com/about",
+    description:
+      "Founder and director of Dr. Shreyank Educare, with a PhD in Ultrasound Signal & Image Processing and over 10 years of teaching experience across Math, Physics, Chemistry, Biology and Computer Science. Has supported students from McGill, York, Carleton and the University of Ottawa.",
+    alumniOf: { "@type": "CollegeOrUniversity", name: "University of Quebec" },
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "degree",
+      educationalLevel: "PhD",
+      name: "PhD in Ultrasound Signal & Image Processing",
+    },
+    knowsAbout: [
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Computer Science",
+    ],
+    worksFor: {
+      "@type": "EducationalOrganization",
+      "@id": "https://www.drshreyankeducare.com/#organization",
+      name: "Dr. Shreyank Educare",
+    },
   };
 }
 

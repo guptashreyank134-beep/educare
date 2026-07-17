@@ -5,7 +5,7 @@ import { AboutHeroSectionContent } from "@/components/GeneralComponents/content"
 import ReadAboutTutors from "@/components/aboutUsComponents/ReadAboutTutors";
 import { tutors } from "@/components/aboutUsComponents/tutorsData";
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
-import { JsonLd, getPageSchema, getTutorsSchema } from "@/components/SchemaMarkup";
+import { JsonLd, getPageSchema, getTutorsSchema, getFounderSchema } from "@/components/SchemaMarkup";
 import KeySection from "@/components/aboutUsComponents/KeySection";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
@@ -23,6 +23,8 @@ const AboutUs = async () => {
       <JsonLd schema={getPageSchema(data, "https://www.drshreyankeducare.com/about")} />
       {/* Person markup for the tutors the page actually names. */}
       <JsonLd schema={getTutorsSchema(tutors)} />
+      {/* Dedicated founder entity (shares @id with Organization.founder). */}
+      <JsonLd schema={getFounderSchema()} />
       <GeneralHeroSection
         {...AboutHeroSectionContent}
         breadcrumb={<Breadcrumbs />}

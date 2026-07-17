@@ -20,7 +20,11 @@ export async function GET() {
   );
   lines.push("");
   lines.push(
-    "Dr. Shreyank Educare is a Burnaby-based tutoring service led by Dr. Shreyank Gupta (PhD, 10+ years' experience). We offer one-on-one, curriculum-aligned tutoring aligned to the BC curriculum, IB and AP, with a strong focus on genuine understanding and exam results."
+    "Dr. Shreyank Educare is a Burnaby-based tutoring service led by Dr. Shreyank Gupta (PhD, 10+ years' experience), rated 5.0 from 41 Google reviews. We offer one-on-one, curriculum-aligned tutoring aligned to the BC curriculum, IB and AP, with a strong focus on genuine understanding and exam results."
+  );
+  lines.push("");
+  lines.push(
+    `For the full inlined content — every program FAQ and complete blog article text — see ${BASE}/llms-full.txt.`
   );
   lines.push("");
 
