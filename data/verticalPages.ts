@@ -947,3 +947,13 @@ export const verticalPages: VerticalPage[] = [
 
 export const getVerticalPageBySlug = (slug: string): VerticalPage | undefined =>
   verticalPages.find((p) => p.slug === slug);
+
+/** Sibling links within the same vertical (medical / quant) for internal-link
+ *  coverage — every vertical page links to, and is linked by, its peers. */
+export function getVerticalSiblings(slug: string): { label: string; href: string }[] {
+  const page = verticalPages.find((p) => p.slug === slug);
+  if (!page) return [];
+  return verticalPages
+    .filter((p) => p.vertical === page.vertical && p.slug !== slug)
+    .map((p) => ({ label: p.heroHeading, href: verticalPath(p.slug) }));
+}

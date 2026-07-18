@@ -18,7 +18,7 @@ import {
   getFAQSchema,
 } from "@/components/SchemaMarkup";
 
-import { getSeoPageBySlug, seoPageUrl } from "@/data/seoPages";
+import { getSeoPageBySlug, seoPageUrl, getSeoSiblings } from "@/data/seoPages";
 
 const metrics = [
   { value: "PhD-Led", label: "by Dr. Shreyank Gupta" },
@@ -230,6 +230,31 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
           </div>
         </section>
       )}
+
+      {/* Auto-generated sibling links (same cluster / location). Ensures every
+          programmatic landing page is well cross-linked, not orphaned. */}
+      {(() => {
+        const siblings = getSeoSiblings(slug, 6, (page.related || []).map((r) => r.href));
+        if (!siblings.length) return null;
+        return (
+          <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pb-16">
+            <h2 className="text-[20px] font-bricolage font-medium text-slate mb-4">
+              Explore More Tutoring
+            </h2>
+            <div className="flex flex-wrap gap-2.5">
+              {siblings.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[#E2E8F0] bg-white px-4 py-2 text-[14px] font-montserrat text-slate/80 hover:border-primary hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       <TrustedBrands />
       <Reviews />

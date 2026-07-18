@@ -18,7 +18,7 @@ import {
   getFAQSchema,
 } from "@/components/SchemaMarkup";
 
-import { getVerticalPageBySlug, verticalUrl } from "@/data/verticalPages";
+import { getVerticalPageBySlug, verticalUrl, getVerticalSiblings } from "@/data/verticalPages";
 
 /** Build Next.js metadata for a vertical page. Used by each route's generateMetadata. */
 export async function verticalMetadata(slug: string): Promise<Metadata> {
@@ -217,6 +217,33 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
           </div>
         </section>
       )}
+
+      {/* Sibling pages in the same vertical (medical / quant) — keeps every
+          vertical page cross-linked rather than orphaned. */}
+      {(() => {
+        const siblings = getVerticalSiblings(slug).filter(
+          (s) => !(page.relatedLinks || []).some((r) => r.href === s.href)
+        );
+        if (!siblings.length) return null;
+        return (
+          <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pb-16">
+            <h2 className="text-[20px] font-bricolage font-medium text-slate mb-4">
+              Related Tutoring
+            </h2>
+            <div className="flex flex-wrap gap-2.5">
+              {siblings.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[#E2E8F0] bg-white px-4 py-2 text-[14px] font-montserrat text-slate/80 hover:border-primary hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       <TrustedBrands />
       <Reviews />

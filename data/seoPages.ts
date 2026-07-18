@@ -5832,3 +5832,42 @@ export const seoPages: SeoPage[] = [
 
 export const getSeoPageBySlug = (slug: string): SeoPage | undefined =>
   seoPages.find((p) => p.slug === slug);
+
+/**
+ * Sibling links for internal-linking coverage. Every landing page was a
+ * programmatic page with few (or no) inbound links; this makes each page link
+ * to — and therefore be linked BY — its cluster neighbours, using a rotating
+ * "ring" so coverage is even (page N links the next few pages, wrapping). Tiny
+ * clusters are topped up with same-location pages. Returns concise {label,href}.
+ */
+export function getSeoSiblings(
+  slug: string,
+  max = 5,
+  exclude: string[] = []
+): { label: string; href: string }[] {
+  const page = seoPages.find((p) => p.slug === slug);
+  if (!page) return [];
+  const skip = new Set([slug, ...exclude.map((h) => h.replace(/^\//, ""))]);
+
+  const cluster = seoPages.filter((p) => p.cluster === page.cluster);
+  const idx = cluster.findIndex((p) => p.slug === slug);
+  const picked: SeoPage[] = [];
+  // Ring within the cluster: take the pages that follow this one, wrapping.
+  for (let i = 1; i < cluster.length && picked.length < max; i++) {
+    const p = cluster[(idx + i) % cluster.length];
+    if (!skip.has(p.slug)) picked.push(p);
+  }
+  // Top up small clusters: first with same-location pages, then with the
+  // general "Core Local" cluster, so every page outputs at least a few links.
+  const topUp = (predicate: (p: SeoPage) => boolean) => {
+    for (const p of seoPages) {
+      if (picked.length >= 4) break;
+      if (!skip.has(p.slug) && !picked.includes(p) && predicate(p)) picked.push(p);
+    }
+  };
+  if (picked.length < 3 && (page as any).location) {
+    topUp((p) => (p as any).location === (page as any).location);
+  }
+  if (picked.length < 3) topUp((p) => p.cluster === "Core Local");
+  return picked.map((p) => ({ label: p.h1, href: seoPagePath(p.slug) }));
+}
