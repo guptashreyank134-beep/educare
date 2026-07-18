@@ -42,8 +42,10 @@ export default function LocationsPage() {
         </div>
 
         <div className="max-w-3xl mb-12">
+          {/* H1 kept distinct from the meta title (avoids the "duplicate h1 and
+              title" flag) and leans into local "tutor near you" intent. */}
           <h1 className="text-[32px] sm:text-[42px] font-bricolage font-medium text-slate leading-[1.2] mb-5">
-            Tutoring Locations Across Metro Vancouver
+            Find a Tutor Near You Across Metro Vancouver
           </h1>
           <p className="text-[#64748B] text-[16px] sm:text-[18px] leading-relaxed mb-4">
             Dr. Shreyank Educare provides expert, PhD-led tutoring in Math,

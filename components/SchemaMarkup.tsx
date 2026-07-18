@@ -195,15 +195,25 @@ export function getPageSchema(data: any, currentUrl: string) {
   };
 
   if (type === "Course") {
+    // Course requires name + description + provider (all set). We previously
+    // also emitted courseMode "Online, Offline" and a CourseInstance with
+    // courseMode "Mixed" — neither is a valid schema.org courseMode value, so
+    // validators flagged the markup as containing errors. A CourseInstance is
+    // given with a valid "blended" mode and no invented cohort dates (this is a
+    // rolling, one-to-one tutoring program, not a fixed-date cohort).
     schema.provider = {
       "@type": "EducationalOrganization",
       name: "Dr. Shreyank Educare",
+      url: "https://www.drshreyankeducare.com",
     };
-    // Example course specifics if available
-    schema.courseMode = "Online, Offline";
     schema.hasCourseInstance = {
       "@type": "CourseInstance",
-      courseMode: "Mixed",
+      courseMode: "blended",
+      courseWorkload: "PT1H",
+      location: {
+        "@type": "Place",
+        name: "Burnaby, BC (in person) & online",
+      },
     };
   }
 
