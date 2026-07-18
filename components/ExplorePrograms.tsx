@@ -16,26 +16,26 @@ const programs = [
     icon: GraduationCap,
     title: "Academic Subjects",
     description: "Grades 8-12 subjects mastered through core fundamentals.",
-    href: "/programs/academic",
+    href: "/programs/mathematics",
   },
   {
     icon: Code,
     title: "Coding & Tech",
     description: "Python, Java, and Web Architecture for young innovators.",
-    href: "/programs/coding",
+    href: "/programs/computer-science",
   },
   {
     icon: ClipboardCheck,
     title: "Test Preparations",
     description: "SAT, ACT, and AP exam strategies that actually work.",
-    href: "/programs/test-prep",
+    href: "/programs/sat-prep",
   },
   {
     icon: Landmark,
     title: "University Courses",
     description:
       "Portfolio building and admissions counselling for global universities.",
-    href: "/programs/university",
+    href: "/university-professional",
   },
 ];
 
