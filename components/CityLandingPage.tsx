@@ -190,6 +190,26 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
             {city.availability}
           </p>
         </div>
+
+        {/* City-specific long-form sections — the substance that makes each
+            city page genuinely distinct rather than a templated name swap. */}
+        {city.localSections?.map((section) => (
+          <div key={section.heading} className="mt-12">
+            <h3 className="text-[22px] sm:text-[26px] font-bricolage font-medium text-slate mb-4">
+              {section.heading}
+            </h3>
+            <div className="space-y-4">
+              {section.body.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        ))}
       </section>
 
       {/* Areas served + local schools */}
