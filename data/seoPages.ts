@@ -5828,6 +5828,100 @@ export const seoPages: SeoPage[] = [
       { label: "MCAT Prep", href: "/programs/mcat-prep" },
     ],
   },
+
+  // ─────────────────────────── LANGUAGES ───────────────────────────
+  {
+    slug: "french-classes-surrey",
+    cluster: "Languages",
+    location: "Surrey",
+    metaTitle: "French Classes in Surrey | Kids, Teens & Adults",
+    metaDescription:
+      "French classes in Surrey for kids, teens and adults — conversation, grammar and French Immersion support. One-on-one or small group, online. Free trial.",
+    h1: "French Classes in Surrey",
+    heroSubheading:
+      "Conversational and academic French for Surrey learners — from Core French homework help to fluency practice for adults.",
+    intro: [
+      "Most Surrey families come to French for one of three reasons: a child is required to take Core French in Grades 5 to 8 and has quietly fallen behind, a student in one of Surrey's French Immersion streams is struggling to keep pace in a classroom taught entirely in French, or an adult wants to actually speak the language rather than only recognise it on a page.",
+      "Our French classes are built around which of those you are. Lessons run online for families across Guildford, Fleetwood, Cloverdale, Newton and South Surrey, either one-on-one or in a small group, with speaking practice in every single session — because the part most learners are missing is not vocabulary, it is the confidence to use it out loud.",
+    ],
+    sections: [
+      {
+        heading: "What Our French Classes Cover",
+        points: [
+          "Speaking and pronunciation",
+          "Listening comprehension",
+          "Reading fluency",
+          "Writing and composition",
+          "Vocabulary development",
+          "Grammar fundamentals — genders, tenses and agreement",
+          "Everyday conversational French",
+          "Cultural and communication skills",
+        ],
+      },
+      {
+        heading: "Support for French Immersion and Core French Students",
+        body: [
+          "French Immersion is demanding in a way that is easy to miss from the outside: a student is not only learning French, they are learning math, science and social studies through it. When their French slips, every other subject slips with it — and because the classroom runs in French, there is rarely time to stop and re-teach the basics.",
+          "We work on the underlying language so the rest of the timetable becomes accessible again, whether that means rebuilding verb conjugation from the ground up or rehearsing an oral presentation until it feels natural. For Core French students, the goal is usually simpler: understand what the teacher is asking, finish the assignments without dread, and stop losing easy marks on grammar.",
+        ],
+      },
+      {
+        heading: "French for Adults and Professionals",
+        body: [
+          "Adult learners in Surrey usually arrive with a specific reason — an upcoming trip, family in Quebec or France, a bilingual requirement at work, or a long-standing intention to finally learn the language properly. Some are starting from nothing; others studied French years ago and want to rebuild what has faded.",
+          "Adult sessions are conversation-led and paced to you, with grammar introduced as it becomes useful rather than as a syllabus to march through. Evening and flexible scheduling makes it workable around a job.",
+        ],
+      },
+      {
+        heading: "How Classes Run",
+        points: [
+          "Private one-on-one coaching",
+          "Small group classes",
+          "Online sessions across Surrey and Metro Vancouver",
+          "In-person option at our Burnaby location",
+          "Support for French proficiency exam preparation",
+          "Flexible scheduling, including evenings",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you teach French for beginners, or only school students?",
+        answer:
+          "Both. We teach complete beginners — children and adults alike — as well as students following the BC school curriculum. Absolute beginners start with pronunciation and high-frequency everyday phrases, so you are speaking from the first lesson rather than memorising rules first.",
+      },
+      {
+        question: "Can you help a French Immersion student in Surrey?",
+        answer:
+          "Yes, and it is one of the most common requests we get. Immersion students are learning other subjects through French, so a gap in the language quietly becomes a gap in math or social studies too. We rebuild the underlying French so the rest of the classroom becomes accessible again.",
+      },
+      {
+        question: "Are classes one-on-one or in a group?",
+        answer:
+          "Both are available. One-on-one suits students with specific gaps or exam deadlines, while small groups suit learners who want regular conversation practice with others at a similar level. We can advise which fits after the free consultation.",
+      },
+      {
+        question: "Are the classes online or in person?",
+        answer:
+          "Surrey families are served online, which keeps scheduling flexible and removes the drive across the city. In-person sessions are available at our Burnaby location if you would prefer to attend on site.",
+      },
+      {
+        question: "My child only needs help before an exam — is that possible?",
+        answer:
+          "Yes. Plenty of students book short, targeted blocks ahead of an oral assessment, a written exam or a French proficiency test rather than committing to ongoing weekly lessons.",
+      },
+      {
+        question: "How do we start?",
+        answer:
+          "Fill in the form on this page for a free consultation. We will ask about the learner's current level and goal, then recommend a format and pace — with no obligation to continue.",
+      },
+    ],
+    related: [
+      { label: "French Language Program", href: "/programs/french" },
+      { label: "Math Tutor in Surrey", href: "/math-tutor-surrey" },
+      CONTACT,
+    ],
+  },
 ];
 
 export const getSeoPageBySlug = (slug: string): SeoPage | undefined =>
