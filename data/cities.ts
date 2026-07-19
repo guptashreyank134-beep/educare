@@ -62,6 +62,14 @@ export interface City {
    * Give each city its own angle and its own sentences — never a name swap.
    */
   localSections?: CityLocalSection[];
+  /**
+   * Locally-framed copy for the shared "who we help" section. Without these the
+   * block is byte-identical on every city page and is the single largest source
+   * of duplicate text across the set.
+   */
+  aboutHeading?: string;
+  aboutBody?: string[];
+  aboutPoints?: string[];
   /** City-specific FAQs (also emitted as FAQPage schema) */
   faqs: CityFAQ[];
 }
@@ -121,6 +129,18 @@ export const cities: City[] = [
           "That wall is common and it is not a sign the student was overrated. High school mathematics rewards recognising familiar question types; university mathematics asks you to justify why a method is valid. We spend a lot of time on exactly that transition, and it is easier to make before the first midterm than after it.",
         ],
       },
+    ],
+    aboutHeading: "Struggling In Class? Sit Down With A Tutor In Burnaby",
+    aboutBody: [
+      "Most students who fall behind are not short of ability. They are short of the one uninterrupted explanation that would have made a topic click, and in a full classroom that explanation rarely arrives at the moment it is needed.",
+      "Because Burnaby is our home location, we can do that in the same room — watching the work happen on paper and catching a hesitation before it hardens into a habit.",
+    ],
+    aboutPoints: [
+      "Go quiet in class rather than ask the question",
+      "Understand the lesson but lose marks under exam conditions",
+      "Skip their working and cannot show method for part marks",
+      "Are moving from Pre-Calculus 12 into first-year calculus at SFU",
+      "Would work better beside a tutor than in front of a screen",
     ],
     faqs: [
       {
@@ -189,6 +209,18 @@ export const cities: City[] = [
         ],
       },
     ],
+    aboutHeading: "Chasing An Admission Average In Vancouver?",
+    aboutBody: [
+      "Vancouver students compete for university places against an unusually strong cohort, and the distance between a good mark and a competitive one is frequently method rather than ability — how a solution is set out, whether it gets checked, how time is rationed across a paper.",
+      "We teach that alongside the content, across the BC curriculum, IB and AP.",
+    ],
+    aboutPoints: [
+      "Need a specific average for a competitive programme",
+      "Lose marks on explanation rather than on the final answer",
+      "Are taking IB Analysis and Approaches or AP Calculus",
+      "Run out of time before finishing an examination paper",
+      "Have started first-year mathematics at UBC and stalled",
+    ],
     faqs: [
       {
         question: "What is the difference between IB Math AA and AI, and does the choice matter?",
@@ -254,6 +286,18 @@ export const cities: City[] = [
           "In practice most sessions start with whatever the student has in front of them: this week's worksheet, a returned test, an assignment due Thursday. Working from their own material is what keeps the hour relevant, and it means a parent can see the connection between the session and the next report card.",
         ],
       },
+    ],
+    aboutHeading: "Tutoring That Fits A North Shore Schedule",
+    aboutBody: [
+      "On the North Shore the difficulty is rarely finding help. It is the bridge — a crossing at the wrong hour turns a one-hour lesson into most of an evening, and that arithmetic is what quietly ends most tutoring arrangements by November.",
+      "Online sessions keep the hour to an hour, and bend around training and practice commitments instead of competing with them for the same slot.",
+    ],
+    aboutPoints: [
+      "Lose evenings to training, practice or competition schedules",
+      "Have missed weeks and come back to a class that moved on",
+      "Need help without a rush-hour bridge crossing",
+      "Are working through Pre-Calculus, Physics or Chemistry this term",
+      "Do better with short, frequent sessions than long blocks",
     ],
     faqs: [
       {
@@ -321,6 +365,18 @@ export const cities: City[] = [
         ],
       },
     ],
+    aboutHeading: "Good Marks — But Is There Understanding Underneath?",
+    aboutBody: [
+      "A lot of West Vancouver enquiries begin with a capable student rather than a struggling one, and with a parent who suspects the marks are resting on memorisation rather than understanding.",
+      "That suspicion is usually confirmed the first time a course turns abstract. We would rather make the understanding structural before it gets tested.",
+    ],
+    aboutPoints: [
+      "Handle familiar exercises but stall on unfamiliar problems",
+      "Apply a formula without being able to say where it comes from",
+      "Are heading into IB Higher Level or AP mathematics",
+      "Find schoolwork easy and have stopped being challenged by it",
+      "Make careless errors that look like weakness but are boredom",
+    ],
     faqs: [
       {
         question: "My child has an A but I do not think they really understand it. Is that a real thing?",
@@ -386,6 +442,18 @@ export const cities: City[] = [
         ],
       },
     ],
+    aboutHeading: "Did Your Child's Marks Fall Away In Grade 11?",
+    aboutBody: [
+      "It is the call we take most often from Coquitlam. A student moves through Grade 9 and 10 comfortably, meets Pre-Calculus 11, and the marks drop sharply inside a single term.",
+      "Nothing has gone wrong with the student. The course has started demanding the algebra habits they were previously able to work around, and those habits can be rebuilt.",
+    ],
+    aboutPoints: [
+      "Did well until Pre-Calculus 11 and then dropped suddenly",
+      "Cannot finish multi-step questions they understand conceptually",
+      "Are shaky with factoring, fractions or radicals",
+      "Solve in their head and lose marks for missing method",
+      "Are carrying Grade 11 gaps forward into Pre-Calculus 12",
+    ],
     faqs: [
       {
         question: "My child had strong marks until Grade 11 mathematics. What changed?",
@@ -448,6 +516,18 @@ export const cities: City[] = [
           "Pre-teaching changes the dynamic in class. A student who has already met an idea once arrives able to follow the lesson rather than decode it, and asks better questions of their own teacher — which over a term does more good than any amount of catch-up.",
         ],
       },
+    ],
+    aboutHeading: "Not Failing, But Quietly Slipping Behind?",
+    aboutBody: [
+      "Most Port Moody families come to us about drift rather than crisis — a student who is coping, has stopped genuinely understanding, and loses a few marks each reporting period until somebody finally notices.",
+      "Regular weekly sessions catch that early, because a tutor working with the same student every week sees the slide long before a report card reports it.",
+    ],
+    aboutPoints: [
+      "Take noticeably longer over homework than they used to",
+      "Arrive at the right answer but cannot explain how",
+      "Are reluctant to show any written working",
+      "Have slipped a few marks a term without failing anything",
+      "Would benefit from steady weekly support rather than a rescue",
     ],
     faqs: [
       {
@@ -519,6 +599,18 @@ export const cities: City[] = [
         ],
       },
     ],
+    aboutHeading: "Choosing A Grade 11 Math Stream In Port Coquitlam?",
+    aboutBody: [
+      "Few school decisions matter more, and few are made with less information. Workplace, Foundations and Pre-Calculus lead to genuinely different places, and Pre-Calculus is the prerequisite for most science, engineering and health-science programmes.",
+      "Stepping out of it to protect a grade point average can close those doors roughly two years before anyone notices they have closed.",
+    ],
+    aboutPoints: [
+      "Are deciding between Workplace, Foundations and Pre-Calculus",
+      "Want to drop a stream because this particular term is hard",
+      "Are struggling with two or three topics rather than the course",
+      "Need Physics 11 or 12 alongside the mathematics",
+      "Are aiming at a programme that requires Pre-Calculus 12",
+    ],
     faqs: [
       {
         question: "Which Grade 11 mathematics should my child take?",
@@ -585,6 +677,18 @@ export const cities: City[] = [
           "Online sessions remove that failure mode. There is no drive, no parking and no reason to cancel because of weather or traffic, which in our experience is the single biggest factor in whether tutoring lasts long enough to show up in a grade.",
         ],
       },
+    ],
+    aboutHeading: "Lost In A Full Surrey Classroom?",
+    aboutBody: [
+      "In the province's largest district the arithmetic is unforgiving: a teacher dividing attention evenly across a full class has roughly a couple of minutes per student in an hour. A student who needs ten uninterrupted minutes on one idea is not going to get them.",
+      "Closing that specific gap is the entire purpose of one-to-one sessions.",
+    ],
+    aboutPoints: [
+      "Never ask questions in front of the rest of the class",
+      "Need longer on a single concept than a lesson can allow",
+      "Have gaps that go back a year or more",
+      "Live too far across Surrey for a tutoring-centre commute",
+      "Would speak up with one adult but never with thirty peers",
     ],
     faqs: [
       {
@@ -659,6 +763,18 @@ export const cities: City[] = [
         ],
       },
     ],
+    aboutHeading: "High Marks — But Does The Understanding Follow?",
+    aboutBody: [
+      "Richmond families often ask for something slightly unusual: not help passing, but help genuinely understanding. It is a sound instinct, because a student who reproduces a method without knowing why it works will meet a ceiling sooner or later.",
+      "Usually that happens in Calculus. Occasionally it waits until first year at university, where it costs a great deal more.",
+    ],
+    aboutPoints: [
+      "Score well but say themselves that they do not understand it",
+      "Recognise question types rather than reason from principles",
+      "Are strong enough to want work beyond the syllabus",
+      "Would rather have harder problems than more of the same",
+      "Are heading into Calculus or Chemistry 12",
+    ],
     faqs: [
       {
         question: "My child gets high marks but says they do not understand it. Can both be true?",
@@ -729,6 +845,18 @@ export const cities: City[] = [
           "We spend most of the time there — on sampling and distributions, on confidence intervals, and on reading a question carefully enough to know what is being asked. Students who have been running procedures without understanding the logic usually find this is where the marks were going.",
         ],
       },
+    ],
+    aboutHeading: "In-Person Tutoring Just Over The New Westminster Border",
+    aboutBody: [
+      "New Westminster sits directly on the Burnaby boundary, which makes it one of the few places outside Burnaby where face-to-face sessions are genuinely practical rather than merely available in principle.",
+      "We work with secondary students across the full range, and with Douglas College students coming back to mathematics after several years away from it.",
+    ],
+    aboutPoints: [
+      "Would rather meet in person than work through a screen",
+      "Are at NWSS and need help matched to their own course",
+      "Are a college student facing first-year calculus or statistics",
+      "Have been away from mathematics for years and expect the worst",
+      "Need the algebra underneath a course rebuilt before anything else",
     ],
     faqs: [
       {
@@ -801,6 +929,18 @@ export const cities: City[] = [
           "Most beginners we work with are stuck on the same handful of things: what a loop is actually doing on each pass, why a function returns nothing, how to read an error message instead of fearing it. We teach Python fundamentals through to data structures and the programming inside senior computer science coursework, always by building something rather than by reciting syntax.",
         ],
       },
+    ],
+    aboutHeading: "Too Far Out For Tutoring? Delta Learns Online",
+    aboutBody: [
+      "Ladner and Tsawwassen sit far enough from the region's tutoring centres that in-person help means handing an evening to a highway, and North Delta families run the same calculation in a different direction.",
+      "Taking the drive out of the equation is what makes tutoring here last beyond the first month, which is usually the difference between a full year of support and six weeks of it.",
+    ],
+    aboutPoints: [
+      "Live too far out for a twice-weekly drive to be realistic",
+      "Have tried tutoring before and stopped because of the travel",
+      "Are preparing for the Graduation Numeracy Assessment",
+      "Need Pre-Calculus, Physics or Chemistry support this term",
+      "Are learning to code and want to work from home",
     ],
     faqs: [
       {

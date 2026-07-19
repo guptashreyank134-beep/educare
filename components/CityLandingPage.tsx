@@ -256,7 +256,11 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
         </div>
       </section>
 
-      <VancouverAboutSection />
+      <VancouverAboutSection
+        heading={city.aboutHeading}
+        body={city.aboutBody}
+        points={city.aboutPoints}
+      />
       <VancouverWhyChooseSection />
       <VancouverExploreSubjectsSection />
       <VancouverFlexibleProgramsSection />

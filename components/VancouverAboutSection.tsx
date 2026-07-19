@@ -2,14 +2,41 @@ import React from 'react';
 import Image from 'next/image';
 import { Trophy, Zap } from 'lucide-react';
 
-export default function VancouverAboutSection() {
-  const painPoints = [
-    "Feel confused in class even after paying attention",
-    "Make mistakes in word problems and multi-step questions",
-    "Need support in Pre-Calculus 11/12, Physics, Chemistry, or Coding",
-    "Are preparing for school tests, finals, IB, AP, or competitive academic goals",
-    "Need a patient teacher who explains clearly and systematically"
-  ];
+export interface VancouverAboutSectionProps {
+  /** Override the section heading (city pages pass a locally-framed one). */
+  heading?: string;
+  /** Override the two lead paragraphs. */
+  body?: string[];
+  /** Override the "We Help Students Who" list. */
+  points?: string[];
+}
+
+const DEFAULT_HEADING =
+  "Is Your Child Struggling With Math, Science, Or Exam Confidence?";
+const DEFAULT_BODY = [
+  "Many students do not struggle because they are weak. They struggle because concepts are not explained clearly, problem-solving steps are skipped, or they lose confidence after repeated mistakes.",
+  "At Dr. Shreyank Educare, we slow down, identify the exact gaps, and rebuild understanding from the foundation.",
+];
+const DEFAULT_POINTS = [
+  "Feel confused in class even after paying attention",
+  "Make mistakes in word problems and multi-step questions",
+  "Need support in Pre-Calculus 11/12, Physics, Chemistry, or Coding",
+  "Are preparing for school tests, finals, IB, AP, or competitive academic goals",
+  "Need a patient teacher who explains clearly and systematically",
+];
+
+/**
+ * Shared "who we help" section. City pages pass locally-framed copy so this
+ * block is not byte-identical across every city — it was previously the single
+ * largest duplicated block on the city landing pages.
+ */
+export default function VancouverAboutSection({
+  heading,
+  body,
+  points,
+}: VancouverAboutSectionProps = {}) {
+  const painPoints = points?.length ? points : DEFAULT_POINTS;
+  const paragraphs = body?.length ? body : DEFAULT_BODY;
 
   return (
     <section className="overflow-hidden mt-12 mb-20">
@@ -35,16 +62,19 @@ export default function VancouverAboutSection() {
           <div className="w-full order-1 lg:order-2 max-w-[665px] h-full flex flex-col justify-between align-start">
             <div>
               <h2 className="text-[32px] leading-[34px] font-bricolage font-display font-normal text-slate capitalize mb-4">
-                Is Your Child Struggling With Math, Science, Or Exam Confidence?
+                {heading || DEFAULT_HEADING}
               </h2>
 
-              <p className="text-[16px] leading-[22px] font-montserrat font-normal text-slate mb-4">
-                Many students do not struggle because they are weak. They struggle because concepts are not explained clearly, problem-solving steps are skipped, or they lose confidence after repeated mistakes.
-              </p>
-
-              <p className="text-[16px] leading-[22px] font-montserrat font-normal text-slate mb-8">
-                At Dr. Shreyank Educare, we slow down, identify the exact gaps, and rebuild understanding from the foundation.
-              </p>
+              {paragraphs.map((paragraph, idx) => (
+                <p
+                  key={idx}
+                  className={`text-[16px] leading-[22px] font-montserrat font-normal text-slate ${
+                    idx === paragraphs.length - 1 ? "mb-8" : "mb-4"
+                  }`}
+                >
+                  {paragraph}
+                </p>
+              ))}
             </div>
 
             <div className="space-y-4">
