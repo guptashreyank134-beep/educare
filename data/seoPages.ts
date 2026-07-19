@@ -5918,7 +5918,275 @@ export const seoPages: SeoPage[] = [
     ],
     related: [
       { label: "French Language Program", href: "/programs/french" },
+      { label: "French Immersion Tutor in Surrey", href: "/french-immersion-tutor-surrey" },
       { label: "Math Tutor in Surrey", href: "/math-tutor-surrey" },
+      CONTACT,
+    ],
+  },
+  {
+    slug: "french-tutor-surrey",
+    cluster: "Languages",
+    location: "Surrey",
+    metaTitle: "French Tutor in Surrey | One-on-One Lessons",
+    metaDescription:
+      "One-on-one French tutoring in Surrey for Grades 5–12 — grammar, oral assessments and recovering a slipping mark. Online, matched to your child's class.",
+    h1: "French Tutor in Surrey",
+    heroSubheading:
+      "Private French tutoring for Surrey school students — built around your child's actual coursework, not a generic language course.",
+    intro: [
+      "This page is for a specific situation: a Surrey student whose French mark has dropped and who needs one-to-one help with the course they are actually enrolled in. That is a narrower job than learning French in general, and it calls for different work — following the teacher's unit plan, preparing for the next oral assessment, and recovering marks on the things school French actually grades.",
+      "School French is assessed in a way that catches students out. A child can hold a reasonable conversation and still lose heavily on written accents, verb agreement and dictées, because the marking rewards precision rather than communication. We work on whichever half is costing the marks.",
+    ],
+    sections: [
+      {
+        heading: "Where School French Marks Are Actually Lost",
+        points: [
+          "Verb conjugation across tenses, especially passé composé and imparfait",
+          "Gender and adjective agreement",
+          "Accents and spelling precision in written work",
+          "Listening comprehension under time pressure",
+          "Oral presentations and speaking assessments",
+          "Reading unfamiliar passages without translating word by word",
+        ],
+      },
+      {
+        heading: "Preparing for Oral Assessments",
+        body: [
+          "Speaking assessments cause more anxiety than any other part of the course, and they are the part students practise least — usually because rehearsing out loud requires an audience willing to listen and correct.",
+          "That is straightforward to fix in a one-to-one session. We rehearse the format the teacher uses, work on pronunciation and fluency under mild pressure, and get the student used to speaking imperfectly without freezing. Most of the improvement here comes from repetition rather than new knowledge.",
+        ],
+      },
+      {
+        heading: "Working From Your Child's Own Material",
+        body: [
+          "Sessions follow the class rather than a separate syllabus. That means the vocabulary list for this unit, the assignment due next week, and the test that just came back marked — because a returned assessment shows exactly where the marks are leaking.",
+          "It also means a parent can see the connection between tutoring and the report card, instead of paying for lessons that run in parallel to the course and hope the two eventually meet.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "My child speaks French reasonably well but the marks are poor. How?",
+        answer:
+          "Very common. School French grades written accuracy heavily — verb endings, agreement, accents — and a student who communicates comfortably can still lose a lot of marks there. The reverse also happens: strong written work and a poor speaking mark. We find out which half is costing you before doing anything else.",
+      },
+      {
+        question: "Can you follow my child's teacher's material?",
+        answer:
+          "Yes, that is how we prefer to work. Bring the unit outline, the vocabulary lists and any returned assessments. Sessions built on the actual course move a mark faster than a general French curriculum running alongside it.",
+      },
+      {
+        question: "How is this different from your French classes page?",
+        answer:
+          "Our French classes cover learning the language broadly, including small groups and adult learners starting from scratch. This is narrower: private, one-to-one academic support for a school student following a specific course, aimed at their coursework and their marks.",
+      },
+      {
+        question: "Do you help before an oral exam only?",
+        answer:
+          "Yes, plenty of students book a short block ahead of a speaking assessment rather than ongoing lessons. Rehearsing the format out loud with correction is usually what is missing, and a few focused sessions can make a visible difference.",
+      },
+    ],
+    related: [
+      { label: "French Classes in Surrey", href: "/french-classes-surrey" },
+      { label: "French Immersion Tutor in Surrey", href: "/french-immersion-tutor-surrey" },
+      { label: "French Language Program", href: "/programs/french" },
+      CONTACT,
+    ],
+  },
+  {
+    slug: "french-immersion-tutor-surrey",
+    cluster: "Languages",
+    location: "Surrey",
+    metaTitle: "French Immersion Tutor in Surrey | All Grades",
+    metaDescription:
+      "Help for Surrey French Immersion students — when math, science and socials are taught in French and the language itself is the barrier. Online, one-on-one.",
+    h1: "French Immersion Tutor in Surrey",
+    heroSubheading:
+      "Support for Immersion students in Surrey, where a gap in French quietly becomes a gap in every other subject.",
+    intro: [
+      "French Immersion has a structural difficulty that is easy to underestimate from the outside. An Immersion student is not simply learning French — they are learning mathematics, science and social studies through French. When their language slips, it does not stay contained: it turns up as a mathematics mark, then a science mark, and the cause is invisible on a report card.",
+      "That is the problem this page is about. Surrey families usually contact us when a child who was fine in the early years starts struggling in the middle grades, as the subject vocabulary becomes technical and the reading load grows faster than their French does.",
+    ],
+    sections: [
+      {
+        heading: "Why the Difficulty Often Appears in the Middle Years",
+        body: [
+          "Early Immersion works well partly because early content is concrete and repetitive. The vocabulary of counting, colours and simple stories is reinforced constantly, so a student builds fluency without noticing.",
+          "Around the middle grades that changes. Subject language becomes abstract and specialised — the French for numerator, hypothesis, erosion, sovereignty — and each term appears far less often than everyday vocabulary did. A student can follow a conversation comfortably and still be unable to follow a science lesson, and it is rarely obvious which of the two is failing.",
+        ],
+      },
+      {
+        heading: "Separating a Language Gap From a Subject Gap",
+        body: [
+          "The first useful thing we do is work out whether a struggling Immersion student does not understand the mathematics, or does not understand the mathematics in French. These need completely different responses, and schools rarely have time to disentangle them.",
+          "The test is simple: present the same concept in English. If the student grasps it immediately, the problem is language, and drilling more mathematics will waste everyone's time. If they do not, the subject needs attention in its own right. We check before choosing an approach.",
+        ],
+      },
+      {
+        heading: "Should a Student Stay in Immersion?",
+        body: [
+          "Some families arrive already asking whether to leave the programme. It is a real decision and we will not pretend it always has a happy answer, but it is worth making with information rather than in the middle of a stressful term.",
+          "Often the difficulty concentrates in one or two subjects and can be addressed directly, in which case leaving would sacrifice years of bilingual progress over a solvable problem. Sometimes the load genuinely is not working for that child. We are happy to give an honest read after working with a student, including when that read is that the programme is not the issue.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "My child is in Immersion and struggling in maths. Is it the maths or the French?",
+        answer:
+          "That is exactly the right question, and it is answerable. We present the same concept in English: if it clicks straight away, the barrier is language and extra maths drilling will not help. If it does not, the mathematics needs work in its own right. Diagnosing this first saves months of pointing effort at the wrong thing.",
+      },
+      {
+        question: "Do you tutor the subject content in French or in English?",
+        answer:
+          "Whichever serves the student. Often we build understanding in English first and then rebuild the vocabulary in French, so they can follow class and complete assessments. For students whose subject understanding is solid, we work directly on the French terminology.",
+      },
+      {
+        question: "Should we pull our child out of French Immersion?",
+        answer:
+          "That is a family decision and it depends on the child. Frequently the trouble is concentrated in one or two subjects and is fixable, which would make leaving a costly response to a solvable problem. Sometimes the load genuinely does not suit the student. We will give you a straight opinion rather than the one that keeps you booking sessions.",
+      },
+      {
+        question: "Which grades do you support?",
+        answer:
+          "We work with Immersion students across the elementary and secondary years. Most enquiries come from the middle grades onward, when subject vocabulary turns technical and the reading load increases sharply.",
+      },
+    ],
+    related: [
+      { label: "French Classes in Surrey", href: "/french-classes-surrey" },
+      { label: "French Tutor in Surrey", href: "/french-tutor-surrey" },
+      { label: "Math Tutor in Surrey", href: "/math-tutor-surrey" },
+      CONTACT,
+    ],
+  },
+  {
+    slug: "french-classes-burnaby",
+    cluster: "Languages",
+    location: "Burnaby",
+    metaTitle: "French Classes in Burnaby | In Person or Online",
+    metaDescription:
+      "French classes in Burnaby for kids, teens and adults — conversation, grammar and exam preparation. In person at our Burnaby location, or online. Free trial.",
+    h1: "French Classes in Burnaby",
+    heroSubheading:
+      "French for every level in Burnaby — and the one location where lessons can happen face to face.",
+    intro: [
+      "Burnaby is our home location, which makes it the one place where French lessons can run in the same room. For language learning that matters more than it does for most subjects, because conversation is the part learners skip when it feels awkward, and it feels least awkward sitting across a table from someone.",
+      "We teach beginners through to students preparing for proficiency assessments, and a good share of our Burnaby learners are adults rather than school students — people learning for travel, for family, or because a bilingual requirement has appeared at work.",
+    ],
+    sections: [
+      {
+        heading: "Why Speaking Practice Works Better in Person",
+        body: [
+          "Reading and grammar transfer perfectly well to a screen. Speaking is different: hesitation, mouth shape, and the small corrections a tutor makes in the moment all land more naturally face to face, and learners are measurably less self-conscious about getting it wrong.",
+          "That said, plenty of our Burnaby students choose online for convenience and do very well. The format is worth choosing deliberately rather than by default, and we will tell you honestly if we think one suits a particular learner better.",
+        ],
+      },
+      {
+        heading: "Adults Starting From Zero",
+        body: [
+          "Adult beginners tend to arrive apologising, convinced they have left it too late or that they were never good at languages. Neither is usually true. What is true is that adults learn differently from children: they want the underlying pattern explained rather than absorbed by repetition, and they get frustrated by the pace of a class aimed at teenagers.",
+          "We take advantage of that. Adult lessons introduce grammar as an explanation rather than a drill, and push speaking early, because the fastest way past self-consciousness is to have already been wrong a hundred times in a low-stakes room.",
+        ],
+      },
+      {
+        heading: "Formats Available in Burnaby",
+        points: [
+          "In-person one-to-one at our Burnaby location",
+          "In-person small group classes",
+          "Live online lessons if you prefer to stay home",
+          "Conversation-focused sessions for adults",
+          "School-aligned support for Grades 5–12",
+          "Preparation for French proficiency assessments",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Where do in-person French lessons take place?",
+        answer:
+          "At our Burnaby location, which is why Burnaby is the one city where we offer face-to-face lessons. Families elsewhere in Metro Vancouver are generally taught online, though they are welcome to come to Burnaby if the trip suits them.",
+      },
+      {
+        question: "I am an adult beginner. Will I be in a class with teenagers?",
+        answer:
+          "No. Adult learners are taught either one-to-one or in adult groups, because the pace and the way grammar is explained are genuinely different. Most of our adult beginners are learning for travel, family or work.",
+      },
+      {
+        question: "How quickly could I hold a basic conversation?",
+        answer:
+          "With regular weekly lessons and a little practice between them, most adult beginners manage simple everyday exchanges within a few months. The limiting factor is almost always speaking practice rather than vocabulary, which is why we push conversation from the first lesson.",
+      },
+    ],
+    related: [
+      { label: "French Classes in Surrey", href: "/french-classes-surrey" },
+      { label: "French Tutor in Vancouver", href: "/french-tutor-vancouver" },
+      { label: "French Language Program", href: "/programs/french" },
+      CONTACT,
+    ],
+  },
+  {
+    slug: "french-tutor-vancouver",
+    cluster: "Languages",
+    location: "Vancouver",
+    metaTitle: "French Tutor in Vancouver | Students & Adults",
+    metaDescription:
+      "French tutoring in Vancouver for school students and working adults — conversation, grammar, oral exams and proficiency preparation. Online across the city.",
+    h1: "French Tutor in Vancouver",
+    heroSubheading:
+      "French for Vancouver students and professionals — from school coursework to the bilingual requirement that appeared in a job posting.",
+    intro: [
+      "Vancouver produces an unusual mix of French learners. Alongside the school students there are working adults who have discovered that a role they want lists French as an asset or a requirement — common in federal public service work, and increasingly in national companies with operations in Quebec.",
+      "Those two groups need different things. A student needs the marks their course awards. A professional needs functional competence they can demonstrate, usually against a proficiency framework and often on a deadline. We teach both, but not the same way.",
+    ],
+    sections: [
+      {
+        heading: "French for Career and Proficiency Requirements",
+        body: [
+          "Adults working toward a language requirement usually have a defined target and limited time, so the work is planned backwards from the assessment rather than following a general curriculum.",
+          "In practice that means heavy emphasis on the productive skills, because speaking and writing are where working adults are weakest and where assessments concentrate. Comprehension often turns out to be further along than expected — it is producing the language under observation that needs the hours.",
+        ],
+      },
+      {
+        heading: "School French Across the City",
+        body: [
+          "For Vancouver school students the work follows the course: the vocabulary and grammar of the current unit, preparation for oral assessments, and the written accuracy that school French marks so strictly.",
+          "Students taking French through to Grade 12, or through IB, need something extra — sustained written argument and the ability to discuss a topic rather than recite prepared sentences. That shift is worth starting well before the final year.",
+        ],
+      },
+      {
+        heading: "Why Adults Stall, and What Fixes It",
+        body: [
+          "Adult learners who plateau have almost always stopped speaking. They keep studying vocabulary and revisiting grammar because those feel productive and carry no risk of embarrassment, while the skill they actually need goes unpractised.",
+          "The fix is uncomfortable and reliable: talk, badly, every session, with correction. Learners who accept that progress far quicker than those who wait until they feel ready, because that feeling does not arrive on its own.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "I need French for a job application. Can you prepare me for a proficiency assessment?",
+        answer:
+          "Yes, and we would plan backwards from your target and your deadline rather than working through a general course. Most working adults are stronger at comprehension than they expect and weaker at speaking and writing under observation, so that is usually where the time goes.",
+      },
+      {
+        question: "Are lessons in Vancouver online or in person?",
+        answer:
+          "Vancouver learners are taught online, which works well for language lessons and avoids a cross-city commute after work. In-person lessons are available at our Burnaby location, a short SkyTrain ride from much of Vancouver, if you would rather meet face to face.",
+      },
+      {
+        question: "I studied French years ago and have forgotten most of it. Is that a problem?",
+        answer:
+          "It is usually an advantage over starting from nothing. Recognition tends to survive long after recall fades, so returning learners often move quickly once they start speaking again — the material is being reactivated rather than learned for the first time.",
+      },
+      {
+        question: "Can you support IB French?",
+        answer:
+          "Yes. IB rewards sustained discussion and written argument rather than recitation, which is a different skill from the one most students build earlier. It is worth beginning that shift before the final year rather than during it.",
+      },
+    ],
+    related: [
+      { label: "French Classes in Burnaby", href: "/french-classes-burnaby" },
+      { label: "French Classes in Surrey", href: "/french-classes-surrey" },
+      { label: "French Language Program", href: "/programs/french" },
       CONTACT,
     ],
   },
