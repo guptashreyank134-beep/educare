@@ -58,7 +58,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "online-medical-tutoring",
     vertical: "medical",
     metaTitle:
-      "Online Medical Tutoring | USA & Caribbean | MD-Led",
+      "Online Medical Tutoring | Dr. Shreyank Educare",
     metaDescription:
       "MD-led online medical tutoring for USA & Caribbean students — physiology, pathology, pharmacology and USMLE prep. Book a free consultation.",
     heroHeading: "MD-Led Online Medical Tutoring for USA & Caribbean Students",
@@ -138,7 +138,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "university-professional",
     vertical: "quant",
     metaTitle:
-      "University & Professional Tutoring | Economics & Stats",
+      "University & Professional Tutoring | Dr. Shreyank Educare",
     metaDescription:
       "Expert online tutoring in Economics, Statistics, Actuarial Science and R for university and professional learners worldwide. Free consultation.",
     heroHeading:
@@ -219,7 +219,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "medical-sciences-tutor",
     vertical: "medical",
     metaTitle:
-      "Medical Sciences Tutor | USA & Caribbean | MD-Led",
+      "Medical Sciences Tutor Online | Dr. Shreyank Educare",
     metaDescription:
       "MD-led online medical sciences tutoring for USA & Caribbean students — physiology, pathology, pharmacology, anatomy and more. Free consultation.",
     heroHeading: "Online Medical Sciences Tutor — USA & Caribbean",
@@ -285,7 +285,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "online-physiology-tutor",
     vertical: "medical",
     metaTitle:
-      "Online Physiology Tutor | USA & Caribbean | MD-Led",
+      "Online Physiology Tutor | Dr. Shreyank Educare",
     metaDescription:
       "MD-led online physiology tutoring for USA and Caribbean medical students. One-on-one help with systems physiology and board prep. Book a free consultation.",
     heroHeading: "Online Physiology Tutor — USA & Caribbean",
@@ -351,7 +351,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "online-pathology-tutor",
     vertical: "medical",
     metaTitle:
-      "Online Pathology Tutor | USA & Caribbean | MD-Led",
+      "Online Pathology Tutor | Dr. Shreyank Educare",
     metaDescription:
       "MD-led online pathology tutoring for USA & Caribbean students — general and systemic pathology and board prep. Free consultation.",
     heroHeading: "Online Pathology Tutor — USA & Caribbean",
@@ -417,7 +417,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "online-pharmacology-tutor",
     vertical: "medical",
     metaTitle:
-      "Online Pharmacology Tutor | USA & Caribbean | MD-Led",
+      "Online Pharmacology Tutor | Dr. Shreyank Educare",
     metaDescription:
       "MD-led online pharmacology tutoring for USA & Caribbean students — drug classes, mechanisms and board prep. Free consultation.",
     heroHeading: "Online Pharmacology Tutor — USA & Caribbean",
@@ -483,7 +483,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "medical-exam-prep-tutor-online",
     vertical: "medical",
     metaTitle:
-      "Medical Exam Prep Tutor | USA & Caribbean | MD-Led",
+      "Medical Exam Prep Tutor Online | Dr. Shreyank Educare",
     metaDescription:
       "MD-led online medical board and licensing exam prep for USA and Caribbean students. Structured, high-yield, one-on-one tutoring. Book a free consultation.",
     heroHeading: "Online Medical Exam Prep — USA & Caribbean",
@@ -551,7 +551,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "online-statistics-tutor",
     vertical: "quant",
     metaTitle:
-      "Online Statistics Tutor | University & Professional",
+      "Online Statistics Tutor | Dr. Shreyank Educare",
     metaDescription:
       "Expert online statistics tutoring worldwide — probability, inference, regression and more for university students and professionals. Free consultation.",
     heroHeading: "Online Statistics Tutor — University & Professional",
@@ -617,7 +617,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "online-economics-tutor",
     vertical: "quant",
     metaTitle:
-      "Online Economics Tutor | University & Professional",
+      "Online Economics Tutor | Dr. Shreyank Educare",
     metaDescription:
       "Expert online economics tutoring for university students worldwide — micro, macro and econometrics. One-on-one, exam-focused. Free consultation.",
     heroHeading: "Online Economics Tutor — University & Professional",
@@ -683,7 +683,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "r-programming-tutor",
     vertical: "quant",
     metaTitle:
-      "R Programming Tutor | University & Professional",
+      "R Programming Tutor Online | Dr. Shreyank Educare",
     metaDescription:
       "Expert online R programming tutoring for UK, USA and worldwide students and professionals — from basics to data analysis and visualisation. Free consultation.",
     heroHeading: "Online R Programming Tutor — University & Professional",
@@ -749,7 +749,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "actuarial-science-tutor",
     vertical: "quant",
     metaTitle:
-      "Actuarial Science Tutor | University & Professional",
+      "Actuarial Science Tutor | Dr. Shreyank Educare",
     metaDescription:
       "Expert online actuarial science tutoring for UK, USA and worldwide students and candidates — probability, financial maths and models. Free consultation.",
     heroHeading: "Online Actuarial Science Tutor — University & Professional",
@@ -815,7 +815,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "statistics-with-r-tutor",
     vertical: "quant",
     metaTitle:
-      "Statistics with R Tutor | University & Professional",
+      "Statistics with R Tutor | Dr. Shreyank Educare",
     metaDescription:
       "Expert online 'Statistics with R' tutoring for UK, USA and worldwide students and professionals — applied statistics using R. One-on-one. Free consultation.",
     heroHeading: "Statistics with R Tutor — University & Professional",
@@ -881,7 +881,7 @@ export const verticalPages: VerticalPage[] = [
     slug: "actuarial-exam-tutor-online",
     vertical: "quant",
     metaTitle:
-      "Actuarial Exam Tutor | University & Professional",
+      "Actuarial Exam Tutor Online | Dr. Shreyank Educare",
     metaDescription:
       "Expert online actuarial exam tutoring worldwide — structured, problem-focused preparation for professional actuarial exams. Free consultation.",
     heroHeading: "Online Actuarial Exam Tutor — University & Professional",
