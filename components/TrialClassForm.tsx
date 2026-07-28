@@ -69,16 +69,16 @@ Preferred Mode Of Classes: ${rawData.get('mode')}
     <div className="bg-white rounded-[24px] shadow-[0_20px_80px_rgba(0,0,0,0.08)] p-8 border border-[#F1F5F9]">
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        <Input label="Parent's Name" placeholder="enter first name" id="parentName" name="parentName" required />
+        <Input label="Parent or Student Name" placeholder="e.g. Priya Sharma" id="parentName" name="parentName" autoComplete="name" required />
 
         <div className="grid grid-cols-2 gap-4">
-          <Input label="Students' Grade" placeholder="enter last name" id="grade" name="grade" required />
-          <Input label="Subject Required" placeholder="enter subject" id="subject" name="subject" required />
+          <Input label="Student's Grade or Course" placeholder="e.g. Grade 11 or UBC MATH 100" id="grade" name="grade" required />
+          <Input label="Subject Required" placeholder="e.g. Pre-Calculus 12" id="subject" name="subject" required />
         </div>
 
-        <Input label="Phone Number" type="tel" placeholder="enter subject" id="phone" name="phone" required />
-        <Input label="Email ID" type="email" placeholder="enter email ID" id="email" name="email" required />
-        <Input label="Preferred Mode Of Classes" placeholder="mention online/offline/not sure" id="mode" name="mode" required />
+        <Input label="Phone Number" type="tel" inputMode="tel" autoComplete="tel" placeholder="e.g. (604) 123-4567" id="phone" name="phone" required />
+        <Input label="Email" type="email" inputMode="email" autoComplete="email" placeholder="e.g. you@example.com" id="email" name="email" required />
+        <Input label="Preferred Format" placeholder="Online, in person, or not sure" id="mode" name="mode" required />
 
         {feedback && (
           <div className={`p-4 rounded-xl text-center text-sm font-medium ${feedback.success ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'}`}>
