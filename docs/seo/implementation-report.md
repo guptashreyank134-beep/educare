@@ -2,6 +2,35 @@
 
 Branch: `seo/search-console-improvements` · not deployed · not pushed.
 
+## Update — follow-up session (more phases closed)
+
+- **Phase 2 now complete**: `scripts/gen-intent-map.ts` → `page-intent-map-full.csv`,
+  a per-page table for **all 168** indexable pages (URL, source, intent, title,
+  H1, canonical, keep/redirect/review decision).
+- **Phase 10 hardened**: `seo:audit` now also validates **JSON-LD** and flags
+  **broken internal links + links to redirects**. Immediately found 3 real
+  link-to-redirect issues.
+- **Phase 7 (code part)**: `getSeoSiblings` now skips any slug that permanently
+  redirects, so auto-linking never points through a 308 (fixed the money page
+  `/best-math-tutor-burnaby`). The 2 remaining link-to-redirects live in **blog
+  post bodies in Sanity** (manual edits, listed below).
+- **Phase 5**: verified the existing implementation is already strong — robots.ts,
+  Open Graph, EducationalOrganization+LocalBusiness / Service / FAQ / Breadcrumb
+  JSON-LD all present. The one genuine gap, a **useful 404 page**, is now added
+  (`app/not-found.tsx`) routing lost visitors to the top money pages + booking.
+
+Still open after this session: **Phase 3** (per-subject content rewrites),
+**Phase 6** (local contact/location sections), **Phase 9** (perf/a11y), and the
+lint/tests/visual parts of **Phase 11**.
+
+New manual actions: (a) in Sanity, fix blog-body links that point to redirected
+URLs — `/blog/mathematics-algebra-functions` → `/math-tutoring-burnaby` should be
+`/math-tutor-burnaby`, and `/blog/university-physics-tutoring-in-vancouver-and-burnaby`
+→ `/blog/physics-tutoring-university-physics` should be the final URL; (b) minor:
+a `/blog/page` nav link on paginated blog pages 308s to `/blog`.
+
+---
+
 ## Scope note (read first)
 
 This branch implements the **safe, high-leverage, verifiable** parts of the brief
