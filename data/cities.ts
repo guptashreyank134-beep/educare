@@ -167,7 +167,7 @@ export const cities: City[] = [
     metaTitle: "Math Tutor in Vancouver | Physics, Chemistry & Coding",
     metaDescription:
       "Expert Vancouver math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Free 30-minute consultation.",
-    heroHeading: "Trusted Math Tutor in Vancouver",
+    heroHeading: "Online Math Tutor for Vancouver Students",
     heroSubheading:
       "Math, Physics, Chemistry and Coding tutoring for Grades 6–12, IB, AP and university — online across the city, or in person a SkyTrain ride away.",
     intro: [
@@ -246,7 +246,7 @@ export const cities: City[] = [
     metaTitle: "Math Tutor in North Vancouver | Physics & Chemistry",
     metaDescription:
       "North Vancouver math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book a free consultation today.",
-    heroHeading: "Expert Math Tutor in North Vancouver",
+    heroHeading: "Online Math Tutor for North Vancouver Students",
     heroSubheading:
       "One-on-one Math, Physics, Chemistry and Coding tutoring for Grades 6–12 and university — online, so nobody has to cross a bridge at rush hour.",
     intro: [
@@ -324,7 +324,7 @@ export const cities: City[] = [
     metaTitle: "Math Tutor in West Vancouver | Physics & Chemistry",
     metaDescription:
       "West Vancouver math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC & IB curriculum. Free 30-minute consultation.",
-    heroHeading: "Trusted Math Tutor in West Vancouver",
+    heroHeading: "Online Math Tutor for West Vancouver Students",
     heroSubheading:
       "Math, Physics, Chemistry and Coding tutoring for Grades 6–12, IB, AP and university — depth and extension for students who are already doing well.",
     intro: [
@@ -402,7 +402,7 @@ export const cities: City[] = [
     metaTitle: "Math Tutor in Coquitlam | Physics, Chemistry & Coding",
     metaDescription:
       "Coquitlam math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book your free consultation today.",
-    heroHeading: "Expert Math Tutor in Coquitlam",
+    heroHeading: "Online Math Tutor for Coquitlam Students",
     heroSubheading:
       "Math, Physics, Chemistry and Coding tutoring for Grades 6–12 and university — with particular attention to the Grade 10 to 11 jump.",
     intro: [
@@ -479,7 +479,7 @@ export const cities: City[] = [
     metaTitle: "Math Tutor in Port Moody | Physics & Chemistry",
     metaDescription:
       "Port Moody math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Free 30-minute consultation.",
-    heroHeading: "Trusted Math Tutor in Port Moody",
+    heroHeading: "Online Math Tutor for Port Moody Students",
     heroSubheading:
       "Steady weekly Math, Physics, Chemistry and Coding tutoring for Grades 6–12 and university — built to catch problems before they become urgent.",
     intro: [
@@ -554,7 +554,7 @@ export const cities: City[] = [
     metaTitle: "Math Tutor in Port Coquitlam | Physics & Chemistry",
     metaDescription:
       "Port Coquitlam math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book a free consultation.",
-    heroHeading: "Expert Math Tutor in Port Coquitlam",
+    heroHeading: "Online Math Tutor for Port Coquitlam Students",
     heroSubheading:
       "Math, Physics, Chemistry and Coding tutoring for Grades 6–12 and university — including help choosing between Workplace, Foundations and Pre-Calculus.",
     intro: [
@@ -636,7 +636,7 @@ export const cities: City[] = [
     metaTitle: "Math Tutor in Surrey | Physics, Chemistry & Coding",
     metaDescription:
       "Surrey math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book your free consultation today.",
-    heroHeading: "Expert Math Tutor in Surrey",
+    heroHeading: "Online Math Tutor for Surrey Students",
     heroSubheading:
       "Math, Physics, Chemistry and Coding tutoring for Grades 6–12 and university — the individual attention a full classroom cannot give.",
     intro: [
@@ -715,7 +715,7 @@ export const cities: City[] = [
     metaTitle: "Math Tutor in Richmond | Physics, Chemistry & Coding",
     metaDescription:
       "Richmond math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Free 30-minute consultation.",
-    heroHeading: "Trusted Math Tutor in Richmond",
+    heroHeading: "Online Math Tutor for Richmond Students",
     heroSubheading:
       "Math, Physics, Chemistry and Coding tutoring for Grades 6–12 and university — for students who want to understand it, not just score well.",
     intro: [
@@ -800,7 +800,7 @@ export const cities: City[] = [
     metaTitle: "Math Tutor in New Westminster | Physics & Chemistry",
     metaDescription:
       "New Westminster math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book a free consultation.",
-    heroHeading: "Expert Math Tutor in New Westminster",
+    heroHeading: "Online Math Tutor for New Westminster Students",
     heroSubheading:
       "Math, Physics, Chemistry and Coding tutoring for Grades 6–12, university and college — in person just over the Burnaby line, or online.",
     intro: [
@@ -883,7 +883,7 @@ export const cities: City[] = [
     metaTitle: "Math Tutor in Delta | Physics, Chemistry & Coding",
     metaDescription:
       "Delta math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Free 30-minute consultation.",
-    heroHeading: "Trusted Math Tutor in Delta",
+    heroHeading: "Online Math Tutor for Delta Students",
     heroSubheading:
       "Math, Physics, Chemistry and Coding tutoring for Ladner, Tsawwassen and North Delta — online, so the drive does not decide the tutoring.",
     intro: [
