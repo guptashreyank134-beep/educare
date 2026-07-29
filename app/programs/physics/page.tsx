@@ -146,7 +146,7 @@ export default async function PhysicsProgramPage() {
                 items={[
                   "Stronger understanding of physics concepts",
                   "Improved mathematical application skills",
-                  "Better grades and exam performance",
+                  "Support toward stronger academic performance",
                   "Faster problem-solving abilities",
                   "Greater confidence in tackling complex questions",
                 ]}

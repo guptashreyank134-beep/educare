@@ -214,7 +214,7 @@ export default async function IBAPTutoringPage() {
                 <div className="absolute bottom-8 left-0 bg-yellow-light text-slate px-4 py-2 rounded-r-xl shadow-lg flex items-center gap-2 animate-bounce-slow">
                   <Zap size={18} fill="currentColor" />
                   <p className="text-[14px] font-bricolage font-bold">
-                    Score a 7 / 5
+                    IB & AP
                   </p>
                 </div>
               </div>

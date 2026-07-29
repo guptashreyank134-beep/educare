@@ -28,8 +28,8 @@ export default function ProgramNextSteps({
         <p className="text-[16px] font-montserrat text-slate/80 leading-relaxed mb-6 max-w-[760px]">
           Sessions run one-to-one or in a small group, in person in Burnaby or
           online across Metro Vancouver. The most useful first step is a
-          conversation — bring a recent test and we will tell you where the marks
-          are actually going.
+          conversation — bring a recent test so we can identify where marks may
+          be being lost.
         </p>
 
         <div className="flex flex-wrap gap-x-6 gap-y-3">

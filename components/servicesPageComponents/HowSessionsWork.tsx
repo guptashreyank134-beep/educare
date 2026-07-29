@@ -124,8 +124,9 @@ export default function HowSessionsWork() {
         </div>
         <p className="text-[16px] font-montserrat text-slate/80 leading-relaxed mb-5 max-w-[760px]">
           Call or message to ask about rates, then book a free 30-minute
-          consultation — a conversation, not a lesson. Bring a recent test and we
-          will tell you where the marks are going and what it would take to fix.
+          consultation — a conversation, not a lesson. Bring a recent test so we
+          can identify where marks may be being lost and what it would take to
+          improve.
           If tutoring is not what your child needs, we will say so.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-3">
