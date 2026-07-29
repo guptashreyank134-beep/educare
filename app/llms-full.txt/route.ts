@@ -2,6 +2,7 @@ import { cities, cityUrl } from "@/data/cities";
 import { verticalPages, verticalUrl } from "@/data/verticalPages";
 import { seoPages, seoPageUrl } from "@/data/seoPages";
 import { client } from "@/sanity/lib/client";
+import { REVIEW_RATING, REVIEW_COUNT } from "@/data/reviews";
 
 const BASE = "https://www.drshreyankeducare.com";
 
@@ -30,7 +31,7 @@ export async function GET() {
   lines.push("# Dr. Shreyank Educare — Full Content");
   lines.push("");
   lines.push(
-    "> PhD-led, 5-star-rated (5.0 from 41 Google reviews) tutoring in Math, Physics, Chemistry, Biology and Coding for Grades 6–12 and university across Burnaby & Vancouver — in person and online — plus online University & Professional tutoring (Economics, Statistics, Actuarial Science, R), MD-led Medical tutoring for USA & Caribbean students, and SAT/GRE/GMAT/MCAT exam prep."
+    `> PhD-led, 5-star-rated (${REVIEW_RATING.toFixed(1)} from ${REVIEW_COUNT} Google reviews) tutoring in Math, Physics, Chemistry, Biology and Coding for Grades 6–12 and university across Burnaby & Vancouver — in person and online — plus online University & Professional tutoring (Economics, Statistics, Actuarial Science, R), MD-led Medical tutoring for USA & Caribbean students, and SAT/GRE/GMAT/MCAT exam prep.`
   );
   lines.push("");
 
@@ -38,7 +39,7 @@ export async function GET() {
   lines.push("## Key Facts");
   lines.push("- Name: Dr. Shreyank Educare");
   lines.push("- Founder: Dr. Shreyank Gupta — PhD in Ultrasound Signal & Image Processing (University of Quebec), 10+ years teaching experience.");
-  lines.push("- Rating: 5.0 out of 5 from 41 Google reviews.");
+  lines.push(`- Rating: ${REVIEW_RATING.toFixed(1)} out of 5 from ${REVIEW_COUNT} Google reviews.`);
   lines.push("- Location: 2088 Madison Avenue, Burnaby, BC, Canada. Serves Burnaby, Vancouver and Metro Vancouver in person, and students worldwide online.");
   lines.push("- Contact: +1 672-514-7587 (phone/WhatsApp), info@drshreyankeducare.com.");
   lines.push("- Subjects: Math, Pre-Calculus, Calculus, Physics, Chemistry, Biology, Computer Science, Python, JavaScript, Web Development; IB & AP; SAT, GRE, GMAT, MCAT; university calculus, physics, chemistry, statistics, finance (CFA, MBA, BCom); MD-led medical sciences; French and Mandarin.");

@@ -89,7 +89,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "Where is Dr. Shreyank Educare located?",
         answer:
-          "In-person tutoring is available at our Burnaby learning centre, and we serve students across Burnaby and Vancouver in person, plus online tutoring across Metro Vancouver and beyond.",
+          "In-person tutoring is available at our Burnaby tutoring studio, and we serve students across Burnaby and Vancouver in person, plus online tutoring across Metro Vancouver and beyond.",
       },
       {
         question: "What subjects and grades do you cover?",
@@ -126,7 +126,7 @@ export const seoPages: SeoPage[] = [
         heading: "What Parents and Students Say",
         points: [
           "Patient, expert PhD-led teaching",
-          "Real grade improvements",
+          "Stronger understanding and confidence",
           "Clear step-by-step explanations",
           "Flexible in-person & online sessions",
           "Strong exam preparation",
@@ -160,7 +160,7 @@ export const seoPages: SeoPage[] = [
     ],
     related: [
       { label: "About Dr. Shreyank Educare", href: "/about" },
-      { label: "Best Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
       CONTACT,
     ],
   },
@@ -202,7 +202,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "Do you offer in-person tutoring in Burnaby?",
         answer:
-          "Yes. In-person tutoring is available at our Burnaby learning centre, so local students attend one-on-one sessions, with online tutoring also available.",
+          "Yes. In-person tutoring is available at our Burnaby tutoring studio, so local students attend one-on-one sessions, with online tutoring also available.",
       },
       {
         question: "Which Burnaby schools do your students attend?",
@@ -339,14 +339,14 @@ export const seoPages: SeoPage[] = [
     slug: "best-math-tutor-burnaby",
     cluster: "Core Local",
     location: "Burnaby",
-    metaTitle: "Best Math Tutor in Burnaby | PhD-Led, 5★ Rated",
+    metaTitle: "Math Tutor in Burnaby | PhD-Led, 5★ Rated",
     metaDescription:
-      "Looking for the best math tutor in Burnaby? PhD-led, 5★-rated one-on-one math tutoring for Grades 6–12 and university. Results-focused. Free consultation.",
-    h1: "Best Math Tutor in Burnaby",
+      "Looking for the math tutor in Burnaby? PhD-led, 5★-rated one-on-one math tutoring for Grades 6–12 and university. Results-focused. Free consultation.",
+    h1: "Math Tutor in Burnaby",
     heroSubheading:
-      "PhD-led, 5★-rated math tutoring with a track record of real grade improvements — trusted by Burnaby families for Grades 6–12 and university.",
+      "PhD-led, 5★-rated math tutoring with a track record of stronger understanding and confidence — trusted by Burnaby families for Grades 6–12 and university.",
     intro: [
-      "Choosing the best math tutor in Burnaby comes down to three things: genuine expertise, personalised attention, and a focus on real progress. Dr. Shreyank Educare delivers all three — PhD-led teaching, true one-on-one sessions, and 5★ reviews from local families.",
+      "Choosing the math tutor in Burnaby comes down to three things: genuine expertise, personalised attention, and a focus on real progress. Dr. Shreyank Educare delivers all three — PhD-led teaching, true one-on-one sessions, and 5★ reviews from local families.",
       "We don't just help students get the answer; we make sure they understand why, so improvement lasts well beyond the next test.",
     ],
     sections: [
@@ -395,14 +395,14 @@ export const seoPages: SeoPage[] = [
     slug: "best-math-tutor-vancouver",
     cluster: "Core Local",
     location: "Vancouver",
-    metaTitle: "Best Math Tutor in Vancouver | PhD-Led, 5★ Rated",
+    metaTitle: "Math Tutor in Vancouver | PhD-Led, 5★ Rated",
     metaDescription:
-      "The best math tutor in Vancouver: PhD-led, 5★-rated one-on-one tutoring for Grades 6–12 and university, online or nearby in Burnaby. Free consultation.",
-    h1: "Best Math Tutor in Vancouver",
+      "The math tutor in Vancouver: PhD-led, 5★-rated one-on-one tutoring for Grades 6–12 and university, online or nearby in Burnaby. Free consultation.",
+    h1: "Math Tutor in Vancouver",
     heroSubheading:
       "Expert, PhD-led math tutoring for Vancouver students — online across the city or in person nearby at our Burnaby location.",
     intro: [
-      "Vancouver families searching for the best math tutor want an expert who can actually lift grades and confidence. Dr. Shreyank Educare pairs PhD-led teaching with flexible online sessions across Vancouver and in-person options nearby in Burnaby.",
+      "Vancouver families searching for the math tutor want an expert who can actually lift grades and confidence. Dr. Shreyank Educare pairs PhD-led teaching with flexible online sessions across Vancouver and in-person options nearby in Burnaby.",
       "From Kitsilano to Kerrisdale and the East Side, students get math tutoring built around their class, their pace and their goals.",
     ],
     sections: [
@@ -498,7 +498,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Best Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
       { label: "Pre-Calculus 12 Tutor in Burnaby", href: "/pre-calculus-12-tutor-burnaby" },
     ],
   },
@@ -553,7 +553,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Best Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
+      { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
       CONTACT,
     ],
   },
@@ -1864,7 +1864,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Best Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
       { label: "Science Tutor in Burnaby", href: "/science-tutor-burnaby" },
       { label: "All-Subject Tutoring in Vancouver", href: "/tutoring-vancouver" },
     ],
@@ -1880,7 +1880,7 @@ export const seoPages: SeoPage[] = [
     heroSubheading:
       "Flexible, expert tutoring for Vancouver students in Math, Science and Coding — online across the city or in person nearby in Burnaby.",
     intro: [
-      "Vancouver families choose Dr. Shreyank Educare for PhD-led tutoring that fits busy schedules and delivers real results. We help students across Math, Physics, Chemistry and Coding, from Grade 6 through university.",
+      "Vancouver families choose Dr. Shreyank Educare for PhD-led tutoring that fits busy schedules and supports stronger understanding and confidence. We help students across Math, Physics, Chemistry and Coding, from Grade 6 through university.",
       "Most Vancouver students learn with us online, with in-person options in person nearby in Burnaby.",
     ],
     sections: [
@@ -1919,7 +1919,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Best Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
+      { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
       { label: "STEM Tutor in Vancouver", href: "/stem-tutor-vancouver" },
       { label: "All-Subject Tutoring in Burnaby", href: "/tutoring-burnaby" },
     ],
@@ -2069,7 +2069,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "Where are you located?",
         answer:
-          "In-person tutoring is available at our Burnaby learning centre, and we serve students across Metro Vancouver in person and online.",
+          "In-person tutoring is available at our Burnaby tutoring studio, and we serve students across Metro Vancouver in person and online.",
       },
       {
         question: "Do you offer in-person tutoring near me?",
@@ -2127,7 +2127,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "Which exams do you prepare students for?",
         answer:
-          "Provincial and final exams in Math, Physics and Chemistry, plus IB and AP exams.",
+          "Final exams and unit assessments in Math, Physics and Chemistry, plus IB and AP exams.",
       },
       {
         question: "How early should we start?",
@@ -2312,10 +2312,10 @@ export const seoPages: SeoPage[] = [
     location: "Burnaby",
     metaTitle: "Test Prep Tutor in Burnaby | Exams, Provincials & More",
     metaDescription:
-      "Test prep tutoring in Burnaby for school exams, provincial assessments and standardized tests. PhD-led, targeted and effective. Book a free consultation.",
+      "Test prep tutoring in Burnaby for school exams, BC graduation assessments and standardized tests. PhD-led, targeted and effective. Book a free consultation.",
     h1: "Test Prep Tutor in Burnaby",
     heroSubheading:
-      "Focused test preparation in Burnaby — school exams, provincial assessments and beyond, with a proven, targeted method.",
+      "Focused test preparation in Burnaby — school exams, BC graduation assessments and beyond, with a proven, targeted method.",
     intro: [
       "Test prep is about strategy as much as content. Our Burnaby test-prep tutoring builds both — mastering the material and the exam technique that turns knowledge into marks.",
       "We tailor preparation to the specific test, from school finals to provincial numeracy assessments.",
@@ -2344,7 +2344,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "Which tests do you prepare students for?",
         answer:
-          "School exams, provincial assessments, and IB/AP exams in Math and Science.",
+          "School exams, BC graduation assessments, and IB/AP exams in Math and Science.",
       },
       {
         question: "Do you teach test-taking strategy?",
@@ -2759,14 +2759,14 @@ export const seoPages: SeoPage[] = [
     slug: "best-chemistry-tutor-burnaby",
     cluster: "Best/Top",
     location: "Burnaby",
-    metaTitle: "Best Chemistry Tutor in Burnaby | PhD-Led, 5★ Rated",
+    metaTitle: "Chemistry Tutor in Burnaby | PhD-Led, 5★ Rated",
     metaDescription:
-      "The best chemistry tutor in Burnaby — PhD-led, 5★-rated help with Chemistry 11 & 12 and university chemistry. In person or online. Free consultation.",
-    h1: "Best Chemistry Tutor in Burnaby",
+      "The chemistry tutor in Burnaby — PhD-led, 5★-rated help with Chemistry 11 & 12 and university chemistry. In person or online. Free consultation.",
+    h1: "Chemistry Tutor in Burnaby",
     heroSubheading:
       "PhD-led, 5★-rated chemistry tutoring in Burnaby — from Chemistry 11 foundations to Chemistry 12 and university.",
     intro: [
-      "The best chemistry tutor combines genuine subject depth with the patience to make abstract concepts concrete. Dr. Shreyank Educare delivers both, with PhD-led teaching and 5★ reviews.",
+      "The chemistry tutor combines genuine subject depth with the patience to make abstract concepts concrete. Dr. Shreyank Educare delivers both, with PhD-led teaching and 5★ reviews.",
       "We help Burnaby students master the trickiest units — equilibrium, acids and bases, stoichiometry — with clear, methodical teaching.",
     ],
     sections: [
@@ -2813,14 +2813,14 @@ export const seoPages: SeoPage[] = [
     slug: "best-physics-tutor-burnaby",
     cluster: "Best/Top",
     location: "Burnaby",
-    metaTitle: "Best Physics Tutor in Burnaby | PhD-Led, 5★ Rated",
+    metaTitle: "Physics Tutor in Burnaby | PhD-Led, 5★ Rated",
     metaDescription:
-      "The best physics tutor in Burnaby — PhD-led, 5★-rated help with Physics 11 & 12 and university physics. In person or online. Book a free consultation.",
-    h1: "Best Physics Tutor in Burnaby",
+      "The physics tutor in Burnaby — PhD-led, 5★-rated help with Physics 11 & 12 and university physics. In person or online. Book a free consultation.",
+    h1: "Physics Tutor in Burnaby",
     heroSubheading:
       "PhD-led, 5★-rated physics tutoring in Burnaby — clear concepts and reliable problem-solving from Physics 11 to university.",
     intro: [
-      "Physics rewards students who understand the concepts and can solve problems systematically. The best physics tutor builds both — and that's exactly our focus.",
+      "Physics rewards students who understand the concepts and can solve problems systematically. The physics tutor builds both — and that's exactly our focus.",
       "Burnaby students trust us for clear teaching of mechanics, electricity and more, plus the math skills physics demands.",
     ],
     sections: [
@@ -2873,7 +2873,7 @@ export const seoPages: SeoPage[] = [
       "The best IB Math tutor in Burnaby — specialist help with AA & AI, SL & HL, and the IA. PhD-led, in person or online. Book a free consultation.",
     h1: "Best IB Math Tutor in Burnaby",
     heroSubheading:
-      "Specialist, top-rated IB Math tutoring in Burnaby across AA and AI, SL and HL — including the Internal Assessment.",
+      "Specialist IB Math tutoring in Burnaby across AA and AI, SL and HL — including the Internal Assessment.",
     intro: [
       "The best IB Math tutor understands the IB itself — its streams, assessment style and IA — not just the mathematics. That's our specialty.",
       "Burnaby IB students rely on us for AA and AI at SL and HL, taught to the IB's exact requirements.",
@@ -2924,7 +2924,7 @@ export const seoPages: SeoPage[] = [
     location: "Vancouver",
     metaTitle: "Top Math Tutor in Vancouver | PhD-Led, 5★ Rated",
     metaDescription:
-      "A top-rated math tutor in Vancouver — PhD-led, 5★-rated one-on-one help for Grades 6–12 and university. Online or nearby in Burnaby. Free consultation.",
+      "An experienced math tutor in Vancouver — PhD-led, 5★-rated one-on-one help for Grades 6–12 and university. Online or nearby in Burnaby. Free consultation.",
     h1: "Top Math Tutor in Vancouver",
     heroSubheading:
       "Among Vancouver's most trusted math tutors — PhD-led, 5★-rated, and focused on building grades and confidence.",
@@ -2967,7 +2967,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Best Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
+      { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
       { label: "Top Chemistry Tutor in Vancouver", href: "/top-chemistry-tutor-vancouver" },
     ],
   },
@@ -2980,9 +2980,9 @@ export const seoPages: SeoPage[] = [
       "A top chemistry tutor in Vancouver — PhD-led help with Chemistry 11 & 12 and university chemistry. Online or nearby in Burnaby. Book a free consultation.",
     h1: "Top Chemistry Tutor in Vancouver",
     heroSubheading:
-      "Top-rated chemistry tutoring for Vancouver students — Chemistry 11, 12 and university, taught clearly and methodically.",
+      "Experienced chemistry tutoring for Vancouver students — Chemistry 11, 12 and university, taught clearly and methodically.",
     intro: [
-      "Chemistry rewards clear, methodical teaching, especially in its trickiest units. Our top-rated Vancouver chemistry tutoring makes equilibrium, acids and bases, and stoichiometry genuinely understandable.",
+      "Chemistry rewards clear, methodical teaching, especially in its trickiest units. Our experienced Vancouver chemistry tutoring makes equilibrium, acids and bases, and stoichiometry genuinely understandable.",
       "Sessions are online across Vancouver, or in person nearby in Burnaby.",
     ],
     sections: [
@@ -3034,9 +3034,9 @@ export const seoPages: SeoPage[] = [
       "A top physics tutor in Vancouver — PhD-led help with Physics 11 & 12 and university physics. Online or nearby in Burnaby. Book a free consultation.",
     h1: "Top Physics Tutor in Vancouver",
     heroSubheading:
-      "Top-rated physics tutoring for Vancouver students — clear concepts and reliable problem-solving from Physics 11 to university.",
+      "Experienced physics tutoring for Vancouver students — clear concepts and reliable problem-solving from Physics 11 to university.",
     intro: [
-      "The best physics tutoring builds deep conceptual understanding and systematic problem-solving. Our top-rated Vancouver physics tutors do exactly that.",
+      "The physics tutoring builds deep conceptual understanding and systematic problem-solving. Our experienced Vancouver physics tutors do exactly that.",
       "We help students across mechanics, electricity and more, online across Vancouver or in person nearby in Burnaby.",
     ],
     sections: [
@@ -4295,7 +4295,7 @@ export const seoPages: SeoPage[] = [
         heading: "Aligned to BC",
         body: [
           "We match tutoring to your exact BC course and teacher's material.",
-          "Sessions build toward provincial and final assessments.",
+          "Sessions build toward final exams and unit assessments.",
         ],
       },
     ],
@@ -4309,7 +4309,7 @@ export const seoPages: SeoPage[] = [
         answer: "Yes — online, one-on-one.",
       },
       {
-        question: "Do you prepare for provincial assessments?",
+        question: "Do you prepare for final exams and unit assessments?",
         answer: "Yes.",
       },
     ],
@@ -5310,7 +5310,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Best Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
       { label: "My Child Is Failing Math — What to Do", href: "/my-child-is-failing-math-what-should-i-do" },
       { label: "Dr. Shreyank Educare Reviews", href: "/dr-shreyank-educare-reviews" },
     ],

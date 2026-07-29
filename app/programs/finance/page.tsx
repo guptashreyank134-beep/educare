@@ -151,7 +151,7 @@ export default async function FinanceProgramPage() {
                   "Improved academic performance",
                   "Better understanding of financial concepts",
                   "Stronger analytical and decision-making skills",
-                  "Higher certification exam success rates",
+                  "Stronger preparation for certification exams",
                   "Greater career readiness in finance",
                 ]}
               />

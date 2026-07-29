@@ -134,7 +134,7 @@ export default async function BurnabySTEMTutoringPage() {
                     "Burnaby high school students (Grades 8–12)",
                     "SFU and other university students",
                     "Students struggling with one or more STEM subjects",
-                    "Learners preparing for final exams and provincial assessments",
+                    "Learners preparing for final exams and unit assessments",
                     "Students aiming for post-secondary STEM programs",
                   ]}
                 />

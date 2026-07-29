@@ -14,7 +14,7 @@ import { MapPin, Monitor, Phone } from "lucide-react";
  * particular this does NOT imply a teaching facility, because there isn't one.
  *
  * Both formats are named here because both are real and sold: one-to-one, and
- * the Monthly Program's small group of 6-8 (app/pricing/content.ts). An earlier
+ * the Monthly Program's small group of up to 6 (app/pricing/content.ts). An earlier
  * version of this file called the service "one-to-one" full stop and described
  * "one student" at the table, which contradicted the pricing page and a dozen
  * programme pages. Keep the two in step.
@@ -29,7 +29,7 @@ export default function HowSessionsWork() {
         <p className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed mb-4">
           It is one service — PhD-led tutoring — in two formats. One-to-one, when
           something specific is broken and needs finding. Or the Monthly Program,
-          two sessions a week in a small group of six to eight, when the need is
+          two sessions a week in a small group of up to six, when the need is
           steady practice across a term.
         </p>
         <p className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed mb-4">
@@ -56,10 +56,11 @@ export default function HowSessionsWork() {
             </h3>
           </div>
           <p className="text-[16px] font-montserrat text-slate/80 leading-relaxed mb-4">
-            Sessions take place at Dr. Shreyank&apos;s home study in Burnaby — a
-            quiet table, no distractions. It is a study rather than a storefront
-            learning centre, and that is deliberate: even in the small group, the
-            teaching is done by the person whose name is on the door.
+            In-person tutoring takes place in a quiet, dedicated tutoring studio
+            at our Burnaby location on Madison Avenue — no distractions. It is a
+            private learning space rather than a walk-in storefront, and that is
+            deliberate: even in the small group, the teaching is done by the
+            person whose name is on the door.
           </p>
           <ul className="list-disc pl-5 marker:text-primary space-y-2">
             <li className="text-[16px] font-montserrat text-slate/80 pl-1">

@@ -176,7 +176,7 @@ export default async function IBAPTutoringPage() {
                     },
                     {
                       title: "Internal Assessment Support",
-                      desc: "IB IAs can be daunting. We guide students through topic selection, methodology, data analysis, and report writing to maximize their IA scores.",
+                      desc: "IB IAs can be daunting. We guide students through topic selection, methodology, data analysis, and report writing to understand the assessment criteria and improve their own reasoning, analysis and communication.",
                     },
                     {
                       title: "Past Paper Mastery",

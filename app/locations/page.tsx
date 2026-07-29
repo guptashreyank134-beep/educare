@@ -71,7 +71,7 @@ export default function LocationsPage() {
           <ul className="space-y-2.5 text-[15px] sm:text-[16px] text-slate/80">
             <li>• In-person tutoring in Burnaby, or online across Metro Vancouver — the same PhD-led tutors either way.</li>
             <li>• Math, Physics, Chemistry, Biology, Computer Science and coding for Grades 6–12, plus Pre-Calculus 11/12, Calculus, IB and AP.</li>
-            <li>• Exam preparation for the SAT, GRE, GMAT and MCAT, and provincial and final-exam review.</li>
+            <li>• Exam preparation for the SAT, GRE, GMAT and MCAT, and final-exam and unit-assessment review.</li>
             <li>• University support for UBC, SFU and Langara students in calculus, physics, chemistry, statistics and finance.</li>
             <li>• A free 30-minute consultation before you commit, so you can meet your tutor first.</li>
           </ul>

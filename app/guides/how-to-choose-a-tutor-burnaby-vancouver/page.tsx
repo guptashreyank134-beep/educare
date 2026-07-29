@@ -122,9 +122,9 @@ export default function GuidePage() {
         <H2>Pricing structures</H2>
         <P>
           Expect to see per-session and monthly-package pricing. In Metro
-          Vancouver, one-on-one high-school rates commonly fall in the roughly
-          $70–$110 per hour range depending on level and tutor experience; group
-          rates are lower per student. Ask what is included: session length,
+          Vancouver, one-on-one high-school rates vary widely by level and tutor
+          experience, and group rates are lower per student. Ask what is
+          included: session length,
           whether materials and practice sets are provided, whether tax is
           included, and the cancellation window. A clear, written policy is a good
           sign. (For reference, our own{" "}

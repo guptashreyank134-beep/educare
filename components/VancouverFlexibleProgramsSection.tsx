@@ -9,7 +9,7 @@ export default function VancouverFlexibleProgramsSection() {
     {
       title: "One-On-One Tutoring",
       image: "/assets/flex1.png",
-      description: "Best for students who need personalized attention, fast improvement, or help with specific weak areas."
+      description: "Best for students who need personalized attention, focused support, or help with specific weak areas."
     },
     {
       title: "Small Group Classes",

@@ -3,6 +3,7 @@ import { Star, GraduationCap, MapPin, ShieldCheck } from "lucide-react";
 import TrialClassForm from "@/components/TrialClassForm";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { JsonLd, getServiceSchema } from "@/components/SchemaMarkup";
+import { REVIEW_RATING, REVIEW_COUNT } from "@/data/reviews";
 
 const PAGE_URL = "https://www.drshreyankeducare.com/book";
 const title = "Book Your Free Assessment | Dr. Shreyank Educare";
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 const TRUST = [
   { icon: GraduationCap, text: "PhD-led tutors, 10+ years' experience" },
-  { icon: Star, text: "Rated 5.0 from 41 Google reviews" },
+  { icon: Star, text: `Rated ${REVIEW_RATING.toFixed(1)} from ${REVIEW_COUNT} Google reviews` },
   { icon: MapPin, text: "In person in Burnaby or online across Metro Vancouver" },
   { icon: ShieldCheck, text: "No obligation — we'll tell you honestly if we're not the right fit" },
 ];

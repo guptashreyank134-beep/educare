@@ -174,8 +174,8 @@ export const redirectPairs: [string, string][] = [
   // scripts/backups/consolidated-posts.json if any needs restoring.
   ["/blog/physics-high-school-physics", "/physics-12-tutor-burnaby"],
   ["/blog/physics-tutoring-high-school-physics", "/physics-12-tutor-burnaby"],
-  ["/blog/physics-tutoring-university-physics", "/university-physics-tutor-vancouver"],
-  ["/blog/physics-university-level-physics", "/university-physics-tutor-vancouver"],
+  ["/blog/physics-tutoring-university-physics", "/programs/university-physics"],
+  ["/blog/physics-university-level-physics", "/programs/university-physics"],
   ["/blog/physics-tutoring-physics-concepts-problem-solving", "/physics-problem-solving-tutor"],
   ["/blog/mathematics-pre-calculus", "/pre-calculus-12-tutor-burnaby"],
   ["/blog/burnaby-stem-tutoring-physics-11-12", "/physics-12-tutor-burnaby"],
