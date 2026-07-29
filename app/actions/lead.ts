@@ -8,6 +8,8 @@ import nodemailer from "nodemailer";
 const FALLBACK_LEAD_EMAIL = "guptashreyank134@gmail.com";
 // Always notify the business inbox, in addition to the routed/fallback inbox.
 const ALWAYS_NOTIFY_EMAIL = "info@drshreyankeducare.com";
+const SENDER = { name: "Dr. Shreyank Educare", email: "info@drshreyankeducare.com" };
+
 const LEAD_EMAIL_BY_VERTICAL: Record<string, string | undefined> = {
   "local-k12": process.env.LEAD_EMAIL_LOCAL,
   medical: process.env.LEAD_EMAIL_MEDICAL,
@@ -26,6 +28,78 @@ const VERTICAL_LABEL: Record<string, string> = {
 const SANITY_WRITE_TOKEN =
   process.env.SANITY_API_WRITE_TOKEN || process.env.SANITY_API_TOKEN;
 
+/**
+ * Send the lead notification email. Prefers Brevo's HTTP API (works from
+ * serverless with no SMTP IP-allowlist), and falls back to SMTP if only SMTP
+ * credentials are configured. Returns true if the message was accepted.
+ */
+async function sendLeadEmail(opts: {
+  recipients: string[];
+  subject: string;
+  text: string;
+  html: string;
+}): Promise<boolean> {
+  const { recipients, subject, text, html } = opts;
+
+  // 1) Brevo HTTP transactional API (recommended).
+  if (process.env.BREVO_API_KEY) {
+    try {
+      const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+        method: "POST",
+        headers: {
+          "api-key": process.env.BREVO_API_KEY,
+          "content-type": "application/json",
+          accept: "application/json",
+        },
+        body: JSON.stringify({
+          sender: SENDER,
+          to: recipients.map((email) => ({ email })),
+          subject,
+          textContent: text,
+          htmlContent: html,
+        }),
+      });
+      if (res.ok) return true;
+      console.error(
+        "Lead: Brevo API send failed:",
+        res.status,
+        await res.text().catch(() => ""),
+      );
+    } catch (err) {
+      console.error("Lead: Brevo API error:", err);
+    }
+  }
+
+  // 2) SMTP fallback (Brevo SMTP relay).
+  if (process.env.BREVO_SMTP_USER && process.env.BREVO_SMTP_PASS) {
+    try {
+      const transporter = nodemailer.createTransport({
+        host: "smtp-relay.brevo.com",
+        port: 587,
+        secure: false,
+        auth: {
+          user: process.env.BREVO_SMTP_USER,
+          pass: process.env.BREVO_SMTP_PASS,
+        },
+      });
+      await transporter.sendMail({
+        from: `"${SENDER.name}" <${SENDER.email}>`,
+        to: recipients.join(", "),
+        subject,
+        text,
+        html,
+      });
+      return true;
+    } catch (err) {
+      console.error("Lead: SMTP send failed:", err);
+    }
+  } else if (!process.env.BREVO_API_KEY) {
+    console.warn("Lead: no Brevo API key or SMTP credentials — skipping email.");
+  }
+
+  return false;
+}
+
 export async function createLead(formData: FormData) {
   const firstName = (formData.get("firstName") as string) || "";
   const lastName = (formData.get("lastName") as string) || "";
@@ -37,13 +111,12 @@ export async function createLead(formData: FormData) {
   const verticalLabel = VERTICAL_LABEL[vertical] || VERTICAL_LABEL["local-k12"];
   const routedInbox = LEAD_EMAIL_BY_VERTICAL[vertical] || FALLBACK_LEAD_EMAIL;
   // Deduplicated recipient list: the routed inbox + the always-notify business inbox.
-  const recipient = [...new Set([routedInbox, ALWAYS_NOTIFY_EMAIL])].join(", ");
+  const recipients = [...new Set([routedInbox, ALWAYS_NOTIFY_EMAIL])];
 
   // Capture the lead through two independent channels (Sanity + email) and
   // report success if EITHER one lands, so a single-channel outage never shows
   // the visitor an error or loses the enquiry.
   let sanityOk = false;
-  let emailOk = false;
 
   // 1) Store the lead in Sanity (visible in Studio).
   if (SANITY_WRITE_TOKEN) {
@@ -72,42 +145,22 @@ export async function createLead(formData: FormData) {
     );
   }
 
-  // 2) Email the notification via Brevo SMTP.
-  if (process.env.BREVO_SMTP_USER && process.env.BREVO_SMTP_PASS) {
-    try {
-      const transporter = nodemailer.createTransport({
-        host: "smtp-relay.brevo.com",
-        port: 587,
-        secure: false,
-        auth: {
-          user: process.env.BREVO_SMTP_USER,
-          pass: process.env.BREVO_SMTP_PASS,
-        },
-      });
-
-      await transporter.sendMail({
-        from: '"Dr. Shreyank Educare" <info@drshreyankeducare.com>',
-        to: recipient,
-        subject: `New ${verticalLabel} Lead: ${subject}`,
-        text: `You have received a new ${verticalLabel} lead from the website.\n\nVertical: ${verticalLabel}\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`,
-        html: `
-          <h2>New ${verticalLabel} Lead</h2>
-          <p><strong>Vertical:</strong> ${verticalLabel}</p>
-          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Subject:</strong> ${subject}</p>
-          <p><strong>Message:</strong></p>
-          <p>${message.replace(/\n/g, "<br>")}</p>
-        `,
-      });
-      emailOk = true;
-    } catch (err) {
-      console.error("Lead: email notification failed:", err);
-    }
-  } else {
-    console.warn("Lead: Brevo SMTP credentials not found. Skipping email.");
-  }
+  // 2) Email the notification (Brevo API, SMTP fallback).
+  const emailOk = await sendLeadEmail({
+    recipients,
+    subject: `New ${verticalLabel} Lead: ${subject}`,
+    text: `You have received a new ${verticalLabel} lead from the website.\n\nVertical: ${verticalLabel}\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`,
+    html: `
+      <h2>New ${verticalLabel} Lead</h2>
+      <p><strong>Vertical:</strong> ${verticalLabel}</p>
+      <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Subject:</strong> ${subject}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message.replace(/\n/g, "<br>")}</p>
+    `,
+  });
 
   if (sanityOk || emailOk) {
     return {
@@ -116,9 +169,8 @@ export async function createLead(formData: FormData) {
     };
   }
 
-  // Both channels failed — surface an error and log so it can be diagnosed.
   console.error(
-    "Lead: BOTH channels failed (Sanity + email). Check SANITY_API_WRITE_TOKEN and BREVO_SMTP_* env vars.",
+    "Lead: BOTH channels failed (Sanity + email). Check SANITY_API_WRITE_TOKEN and BREVO_API_KEY / BREVO_SMTP_* env vars.",
   );
   return {
     success: false,
