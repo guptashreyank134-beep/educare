@@ -47,6 +47,28 @@ a `/blog/page` nav link on paginated blog pages 308s to `/blog`.
 
 ---
 
+## Update — Phase 9 (perf/accessibility)
+
+**Lab Core Web Vitals (Lighthouse) is blocked:** the Vercel PR preview
+(`educare-git-seo-search-console-improvements-…vercel.app`) has **Deployment
+Protection / Vercel Authentication** on, so it 302s to an SSO login — Lighthouse
+can't reach it. To run the lab pass, either disable preview protection for this
+project or add a protection-bypass token, then run Lighthouse against the preview.
+
+As an honest proxy I ran a **static perf/a11y heuristic** (`npm run seo:perf`)
+against production. Real findings:
+- **CLS risk** — several pages render `<img>` without explicit width+height
+  (home 12/38, /math-tutor-burnaby 11/37, /blog 9/12). *Caveat:* some are likely
+  `next/image` with `fill` (positioned by CSS, not attributes) which is safe when
+  the container is sized — verify per component before "fixing".
+- **A11y** — `/contact` and `/blog` skip a heading level (H2 → H4). Low effort to fix.
+
+Not changed here (needs per-component review + the lab pass to prioritise), so
+Phase 9 remains **partially done**: structural risks identified, lab CWV pending
+an accessible deploy.
+
+---
+
 ## Scope note (read first)
 
 This branch implements the **safe, high-leverage, verifiable** parts of the brief
