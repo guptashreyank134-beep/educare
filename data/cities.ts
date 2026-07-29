@@ -88,9 +88,9 @@ export const cities: City[] = [
     metaTitle: "Burnaby Tutoring Centre | Math, Science & Coding Tutors",
     metaDescription:
       "In-person and online tutoring in Burnaby — math, physics, chemistry and coding for Grades 6–12 and university. PhD-led, 5★ rated. Book a free consultation.",
-    heroHeading: "Top-Rated Math Tutor in Burnaby",
+    heroHeading: "Math Tutoring in Burnaby for Grades 6–12 and University",
     heroSubheading:
-      "PhD-led tutoring in Math, Physics, Chemistry and Coding for Grades 6–12 and university — and the one city where we teach face to face.",
+      "PhD-led mathematics tutoring in Burnaby — Foundations, Pre-Calculus 11 & 12, Calculus and university math, one-on-one or small group, in person or online.",
     intro: [
       "Burnaby is where we teach in person, and that changes what a session can do. Sitting next to a student, a tutor sees the exact moment the pencil stops moving — the pause before a negative sign, the step that quietly gets skipped every single time. That kind of diagnostic detail is difficult to get any other way, and it is usually why our Burnaby students find their footing quickly.",
       "We work across the full range, from Grade 6 fundamentals through Pre-Calculus 12, AP and university coursework, including SFU students who have run into first-year calculus. Every session is built around the material your teacher handed out this week rather than a generic workbook.",
@@ -151,24 +151,39 @@ export const cities: City[] = [
     ],
     faqs: [
       {
-        question: "Do you have a tutoring centre in Burnaby?",
+        question: "Do you offer in-person math tutoring in Burnaby?",
         answer:
-          "Yes — we teach in person at our Burnaby centre on Madison Avenue, with online sessions available too. It is a dedicated space for one-on-one tutoring across math, the sciences and coding, for Grades 6–12 and university students.",
+          "Yes — we teach in person at our Burnaby centre on Madison Avenue, and online for students who prefer to learn from home.",
       },
       {
-        question: "My child does fine on homework but freezes in tests — can you help with that?",
+        question: "Which grades and math courses do you teach?",
         answer:
-          "Yes, and it is one of the most common reasons families call. Homework is done with notes open and no clock running, so it can hide gaps completely. We work under test-like conditions and rebuild the underlying fluency, so the recall does not depend on having the textbook nearby.",
+          "Grades 6–12 across the BC curriculum — Foundations of Mathematics, Pre-Calculus 11 and 12, and Calculus — as well as first-year university mathematics.",
       },
       {
-        question: "Do you tutor SFU students as well as school students?",
+        question: "Do you teach Pre-Calculus 11 and 12?",
         answer:
-          "We do. First- and second-year calculus and linear algebra are the courses we are asked about most, usually by students who did well in high school and were surprised by the jump. Sessions focus on the reasoning university courses assess rather than on drilling more of the same exercises.",
+          "Yes. Pre-Calculus 11 and 12 are among the courses we tutor most, including transformations, trigonometry, logarithms, word problems and final-exam preparation.",
       },
       {
-        question: "Is in-person actually better, or should we just book online?",
+        question: "Do you tutor SFU, UBC and Langara students?",
         answer:
-          "Honestly, it depends on the student. If they are older, self-motivated and their difficulty is with specific content, online is just as effective and far more convenient. If they are younger or tend to go quiet when confused, in person is worth the trip. We are happy to say which we would suggest after the free consultation.",
+          "Yes — we support first- and second-year university mathematics, including calculus, linear algebra and statistics, for SFU, UBC and Langara students.",
+      },
+      {
+        question: "What is the difference between one-on-one and group tutoring?",
+        answer:
+          "One-on-one sessions are fully tailored to a single student's pace and gaps. Small-group sessions (up to six students) cost less per student and suit learners who are close in level and taking the same course.",
+      },
+      {
+        question: "How much does math tutoring cost?",
+        answer:
+          "One-on-one sessions are $75–$100 per 60-minute session, GST included, varying by level. Group and package options are on the pricing page.",
+      },
+      {
+        question: "Is the consultation a free lesson?",
+        answer:
+          "No — the free 30-minute consultation is a planning conversation, not a lesson. We discuss your child's needs and suggest a plan that fits, with no obligation.",
       },
     ],
   },

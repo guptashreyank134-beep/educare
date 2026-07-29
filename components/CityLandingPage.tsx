@@ -20,6 +20,8 @@ import {
   getCityPageSchema,
   getFAQSchema,
 } from "@/components/SchemaMarkup";
+import AtAGlance from "@/components/AtAGlance";
+import { BUSINESS } from "@/data/businessInfo";
 
 import { getCityBySlug, cityUrl } from "@/data/cities";
 
@@ -78,6 +80,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
     <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
       <JsonLd schema={getCityPageSchema(city, url)} />
       <JsonLd schema={getFAQSchema(faqs)} />
+      {/* BreadcrumbList JSON-LD is emitted by the <Breadcrumbs> component below. */}
 
       {/* Yellow Grid Background */}
       <div
@@ -167,6 +170,23 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* At-a-Glance facts — server-rendered, easy for search and AI answer
+          engines to extract. Facts come from the single BUSINESS source. */}
+      <div className="relative z-10">
+        <AtAGlance
+          facts={[
+            { label: "Business", value: BUSINESS.name },
+            { label: "Address", value: BUSINESS.addressFull },
+            { label: "Levels", value: BUSINESS.levels },
+            { label: "Formats", value: BUSINESS.formats },
+            { label: "Programs", value: BUSINESS.programs },
+            { label: "Mathematics areas", value: "Foundations, Pre-Calculus, Calculus and university math" },
+            { label: "Lead tutor", value: BUSINESS.leadTutor },
+            { label: "Consultation", value: BUSINESS.consultation },
+          ]}
+        />
       </div>
 
       {/* City-specific intro / local content */}

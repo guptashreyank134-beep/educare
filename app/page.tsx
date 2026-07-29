@@ -58,10 +58,21 @@ export default async function Home() {
               PhD-Led Math, Physics, Chemistry &amp; Coding Tutoring in Burnaby
               and Vancouver
             </h1>
-            <p className="text-[#64748B] text-[16px] leading-relaxed max-w-[500px] mb-8">
+            <p className="text-[#64748B] text-[16px] leading-relaxed max-w-[500px] mb-4">
               Personalized tutoring that helps students build confidence, master
               difficult concepts, and improve grades through clear, step-by-step
               teaching.
+            </p>
+            <p className="text-[#64748B] text-[15px] leading-relaxed max-w-[520px] mb-8">
+              Popular:{" "}
+              <Link href="/math-tutor-burnaby" className="text-primary underline decoration-yellow-light decoration-2 underline-offset-2 hover:text-primary/80">
+                math tutoring in Burnaby
+              </Link>
+              . New to tutoring? Read our guide on{" "}
+              <Link href="/guides/how-to-choose-a-tutor-burnaby-vancouver" className="text-primary underline decoration-yellow-light decoration-2 underline-offset-2 hover:text-primary/80">
+                how to choose a tutor in Burnaby &amp; Vancouver
+              </Link>
+              .
             </p>
 
             <div className="flex flex-wrap gap-4 mb-16">
