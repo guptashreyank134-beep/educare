@@ -5,7 +5,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, Clock, ArrowLeft, CalendarDays } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, ArrowRight, CalendarDays } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { JsonLd, getBlogPostSchema } from "@/components/SchemaMarkup";
@@ -176,6 +176,35 @@ const portableTextComponents = {
   },
 };
 
+// Map a post to the ONE most relevant tutoring service, by topic in its slug.
+// This gives every article a single, genuinely relevant service link (rather
+// than only linking to other blog posts). Order matters: more specific first.
+function blogServiceLink(slug: string): { label: string; href: string } {
+  const s = slug.toLowerCase();
+  const rules: [RegExp, string, string][] = [
+    [/gmat/, "GMAT Prep", "/programs/gmat-prep"],
+    [/\bgre\b|gre-prep/, "GRE Prep", "/programs/gre-prep"],
+    [/mcat/, "MCAT Prep", "/programs/mcat-prep"],
+    [/\bsat\b/, "SAT Prep", "/programs/sat-prep"],
+    [/french/, "French Tutoring", "/programs/french"],
+    [/mandarin/, "Mandarin Tutoring", "/programs/mandarin"],
+    [/finance|cfa|csc|ifc|bcom|mba/, "Finance Tutoring", "/programs/finance"],
+    [/university-physics|phys-\d|engineering-(statics|dynamics)|first-year-engineering/, "University Physics Tutoring", "/programs/university-physics"],
+    [/university-mathematics|ubc-math|langara-math|calculus|linear-algebra|stat-\d|statistics/, "University Mathematics Tutoring", "/programs/university-mathematics"],
+    [/university-chemistry|chem-\d/, "University Chemistry Tutoring", "/programs/university-chemistry"],
+    [/university-biology|anatomy|physiology/, "University Biology Tutoring", "/programs/university-biology"],
+    [/pre-calculus|precalc/, "Pre-Calculus Tutoring", "/programs/pre-calculus"],
+    [/chemistry|stoichiometry|equilibrium|organic/, "Chemistry Tutoring", "/programs/chemistry"],
+    [/physics|kinematics|dynamics|electromagnetism/, "Physics Tutoring", "/programs/physics"],
+    [/biology|cell|genetics|ecology|molecular/, "Biology Tutoring", "/programs/biology"],
+    [/computer-science|python|javascript|web-development|programming|data-structures|coding/, "Computer Science Tutoring", "/programs/computer-science"],
+    [/\bib\b|\bap\b/, "IB & AP Tutoring", "/programs/ib-ap-tutoring"],
+    [/math|algebra|trigonometry|geometry/, "Math Tutoring", "/programs/mathematics"],
+  ];
+  for (const [re, label, href] of rules) if (re.test(s)) return { label, href };
+  return { label: "Explore Our Tutoring Programs", href: "/programs" };
+}
+
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
 
@@ -312,6 +341,25 @@ export default async function BlogPostPage({ params }: PageProps) {
                 publishedAt={post.publishedAt}
                 updatedAt={post._updatedAt}
               />
+
+              {/* One primary, topic-relevant service link per article. */}
+              {(() => {
+                const service = blogServiceLink(slug);
+                return (
+                  <div className="mt-10 rounded-2xl border border-yellow-light bg-yellow-light/20 p-6 sm:p-8 text-center">
+                    <p className="text-[16px] sm:text-[18px] font-montserrat text-slate mb-4">
+                      Need one-on-one help with this? Our tutors can guide you step by step.
+                    </p>
+                    <Link
+                      href={service.href}
+                      className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-white font-medium hover:bg-primary/90 transition-colors"
+                    >
+                      {service.label}
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                );
+              })()}
             </div>
           </div>
         </article>
