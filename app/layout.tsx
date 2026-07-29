@@ -15,6 +15,8 @@ import {
 } from "../components/GoogleTagManager";
 import { JsonLd, getOrganizationSchema } from "../components/SchemaMarkup";
 import { ContactClickTracking } from "../components/ContactClickTracking";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -90,6 +92,8 @@ export default function RootLayout({
         <Footer />
         <WhatsAppFloating />
         <ContactClickTracking />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
