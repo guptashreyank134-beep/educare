@@ -135,7 +135,7 @@ export default async function VancouverMathTutoringPage() {
                     "Vancouver students in Grades 8 through 12",
                     "University students in introductory math courses",
                     "Students falling behind or needing to accelerate",
-                    "Learners preparing for provincial exams",
+                    "Learners preparing for final exams and BC curriculum-aligned coursework",
                     "Students who want structured, consistent support",
                   ]}
                 />

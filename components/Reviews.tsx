@@ -3,6 +3,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { REVIEW_RATING, REVIEW_COUNT } from "@/data/reviews";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Button } from "./ui/Button";
@@ -54,7 +55,7 @@ const fallbackReviews: Review[] = [
     avatar: "/assets/team-5.png",
     rating: 5,
     relativeTime: "1 week ago",
-    text: "Highly professional and dedicated. The structured study plan helped my son stay on track. He look forward to his classes every week.",
+    text: "Highly professional and dedicated. The structured study plan helped my son stay on track. He looks forward to his classes every week.",
     role: "Parent",
   },
 ];
@@ -63,8 +64,10 @@ export default function Reviews() {
   const [reviews, setReviews] = useState<Review[]>(fallbackReviews);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
-  const [rating, setRating] = useState<number>(5.0);
-  const [totalReviews, setTotalReviews] = useState<number>(34);
+  // Rating + count come from the single controlled source (data/reviews.ts), not
+  // the live API total, so every page shows the same verified figure.
+  const [rating] = useState<number>(REVIEW_RATING);
+  const [totalReviews] = useState<number>(REVIEW_COUNT);
 
   useEffect(() => {
     // Detect viewport width to adjust visible cards
@@ -95,12 +98,8 @@ export default function Reviews() {
           }));
           setReviews(formatted);
         }
-        if (data.rating) {
-          setRating(data.rating);
-        }
-        if (data.totalReviews) {
-          setTotalReviews(data.totalReviews);
-        }
+        // Only the review CARDS come from the live API; the headline rating/count
+        // stay pinned to the controlled values above for consistency.
       } catch (error) {
         console.error("Failed to load reviews from API, using fallback data:", error);
       }

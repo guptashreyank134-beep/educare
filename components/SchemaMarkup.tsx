@@ -124,15 +124,10 @@ export function getOrganizationSchema() {
       ],
       worksFor: { "@id": "https://www.drshreyankeducare.com/#organization" },
     },
-    // Genuine Google review rating shown on the site (Reviews.tsx pulls the live
-    // count from the Google Places API). Update reviewCount as it grows.
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: 41,
-      bestRating: "5",
-      worstRating: "1",
-    },
+    // NOTE: no aggregateRating here on purpose. Self-serving review markup (a
+    // business rating itself on its own site) is not eligible for Google review
+    // rich results and can risk a structured-data manual action. The genuine
+    // Google rating is shown in the UI (Reviews.tsx) instead of marked up here.
   };
 }
 

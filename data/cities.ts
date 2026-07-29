@@ -916,7 +916,7 @@ export const cities: City[] = [
         ],
       },
       {
-        heading: "Numeracy Assessments and Provincial Exams",
+        heading: "Numeracy Assessments and Final Exams",
         body: [
           "Delta students, like all BC students, sit the Graduation Numeracy Assessment, which catches many families off guard because it does not resemble a normal mathematics test. It is less about recalling procedures and more about reasoning through an unfamiliar, often wordy situation.",
           "Students who are strong at routine questions can find that genuinely difficult, and it is worth practising the format specifically rather than assuming good marks will carry across. We work on that alongside course content and final examination preparation.",

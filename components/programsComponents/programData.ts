@@ -27,7 +27,7 @@ export const programTabs: ProgramTab[] = [
         ],
         idealFor:
           "Students preparing for school exams and competitive entrance tests requiring strong analytical thinking.",
-        expectedOutcome: "98% success rate in SAT math modules.",
+        expectedOutcome: "Structured SAT math support focused on accuracy, timing and confidence.",
         learnMoreHref: "/programs/mathematics",
       },
       {
@@ -155,7 +155,7 @@ export const programTabs: ProgramTab[] = [
         ],
         idealFor: "Students preparing for SAT/PSAT",
         expectedOutcome:
-          "98% success rate in SAT math modules, +150 pts target score",
+          "Targeted SAT math practice — accuracy, timing and test strategy",
         learnMoreHref: "/programs/sat-prep",
       },
       {

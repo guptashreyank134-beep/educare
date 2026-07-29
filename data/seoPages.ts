@@ -63,7 +63,7 @@ export const seoPages: SeoPage[] = [
       "Personalized, results-driven tutoring in Math, Physics, Chemistry and Coding, led by Dr. Shreyank Gupta and trusted by families across Burnaby and Vancouver.",
     intro: [
       "Dr. Shreyank Educare is a Burnaby-based tutoring service founded on one idea: students learn best with a clear, patient, expert teacher who builds real understanding rather than quick fixes. Led by Dr. Shreyank Gupta, our team helps students in Grades 6–12 and university master their toughest subjects and walk into exams with confidence.",
-      "Families choose us for our PhD-led teaching, consistent one-on-one attention, and a track record of measurable grade improvements — reflected in our 5★ parent reviews.",
+      "Families choose us for our PhD-led teaching, consistent one-on-one attention, and structured support focused on genuine understanding — reflected in our Google reviews.",
     ],
     sections: [
       {
@@ -89,7 +89,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "Where is Dr. Shreyank Educare located?",
         answer:
-          "our Burnaby location is in Burnaby, BC, and we serve students across Burnaby and Vancouver in person, plus online tutoring across Metro Vancouver and beyond.",
+          "In-person tutoring is available at our Burnaby learning centre, and we serve students across Burnaby and Vancouver in person, plus online tutoring across Metro Vancouver and beyond.",
       },
       {
         question: "What subjects and grades do you cover?",
@@ -150,7 +150,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "What do most reviews mention?",
         answer:
-          "Families most often praise the PhD-led teaching, clear explanations, measurable grade improvements and strong exam preparation.",
+          "Families most often praise the PhD-led teaching, clear explanations and strong exam preparation.",
       },
       {
         question: "Can I leave a review?",
@@ -202,7 +202,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "Do you offer in-person tutoring in Burnaby?",
         answer:
-          "Yes. our Burnaby location is in Burnaby, so local students attend in-person one-on-one sessions, with online tutoring also available.",
+          "Yes. In-person tutoring is available at our Burnaby learning centre, so local students attend one-on-one sessions, with online tutoring also available.",
       },
       {
         question: "Which Burnaby schools do your students attend?",
@@ -324,7 +324,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "Can you help before an exam?",
         answer:
-          "Yes. We offer focused final and provincial exam preparation with targeted review and practice.",
+          "Yes. We offer focused final-exam and school-assessment preparation with targeted review and practice.",
       },
     ],
     related: [
@@ -341,30 +341,30 @@ export const seoPages: SeoPage[] = [
     location: "Burnaby",
     metaTitle: "Best Math Tutor in Burnaby | PhD-Led, 5★ Rated",
     metaDescription:
-      "Looking for the best math tutor in Burnaby? PhD-led, 5★-rated one-on-one math tutoring for Grades 6–12 and university. Proven results. Free consultation.",
+      "Looking for the best math tutor in Burnaby? PhD-led, 5★-rated one-on-one math tutoring for Grades 6–12 and university. Results-focused. Free consultation.",
     h1: "Best Math Tutor in Burnaby",
     heroSubheading:
       "PhD-led, 5★-rated math tutoring with a track record of real grade improvements — trusted by Burnaby families for Grades 6–12 and university.",
     intro: [
-      "Choosing the best math tutor in Burnaby comes down to three things: genuine expertise, personalised attention, and proven results. Dr. Shreyank Educare delivers all three — PhD-led teaching, true one-on-one sessions, and 5★ reviews from local families.",
+      "Choosing the best math tutor in Burnaby comes down to three things: genuine expertise, personalised attention, and a focus on real progress. Dr. Shreyank Educare delivers all three — PhD-led teaching, true one-on-one sessions, and 5★ reviews from local families.",
       "We don't just help students get the answer; we make sure they understand why, so improvement lasts well beyond the next test.",
     ],
     sections: [
       {
-        heading: "What Makes Us Burnaby's Top Choice",
+        heading: "What Families in Burnaby Value",
         points: [
           "PhD-qualified, 10+ years' experience",
           "One-on-one, curriculum-aligned",
           "5★ rated by parents",
-          "In-person in person in Burnaby",
-          "Proven grade improvements",
+          "In person in Burnaby",
+          "A focus on understanding and exam readiness",
           "Strong exam preparation",
         ],
       },
       {
         heading: "Results That Speak",
         body: [
-          "Our students routinely move up letter grades and, just as importantly, rebuild their confidence in math.",
+          "Many students and parents report stronger understanding, confidence and consistency in math.",
           "Every plan is tailored to your child's class and goals, and we keep parents updated on progress throughout.",
         ],
       },
@@ -373,7 +373,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "What makes a math tutor the 'best' in Burnaby?",
         answer:
-          "Genuine subject expertise, personalised one-on-one teaching, and a proven record of results — all of which Dr. Shreyank Educare offers, PhD-led and 5★ rated.",
+          "Genuine subject expertise, personalised one-on-one teaching, and a genuine focus on results — all of which Dr. Shreyank Educare offers, PhD-led and 5.0-rated on Google.",
       },
       {
         question: "Do you tutor all levels of math?",
@@ -400,7 +400,7 @@ export const seoPages: SeoPage[] = [
       "The best math tutor in Vancouver: PhD-led, 5★-rated one-on-one tutoring for Grades 6–12 and university, online or nearby in Burnaby. Free consultation.",
     h1: "Best Math Tutor in Vancouver",
     heroSubheading:
-      "Expert, PhD-led math tutoring for Vancouver students — online across the city or in person in person nearby in Burnaby.",
+      "Expert, PhD-led math tutoring for Vancouver students — online across the city or in person nearby at our Burnaby location.",
     intro: [
       "Vancouver families searching for the best math tutor want an expert who can actually lift grades and confidence. Dr. Shreyank Educare pairs PhD-led teaching with flexible online sessions across Vancouver and in-person options nearby in Burnaby.",
       "From Kitsilano to Kerrisdale and the East Side, students get math tutoring built around their class, their pace and their goals.",
@@ -414,7 +414,7 @@ export const seoPages: SeoPage[] = [
           "One-on-one, curriculum-aligned",
           "IB & AP experience",
           "5★ parent reviews",
-          "Proven results",
+          "A results-focused approach",
         ],
       },
       {
@@ -429,7 +429,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "Do you tutor Vancouver students online?",
         answer:
-          "Yes. Most Vancouver students learn with us online, with in-person sessions available in person in Burnaby.",
+          "Yes. Most Vancouver students learn with us online, with in-person sessions available at our Burnaby location.",
       },
       {
         question: "Can you help with IB and AP math?",
@@ -511,7 +511,7 @@ export const seoPages: SeoPage[] = [
       "Expert math tutoring in Vancouver for Grades 6–12 and university — online or nearby in Burnaby. Pre-Calculus, Calculus, IB & AP. Book a free consultation.",
     h1: "Math Tutoring in Vancouver",
     heroSubheading:
-      "Flexible, expert math tutoring for Vancouver students — online across the city or in person in person nearby in Burnaby.",
+      "Flexible, expert math tutoring for Vancouver students — online across the city or in person nearby at our Burnaby location.",
     intro: [
       "Our Vancouver math tutoring gives students across the city access to PhD-led, one-on-one help without the commute. Sessions are online and fully aligned to the BC curriculum, IB and AP coursework.",
       "From building foundations to mastering Pre-Calculus 12 and calculus, we help students improve steadily and prepare thoroughly for exams.",
@@ -525,14 +525,14 @@ export const seoPages: SeoPage[] = [
           "Calculus 12 & university math",
           "IB & AP mathematics",
           "Problem solving & word problems",
-          "Final & provincial exam prep",
+          "Final & school exam prep",
         ],
       },
       {
         heading: "Online, Around Your Schedule",
         body: [
           "Vancouver students learn live and online with a shared whiteboard, ideal for working through problems together in real time.",
-          "In-person sessions are available in person in Burnaby for families who prefer them.",
+          "In-person sessions are available at our Burnaby location for families who prefer them.",
         ],
       },
     ],
@@ -549,7 +549,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "Can you prepare my child for exams?",
         answer:
-          "Absolutely — we offer focused final and provincial exam preparation.",
+          "Absolutely — we offer focused final-exam and school-assessment preparation.",
       },
     ],
     related: [
@@ -1971,7 +1971,7 @@ export const seoPages: SeoPage[] = [
       "One expert team for Math, Science and Coding — connected STEM tutoring in Burnaby that builds transferable skills.",
     intro: [
       "STEM subjects reinforce each other, and our Burnaby STEM tutoring joins the dots between strong math, clear physics and logical coding.",
-      "In-person in person in Burnaby or online, we help Grades 6–12 and university students build skills that carry across math, science and computer science.",
+      "In person in Burnaby or online, we help Grades 6–12 and university students build skills that carry across math, science and computer science.",
     ],
     sections: [
       {
@@ -2050,7 +2050,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "Where are you located?",
         answer:
-          "our Burnaby location is in Burnaby, and we serve students across Metro Vancouver in person and online.",
+          "In-person tutoring is available at our Burnaby learning centre, and we serve students across Metro Vancouver in person and online.",
       },
       {
         question: "Do you offer in-person tutoring near me?",
@@ -2752,7 +2752,7 @@ export const seoPages: SeoPage[] = [
     ],
     sections: [
       {
-        heading: "Why We're a Top Choice",
+        heading: "Why Families Choose Us",
         points: [
           "PhD-qualified chemistry expertise",
           "Chemistry 11 & 12",
@@ -2806,7 +2806,7 @@ export const seoPages: SeoPage[] = [
     ],
     sections: [
       {
-        heading: "Why We're a Top Choice",
+        heading: "Why Families Choose Us",
         points: [
           "PhD-qualified physics expertise",
           "Physics 11 & 12",
@@ -2861,7 +2861,7 @@ export const seoPages: SeoPage[] = [
     ],
     sections: [
       {
-        heading: "Why We're a Top Choice",
+        heading: "Why Families Choose Us",
         points: [
           "AA & AI, SL & HL",
           "IB assessment expertise",
@@ -2908,7 +2908,7 @@ export const seoPages: SeoPage[] = [
       "A top-rated math tutor in Vancouver — PhD-led, 5★-rated one-on-one help for Grades 6–12 and university. Online or nearby in Burnaby. Free consultation.",
     h1: "Top Math Tutor in Vancouver",
     heroSubheading:
-      "Among Vancouver's most trusted math tutors — PhD-led, 5★-rated, and proven to lift grades and confidence.",
+      "Among Vancouver's most trusted math tutors — PhD-led, 5★-rated, and focused on building grades and confidence.",
     intro: [
       "A top math tutor in Vancouver should deliver genuine expertise, personalised teaching and results. Dr. Shreyank Educare offers all three, with flexible online sessions across the city.",
       "From Grade 6 through Pre-Calculus, Calculus and university math, we help students reach their potential.",
@@ -2921,7 +2921,7 @@ export const seoPages: SeoPage[] = [
           "One-on-one, curriculum-aligned",
           "IB & AP experience",
           "Flexible online sessions",
-          "Proven results",
+          "A results-focused approach",
           "5★ reviews",
         ],
       },
@@ -5503,7 +5503,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "Do Vancouver students have to travel to Burnaby?",
         answer:
-          "No. Most Vancouver families choose online sessions, which work well for physics because we share a whiteboard and work problems together in real time. In-person sessions are available in person in Burnaby if you prefer, and it is an easy SkyTrain trip.",
+          "No. Most Vancouver families choose online sessions, which work well for physics because we share a whiteboard and work problems together in real time. In-person sessions are available at our Burnaby location if you prefer, and it is an easy SkyTrain trip.",
       },
     ],
     related: [

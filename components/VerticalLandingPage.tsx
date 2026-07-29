@@ -116,7 +116,7 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#25D366] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
               >
-                Chat On WhatsApp
+                Chat on WhatsApp
               </a>
             </div>
           </div>
