@@ -93,9 +93,18 @@ export default async function UniversityBiologyPage() {
               </p>
               <p>
                 At Dr. Shreyank Educare, we provide structured tutoring that
-                helps students understand technical concepts, improve coding
-                skills, and confidently solve programming challenges through
-                hands-on learning and personalized support.
+                helps students build genuine conceptual understanding, connect
+                ideas across biological systems, and approach exams and lab work
+                with confidence — through active recall, diagrams and applied
+                practice rather than rote memorization.
+              </p>
+              <p>
+                We tutor life-sciences students from UBC, SFU and Langara —
+                introductory biology, cell and molecular biology, genetics, and
+                anatomy and physiology — along with pre-med students preparing
+                for the MCAT. Sessions run in person at our Burnaby centre,
+                minutes from SFU, and online for students across Vancouver and
+                the Lower Mainland.
               </p>
             </div>
 
@@ -218,26 +227,37 @@ export default async function UniversityBiologyPage() {
             </p>
           </div>
 
-          <div className="flex justify-center">
-            <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group w-full max-w-[400px]">
-              <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
-                College & University Biology
-              </h3>
-              <ul className="space-y-2">
-                {["General Biology", "Molecular Biology", "Anatomy and Physiology"].map(
-                  (course) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { school: "University Of British Columbia", courses: ["BIOL 111", "BIOL 112", "BIOL 121", "BIOL 140", "BIOL 200", "BIOL 201"] },
+              { school: "Simon Fraser University", courses: ["BISC 100", "BISC 101", "BISC 102", "BISC 202"] },
+              { school: "Langara College", courses: ["BIOL 1115", "BIOL 1116", "BIOL 1215", "BIOL 1216"] },
+            ].map((card) => (
+              <div
+                key={card.school}
+                className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group"
+              >
+                <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
+                  {card.school}
+                </h3>
+                <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                  {card.courses.map((course) => (
                     <li
                       key={course}
-                      className="flex items-center gap-3 text-[14px] font-montserrat text-slate"
+                      className="flex items-center gap-3 text-[14px] font-montserrat text-slate list-none"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate/20" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate/20 shrink-0" />
                       {course}
                     </li>
-                  ),
-                )}
-              </ul>
-            </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
+          <p className="text-center text-[14px] font-montserrat text-slate/60 mt-6">
+            Also covering General Biology, Cell &amp; Molecular Biology, Genetics,
+            and Anatomy &amp; Physiology at other BC colleges and universities.
+          </p>
         </section>
       </div>
     
@@ -250,6 +270,11 @@ export default async function UniversityBiologyPage() {
       
         <ProgramNextSteps
           subject="University Biology"
+          relatedLinks={[
+            { label: "Biology 11 & 12 tutoring", href: "/programs/biology" },
+            { label: "Biology 12 tutoring in Vancouver", href: "/biology-12-tutor-vancouver" },
+            { label: "MCAT preparation", href: "/programs/mcat-prep" },
+          ]}
         />
       </main>
     </>
