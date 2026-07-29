@@ -95,6 +95,14 @@ export default async function UniversityPhysicsPage() {
                 concepts and build confidence through structured problem-solving
                 practice.
               </p>
+              <p>
+                Most of our university physics students come from UBC, SFU and
+                Langara — first-year mechanics and electromagnetism (the PHYS
+                100-series and equivalents) through to upper-year thermodynamics,
+                quantum and modern physics. We work in person at our Burnaby
+                centre, a short distance from SFU, and online for students across
+                Vancouver and the Lower Mainland.
+              </p>
             </div>
 
             <section>
@@ -216,7 +224,7 @@ export default async function UniversityPhysicsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* UBC Card */}
             <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group">
               <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
@@ -231,6 +239,31 @@ export default async function UniversityPhysicsPage() {
                   "PHYS 107",
                   "PHYS 170",
                   "PHYS 108",
+                ].map((course) => (
+                  <li
+                    key={course}
+                    className="flex items-center gap-3 text-[14px] font-montserrat text-slate"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate/20 shrink-0" />
+                    {course}
+                  </li>
+                ))}
+              </div>
+            </div>
+
+            {/* SFU Card — SFU is in Burnaby, where our centre is */}
+            <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group">
+              <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
+                Simon Fraser University
+              </h3>
+              <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                {[
+                  "PHYS 101",
+                  "PHYS 120",
+                  "PHYS 102",
+                  "PHYS 121",
+                  "PHYS 125",
+                  "PHYS 126",
                 ].map((course) => (
                   <li
                     key={course}
@@ -283,6 +316,7 @@ export default async function UniversityPhysicsPage() {
         <ProgramNextSteps
           subject="University Physics"
           relatedLinks={[
+            { label: "Physics 11 & 12 tutoring", href: "/programs/physics" },
             { label: "Engineering statics tutor", href: "/engineering-statics-tutor" },
             { label: "Engineering dynamics tutor", href: "/engineering-dynamics-tutor" },
             { label: "First-year engineering tutor", href: "/first-year-engineering-tutor" },
