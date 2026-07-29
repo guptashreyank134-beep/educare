@@ -32,9 +32,8 @@ export const PrivacyPolicyContent = {
     {
       heading: "3. Data Security",
       content: [
-        "We implement industry-standard security measures to protect your personal information from unauthorized access, alteration, and destruction.",
-        "Your data is stored on secure servers with appropriate firewalls and encryption protocols.",
-        "However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.",
+        "We use reasonable administrative and technical safeguards intended to protect your personal information from unauthorized access, alteration, and destruction.",
+        "No method of transmission or storage over the Internet is completely secure, so we cannot guarantee absolute security.",
       ],
     },
     {
@@ -50,7 +49,8 @@ export const PrivacyPolicyContent = {
       content: [
         "You have the right to access, update, or delete your personal information by contacting us.",
         "You can opt out of marketing communications at any time.",
-        "You have the right to data portability and can request a copy of your information in a structured format.",
+        "You may withdraw your consent to our use of your personal information at any time by contacting us, subject to legal or contractual restrictions.",
+        "As a private organization in British Columbia, we handle personal information in line with BC's Personal Information Protection Act (PIPA). To exercise any of these rights, contact us using the details below.",
       ],
     },
     {
@@ -123,8 +123,8 @@ export const TermsAndConditionsContent = {
     {
       heading: "8. Governing Law",
       content: [
-        "These Terms and Conditions are governed by the laws of the jurisdiction where Dr. Shreyank Educare operates.",
-        "Any disputes shall be resolved in the appropriate courts of that jurisdiction.",
+        "These Terms and Conditions are governed by the laws of the Province of British Columbia and the applicable laws of Canada.",
+        "Any disputes shall be resolved in the courts of British Columbia. (This clause, along with the refund, cancellation and limitation-of-liability terms above, should be reviewed by a BC-qualified lawyer.)",
       ],
     },
     {

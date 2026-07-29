@@ -74,7 +74,7 @@ Consent to contact: ${rawData.get('consent') ? 'Yes' : 'No'}
         <Input label="Parent or Student Name" placeholder="e.g. Priya Sharma" id="parentName" name="parentName" autoComplete="name" required />
 
         <div className="grid grid-cols-2 gap-4">
-          <Input label="Student's Grade or Course" placeholder="e.g. Grade 11 or UBC MATH 100" id="grade" name="grade" required />
+          <Input label="Student's Grade or Course" placeholder="e.g. Grade 11 or a first-year university course" id="grade" name="grade" required />
           <Input label="Subject Required" placeholder="e.g. Math, Chemistry, Physics or Coding" id="subject" name="subject" required />
         </div>
 

@@ -34,7 +34,7 @@ export const pricingSectionContent: {
     },
     {
       icon: Users,
-      title: "1 On 1 Tutoring",
+      title: "One-on-One Tutoring",
       subtitle: "Maximum personalization",
       features: [
         "60-minute one-on-one sessions",
