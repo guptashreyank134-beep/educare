@@ -20,6 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/pricing",
     "/privacy",
     "/locations",
+    "/guides/how-to-choose-a-tutor-burnaby-vancouver",
     ...verticalRoutes,
     ...cityRoutes,
     ...seoRoutes,

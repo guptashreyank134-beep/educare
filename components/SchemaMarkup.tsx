@@ -26,6 +26,29 @@ const AREAS_SERVED = [
   "Delta",
 ];
 
+const SITE = "https://www.drshreyankeducare.com";
+
+// Every tutoring service we offer, with its canonical page. Rendered as an
+// OfferCatalog so AI answer engines can enumerate exactly which subjects we
+// cover (math, sciences, university and medical/MCAT prep) and link each one.
+export const TUTORING_SERVICES: { name: string; url: string }[] = [
+  { name: "Mathematics Tutoring (Grades 6–12)", url: `${SITE}/programs/mathematics` },
+  { name: "Pre-Calculus 11 & 12 Tutoring", url: `${SITE}/programs/pre-calculus` },
+  { name: "University Mathematics Tutoring", url: `${SITE}/programs/university-mathematics` },
+  { name: "Physics Tutoring", url: `${SITE}/programs/physics` },
+  { name: "University Physics Tutoring", url: `${SITE}/programs/university-physics` },
+  { name: "Chemistry Tutoring", url: `${SITE}/programs/chemistry` },
+  { name: "University Chemistry Tutoring", url: `${SITE}/programs/university-chemistry` },
+  { name: "Biology Tutoring", url: `${SITE}/programs/biology` },
+  { name: "University Biology Tutoring", url: `${SITE}/programs/university-biology` },
+  { name: "Computer Science & Coding Tutoring", url: `${SITE}/programs/computer-science` },
+  { name: "IB & AP Tutoring", url: `${SITE}/programs/ib-ap-tutoring` },
+  { name: "SAT Preparation", url: `${SITE}/programs/sat-prep` },
+  { name: "MCAT Preparation (Medical)", url: `${SITE}/programs/mcat-prep` },
+  { name: "GRE Preparation", url: `${SITE}/programs/gre-prep` },
+  { name: "GMAT Preparation", url: `${SITE}/programs/gmat-prep` },
+];
+
 export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -98,6 +121,16 @@ export function getOrganizationSchema() {
       "Statistics",
       "Finance",
     ],
+    // Explicit, linkable catalogue of every subject we tutor. Lets AI answer
+    // engines enumerate and cite each service, not just mathematics.
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Tutoring services",
+      itemListElement: TUTORING_SERVICES.map((s) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: s.name, url: s.url },
+      })),
+    },
     // Founder entity with real, on-site credentials (see About page / AuthorBox).
     // Strengthens E-E-A-T and the knowledge-graph link between the person and
     // the organization — a strong signal for AI answer engines.
@@ -128,6 +161,26 @@ export function getOrganizationSchema() {
     // business rating itself on its own site) is not eligible for Google review
     // rich results and can risk a structured-data manual action. The genuine
     // Google rating is shown in the UI (Reviews.tsx) instead of marked up here.
+  };
+}
+
+/**
+ * BreadcrumbList structured data. Pass the trail as {name, url} items (the last
+ * item is the current page). Helps search and AI engines understand site
+ * hierarchy and show breadcrumb context in results.
+ */
+export function getBreadcrumbSchema(
+  items: { name: string; url: string }[],
+): Record<string, any> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
   };
 }
 
