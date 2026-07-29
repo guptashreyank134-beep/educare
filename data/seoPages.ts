@@ -4599,6 +4599,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "Coding is a skill best learned by building, with a mentor to explain the why. Our Burnaby coding tutoring teaches Python, Java and computer science fundamentals through hands-on projects.",
       "Sessions suit beginners and students looking to go deeper, in person in Burnaby or online.",
+      "We cover Python, Java and JavaScript, plus the HTML and CSS behind real web pages — and the problem-solving habits that make the next language easier to pick up. Whether your child is following a school ICS course, exploring AP Computer Science, or just curious, we meet them at their level.",
     ],
     sections: [
       {
@@ -4606,10 +4607,17 @@ export const seoPages: SeoPage[] = [
         points: [
           "Python programming",
           "Java programming",
+          "JavaScript & web basics (HTML, CSS, JS)",
           "Logic & problem solving",
           "Data structures basics",
-          "Web development intro",
           "Project-based learning",
+        ],
+      },
+      {
+        heading: "From School Coding to Real Projects",
+        body: [
+          "We support the coding students actually face at school — from BC's ICS courses to AP Computer Science — and go further with projects that turn concepts into something they can show: a small game, a website, or an automation script.",
+          "For teens deciding whether coding is for them, that first working project is often what makes it click.",
         ],
       },
       {
@@ -4623,15 +4631,23 @@ export const seoPages: SeoPage[] = [
     faqs: [
       {
         question: "What languages do you teach?",
-        answer: "Python and Java mainly, plus computer science fundamentals and intro web development.",
+        answer: "Python, Java and JavaScript, plus HTML and CSS for web development and computer science fundamentals.",
       },
       {
         question: "Is it good for beginners?",
         answer: "Yes — we start from the basics and build up with projects.",
       },
       {
+        question: "Do you teach web development?",
+        answer: "Yes — HTML, CSS and JavaScript, building up to simple, real web pages a student can actually publish.",
+      },
+      {
+        question: "Can you help with a school coding course or AP Computer Science?",
+        answer: "Yes — we align sessions to your child's school ICS course or AP Computer Science, explaining concepts and reviewing their work. We help them do their own assignments and projects rather than doing the graded work for them.",
+      },
+      {
         question: "In person or online?",
-        answer: "Both are available in Burnaby.",
+        answer: "Both — in person at our Burnaby centre, or online for students across the Lower Mainland.",
       },
     ],
     related: [
