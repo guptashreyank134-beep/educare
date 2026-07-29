@@ -37,7 +37,7 @@ export default function VancouverCTABanner() {
           {/* Right Column: Content */}
           <div className="w-full md:w-[600px]">
             <h2 className="text-[32px] sm:text-[38px] font-bricolage font-normal leading-[1.2] mb-4">
-              Book Free Consultation With Us Today!
+              Book a Free 30-Minute Consultation With Us Today!
             </h2>
 
             <p className="text-[16px] font-montserrat font-normal text-white/90 leading-relaxed mb-8 max-w-[500px]">
@@ -67,7 +67,7 @@ export default function VancouverCTABanner() {
 
             <div className="flex flex-wrap gap-4">
               <Link href="/book">
-                <Button className='border border-white' iconRight={ArrowRight}>Book Free Consultation</Button>
+                <Button className='border border-white' iconRight={ArrowRight}>Book a Free 30-Minute Consultation</Button>
               </Link>
               <a
                 href="https://wa.me/16725147587"

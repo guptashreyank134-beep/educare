@@ -43,7 +43,7 @@ export const pricingSectionContent: {
       price: 75,
       priceMax: 100,
       priceCaption: "based on subject and level",
-      ctaText: "Book Free Consultation",
+      ctaText: "Book a Free 30-Minute Consultation",
     },
     {
       icon: Rocket,

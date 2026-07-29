@@ -110,7 +110,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
 
             <div className="flex flex-wrap gap-4 mb-16">
               <Link href="/book">
-                <Button iconRight={ArrowRight}>Book Free Consultation</Button>
+                <Button iconRight={ArrowRight}>Book a Free 30-Minute Consultation</Button>
               </Link>
               <a
                 href="https://wa.me/16725147587"

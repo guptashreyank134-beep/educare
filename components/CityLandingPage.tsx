@@ -108,7 +108,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
 
             <div className="flex flex-wrap gap-4 mb-16">
               <Link href="/book">
-                <Button iconRight={ArrowRight}>Book Free Consultation</Button>
+                <Button iconRight={ArrowRight}>Book a Free 30-Minute Consultation</Button>
               </Link>
               <a
                 href="https://wa.me/16725147587"
@@ -146,8 +146,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[110%] bg-white/40 blur-3xl rounded-full -z-10" />
             <TrialClassForm />
             <p className="text-[14px] text-slate font-montserrat text-center mt-4 leading-relaxed">
-              ⓘ Limited spots available for weekly tutoring batches and
-              one-on-one sessions !
+              ⓘ No obligation — we'll suggest a plan that fits your child.
             </p>
           </div>
         </div>
