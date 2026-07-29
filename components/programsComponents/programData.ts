@@ -200,9 +200,9 @@ export const programTabs: ProgramTab[] = [
       {
         title: "Mathematics - College/ University",
         coreTargets: [
-          "Statistics UBC: STAT 200, 203, 241, 251",
-          "Statistics Langara: STAT 1123, 1124, 1181",
-          "Linear Algebra UBC: MATH 152",
+          "Statistics UBC: STAT 200, 203 and 251",
+          "Statistics Langara: STAT 1123, 1124 and 1181",
+          "Linear Systems (Engineering Linear Algebra) UBC: MATH 152",
           "Linear Algebra Langara: MATH 2362",
         ],
         idealFor: "College/University students",
@@ -214,7 +214,7 @@ export const programTabs: ProgramTab[] = [
         title: "Physics - College/ University",
         coreTargets: [
           "UBC: PHYS 100, 101, 107, 108, 117, 118, 170",
-          "Langara College : PHYS 1101, 1114, 1118, 1125, 1225",
+          "Langara College: PHYS 1101, 1114, 1118, 1125, 1225",
         ],
         idealFor: "College/University students",
         expectedOutcome:
@@ -224,8 +224,8 @@ export const programTabs: ProgramTab[] = [
       {
         title: "Chemistry - College/ University",
         coreTargets: [
-          "UBC : CHEM 111, 121, 123",
-          "Langara College : CHEM 1114, 1118, 1120, 1220",
+          "UBC: CHEM 111, 121, 123",
+          "Langara College: CHEM 1114, 1118, 1120, 1220",
         ],
         idealFor: "College/University students",
         expectedOutcome:
