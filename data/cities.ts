@@ -85,9 +85,9 @@ export const cities: City[] = [
     slug: "burnaby",
     name: "Burnaby",
     region: "BC",
-    metaTitle: "Math Tutor in Burnaby | Physics, Chemistry & Coding",
+    metaTitle: "Burnaby Tutoring Centre | Math, Science & Coding Tutors",
     metaDescription:
-      "Top-rated Burnaby math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book a free consultation.",
+      "In-person and online tutoring in Burnaby — math, physics, chemistry and coding for Grades 6–12 and university. PhD-led, 5★ rated. Book a free consultation.",
     heroHeading: "Top-Rated Math Tutor in Burnaby",
     heroSubheading:
       "PhD-led tutoring in Math, Physics, Chemistry and Coding for Grades 6–12 and university — and the one city where we teach face to face.",
@@ -116,6 +116,13 @@ export const cities: City[] = [
       "Burnaby is our home base, so students here can attend in person, with online sessions available for families who prefer to learn from home.",
     localSections: [
       {
+        heading: "A Tutoring Centre in the Heart of Burnaby",
+        body: [
+          "Burnaby is our home base: a dedicated tutoring centre on Madison Avenue where students work one-on-one with a tutor in person, not over a screen. That is what sets us apart from purely online services and from drop-in homework clubs — focused, private sessions built around each student.",
+          "Families come to us for more than math. We cover physics, chemistry, biology and coding too, for high-school and university students, so a household with two children in different subjects can keep everything in one place.",
+        ],
+      },
+      {
         heading: "Who Benefits Most From Sitting in the Room",
         body: [
           "Online tutoring works well for most students, but not all of them equally. Younger students, and students who have learned to nod along rather than admit they are lost, tend to do noticeably better in person — it is much harder to quietly disengage when someone is sitting beside you watching the page.",
@@ -143,6 +150,11 @@ export const cities: City[] = [
       "Would work better beside a tutor than in front of a screen",
     ],
     faqs: [
+      {
+        question: "Do you have a tutoring centre in Burnaby?",
+        answer:
+          "Yes — we teach in person at our Burnaby centre on Madison Avenue, with online sessions available too. It is a dedicated space for one-on-one tutoring across math, the sciences and coding, for Grades 6–12 and university students.",
+      },
       {
         question: "My child does fine on homework but freezes in tests — can you help with that?",
         answer:
