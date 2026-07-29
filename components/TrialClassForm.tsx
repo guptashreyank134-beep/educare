@@ -39,6 +39,7 @@ Subject Required: ${rawData.get('subject')}
 Phone Number: ${rawData.get('phone')}
 Email ID: ${rawData.get('email')}
 Preferred Mode Of Classes: ${rawData.get('mode')}
+Consent to contact: ${rawData.get('consent') ? 'Yes' : 'No'}
     `.trim()
 
     formData.append('message', messageBody)
@@ -79,6 +80,21 @@ Preferred Mode Of Classes: ${rawData.get('mode')}
         <Input label="Phone Number" type="tel" inputMode="tel" autoComplete="tel" placeholder="e.g. (604) 123-4567" id="phone" name="phone" required />
         <Input label="Email" type="email" inputMode="email" autoComplete="email" placeholder="e.g. you@example.com" id="email" name="email" required />
         <Input label="Preferred Format" placeholder="Online, in person, or not sure" id="mode" name="mode" required />
+
+        <label htmlFor="consent" className="flex items-start gap-2 text-[13px] font-montserrat text-slate/70 leading-snug">
+          <input
+            type="checkbox"
+            id="consent"
+            name="consent"
+            required
+            className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
+          />
+          <span>
+            I agree to be contacted by Dr. Shreyank Educare about my enquiry by phone, email or
+            WhatsApp. See our{" "}
+            <a href="/privacy" className="text-primary underline">privacy policy</a>.
+          </span>
+        </label>
 
         {feedback && (
           <div className={`p-4 rounded-xl text-center text-sm font-medium ${feedback.success ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'}`}>

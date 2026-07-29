@@ -19,9 +19,25 @@ Branch: `seo/search-console-improvements` · not deployed · not pushed.
   JSON-LD all present. The one genuine gap, a **useful 404 page**, is now added
   (`app/not-found.tsx`) routing lost visitors to the top money pages + booking.
 
-Still open after this session: **Phase 3** (per-subject content rewrites),
-**Phase 6** (local contact/location sections), **Phase 9** (perf/a11y), and the
-lint/tests/visual parts of **Phase 11**.
+- **Phase 8 completed**: added a required **consent checkbox** (with privacy-policy
+  link, recorded on the lead) and a **global contact-click tracker**
+  (`ContactClickTracking.tsx`) that pushes a `contact_click` dataLayer event
+  (channel = phone/email/whatsapp, no PII) for every tel/mailto/WhatsApp link —
+  one delegated listener covers all 9 files and future links.
+- **Phase 3 finding (important, honest)**: the subject/money pages are **already
+  content-complete** against the brief's checklist. `/programs/chemistry` covers
+  Chemistry 11/12, stoichiometry, equilibrium, organic; `/programs/physics`
+  covers Physics 11/12, kinematics, forces, dynamics, energy, electricity, waves;
+  `/programs/computer-science` covers Python, Java, algorithms, data structures,
+  debugging; the city pages already have unique H1/local sections/FAQs/CTA/
+  breadcrumbs (from the near-duplicate rewrite). **Wholesale rewriting them was
+  not done because it would risk regressing already-good content.** The genuine
+  Phase-3 gap is the broad *chemistry-tutor-burnaby / physics-tutor-burnaby* LOCAL
+  pages (new pages), deliberately deferred to avoid doorway-page risk.
+
+Still genuinely open: the broad chem/physics-Burnaby local pages (Phase 3), an
+explicit contact/NAP block on primary pages (**Phase 6**), **Phase 9** (perf/a11y,
+needs a deploy preview to measure), and lint/tests/visual (**Phase 11**).
 
 New manual actions: (a) in Sanity, fix blog-body links that point to redirected
 URLs — `/blog/mathematics-algebra-functions` → `/math-tutoring-burnaby` should be
