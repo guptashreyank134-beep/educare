@@ -97,6 +97,13 @@ export default async function PhysicsProgramPage() {
                 structured approach ensures students improve both their
                 understanding of physics theory and the mathematics behind it.
               </p>
+              <p>
+                We tutor Physics 11 and 12 in the BC curriculum, AP and IB
+                Physics, and first-year university and engineering physics —
+                tailoring every session to the exact course. Sessions run in
+                person at our Burnaby centre — minutes from SFU — and online for
+                students across Vancouver and the Lower Mainland.
+              </p>
             </div>
 
             <section>
@@ -207,6 +214,66 @@ export default async function PhysicsProgramPage() {
           </div>
         </div>
 
+        {/* Physics we tutor, by level — targets Physics 11/12, AP, IB and
+            engineering/university intent, and links to the dedicated pages. */}
+        <section className="mt-32">
+          <div className="text-center mb-16">
+            <h2 className="text-[32px] font-bricolage font-normal text-slate mb-3 leading-[34px]">
+              Physics We Tutor — By Level
+            </h2>
+            <p className="text-[18px] font-montserrat text-slate/60">
+              From BC senior physics to engineering and university
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Physics 11 & 12 (BC Curriculum)",
+                body: "BC senior physics spans kinematics and dynamics, momentum and energy, circular motion and gravitation, electricity and magnetism, and waves and optics. We connect each topic to the maths it relies on so problems stop feeling like guesswork.",
+                href: "/physics-12-tutor-burnaby",
+                cta: "Physics 12 tutoring in Burnaby",
+              },
+              {
+                title: "AP Physics (1, 2 & C)",
+                body: "Support across AP Physics 1 and 2 and both Physics C courses (Mechanics and Electricity & Magnetism), with exam-style free-response and multiple-choice practice so nothing on the exam is a surprise.",
+                href: "/ap-physics-tutor-burnaby",
+                cta: "AP Physics tutoring",
+              },
+              {
+                title: "IB Physics (SL & HL)",
+                body: "Topic-by-topic tutoring for both Standard and Higher Level, plus structured help with the Internal Assessment (IA) — from designing the investigation to writing up uncertainties and analysis.",
+                href: "/ib-physics-tutor-vancouver",
+                cta: "IB Physics tutoring",
+              },
+              {
+                title: "University & Engineering Physics",
+                body: "First-year mechanics and electromagnetism through to the calculus-based physics engineering students face — with weekly problem sets, lab support and exam prep for UBC, SFU and Langara courses.",
+                href: "/programs/university-physics",
+                cta: "University physics tutoring",
+              },
+            ].map((lvl) => (
+              <div
+                key={lvl.title}
+                className="bg-bg-grey p-8 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-1"
+              >
+                <h3 className="text-[20px] font-bricolage font-normal leading-[24px] text-slate mb-3 inline-block border-b-2 border-yellow-light pb-1">
+                  {lvl.title}
+                </h3>
+                <p className="text-[16px] font-montserrat text-slate/80 leading-relaxed mb-4">
+                  {lvl.body}
+                </p>
+                <a
+                  href={lvl.href}
+                  className="text-[15px] font-montserrat font-medium text-primary underline decoration-2 underline-offset-4 decoration-yellow-light hover:text-primary/80 transition-colors"
+                >
+                  {lvl.cta} →
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Bottom Section: Courses We Support */}
         <section className="mt-32">
           <div className="text-center mb-16">
@@ -300,7 +367,12 @@ export default async function PhysicsProgramPage() {
       
         <ProgramNextSteps
           subject="Physics"
-          relatedLinks={[{ label: "Physics 12 tutoring in Burnaby", href: "/physics-12-tutor-burnaby" }]}
+          relatedLinks={[
+            { label: "Physics 11 tutoring in Burnaby", href: "/physics-11-tutor-burnaby" },
+            { label: "Physics 12 tutoring in Burnaby", href: "/physics-12-tutor-burnaby" },
+            { label: "Physics 12 final-exam review", href: "/physics-12-final-exam-review" },
+            { label: "Physics tutor in Vancouver", href: "/top-physics-tutor-vancouver" },
+          ]}
         />
       </main>
     </>
