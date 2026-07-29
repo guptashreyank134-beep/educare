@@ -56,7 +56,7 @@ export const PrivacyPolicyContent = {
     {
       heading: "6. Contact Us",
       content: [
-        "If you have any questions about our Privacy Policy or how we handle your information, please contact us at  info@drshreyankeducare.com or call +1 (778) 819-3202.",
+        "If you have any questions about our Privacy Policy or how we handle your information, please contact us at info@drshreyankeducare.com or call +1 (672) 514-7587.",
       ],
     },
   ],
@@ -130,7 +130,7 @@ export const TermsAndConditionsContent = {
     {
       heading: "9. Contact Information",
       content: [
-        "For questions or concerns about these Terms and Conditions, please contact us at  info@drshreyankeducare.com or call +1 (778) 819-3202.",
+        "For questions or concerns about these Terms and Conditions, please contact us at info@drshreyankeducare.com or call +1 (672) 514-7587.",
       ],
     },
   ],

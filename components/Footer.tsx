@@ -2,10 +2,10 @@
 
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import TrialClassForm from "./TrialClassForm";
 import Link from "next/link";
-import { ArrowRight, Phone, Mail } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 // Instagram brand icon (not in lucide-react — using inline SVG)
 const InstagramIcon = () => (
@@ -40,146 +40,40 @@ const FacebookIcon = () => (
     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
   </svg>
 );
-import { Button } from "./ui/Button";
 
-import { Input } from "./ui/Input";
-import { Textarea } from "./ui/TextArea";
 
-import { createLead } from "../app/actions/lead";
 
 // ─── Contact Form ─────────────────────────────────────────────────────────────
 
 function ContactForm() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const formElement = e.currentTarget as HTMLFormElement;
-    const form = new FormData(formElement);
-    await createLead(form);
-
-    setSubmitted(true);
-    setIsSubmitting(false);
-  };
-
   return (
     <section className="relative overflow-hidden py-10 px-4 sm:px-6 lg:px-8">
       {/* Yellow grid background */}
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-46"
         style={{
-          backgroundImage: `url('/backgrounds/yellowGrid.svg')`,
+          backgroundImage: "url('/backgrounds/yellowGrid.svg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       />
 
-      <div className="relative z-10 max-w-3xl mx-auto text-center">
-        {/* Heading */}
-        <h2 className="text-[32px] font-bricolage font-normal text-slate leading-tight mb-3">
-          Book a Free{" "}
-          <span className="text-primary font-semibold">30-Minute</span>{" "}
-          Consultation
-        </h2>
-        <p className="text-[16px] font-montserrat text-slate mb-10">
-          Use the form below and a member of our team will respond within the
-          next 24 hours.
-        </p>
+      <div className="relative z-10 max-w-2xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-[32px] font-bricolage font-normal text-slate leading-tight mb-3">
+            Book a Free{" "}
+            <span className="text-primary font-semibold">30-Minute</span>{" "}
+            Consultation
+          </h2>
+          <p className="text-[16px] font-montserrat text-slate">
+            Tell us about the learner and a member of our team will respond within
+            24 hours.
+          </p>
+        </div>
 
-        {submitted ? (
-          <div className="rounded-xl bg-white/80 backdrop-blur border border-primary/20 p-10 text-center shadow-sm">
-            <p className="text-[20px] font-bricolage font-semibold text-primary mb-2">
-              Thank you! 🎉
-            </p>
-            <p className="text-[15px] font-montserrat text-slate/70">
-              We&apos;ll be in touch within 24 hours.
-            </p>
-          </div>
-        ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="bg-white/70 backdrop-blur-sm rounded-[24px] shadow-[0px_0px_50px_0px_#5757561F] p-8 text-left space-y-6"
-          >
-            {/* Row 1 */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <Input
-                id="firstName"
-                name="firstName"
-                label="First Name"
-                placeholder="enter first name"
-                value={formData.firstName}
-                onChange={handleChange}
-                required
-              />
-              <Input
-                id="lastName"
-                name="lastName"
-                label="Last Name"
-                placeholder="enter last name"
-                value={formData.lastName}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            {/* Email */}
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              label="Email ID"
-              placeholder="enter email ID"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-
-            {/* Subject */}
-            <Input
-              id="subject"
-              name="subject"
-              label="Subject"
-              placeholder="enter subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-            />
-
-            {/* Message */}
-            <Textarea
-              id="message"
-              name="message"
-              label="Message/Feedback"
-              placeholder="enter message here"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-
-            {/* Submit */}
-            <div className="flex justify-center pt-2">
-              <Button type="submit" disabled={isSubmitting} iconRight={isSubmitting ? undefined : ArrowRight}>
-                {isSubmitting ? "Submitting..." : "Submit For Consultation"}
-              </Button>
-            </div>
-          </form>
-        )}
+        {/* One shared form across the whole site (fields, consent, tel/email
+            types, single-submit conversion tracking all live in TrialClassForm). */}
+        <TrialClassForm />
       </div>
     </section>
   );
@@ -376,12 +270,7 @@ export default function Footer() {
   return (
     <>
       <ContactForm />
-      <div className="flex justify-center items-center max-w-[784px] w-full mx-auto my-8 px-4">
-        <div className="bg-[#E2E8F0] h-[1px] w-full" />
-        <span className="text-[14px] font-montserrat font-medium text-[#94A3B8] px-4 uppercase tracking-wider">Or</span>
-        <div className="bg-[#E2E8F0] h-[1px] w-full" />
-      </div>
-      <div className="flex flex-col gap-6 items-center text-center max-w-[1010px] w-full mx-auto mb-16 px-4">
+      <div className="flex flex-col gap-6 items-center text-center max-w-[1010px] w-full mx-auto mt-12 mb-16 px-4">
         <p className="text-[18px] sm:text-[20px] font-montserrat font-medium text-slate">
           Prefer Quick Communication? Message Us On Whatsapp Or Call Us!
         </p>

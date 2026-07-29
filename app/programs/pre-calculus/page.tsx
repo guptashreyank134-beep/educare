@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
       title: "Pre-Calculus 11 & 12 Tutoring | Dr. Shreyank Educare",
       description:
-        "Expert Pre-Calculus 11 and 12 tutoring. Master trigonometry, quadratics, rational functions, sequences, and limits to ace your BC provincial exams.",
+        "Expert Pre-Calculus 11 and 12 tutoring. Master transformations, polynomial and rational functions, exponentials, logarithms, trigonometry and sequences — aligned to the BC curriculum.",
     };
   }
 }
@@ -120,7 +120,7 @@ export default async function PreCalculusProgramPage() {
                     "Exponential & Logarithmic Functions",
                     "Sequences, Series & Binomial Theorem",
                     "Permutations, Combinations & Probability",
-                    "Introduction to Limits & Derivatives (Pre-Calc 12)",
+                    "Limits & Derivatives — optional Calculus 12 bridge",
                   ]}
                 />
 
@@ -129,7 +129,7 @@ export default async function PreCalculusProgramPage() {
                   items={[
                     "Students enrolled in Pre-Calculus 11 or 12",
                     "Students who struggled with Foundations of Math 10",
-                    "Learners preparing for BC Provincial Exams",
+                    "Learners preparing for school tests, final exams and BC curriculum-aligned coursework",
                     "Students aiming for science, engineering, or business programs",
                     "Anyone wanting a strong head start on university math",
                   ]}
@@ -141,7 +141,7 @@ export default async function PreCalculusProgramPage() {
                     "One-on-One Tutoring (online)",
                     "Chapter-by-chapter review sessions",
                     "Practice problem sets & worked solutions",
-                    "Provincial exam preparation",
+                    "School test, unit assessment and final exam preparation",
                     "Flexible scheduling — evenings & weekends",
                   ]}
                 />
@@ -150,7 +150,7 @@ export default async function PreCalculusProgramPage() {
                 <ListItems
                   items={[
                     "Higher grades in Pre-Calculus 11 & 12",
-                    "Stronger BC Provincial Exam performance",
+                    "Stronger performance on school tests and final examinations",
                     "Readiness for university-level calculus",
                     "Confident approach to multi-step problems",
                     "Clear understanding of all key unit concepts",

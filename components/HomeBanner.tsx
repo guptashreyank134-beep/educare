@@ -7,8 +7,8 @@ import Link from "next/link";
 
 const metrics = [
   { value: "10+ Years", label: "of teaching experience" },
-  { value: "90% Success", label: "student success rate" },
-  { value: "30% Improvement", label: "in overall grades" },
+  { value: "PhD-Led", label: "expert one-on-one tutoring" },
+  { value: "5.0 ★", label: "Google rating from parents & students" },
 ];
 
 export default function HomeBanner() {

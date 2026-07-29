@@ -128,7 +128,7 @@ export default async function PhysicsTutoringPage() {
                   items={[
                     "Students enrolled in Physics 11 or Physics 12",
                     "Learners who find physics concepts abstract or difficult",
-                    "Students preparing for BC Provincial Exams",
+                    "Students preparing for school tests, final exams and BC curriculum-aligned coursework",
                     "Students heading into engineering, medicine, or science programs",
                     "Anyone who wants to improve their physics grade quickly",
                   ]}
@@ -149,7 +149,7 @@ export default async function PhysicsTutoringPage() {
                 <ListItems
                   items={[
                     "Improved Physics 11 & 12 grades",
-                    "Stronger performance on BC Provincial Exams",
+                    "Stronger performance on school tests and final examinations",
                     "Clear conceptual understanding of all major units",
                     "Confident and systematic approach to physics problems",
                     "Solid preparation for first-year university physics",
@@ -173,7 +173,7 @@ export default async function PhysicsTutoringPage() {
                     },
                     {
                       title: "Exam Strategy and Time Management",
-                      desc: "We walk students through past provincial exam questions, teaching them how to allocate time, recognize question types, and avoid common pitfalls.",
+                      desc: "We walk students through past exam and unit-test questions, teaching them how to allocate time, recognize question types, and avoid common pitfalls.",
                     },
                   ].map((item, idx) => (
                     <div key={idx} className="text-[16px] font-montserrat leading-tight text-slate">
@@ -232,7 +232,7 @@ export default async function PhysicsTutoringPage() {
                   {[
                     "Physics 11",
                     "Physics 12",
-                    "BC Provincial Exam Prep",
+                    "Final Exam & Unit Test Prep",
                     "IB Physics SL/HL",
                   ].map((c) => (
                     <li key={c} className="flex items-center gap-3 text-[16px] font-montserrat text-slate">
