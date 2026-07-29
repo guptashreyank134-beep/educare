@@ -103,25 +103,24 @@ export default async function ComputerScienceProgramPage() {
               <SectionHeader icon={Layers} title="What We Cover" />
               <ListItems
                 items={[
-                  "Programming Fundamentals (Python, Java, C, C++)",
-                  "Data Structures and Algorithms",
-                  "Object-Oriented Programming",
-                  "Database Management & SQL",
-                  "Computer Systems & Architecture",
-                  "Artificial Intelligence & Machine Learning",
-                  "Web Development & Software Engineering",
-                  "Debugging and Problem-Solving Techniques",
+                  "Python programming, from first steps to intermediate",
+                  "Java and JavaScript fundamentals",
+                  "Data structures and algorithms",
+                  "Object-oriented programming",
+                  "Databases and SQL",
+                  "Web development (HTML, CSS, JavaScript)",
+                  "Debugging and problem-solving techniques",
                 ]}
               />
 
               <SectionHeader icon={FileText} title="Who Is This For" />
               <ListItems
                 items={[
+                  "School students beginning to code",
+                  "AP and high-school computer science students",
                   "College and university computer science students",
-                  "Beginners learning programming fundamentals",
-                  "Students struggling with coding assignments and projects",
-                  "Learners preparing for technical exams",
-                  "Students exploring advanced technologies and software careers",
+                  "Students who need help understanding assignments and projects",
+                  "Anyone stuck on debugging or a specific concept",
                 ]}
               />
 
@@ -215,22 +214,17 @@ export default async function ComputerScienceProgramPage() {
               Courses We Support
             </h2>
             <p className="text-[18px] font-montserrat text-slate/60">
-              Coverage Across School and University Curriculum
+              From first lines of code to university coursework — the areas our tutors genuinely teach
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Introductory Card */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-bg-grey p-8 rounded-[8px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-2 group">
-              <h3 className="text-[20px] font-bricolage font-normal leading-[20px] text-slate mb-6 inline-block border-b-2 border-yellow-light pb-1">
-                Introductory Courses
+              <h3 className="text-[20px] font-bricolage font-normal leading-[24px] text-slate mb-6 inline-block border-b-2 border-yellow-light pb-1">
+                School Coding & Beginners
               </h3>
               <ul className="space-y-2">
-                {[
-                  "Introduction to Programming",
-                  "Discrete Mathematics for Computing",
-                  "Software Construction",
-                ].map((course) => (
+                {["First steps in Python","Loops, conditionals and functions","Variables, lists and basic data types","Moving from block coding to written code"].map((course) => (
                   <li
                     key={course}
                     className="flex items-start gap-2 text-[14px] font-montserrat text-slate"
@@ -242,18 +236,12 @@ export default async function ComputerScienceProgramPage() {
               </ul>
             </div>
 
-            {/* Intermediate Card */}
             <div className="bg-bg-grey p-8 rounded-[8px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-2 group">
-              <h3 className="text-[20px] font-bricolage font-normal leading-[20px] text-slate mb-6 inline-block border-b-2 border-yellow-light pb-1">
-                Intermediate Courses
+              <h3 className="text-[20px] font-bricolage font-normal leading-[24px] text-slate mb-6 inline-block border-b-2 border-yellow-light pb-1">
+                AP & High-School Computer Science
               </h3>
               <ul className="space-y-2">
-                {[
-                  "Data Structures & Algorithms",
-                  "Computer Systems",
-                  "Database Management",
-                  "Algorithm Design",
-                ].map((course) => (
+                {["AP Computer Science Principles concepts","Java fundamentals and object-oriented basics","Reading, tracing and writing code","Preparing for school CS assessments"].map((course) => (
                   <li
                     key={course}
                     className="flex items-start gap-2 text-[14px] font-montserrat text-slate"
@@ -265,19 +253,12 @@ export default async function ComputerScienceProgramPage() {
               </ul>
             </div>
 
-            {/* Advanced Card */}
             <div className="bg-bg-grey p-8 rounded-[8px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-2 group">
-              <h3 className="text-[20px] font-bricolage font-normal leading-[20px] text-slate mb-6 inline-block border-b-2 border-yellow-light pb-1">
-                Advanced Courses
+              <h3 className="text-[20px] font-bricolage font-normal leading-[24px] text-slate mb-6 inline-block border-b-2 border-yellow-light pb-1">
+                University Computer Science
               </h3>
               <ul className="space-y-2">
-                {[
-                  "Artificial Intelligence",
-                  "Machine Learning",
-                  "Computer Networks",
-                  "Advanced Algorithms",
-                  "Compilers",
-                ].map((course) => (
+                {["Data structures and algorithms","Object-oriented programming","Databases and SQL","Discrete mathematics for computing"].map((course) => (
                   <li
                     key={course}
                     className="flex items-start gap-2 text-[14px] font-montserrat text-slate"
@@ -289,19 +270,12 @@ export default async function ComputerScienceProgramPage() {
               </ul>
             </div>
 
-            {/* Specialized Card */}
             <div className="bg-bg-grey p-8 rounded-[8px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-2 group">
-              <h3 className="text-[20px] font-bricolage font-normal leading-[20px] text-slate mb-6 inline-block border-b-2 border-yellow-light pb-1">
-                Specialized Topics
+              <h3 className="text-[20px] font-bricolage font-normal leading-[24px] text-slate mb-6 inline-block border-b-2 border-yellow-light pb-1">
+                Programming Assignment Support
               </h3>
               <ul className="space-y-2">
-                {[
-                  "Operating Systems",
-                  "Web Development",
-                  "Cloud Computing",
-                  "Cybersecurity",
-                  "Software Engineering",
-                ].map((course) => (
+                {["Understanding what the assignment asks","Planning an approach before coding","Code review and feedback on your work","Explaining errors and how to fix them"].map((course) => (
                   <li
                     key={course}
                     className="flex items-start gap-2 text-[14px] font-montserrat text-slate"
@@ -312,6 +286,34 @@ export default async function ComputerScienceProgramPage() {
                 ))}
               </ul>
             </div>
+
+            <div className="bg-bg-grey p-8 rounded-[8px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-2 group">
+              <h3 className="text-[20px] font-bricolage font-normal leading-[24px] text-slate mb-6 inline-block border-b-2 border-yellow-light pb-1">
+                Projects & Debugging
+              </h3>
+              <ul className="space-y-2">
+                {["Building small projects step by step","Reading and understanding error messages","Debugging logic and edge cases","Web basics: HTML, CSS and JavaScript"].map((course) => (
+                  <li
+                    key={course}
+                    className="flex items-start gap-2 text-[14px] font-montserrat text-slate"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-slate/20 mt-1.5 shrink-0" />
+                    {course}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Academic-integrity note */}
+          <div className="mt-10 max-w-3xl mx-auto rounded-[12px] border border-yellow-light bg-yellow-light/20 px-6 py-5">
+            <p className="text-[15px] font-montserrat text-slate leading-relaxed">
+              <span className="font-semibold">A note on academic integrity.</span>{" "}
+              Our tutoring gives you explanations, worked examples and step-by-step
+              guidance so you can do your own work with confidence. We do not
+              complete graded assignments, exams or projects on a student&apos;s
+              behalf.
+            </p>
           </div>
         </section>
       </div>
