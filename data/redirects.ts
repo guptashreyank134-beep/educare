@@ -106,13 +106,13 @@ export const redirectPairs: [string, string][] = [
   ["/%F0%9F%94%AC-best-chemistry-tutoring-in-burnaby-vancouver-ib-ap-bc-curriculum", "/programs/chemistry"],
 
   // Physics
-  ["/physics-tutoring", "/programs/physics-tutoring"],
-  ["/science-physics-tutoring-burnaby", "/programs/physics-tutoring"],
+  ["/physics-tutoring", "/programs/physics"],
+  ["/science-physics-tutoring-burnaby", "/programs/physics"],
   ["/hardest-high-school-physics-topics-bc-curriculum", "/programs/physics"],
   ["/the-math-behind-waves-and-sound-burnaby-tutor", "/programs/physics"],
   ["/mastering-waves-and-sound-physics-tutoring-burnaby", "/programs/physics"],
   ["/mastering-projectile-motion-physics-12-bc", "/programs/physics"],
-  ["/types-of-physics-tutoring-in-canada-choose-what-suits-you", "/programs/physics-tutoring"],
+  ["/types-of-physics-tutoring-in-canada-choose-what-suits-you", "/programs/physics"],
   ["/how-calculus-explains-velocity-and-acceleration-in-grade-12-physics", "/programs/physics"],
   ["/calculus-velocity-acceleration-physics-math", "/programs/physics"],
   ["/physics-math-tutoring-high-school-canada", "/programs/physics"],
@@ -251,6 +251,14 @@ export const redirectPairs: [string, string][] = [
   // Empty article (0 body blocks) -> the informational resources hub (not a
   // commercial page). The other 108 posts are substantial and kept.
   ["/blog/how-to-study-effectively-for-ib-exams", "/resources"],
+
+  // Chemistry/physics consolidation (2026-07, GSC-confirmed survivors)
+  ["/best-chemistry-tutor-burnaby", "/programs/chemistry"],
+  ["/best-physics-tutor-burnaby", "/programs/physics"],
+  ["/programs/physics-tutoring", "/programs/physics"],
+  // Two university-physics pages competed; GSC shows /programs/university-physics
+  // already ranks for "university physics tutor vancouver" (pos ~9), so keep it.
+  ["/university-physics-tutor-vancouver", "/programs/university-physics"],
 ];
 
 export const redirectSources = new Set(redirectPairs.map(([from]) => from));

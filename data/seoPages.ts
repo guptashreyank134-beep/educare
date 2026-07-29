@@ -4186,7 +4186,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "University Physics Tutor in Vancouver", href: "/university-physics-tutor-vancouver" },
+      { label: "University Physics Tutor in Vancouver", href: "/programs/university-physics" },
       { label: "Engineering Dynamics Tutor", href: "/engineering-dynamics-tutor" },
       { label: "Calculus 1 Tutor Online", href: "/calculus-1-tutor-online" },
     ],
@@ -5573,7 +5573,7 @@ export const seoPages: SeoPage[] = [
     related: [
       { label: "Physics 11 Tutor in Vancouver", href: "/physics-11-tutor-vancouver" },
       { label: "AP Physics Tutor in Vancouver", href: "/ap-physics-tutor-vancouver" },
-      { label: "University Physics Tutor in Vancouver", href: "/university-physics-tutor-vancouver" },
+      { label: "University Physics Tutor in Vancouver", href: "/programs/university-physics" },
       { label: "Physics 12 Final Exam Review", href: "/physics-12-final-exam-review" },
     ],
   },
