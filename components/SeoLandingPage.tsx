@@ -9,8 +9,6 @@ import TrialClassForm from "@/components/TrialClassForm";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
-import TrustedBrands from "@/components/TrustedBrands";
-import Reviews from "@/components/Reviews";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   JsonLd,
@@ -256,8 +254,6 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
         );
       })()}
 
-      <TrustedBrands />
-      <Reviews />
       <VancouverCTABanner />
       <VancouverFAQSection faqs={faqs} />
     </div>
