@@ -229,6 +229,23 @@ export const redirectPairs: [string, string][] = [
   ["/category/stem-education-2", "/programs/burnaby-stem-tutoring"],
   ["/category/tutor", "/services"],
   ["/category/uncategorized", "/blog"],
+
+  // ── Cannibalization cleanup (2026-07, from GSC page-level data) ────────────
+  // Brand-name variants: near-zero impressions each (3-9), 0 clicks; the
+  // homepage already wins brand queries ("dr shreyank educare" 7 clicks).
+  ["/dr-shreyank-educare", "/about"],
+  ["/dr-shreyank-gupta-tutor", "/about"],
+  ["/dr-shreyank-math-tutor", "/math-tutor-burnaby"],
+  ["/dr-shreyank-educare-burnaby", "/tutoring-burnaby"],
+  // Burnaby math variants competing with the city page (all rank ~48-51, 0
+  // clicks). Consolidate onto /math-tutor-burnaby.
+  ["/best-math-tutor-burnaby", "/math-tutor-burnaby"],
+  ["/one-on-one-math-tutor-burnaby", "/math-tutor-burnaby"],
+  // Vancouver math variants -> the strongest Vancouver math URL by impressions
+  // (/math-tutor-vancouver 204 impr vs /math-tutoring-vancouver 35). NOTE:
+  // corrected from the originally-suggested /math-tutoring-vancouver target.
+  ["/best-math-tutor-vancouver", "/math-tutor-vancouver"],
+  ["/math-tutoring-vancouver", "/math-tutor-vancouver"],
 ];
 
 export const redirectSources = new Set(redirectPairs.map(([from]) => from));

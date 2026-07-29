@@ -225,7 +225,7 @@ const footerColumns = [
   {
     title: "Vancouver & University",
     links: [
-      { label: "Math Tutoring in Vancouver", href: "/math-tutoring-vancouver" },
+      { label: "Math Tutoring in Vancouver", href: "/math-tutor-vancouver" },
       { label: "Computer Science Tutor", href: "/computer-science-tutor-vancouver" },
       { label: "University Mathematics", href: "/programs/university-mathematics" },
       { label: "University Chemistry", href: "/programs/university-chemistry" },

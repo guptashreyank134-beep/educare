@@ -159,8 +159,8 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "About Dr. Shreyank Educare", href: "/dr-shreyank-educare" },
-      { label: "Best Math Tutor in Burnaby", href: "/best-math-tutor-burnaby" },
+      { label: "About Dr. Shreyank Educare", href: "/about" },
+      { label: "Best Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
       CONTACT,
     ],
   },
@@ -217,7 +217,7 @@ export const seoPages: SeoPage[] = [
     ],
     related: [
       { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
-      { label: "About Dr. Shreyank Educare", href: "/dr-shreyank-educare" },
+      { label: "About Dr. Shreyank Educare", href: "/about" },
       CONTACT,
     ],
   },
@@ -272,8 +272,8 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Dr. Shreyank Math Tutor", href: "/dr-shreyank-math-tutor" },
-      { label: "About the Centre", href: "/dr-shreyank-educare" },
+      { label: "Dr. Shreyank Math Tutor", href: "/math-tutor-burnaby" },
+      { label: "About the Centre", href: "/about" },
       CONTACT,
     ],
   },
@@ -389,7 +389,6 @@ export const seoPages: SeoPage[] = [
     related: [
       { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
       { label: "Private Math Tutor in Burnaby", href: "/private-math-tutor-burnaby" },
-      { label: "Math Tutoring in Burnaby", href: "/math-tutor-burnaby" },
     ],
   },
   {
@@ -445,7 +444,6 @@ export const seoPages: SeoPage[] = [
     ],
     related: [
       { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
-      { label: "Vancouver Math Tutoring (All Levels)", href: "/math-tutoring-vancouver" },
       CONTACT,
     ],
   },
@@ -500,8 +498,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Best Math Tutor in Burnaby", href: "/best-math-tutor-burnaby" },
-      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+      { label: "Best Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
       { label: "Pre-Calculus 12 Tutor in Burnaby", href: "/pre-calculus-12-tutor-burnaby" },
     ],
   },
@@ -556,8 +553,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Best Math Tutor in Vancouver", href: "/best-math-tutor-vancouver" },
-      { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
+      { label: "Best Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
       CONTACT,
     ],
   },
@@ -611,8 +607,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "One-on-One Math Tutor in Burnaby", href: "/one-on-one-math-tutor-burnaby" },
-      { label: "Best Math Tutor in Burnaby", href: "/best-math-tutor-burnaby" },
+      { label: "One-on-One Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
       CONTACT,
     ],
   },
@@ -1850,7 +1845,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Best Math Tutor in Burnaby", href: "/best-math-tutor-burnaby" },
+      { label: "Best Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
       { label: "Science Tutor in Burnaby", href: "/science-tutor-burnaby" },
       { label: "All-Subject Tutoring in Vancouver", href: "/tutoring-vancouver" },
     ],
@@ -1905,7 +1900,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Best Math Tutor in Vancouver", href: "/best-math-tutor-vancouver" },
+      { label: "Best Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
       { label: "STEM Tutor in Vancouver", href: "/stem-tutor-vancouver" },
       { label: "All-Subject Tutoring in Burnaby", href: "/tutoring-burnaby" },
     ],
@@ -2953,8 +2948,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Best Math Tutor in Vancouver", href: "/best-math-tutor-vancouver" },
-      { label: "Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
+      { label: "Best Math Tutor in Vancouver", href: "/math-tutor-vancouver" },
       { label: "Top Chemistry Tutor in Vancouver", href: "/top-chemistry-tutor-vancouver" },
     ],
   },
@@ -5226,8 +5220,7 @@ export const seoPages: SeoPage[] = [
     ],
     related: [
       { label: "My Child Is Failing Math — What to Do", href: "/my-child-is-failing-math-what-should-i-do" },
-      { label: "One-on-One Math Tutor in Burnaby", href: "/one-on-one-math-tutor-burnaby" },
-      { label: "Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
+      { label: "One-on-One Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
     ],
   },
   {
@@ -5282,7 +5275,7 @@ export const seoPages: SeoPage[] = [
       },
     ],
     related: [
-      { label: "Best Math Tutor in Burnaby", href: "/best-math-tutor-burnaby" },
+      { label: "Best Math Tutor in Burnaby", href: "/math-tutor-burnaby" },
       { label: "My Child Is Failing Math — What to Do", href: "/my-child-is-failing-math-what-should-i-do" },
       { label: "Dr. Shreyank Educare Reviews", href: "/dr-shreyank-educare-reviews" },
     ],
