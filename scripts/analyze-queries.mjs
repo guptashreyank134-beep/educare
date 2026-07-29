@@ -3,7 +3,7 @@
 // ranking opportunity. Writes docs/seo/search-query-analysis.csv.
 //
 // Run: node scripts/analyze-queries.mjs
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 
 const rows = readFileSync("Queries.csv", "utf8")
   .split(/\r?\n/)
@@ -93,7 +93,7 @@ function opportunity(r) {
   if (p <= 20) return "Page-2 (build authority)";
   return "Low (long-term)";
 }
-function action(r, intent, page) {
+function action(r, intent) {
   if (intent.startsWith("Location (not served)") || intent === "Irrelevant / low-value") return "Ignore / mark not-relevant";
   if (intent === "Informational (pricing/jobs)") return r.query.includes("job") ? "Ignore (recruiting query)" : "Ensure /pricing answers this";
   if (r.clicks > 0) return "Keep; protect ranking";
@@ -126,7 +126,7 @@ for (const r of rows.sort((a, b) => b.impressions - a.impressions)) {
   const pr = priority(r, intent);
   if (op.startsWith("STRIKING")) strikingImpr += r.impressions;
   byIntent[intent] = (byIntent[intent] || 0) + 1;
-  out.push([r.query, r.clicks, r.impressions, r.ctr, r.position, intent, page, op, action(r, intent, page), pr].map(esc).join(","));
+  out.push([r.query, r.clicks, r.impressions, r.ctr, r.position, intent, page, op, action(r, intent), pr].map(esc).join(","));
 }
 writeFileSync("docs/seo/search-query-analysis.csv", out.join("\n"));
 

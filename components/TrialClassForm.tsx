@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { ArrowRight, Loader2 } from 'lucide-react'
 import { Input } from '@/components/ui/Input'
@@ -92,7 +93,7 @@ Consent to contact: ${rawData.get('consent') ? 'Yes' : 'No'}
           <span>
             I agree to be contacted by Dr. Shreyank Educare about my enquiry by phone, email or
             WhatsApp. See our{" "}
-            <a href="/privacy" className="text-primary underline">privacy policy</a>.
+            <Link href="/privacy" className="text-primary underline">privacy policy</Link>.
           </span>
         </label>
 

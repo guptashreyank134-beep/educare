@@ -120,7 +120,7 @@ const W = (u, m) => warnings.push(`${u}\n     ${m}`);
     else if (ls.status >= 300 && ls.status < 400) W(from, `internal link to a redirect -> ${ls.path} (${ls.status} -> ${ls.to})`);
   }
   for (const [k, list] of titles) if (list.length > 1) E(list[0], `duplicate <title> "${k}" on ${list.length} pages:\n     - ${list.join("\n     - ")}`);
-  for (const [k, list] of descs) if (list.length > 1) W(list[0], `duplicate meta description on ${list.length} pages:\n     - ${list.join("\n     - ")}`);
+  for (const [, list] of descs) if (list.length > 1) W(list[0], `duplicate meta description on ${list.length} pages:\n     - ${list.join("\n     - ")}`);
 
   if (errors.length) { console.log(`ERRORS (${errors.length}):`); for (const e of errors) console.log("  ✗ " + e); console.log(""); }
   if (warnings.length) { console.log(`WARNINGS (${warnings.length}):`); for (const w of warnings) console.log("  ! " + w); console.log(""); }
