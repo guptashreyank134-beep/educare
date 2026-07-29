@@ -246,6 +246,11 @@ export const redirectPairs: [string, string][] = [
   // corrected from the originally-suggested /math-tutoring-vancouver target.
   ["/best-math-tutor-vancouver", "/math-tutor-vancouver"],
   ["/math-tutoring-vancouver", "/math-tutor-vancouver"],
+
+  // ── Blog cleanup (2026-07) ────────────────────────────────────────────────
+  // Empty article (0 body blocks) -> the informational resources hub (not a
+  // commercial page). The other 108 posts are substantial and kept.
+  ["/blog/how-to-study-effectively-for-ib-exams", "/resources"],
 ];
 
 export const redirectSources = new Set(redirectPairs.map(([from]) => from));
