@@ -20,7 +20,7 @@ export default function TrustedBrands() {
       <div className="max-w-7xl mx-auto px-4 w-full">
         <div className="bg-white rounded-[20px] shadow-[0px_0px_30px_0px_#57575614] p-10 text-center overflow-hidden">
           <h2 className="text-[24px] font-bricolage font-display font-medium text-slate mb-10">
-            Trusted By Students All Around Canada
+            Where Our Students Study and Get Accepted
           </h2>
           
           <div className="relative w-full overflow-hidden py-2">
@@ -46,7 +46,7 @@ export default function TrustedBrands() {
             </div>
           </div>
           <p className="text-[12px] text-slate/60 mt-6 font-montserrat max-w-2xl mx-auto">
-            * University logos are shown for representational purposes to indicate where some of our students study or have been accepted. They do not imply any official partnership or endorsement by the respective institutions.
+            We support students enrolled at universities and colleges across Canada, including SFU, McGill and the University of Waterloo. These logos indicate where some of our students study or have been accepted — they do not imply any official partnership or endorsement by the institutions.
           </p>
         </div>
       </div>

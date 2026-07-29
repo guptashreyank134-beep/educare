@@ -10,6 +10,7 @@ export const pricingSectionContent: {
   heading: string;
   subheading: string;
   cards: PricingCardItem[];
+  notes: string[];
 } = {
   heading: "Flexible Pricing For Every Learning Goal",
   subheading:
@@ -20,44 +21,52 @@ export const pricingSectionContent: {
       title: "Monthly Program",
       subtitle: "Best for consistent growth",
       features: [
-        "2 sessions per week",
-        "Small group (6-8 students)",
+        "Two 60-minute sessions per week",
+        "Small group of up to 6 students",
+        "All materials included",
         "Monthly progress tracking",
-        "Exam strategy included",
       ],
       price: 185,
       priceMax: 200,
-      priceCaption: "per month, no hidden fees",
-      ctaText: "Enroll Today!",
+      priceCaption: "per month, GST included",
+      ctaText: "Book a Free 30-Minute Consultation",
     },
     {
       icon: Users,
       title: "1 On 1 Tutoring",
       subtitle: "Maximum personalization",
       features: [
-        "Fully personalized sessions",
+        "60-minute one-on-one sessions",
+        "Fully personalized to your goals",
         "Flexible scheduling",
-        "Faster targeted improvement",
-        "Custom learning plan",
+        "All materials included",
       ],
       price: 75,
       priceMax: 100,
-      priceCaption: "based on subject and level",
-      ctaText: "Book Free Consultation",
+      priceCaption: "per 60-min session, GST incl. (varies by subject & level)",
+      ctaText: "Book a Free 30-Minute Consultation",
     },
     {
       icon: Rocket,
       title: "Exam Booster",
       subtitle: "Intensive exam preparation",
       features: [
-        "2-week intensive program",
-        "Past paper practice",
-        "Test-taking strategy",
-        "IB & AP specialized",
+        "5 hours of focused instruction",
+        "Revision and question-solving",
+        "Targeted concept review",
+        "Past-paper practice",
       ],
       price: 280,
-      priceCaption: "per intensive course",
-      ctaText: "Start Preparing",
+      priceCaption: "for the full 5-hour course, GST included",
+      ctaText: "Book a Free 30-Minute Consultation",
     },
+  ],
+  // Shared terms shown as small print under the cards, so pricing is unambiguous.
+  notes: [
+    "Every session is 60 minutes.",
+    "All prices are GST-inclusive — no hidden fees.",
+    "All learning materials are included.",
+    "The same pricing covers online and in-person sessions in Burnaby.",
+    "Please cancel or reschedule at least 25 hours before a session.",
   ],
 };

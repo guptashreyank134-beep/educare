@@ -115,7 +115,7 @@ Consent to contact: ${rawData.get('consent') ? 'Yes' : 'No'}
                 <Loader2 className="w-5 h-5 animate-spin" />
                 Submitting...
               </span>
-            ) : 'Book Free Consultation'}
+            ) : 'Book a Free 30-Minute Consultation'}
           </Button>
         </div>
       </form>

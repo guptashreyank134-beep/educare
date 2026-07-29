@@ -277,7 +277,7 @@ export default async function UniversityMathematicsPage() {
                 {[
                   "Multivariable Calculus",
                   "Vector Calculus",
-                  "Lambda Calculus",
+                  "Sequences & Series",
                 ].map((course) => (
                   <li
                     key={course}

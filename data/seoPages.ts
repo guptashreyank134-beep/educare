@@ -5831,7 +5831,7 @@ export const seoPages: SeoPage[] = [
     location: "Surrey",
     metaTitle: "French Classes in Surrey | Kids, Teens & Adults",
     metaDescription:
-      "French classes in Surrey for kids, teens and adults — conversation, grammar and French Immersion support. One-on-one or small group, online. Free trial.",
+      "French classes in Surrey for kids, teens and adults — conversation, grammar and French Immersion support. One-on-one or small group, online. Free consultation.",
     h1: "French Classes in Surrey",
     heroSubheading:
       "Conversational and academic French for Surrey learners — from Core French homework help to fluency practice for adults.",
@@ -6060,7 +6060,7 @@ export const seoPages: SeoPage[] = [
     location: "Burnaby",
     metaTitle: "French Classes in Burnaby | In Person or Online",
     metaDescription:
-      "French classes in Burnaby for kids, teens and adults — conversation, grammar and exam preparation. In person at our Burnaby location, or online. Free trial.",
+      "French classes in Burnaby for kids, teens and adults — conversation, grammar and exam preparation. In person at our Burnaby location, or online. Free consultation.",
     h1: "French Classes in Burnaby",
     heroSubheading:
       "French for every level in Burnaby — and the one location where lessons can happen face to face.",

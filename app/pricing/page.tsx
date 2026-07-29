@@ -38,6 +38,19 @@ const PricingPage = async () => {
                         cards={pricingSectionContent.cards}
                     />
 
+                    {/* Shared terms — makes pricing unambiguous (session length,
+                        GST, materials, cancellation). */}
+                    <section className="max-w-[1096px] mx-auto px-4 sm:px-6 -mt-4 pb-12">
+                        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[14px] font-montserrat text-slate/70">
+                            {pricingSectionContent.notes.map((note) => (
+                                <li key={note} className="flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
+                                    {note}
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+
                     {/* Contextual links out to where we actually teach. Someone
                         comparing prices next wants to know "do you cover my area
                         and my subject?" — descriptive anchors, not "learn more". */}
