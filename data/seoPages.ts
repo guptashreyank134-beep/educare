@@ -850,6 +850,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "Pre-Calculus 12 is a gateway course for university and a demanding one, spanning transformations, trig identities, logarithms and more. Small gaps compound quickly, which is why focused tutoring makes such a difference.",
       "Our Burnaby Pre-Calculus 12 tutoring breaks each topic into clear steps and prepares students thoroughly for the final exam.",
+      "Whether your student is aiming for a science, engineering or business program, a strong Pre-Calculus 12 grade keeps those doors open — and builds the algebra and trig fluency that first-year Calculus assumes. We tutor in person at our Burnaby centre and online across the Lower Mainland, matching every session to what your student is covering in class.",
     ],
     sections: [
       {
@@ -861,6 +862,13 @@ export const seoPages: SeoPage[] = [
           "Polynomial & rational functions",
           "Geometric sequences & series",
           "Function operations & inverses",
+        ],
+      },
+      {
+        heading: "Where Pre-Calculus 12 Students Lose Marks",
+        body: [
+          "Most lost marks in Pre-Calculus 12 come from a handful of predictable places: proving trigonometric identities, solving logarithmic and exponential equations, and reading transformations of functions correctly. These are learnable patterns, not luck.",
+          "We target those exact sticking points with worked examples and timed practice, so the final exam feels familiar rather than surprising.",
         ],
       },
       {
@@ -878,13 +886,24 @@ export const seoPages: SeoPage[] = [
           "It packs demanding topics — trig identities, logarithms, transformations — into one course, and gaps compound quickly. Focused tutoring keeps students on track.",
       },
       {
+        question: "Which Pre-Calculus 12 topics do students struggle with most?",
+        answer:
+          "Trigonometric identities and proofs, logarithmic and exponential equations, and function transformations are the usual culprits. We drill these until they feel routine.",
+      },
+      {
         question: "Do you prepare for the final exam?",
         answer:
           "Yes — we build toward the final with review and practice on the exact question types it tests.",
       },
       {
+        question: "Does Pre-Calculus 12 matter for university?",
+        answer:
+          "Very — it is the standard prerequisite for first-year Calculus and most STEM and business programs, and the fluency it builds is what makes first-year university math manageable.",
+      },
+      {
         question: "In person or online?",
-        answer: "Both are available in Burnaby.",
+        answer:
+          "Both — in person at our Burnaby centre, or online for students across the Lower Mainland.",
       },
     ],
     related: [
