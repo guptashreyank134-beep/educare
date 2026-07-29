@@ -18,6 +18,7 @@ import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import { getProgramFaqs } from "@/sanity/lib/faqs";
+import UniversityCourseTable from "@/components/UniversityCourseTable";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "university-mathematics");
@@ -211,86 +212,7 @@ export default async function UniversityMathematicsPage() {
         </div>
 
         {/* Bottom Section: Courses We Support */}
-        <section className="mt-32">
-          <div className="text-center mb-16">
-            <h2 className="text-[32px] font-bricolage font-normal text-slate mb-3 leading-[34px]">
-              Courses We Support
-            </h2>
-            <p className="text-[18px] font-montserrat text-slate/60">
-              Coverage Across School and University Curriculum
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* UBC Card */}
-            <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group">
-              <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
-                University Of British Columbia
-              </h3>
-              <ul className="space-y-2">
-                {[
-                  "Statistics: STAT 200, 203, 241, 251",
-                  "Linear Algebra: MATH 152",
-                  "Differential Calculus: MATH 100, 102, 104, 110, 120, 180, 184",
-                  "Integral Calculus: MATH 101, 103, 105, 121",
-                ].map((course) => (
-                  <li
-                    key={course}
-                    className="flex items-start gap-3 text-[14px] font-montserrat text-slate"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate/20 mt-1.5 shrink-0" />
-                    {course}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Langara Card */}
-            <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group">
-              <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
-                Langara College
-              </h3>
-              <ul className="space-y-2">
-                {[
-                  "Statistics: STAT 1123, 1124, 1181",
-                  "Linear Algebra: MATH 2362",
-                  "Differential Calculus: MATH 1153, 1171, 1173, 1174, 1253",
-                  "Integral Calculus: MATH 1271, 1273, 1274",
-                ].map((course) => (
-                  <li
-                    key={course}
-                    className="flex items-start gap-3 text-[14px] font-montserrat text-slate"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate/20 mt-1.5 shrink-0" />
-                    {course}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Other Card */}
-            <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group">
-              <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
-                Other Calculus Topics
-              </h3>
-              <ul className="space-y-2">
-                {[
-                  "Multivariable Calculus",
-                  "Vector Calculus",
-                  "Sequences & Series",
-                ].map((course) => (
-                  <li
-                    key={course}
-                    className="flex items-start gap-3 text-[14px] font-montserrat text-slate"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate/20 mt-1.5 shrink-0" />
-                    {course}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
+                <UniversityCourseTable subject={["Statistics", "Mathematics"]} />
       </div>
     
         {faqs.length > 0 && (

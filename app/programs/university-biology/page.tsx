@@ -18,6 +18,7 @@ import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import { getProgramFaqs } from "@/sanity/lib/faqs";
+import UniversityCourseTable from "@/components/UniversityCourseTable";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "university-biology");
@@ -99,7 +100,7 @@ export default async function UniversityBiologyPage() {
                 practice rather than rote memorization.
               </p>
               <p>
-                We tutor life-sciences students from UBC, SFU and Langara —
+                We tutor life-sciences students from UBC and Langara —
                 introductory biology, cell and molecular biology, genetics, and
                 anatomy and physiology — along with pre-med students preparing
                 for the MCAT. Sessions run in person at our Burnaby centre,
@@ -217,48 +218,7 @@ export default async function UniversityBiologyPage() {
         </div>
 
         {/* Bottom Section: Courses We Support */}
-        <section className="mt-32">
-          <div className="text-center mb-16">
-            <h2 className="text-[32px] font-bricolage font-normal text-slate mb-3 leading-[34px]">
-              Courses We Support
-            </h2>
-            <p className="text-[18px] font-montserrat text-slate/60">
-              Coverage Across School and University Curriculum
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { school: "University Of British Columbia", courses: ["BIOL 111", "BIOL 112", "BIOL 121", "BIOL 140", "BIOL 200", "BIOL 201"] },
-              { school: "Simon Fraser University", courses: ["BISC 100", "BISC 101", "BISC 102", "BISC 202"] },
-              { school: "Langara College", courses: ["BIOL 1115", "BIOL 1116", "BIOL 1215", "BIOL 1216"] },
-            ].map((card) => (
-              <div
-                key={card.school}
-                className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group"
-              >
-                <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
-                  {card.school}
-                </h3>
-                <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-                  {card.courses.map((course) => (
-                    <li
-                      key={course}
-                      className="flex items-center gap-3 text-[14px] font-montserrat text-slate list-none"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate/20 shrink-0" />
-                      {course}
-                    </li>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-[14px] font-montserrat text-slate/60 mt-6">
-            Also covering General Biology, Cell &amp; Molecular Biology, Genetics,
-            and Anatomy &amp; Physiology at other BC colleges and universities.
-          </p>
-        </section>
+                <UniversityCourseTable subject={"Biology"} />
       </div>
     
         {faqs.length > 0 && (

@@ -18,6 +18,7 @@ import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import { getProgramFaqs } from "@/sanity/lib/faqs";
+import UniversityCourseTable from "@/components/UniversityCourseTable";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "physics");
@@ -275,87 +276,7 @@ export default async function PhysicsProgramPage() {
         </section>
 
         {/* Bottom Section: Courses We Support */}
-        <section className="mt-32">
-          <div className="text-center mb-16">
-            <h2 className="text-[32px] font-bricolage font-normal text-slate mb-3 leading-[34px]">
-              Courses We Support
-            </h2>
-            <p className="text-[18px] font-montserrat text-slate/60">
-              Coverage Across School and University Curriculum
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* High School Card */}
-            <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group">
-              <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
-                High School Physics
-              </h3>
-              <ul className="space-y-2">
-                {["Physics 11", "Physics 12"].map((course) => (
-                  <li
-                    key={course}
-                    className="flex items-center gap-3 text-[16px] font-montserrat text-slate"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate/20" />
-                    {course}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* University Card */}
-            <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group">
-              <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
-                University Physics
-              </h3>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                {[
-                  "PHYS 100",
-                  "PHYS 117",
-                  "PHYS 101",
-                  "PHYS 118",
-                  "PHYS 107",
-                  "PHYS 170",
-                  "PHYS 108",
-                  "PHYS 1101",
-                  "PHYS 1114",
-                  "PHYS 1118",
-                  "PHYS 1125",
-                  "PHYS 1225",
-                ].map((course) => (
-                  <li
-                    key={course}
-                    className="flex items-center gap-3 text-[14px] font-montserrat text-slate list-none"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-slate/20 shrink-0" />
-                    {course}
-                  </li>
-                ))}
-              </div>
-            </div>
-
-            {/* Additional Support Card */}
-            <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group">
-              <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
-                Additional Support
-              </h3>
-              <ul className="space-y-2">
-                {["Assignment help", "Quiz preparation", "Exam preparation"].map(
-                  (course) => (
-                    <li
-                      key={course}
-                      className="flex items-center gap-3 text-[16px] font-montserrat text-slate"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate/20" />
-                      {course}
-                    </li>
-                  ),
-                )}
-              </ul>
-            </div>
-          </div>
-        </section>
+                <UniversityCourseTable subject={"Physics"} />
       </div>
     
         {faqs.length > 0 && (

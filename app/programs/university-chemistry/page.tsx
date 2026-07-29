@@ -18,6 +18,7 @@ import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import { getProgramFaqs } from "@/sanity/lib/faqs";
+import UniversityCourseTable from "@/components/UniversityCourseTable";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "university-chemistry");
@@ -204,56 +205,7 @@ export default async function UniversityChemistryPage() {
         </div>
 
         {/* Bottom Section: Courses We Support */}
-        <section className="mt-32">
-          <div className="text-center mb-16">
-            <h2 className="text-[32px] font-bricolage font-normal text-slate mb-3 leading-[34px]">
-              Courses We Support
-            </h2>
-            <p className="text-[18px] font-montserrat text-slate/60">
-              Coverage Across School and University Curriculum
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* UBC Card */}
-            <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group">
-              <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
-                University Of British Columbia
-              </h3>
-              <ul className="space-y-2">
-                {["CHEM 111", "CHEM 121", "CHEM 123"].map((course) => (
-                  <li
-                    key={course}
-                    className="flex items-center gap-3 text-[14px] font-montserrat text-slate"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate/20" />
-                    {course}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Langara Card */}
-            <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group">
-              <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
-                Langara College
-              </h3>
-              <ul className="space-y-2">
-                {["CHEM 1114", "CHEM 1118", "CHEM 1120", "CHEM 1220"].map(
-                  (course) => (
-                    <li
-                      key={course}
-                      className="flex items-center gap-3 text-[14px] font-montserrat text-slate"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate/20" />
-                      {course}
-                    </li>
-                  ),
-                )}
-              </ul>
-            </div>
-          </div>
-        </section>
+                <UniversityCourseTable subject={"Chemistry"} />
       </div>
     
         {faqs.length > 0 && (
