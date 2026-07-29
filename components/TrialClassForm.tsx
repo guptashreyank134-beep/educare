@@ -75,7 +75,7 @@ Consent to contact: ${rawData.get('consent') ? 'Yes' : 'No'}
 
         <div className="grid grid-cols-2 gap-4">
           <Input label="Student's Grade or Course" placeholder="e.g. Grade 11 or UBC MATH 100" id="grade" name="grade" required />
-          <Input label="Subject Required" placeholder="e.g. Pre-Calculus 12" id="subject" name="subject" required />
+          <Input label="Subject Required" placeholder="e.g. Math, Chemistry, Physics or Coding" id="subject" name="subject" required />
         </div>
 
         <Input label="Phone Number" type="tel" inputMode="tel" autoComplete="tel" placeholder="e.g. (604) 123-4567" id="phone" name="phone" required />
