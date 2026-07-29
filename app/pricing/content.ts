@@ -67,6 +67,6 @@ export const pricingSectionContent: {
     "All prices are GST-inclusive — no hidden fees.",
     "All learning materials are included.",
     "The same pricing covers online and in-person sessions in Burnaby.",
-    "Please cancel or reschedule at least 25 hours before a session.",
+    "Please cancel or reschedule at least 24 hours before a session.",
   ],
 };
