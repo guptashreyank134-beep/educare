@@ -10,6 +10,8 @@
  * one keyword-matched H1, and genuine local content.
  */
 
+import { redirectSources } from "./redirects";
+
 export interface SeoSection {
   heading: string;
   body?: string[];
@@ -6209,7 +6211,13 @@ export function getSeoSiblings(
 ): { label: string; href: string }[] {
   const page = seoPages.find((p) => p.slug === slug);
   if (!page) return [];
-  const skip = new Set([slug, ...exclude.map((h) => h.replace(/^\//, ""))]);
+  // Never auto-link to a slug that permanently redirects elsewhere — that would
+  // send internal links (and crawlers) through a 308 hop.
+  const skip = new Set([
+    slug,
+    ...exclude.map((h) => h.replace(/^\//, "")),
+    ...seoPages.filter((p) => redirectSources.has(`/${p.slug}`)).map((p) => p.slug),
+  ]);
 
   const cluster = seoPages.filter((p) => p.cluster === page.cluster);
   const idx = cluster.findIndex((p) => p.slug === slug);

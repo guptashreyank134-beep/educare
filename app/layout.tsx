@@ -14,6 +14,7 @@ import {
   GoogleTagManagerNoScript,
 } from "../components/GoogleTagManager";
 import { JsonLd, getOrganizationSchema } from "../components/SchemaMarkup";
+import { ContactClickTracking } from "../components/ContactClickTracking";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -88,6 +89,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <WhatsAppFloating />
+        <ContactClickTracking />
       </body>
     </html>
   );

@@ -3,6 +3,7 @@ import { client } from "@/sanity/lib/client";
 import { cities, cityPath } from "@/data/cities";
 import { verticalPages, verticalPath } from "@/data/verticalPages";
 import { seoPages, seoPagePath } from "@/data/seoPages";
+import { redirectSources } from "@/data/redirects";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.drshreyankeducare.com";
@@ -72,7 +73,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Error fetching posts for sitemap:", error);
   }
 
-  const allRoutes = [...staticRoutes, ...dynamicRoutes];
+  // Exclude any route that is a permanent-redirect source: a sitemap must list
+  // only canonical, indexable URLs, never a URL that 308s elsewhere.
+  const allRoutes = [...staticRoutes, ...dynamicRoutes].filter(
+    (route) => !redirectSources.has(route.replace(/\/+$/, "") || "/")
+  );
 
   return allRoutes.map((route) => {
     // The site serves canonical URLs WITHOUT a trailing slash (Next default

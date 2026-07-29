@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seo:analyze": "node scripts/analyze-queries.mjs",
+    "seo:audit": "node scripts/seo-audit.mjs",
+    "seo:perf": "node scripts/perf-a11y-audit.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^6.2.0",

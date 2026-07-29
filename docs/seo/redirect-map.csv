@@ -1,0 +1,11 @@
+Source,Destination,Status,State,Reason
+/math-tutoring-burnaby,/math-tutor-burnaby,301,Existing,Consolidate broad Burnaby math intent onto the city page (now also removed from sitemap)
+/math-tutoring-burnaby-vancouver-online-canada,/math-tutor-burnaby,301,Existing,Consolidate keyword-stuffed variant
+/vancouver-math-tutor,/,301,Existing,Weak duplicate of Vancouver math intent
+/vancouver-math-tutors,/programs/vancouver-math-tutoring,301,Existing,Consolidate plural variant
+/math-tutoring,/programs/mathematics,301,Existing,Generic math tutoring -> mathematics hub
+/math-tutor-dr-shreyank-educare,/programs/mathematics,301,Existing,Brand+keyword variant
+/contact-us,/contact,301,Existing,Canonical contact URL
+"183 total permanent redirects",,301,Existing,See data/redirects.ts (now the single source of truth for next.config + sitemap)
+/best-math-tutor-vancouver,/math-tutor-vancouver,301,RECOMMENDED (verify traffic first),"""best math tutor vancouver"" and ""math tutor vancouver"" share intent; consolidate to one Vancouver math page. Only after confirming which URL has better links/rankings."
+/programs/physics-tutoring,/programs/physics,301,RECOMMENDED,"Two physics program pages (/programs/physics and /programs/physics-tutoring) serve the same intent — merge content into /programs/physics, redirect the weaker. Verify internal links + backlinks before merging."
