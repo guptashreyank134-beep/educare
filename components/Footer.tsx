@@ -207,7 +207,7 @@ function FooterBar() {
             </div>
           ))}
 
-          {/* Visit Us — Google Map of the Burnaby learning centre. Fills the
+          {/* Visit Us — Google Map of the Burnaby tutoring studio. Fills the
               footer's empty right-hand columns and reinforces the real address
               for local SEO. */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-2">
@@ -223,7 +223,7 @@ function FooterBar() {
               2088 Madison Avenue, Burnaby, BC V5C 6T5
             </a>
             <iframe
-              title="Dr. Shreyank Educare — Burnaby learning centre"
+              title="Dr. Shreyank Educare — Burnaby tutoring studio"
               src="https://maps.google.com/maps?q=2088%20Madison%20Avenue%2C%20Burnaby%2C%20BC%20V5C%206T5&z=15&output=embed"
               className="w-full h-[180px] rounded-lg border-0"
               loading="lazy"

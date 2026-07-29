@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { CalendarDays, Users, Rocket } from "lucide-react";
 import type { PricingCardProps } from "@/components/PricingComponent/PricingCard";
+import { PRICING } from "@/data/pricing";
 
 export interface PricingCardItem extends Omit<PricingCardProps, "icon"> {
   icon: LucideIcon;
@@ -21,13 +22,13 @@ export const pricingSectionContent: {
       title: "Monthly Program",
       subtitle: "Best for consistent growth",
       features: [
-        "Two 60-minute sessions per week",
-        "Small group of up to 6 students",
+        `Two ${PRICING.monthlyGroup.sessionMinutes}-minute sessions per week`,
+        `Small group of up to ${PRICING.monthlyGroup.maxGroupSize} students`,
         "All materials included",
         "Monthly progress tracking",
       ],
-      price: 185,
-      priceMax: 200,
+      price: PRICING.monthlyGroup.min,
+      priceMax: PRICING.monthlyGroup.max,
       priceCaption: "per month, GST included",
       ctaText: "Book a Free 30-Minute Consultation",
     },
@@ -41,8 +42,8 @@ export const pricingSectionContent: {
         "Flexible scheduling",
         "All materials included",
       ],
-      price: 75,
-      priceMax: 100,
+      price: PRICING.oneOnOne.min,
+      priceMax: PRICING.oneOnOne.max,
       priceCaption: "per 60-min session, GST incl. (varies by subject & level)",
       ctaText: "Book a Free 30-Minute Consultation",
     },
@@ -56,8 +57,8 @@ export const pricingSectionContent: {
         "Targeted concept review",
         "Past-paper practice",
       ],
-      price: 280,
-      priceCaption: "for the full 5-hour course, GST included",
+      price: PRICING.examBooster.amount,
+      priceCaption: `for the full ${PRICING.examBooster.hours}-hour course, GST included`,
       ctaText: "Book a Free 30-Minute Consultation",
     },
   ],
@@ -67,6 +68,6 @@ export const pricingSectionContent: {
     "All prices are GST-inclusive — no hidden fees.",
     "All learning materials are included.",
     "The same pricing covers online and in-person sessions in Burnaby.",
-    "Please cancel or reschedule at least 24 hours before a session.",
+    `Please cancel or reschedule at least ${PRICING.cancellationHours} hours before a session.`,
   ],
 };

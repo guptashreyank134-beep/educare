@@ -62,7 +62,7 @@ export default function ExplorePrograms() {
           </h2>
           <p className="text-[16px] font-sans font-normal text-slate opacity-80 leading-relaxed max-w-xl mx-auto">
             Tailored curricula designed to push academic boundaries and secure
-            top-tier results.
+            stronger understanding and results.
           </p>
         </div>
 

@@ -16,7 +16,7 @@ export interface GeneralHeroSectionProps {
 }
 
 export const AboutHeroSectionContent = {
-  heading: "A More Focused Approach to Learning, That Delivers Real Results",
+  heading: "A More Focused Approach to Learning",
   description:
     "At Dr. Shreyank Educare, we help students move beyond confusion and build true understanding through structured, personalized, and engaging learning experiences.",
   buttonText: "Get a free consultation",
@@ -54,7 +54,7 @@ export const ResourcesHeroSectionContent = {
 };
 
 export const ProgramsHeroSectionContent = {
-  heading: "Find A Program,\nThat Works Best For You!",
+  heading: "Find a Program That Works for You",
   description:
     "Build strong academic foundations with personalized tutoring designed\nto simplify concepts, improve problem-solving, and boost performance\nacross school and university levels.",
   buttonText: "Book a Free 30-Minute Consultation",

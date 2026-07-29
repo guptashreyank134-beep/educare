@@ -85,7 +85,7 @@ export const cities: City[] = [
     slug: "burnaby",
     name: "Burnaby",
     region: "BC",
-    metaTitle: "Burnaby Tutoring Centre | Math, Science & Coding Tutors",
+    metaTitle: "Math Tutoring in Burnaby | Grades 6–12 & University",
     metaDescription:
       "In-person and online tutoring in Burnaby — math, physics, chemistry and coding for Grades 6–12 and university. PhD-led, 5★ rated. Book a free consultation.",
     heroHeading: "Math Tutoring in Burnaby for Grades 6–12 and University",
@@ -116,9 +116,9 @@ export const cities: City[] = [
       "Burnaby is our home base, so students here can attend in person, with online sessions available for families who prefer to learn from home.",
     localSections: [
       {
-        heading: "A Tutoring Centre in the Heart of Burnaby",
+        heading: "In-Person Tutoring at Our Burnaby Studio",
         body: [
-          "Burnaby is our home base: a dedicated tutoring centre on Madison Avenue where students work one-on-one with a tutor in person, not over a screen. That is what sets us apart from purely online services and from drop-in homework clubs — focused, private sessions built around each student.",
+          "In-person tutoring takes place in a quiet, dedicated tutoring studio at our Burnaby location on Madison Avenue, where students work one-on-one with a tutor in person, not over a screen. It is a private learning space rather than a walk-in storefront — focused, private sessions built around each student.",
           "Families come to us for more than math. We cover physics, chemistry, biology and coding too, for high-school and university students, so a household with two children in different subjects can keep everything in one place.",
         ],
       },

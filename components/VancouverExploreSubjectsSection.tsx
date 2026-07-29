@@ -76,7 +76,7 @@ export default function VancouverExploreSubjectsSection() {
             Designed Around Your Academic Goals
           </h2>
           <p className="text-[16px] font-sans font-normal text-slate opacity-80 leading-relaxed max-w-xl mx-auto">
-            Tailored curriculum designed to break academic boundaries and secure top-tier results.
+            Tailored curriculum designed to build stronger understanding and academic confidence.
           </p>
         </div>
 

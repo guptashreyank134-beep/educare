@@ -41,7 +41,7 @@ export default function VancouverCTABanner() {
             </h2>
 
             <p className="text-[16px] font-montserrat font-normal text-white/90 leading-relaxed mb-8 max-w-[500px]">
-              The best way to know whether our teaching style is right for your child is to experience it directly.
+              The free consultation helps us understand the student’s current challenges, goals and course requirements so we can recommend an appropriate tutoring plan. It is an assessment and planning conversation, not a full tutoring lesson.
             </p>
 
             <div className="flex items-center gap-3 mb-6">

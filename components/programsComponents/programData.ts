@@ -27,7 +27,7 @@ export const programTabs: ProgramTab[] = [
         ],
         idealFor:
           "Students preparing for school exams and competitive entrance tests requiring strong analytical thinking.",
-        expectedOutcome: "Structured SAT math support focused on accuracy, timing and confidence.",
+        expectedOutcome: "Stronger conceptual understanding, improved problem-solving skills and greater confidence across school and university mathematics.",
         learnMoreHref: "/programs/mathematics",
       },
       {
