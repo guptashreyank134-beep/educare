@@ -94,6 +94,13 @@ export default async function ChemistryProgramPage() {
                 helps students understand difficult concepts, improve analytical
                 thinking, and perform better in coursework, labs, and exams.
               </p>
+              <p>
+                Whether your student is taking Chemistry 11 or 12 in the BC
+                curriculum, AP or IB Chemistry, or a first-year university
+                course, we tailor every session to the exact syllabus. We tutor
+                in person at our Burnaby centre — minutes from SFU — and online
+                for students across Vancouver and the Lower Mainland.
+              </p>
             </div>
 
             <section>
@@ -204,6 +211,66 @@ export default async function ChemistryProgramPage() {
           </div>
         </div>
 
+        {/* Chemistry we tutor, by level — targets Chem 11/12, AP, IB and
+            university intent, and links to the dedicated pages for each. */}
+        <section className="mt-32">
+          <div className="text-center mb-16">
+            <h2 className="text-[32px] font-bricolage font-normal text-slate mb-3 leading-[34px]">
+              Chemistry We Tutor — By Level
+            </h2>
+            <p className="text-[18px] font-montserrat text-slate/60">
+              From BC senior chemistry to first-year university
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Chemistry 11 & 12 (BC Curriculum)",
+                body: "The BC senior chemistry courses move fast — atomic theory, the mole and stoichiometry, solubility, an introduction to organic chemistry, acids and bases, reaction kinetics and thermochemistry. We rebuild the gaps that quietly cost marks and keep every session aligned to what your student is covering in class.",
+                href: "/chemistry-12-tutor-burnaby",
+                cta: "Chemistry 12 tutoring in Burnaby",
+              },
+              {
+                title: "AP Chemistry",
+                body: "Full support across the College Board AP Chemistry curriculum, with exam-style multiple-choice and free-response practice so students walk into the exam knowing exactly what to expect.",
+                href: "/ap-chemistry-tutor-burnaby",
+                cta: "AP Chemistry tutoring",
+              },
+              {
+                title: "IB Chemistry (SL & HL)",
+                body: "Topic-by-topic tutoring for both Standard and Higher Level, plus structured help with the Internal Assessment (IA) — from framing a research question to writing up the analysis.",
+                href: "/ib-chemistry-tutor-vancouver",
+                cta: "IB Chemistry tutoring",
+              },
+              {
+                title: "University Chemistry",
+                body: "First year and beyond: General, Organic (reaction mechanisms, synthesis and spectroscopy), Physical (thermodynamics, kinetics and quantum) and Inorganic chemistry — plus lab reports and weekly problem sets for UBC, SFU and Langara courses.",
+                href: "/programs/university-chemistry",
+                cta: "University chemistry tutoring",
+              },
+            ].map((lvl) => (
+              <div
+                key={lvl.title}
+                className="bg-bg-grey p-8 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-1"
+              >
+                <h3 className="text-[20px] font-bricolage font-normal leading-[24px] text-slate mb-3 inline-block border-b-2 border-yellow-light pb-1">
+                  {lvl.title}
+                </h3>
+                <p className="text-[16px] font-montserrat text-slate/80 leading-relaxed mb-4">
+                  {lvl.body}
+                </p>
+                <a
+                  href={lvl.href}
+                  className="text-[15px] font-montserrat font-medium text-primary underline decoration-2 underline-offset-4 decoration-yellow-light hover:text-primary/80 transition-colors"
+                >
+                  {lvl.cta} →
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Bottom Section: Courses We Support */}
         <section className="mt-32">
           <div className="text-center mb-16">
@@ -215,7 +282,7 @@ export default async function ChemistryProgramPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* UBC Card */}
             <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group">
               <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
@@ -223,6 +290,24 @@ export default async function ChemistryProgramPage() {
               </h3>
               <ul className="space-y-2">
                 {["CHEM 111", "CHEM 121", "CHEM 123"].map((course) => (
+                  <li
+                    key={course}
+                    className="flex items-center gap-3 text-[16px] font-montserrat text-slate"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate/20" />
+                    {course}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* SFU Card — SFU is in Burnaby, where our centre is located */}
+            <div className="bg-bg-grey p-10 rounded-[8px] shadow-[0_10px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group">
+              <h3 className="text-[22px] font-bricolage font-normal leading-[22px] text-slate mb-[18px] inline-block border-b-2 border-yellow-light pb-1">
+                Simon Fraser University
+              </h3>
+              <ul className="space-y-2">
+                {["CHEM 121", "CHEM 122", "CHEM 281"].map((course) => (
                   <li
                     key={course}
                     className="flex items-center gap-3 text-[16px] font-montserrat text-slate"
@@ -266,7 +351,12 @@ export default async function ChemistryProgramPage() {
       
         <ProgramNextSteps
           subject="Chemistry"
-          relatedLinks={[{ label: "Chemistry 12 tutoring in Burnaby", href: "/chemistry-12-tutor-burnaby" }]}
+          relatedLinks={[
+            { label: "Chemistry 11 tutoring in Burnaby", href: "/chemistry-11-tutor-burnaby" },
+            { label: "Chemistry 12 tutoring in Burnaby", href: "/chemistry-12-tutor-burnaby" },
+            { label: "Chemistry 12 final-exam review", href: "/chemistry-12-final-exam-review" },
+            { label: "Chemistry tutor in Vancouver", href: "/top-chemistry-tutor-vancouver" },
+          ]}
         />
       </main>
     </>
