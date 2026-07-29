@@ -38,7 +38,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/programs/mathematics",
     "/programs/mcat-prep",
     "/programs/physics",
-    "/programs/physics-tutoring",
     "/programs/pre-calculus",
     "/programs/python",
     "/programs/sat-prep",

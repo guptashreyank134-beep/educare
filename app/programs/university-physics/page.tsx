@@ -283,7 +283,6 @@ export default async function UniversityPhysicsPage() {
         <ProgramNextSteps
           subject="University Physics"
           relatedLinks={[
-            { label: "University physics tutoring", href: "/university-physics-tutor-vancouver" },
             { label: "Engineering statics tutor", href: "/engineering-statics-tutor" },
             { label: "Engineering dynamics tutor", href: "/engineering-dynamics-tutor" },
             { label: "First-year engineering tutor", href: "/first-year-engineering-tutor" },
