@@ -14,8 +14,6 @@ import VancouverFlexibleProgramsSection from "@/components/VancouverFlexibleProg
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
-import TrustedBrands from "@/components/TrustedBrands";
-import Reviews from "@/components/Reviews";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   JsonLd,
@@ -263,8 +261,6 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
       <VancouverWhyChooseSection />
       <VancouverExploreSubjectsSection />
       <VancouverFlexibleProgramsSection />
-      <TrustedBrands />
-      <Reviews />
       <VancouverCTABanner />
       <VancouverFAQSection faqs={faqs} />
     </div>

@@ -206,6 +206,31 @@ function FooterBar() {
               </ul>
             </div>
           ))}
+
+          {/* Visit Us — Google Map of the Burnaby learning centre. Fills the
+              footer's empty right-hand columns and reinforces the real address
+              for local SEO. */}
+          <div className="col-span-2 sm:col-span-3 lg:col-span-2">
+            <p className="text-[13px] font-montserrat font-semibold text-white/50 uppercase tracking-widest mb-3">
+              Visit Us
+            </p>
+            <a
+              href="https://maps.google.com/?q=2088+Madison+Avenue,+Burnaby,+BC+V5C+6T5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[14px] font-montserrat text-bg-white/80 hover:text-white transition-colors block mb-3"
+            >
+              2088 Madison Avenue, Burnaby, BC V5C 6T5
+            </a>
+            <iframe
+              title="Dr. Shreyank Educare — Burnaby learning centre"
+              src="https://maps.google.com/maps?q=2088%20Madison%20Avenue%2C%20Burnaby%2C%20BC%20V5C%206T5&z=15&output=embed"
+              className="w-full h-[180px] rounded-lg border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
         </nav>
 
         {/* Divider + Nav */}
