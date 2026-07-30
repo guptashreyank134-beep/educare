@@ -120,12 +120,65 @@ for (const file of files) {
   });
 }
 
-const errors = findings.filter((f) => f.rule.level === "ERROR");
-const warns = findings.filter((f) => f.rule.level === "WARN");
+// ─── Sanity content scan ─────────────────────────────────────────────────────
+// The FAQs and metadata rendered on many pages live in Sanity, NOT in the code
+// files above — so a code-only scan misses them. If a Sanity token is available
+// (.env.local or the environment), scan every programPage and pageFaq FAQ with
+// the same content rules. Silently skipped when no token (e.g. bare CI).
+const plain = (a) =>
+  Array.isArray(a) ? a.map((b) => (b.children || []).map((x) => x.text).join("")).join(" ") : a || "";
 
-console.log(`\nContent audit — scanned ${files.length} source files\n`);
-for (const f of findings) {
-  console.log(`  ${f.rule.level === "ERROR" ? "✗" : "!"} [${f.rule.id}] ${f.file}:${f.line}`);
+async function scanSanity() {
+  const out = [];
+  let env = {};
+  try {
+    env = Object.fromEntries(
+      readFileSync(".env.local", "utf8")
+        .split("\n").filter((l) => l.includes("="))
+        .map((l) => { const i = l.indexOf("="); return [l.slice(0, i).trim(), l.slice(i + 1).trim()]; }),
+    );
+  } catch { /* no .env.local */ }
+  const token = env.SANITY_API_WRITE_TOKEN || process.env.SANITY_API_WRITE_TOKEN || process.env.SANITY_API_TOKEN;
+  const projectId = env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+  const dataset = env.NEXT_PUBLIC_SANITY_DATASET || process.env.NEXT_PUBLIC_SANITY_DATASET;
+  if (!token || !projectId) {
+    console.log("  (Sanity scan skipped — no SANITY token/project in env)");
+    return out;
+  }
+  let createClient;
+  try { ({ createClient } = await import("@sanity/client")); }
+  catch { console.log("  (Sanity scan skipped — @sanity/client not available)"); return out; }
+  const c = createClient({ projectId, dataset, apiVersion: "2024-01-01", token, useCdn: false });
+  const sanityRules = [
+    ["bad-price", "ERROR", /\$(?!75|100|185|200|280)\d{2,3}\b/],
+    ["timeline", "WARN", /\d\s*-\s*\d\s*weeks|four to six|measurable improvement/i],
+    ["superlative", "WARN", /\btop-rated\b|\bbest (math|physics|chemistry|biology) tutor|consistently improve their grades/i],
+    ["provincial", "WARN", /provincial\s+(exam|assessment)/i],
+    ["grammar", "WARN", /Educare approach(?!'s)\b/],
+  ];
+  const progs = await c.fetch('*[_type=="programPage"]{"id":slug.current,"faqs":faqs[]{question,answer}}');
+  const pfaqs = await c.fetch('*[_type=="pageFaq"]{"id":pageSlug,"faqs":faqs[]{question,answer}}');
+  for (const [label, docs] of [["programPage", progs], ["pageFaq", pfaqs]]) {
+    for (const d of docs || []) {
+      for (const f of d.faqs || []) {
+        const t = (f.question || "") + " " + plain(f.answer);
+        for (const [id, level, re] of sanityRules) {
+          if (re.test(t)) out.push({ file: `sanity:${label}/${d.id}`, line: 0, rule: { id, level }, text: t.trim().slice(0, 140) });
+        }
+      }
+    }
+  }
+  return out;
+}
+
+const sanityFindings = await scanSanity();
+const all = [...findings, ...sanityFindings];
+const errors = all.filter((f) => f.rule.level === "ERROR");
+const warns = all.filter((f) => f.rule.level === "WARN");
+
+console.log(`\nContent audit — scanned ${files.length} source files + Sanity FAQs\n`);
+for (const f of all) {
+  console.log(`  ${f.rule.level === "ERROR" ? "✗" : "!"} [${f.rule.id}] ${f.file}${f.line ? ":" + f.line : ""}`);
   console.log(`      ${f.text}`);
 }
 console.log(`\nSummary: ${errors.length} errors, ${warns.length} warnings.`);
