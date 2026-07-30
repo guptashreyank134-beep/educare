@@ -9,7 +9,7 @@ import TrialClassForm from "@/components/TrialClassForm";
 import VancouverHeroImage from "@/components/VancouverHeroImage";
 import VancouverAboutSection from "@/components/VancouverAboutSection";
 import VancouverWhyChooseSection from "@/components/VancouverWhyChooseSection";
-import VancouverExploreSubjectsSection from "@/components/VancouverExploreSubjectsSection";
+import CityMathCoverage from "@/components/CityMathCoverage";
 import VancouverFlexibleProgramsSection from "@/components/VancouverFlexibleProgramsSection";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
@@ -192,7 +192,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
       {/* City-specific intro / local content */}
       <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-16">
         <h2 className="text-[28px] sm:text-[34px] font-bricolage font-medium text-slate mb-6">
-          Math, Physics, Chemistry &amp; Coding Tutoring in {city.name}
+          Mathematics Tutoring in {city.name}
         </h2>
         <div className="space-y-5">
           {intro.map((paragraph, index) => (
@@ -228,6 +228,9 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
           </div>
         ))}
       </section>
+
+      {/* Math-specific coverage — keeps the page primarily about mathematics. */}
+      <CityMathCoverage cityName={city.name} />
 
       {/* Areas served + local schools */}
       <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pb-16">
@@ -279,7 +282,6 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
         points={city.aboutPoints}
       />
       <VancouverWhyChooseSection />
-      <VancouverExploreSubjectsSection />
       <VancouverFlexibleProgramsSection />
       <VancouverCTABanner />
       <VancouverFAQSection faqs={faqs} />
