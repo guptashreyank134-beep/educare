@@ -119,7 +119,7 @@ export const cities: City[] = [
         heading: "In-Person Tutoring at Our Burnaby Studio",
         body: [
           "In-person tutoring takes place in a quiet, dedicated tutoring studio at our Burnaby location on Madison Avenue, where students work one-on-one with a tutor in person, not over a screen. It is a private learning space rather than a walk-in storefront — focused, private sessions built around each student.",
-          "Families come to us for more than math. We cover physics, chemistry, biology and coding too, for high-school and university students, so a household with two children in different subjects can keep everything in one place.",
+          "For mathematics in particular, being in the room helps: a tutor can watch how a student sets out a problem — where a sign gets dropped, where a step is quietly skipped — and correct it on the spot, which is much harder to catch over a screen.",
         ],
       },
       {

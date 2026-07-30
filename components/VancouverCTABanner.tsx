@@ -6,7 +6,7 @@ import { Button } from './ui/Button';
 
 export default function VancouverCTABanner() {
   const trialPoints = [
-    "Understand your child's current level",
+    "Understand the student's current level",
     "Identify weak concepts",
     "Recommend the right tutoring plan",
     "Explain how we can help improve confidence and grades"

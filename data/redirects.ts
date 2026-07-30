@@ -182,6 +182,8 @@ export const redirectPairs: [string, string][] = [
   ["/blog/burnaby-stem-tutoring-chemistry-11-12", "/chemistry-12-tutor-burnaby"],
   ["/blog/burnaby-stem-tutoring-biology-11-12", "/biology-12-tutor-burnaby"],
   ["/blog/burnaby-stem-tutoring-mathematics-grades-8-12", "/math-tutor-burnaby"],
+  ["/blog/burnaby-stem-tutoring-computer-science-programming", "/programs/computer-science"],
+  ["/blog/burnaby-stem-tutoring-statistics-data-analysis", "/programs/university-mathematics"],
 
   // Additional redirects (Turn 2)
   ["/how-to-solve-differential-equations", "/programs/university-mathematics"],
