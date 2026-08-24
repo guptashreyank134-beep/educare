@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { relatedLinksField } from "./relatedLinksField";
 
 export const post = defineType({
   name: "post",
@@ -136,5 +137,6 @@ export const post = defineType({
       title: "SEO Metadata",
       type: "metaData",
     }),
+    relatedLinksField,
   ],
 });

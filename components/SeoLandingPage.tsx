@@ -7,6 +7,7 @@ import { ArrowRight, Check, Link2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import TrialClassForm from "@/components/TrialClassForm";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
+import ExtraRelatedLinks from "@/components/ExtraRelatedLinks";
 import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
@@ -256,6 +257,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
 
       <VancouverCTABanner />
       <VancouverFAQSection faqs={faqs} />
+      <ExtraRelatedLinks links={content?.relatedLinks} />
     </div>
   );
 }

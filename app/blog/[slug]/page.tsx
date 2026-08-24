@@ -1,4 +1,5 @@
 import katex from "katex";
+import ExtraRelatedLinks from "@/components/ExtraRelatedLinks";
 import "katex/dist/katex.min.css";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
@@ -219,7 +220,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     mainImage,
     metaData,
     reviewedByExpert,
-    reviewedAt
+    reviewedAt,
+    relatedLinks[]{ label, href }
   }`;
 
   const post = await client.fetch(query, { slug });
@@ -498,6 +500,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             color: #d97706;
           }
         `}} />
+            <ExtraRelatedLinks links={(post as any)?.relatedLinks} />
       </main>
     </>
   );
