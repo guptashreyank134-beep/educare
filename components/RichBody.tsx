@@ -40,8 +40,13 @@ const components: PortableTextComponents = {
     strong: ({ children }) => <strong className="font-semibold text-slate">{children}</strong>,
     em: ({ children }) => <em>{children}</em>,
     link: ({ value, children }) => {
-      const href: string = value?.href || "#";
-      const internal = href.startsWith("/");
+      // Scheme allowlist — never let javascript:/data:/protocol-relative URLs
+      // (which could arrive via direct Sanity API writes) reach the DOM.
+      const raw = String(value?.href || "#");
+      const isInternal = raw.startsWith("/") && !raw.startsWith("//");
+      const isSafeExternal = /^(https?:|mailto:|tel:)/i.test(raw);
+      const href = isInternal || isSafeExternal ? raw : "#";
+      const internal = isInternal;
       const cls =
         "text-primary underline decoration-2 underline-offset-2 decoration-yellow-light hover:text-primary/80";
       return internal ? (
