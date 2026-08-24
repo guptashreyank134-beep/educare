@@ -87,6 +87,23 @@ export async function getProgramFaqs(slug: string): Promise<FaqItem[]> {
   }
 }
 
+/** Editor-added extra internal links for a program page (Studio > Extra Related Links). */
+export async function getProgramRelatedLinks(
+  slug: string,
+): Promise<{ label: string; href: string }[]> {
+  try {
+    const doc = await client.fetch<{ relatedLinks?: { label?: string; href?: string }[] } | null>(
+      `*[_type == "programPage" && slug.current == $slug][0]{ relatedLinks[]{ label, href } }`,
+      { slug },
+    );
+    return (doc?.relatedLinks || [])
+      .filter((l) => l && l.label && l.href)
+      .map((l) => ({ label: l.label as string, href: l.href as string }));
+  } catch {
+    return [];
+  }
+}
+
 /**
  * Flattens a Portable Text answer to plain text. FAQPage structured data (and
  * Google) needs a plain string, not blocks.

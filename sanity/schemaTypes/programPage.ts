@@ -44,5 +44,27 @@ export const programPage = defineType({
         },
       ],
     }),
+    defineField({
+      name: "relatedLinks",
+      title: "Extra Related Links",
+      type: "array",
+      description:
+        "Optional. Added to the auto-generated 'Related Tutoring Pages' block at the bottom of the page. The automatic cluster links always show; these append (duplicates are removed).",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "label", title: "Label", type: "string" },
+            {
+              name: "href",
+              title: "URL / Path",
+              type: "string",
+              description: "Internal path (e.g. /programs/physics) or full URL.",
+            },
+          ],
+          preview: { select: { title: "label", subtitle: "href" } },
+        },
+      ],
+    }),
   ],
 });

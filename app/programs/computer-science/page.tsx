@@ -325,7 +325,7 @@ export default async function ComputerScienceProgramPage() {
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
-      <RelatedTutoringPages pillar="/programs/computer-science" />
+      <RelatedTutoringPages pillar="/programs/computer-science" programSlug="computer-science" />
 
       
         <ProgramNextSteps

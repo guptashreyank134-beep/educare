@@ -222,7 +222,7 @@ export default async function UniversityMathematicsPage() {
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
-      <RelatedTutoringPages pillar="/programs/university-mathematics" />
+      <RelatedTutoringPages pillar="/programs/university-mathematics" programSlug="university-mathematics" />
 
       
         <ProgramNextSteps
