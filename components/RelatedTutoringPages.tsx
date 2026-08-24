@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import { spokesForPillar } from "@/data/seoPages";
+
+const safeHref = (raw: string) =>
+  (raw.startsWith("/") && !raw.startsWith("//")) || /^(https?:|mailto:|tel:)/i.test(raw) ? raw : "#";
 import { getProgramRelatedLinks } from "@/sanity/lib/faqs";
 
 /**
@@ -43,7 +46,7 @@ export default async function RelatedTutoringPages({
         {links.map((s) => (
           <Link
             key={s.href}
-            href={s.href}
+            href={safeHref(s.href)}
             className="inline-flex items-center rounded-full border border-[#E2E8F0] bg-white px-4 py-2 text-[14px] font-montserrat text-slate/80 hover:border-primary hover:text-primary transition-colors"
           >
             {s.label}
