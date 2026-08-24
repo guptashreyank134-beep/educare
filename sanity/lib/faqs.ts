@@ -23,13 +23,15 @@ export type LandingContent = {
   sections?: LandingSection[];
   faqs?: FaqItem[];
   relatedLinks?: { label?: string; href?: string }[];
+  bodyContent?: unknown;
 };
 
 const LANDING_QUERY = `*[_type == "pageFaq" && pageSlug == $slug][0]{
   metaTitle, metaDescription, heading, heroSubheading, intro,
   sections[]{ heading, body, points },
   faqs[]{ question, answer },
-  relatedLinks[]{ label, href }
+  relatedLinks[]{ label, href },
+  bodyContent
 }`;
 
 /**
@@ -86,6 +88,19 @@ export async function getProgramFaqs(slug: string): Promise<FaqItem[]> {
     return doc?.faqs?.length ? doc.faqs : [];
   } catch {
     return [];
+  }
+}
+
+/** Editor-added rich-text body block for a program page (Studio > Body Content). */
+export async function getProgramBodyContent(slug: string): Promise<unknown> {
+  try {
+    const doc = await client.fetch<{ bodyContent?: unknown } | null>(
+      `*[_type == "programPage" && slug.current == $slug][0]{ bodyContent }`,
+      { slug },
+    );
+    return doc?.bodyContent ?? null;
+  } catch {
+    return null;
   }
 }
 

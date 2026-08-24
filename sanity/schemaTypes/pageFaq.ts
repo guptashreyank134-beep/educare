@@ -153,6 +153,12 @@ export const pageFaq = defineType({
         },
       ],
     }),
+    defineField({
+      name: "bodyContent",
+      title: "Body Content (rich text)",
+      type: "faqAnswer",
+      description: "Optional rich text with inline links, rendered in the page content (before the FAQ). Supports paragraphs, lists, bold and hyperlinks.",
+    }),
     relatedLinksField,
   ],
   preview: {
