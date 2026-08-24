@@ -18,6 +18,7 @@ import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import { getProgramFaqs } from "@/sanity/lib/faqs";
 import type { Metadata } from "next";
+import RelatedTutoringPages from "@/components/RelatedTutoringPages";
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
@@ -282,6 +283,8 @@ export default async function IBAPTutoringPage() {
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
+      <RelatedTutoringPages pillar="/programs/ib-ap-tutoring" />
+
       
         <ProgramNextSteps
           subject="IB & AP"

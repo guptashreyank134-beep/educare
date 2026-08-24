@@ -6269,3 +6269,32 @@ export function getSeoSiblings(
   if (picked.length < 3) topUp((p) => p.cluster === "Core Local");
   return picked.map((p) => ({ label: p.h1, href: seoPagePath(p.slug) }));
 }
+
+/**
+ * Map a seoPage slug to its pillar (program hub) page, so every spoke is linked
+ * DOWN from its topical pillar (not just spoke-to-spoke via getSeoSiblings).
+ * Subject keywords win over the IB/AP fallback (e.g. ap-chemistry -> chemistry).
+ */
+export function pillarForSlug(slug: string): string {
+  if (/chemistry|chem-\d/.test(slug)) return "/programs/chemistry";
+  if (/physics/.test(slug)) return "/programs/physics";
+  if (/biology|bio-/.test(slug)) return "/programs/biology";
+  if (/python|coding|computer-science/.test(slug)) return "/programs/computer-science";
+  if (/french/.test(slug)) return "/programs/french";
+  if (/pre-calculus|precalc|calculus-12/.test(slug)) return "/programs/pre-calculus";
+  if (/university-|linear-algebra|differential-equations|engineering|calculus-1|calculus-2/.test(slug))
+    return "/programs/university-mathematics";
+  if (/(^|-)(ib|ap)(-|$)/.test(slug)) return "/programs/ib-ap-tutoring";
+  if (/reviews$/.test(slug)) return "/about";
+  return "/programs/mathematics";
+}
+
+/**
+ * Active (non-redirect) spoke links belonging to a pillar hub, for rendering a
+ * "Related tutoring pages" block on that hub. Ensures no seoPage is orphaned.
+ */
+export function spokesForPillar(pillarPath: string): { label: string; href: string }[] {
+  return seoPages
+    .filter((p) => !redirectSources.has(`/${p.slug}`) && pillarForSlug(p.slug) === pillarPath)
+    .map((p) => ({ label: p.h1, href: seoPagePath(p.slug) }));
+}
