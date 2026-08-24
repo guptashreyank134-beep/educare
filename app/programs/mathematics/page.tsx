@@ -293,7 +293,7 @@ export default async function MathematicsProgramPage() {
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
-      <RelatedTutoringPages pillar="/programs/mathematics" />
+      <RelatedTutoringPages pillar="/programs/mathematics" programSlug="mathematics" />
 
       
         <ProgramNextSteps

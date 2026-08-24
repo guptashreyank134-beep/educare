@@ -273,7 +273,7 @@ export default async function PreCalculusProgramPage() {
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
-      <RelatedTutoringPages pillar="/programs/pre-calculus" />
+      <RelatedTutoringPages pillar="/programs/pre-calculus" programSlug="pre-calculus" />
 
       
         <ProgramNextSteps

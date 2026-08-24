@@ -216,7 +216,7 @@ export default async function FrenchCoursePage() {
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
-      <RelatedTutoringPages pillar="/programs/french" />
+      <RelatedTutoringPages pillar="/programs/french" programSlug="french" />
 
       
         <ProgramNextSteps

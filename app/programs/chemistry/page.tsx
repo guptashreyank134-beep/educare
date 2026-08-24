@@ -283,7 +283,7 @@ export default async function ChemistryProgramPage() {
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
-      <RelatedTutoringPages pillar="/programs/chemistry" />
+      <RelatedTutoringPages pillar="/programs/chemistry" programSlug="chemistry" />
 
       
         <ProgramNextSteps

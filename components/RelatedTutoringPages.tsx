@@ -2,28 +2,45 @@
 
 import Link from "next/link";
 import { spokesForPillar } from "@/data/seoPages";
+import { getProgramRelatedLinks } from "@/sanity/lib/faqs";
 
 /**
- * Renders every active seoPage "spoke" that belongs to this pillar (program hub)
- * as internal links, so no landing page stays orphaned and the hub passes
- * authority down to its topical cluster. Data-driven from data/seoPages.ts.
+ * "Related Tutoring Pages" block for a program hub.
+ * - Auto: every active seoPage spoke that belongs to this pillar (from
+ *   data/seoPages.ts) — self-maintaining, prevents orphans.
+ * - Manual: optional editor-added links from Studio (programPage.relatedLinks),
+ *   appended and de-duplicated. Pass programSlug to enable the Sanity fetch.
  */
-export default function RelatedTutoringPages({
+export default async function RelatedTutoringPages({
   pillar,
+  programSlug,
   heading = "Related Tutoring Pages",
 }: {
   pillar: string;
+  programSlug?: string;
   heading?: string;
 }) {
-  const spokes = spokesForPillar(pillar);
-  if (!spokes.length) return null;
+  const auto = spokesForPillar(pillar);
+  const extra = programSlug ? await getProgramRelatedLinks(programSlug) : [];
+
+  const seen = new Set<string>();
+  const norm = (h: string) => h.replace(/\/+$/, "").toLowerCase();
+  const links: { label: string; href: string }[] = [];
+  for (const l of [...auto, ...extra]) {
+    const k = norm(l.href);
+    if (seen.has(k)) continue;
+    seen.add(k);
+    links.push(l);
+  }
+  if (!links.length) return null;
+
   return (
     <section className="relative z-10 max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h2 className="text-[24px] sm:text-[28px] font-bricolage font-normal text-slate mb-5">
         {heading}
       </h2>
       <div className="flex flex-wrap gap-2.5">
-        {spokes.map((s) => (
+        {links.map((s) => (
           <Link
             key={s.href}
             href={s.href}

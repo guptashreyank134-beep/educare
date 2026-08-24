@@ -283,7 +283,7 @@ export default async function IBAPTutoringPage() {
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
-      <RelatedTutoringPages pillar="/programs/ib-ap-tutoring" />
+      <RelatedTutoringPages pillar="/programs/ib-ap-tutoring" programSlug="ib-ap-tutoring" />
 
       
         <ProgramNextSteps
