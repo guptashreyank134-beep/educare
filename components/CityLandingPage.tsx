@@ -13,6 +13,7 @@ import CityMathCoverage from "@/components/CityMathCoverage";
 import VancouverFlexibleProgramsSection from "@/components/VancouverFlexibleProgramsSection";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ExtraRelatedLinks from "@/components/ExtraRelatedLinks";
+import RichBody from "@/components/RichBody";
 import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
@@ -231,6 +232,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
       </section>
 
       {/* Math-specific coverage — keeps the page primarily about mathematics. */}
+      <RichBody value={content?.bodyContent} />
       <CityMathCoverage cityName={city.name} />
 
       {/* Areas served + local schools */}

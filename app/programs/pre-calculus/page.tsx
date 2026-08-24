@@ -15,9 +15,10 @@ import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
 import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
-import { getProgramFaqs } from "@/sanity/lib/faqs";
+import { getProgramFaqs, getProgramBodyContent } from "@/sanity/lib/faqs";
 import type { Metadata } from "next";
 import RelatedTutoringPages from "@/components/RelatedTutoringPages";
+import RichBody from "@/components/RichBody";
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
@@ -60,6 +61,7 @@ const ListItems = ({ items }: { items: string[] }) => (
 export default async function PreCalculusProgramPage() {
   // FAQs are managed in Studio > Program Pages; empty means no section is shown.
   const faqs = await getProgramFaqs("pre-calculus");
+  const bodyContent = await getProgramBodyContent("pre-calculus");
   let data;
   try {
     data = await getMetaDataBySlug("programPage", "pre-calculus");
@@ -273,6 +275,7 @@ export default async function PreCalculusProgramPage() {
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
+      <RichBody value={bodyContent} />
       <RelatedTutoringPages pillar="/programs/pre-calculus" programSlug="pre-calculus" />
 
       

@@ -17,8 +17,9 @@ import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
 import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
-import { getProgramFaqs } from "@/sanity/lib/faqs";
+import { getProgramFaqs, getProgramBodyContent } from "@/sanity/lib/faqs";
 import RelatedTutoringPages from "@/components/RelatedTutoringPages";
+import RichBody from "@/components/RichBody";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "computer-science");
@@ -54,6 +55,7 @@ export default async function ComputerScienceProgramPage() {
   const data = await getMetaDataBySlug("programPage", "computer-science");
   // FAQs are managed in Studio > Program Pages; empty means no section is shown.
   const faqs = await getProgramFaqs("computer-science");
+  const bodyContent = await getProgramBodyContent("computer-science");
   const breadcrumbItems = [
     { label: "Programs", href: "/programs" },
     { label: "Academic", href: "/programs" },
@@ -325,6 +327,7 @@ export default async function ComputerScienceProgramPage() {
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
+      <RichBody value={bodyContent} />
       <RelatedTutoringPages pillar="/programs/computer-science" programSlug="computer-science" />
 
       
