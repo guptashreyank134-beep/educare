@@ -10,6 +10,7 @@ import VancouverExploreSubjectsSection from "@/components/VancouverExploreSubjec
 import VancouverFlexibleProgramsSection from "@/components/VancouverFlexibleProgramsSection";
 import VancouverLocationsSection from "@/components/VancouverLocationsSection";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
+import ExtraRelatedLinks from "@/components/ExtraRelatedLinks";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
 import TrustedBrands from "@/components/TrustedBrands";
 import Reviews from "@/components/Reviews";
@@ -194,6 +195,7 @@ export default async function Home() {
       <Reviews />
       <VancouverCTABanner />
       <VancouverFAQSection faqs={data?.faqs} />
+      <ExtraRelatedLinks links={data?.relatedLinks} />
     </div>
   );
 }

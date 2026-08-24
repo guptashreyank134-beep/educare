@@ -8,6 +8,7 @@ export const getResourcePageData = async () => {
     const query = `*[_type == "resourcePage" && slug.current == "resources"][0]{
   title,
   "slug": slug.current,
+  relatedLinks[]{ label, href },
 
   faqs[]{
     question,

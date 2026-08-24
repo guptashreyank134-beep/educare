@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { relatedLinksField } from "./relatedLinksField";
 
 /**
  * Editable content for a landing page (city / vertical / SEO page), keyed by
@@ -152,6 +153,7 @@ export const pageFaq = defineType({
         },
       ],
     }),
+    relatedLinksField,
   ],
   preview: {
     select: { title: "title", subtitle: "pageSlug" },

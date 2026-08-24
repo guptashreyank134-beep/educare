@@ -22,12 +22,14 @@ export type LandingContent = {
   intro?: string[];
   sections?: LandingSection[];
   faqs?: FaqItem[];
+  relatedLinks?: { label?: string; href?: string }[];
 };
 
 const LANDING_QUERY = `*[_type == "pageFaq" && pageSlug == $slug][0]{
   metaTitle, metaDescription, heading, heroSubheading, intro,
   sections[]{ heading, body, points },
-  faqs[]{ question, answer }
+  faqs[]{ question, answer },
+  relatedLinks[]{ label, href }
 }`;
 
 /**

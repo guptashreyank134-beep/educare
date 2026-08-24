@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { relatedLinksField } from "./relatedLinksField";
 
 export const resourcePage = defineType({
   name: "resourcePage",
@@ -161,5 +162,6 @@ export const resourcePage = defineType({
         },
       ],
     }),
+    relatedLinksField,
   ],
 });
