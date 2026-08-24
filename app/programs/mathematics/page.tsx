@@ -18,6 +18,7 @@ import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import { getProgramFaqs } from "@/sanity/lib/faqs";
+import RelatedTutoringPages from "@/components/RelatedTutoringPages";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "mathematics");
@@ -292,6 +293,8 @@ export default async function MathematicsProgramPage() {
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
+      <RelatedTutoringPages pillar="/programs/mathematics" />
+
       
         <ProgramNextSteps
           subject="Math"
