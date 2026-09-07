@@ -28,13 +28,6 @@ const teamMembers = [
     image: "/assets/team-4.png",
   },
   {
-    id: 5,
-    name: "Dr. Vandani Verma",
-    role: "Expert Mathematics Tutor",
-    credentials: "Ph.D. in Applied Mathematics",
-    image: "/assets/team-5.png",
-  },
-  {
     id: 6,
     name: "Dr. Sabiha Arshed",
     role: "Health Sciences & Medical Tutor",

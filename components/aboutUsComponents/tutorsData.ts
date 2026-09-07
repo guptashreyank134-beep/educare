@@ -82,30 +82,6 @@ export const tutors = [
   },
 
   {
-    id: 5,
-    name: "Dr. Vandani Verma",
-    role: "Expert Mathematics Tutor",
-    image: "/assets/tutors/vandani.webp",
-
-    belowshortDescription:
-      "Zeba’s ensures that students not only master their coursework but also develop the skills to excel in future academic and career pursuits.",
-
-    fullDescription:
-      "Dr. Vandani Verma is an experienced Applied Mathematics educator with over 18 years of teaching expertise across school and university levels. She specializes in simplifying complex topics such as calculus, algebra, statistics, and differential equations.\n\nHer teaching approach focuses on building strong conceptual clarity and applying mathematical concepts to real-world problems, helping students improve both performance and confidence.\n\n",
-
-    education: ["Ph.D. in Applied Mathematics"],
-
-    expertise: "Expert Mathematics Tutor",
-
-    strengths: [
-      "Expertise in advanced mathematics and applied concepts",
-      "Extensive university-level teaching experience",
-      "Focus on conceptual clarity and problem-solving",
-      "Strong academic and research background",
-    ],
-  },
-
-  {
     id: 6,
     name: "Dr. Sabiha Arshed",
     role: "Health Sciences & Medical Tutor",
