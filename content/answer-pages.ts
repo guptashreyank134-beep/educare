@@ -12,8 +12,10 @@
 // rule. Where we have no citable source — a "typical Vancouver rate", for
 // instance — the claim is left out rather than estimated.
 //
-// Facts reviewed by Dr. Shreyank Gupta on 2026-09-18. Flip `status` to
-// "published" per page; nothing about the template depends on the others.
+// Facts reviewed and approved by Dr. Shreyank Gupta on 2026-09-18, and the
+// written copy approved on publication. `status` gates indexing per page: a
+// page set back to "draft" returns to noindex and drops out of the sitemap and
+// llms.txt on the next build.
 
 import { PRICING, PRICING_TEXT } from "@/data/pricing";
 
@@ -101,7 +103,7 @@ export const answerPages: AnswerPage[] = [
       { label: "Math tutoring in Vancouver", href: "/math-tutor-vancouver" },
       { label: "How to choose a tutor", href: "/guides/how-to-choose-a-tutor-burnaby-vancouver" },
     ],
-    status: "draft",
+    status: "published",
     lastReviewed: REVIEWED,
   },
 
@@ -158,7 +160,7 @@ export const answerPages: AnswerPage[] = [
       { label: "Chemistry 12 tutor in Burnaby", href: "/chemistry-12-tutor-burnaby" },
       { label: "Chemistry 12 final exam review", href: "/chemistry-12-final-exam-review" },
     ],
-    status: "draft",
+    status: "published",
     lastReviewed: REVIEWED,
   },
 
@@ -219,7 +221,7 @@ export const answerPages: AnswerPage[] = [
       { label: "Pre-Calculus 11 tutor in Burnaby", href: "/pre-calculus-11-tutor-burnaby" },
       { label: "Mathematics tutoring", href: "/programs/mathematics" },
     ],
-    status: "draft",
+    status: "published",
     lastReviewed: REVIEWED,
   },
 
@@ -280,7 +282,7 @@ export const answerPages: AnswerPage[] = [
       { label: "IB Math tutor in Burnaby", href: "/ib-math-tutor-burnaby" },
       { label: "Mathematics tutoring", href: "/programs/mathematics" },
     ],
-    status: "draft",
+    status: "published",
     lastReviewed: REVIEWED,
   },
 
@@ -330,7 +332,7 @@ export const answerPages: AnswerPage[] = [
       { label: "AP Chemistry tutor in Burnaby", href: "/ap-chemistry-tutor-burnaby" },
       { label: "AP Physics tutor in Burnaby", href: "/ap-physics-tutor-burnaby" },
     ],
-    status: "draft",
+    status: "published",
     lastReviewed: REVIEWED,
   },
 ];

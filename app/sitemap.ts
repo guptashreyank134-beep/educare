@@ -114,6 +114,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return !redirectSources.has(path) && !noindexPaths.has(path);
   });
 
+  // Answer pages are data-driven rather than one file each, so their review
+  // date is the truthful "last modified" — more accurate than the commit that
+  // last touched the shared content module.
+  for (const page of publishedAnswerPages) {
+    cmsDates.set(answerPagePath(page.slug), page.lastReviewed);
+  }
+
   const fileDates = routeDates as Record<string, string>;
 
   return allRoutes.map((route) => {
