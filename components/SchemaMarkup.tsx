@@ -3,6 +3,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { faqAnswerToPlainText } from "@/sanity/lib/faqs";
 import { BUSINESS, SAME_AS, SITE_URL } from "@/data/businessInfo";
 import { LEAD_AUTHOR, type Author, authorSameAs, authorUrl } from "@/data/authors";
+import { cities } from "@/data/cities";
 
 export function JsonLd({ schema }: { schema: Record<string, any> }) {
   return (
@@ -13,20 +14,9 @@ export function JsonLd({ schema }: { schema: Record<string, any> }) {
   );
 }
 
-// Metro-Vancouver areas we serve — kept in sync with the city landing pages.
-const AREAS_SERVED = [
-  "Burnaby",
-  "Vancouver",
-  "North Vancouver",
-  "West Vancouver",
-  "Coquitlam",
-  "Port Moody",
-  "Port Coquitlam",
-  "Surrey",
-  "Richmond",
-  "New Westminster",
-  "Delta",
-];
+// Derived from the city hubs we actually maintain, so areaServed cannot drift
+// from the pages that back it. Retiring a city hub removes it from here too.
+const AREAS_SERVED = cities.map((city) => city.name);
 
 const SITE = SITE_URL;
 
@@ -319,6 +309,44 @@ export function getServiceSchema(
       serviceUrl: opts.url,
       availableLanguage: "en",
     },
+  };
+}
+
+/**
+ * Article schema for guides and long-form pages. `author` defaults to the
+ * organisation: naming a person is a claim of first-hand authorship, so callers
+ * opt in by passing the author explicitly.
+ */
+export function getArticleSchema(opts: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+  byAuthor?: boolean;
+  about?: string[];
+  image?: string;
+}): Record<string, any> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: opts.headline,
+    description: opts.description,
+    mainEntityOfPage: { "@type": "WebPage", "@id": opts.url },
+    url: opts.url,
+    image: opts.image ?? BUSINESS.logo,
+    author: opts.byAuthor
+      ? { "@id": `${SITE}/#founder` }
+      : { "@type": "Organization", "@id": `${SITE}/#organization`, name: BUSINESS.name, url: BUSINESS.url },
+    publisher: {
+      "@type": "EducationalOrganization",
+      "@id": `${SITE}/#organization`,
+      name: BUSINESS.name,
+      logo: { "@type": "ImageObject", url: BUSINESS.logo },
+    },
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified ?? opts.datePublished,
+    ...(opts.about?.length ? { about: opts.about } : {}),
   };
 }
 
