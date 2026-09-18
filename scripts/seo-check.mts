@@ -11,7 +11,7 @@
  * A headless browser would test the same HTML this reads from the server.
  */
 
-import { spawn, type ChildProcess } from "node:child_process";
+import { execFileSync, spawn, type ChildProcess } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 
 const { redirectPairs, redirectSources } = await import("../data/redirects.ts");
@@ -56,11 +56,19 @@ async function assertPortFree(): Promise<void> {
   );
 }
 
-/** `kill()` on Windows leaves the real node child running under the npx shim. */
+/**
+ * `kill()` on Windows leaves the real node child running under the npx shim, and
+ * the kill must finish before process.exit or the server survives the run and
+ * blocks the next one.
+ */
 function stopServer(child: ChildProcess | undefined): void {
   if (!child?.pid) return;
   if (process.platform === "win32") {
-    spawn("taskkill", ["/F", "/T", "/PID", String(child.pid)], { stdio: "ignore" });
+    try {
+      execFileSync("taskkill", ["/F", "/T", "/PID", String(child.pid)], { stdio: "ignore" });
+    } catch {
+      // Already gone.
+    }
   } else {
     child.kill("SIGTERM");
   }
@@ -193,7 +201,7 @@ try {
       fail("duplicate-title", `${paths.length} pages share "${title}": ${paths.slice(0, 4).join(", ")}`);
     }
   }
-  for (const [description, paths] of descriptions) {
+  for (const paths of descriptions.values()) {
     if (paths.length > 1) {
       fail(
         "duplicate-description",

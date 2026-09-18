@@ -5,6 +5,17 @@ import { BUSINESS, SAME_AS, SITE_URL } from "@/data/businessInfo";
 import { LEAD_AUTHOR, type Author, authorSameAs, authorUrl } from "@/data/authors";
 import { cities } from "@/data/cities";
 
+/** A JSON-LD value, as schema.org permits. */
+export type JsonLdValue =
+  | string
+  | number
+  | boolean
+  | null
+  | JsonLdValue[]
+  | { [key: string]: JsonLdValue };
+
+export type JsonLdObject = { [key: string]: JsonLdValue };
+
 export function JsonLd({ schema }: { schema: Record<string, any> }) {
   return (
     <script
@@ -326,7 +337,7 @@ export function getArticleSchema(opts: {
   byAuthor?: boolean;
   about?: string[];
   image?: string;
-}): Record<string, any> {
+}): JsonLdObject {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
