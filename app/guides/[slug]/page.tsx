@@ -126,6 +126,25 @@ export default async function AnswerPage({ params }: PageProps) {
                 ))}
               </ul>
             )}
+            {section.sources && (
+              <p className="mt-4 text-[14px] font-montserrat text-slate/60">
+                Source
+                {section.sources.length > 1 ? "s" : ""}:{" "}
+                {section.sources.map((source, index) => (
+                  <span key={source.href}>
+                    {index > 0 && ", "}
+                    <a
+                      href={source.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline underline-offset-2 hover:text-primary/80"
+                    >
+                      {source.label}
+                    </a>
+                  </span>
+                ))}
+              </p>
+            )}
           </section>
         ))}
 
