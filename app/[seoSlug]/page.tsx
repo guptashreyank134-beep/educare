@@ -1,5 +1,6 @@
 import SeoLandingPage, { seoPageMetadata } from "@/components/SeoLandingPage";
 import { seoPages } from "@/data/seoPages";
+import { retiredPaths } from "@/content/page-policy";
 
 interface PageProps {
   params: Promise<{ seoSlug: string }>;
@@ -10,7 +11,10 @@ interface PageProps {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return seoPages.map((p) => ({ seoSlug: p.slug }));
+  // Retired pages are redirect sources; building them would be dead output.
+  return seoPages
+    .filter((p) => !retiredPaths.has(`/${p.slug}`))
+    .map((p) => ({ seoSlug: p.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {

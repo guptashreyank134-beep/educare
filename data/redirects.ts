@@ -3,6 +3,7 @@
 // Relative, not the "@/" alias: this module is also loaded by next.config.ts,
 // which resolves outside the app's tsconfig paths.
 import { legacyRedirects } from "../redirects/legacy";
+import { policyRedirects } from "../content/page-policy";
 
 // Single source of truth for 301/permanent redirects. Imported by
 // next.config.ts (to emit the redirects) and app/sitemap.ts (to EXCLUDE redirect
@@ -47,6 +48,7 @@ const consolidationPairs: [string, string][] = [
 export const redirectPairs: [string, string][] = [
   ...legacyRedirects.map(({ from, to }): [string, string] => [from, to]),
   ...consolidationPairs,
+  ...policyRedirects,
 ];
 
 export const redirectSources = new Set(redirectPairs.map(([from]) => from));

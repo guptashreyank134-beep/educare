@@ -72,8 +72,23 @@ export interface City {
   aboutHeading?: string;
   aboutBody?: string[];
   aboutPoints?: string[];
+  /**
+   * A real quote from a family in this city. Rendered only when set, so an
+   * unfilled slot shows nothing rather than generic filler.
+   *
+   * TODO(owner): supply genuine, attributable quotes. Leave undefined until
+   * then — invented testimonials are not an option.
+   */
+  localTestimonial?: CityTestimonial;
   /** City-specific FAQs (also emitted as FAQPage schema) */
   faqs: CityFAQ[];
+}
+
+/** A real, attributable quote from a family in the city. */
+export interface CityTestimonial {
+  quote: string;
+  /** How the person is credited, e.g. "Parent of a Grade 11 student". */
+  attribution: string;
 }
 
 export const BASE_URL = SITE_URL;
@@ -269,162 +284,6 @@ export const cities: City[] = [
     ],
   },
   {
-    slug: "north-vancouver",
-    name: "North Vancouver",
-    region: "BC",
-    metaTitle: "Math Tutor in North Vancouver | Physics & Chemistry",
-    metaDescription:
-      "North Vancouver math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book a free consultation today.",
-    heroHeading: "Online Math Tutor for North Vancouver Students",
-    heroSubheading:
-      "One-on-one Math, Physics, Chemistry and Coding tutoring for Grades 6–12 and university — online, so nobody has to cross a bridge at rush hour.",
-    intro: [
-      "For North Shore families the obstacle is rarely finding a tutor. It is the bridge. A crossing at the wrong time of day turns a one-hour lesson into most of an evening, and that arithmetic is why a lot of well-intentioned tutoring arrangements quietly stop by November.",
-      "Our sessions run online, so an hour costs an hour. That matters especially on the North Shore, where a large share of students give their evenings to training and practice schedules — tutoring can be fitted around ski season, rowing or club sport rather than competing with them for the same slot.",
-    ],
-    neighborhoods: [
-      "Lonsdale",
-      "Lynn Valley",
-      "Deep Cove",
-      "Edgemont Village",
-      "Capilano",
-      "Seymour",
-      "Central Lonsdale",
-    ],
-    nearbySchools: [
-      "Handsworth Secondary",
-      "Carson Graham Secondary",
-      "Sutherland Secondary",
-      "Argyle Secondary",
-      "Windsor Secondary",
-    ],
-    availability:
-      "North Vancouver students learn with us through flexible online tutoring, with in-person sessions available at our Burnaby location.",
-    localSections: [
-      {
-        heading: "Keeping Tutoring Alive Through a Busy Season",
-        body: [
-          "The students we see slip furthest are rarely the least able. They are the ones with the fullest calendars, who miss three weeks for a competition season and return to a class that has moved on to a topic built on the one they missed.",
-          "Because sessions are online and short, they survive that kind of term. We would rather run a focused forty minutes in a genuinely busy week than have a family cancel a two-hour block and lose the thread entirely. Consistency, even at low volume, is what keeps a student from having to rebuild in April.",
-        ],
-      },
-      {
-        heading: "What an Online Session Actually Looks Like",
-        body: [
-          "Sessions are live and one-to-one over video with a shared digital whiteboard — not a recorded course and not a chat window. The tutor writes, the student writes, and both see the same page develop in real time.",
-          "In practice most sessions start with whatever the student has in front of them: this week's worksheet, a returned test, an assignment due Thursday. Working from their own material is what keeps the hour relevant, and it means a parent can see the connection between the session and the next report card.",
-        ],
-      },
-    ],
-    aboutHeading: "Tutoring That Fits A North Shore Schedule",
-    aboutBody: [
-      "On the North Shore the difficulty is rarely finding help. It is the bridge — a crossing at the wrong hour turns a one-hour lesson into most of an evening, and that arithmetic is what quietly ends most tutoring arrangements by November.",
-      "Online sessions keep the hour to an hour, and bend around training and practice commitments instead of competing with them for the same slot.",
-    ],
-    aboutPoints: [
-      "Lose evenings to training, practice or competition schedules",
-      "Have missed weeks and come back to a class that moved on",
-      "Need help without a rush-hour bridge crossing",
-      "Are working through Pre-Calculus, Physics or Chemistry this term",
-      "Do better with short, frequent sessions than long blocks",
-    ],
-    faqs: [
-      {
-        question: "Is online tutoring genuinely as effective as sitting in a room?",
-        answer:
-          "For most secondary and university students, yes — the shared whiteboard covers nearly everything a desk would, and the time saved usually buys an extra session a month. The students who benefit more from in person are younger ones, and those who tend to hide confusion rather than voice it.",
-      },
-      {
-        question: "Can session times move week to week around training schedules?",
-        answer:
-          "Yes. A fixed weekly slot is ideal when it is possible, but we would rather move a session than lose it. Families with competition or performance schedules usually settle into a rhythm of shifting the time rather than skipping the week.",
-      },
-      {
-        question: "What does my child need for an online session?",
-        answer:
-          "A laptop or tablet, a reliable connection, and their current course material. A stylus or drawing tablet helps for mathematics but is not required — plenty of students work on paper and hold it up or photograph it, and the tutor writes on the shared board.",
-      },
-    ],
-  },
-  {
-    slug: "west-vancouver",
-    name: "West Vancouver",
-    region: "BC",
-    metaTitle: "Math Tutor in West Vancouver | Physics & Chemistry",
-    metaDescription:
-      "West Vancouver math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC & IB curriculum. Free 30-minute consultation.",
-    heroHeading: "Online Math Tutor for West Vancouver Students",
-    heroSubheading:
-      "Math, Physics, Chemistry and Coding tutoring for Grades 6–12, IB, AP and university — depth and extension for students who are already doing well.",
-    intro: [
-      "A good number of West Vancouver enquiries do not begin with a problem at all. They begin with a student who is getting strong marks and a parent with a quiet suspicion that those marks are coming from memory rather than understanding — a suspicion that tends to be confirmed the first time a course turns abstract.",
-      "That is much of the work we do here: taking a capable student and making their understanding structural instead of procedural, so it holds up in IB Higher Level, in AP, and in first year at university, where recognising the shape of a question stops being enough to answer it.",
-    ],
-    neighborhoods: [
-      "Ambleside",
-      "Dundarave",
-      "British Properties",
-      "Caulfeild",
-      "Horseshoe Bay",
-      "Cypress",
-      "Park Royal",
-    ],
-    nearbySchools: [
-      "West Vancouver Secondary",
-      "Sentinel Secondary",
-      "Rockridge Secondary",
-      "Collingwood School",
-      "Mulgrave School",
-    ],
-    availability:
-      "West Vancouver students learn through flexible online tutoring, with in-person sessions available at our Burnaby location.",
-    localSections: [
-      {
-        heading: "When a Strong Student Is Not Actually Fine",
-        body: [
-          "There is a recognisable pattern. The student handles anything that resembles a worked example, but stalls completely on a problem phrased in an unfamiliar way. They can apply a formula and cannot say where it comes from. They lose marks on the derivation and gain them back on the arithmetic.",
-          "None of this shows up while a course stays computational, which is why it so often surfaces for the first time in Grade 12 or in Higher Level — by which point the student has built two years of confidence on a foundation that was never tested. Catching it earlier is far less disruptive than repairing it during a graduating year.",
-        ],
-      },
-      {
-        heading: "Extension for Students Who Are Ahead",
-        body: [
-          "Not every student who needs a tutor is behind. Some are bored, which looks like carelessness and gets treated as an attitude problem when it is really an unmet appetite.",
-          "For those students we work above the syllabus: harder and less familiar problems, competition-style questions, and early exposure to ideas from university mathematics. The aim is not to race ahead through the curriculum but to make the subject interesting again, which in our experience does more for a mark than another set of routine exercises.",
-        ],
-      },
-    ],
-    aboutHeading: "Good Marks — But Is There Understanding Underneath?",
-    aboutBody: [
-      "A lot of West Vancouver enquiries begin with a capable student rather than a struggling one, and with a parent who suspects the marks are resting on memorisation rather than understanding.",
-      "That suspicion is usually confirmed the first time a course turns abstract. We would rather make the understanding structural before it gets tested.",
-    ],
-    aboutPoints: [
-      "Handle familiar exercises but stall on unfamiliar problems",
-      "Apply a formula without being able to say where it comes from",
-      "Are heading into IB Higher Level or AP mathematics",
-      "Find schoolwork easy and have stopped being challenged by it",
-      "Make careless errors that look like weakness but are boredom",
-    ],
-    faqs: [
-      {
-        question: "My child has an A but I do not think they really understand it. Is that a real thing?",
-        answer:
-          "It is, and it is more common in high-achieving cohorts than people expect. A capable student can carry a course a long way on pattern recognition and diligence. The usual tell is that they are fine on anything resembling practice material and lost on a genuinely unfamiliar question. It is very fixable, and much easier to address before Grade 12.",
-      },
-      {
-        question: "Do you work with students who are ahead and bored rather than behind?",
-        answer:
-          "Yes, and we enjoy it. Those sessions look quite different — less revision, more difficult and open-ended problems, and often material from beyond the course. Parents frequently find that engagement fixes the careless-mistake problem that prompted the call in the first place.",
-      },
-      {
-        question: "Can you support IB Higher Level Mathematics?",
-        answer:
-          "Yes. HL Analysis and Approaches is one of our most requested courses, along with HL Physics and Chemistry. We support the internal assessment as well as examination preparation, though we help students develop their own work rather than produce it for them.",
-      },
-    ],
-  },
-  {
     slug: "coquitlam",
     name: "Coquitlam",
     region: "BC",
@@ -498,163 +357,6 @@ export const cities: City[] = [
         question: "Do you cover Foundations of Mathematics as well as Pre-Calculus?",
         answer:
           "Yes, both streams, along with Workplace Mathematics. If you are unsure which stream suits your child's intended path after graduation, that is worth discussing at the consultation, because the choice affects which post-secondary programmes stay open.",
-      },
-    ],
-  },
-  {
-    slug: "port-moody",
-    name: "Port Moody",
-    region: "BC",
-    metaTitle: "Math Tutor in Port Moody | Physics & Chemistry",
-    metaDescription:
-      "Port Moody math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Free 30-minute consultation.",
-    heroHeading: "Online Math Tutor for Port Moody Students",
-    heroSubheading:
-      "Steady weekly Math, Physics, Chemistry and Coding tutoring for Grades 6–12 and university — built to catch problems before they become urgent.",
-    intro: [
-      "Port Moody families tend to come to us for the long game rather than an emergency. The pattern we see most often is drift: a student who is not failing anything, who has simply stopped understanding, and whose marks slide a few points each reporting period until somebody finally notices.",
-      "Regular weekly sessions are unusually good at catching that, because a tutor working with the same student every week sees the slide well before a report card does. We work with students from Heritage Mountain and Klahanie through Newport Village, College Park and Inlet Centre.",
-    ],
-    neighborhoods: [
-      "Heritage Mountain",
-      "Klahanie",
-      "Newport Village",
-      "Heritage Woods",
-      "College Park",
-      "Inlet Centre",
-    ],
-    nearbySchools: [
-      "Port Moody Secondary",
-      "Heritage Woods Secondary",
-      "Moody Middle School",
-    ],
-    availability:
-      "Port Moody students learn through flexible online tutoring, with in-person sessions available at our Burnaby location.",
-    localSections: [
-      {
-        heading: "The Case for Starting Before It Is Urgent",
-        body: [
-          "Most families call when a mark has already dropped, which is understandable but expensive. By then the student has usually lost several topics, and the work is remedial and demoralising rather than incremental.",
-          "Early looks unremarkable: homework taking longer than it used to, a reluctance to show work, an answer that is right without the student being able to explain it. None of that triggers alarm on its own, which is exactly why it is worth having someone assess it while the fix is still small.",
-        ],
-      },
-      {
-        heading: "What a Regular Weekly Session Covers",
-        body: [
-          "A typical hour splits three ways. We look at whatever came back marked since last week, because a returned test is the most honest diagnostic available. We work through current homework, so the session earns its place in an already full week. And we pre-teach the topic coming next, which is the part families underrate.",
-          "Pre-teaching changes the dynamic in class. A student who has already met an idea once arrives able to follow the lesson rather than decode it, and asks better questions of their own teacher — which over a term does more good than any amount of catch-up.",
-        ],
-      },
-    ],
-    aboutHeading: "Not Failing, But Quietly Slipping Behind?",
-    aboutBody: [
-      "Most Port Moody families come to us about drift rather than crisis — a student who is coping, has stopped genuinely understanding, and loses a few marks each reporting period until somebody finally notices.",
-      "Regular weekly sessions catch that early, because a tutor working with the same student every week sees the slide long before a report card reports it.",
-    ],
-    aboutPoints: [
-      "Take noticeably longer over homework than they used to",
-      "Arrive at the right answer but cannot explain how",
-      "Are reluctant to show any written working",
-      "Have slipped a few marks a term without failing anything",
-      "Would benefit from steady weekly support rather than a rescue",
-    ],
-    faqs: [
-      {
-        question: "My child is not failing anything. Is tutoring premature?",
-        answer:
-          "Usually the opposite. Working with a student who is coping but drifting is faster, cheaper and considerably less stressful than intervening after a bad term. If you are seeing homework take longer than it used to, that is a reasonable point to have someone look.",
-      },
-      {
-        question: "How long do students normally stay with you?",
-        answer:
-          "It varies a great deal. Some come for a few weeks around a specific unit or an exam and then stop, which is a perfectly good outcome. Others stay across a full course, particularly through Pre-Calculus 11 and 12. We are not going to push for continuation once a student no longer needs it.",
-      },
-      {
-        question: "What actually happens in a typical session?",
-        answer:
-          "Roughly: review what came back marked, work through current homework, then preview what is coming next so the student walks into class already familiar with it. The balance shifts depending on whether an assessment is close.",
-      },
-    ],
-  },
-  {
-    slug: "port-coquitlam",
-    name: "Port Coquitlam",
-    region: "BC",
-    metaTitle: "Math Tutor in Port Coquitlam | Physics & Chemistry",
-    metaDescription:
-      "Port Coquitlam math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Book a free consultation.",
-    heroHeading: "Online Math Tutor for Port Coquitlam Students",
-    heroSubheading:
-      "Math, Physics, Chemistry and Coding tutoring for Grades 6–12 and university — including help choosing between Workplace, Foundations and Pre-Calculus.",
-    intro: [
-      "One decision quietly does more damage than any single bad test result: choosing the wrong Grade 11 mathematics stream. British Columbia splits students between Workplace Mathematics, Foundations of Mathematics and Pre-Calculus, and that choice is often made on the basis of which course looks survivable this year rather than which one the student's intended path actually requires.",
-      "Pre-Calculus is the prerequisite for most science, engineering, health and many business programmes. Stepping out of it to protect a grade point average can close those doors roughly two years before anyone notices they have closed. We help students stay in the stream they need — and help families work out which stream that is.",
-    ],
-    neighborhoods: [
-      "Citadel Heights",
-      "Birchland Manor",
-      "Central Port Coquitlam",
-      "Riverwood",
-      "Mary Hill",
-      "Lincoln Park",
-    ],
-    nearbySchools: [
-      "Terry Fox Secondary",
-      "Riverside Secondary",
-      "Archbishop Carney Regional",
-    ],
-    availability:
-      "Port Coquitlam students learn through flexible online tutoring, with in-person sessions available at our Burnaby location.",
-    localSections: [
-      {
-        heading: "Workplace, Foundations or Pre-Calculus?",
-        body: [
-          "Workplace Mathematics is built around practical, applied numeracy. Foundations of Mathematics suits students heading toward arts, humanities and a number of college programmes. Pre-Calculus is the algebraic, function-heavy route, and it is the one nearly every science, engineering and health-science programme lists as a prerequisite.",
-          "The difficulty is that the streams are chosen in Grade 10 or 11, when many students have no settled idea of what they want to do at nineteen. Choosing the least demanding option is a rational response to a hard year, but it is a decision with a long tail, and it is worth making deliberately rather than by default.",
-        ],
-      },
-      {
-        heading: "Staying in Pre-Calculus When It Gets Hard",
-        body: [
-          "When a student is struggling in Pre-Calculus, the usual advice is to move down a stream. Sometimes that genuinely is right. Often it is a response to two or three specific topics rather than to the course as a whole.",
-          "Before a family makes that call, it is worth finding out which it is. If a student is coping with functions and losing marks purely on trigonometric identities, that is a targeted problem with a targeted fix, and stepping down would trade a temporary difficulty for a permanent limitation.",
-        ],
-      },
-      {
-        heading: "Physics 11 and 12 Alongside the Mathematics",
-        body: [
-          "Physics is where weak algebra becomes visible fastest. A student who cannot rearrange an equation confidently will lose marks on kinematics questions they conceptually understand perfectly well, because the physics and the algebra are being assessed simultaneously and only one of them is the stated topic.",
-          "We teach the two together for that reason. Forces and free-body diagrams, momentum and energy conservation, and the circuit work in Physics 12 all reward a student who can set up an equation cleanly and track units through it. Fixing the algebra usually lifts the physics mark more than additional physics revision does.",
-        ],
-      },
-    ],
-    aboutHeading: "Choosing A Grade 11 Math Stream In Port Coquitlam?",
-    aboutBody: [
-      "Few school decisions matter more, and few are made with less information. Workplace, Foundations and Pre-Calculus lead to genuinely different places, and Pre-Calculus is the prerequisite for most science, engineering and health-science programmes.",
-      "Stepping out of it to protect a grade point average can close those doors roughly two years before anyone notices they have closed.",
-    ],
-    aboutPoints: [
-      "Are deciding between Workplace, Foundations and Pre-Calculus",
-      "Want to drop a stream because this particular term is hard",
-      "Are struggling with two or three topics rather than the course",
-      "Need Physics 11 or 12 alongside the mathematics",
-      "Are aiming at a programme that requires Pre-Calculus 12",
-    ],
-    faqs: [
-      {
-        question: "Which Grade 11 mathematics should my child take?",
-        answer:
-          "It depends entirely on what they might want to study after graduation. If there is any realistic chance of science, engineering, health sciences or many business programmes, they need Pre-Calculus, because those programmes list it as a prerequisite. If the direction is clearly toward arts or particular college programmes, Foundations may serve them better.",
-      },
-      {
-        question: "My child wants to drop from Pre-Calculus to Foundations. Should they?",
-        answer:
-          "Find out first whether the problem is the whole course or two or three topics — the answer changes the decision completely. Dropping down solves this term and can close programme options two years out. It is sometimes the right call, but it deserves more scrutiny than it usually gets.",
-      },
-      {
-        question: "Can a student move back up to Pre-Calculus later?",
-        answer:
-          "It is possible but genuinely difficult, because the courses diverge quickly and the student would be rejoining without the intervening material. Many students end up taking Pre-Calculus 11 later through summer or upgrading courses. That is doable, but it is far easier not to have to.",
       },
     ],
   },
@@ -902,90 +604,6 @@ export const cities: City[] = [
         question: "I have not done mathematics in ten years. Where would we even begin?",
         answer:
           "With a short diagnostic conversation to find what is actually missing, which is usually less than people fear. In most cases the gap is algebraic technique rather than conceptual ability, and that can be rebuilt quickly. You would not be starting from nothing, and you would not be the first person we have started there with.",
-      },
-    ],
-  },
-  {
-    slug: "delta",
-    name: "Delta",
-    region: "BC",
-    metaTitle: "Math Tutor in Delta | Physics, Chemistry & Coding",
-    metaDescription:
-      "Delta math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Free 30-minute consultation.",
-    heroHeading: "Online Math Tutor for Delta Students",
-    heroSubheading:
-      "Math, Physics, Chemistry and Coding tutoring for Ladner, Tsawwassen and North Delta — online, so the drive does not decide the tutoring.",
-    intro: [
-      "Delta's geography is the whole problem. Ladner and Tsawwassen sit far enough from the region's tutoring centres that in-person help means committing an evening to a highway, and North Delta families run the same calculation in a different direction.",
-      "Online sessions remove that calculation entirely, and the practical result is that students here actually continue past the first month. We follow BC curriculum coursework from Grade 6 through Pre-Calculus 12, AP and university level, matched to whatever the classroom teacher is covering right now.",
-    ],
-    neighborhoods: [
-      "Ladner",
-      "Tsawwassen",
-      "North Delta",
-      "Sunshine Hills",
-      "Nordel",
-      "Beach Grove",
-    ],
-    nearbySchools: [
-      "Delta Secondary",
-      "Sands Secondary",
-      "Seaquam Secondary",
-      "Burnsview Secondary",
-      "South Delta Secondary",
-    ],
-    availability:
-      "Delta students learn with us through flexible online tutoring, with in-person sessions available at our Burnaby location.",
-    localSections: [
-      {
-        heading: "Why Distance Quietly Ends Most Tutoring",
-        body: [
-          "Tutoring arrangements rarely stop because the tutoring was not working. They stop because the logistics became unsustainable — a long drive twice a week through a wet winter is a genuine ask, and it is the commitment that gets dropped when a term gets busy.",
-          "For families out in Ladner and Tsawwassen that risk is higher than almost anywhere else in the region. Removing the travel is not a convenience feature here; it is the difference between a student getting eight months of support and getting six weeks of it.",
-        ],
-      },
-      {
-        heading: "Numeracy Assessments and Final Exams",
-        body: [
-          "Delta students, like all BC students, sit the Graduation Numeracy Assessment, which catches many families off guard because it does not resemble a normal mathematics test. It is less about recalling procedures and more about reasoning through an unfamiliar, often wordy situation.",
-          "Students who are strong at routine questions can find that genuinely difficult, and it is worth practising the format specifically rather than assuming good marks will carry across. We work on that alongside course content and final examination preparation.",
-        ],
-      },
-      {
-        heading: "Coding and Computer Science From Home",
-        body: [
-          "Programming is the subject that suits remote teaching best, because the work already lives on a screen. A student shares their editor, the tutor watches the code being written, and a bug gets diagnosed in the moment rather than described after the fact.",
-          "Most beginners we work with are stuck on the same handful of things: what a loop is actually doing on each pass, why a function returns nothing, how to read an error message instead of fearing it. We teach Python fundamentals through to data structures and the programming inside senior computer science coursework, always by building something rather than by reciting syntax.",
-        ],
-      },
-    ],
-    aboutHeading: "Too Far Out For Tutoring? Delta Learns Online",
-    aboutBody: [
-      "Ladner and Tsawwassen sit far enough from the region's tutoring centres that in-person help means handing an evening to a highway, and North Delta families run the same calculation in a different direction.",
-      "Taking the drive out of the equation is what makes tutoring here last beyond the first month, which is usually the difference between a full year of support and six weeks of it.",
-    ],
-    aboutPoints: [
-      "Live too far out for a twice-weekly drive to be realistic",
-      "Have tried tutoring before and stopped because of the travel",
-      "Are preparing for the Graduation Numeracy Assessment",
-      "Need Pre-Calculus, Physics or Chemistry support this term",
-      "Are learning to code and want to work from home",
-    ],
-    faqs: [
-      {
-        question: "We are in Tsawwassen. Do you have anyone out this way?",
-        answer:
-          "We teach Delta students online rather than travelling out, and we would rather be straightforward about that than imply otherwise. Given the distance from most in-person tutoring in the region, online is generally the option that actually lasts a full school year for families here.",
-      },
-      {
-        question: "Does online work for a student who is easily distracted?",
-        answer:
-          "It can work very well, because one-to-one attention leaves nowhere to drift — the tutor is asking the student to work continuously rather than lecturing. For younger or particularly restless students we would suggest shorter, more frequent sessions instead of a long block.",
-      },
-      {
-        question: "Can you help with the Graduation Numeracy Assessment?",
-        answer:
-          "Yes. It rewards a different skill from a normal mathematics test — interpreting an unfamiliar, wordy problem and reasoning through it — so students who are good at routine questions sometimes underperform. Practising the specific format makes a noticeable difference.",
       },
     ],
   },
