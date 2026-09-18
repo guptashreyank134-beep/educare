@@ -142,7 +142,7 @@ export const legacyRedirects: LegacyRedirect[] = [
   { from: "/python", to: "/programs/python", permanent: true },
   { from: "/java", to: "/programs/computer-science", permanent: true },
   { from: "/web-development", to: "/programs/web-development", permanent: true },
-  { from: "/programs/language-programs", to: "/programs", permanent: true },
+  { from: "/programs/language-programs", to: "/programs/french", permanent: true },
   { from: "/programs/test-prep-burnaby", to: "/programs", permanent: true },
   { from: "/college-entrance-exam-prep-canadian-students-2026", to: "/programs", permanent: true },
   { from: "/best-test-prep-courses-2025-comparison", to: "/programs", permanent: true },

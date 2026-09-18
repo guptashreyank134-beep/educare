@@ -28,7 +28,9 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { GraduationCap, NotebookPen, Zap } from "lucide-react";
+import Link from "next/link";
 import { tutors } from "./tutorsData";
+import { authorPath, credentialYears } from "@/data/authors";
 
 const ReadAboutTutors = () => {
   const [activeTutor, setActiveTutor] = useState(tutors[0]);
@@ -75,6 +77,15 @@ const ReadAboutTutors = () => {
                 {activeTutor.education.map((item, index) => (
                   <p key={index}>{item}</p>
                 ))}
+                {/* Institution and years render only when confirmed, so an
+                    unverified credential shows the degree alone. */}
+                {activeTutor.credential?.institution && (
+                  <p className="mt-1 text-gray-600">
+                    {[activeTutor.credential.institution, credentialYears(activeTutor.credential)]
+                      .filter(Boolean)
+                      .join(", ")}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -87,6 +98,41 @@ const ReadAboutTutors = () => {
                 Expert mentor with structured teaching methods.
               </p>
             </div>
+
+            {(activeTutor.profiles?.linkedin ||
+              activeTutor.profiles?.scholar ||
+              activeTutor.authorSlug) && (
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm border-t border-gray-100 pt-4">
+                {activeTutor.authorSlug && (
+                  <Link
+                    href={authorPath(activeTutor.authorSlug)}
+                    className="text-primary underline underline-offset-2 hover:text-primary/80"
+                  >
+                    Full profile
+                  </Link>
+                )}
+                {activeTutor.profiles?.linkedin && (
+                  <a
+                    href={activeTutor.profiles.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                    className="text-primary underline underline-offset-2 hover:text-primary/80"
+                  >
+                    LinkedIn
+                  </a>
+                )}
+                {activeTutor.profiles?.scholar && (
+                  <a
+                    href={activeTutor.profiles.scholar}
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                    className="text-primary underline underline-offset-2 hover:text-primary/80"
+                  >
+                    Google Scholar
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </div>
 

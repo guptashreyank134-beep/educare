@@ -6,7 +6,7 @@
  * reference rather than the array, which broke the /about prerender.
  */
 
-import type { AcademicCredential, AuthorProfiles } from "@/data/authors";
+import { LEAD_AUTHOR, type AcademicCredential, type AuthorProfiles } from "@/data/authors";
 
 export interface Tutor {
   id: number;
@@ -28,6 +28,8 @@ export interface Tutor {
   profiles?: Partial<AuthorProfiles>;
   /** Longer biography, shown in place of fullDescription when present. */
   bio?: string;
+  /** Links the card to a dedicated author page under /about. */
+  authorSlug?: string;
 }
 
 export const tutors: Tutor[] = [
@@ -44,6 +46,11 @@ export const tutors: Tutor[] = [
       "Ph.D. in Ultrasound Signal & Image Processing",
       "10+ Years of Teaching Experience",
     ],
+    // Sourced from the author record so the credential shown here, in the
+    // structured data and on the author page cannot drift apart.
+    credential: LEAD_AUTHOR.credential,
+    profiles: LEAD_AUTHOR.profiles,
+    authorSlug: LEAD_AUTHOR.slug,
     expertise: "Expert Tutoring in Math, Science & Coding",
     strengths: [
       "PhD-level expert instructor with over 10 years of teaching experience",
