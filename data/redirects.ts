@@ -52,3 +52,15 @@ export const redirectPairs: [string, string][] = [
 ];
 
 export const redirectSources = new Set(redirectPairs.map(([from]) => from));
+
+const redirectMap = new Map(redirectPairs);
+
+/**
+ * Final destination for an internal path. Hand-authored link lists outlive the
+ * pages they point at, so resolving here keeps an internal link from costing a
+ * 308 hop once its target is consolidated away.
+ */
+export function resolveInternalHref(href: string): string {
+  const path = href.replace(/\/+$/, "") || "/";
+  return redirectMap.get(path) ?? href;
+}

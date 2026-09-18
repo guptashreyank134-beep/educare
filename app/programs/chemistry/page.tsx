@@ -295,7 +295,7 @@ export default async function ChemistryProgramPage() {
             { label: "Chemistry 11 tutoring in Burnaby", href: "/chemistry-11-tutor-burnaby" },
             { label: "Chemistry 12 tutoring in Burnaby", href: "/chemistry-12-tutor-burnaby" },
             { label: "Chemistry 12 final-exam review", href: "/chemistry-12-final-exam-review" },
-            { label: "Chemistry tutor in Vancouver", href: "/top-chemistry-tutor-vancouver" },
+            { label: "Chemistry 12 tutor in Vancouver", href: "/chemistry-12-tutor-vancouver" },
           ]}
         />
       </main>

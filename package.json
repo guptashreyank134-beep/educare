@@ -14,7 +14,8 @@
     "seo:redirects": "tsx scripts/check-redirects.mts && tsx scripts/check-redirect-targets.mts",
     "seo:duplicates": "tsx scripts/audit-duplicates.mts",
     "test": "node --import tsx --test \"app/**/*.test.mts\" \"components/**/*.test.mts\"",
-    "seo:route-dates": "tsx scripts/build-route-dates.mts"
+    "seo:route-dates": "tsx scripts/build-route-dates.mts",
+    "seo:check": "tsx scripts/seo-check.mts"
   },
   "dependencies": {
     "@portabletext/react": "^6.2.0",

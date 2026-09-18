@@ -298,7 +298,7 @@ export default async function PhysicsProgramPage() {
             { label: "Physics 11 tutoring in Burnaby", href: "/physics-11-tutor-burnaby" },
             { label: "Physics 12 tutoring in Burnaby", href: "/physics-12-tutor-burnaby" },
             { label: "Physics 12 final-exam review", href: "/physics-12-final-exam-review" },
-            { label: "Physics tutor in Vancouver", href: "/top-physics-tutor-vancouver" },
+            { label: "Physics 12 tutor in Vancouver", href: "/physics-12-tutor-vancouver" },
           ]}
         />
       </main>

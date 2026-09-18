@@ -10,6 +10,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 import Pagination from "@/components/ui/Pagination";
 import { getMetaDataBySlug } from "@/utils/seoBuilder";
+import { redirectSources } from "@/data/redirects";
 
 export const POSTS_PER_PAGE = 9;
 
@@ -36,8 +37,21 @@ function getReadingTime(text: string): string {
 }
 
 /** Total number of blog listing pages (used by generateStaticParams). */
+/**
+ * Slugs of posts that permanently redirect. Listing them would send a reader —
+ * and a crawler — through a 308, so they are excluded from the listing and its
+ * page count, exactly as the sitemap excludes them.
+ */
+const REDIRECTED_POST_SLUGS = [...redirectSources]
+  .filter((path) => path.startsWith("/blog/"))
+  .map((path) => path.replace("/blog/", ""));
+
+const LISTED_POSTS = `*[_type == "post" && !(slug.current in $excluded)]`;
+
 export async function getTotalBlogPages(): Promise<number> {
-  const totalPosts = await client.fetch<number>(`count(*[_type == "post"])`);
+  const totalPosts = await client.fetch<number>(`count(${LISTED_POSTS})`, {
+    excluded: REDIRECTED_POST_SLUGS,
+  });
   return Math.max(1, Math.ceil(totalPosts / POSTS_PER_PAGE));
 }
 
@@ -50,7 +64,7 @@ export default async function BlogListingView({ page }: { page: number }) {
   const start = (validPage - 1) * POSTS_PER_PAGE;
   const end = validPage * POSTS_PER_PAGE;
 
-  const postsQuery = `*[_type == "post"] | order(publishedAt desc) [$start...$end] {
+  const postsQuery = `${LISTED_POSTS} | order(publishedAt desc) [$start...$end] {
     _id,
     title,
     "slug": slug.current,
@@ -61,8 +75,8 @@ export default async function BlogListingView({ page }: { page: number }) {
   }`;
 
   const [posts, totalPosts, data] = await Promise.all([
-    client.fetch(postsQuery, { start, end }),
-    client.fetch(`count(*[_type == "post"])`),
+    client.fetch(postsQuery, { start, end, excluded: REDIRECTED_POST_SLUGS }),
+    client.fetch(`count(${LISTED_POSTS})`, { excluded: REDIRECTED_POST_SLUGS }),
     getMetaDataBySlug("page", "blog"),
   ]);
 
@@ -76,7 +90,10 @@ export default async function BlogListingView({ page }: { page: number }) {
   return (
     <>
       <JsonLd schema={getPageSchema(data, "https://www.drshreyankeducare.com/blog")} />
-      <GeneralHeroSection {...BlogsHeroSectionContent} breadcrumb={<Breadcrumbs />} />
+      <GeneralHeroSection
+        {...BlogsHeroSectionContent}
+        breadcrumb={<Breadcrumbs items={[{ label: "Blog" }]} />}
+      />
 
       <main className="min-h-screen py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

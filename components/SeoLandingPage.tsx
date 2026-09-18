@@ -18,6 +18,7 @@ import {
 } from "@/components/SchemaMarkup";
 
 import { getSeoPageBySlug, seoPageUrl, getSeoSiblings } from "@/data/seoPages";
+import { resolveInternalHref } from "@/data/redirects";
 import { BUSINESS } from "@/data/businessInfo";
 
 const metrics = [
@@ -220,7 +221,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
             {page.related.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={resolveInternalHref(link.href)}
                 className="inline-flex items-center gap-2 text-primary font-montserrat font-medium underline decoration-2 underline-offset-4 decoration-yellow-light hover:text-primary/80 transition-colors"
               >
                 {link.label}
