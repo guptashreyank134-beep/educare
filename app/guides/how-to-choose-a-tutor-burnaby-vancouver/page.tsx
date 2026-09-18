@@ -3,10 +3,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
-import { JsonLd } from "@/components/SchemaMarkup";
+import { JsonLd, getArticleSchema } from "@/components/SchemaMarkup";
+import routeDates from "@/data/route-dates.json";
+import { SITE_URL } from "@/data/businessInfo";
 
-const URL =
-  "https://www.drshreyankeducare.com/guides/how-to-choose-a-tutor-burnaby-vancouver";
+const GUIDE_PATH = "/guides/how-to-choose-a-tutor-burnaby-vancouver";
+const URL = `${SITE_URL}${GUIDE_PATH}`;
+const ROUTE_DATES = routeDates as Record<string, string>;
+/** Used only if the route has no git history yet (a brand-new file). */
+const PUBLISHED_FALLBACK = "2026-07-14T00:00:00-07:00";
 const TITLE =
   "How to Choose a Tutor in Burnaby and Vancouver: Costs, Formats and Questions to Ask";
 const DESCRIPTION =
@@ -20,25 +25,12 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: "/assets/logo.png" },
 };
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
+const articleSchema = getArticleSchema({
   headline: TITLE,
   description: DESCRIPTION,
-  mainEntityOfPage: { "@type": "WebPage", "@id": URL },
-  author: {
-    "@type": "Organization",
-    name: "Dr. Shreyank Educare",
-    url: "https://www.drshreyankeducare.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Dr. Shreyank Educare",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.drshreyankeducare.com/assets/logo.png",
-    },
-  },
+  url: URL,
+  datePublished: ROUTE_DATES[GUIDE_PATH] ?? PUBLISHED_FALLBACK,
+  dateModified: ROUTE_DATES[GUIDE_PATH] ?? PUBLISHED_FALLBACK,
   about: [
     "Tutoring in Burnaby",
     "Tutoring in Vancouver",
@@ -47,7 +39,7 @@ const articleSchema = {
     "University tutoring",
     "MCAT preparation",
   ],
-};
+});
 
 function H2({ children }: { children: React.ReactNode }) {
   return (

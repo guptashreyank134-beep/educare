@@ -114,7 +114,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
                 <Button iconRight={ArrowRight}>Book a Free 30-Minute Consultation</Button>
               </Link>
               <a
-                href="https://wa.me/16725147587"
+                href={BUSINESS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#25D366] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
@@ -229,6 +229,19 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
             </div>
           </div>
         ))}
+
+        {/* Local-detail slot. Rendered only when a real, attributable quote
+            exists for this city — an empty slot is correct, filler is not. */}
+        {city.localTestimonial && (
+          <figure className="mt-12 border-l-4 border-yellow-light bg-bg-grey rounded-r-xl px-6 py-5">
+            <blockquote className="text-[16px] sm:text-[18px] font-montserrat text-slate/85 leading-relaxed">
+              {city.localTestimonial.quote}
+            </blockquote>
+            <figcaption className="mt-3 text-[14px] font-montserrat text-slate/60">
+              {city.localTestimonial.attribution} — {city.name}
+            </figcaption>
+          </figure>
+        )}
       </section>
 
       {/* Math-specific coverage — keeps the page primarily about mathematics. */}

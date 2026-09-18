@@ -3,8 +3,10 @@ import { verticalPages, verticalUrl } from "@/data/verticalPages";
 import { seoPages, seoPageUrl } from "@/data/seoPages";
 import { client } from "@/sanity/lib/client";
 import { REVIEW_RATING, REVIEW_COUNT } from "@/data/reviews";
+import { BUSINESS, SITE_URL } from "@/data/businessInfo";
+import { LEAD_AUTHOR, authorUrl, credentialLabel } from "@/data/authors";
 
-const BASE = "https://www.drshreyankeducare.com";
+const BASE = SITE_URL;
 
 /**
  * Serves /llms-full.txt — a fuller companion to /llms.txt. Where llms.txt is a
@@ -38,10 +40,12 @@ export async function GET() {
   // Key facts (machine-readable, high-signal for AI answers)
   lines.push("## Key Facts");
   lines.push("- Name: Dr. Shreyank Educare");
-  lines.push("- Founder: Dr. Shreyank Gupta — PhD in Ultrasound Signal & Image Processing (University of Quebec), 10+ years teaching experience.");
+  lines.push(
+    `- Founder: ${LEAD_AUTHOR.name} — ${credentialLabel(LEAD_AUTHOR.credential)}, 10+ years teaching experience. Profile: ${authorUrl(LEAD_AUTHOR.slug)}.`,
+  );
   lines.push(`- Rating: ${REVIEW_RATING.toFixed(1)} out of 5 from ${REVIEW_COUNT} Google reviews.`);
-  lines.push("- Location: 2088 Madison Avenue, Burnaby, BC, Canada. Serves Burnaby, Vancouver and Metro Vancouver in person, and students worldwide online.");
-  lines.push("- Contact: +1 672-514-7587 (phone/WhatsApp), info@drshreyankeducare.com.");
+  lines.push(`- Location: ${BUSINESS.addressFull}, Canada. Serves Burnaby, Vancouver and Metro Vancouver in person, and students worldwide online.`);
+  lines.push(`- Contact: ${BUSINESS.phone} (phone/WhatsApp), ${BUSINESS.email}.`);
   lines.push("- Subjects: Math, Pre-Calculus, Calculus, Physics, Chemistry, Biology, Computer Science, Python, JavaScript, Web Development; IB & AP; SAT, GRE, GMAT, MCAT; university calculus, physics, chemistry, statistics, finance (CFA, MBA, BCom); MD-led medical sciences; French and Mandarin.");
   lines.push("- Curriculum: aligned to the BC curriculum, IB and AP. Free 30-minute consultation available.");
   lines.push("");

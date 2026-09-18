@@ -1,6 +1,7 @@
 /** @format */
 
 import { MetadataRoute } from "next";
+import { SITE_URL } from "@/data/businessInfo";
 
 // AI answer-engine / assistant crawlers we explicitly welcome. The wildcard
 // rule already permits them, but listing them makes the intent unambiguous and
@@ -30,7 +31,8 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "*", allow: "/", disallow: ["/studio/"] },
       { userAgent: AI_BOTS, allow: "/", disallow: ["/studio/"] },
     ],
-    sitemap: "https://www.drshreyankeducare.com/sitemap.xml",
-    host: "https://www.drshreyankeducare.com",
+    // No `host` directive: it is a Yandex extension that Google and Bing
+    // ignore, and the canonical host is already declared by canonical tags.
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

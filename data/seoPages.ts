@@ -11,6 +11,7 @@
  */
 
 import { redirectSources } from "./redirects";
+import { SITE_URL } from "./businessInfo";
 
 export interface SeoSection {
   heading: string;
@@ -44,7 +45,7 @@ export interface SeoPage {
   related: SeoRelated[];
 }
 
-export const SEO_BASE_URL = "https://www.drshreyankeducare.com";
+export const SEO_BASE_URL = SITE_URL;
 export const seoPagePath = (slug: string) => `/${slug}`;
 export const seoPageUrl = (slug: string) => `${SEO_BASE_URL}/${slug}`;
 

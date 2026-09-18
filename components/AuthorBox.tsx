@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { BadgeCheck, GraduationCap } from "lucide-react";
 
+import { LEAD_AUTHOR, authorPath } from "@/data/authors";
+
 /**
  * Byline / author box for blog articles.
  *
@@ -13,14 +15,14 @@ import { BadgeCheck, GraduationCap } from "lucide-react";
  */
 
 export const EXPERT = {
-  name: "Dr. Shreyank Gupta",
-  credentials: "PhD",
-  role: "Founder & Lead Tutor, Dr. Shreyank Educare",
+  name: LEAD_AUTHOR.name,
+  credentials: LEAD_AUTHOR.credential.degree,
+  role: `${LEAD_AUTHOR.jobTitle}, Dr. Shreyank Educare`,
   // A specific, checkable credential is a far stronger expertise signal than a
   // bare "PhD" — and ultrasound/signal processing is applied math and physics,
   // which is exactly what he teaches.
-  bio: "Dr. Shreyank Gupta holds a PhD in ultrasound and signal processing from the University of Quebec — applied mathematics and physics in practice. He has taught Math, Physics and Chemistry for over 10 years, working with students across Burnaby and Vancouver from Grade 6 through university.",
-  url: "/about",
+  bio: LEAD_AUTHOR.bio,
+  url: authorPath(LEAD_AUTHOR.slug),
 };
 
 const ORG = {
@@ -68,7 +70,13 @@ export default function AuthorBox({
         <div className="flex-1">
           <div className="flex flex-wrap items-center gap-2 mb-1">
             <p className="text-[18px] font-bricolage font-medium text-slate">
-              {reviewedByExpert ? `${EXPERT.name}, ${EXPERT.credentials}` : ORG.name}
+              {reviewedByExpert ? (
+                <Link href={EXPERT.url} className="hover:text-primary transition-colors">
+                  {`${EXPERT.name}, ${EXPERT.credentials}`}
+                </Link>
+              ) : (
+                ORG.name
+              )}
             </p>
             {reviewedByExpert && (
               <span className="inline-flex items-center gap-1 text-[12px] font-montserrat text-primary bg-primary/10 border border-primary/20 rounded-full px-2 py-0.5">

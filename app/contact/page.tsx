@@ -5,28 +5,29 @@ import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 import ContactInfoCards, {
   type ContactCard,
 } from "@/components/contactPageComponents/ContactInfoCards";
+import { BUSINESS, SITE_URL } from "@/data/businessInfo";
 
 const fallbackContactCards: ContactCard[] = [
   {
     title: "Call Us",
-    value: "+1 672-514-7587",
+    value: BUSINESS.phone,
     type: "phone",
   },
   {
     title: "E-Mail Us",
-    value: "info@drshreyankeducare.com",
+    value: BUSINESS.email,
     type: "email",
   },
   {
     title: "Reach Us",
-    value: "2088 Madison Avenue, Burnaby, V5C 6T5, BC, Canada",
+    value: `${BUSINESS.addressFull}, Canada`,
     type: "location",
   },
 ];
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("page", "contact");
-  return getMetadata(data, "https://www.drshreyankeducare.com/contact", {
+  return getMetadata(data, `${SITE_URL}/contact`, {
     title: "Contact Dr. Shreyank Educare | Tutoring in Burnaby & Vancouver",
     description:
       "Get in touch with Dr. Shreyank Educare for tutoring in Burnaby & Vancouver. Call, email or book a free 30-minute consultation — we usually reply within 24 hours.",

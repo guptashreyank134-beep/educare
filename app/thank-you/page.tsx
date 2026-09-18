@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, MessageCircle, BookOpen } from "lucide-react";
 import ThankYouTracking from "@/components/ThankYouTracking";
+import { BUSINESS } from "@/data/businessInfo";
 
 const PAGE_URL = "https://www.drshreyankeducare.com/thank-you";
 
@@ -45,7 +46,7 @@ export default function ThankYouPage() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <a
-            href="https://wa.me/16725147587"
+            href={BUSINESS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-[8px] border border-[#25D366] px-5 py-3 text-[#25D366] font-medium text-[16px] hover:bg-[#25D366]/10 transition-all"
@@ -64,8 +65,8 @@ export default function ThankYouPage() {
 
         <p className="text-[14px] text-slate/60">
           Prefer to talk now? Call{" "}
-          <a href="tel:+16725147587" className="text-primary font-semibold">
-            +1 (672) 514-7587
+          <a href={`tel:${BUSINESS.phoneE164}`} className="text-primary font-semibold">
+            {BUSINESS.phone}
           </a>
           .
         </p>
