@@ -7,6 +7,7 @@ import { redirectSources } from "@/data/redirects";
 import { noindexPaths } from "@/content/page-policy";
 import routeDates from "@/data/route-dates.json";
 import { LEAD_AUTHOR } from "@/data/authors";
+import { answerPagePath, publishedAnswerPages } from "@/content/answer-pages";
 import { SITE_URL } from "@/data/businessInfo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -27,6 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/privacy",
     "/locations",
     "/guides/how-to-choose-a-tutor-burnaby-vancouver",
+    ...publishedAnswerPages.map((page) => answerPagePath(page.slug)),
     ...verticalRoutes,
     ...cityRoutes,
     ...seoRoutes,
