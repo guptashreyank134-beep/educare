@@ -97,6 +97,24 @@ async function mapLimit<T>(items: T[], worker: (item: T) => Promise<void>): Prom
   await Promise.all(runners);
 }
 
+/**
+ * Fetch, retrying only when the connection itself fails. A transient drop under
+ * concurrency must not fail the build — but a response the server actually sent,
+ * including a 404, is a real result and is never retried.
+ */
+async function fetchWithRetry(url: string, attempts = 3): Promise<Response> {
+  let lastError: unknown;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      return await fetch(url, { redirect: "manual" });
+    } catch (error) {
+      lastError = error;
+      if (attempt < attempts) await new Promise((resolve) => setTimeout(resolve, 250 * attempt));
+    }
+  }
+  throw lastError;
+}
+
 const tagContent = (html: string, re: RegExp) => html.match(re)?.[1]?.trim();
 
 function parseJsonLd(html: string): { ok: boolean; error?: string } {
@@ -158,7 +176,7 @@ try {
   await mapLimit(sitemapEntries, async (path) => {
     let res: Response;
     try {
-      res = await fetch(`${ORIGIN}${path}`, { redirect: "manual" });
+      res = await fetchWithRetry(`${ORIGIN}${path}`);
     } catch (error) {
       fail("sitemap-200", `${path} could not be fetched: ${(error as Error).message}`);
       return;
@@ -226,7 +244,7 @@ try {
   await mapLimit(redirectPairs, async ([from, to]) => {
     let res: Response;
     try {
-      res = await fetch(`${ORIGIN}${from}`, { redirect: "manual" });
+      res = await fetchWithRetry(`${ORIGIN}${from}`);
     } catch (error) {
       fail("redirect-status", `${from} could not be fetched: ${(error as Error).message}`);
       return;
@@ -239,7 +257,7 @@ try {
     if (location !== normalize(to)) {
       fail("redirect-target", `${from} went to ${location}, expected ${normalize(to)}`);
     }
-    const hop = await fetch(`${ORIGIN}${location}`, { redirect: "manual" });
+    const hop = await fetchWithRetry(`${ORIGIN}${location}`);
     if (hop.status >= 300 && hop.status < 400) {
       fail("redirect-chain", `${from} -> ${location} -> ${hop.headers.get("location")}`);
     }
@@ -253,7 +271,7 @@ try {
       fail("internal-link-redirect", `a page links to ${href}, which permanently redirects`);
       return;
     }
-    const res = await fetch(`${ORIGIN}${href}`, { redirect: "manual" });
+    const res = await fetchWithRetry(`${ORIGIN}${href}`);
     if (res.status === 404) fail("internal-link-404", `a page links to ${href}, which 404s`);
     else if (res.status >= 300 && res.status < 400) {
       fail("internal-link-redirect", `a page links to ${href}, which redirects`);
