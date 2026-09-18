@@ -31,7 +31,8 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "*", allow: "/", disallow: ["/studio/"] },
       { userAgent: AI_BOTS, allow: "/", disallow: ["/studio/"] },
     ],
+    // No `host` directive: it is a Yandex extension that Google and Bing
+    // ignore, and the canonical host is already declared by canonical tags.
     sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL,
   };
 }

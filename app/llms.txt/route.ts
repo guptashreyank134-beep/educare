@@ -4,6 +4,10 @@ import { seoPages, seoPageUrl } from "@/data/seoPages";
 import { client } from "@/sanity/lib/client";
 import { REVIEW_RATING, REVIEW_COUNT } from "@/data/reviews";
 import { BUSINESS, SITE_URL } from "@/data/businessInfo";
+import { LEAD_AUTHOR, authorPath } from "@/data/authors";
+import { redirectSources } from "@/data/redirects";
+import { noindexPaths, retiredPaths } from "@/content/page-policy";
+import { answerPagePath, publishedAnswerPages } from "@/content/answer-pages";
 
 const BASE = SITE_URL;
 
@@ -12,6 +16,11 @@ const BASE = SITE_URL;
  * can discover and cite the right pages. Generated from the same data files
  * that drive the pages, so it stays in sync.
  */
+/** A URL belongs in llms.txt only if it is live and indexable. */
+function isListable(path: string): boolean {
+  return !redirectSources.has(path) && !retiredPaths.has(path) && !noindexPaths.has(path);
+}
+
 export async function GET() {
   const lines: string[] = [];
 
@@ -42,8 +51,14 @@ export async function GET() {
     ["Blog", "/blog", "Study guides and subject articles by PhD-qualified educators."],
     ["Locations", "/locations", "Tutoring locations across Metro Vancouver."],
     ["Contact", "/contact", "Book a free 30-minute consultation."],
+    [
+      LEAD_AUTHOR.name,
+      authorPath(LEAD_AUTHOR.slug),
+      `${LEAD_AUTHOR.jobTitle} — credentials and subjects taught.`,
+    ],
   ];
   for (const [title, path, desc] of mainPages) {
+    if (!isListable(path)) continue;
     lines.push(`- [${title}](${BASE}${path}): ${desc}`);
   }
   lines.push("");
@@ -51,6 +66,7 @@ export async function GET() {
   // Local tutoring by city
   lines.push("## Local Tutoring by City");
   for (const c of cities) {
+    if (!isListable(`/math-tutor-${c.slug}`)) continue;
     lines.push(`- [Math Tutor in ${c.name}](${cityUrl(c.slug)}): ${c.metaDescription}`);
   }
   lines.push("");
@@ -58,6 +74,7 @@ export async function GET() {
   // University & Professional + Medical
   lines.push("## University, Professional & Medical Tutoring");
   for (const p of verticalPages) {
+    if (!isListable(`/${p.slug}`)) continue;
     lines.push(`- [${p.heroHeading}](${verticalUrl(p.slug)}): ${p.metaDescription}`);
   }
   lines.push("");
@@ -65,6 +82,7 @@ export async function GET() {
   // SEO / subject pages grouped by cluster
   const byCluster = new Map<string, typeof seoPages>();
   for (const p of seoPages) {
+    if (!isListable(`/${p.slug}`)) continue;
     if (!byCluster.has(p.cluster)) byCluster.set(p.cluster, []);
     byCluster.get(p.cluster)!.push(p);
   }
@@ -88,6 +106,7 @@ export async function GET() {
     if (posts.length) {
       lines.push("## Blog Articles");
       for (const post of posts) {
+        if (!isListable(`/blog/${post.slug}`)) continue;
         const desc = post.excerpt ? `: ${post.excerpt}` : "";
         lines.push(`- [${post.title}](${BASE}/blog/${post.slug})${desc}`);
       }
@@ -95,6 +114,24 @@ export async function GET() {
     }
   } catch {
     // Sanity unavailable at build/request time — skip the blog section.
+  }
+
+  // Guides: only those reviewed and published. Drafts are noindex and must not
+  // be advertised to an answer engine.
+  const guides: [string, string][] = [
+    [
+      "How to Choose a Tutor in Burnaby and Vancouver",
+      "/guides/how-to-choose-a-tutor-burnaby-vancouver",
+    ],
+    ...publishedAnswerPages.map(
+      (page): [string, string] => [page.question, answerPagePath(page.slug)],
+    ),
+  ];
+  const listableGuides = guides.filter(([, path]) => isListable(path));
+  if (listableGuides.length) {
+    lines.push("## Guides");
+    for (const [title, path] of listableGuides) lines.push(`- [${title}](${BASE}${path})`);
+    lines.push("");
   }
 
   lines.push("## Contact");
