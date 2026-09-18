@@ -2,6 +2,7 @@ import React from "react";
 import { urlFor } from "@/sanity/lib/image";
 import { faqAnswerToPlainText } from "@/sanity/lib/faqs";
 import { BUSINESS, SAME_AS, SITE_URL } from "@/data/businessInfo";
+import { LEAD_AUTHOR, type Author, authorSameAs, authorUrl } from "@/data/authors";
 
 export function JsonLd({ schema }: { schema: Record<string, any> }) {
   return (
@@ -137,26 +138,17 @@ export function getOrganizationSchema() {
     founder: {
       "@type": "Person",
       "@id": `${SITE}/#founder`,
-      name: "Dr. Shreyank Gupta",
-      jobTitle: "Founder & Director",
-      description:
-        "Founder and director of Dr. Shreyank Educare, with a PhD in Ultrasound Signal & Image Processing and over 10 years of teaching experience.",
-      // TODO(owner): confirm the degree-awarding institution before restoring
-      // `alumniOf`. It previously named "University of Quebec", which appears
-      // nowhere else on the site and could not be verified from repo content.
+      name: LEAD_AUTHOR.name,
+      jobTitle: LEAD_AUTHOR.jobTitle,
+      url: authorUrl(LEAD_AUTHOR.slug),
+      description: LEAD_AUTHOR.bio,
       hasCredential: {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "degree",
-        educationalLevel: "PhD",
-        name: "PhD in Ultrasound Signal & Image Processing",
+        educationalLevel: LEAD_AUTHOR.credential.degree,
+        name: `${LEAD_AUTHOR.credential.degree} in ${LEAD_AUTHOR.credential.field}`,
       },
-      knowsAbout: [
-        "Mathematics",
-        "Physics",
-        "Chemistry",
-        "Biology",
-        "Computer Science",
-      ],
+      knowsAbout: LEAD_AUTHOR.knowsAbout,
       worksFor: { "@id": `${SITE}/#organization` },
     },
     // NOTE: no aggregateRating here on purpose. Self-serving review markup (a
@@ -192,33 +184,36 @@ export function getBreadcrumbSchema(
  * engines reconcile both references into a single well-described person — a
  * strong knowledge-graph / E-E-A-T signal. Only facts the site publishes.
  */
-export function getFounderSchema() {
+export function getFounderSchema(author: Author = LEAD_AUTHOR) {
+  const { credential } = author;
+  const sameAs = authorSameAs(author);
   return {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${SITE}/#founder`,
-    name: "Dr. Shreyank Gupta",
-    honorificPrefix: "Dr.",
-    jobTitle: "Founder & Director",
-    image: `${SITE}/assets/drShreyank.webp`,
-    url: `${SITE}/about`,
-    description:
-      "Founder and director of Dr. Shreyank Educare, with a PhD in Ultrasound Signal & Image Processing and over 10 years of teaching experience across Math, Physics, Chemistry, Biology and Computer Science. Has supported students from McGill, York, Carleton and the University of Ottawa.",
-    // TODO(owner): confirm the degree-awarding institution before restoring
-    // `alumniOf` (see getOrganizationSchema).
+    name: author.name,
+    ...(author.honorificPrefix ? { honorificPrefix: author.honorificPrefix } : {}),
+    jobTitle: author.jobTitle,
+    image: author.image,
+    url: authorUrl(author.slug),
+    description: author.bio,
+    // Only claimed when the institution is confirmed: alumniOf asserts a
+    // relationship with a named university.
+    ...(credential.institution
+      ? { alumniOf: { "@type": "CollegeOrUniversity", name: credential.institution } }
+      : {}),
     hasCredential: {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "degree",
-      educationalLevel: "PhD",
-      name: "PhD in Ultrasound Signal & Image Processing",
+      educationalLevel: credential.degree,
+      name: `${credential.degree} in ${credential.field}`,
+      ...(credential.institution
+        ? { recognizedBy: { "@type": "CollegeOrUniversity", name: credential.institution } }
+        : {}),
+      ...(credential.year ? { dateCreated: String(credential.year) } : {}),
     },
-    knowsAbout: [
-      "Mathematics",
-      "Physics",
-      "Chemistry",
-      "Biology",
-      "Computer Science",
-    ],
+    knowsAbout: author.knowsAbout,
+    ...(sameAs.length ? { sameAs } : {}),
     worksFor: {
       "@type": "EducationalOrganization",
       "@id": `${SITE}/#organization`,
@@ -378,14 +373,15 @@ export function getBlogPostSchema(post: any, currentUrl: string): Record<string,
     "author": post?.reviewedByExpert
       ? {
           "@type": "Person",
-          "name": "Dr. Shreyank Gupta",
-          "jobTitle": "PhD, Founder & Lead Tutor",
+          "@id": `${SITE}/#founder`,
+          "name": LEAD_AUTHOR.name,
+          "jobTitle": LEAD_AUTHOR.jobTitle,
           "worksFor": {
             "@type": "EducationalOrganization",
             "@id": `${SITE}/#organization`,
             "name": BUSINESS.name,
           },
-          "url": `${SITE}/about`,
+          "url": authorUrl(LEAD_AUTHOR.slug),
         }
       : {
           "@type": "Organization",
@@ -397,8 +393,9 @@ export function getBlogPostSchema(post: any, currentUrl: string): Record<string,
       ? {
           "reviewedBy": {
             "@type": "Person",
-            "name": "Dr. Shreyank Gupta",
-            "jobTitle": "PhD, Founder & Lead Tutor",
+            "@id": `${SITE}/#founder`,
+            "name": LEAD_AUTHOR.name,
+            "jobTitle": LEAD_AUTHOR.jobTitle,
           },
         }
       : {}),

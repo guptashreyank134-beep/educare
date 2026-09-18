@@ -6,6 +6,7 @@ import { seoPages, seoPagePath } from "@/data/seoPages";
 import { redirectSources } from "@/data/redirects";
 import { noindexPaths } from "@/content/page-policy";
 import routeDates from "@/data/route-dates.json";
+import { LEAD_AUTHOR } from "@/data/authors";
 import { SITE_URL } from "@/data/businessInfo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -18,6 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",
     "/about",
+    `/about/${LEAD_AUTHOR.slug}`,
     "/blog",
     "/book",
     "/contact",

@@ -6,7 +6,31 @@
  * reference rather than the array, which broke the /about prerender.
  */
 
-export const tutors = [
+import type { AcademicCredential, AuthorProfiles } from "@/data/authors";
+
+export interface Tutor {
+  id: number;
+  name: string;
+  role: string;
+  image: string;
+  belowshortDescription: string;
+  fullDescription: string;
+  /** Free-text credential lines already shown on the About page. */
+  education: string[];
+  expertise: string;
+  strengths: string[];
+  /**
+   * Structured credential, for tutors whose degree details are confirmed. Each
+   * part renders only when set, so a partially-known credential shows the part
+   * that is known and nothing else.
+   */
+  credential?: AcademicCredential;
+  profiles?: Partial<AuthorProfiles>;
+  /** Longer biography, shown in place of fullDescription when present. */
+  bio?: string;
+}
+
+export const tutors: Tutor[] = [
   {
     id: 0,
     name: "Dr. Shreyank",
