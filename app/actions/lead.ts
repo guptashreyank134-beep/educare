@@ -2,13 +2,14 @@
 
 import { client } from "@/sanity/lib/client";
 import nodemailer from "nodemailer";
+import { BUSINESS } from "@/data/businessInfo";
 
 // Route each vertical's lead notifications to its own inbox when configured,
 // falling back to the shared inbox so nothing is ever silently dropped.
 const FALLBACK_LEAD_EMAIL = "guptashreyank134@gmail.com";
 // Always notify the business inbox, in addition to the routed/fallback inbox.
-const ALWAYS_NOTIFY_EMAIL = "info@drshreyankeducare.com";
-const SENDER = { name: "Dr. Shreyank Educare", email: "info@drshreyankeducare.com" };
+const ALWAYS_NOTIFY_EMAIL = BUSINESS.email;
+const SENDER = { name: BUSINESS.name, email: BUSINESS.email };
 
 const LEAD_EMAIL_BY_VERTICAL: Record<string, string | undefined> = {
   "local-k12": process.env.LEAD_EMAIL_LOCAL,
@@ -175,6 +176,6 @@ export async function createLead(formData: FormData) {
   return {
     success: false,
     message:
-      "Sorry — we couldn't submit your request. Please call or WhatsApp us at +1 672-514-7587 and we'll help right away.",
+      `Sorry — we couldn't submit your request. Please call or WhatsApp us at ${BUSINESS.phone} and we'll help right away.`,
   };
 }

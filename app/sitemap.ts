@@ -4,9 +4,10 @@ import { cities, cityPath } from "@/data/cities";
 import { verticalPages, verticalPath } from "@/data/verticalPages";
 import { seoPages, seoPagePath } from "@/data/seoPages";
 import { redirectSources } from "@/data/redirects";
+import { SITE_URL } from "@/data/businessInfo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://www.drshreyankeducare.com";
+  const baseUrl = SITE_URL;
 
   const cityRoutes = cities.map((c) => cityPath(c.slug));
   const verticalRoutes = verticalPages.map((p) => verticalPath(p.slug));

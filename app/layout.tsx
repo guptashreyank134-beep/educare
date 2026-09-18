@@ -17,6 +17,7 @@ import { JsonLd, getOrganizationSchema } from "../components/SchemaMarkup";
 import { ContactClickTracking } from "../components/ContactClickTracking";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SITE_URL } from "@/data/businessInfo";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -29,7 +30,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.drshreyankeducare.com"),
+  metadataBase: new URL(SITE_URL),
   title:
     "Dr. Shreyank Educare — Math, Physics, Chemistry & Coding Tutoring in Burnaby & Vancouver",
   description:
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Dr. Shreyank Educare",
     locale: "en_CA",
-    url: "https://www.drshreyankeducare.com",
+    url: SITE_URL,
     title:
       "Dr. Shreyank Educare — Math, Physics, Chemistry & Coding Tutoring in Burnaby & Vancouver",
     description:

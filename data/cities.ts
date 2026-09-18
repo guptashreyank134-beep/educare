@@ -17,6 +17,8 @@
  * app/sitemap.ts.
  */
 
+import { SITE_URL } from "./businessInfo";
+
 export interface CityFAQ {
   question: string;
   answer: string;
@@ -74,7 +76,7 @@ export interface City {
   faqs: CityFAQ[];
 }
 
-export const BASE_URL = "https://www.drshreyankeducare.com";
+export const BASE_URL = SITE_URL;
 
 /** Canonical path for a city page (no trailing slash). */
 export const cityPath = (slug: string) => `/math-tutor-${slug}`;

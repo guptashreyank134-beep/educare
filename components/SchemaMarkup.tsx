@@ -1,6 +1,7 @@
 import React from "react";
 import { urlFor } from "@/sanity/lib/image";
 import { faqAnswerToPlainText } from "@/sanity/lib/faqs";
+import { BUSINESS, SAME_AS, SITE_URL } from "@/data/businessInfo";
 
 export function JsonLd({ schema }: { schema: Record<string, any> }) {
   return (
@@ -26,7 +27,17 @@ const AREAS_SERVED = [
   "Delta",
 ];
 
-const SITE = "https://www.drshreyankeducare.com";
+const SITE = SITE_URL;
+
+/** Reused wherever schema needs the business postal address. */
+const POSTAL_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: BUSINESS.streetAddress,
+  addressLocality: BUSINESS.addressLocality,
+  addressRegion: BUSINESS.addressRegion,
+  postalCode: BUSINESS.postalCode,
+  addressCountry: BUSINESS.addressCountry,
+} as const;
 
 // Every tutoring service we offer, with its canonical page. Rendered as an
 // OfferCatalog so AI answer engines can enumerate exactly which subjects we
@@ -55,29 +66,22 @@ export function getOrganizationSchema() {
     // Multi-typed so the same entity is eligible as both an education provider
     // and a local business (local-pack / "near me" signals).
     "@type": ["EducationalOrganization", "LocalBusiness"],
-    "@id": "https://www.drshreyankeducare.com/#organization",
-    name: "Dr. Shreyank Educare",
-    url: "https://www.drshreyankeducare.com",
-    logo: "https://www.drshreyankeducare.com/assets/logo.png",
-    image: "https://www.drshreyankeducare.com/assets/logo.png",
+    "@id": `${SITE}/#organization`,
+    name: BUSINESS.name,
+    url: BUSINESS.url,
+    logo: BUSINESS.logo,
+    image: BUSINESS.logo,
     description:
       "PhD-led, 5-star-rated tutoring in Math, Physics, Chemistry and Coding for Grades 6–12 and university across Burnaby & Vancouver — in person and online.",
-    telephone: "+1-672-514-7587",
-    email: "info@drshreyankeducare.com",
+    telephone: BUSINESS.phone,
+    email: BUSINESS.email,
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-672-514-7587",
+      telephone: BUSINESS.phone,
       contactType: "customer service",
-      email: "info@drshreyankeducare.com",
+      email: BUSINESS.email,
     },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "2088 Madison Avenue",
-      addressLocality: "Burnaby",
-      addressRegion: "BC",
-      postalCode: "V5C 6T5",
-      addressCountry: "CA",
-    },
+    address: POSTAL_ADDRESS,
     areaServed: AREAS_SERVED.map((name) => ({ "@type": "City", name })),
     priceRange: "$$",
     openingHoursSpecification: [
@@ -96,11 +100,7 @@ export function getOrganizationSchema() {
         closes: "20:00",
       },
     ],
-    sameAs: [
-      "https://www.facebook.com/DrShreyankEducare/",
-      "https://www.instagram.com/drshreyankeducare/",
-      "https://www.tiktok.com/@drshreyankeducare",
-    ],
+    sameAs: SAME_AS,
     // Machine-readable statement of the subjects this provider is authoritative
     // on — helps AI answer engines match the entity to subject queries.
     knowsAbout: [
@@ -136,12 +136,14 @@ export function getOrganizationSchema() {
     // the organization — a strong signal for AI answer engines.
     founder: {
       "@type": "Person",
-      "@id": "https://www.drshreyankeducare.com/#founder",
+      "@id": `${SITE}/#founder`,
       name: "Dr. Shreyank Gupta",
       jobTitle: "Founder & Director",
       description:
         "Founder and director of Dr. Shreyank Educare, with a PhD in Ultrasound Signal & Image Processing and over 10 years of teaching experience.",
-      alumniOf: { "@type": "CollegeOrUniversity", name: "University of Quebec" },
+      // TODO(owner): confirm the degree-awarding institution before restoring
+      // `alumniOf`. It previously named "University of Quebec", which appears
+      // nowhere else on the site and could not be verified from repo content.
       hasCredential: {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "degree",
@@ -155,7 +157,7 @@ export function getOrganizationSchema() {
         "Biology",
         "Computer Science",
       ],
-      worksFor: { "@id": "https://www.drshreyankeducare.com/#organization" },
+      worksFor: { "@id": `${SITE}/#organization` },
     },
     // NOTE: no aggregateRating here on purpose. Self-serving review markup (a
     // business rating itself on its own site) is not eligible for Google review
@@ -194,15 +196,16 @@ export function getFounderSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://www.drshreyankeducare.com/#founder",
+    "@id": `${SITE}/#founder`,
     name: "Dr. Shreyank Gupta",
     honorificPrefix: "Dr.",
     jobTitle: "Founder & Director",
-    image: "https://www.drshreyankeducare.com/assets/drShreyank.webp",
-    url: "https://www.drshreyankeducare.com/about",
+    image: `${SITE}/assets/drShreyank.webp`,
+    url: `${SITE}/about`,
     description:
       "Founder and director of Dr. Shreyank Educare, with a PhD in Ultrasound Signal & Image Processing and over 10 years of teaching experience across Math, Physics, Chemistry, Biology and Computer Science. Has supported students from McGill, York, Carleton and the University of Ottawa.",
-    alumniOf: { "@type": "CollegeOrUniversity", name: "University of Quebec" },
+    // TODO(owner): confirm the degree-awarding institution before restoring
+    // `alumniOf` (see getOrganizationSchema).
     hasCredential: {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "degree",
@@ -218,8 +221,8 @@ export function getFounderSchema() {
     ],
     worksFor: {
       "@type": "EducationalOrganization",
-      "@id": "https://www.drshreyankeducare.com/#organization",
-      name: "Dr. Shreyank Educare",
+      "@id": `${SITE}/#organization`,
+      name: BUSINESS.name,
     },
   };
 }
@@ -238,7 +241,8 @@ export function getPageSchema(data: any, currentUrl: string) {
     url: currentUrl,
     publisher: {
       "@type": "EducationalOrganization",
-      name: "Dr. Shreyank Educare",
+      "@id": `${SITE}/#organization`,
+      name: BUSINESS.name,
     },
   };
 
@@ -251,8 +255,9 @@ export function getPageSchema(data: any, currentUrl: string) {
     // rolling, one-to-one tutoring program, not a fixed-date cohort).
     schema.provider = {
       "@type": "EducationalOrganization",
-      name: "Dr. Shreyank Educare",
-      url: "https://www.drshreyankeducare.com",
+      "@id": `${SITE}/#organization`,
+      name: BUSINESS.name,
+      url: BUSINESS.url,
     };
     schema.hasCourseInstance = {
       "@type": "CourseInstance",
@@ -272,30 +277,20 @@ export function getCityPageSchema(city: any, currentUrl: string): Record<string,
   return {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    name: `Dr. Shreyank Educare — Tutoring in ${city.name}`,
+    name: `${BUSINESS.name} — Tutoring in ${city.name}`,
     description:
       city.metaDescription ||
       `Math, Physics, Chemistry and Coding tutoring for ${city.name} students.`,
     url: currentUrl,
-    logo: "https://www.drshreyankeducare.com/assets/logo.png",
-    telephone: "+1-672-514-7587",
-    email: "info@drshreyankeducare.com",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "2088 Madison Avenue",
-      addressLocality: "Burnaby",
-      addressRegion: "BC",
-      postalCode: "V5C 6T5",
-      addressCountry: "CA",
-    },
+    logo: BUSINESS.logo,
+    telephone: BUSINESS.phone,
+    email: BUSINESS.email,
+    address: POSTAL_ADDRESS,
     areaServed: {
       "@type": "City",
       name: `${city.name}, ${city.region || "BC"}`,
     },
-    sameAs: [
-      "https://www.facebook.com/DrShreyankEducare/",
-      "https://www.instagram.com/drshreyankeducare/",
-    ],
+    sameAs: SAME_AS,
   };
 }
 
@@ -316,9 +311,10 @@ export function getServiceSchema(
     url: opts.url,
     provider: {
       "@type": "EducationalOrganization",
-      name: "Dr. Shreyank Educare",
-      url: "https://www.drshreyankeducare.com",
-      logo: "https://www.drshreyankeducare.com/assets/logo.png",
+      "@id": `${SITE}/#organization`,
+      name: BUSINESS.name,
+      url: BUSINESS.url,
+      logo: BUSINESS.logo,
     },
     ...(opts.areaServed && opts.areaServed.length
       ? { areaServed: opts.areaServed.map((a) => ({ "@type": "Place", name: a })) }
@@ -356,7 +352,7 @@ export function getBlogPostSchema(post: any, currentUrl: string): Record<string,
   const title = seo?.metaTitle || post?.title || "Blog Post";
   const description = seo?.metaDescription || post?.excerpt || "Expert academic tutoring, coding classes, and test preparation.";
 
-  let imageUrl = "https://www.drshreyankeducare.com/assets/logo.png";
+  let imageUrl: string = BUSINESS.logo;
   if (post?.mainImage) {
     try {
       imageUrl = urlFor(post.mainImage).url();
@@ -386,14 +382,16 @@ export function getBlogPostSchema(post: any, currentUrl: string): Record<string,
           "jobTitle": "PhD, Founder & Lead Tutor",
           "worksFor": {
             "@type": "EducationalOrganization",
-            "name": "Dr. Shreyank Educare",
+            "@id": `${SITE}/#organization`,
+            "name": BUSINESS.name,
           },
-          "url": "https://www.drshreyankeducare.com/about",
+          "url": `${SITE}/about`,
         }
       : {
           "@type": "Organization",
-          "name": "Dr. Shreyank Educare",
-          "url": "https://www.drshreyankeducare.com",
+          "@id": `${SITE}/#organization`,
+          "name": BUSINESS.name,
+          "url": BUSINESS.url,
         },
     ...(post?.reviewedByExpert
       ? {
@@ -406,10 +404,11 @@ export function getBlogPostSchema(post: any, currentUrl: string): Record<string,
       : {}),
     "publisher": {
       "@type": "EducationalOrganization",
-      "name": "Dr. Shreyank Educare",
+      "@id": `${SITE}/#organization`,
+      "name": BUSINESS.name,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.drshreyankeducare.com/assets/logo.png",
+        "url": BUSINESS.logo,
       },
     },
     "datePublished": post.publishedAt || new Date().toISOString(),
@@ -435,7 +434,7 @@ export function getTutorsSchema(
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Tutors at Dr. Shreyank Educare",
+    name: `Tutors at ${BUSINESS.name}`,
     itemListElement: (tutors || []).map((t, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -445,8 +444,9 @@ export function getTutorsSchema(
         jobTitle: t.role,
         worksFor: {
           "@type": "EducationalOrganization",
-          name: "Dr. Shreyank Educare",
-          url: "https://www.drshreyankeducare.com",
+          "@id": `${SITE}/#organization`,
+          name: BUSINESS.name,
+          url: BUSINESS.url,
         },
         ...(t.education?.length ? { description: t.education.join(" · ") } : {}),
         ...(t.role ? { knowsAbout: t.role } : {}),

@@ -7,12 +7,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Home } from "lucide-react";
 import { buildBreadcrumbItems, BreadcrumbItem } from "@/utils/breadcrumb";
+import { SITE_URL } from "@/data/businessInfo";
 
 interface BreadcrumbsProps {
   items?: BreadcrumbItem[];
 }
 
-const SITE_ORIGIN = "https://www.drshreyankeducare.com";
+const SITE_ORIGIN = SITE_URL;
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
   const pathname = usePathname();

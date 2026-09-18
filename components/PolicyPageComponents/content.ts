@@ -1,5 +1,7 @@
 /** @format */
 
+import { BUSINESS } from "@/data/businessInfo";
+
 export interface PolicySection {
   heading: string;
   content: string[];
@@ -56,7 +58,7 @@ export const PrivacyPolicyContent = {
     {
       heading: "6. Contact Us",
       content: [
-        "If you have any questions about our Privacy Policy or how we handle your information, please contact us at info@drshreyankeducare.com or call +1 (672) 514-7587.",
+        `If you have any questions about our Privacy Policy or how we handle your information, please contact us at ${BUSINESS.email} or call ${BUSINESS.phone}.`,
       ],
     },
   ],
@@ -96,7 +98,7 @@ export const TermsAndConditionsContent = {
       content: [
         "Refunds are available within 7 days of enrollment if no sessions have been attended.",
         "For ongoing programs, refunds may be available based on the specific program terms.",
-        "Requests for refunds must be submitted in writing to  info@drshreyankeducare.com.",
+        `Requests for refunds must be submitted in writing to ${BUSINESS.email}.`,
       ],
     },
     {
@@ -130,7 +132,7 @@ export const TermsAndConditionsContent = {
     {
       heading: "9. Contact Information",
       content: [
-        "For questions or concerns about these Terms and Conditions, please contact us at info@drshreyankeducare.com or call +1 (672) 514-7587.",
+        `For questions or concerns about these Terms and Conditions, please contact us at ${BUSINESS.email} or call ${BUSINESS.phone}.`,
       ],
     },
   ],

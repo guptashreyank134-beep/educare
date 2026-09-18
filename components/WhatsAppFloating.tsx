@@ -3,9 +3,10 @@
 "use client";
 
 import React from "react";
+import { BUSINESS } from "@/data/businessInfo";
 
 const WhatsAppFloating = () => {
-  const phoneNumber = "16725147587";
+  const phoneNumber = BUSINESS.phoneE164.replace("+", "");
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
   //deploy

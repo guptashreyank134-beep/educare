@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin, Monitor, Phone } from "lucide-react";
+import { BUSINESS } from "@/data/businessInfo";
 
 /**
  * How sessions actually work — online or in person.
@@ -136,8 +137,8 @@ export default function HowSessionsWork() {
           <Link href="/pricing" className="text-[16px] font-montserrat font-medium text-primary underline hover:text-primary/80 transition-colors">
             See our tutoring prices
           </Link>
-          <a href="tel:+16725147587" className="text-[16px] font-montserrat font-medium text-primary underline hover:text-primary/80 transition-colors">
-            Call +1 672-514-7587
+          <a href={`tel:${BUSINESS.phoneE164}`} className="text-[16px] font-montserrat font-medium text-primary underline hover:text-primary/80 transition-colors">
+            Call {BUSINESS.phone}
           </a>
         </div>
       </div>

@@ -3,8 +3,9 @@ import { verticalPages, verticalUrl } from "@/data/verticalPages";
 import { seoPages, seoPageUrl } from "@/data/seoPages";
 import { client } from "@/sanity/lib/client";
 import { REVIEW_RATING, REVIEW_COUNT } from "@/data/reviews";
+import { BUSINESS, SITE_URL } from "@/data/businessInfo";
 
-const BASE = "https://www.drshreyankeducare.com";
+const BASE = SITE_URL;
 
 /**
  * Serves /llms.txt — an llmstxt.org-style overview of the site so AI systems
@@ -14,7 +15,7 @@ const BASE = "https://www.drshreyankeducare.com";
 export async function GET() {
   const lines: string[] = [];
 
-  lines.push("# Dr. Shreyank Educare");
+  lines.push(`# ${BUSINESS.name}`);
   lines.push("");
   lines.push(
     "> PhD-led, 5-star-rated tutoring in Math, Physics, Chemistry and Coding for Grades 6–12 and university across Burnaby & Vancouver — in person and online — plus online University & Professional tutoring (Economics, Statistics, Actuarial Science, R) and MD-led Medical tutoring for USA & Caribbean students."
@@ -98,7 +99,7 @@ export async function GET() {
 
   lines.push("## Contact");
   lines.push(
-    "- Phone/WhatsApp: +1 672-514-7587 — Email: info@drshreyankeducare.com — Location: 2088 Madison Avenue, Burnaby, BC, Canada."
+    `- Phone/WhatsApp: ${BUSINESS.phone} — Email: ${BUSINESS.email} — Location: ${BUSINESS.addressFull}, Canada.`
   );
   lines.push("");
 

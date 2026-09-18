@@ -6,6 +6,7 @@ import Image from "next/image";
 import TrialClassForm from "./TrialClassForm";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
+import { BUSINESS, SOCIAL_PROFILES } from "@/data/businessInfo";
 
 // Instagram brand icon (not in lucide-react — using inline SVG)
 const InstagramIcon = () => (
@@ -144,18 +145,18 @@ function FooterBar() {
               Contact Us
             </p>
             <a
-              href="tel:+16725147587"
+              href={`tel:${BUSINESS.phoneE164}`}
               className="flex items-center gap-2 text-[14px] font-montserrat text-white/80 hover:text-white transition-colors mb-2"
             >
               <Phone className="w-4 h-4 shrink-0" />
-              +1 (672) 514-7587
+              {BUSINESS.phone}
             </a>
             <a
-              href="mailto: info@drshreyankeducare.com"
+              href={`mailto:${BUSINESS.email}`}
               className="flex items-center gap-2 text-[14px] font-montserrat text-white/80 hover:text-white transition-colors"
             >
               <Mail className="w-4 h-4 shrink-0" />
-              info@drshreyankeducare.com
+              {BUSINESS.email}
             </a>
           </div>
 
@@ -166,7 +167,7 @@ function FooterBar() {
             </p>
             <div className="flex items-center gap-3">
               <a
-                href="https://www.instagram.com/drshreyankeducare/"
+                href={SOCIAL_PROFILES.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -175,7 +176,7 @@ function FooterBar() {
                 <InstagramIcon />
               </a>
               <a
-                href="https://www.facebook.com/DrShreyankEducare/"
+                href={SOCIAL_PROFILES.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -215,16 +216,16 @@ function FooterBar() {
               Visit Us
             </p>
             <a
-              href="https://maps.google.com/?q=2088+Madison+Avenue,+Burnaby,+BC+V5C+6T5"
+              href={`https://maps.google.com/?q=${encodeURIComponent(BUSINESS.addressFull)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[14px] font-montserrat text-bg-white/80 hover:text-white transition-colors block mb-3"
             >
-              2088 Madison Avenue, Burnaby, BC V5C 6T5
+              {BUSINESS.addressFull}
             </a>
             <iframe
-              title="Dr. Shreyank Educare — Burnaby tutoring studio"
-              src="https://maps.google.com/maps?q=2088%20Madison%20Avenue%2C%20Burnaby%2C%20BC%20V5C%206T5&z=15&output=embed"
+              title={`${BUSINESS.name} — Burnaby tutoring studio`}
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(BUSINESS.addressFull)}&z=15&output=embed`}
               className="w-full h-[180px] rounded-lg border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -256,7 +257,7 @@ export default function Footer() {
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <a
-            href="https://wa.me/16725147587"
+            href={BUSINESS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-[44px] items-center justify-center gap-[10px] border border-[#25D366] bg-white rounded-[8px] px-[20px] py-[10px] text-[#25D366] font-medium text-[16px] leading-none hover:bg-[#25D366]/5 transition-all"
@@ -267,11 +268,11 @@ export default function Footer() {
             Chat With Us On WhatsApp
           </a>
           <a
-            href="tel:+16725147587"
+            href={`tel:${BUSINESS.phoneE164}`}
             className="inline-flex h-[44px] items-center justify-center gap-[10px] bg-primary text-white rounded-[8px] px-[20px] py-[10px] font-medium text-[16px] leading-none hover:bg-primary/90 transition-all"
           >
             <Phone className="w-5 h-5 fill-current" />
-            +1 672-514-7587
+            {BUSINESS.phone}
           </a>
         </div>
       </div>

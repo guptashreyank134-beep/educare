@@ -11,6 +11,8 @@
  * existing wrapper). Also add the route to app/sitemap.ts.
  */
 
+import { SITE_URL } from "./businessInfo";
+
 export interface LandingSection {
   heading: string;
   body?: string[];
@@ -48,7 +50,7 @@ export interface VerticalPage {
   leadSubjectPlaceholder?: string;
 }
 
-export const VERTICAL_BASE_URL = "https://www.drshreyankeducare.com";
+export const VERTICAL_BASE_URL = SITE_URL;
 export const verticalPath = (slug: string) => `/${slug}`;
 export const verticalUrl = (slug: string) => `${VERTICAL_BASE_URL}/${slug}`;
 

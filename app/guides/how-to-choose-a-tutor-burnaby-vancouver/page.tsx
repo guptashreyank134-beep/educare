@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/SchemaMarkup";
+import { SITE_URL } from "@/data/businessInfo";
 
 const URL =
   "https://www.drshreyankeducare.com/guides/how-to-choose-a-tutor-burnaby-vancouver";
@@ -29,7 +30,7 @@ const articleSchema = {
   author: {
     "@type": "Organization",
     name: "Dr. Shreyank Educare",
-    url: "https://www.drshreyankeducare.com",
+    url: SITE_URL,
   },
   publisher: {
     "@type": "Organization",
