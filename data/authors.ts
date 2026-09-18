@@ -19,6 +19,8 @@ export interface AcademicCredential {
   institution: string | null;
   /** Year awarded. Null until the owner confirms it. */
   year: number | null;
+  /** Year study began. Set only when the full range is known. */
+  startYear?: number | null;
 }
 
 export interface AuthorProfiles {
@@ -48,28 +50,26 @@ export const LEAD_AUTHOR: Author = {
   jobTitle: "Founder & Lead Tutor",
   image: `${SITE_URL}/assets/drShreyank.webp`,
   bio:
-    "Dr. Shreyank Gupta holds a PhD in Ultrasound Signal & Image Processing — applied " +
-    "mathematics and physics in practice. He has taught Math, Physics and Chemistry for " +
+    "Dr. Shreyank Gupta holds a PhD in Ultrasound Signal & Image Processing from École de " +
+    "technologie supérieure in Montréal — applied mathematics and physics in practice. " +
+    "He has taught Math, Physics and Chemistry for " +
     "over 10 years, working with students across Burnaby and Vancouver from Grade 6 " +
     "through university, and has supported students from McGill, York, Carleton and the " +
     "University of Ottawa.",
   credential: {
     degree: "Ph.D.",
     field: "Ultrasound Signal & Image Processing",
-    // TODO(owner): confirm the degree-awarding institution. Earlier copy and
-    // schema both named "University of Quebec", which is unverified and appears
-    // nowhere else on the site. `alumniOf` is omitted entirely until confirmed.
-    institution: null,
-    // TODO(owner): confirm the year the PhD was awarded.
-    year: null,
+    // Confirmed by the owner. ETS is a constituent school of the Universite du
+    // Quebec network, which is what earlier copy had loosely called it.
+    institution: "École de technologie supérieure",
+    year: 2021,
+    startYear: 2016,
   },
   profiles: {
-    // TODO(owner): supply the LinkedIn profile URL.
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/in/shreyank-gupta-3501aa6a/",
     // TODO(owner): supply the ORCID iD, if there is one.
     orcid: null,
-    // TODO(owner): supply the Google Scholar profile URL, if there is one.
-    scholar: null,
+    scholar: "https://scholar.google.com/citations?user=Q7HaLb8AAAAJ&hl=en",
   },
   knowsAbout: ["Mathematics", "Physics", "Chemistry", "Biology", "Computer Science"],
 };
@@ -84,9 +84,15 @@ export function authorSameAs(author: Author): string[] {
   );
 }
 
+/** The years of study, as a range when the start year is known. */
+export function credentialYears(credential: AcademicCredential): string | null {
+  if (!credential.year) return null;
+  return credential.startYear ? `${credential.startYear}–${credential.year}` : String(credential.year);
+}
+
 /** "Ph.D. in Ultrasound Signal & Image Processing", plus institution/year when known. */
 export function credentialLabel(credential: AcademicCredential): string {
   const base = `${credential.degree} in ${credential.field}`;
-  const suffix = [credential.institution, credential.year].filter(Boolean).join(", ");
+  const suffix = [credential.institution, credentialYears(credential)].filter(Boolean).join(", ");
   return suffix ? `${base} — ${suffix}` : base;
 }

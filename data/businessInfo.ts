@@ -21,9 +21,9 @@ export interface SocialProfiles {
   instagram: string;
   facebook: string;
   tiktok: string;
-  /** TODO(owner): Google Business Profile URL (maps.app.goo.gl or g.page link). */
+  /** Google Business Profile share link. */
   googleBusinessProfile: string | null;
-  /** TODO(owner): LinkedIn company page URL. */
+  /** LinkedIn company page. */
   linkedin: string | null;
 }
 
@@ -31,8 +31,10 @@ export const SOCIAL_PROFILES: SocialProfiles = {
   instagram: "https://www.instagram.com/drshreyankeducare/",
   facebook: "https://www.facebook.com/DrShreyankEducare/",
   tiktok: "https://www.tiktok.com/@drshreyankeducare",
-  googleBusinessProfile: null,
-  linkedin: null,
+  googleBusinessProfile: "https://share.google/G76MvQY8E69s4GL33",
+  // The owner-supplied URL carried "?viewAsMember=true", a viewing parameter
+  // rather than part of the address. sameAs must name the canonical page.
+  linkedin: "https://www.linkedin.com/company/dr-shreyank-educare/",
 };
 
 /** `sameAs` for structured data: confirmed profile URLs only. */
