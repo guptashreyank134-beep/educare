@@ -39,7 +39,10 @@ export const TESTIMONIALS: Testimonial[] = [
     source: "Google",
     // Shown as "42 weeks ago" on the profile in September 2026.
     approximateDate: "2025-11",
-    topics: ["university-physics", "physics"],
+    // University only, at the owner's direction. The review speaks to a
+    // university course, so it is not offered as evidence on the Grade 11/12
+    // page, which has no school-level review of its own yet.
+    topics: ["university-physics"],
   },
 ];
 
