@@ -41,6 +41,20 @@ export const lead = defineType({
       type: "string",
     }),
     defineField({
+      name: "preferredContact",
+      title: "Preferred Contact Method",
+      type: "string",
+      description:
+        "How the enquirer asked to be reached. 'Both' is recorded for the older forms, which require an email and a phone number.",
+      options: {
+        list: [
+          { title: "Email", value: "email" },
+          { title: "Phone", value: "phone" },
+          { title: "Both", value: "both" },
+        ],
+      },
+    }),
+    defineField({
       name: "message",
       title: "Message",
       type: "text",

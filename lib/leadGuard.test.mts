@@ -179,3 +179,66 @@ test("html is escaped before it reaches the notification email", () => {
   );
   assert.equal(escapeHtml("Tom & Jerry's"), "Tom &amp; Jerry&#39;s");
 });
+
+test("preferred contact decides which channel is required", () => {
+  const base = {
+    firstName: "Priya",
+    lastName: "Sharma",
+    subject: "University Physics",
+    message: "Stuck on rotational dynamics.",
+  };
+
+  // Email chosen: no phone number is collected, and none is required.
+  const emailOnly = validateLead({
+    ...base,
+    email: "priya@example.com",
+    phone: "",
+    preferredContact: "email",
+  });
+  assert.equal(emailOnly.ok, true, "email-only enquiry should validate");
+
+  // Phone chosen: likewise, with no email address.
+  const phoneOnly = validateLead({
+    ...base,
+    email: "",
+    phone: "(604) 123-4567",
+    preferredContact: "phone",
+  });
+  assert.equal(phoneOnly.ok, true, "phone-only enquiry should validate");
+
+  // The chosen channel still has to be valid.
+  const badChosen = validateLead({
+    ...base,
+    email: "nope@",
+    phone: "",
+    preferredContact: "email",
+  });
+  assert.equal(badChosen.ok, false);
+  if (!badChosen.ok) assert.equal(badChosen.field, "email");
+
+  // A malformed value in the channel they did not choose is still rejected,
+  // so nothing unusable reaches the notification.
+  const badUnchosen = validateLead({
+    ...base,
+    email: "priya@example.com",
+    phone: "12",
+    preferredContact: "email",
+  });
+  assert.equal(badUnchosen.ok, false);
+  if (!badUnchosen.ok) assert.equal(badUnchosen.field, "phone");
+});
+
+test("omitting preferredContact keeps the older forms' behaviour", () => {
+  // The existing forms collect and require both fields; defaulting to "both"
+  // means this change cannot loosen validation for them.
+  const missingPhone = validateLead({
+    firstName: "Priya",
+    lastName: "Sharma",
+    email: "priya@example.com",
+    phone: "",
+    subject: "Tutoring",
+    message: "Hello",
+  });
+  assert.equal(missingPhone.ok, false);
+  if (!missingPhone.ok) assert.equal(missingPhone.field, "phone");
+});
