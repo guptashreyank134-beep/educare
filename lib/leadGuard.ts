@@ -13,6 +13,14 @@
 //   - `screenForBot` looks for evidence the submitter was automated. Its
 //     verdicts are discarded silently, so a bot learns nothing from the reply.
 
+/**
+ * Which channel the visitor asked to be contacted on.
+ *
+ * "both" is the default so the older forms, which require an email and a phone
+ * number, keep validating exactly as before.
+ */
+export type PreferredContact = "email" | "phone" | "both";
+
 export interface LeadInput {
   firstName: string;
   lastName: string;
@@ -20,6 +28,8 @@ export interface LeadInput {
   phone: string;
   subject: string;
   message: string;
+  /** Defaults to "both" for forms that collect and require each field. */
+  preferredContact?: PreferredContact;
   /** Hidden field no human fills in; bots complete every input they find. */
   honeypot?: string;
   /** Milliseconds the form was on screen before submission. */
@@ -145,12 +155,19 @@ export function validateLead(input: LeadInput): ValidationResult {
   const firstName = input.firstName.trim();
   const lastName = input.lastName.trim();
   const name = `${firstName} ${lastName}`.trim();
+  const preferred: PreferredContact = input.preferredContact ?? "both";
 
   if (name.length < 2 || name.length > 100) {
     return { ok: false, field: "name", message: "Please enter your name." };
   }
 
-  if (!isValidEmail(input.email)) {
+  // Only the channel the visitor chose is required. Asking someone who wants a
+  // phone call to supply an email as well is a reason to abandon the form, and
+  // the field they did not choose is not shown to them at all.
+  const needsEmail = preferred === "email" || preferred === "both";
+  const needsPhone = preferred === "phone" || preferred === "both";
+
+  if (needsEmail && !isValidEmail(input.email)) {
     return {
       ok: false,
       field: "email",
@@ -158,7 +175,24 @@ export function validateLead(input: LeadInput): ValidationResult {
     };
   }
 
-  if (!isValidPhone(input.phone)) {
+  if (needsPhone && !isValidPhone(input.phone)) {
+    return {
+      ok: false,
+      field: "phone",
+      message: "That phone number doesn't look right — please check it and try again.",
+    };
+  }
+
+  // A value supplied in the channel they did not pick still has to be sane, so
+  // a stray malformed entry never reaches the notification.
+  if (!needsEmail && input.email.trim() && !isValidEmail(input.email)) {
+    return {
+      ok: false,
+      field: "email",
+      message: "That email address doesn't look right — please check it and try again.",
+    };
+  }
+  if (!needsPhone && input.phone.trim() && !isValidPhone(input.phone)) {
     return {
       ok: false,
       field: "phone",

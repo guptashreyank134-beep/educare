@@ -10,6 +10,7 @@ import {
   isInternationalPhone,
   screenForBot,
   validateLead,
+  type PreferredContact,
 } from "@/lib/leadGuard";
 
 // Route each vertical's lead notifications to its own inbox when configured,
@@ -142,6 +143,15 @@ export async function createLead(formData: FormData) {
   const subject = (formData.get("subject") as string) || "Website Contact Form";
   const message = (formData.get("message") as string) || "";
   const vertical = (formData.get("vertical") as string) || "local-k12";
+  const preferredContact =
+    ((formData.get("preferredContact") as string) || "both") as PreferredContact;
+
+  // Client-generated id, reused when the visitor retries after a failure, so a
+  // second attempt updates the same document instead of creating a duplicate.
+  const rawSubmissionId = (formData.get("submissionId") as string) || "";
+  const submissionId = /^[A-Za-z0-9._-]{8,64}$/.test(rawSubmissionId)
+    ? `lead-${rawSubmissionId}`
+    : undefined;
 
   // Anti-spam fields. Both are absent on an older cached page, and neither
   // absence may condemn a submission.
@@ -158,6 +168,7 @@ export async function createLead(formData: FormData) {
     phone,
     subject,
     message,
+    preferredContact,
     honeypot,
     elapsedMs,
   };
@@ -199,29 +210,36 @@ export async function createLead(formData: FormData) {
   // Deduplicated recipient list: the routed inbox + the always-notify business inbox.
   const recipients = [...new Set([routedInbox, ALWAYS_NOTIFY_EMAIL])];
 
-  // Capture the lead through two independent channels (Sanity + email) and
-  // report success if EITHER one lands, so a single-channel outage never shows
-  // the visitor an error or loses the enquiry.
-  let sanityOk = false;
+  // Sanity is the durable record; the email is a notification about it. Only a
+  // successful write here may be reported to the visitor as captured.
+  let stored = false;
 
-  // Store the lead in Sanity (visible in Studio).
   if (SANITY_WRITE_TOKEN) {
     try {
       const writeClient = client.withConfig({
         token: SANITY_WRITE_TOKEN,
         useCdn: false,
       });
-      await writeClient.create({
-        _type: "lead",
+      const document = {
+        _type: "lead" as const,
         vertical,
-        name: `${firstName} ${lastName}`.trim(),
-        subject,
-        email,
-        phone,
-        message: `Subject: ${subject}\n\n${message}`,
+        name: `${lead.firstName} ${lead.lastName}`.trim(),
+        subject: lead.subject,
+        email: lead.email,
+        phone: lead.phone,
+        preferredContact,
+        message: `Subject: ${lead.subject}\n\n${lead.message}`,
         submittedAt: new Date().toISOString(),
-      });
-      sanityOk = true;
+      };
+      // createIfNotExists makes a retry idempotent: the visitor's second attempt
+      // carries the same submissionId and resolves against the existing document
+      // rather than filing the enquiry twice.
+      if (submissionId) {
+        await writeClient.createIfNotExists({ _id: submissionId, ...document });
+      } else {
+        await writeClient.create(document);
+      }
+      stored = true;
     } catch (err) {
       console.error("Lead: Sanity write failed:", err);
     }
@@ -270,19 +288,36 @@ ${lead.message}`,
     `,
   });
 
-  if (sanityOk || emailOk) {
+  // Stored is the only basis for telling the visitor we have their enquiry. A
+  // failed notification is an internal problem: the lead is safe in Sanity, so
+  // reporting failure would push them to submit again for no reason.
+  if (stored) {
+    if (!emailOk) {
+      console.error(
+        "Lead: STORED but notification failed. The enquiry is in Sanity and must be " +
+          "picked up from Studio. Check BREVO_API_KEY / BREVO_SMTP_* env vars.",
+      );
+    }
     return {
       success: true,
+      stored: true,
+      notified: emailOk,
       message: "Thank you for your message! We will get back to you soon.",
     };
   }
 
+  // Not stored. The notification may still have gone out, which is why it is
+  // attempted before this branch — the enquiry reaches a human inbox even when
+  // durable capture failed, so it is not lost.
   console.error(
-    "Lead: BOTH channels failed (Sanity + email). Check SANITY_API_WRITE_TOKEN and BREVO_API_KEY / BREVO_SMTP_* env vars.",
+    `Lead: NOT STORED (notification ${emailOk ? "sent" : "also failed"}). ` +
+      "Check SANITY_API_WRITE_TOKEN and BREVO_API_KEY / BREVO_SMTP_* env vars.",
   );
   return {
     success: false,
+    stored: false,
+    notified: emailOk,
     message:
-      `Sorry — we couldn't submit your request. Please call or WhatsApp us at ${BUSINESS.phone} and we'll help right away.`,
+      `Sorry — we couldn't save your enquiry. Please try again, or call or WhatsApp us at ${BUSINESS.phone} and we'll help right away.`,
   };
 }
