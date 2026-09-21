@@ -189,7 +189,8 @@ export default async function PhysicsProgramPage() {
           <CourseEnquiryForm
             subject="Physics"
             formId={FORM_ID}
-            courseExample="Physics 12, AP Physics 1 or IB Physics HL"
+            courseLabel="Student's grade or course"
+            courseExample="Physics 11, Physics 12, AP Physics 1, IB Physics HL, or UBC PHYS 117"
           />
         </div>
 

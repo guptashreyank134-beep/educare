@@ -15,7 +15,9 @@
     "seo:duplicates": "tsx scripts/audit-duplicates.mts",
     "test": "node --import tsx --experimental-test-module-mocks --test \"app/**/*.test.mts\" \"components/**/*.test.mts\" \"lib/**/*.test.mts\"",
     "seo:route-dates": "tsx scripts/build-route-dates.mts",
-    "seo:check": "tsx scripts/seo-check.mts"
+    "seo:check": "tsx scripts/seo-check.mts",
+    "test:browser": "playwright test",
+    "verify:leads": "tsx scripts/verify-lead-delivery.mts"
   },
   "dependencies": {
     "@portabletext/react": "^6.2.0",
@@ -34,6 +36,7 @@
     "styled-components": "^6.4.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/nodemailer": "^8.0.0",

@@ -18,6 +18,12 @@ interface CourseEnquiryFormProps {
   formId: string;
   /** Example for the optional course field, e.g. "UBC PHYS 117 or SFU PHYS 120". */
   courseExample: string;
+  /**
+   * Label for the optional course field. Defaults to the university wording;
+   * a school-level page asks for a grade instead, because a parent of a Grade 11
+   * student has no course code to give.
+   */
+  courseLabel?: string;
   /** Routes the notification and tags the lead. */
   vertical?: "local-k12" | "medical" | "quant";
 }
@@ -50,6 +56,7 @@ export default function CourseEnquiryForm({
   subject,
   formId,
   courseExample,
+  courseLabel = "University and course code",
   vertical = "local-k12",
 }: CourseEnquiryFormProps) {
   const uid = useId();
@@ -198,8 +205,7 @@ export default function CourseEnquiryForm({
 
         <div>
           <label htmlFor={ids.course} className={labelClass}>
-            University and course code{" "}
-            <span className="font-normal text-slate/50">(optional)</span>
+            {courseLabel} <span className="font-normal text-slate/50">(optional)</span>
           </label>
           <input
             id={ids.course}
