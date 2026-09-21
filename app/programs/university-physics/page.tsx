@@ -25,6 +25,8 @@ import {
 } from "@/components/ConsultationCta";
 import { LEAD_AUTHOR, authorPath, credentialLabel } from "@/data/authors";
 import { PRICING_TEXT } from "@/data/pricing";
+import { testimonialsFor } from "@/data/testimonials";
+import TestimonialQuote from "@/components/TestimonialQuote";
 
 const ENQUIRY_ANCHOR = "university-physics-enquiry";
 const FORM_ID = "university-physics-enquiry";
@@ -63,6 +65,7 @@ export default async function UniversityPhysicsPage() {
   const data = await getMetaDataBySlug("programPage", "university-physics");
   // FAQs are managed in Studio > Program Pages; empty means no section is shown.
   const faqs = await getProgramFaqs("university-physics");
+  const physicsTestimonials = testimonialsFor("university-physics");
   const breadcrumbItems = [
     { label: "Programs", href: "/programs" },
     { label: "University Courses", href: "/programs" },
@@ -250,6 +253,14 @@ export default async function UniversityPhysicsPage() {
                 </Link>
               </p>
             </div>
+
+            {/* Published reviews that actually mention university physics. The
+                list is empty for pages with none, so nothing is invented. */}
+            {physicsTestimonials.map((testimonial) => (
+              <div key={testimonial.author} className="mt-5">
+                <TestimonialQuote testimonial={testimonial} />
+              </div>
+            ))}
           </div>
         </div>
 
