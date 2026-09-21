@@ -120,7 +120,10 @@ async function sendLeadEmail(opts: {
  */
 const recentSubmissions = new Map<string, number[]>();
 const RATE_LIMIT_WINDOW_MS = 60_000;
-const RATE_LIMIT_MAX = 5;
+// Five a minute from one address is far above what a person does and well below
+// what a script does. Overridable only so the browser suite, which submits from
+// a single address repeatedly, is not throttled into false failures.
+const RATE_LIMIT_MAX = Number(process.env.LEAD_RATE_LIMIT_MAX ?? 5);
 
 function isRateLimited(clientKey: string): boolean {
   const now = Date.now();
