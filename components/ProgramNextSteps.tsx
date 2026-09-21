@@ -14,10 +14,17 @@ import Link from "next/link";
 export default function ProgramNextSteps({
   subject,
   relatedLinks = [],
+  consultationHref = "/book",
 }: {
   /** e.g. "Physics" — used to make the anchors specific to this page. */
   subject: string;
   relatedLinks?: Array<{ label: string; href: string }>;
+  /**
+   * Where the consultation link goes. A page with its own enquiry form passes
+   * that form's anchor, so the reader is not sent to a different page to do
+   * what this one already offers.
+   */
+  consultationHref?: string;
 }) {
   return (
     <section className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pb-20">
@@ -34,7 +41,7 @@ export default function ProgramNextSteps({
 
         <div className="flex flex-wrap gap-x-6 gap-y-3">
           <Link
-            href="/book"
+            href={consultationHref}
             className="text-[16px] font-montserrat font-medium text-primary underline hover:text-primary/80 transition-colors"
           >
             Book a free 30-minute {subject} consultation

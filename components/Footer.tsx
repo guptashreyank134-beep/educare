@@ -3,6 +3,7 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import TrialClassForm from "./TrialClassForm";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
@@ -247,10 +248,20 @@ function FooterBar() {
 
 // ─── Export ───────────────────────────────────────────────────────────────────
 
+/**
+ * Pages that render their own, subject-specific enquiry form. The shared footer
+ * form is omitted there: two forms compete for the same submission, and the
+ * visitor has to decide which one to use.
+ */
+const ROUTES_WITH_THEIR_OWN_FORM = new Set(["/programs/university-physics"]);
+
 export default function Footer() {
+  const pathname = usePathname();
+  const showGlobalForm = !pathname || !ROUTES_WITH_THEIR_OWN_FORM.has(pathname);
+
   return (
     <>
-      <ContactForm />
+      {showGlobalForm && <ContactForm />}
       <div className="flex flex-col gap-6 items-center text-center max-w-[1010px] w-full mx-auto mt-12 mb-16 px-4">
         <p className="text-[18px] sm:text-[20px] font-montserrat font-medium text-slate">
           Prefer Quick Communication? Message Us On WhatsApp Or Call Us!

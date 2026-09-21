@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useId, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { ArrowRight, Loader2 } from 'lucide-react'
@@ -15,6 +15,11 @@ import FormSpamFields from "@/components/FormSpamFields";
 const TrialClassForm = ({ redirectTo = '/thank-you' }: { redirectTo?: string | null }) => {
   const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
+  // Unique per instance: this form also renders inside the site footer, so a
+  // page that uses it directly would otherwise emit each id twice and leave
+  // every label bound to whichever field came first in the document.
+  const uid = useId();
+  const fieldId = (name: string) => `${uid}-${name}`;
   const [feedback, setFeedback] = useState<{ success: boolean; message: string } | null>(null)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -76,21 +81,21 @@ Consent to contact: ${rawData.get('consent') ? 'Yes' : 'No'}
 
       <form onSubmit={handleSubmit} className="space-y-6 relative">
         <FormSpamFields />
-        <Input label="Parent or Student Name" placeholder="e.g. Priya Sharma" id="parentName" name="parentName" autoComplete="name" required />
+        <Input label="Parent or Student Name" placeholder="e.g. Priya Sharma" id={fieldId("parentName")} name="parentName" autoComplete="name" required />
 
         <div className="grid grid-cols-2 gap-4">
-          <Input label="Student's Grade or Course" placeholder="e.g. Grade 11 or a first-year university course" id="grade" name="grade" required />
-          <Input label="Subject Required" placeholder="e.g. Math, Chemistry, Physics or Coding" id="subject" name="subject" required />
+          <Input label="Student's Grade or Course" placeholder="e.g. Grade 11 or a first-year university course" id={fieldId("grade")} name="grade" required />
+          <Input label="Subject Required" placeholder="e.g. Math, Chemistry, Physics or Coding" id={fieldId("subject")} name="subject" required />
         </div>
 
-        <Input label="Phone Number" type="tel" inputMode="tel" autoComplete="tel" placeholder="e.g. (604) 123-4567" id="phone" name="phone" required />
-        <Input label="Email" type="email" inputMode="email" autoComplete="email" placeholder="e.g. you@example.com" id="email" name="email" required />
-        <Input label="Preferred Format" placeholder="Online, in person, or not sure" id="mode" name="mode" required />
+        <Input label="Phone Number" type="tel" inputMode="tel" autoComplete="tel" placeholder="e.g. (604) 123-4567" id={fieldId("phone")} name="phone" required />
+        <Input label="Email" type="email" inputMode="email" autoComplete="email" placeholder="e.g. you@example.com" id={fieldId("email")} name="email" required />
+        <Input label="Preferred Format" placeholder="Online, in person, or not sure" id={fieldId("mode")} name="mode" required />
 
-        <label htmlFor="consent" className="flex items-start gap-2 text-[13px] font-montserrat text-slate/70 leading-snug">
+        <label htmlFor={fieldId("consent")} className="flex items-start gap-2 text-[13px] font-montserrat text-slate/70 leading-snug">
           <input
             type="checkbox"
-            id="consent"
+            id={fieldId("consent")}
             name="consent"
             required
             className="mt-0.5 h-4 w-4 shrink-0 accent-primary"

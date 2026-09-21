@@ -145,7 +145,51 @@ export default async function UniversityPhysicsPage() {
                 .
               </p>
             </div>
+          </div>
 
+          {/* Right column: who teaches it, and what a family said about it.
+              Evidence sits beside the consultation offer rather than below the
+              course detail. */}
+          <div className="w-full lg:w-[380px]">
+            {/* Credentials come from the author record, so this cannot drift
+                from the About page or the structured data. */}
+            <div className="rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5">
+              <p className="text-[14px] font-montserrat font-medium text-slate mb-1">
+                Taught by {LEAD_AUTHOR.name}
+              </p>
+              <p className="text-[14px] font-montserrat leading-relaxed text-slate/70">
+                {credentialLabel(LEAD_AUTHOR.credential)}, with over 10 years teaching
+                mathematics and physics.{" "}
+                <Link
+                  href={authorPath(LEAD_AUTHOR.slug)}
+                  className="text-primary underline underline-offset-2"
+                >
+                  Full profile
+                </Link>
+              </p>
+            </div>
+
+            {/* Published reviews that actually mention university physics. The
+                list is empty for pages with none, so nothing is invented. */}
+            {physicsTestimonials.map((testimonial) => (
+              <div key={testimonial.author} className="mt-5">
+                <TestimonialQuote testimonial={testimonial} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* The enquiry form follows the consultation offer directly, so a reader
+            meets it before the course detail rather than after it. */}
+        <div id={ENQUIRY_ANCHOR} className="mt-12 w-full max-w-[640px] scroll-mt-28">
+          <CourseEnquiryForm
+            subject="University Physics"
+            formId={FORM_ID}
+            courseExample="UBC PHYS 117 or SFU PHYS 120"
+          />
+        </div>
+
+        <div className="mt-14 max-w-[880px]">
             <section>
               <SectionHeader icon={Layers} title="What We Cover" />
               <ListItems
@@ -226,42 +270,6 @@ export default async function UniversityPhysicsPage() {
                 ))}
               </div>
             </section>
-          </div>
-
-          {/* Right Column: the enquiry form, on the first screen */}
-          <div id={ENQUIRY_ANCHOR} className="w-full lg:w-[400px] scroll-mt-28">
-            <CourseEnquiryForm
-              subject="University Physics"
-              formId={FORM_ID}
-              courseExample="UBC PHYS 117 or SFU PHYS 120"
-            />
-
-            {/* Who teaches it. Credentials come from the author record, so this
-                cannot drift from the About page or the structured data. */}
-            <div className="mt-5 rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5">
-              <p className="text-[14px] font-montserrat font-medium text-slate mb-1">
-                Taught by {LEAD_AUTHOR.name}
-              </p>
-              <p className="text-[14px] font-montserrat leading-relaxed text-slate/70">
-                {credentialLabel(LEAD_AUTHOR.credential)}, with over 10 years teaching
-                mathematics and physics.{" "}
-                <Link
-                  href={authorPath(LEAD_AUTHOR.slug)}
-                  className="text-primary underline underline-offset-2"
-                >
-                  Full profile
-                </Link>
-              </p>
-            </div>
-
-            {/* Published reviews that actually mention university physics. The
-                list is empty for pages with none, so nothing is invented. */}
-            {physicsTestimonials.map((testimonial) => (
-              <div key={testimonial.author} className="mt-5">
-                <TestimonialQuote testimonial={testimonial} />
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Bottom Section: Courses We Support */}
@@ -279,6 +287,7 @@ export default async function UniversityPhysicsPage() {
 
         <ProgramNextSteps
           subject="University Physics"
+          consultationHref={`#${ENQUIRY_ANCHOR}`}
           relatedLinks={[
             { label: "Physics 11 & 12 tutoring", href: "/programs/physics" },
             { label: "Engineering statics tutor", href: "/engineering-statics-tutor" },

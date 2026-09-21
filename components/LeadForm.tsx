@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useId } from "react";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
@@ -34,6 +34,11 @@ const LeadForm: React.FC<LeadFormProps> = ({
   submitLabel = "Book a Free 30-Minute Consultation",
 }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // Unique per instance: this form also renders inside the site footer, so a
+  // page that uses it directly would otherwise emit each id twice and leave
+  // every label bound to whichever field came first in the document.
+  const uid = useId();
+  const fieldId = (name: string) => `${uid}-${name}`;
   const [feedback, setFeedback] = useState<{
     success: boolean;
     message: string;
@@ -95,7 +100,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
         <Input
           label="Full Name"
           placeholder="enter your name"
-          id="fullName"
+          id={fieldId("fullName")}
           name="fullName"
           required
         />
@@ -104,7 +109,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
             label="Email"
             type="email"
             placeholder="enter your email"
-            id="email"
+            id={fieldId("email")}
             name="email"
             required
           />
@@ -112,7 +117,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
             label="Phone / WhatsApp"
             type="tel"
             placeholder="enter your phone"
-            id="phone"
+            id={fieldId("phone")}
             name="phone"
             required
           />
@@ -120,14 +125,14 @@ const LeadForm: React.FC<LeadFormProps> = ({
         <Input
           label={subjectLabel}
           placeholder={subjectPlaceholder}
-          id="subject"
+          id={fieldId("subject")}
           name="subject"
           required
         />
         <Input
           label="Level (optional)"
           placeholder="e.g. undergraduate, postgraduate, professional"
-          id="level"
+          id={fieldId("level")}
           name="level"
         />
 
