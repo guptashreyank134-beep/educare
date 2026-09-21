@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react";
 import { createLead } from "@/app/actions/lead";
 import FormSpamFields from "@/components/FormSpamFields";
 import { Button } from "@/components/ui/Button";
-import { trackEvent, type EnquiryErrorReason } from "@/lib/analytics";
+import { isConfirmedCapture, trackEvent, type EnquiryErrorReason } from "@/lib/analytics";
 
 type ContactMethod = "email" | "phone";
 
@@ -133,9 +133,8 @@ export default function CourseEnquiryForm({
     try {
       const result = await createLead(payload);
 
-      // `stored` is the durable-capture flag. A result that only sent a
-      // notification is not success, and must not fire the conversion event.
-      if (result.success && result.stored !== false) {
+      // Only a confirmed durable write counts: see isConfirmedCapture.
+      if (isConfirmedCapture(result)) {
         setCaptured(true);
         trackEvent("generate_lead", { form_id: formId, lead_subject: subject });
         return;

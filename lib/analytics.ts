@@ -36,6 +36,26 @@ interface EventParams {
   lead_subject?: string;
 }
 
+/** What createLead reports back about a submission. */
+export interface CaptureResult {
+  success: boolean;
+  /** Absent on paths that never reached the storage step. */
+  stored?: boolean;
+  notified?: boolean;
+}
+
+/**
+ * Whether a result represents a lead we actually hold.
+ *
+ * `generate_lead` is a conversion metric, so it may fire only when the server
+ * confirms durable storage. A submission that was merely notified, or one
+ * silently discarded as automated, must not count — otherwise the metric drifts
+ * away from the enquiries that exist in Studio.
+ */
+export function isConfirmedCapture(result: CaptureResult): boolean {
+  return result.success === true && result.stored === true;
+}
+
 /**
  * Push one event. Safe to call during render or on the server: it does nothing
  * when `window` is absent, and never throws into the caller's flow.

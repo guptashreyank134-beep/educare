@@ -13,7 +13,7 @@
     "audit:content": "node scripts/content-audit.mjs",
     "seo:redirects": "tsx scripts/check-redirects.mts && tsx scripts/check-redirect-targets.mts",
     "seo:duplicates": "tsx scripts/audit-duplicates.mts",
-    "test": "node --import tsx --test \"app/**/*.test.mts\" \"components/**/*.test.mts\" \"lib/**/*.test.mts\"",
+    "test": "node --import tsx --experimental-test-module-mocks --test \"app/**/*.test.mts\" \"components/**/*.test.mts\" \"lib/**/*.test.mts\"",
     "seo:route-dates": "tsx scripts/build-route-dates.mts",
     "seo:check": "tsx scripts/seo-check.mts"
   },

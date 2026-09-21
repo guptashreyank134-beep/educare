@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 /**
  * Two hidden inputs the server uses to recognise automated submissions.
@@ -15,6 +15,10 @@ import { useEffect, useRef, useState } from "react";
  * the markup. It is also `aria-hidden` so screen readers skip it too.
  */
 export default function FormSpamFields() {
+  // A fixed id collides whenever two forms share a page — the footer enquiry
+  // form alongside a page's own. A duplicate id makes the label ambiguous and
+  // binds it to whichever field comes first in the document.
+  const honeypotId = `${useId()}-company-website`;
   const [startedAt, setStartedAt] = useState("");
   const rendered = useRef(false);
 
@@ -28,9 +32,9 @@ export default function FormSpamFields() {
 
   return (
     <div aria-hidden="true" className="absolute left-[-9999px] top-0 h-0 w-0 overflow-hidden">
-      <label htmlFor="company-website">Company website (leave blank)</label>
+      <label htmlFor={honeypotId}>Company website (leave blank)</label>
       <input
-        id="company-website"
+        id={honeypotId}
         type="text"
         name="company"
         tabIndex={-1}
