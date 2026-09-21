@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
 import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
@@ -10,7 +10,6 @@ import {
   LayoutGrid,
   Sparkles,
   Rocket,
-  Zap,
 } from "lucide-react";
 
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
@@ -21,6 +20,18 @@ import { getProgramFaqs, getProgramBodyContent } from "@/sanity/lib/faqs";
 import UniversityCourseTable from "@/components/UniversityCourseTable";
 import RelatedTutoringPages from "@/components/RelatedTutoringPages";
 import RichBody from "@/components/RichBody";
+import CourseEnquiryForm from "@/components/CourseEnquiryForm";
+import {
+  ConsultationCtaLink,
+  StickyConsultationBar,
+} from "@/components/ConsultationCta";
+import TestimonialQuote from "@/components/TestimonialQuote";
+import { LEAD_AUTHOR, authorPath, credentialLabel } from "@/data/authors";
+import { PRICING_TEXT } from "@/data/pricing";
+import { testimonialsFor } from "@/data/testimonials";
+
+const ENQUIRY_ANCHOR = "physics-enquiry";
+const FORM_ID = "physics-enquiry";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "physics");
@@ -57,6 +68,7 @@ export default async function PhysicsProgramPage() {
   // FAQs are managed in Studio > Program Pages; empty means no section is shown.
   const faqs = await getProgramFaqs("physics");
   const bodyContent = await getProgramBodyContent("physics");
+  const physicsTestimonials = testimonialsFor("physics");
   const breadcrumbItems = [
     { label: "Programs", href: "/programs" },
     { label: "Academic", href: "/programs" },
@@ -110,6 +122,78 @@ export default async function PhysicsProgramPage() {
               </p>
             </div>
 
+            {/* Consultation offer. The description and the response time are the
+                same ones published on /book and /contact. */}
+            <div className="mb-8 rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <ConsultationCtaLink
+                  targetId={ENQUIRY_ANCHOR}
+                  formId={FORM_ID}
+                  className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
+                >
+                  Book a Free 30-Minute Consultation
+                </ConsultationCtaLink>
+                <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
+                  One free, no-obligation 30-minute conversation: tell us which course
+                  your student is taking and where they are stuck, and we map out the
+                  level, tutor and schedule that would help. Bring a recent test. We
+                  reply within 24 hours on business days.
+                </p>
+              </div>
+              <p className="mt-4 text-[14px] font-montserrat text-slate/70">
+                One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
+                level — we confirm the rate for the course at the consultation. See{" "}
+                <Link href="/pricing" className="text-primary underline underline-offset-2">
+                  full pricing
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+
+          {/* Right column: who teaches it, and what a family said about it.
+              Evidence sits beside the consultation offer rather than below the
+              course detail. */}
+          <div className="w-full lg:w-[380px]">
+            {/* Credentials come from the author record, so this cannot drift
+                from the About page or the structured data. */}
+            <div className="rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5">
+              <p className="text-[14px] font-montserrat font-medium text-slate mb-1">
+                Taught by {LEAD_AUTHOR.name}
+              </p>
+              <p className="text-[14px] font-montserrat leading-relaxed text-slate/70">
+                {credentialLabel(LEAD_AUTHOR.credential)}, with over 10 years teaching
+                mathematics and physics.{" "}
+                <Link
+                  href={authorPath(LEAD_AUTHOR.slug)}
+                  className="text-primary underline underline-offset-2"
+                >
+                  Full profile
+                </Link>
+              </p>
+            </div>
+
+            {/* Published reviews tagged for this subject. The quote names the
+                course it refers to, so a reader can judge its relevance. */}
+            {physicsTestimonials.map((testimonial) => (
+              <div key={testimonial.author} className="mt-5">
+                <TestimonialQuote testimonial={testimonial} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* The enquiry form follows the consultation offer directly, so a reader
+            meets it before the course detail rather than after it. */}
+        <div id={ENQUIRY_ANCHOR} className="mt-12 w-full max-w-[640px] scroll-mt-28">
+          <CourseEnquiryForm
+            subject="Physics"
+            formId={FORM_ID}
+            courseExample="Physics 12, AP Physics 1 or IB Physics HL"
+          />
+        </div>
+
+        <div className="mt-14 max-w-[880px]">
             <section>
               <SectionHeader icon={Layers} title="What We Cover" />
               <ListItems
@@ -190,32 +274,6 @@ export default async function PhysicsProgramPage() {
                 ))}
               </div>
             </section>
-          </div>
-
-          {/* Right Column: Image and Visuals */}
-          <div className="relative lg:pt-20 w-full lg:w-auto flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[378px] rounded-3xl overflow-hidden shadow-2xl transform rotate-1 group transition-transform hover:rotate-0 duration-500">
-              <Image
-                src="/assets/physics.jpg"
-                alt="Physics Tutoring"
-                width={378}
-                height={361}
-                className="h-[280px] sm:h-[361px] w-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
-              />
-
-              {/* Floating Badge */}
-              <div className="absolute bottom-8 left-0 bg-yellow-light text-slate px-4 py-2 rounded-r-xl shadow-lg flex items-center gap-2 animate-bounce-slow">
-                <Zap size={18} fill="currentColor" />
-                <p className="text-[14px] font-bricolage font-bold">
-                  Accelerated Learning
-                </p>
-              </div>
-            </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-primary/5 rounded-full blur-3xl animate-pulse" />
-          </div>
         </div>
 
         {/* Physics we tutor, by level — targets Physics 11/12, AP, IB and
@@ -292,8 +350,11 @@ export default async function PhysicsProgramPage() {
       <RelatedTutoringPages pillar="/programs/physics" programSlug="physics" />
 
       
+        <StickyConsultationBar targetId={ENQUIRY_ANCHOR} formId={FORM_ID} />
+
         <ProgramNextSteps
           subject="Physics"
+          consultationHref={`#${ENQUIRY_ANCHOR}`}
           relatedLinks={[
             { label: "Physics 11 tutoring in Burnaby", href: "/physics-11-tutor-burnaby" },
             { label: "Physics 12 tutoring in Burnaby", href: "/physics-12-tutor-burnaby" },

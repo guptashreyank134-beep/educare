@@ -253,7 +253,10 @@ function FooterBar() {
  * form is omitted there: two forms compete for the same submission, and the
  * visitor has to decide which one to use.
  */
-const ROUTES_WITH_THEIR_OWN_FORM = new Set(["/programs/university-physics"]);
+const ROUTES_WITH_THEIR_OWN_FORM = new Set([
+  "/programs/university-physics",
+  "/programs/physics",
+]);
 
 export default function Footer() {
   const pathname = usePathname();
