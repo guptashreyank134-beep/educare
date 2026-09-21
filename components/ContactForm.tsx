@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/Input'
 import { Textarea } from '@/components/ui/TextArea'
 import { Button } from '@/components/ui/Button'
 import { createLead } from '@/app/actions/lead'
+import FormSpamFields from "@/components/FormSpamFields";
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -29,7 +30,8 @@ const ContactForm = () => {
 
   return (
     <div className="max-w-4xl mx-auto bg-white rounded-[24px] sm:rounded-[40px] shadow-[0_20px_80px_rgba(0,0,0,0.06)] p-6 sm:p-10 md:p-16 border border-[#F1F5F9] mb-16 sm:mb-32">
-      <form onSubmit={handleSubmit} className="space-y-10">
+      <form onSubmit={handleSubmit} className="space-y-10 relative">
+        <FormSpamFields />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Input label="First Name" placeholder="enter first name" id="firstName" name="firstName" required />
           <Input label="Last Name" placeholder="enter last name" id="lastName" name="lastName" required />

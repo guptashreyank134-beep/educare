@@ -1,8 +1,16 @@
 "use server";
 
+import { headers } from "next/headers";
+
 import { client } from "@/sanity/lib/client";
 import nodemailer from "nodemailer";
 import { BUSINESS } from "@/data/businessInfo";
+import {
+  escapeHtml,
+  isInternationalPhone,
+  screenForBot,
+  validateLead,
+} from "@/lib/leadGuard";
 
 // Route each vertical's lead notifications to its own inbox when configured,
 // falling back to the shared inbox so nothing is ever silently dropped.
@@ -101,6 +109,31 @@ async function sendLeadEmail(opts: {
   return false;
 }
 
+/**
+ * Recent submission times per client, newest last.
+ *
+ * In-memory, so it is per serverless instance rather than global: it blunts a
+ * burst from one source hitting a warm instance, and is not a substitute for a
+ * real limiter. It is here because it costs nothing; the honeypot and timing
+ * checks are what actually stop the bot.
+ */
+const recentSubmissions = new Map<string, number[]>();
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX = 5;
+
+function isRateLimited(clientKey: string): boolean {
+  const now = Date.now();
+  const recent = (recentSubmissions.get(clientKey) ?? []).filter(
+    (at) => now - at < RATE_LIMIT_WINDOW_MS,
+  );
+  recent.push(now);
+  recentSubmissions.set(clientKey, recent);
+  return recent.length > RATE_LIMIT_MAX;
+}
+
+/** Shown when a submission is discarded, so a bot learns nothing from the reply. */
+const ACCEPTED_MESSAGE = "Thank you for your message! We will get back to you soon.";
+
 export async function createLead(formData: FormData) {
   const firstName = (formData.get("firstName") as string) || "";
   const lastName = (formData.get("lastName") as string) || "";
@@ -109,6 +142,58 @@ export async function createLead(formData: FormData) {
   const subject = (formData.get("subject") as string) || "Website Contact Form";
   const message = (formData.get("message") as string) || "";
   const vertical = (formData.get("vertical") as string) || "local-k12";
+
+  // Anti-spam fields. Both are absent on an older cached page, and neither
+  // absence may condemn a submission.
+  const honeypot = (formData.get("company") as string) || "";
+  const startedAtRaw = (formData.get("formStartedAt") as string) || "";
+  const startedAt = Number(startedAtRaw);
+  const elapsedMs =
+    Number.isFinite(startedAt) && startedAt > 0 ? Date.now() - startedAt : undefined;
+
+  const submission = {
+    firstName,
+    lastName,
+    email,
+    phone,
+    subject,
+    message,
+    honeypot,
+    elapsedMs,
+  };
+
+  // 1) Discard automated submissions silently. Returning the success message
+  //    means a bot cannot tell a filtered post from an accepted one and has
+  //    nothing to tune against.
+  const verdict = screenForBot(submission);
+  if (verdict.isBot) {
+    console.warn(`Lead: discarded automated submission (${verdict.reasons.join("; ")})`);
+    return { success: true, message: ACCEPTED_MESSAGE };
+  }
+
+  let clientKey = "unknown";
+  try {
+    const headerList = await headers();
+    clientKey =
+      headerList.get("x-forwarded-for")?.split(",")[0].trim() ||
+      headerList.get("x-real-ip") ||
+      "unknown";
+  } catch {
+    // Headers are unavailable outside a request scope; rate limiting is skipped.
+  }
+  if (clientKey !== "unknown" && isRateLimited(clientKey)) {
+    console.warn("Lead: rate limit exceeded, discarding submission");
+    return { success: true, message: ACCEPTED_MESSAGE };
+  }
+
+  // 2) Validate what a person could plausibly have typed. Unlike the bot
+  //    screen, these failures are reported so a visitor can correct them.
+  const validation = validateLead(submission);
+  if (!validation.ok) {
+    return { success: false, message: validation.message };
+  }
+  const lead = validation.lead;
+
   const verticalLabel = VERTICAL_LABEL[vertical] || VERTICAL_LABEL["local-k12"];
   const routedInbox = LEAD_EMAIL_BY_VERTICAL[vertical] || FALLBACK_LEAD_EMAIL;
   // Deduplicated recipient list: the routed inbox + the always-notify business inbox.
@@ -119,7 +204,7 @@ export async function createLead(formData: FormData) {
   // the visitor an error or loses the enquiry.
   let sanityOk = false;
 
-  // 1) Store the lead in Sanity (visible in Studio).
+  // Store the lead in Sanity (visible in Studio).
   if (SANITY_WRITE_TOKEN) {
     try {
       const writeClient = client.withConfig({
@@ -146,20 +231,42 @@ export async function createLead(formData: FormData) {
     );
   }
 
-  // 2) Email the notification (Brevo API, SMTP fallback).
+  // 3) Email the notification (Brevo API, SMTP fallback).
+  //
+  // Every interpolated value is escaped. These fields are attacker-controlled,
+  // and an unescaped one lets a submitter place arbitrary markup — a plausible
+  // link, say — inside a notification that looks like it came from our own site.
+  const originNote = isInternationalPhone(lead.phone) ? " (international number)" : "";
+  const safe = {
+    name: escapeHtml(`${lead.firstName} ${lead.lastName}`.trim()),
+    email: escapeHtml(lead.email),
+    phone: escapeHtml(lead.phone) + originNote,
+    subject: escapeHtml(lead.subject),
+    message: escapeHtml(lead.message).replace(/\n/g, "<br>"),
+  };
+
   const emailOk = await sendLeadEmail({
     recipients,
-    subject: `New ${verticalLabel} Lead: ${subject}`,
-    text: `You have received a new ${verticalLabel} lead from the website.\n\nVertical: ${verticalLabel}\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`,
+    subject: `New ${verticalLabel} Lead: ${lead.subject}`,
+    text: `You have received a new ${verticalLabel} lead from the website.
+
+Vertical: ${verticalLabel}
+Name: ${lead.firstName} ${lead.lastName}
+Email: ${lead.email}
+Phone: ${lead.phone}${originNote}
+Subject: ${lead.subject}
+
+Message:
+${lead.message}`,
     html: `
       <h2>New ${verticalLabel} Lead</h2>
       <p><strong>Vertical:</strong> ${verticalLabel}</p>
-      <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Subject:</strong> ${subject}</p>
+      <p><strong>Name:</strong> ${safe.name}</p>
+      <p><strong>Email:</strong> ${safe.email}</p>
+      <p><strong>Phone:</strong> ${safe.phone}</p>
+      <p><strong>Subject:</strong> ${safe.subject}</p>
       <p><strong>Message:</strong></p>
-      <p>${message.replace(/\n/g, "<br>")}</p>
+      <p>${safe.message}</p>
     `,
   });
 

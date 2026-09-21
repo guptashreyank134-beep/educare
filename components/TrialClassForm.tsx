@@ -7,6 +7,7 @@ import { ArrowRight, Loader2 } from 'lucide-react'
 import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 import { createLead } from '@/app/actions/lead'
+import FormSpamFields from "@/components/FormSpamFields";
 
 // On success we redirect here (a distinct URL + dataLayer event) so bookings can
 // be measured as a conversion in GTM/GA4/Google Ads. Pass redirectTo={null} to
@@ -45,6 +46,9 @@ Consent to contact: ${rawData.get('consent') ? 'Yes' : 'No'}
 
     formData.append('message', messageBody)
 
+    formData.append("company", (rawData.get("company") as string) || "")
+    formData.append("formStartedAt", (rawData.get("formStartedAt") as string) || "")
+
     const result = await createLead(formData)
 
     setIsSubmitting(false)
@@ -70,7 +74,8 @@ Consent to contact: ${rawData.get('consent') ? 'Yes' : 'No'}
   return (
     <div className="bg-white rounded-[24px] shadow-[0_20px_80px_rgba(0,0,0,0.08)] p-8 border border-[#F1F5F9]">
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-6 relative">
+        <FormSpamFields />
         <Input label="Parent or Student Name" placeholder="e.g. Priya Sharma" id="parentName" name="parentName" autoComplete="name" required />
 
         <div className="grid grid-cols-2 gap-4">

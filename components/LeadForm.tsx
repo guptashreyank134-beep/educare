@@ -5,6 +5,7 @@ import { ArrowRight, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { createLead } from "@/app/actions/lead";
+import FormSpamFields from "@/components/FormSpamFields";
 
 export type LeadVertical = "local-k12" | "medical" | "quant";
 
@@ -68,6 +69,9 @@ const LeadForm: React.FC<LeadFormProps> = ({
       ].join("\n"),
     );
 
+    formData.append("company", (rawData.get("company") as string) || "")
+    formData.append("formStartedAt", (rawData.get("formStartedAt") as string) || "")
+
     const result = await createLead(formData);
 
     setIsSubmitting(false);
@@ -86,7 +90,8 @@ const LeadForm: React.FC<LeadFormProps> = ({
           {heading}
         </p>
       )}
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-6 relative">
+        <FormSpamFields />
         <Input
           label="Full Name"
           placeholder="enter your name"
