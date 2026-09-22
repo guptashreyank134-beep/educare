@@ -9,6 +9,7 @@ import routeDates from "@/data/route-dates.json";
 import { LEAD_AUTHOR } from "@/data/authors";
 import { answerPagePath, publishedAnswerPages } from "@/content/answer-pages";
 import { SITE_URL } from "@/data/businessInfo";
+import { LISTED_POSTS, REDIRECTED_POST_SLUGS, blogPageCount } from "@/lib/blogPagination";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_URL;
@@ -67,10 +68,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const cmsDates = new Map<string, string>();
   try {
     const posts = await client.fetch<Array<{ slug: string; updatedAt?: string }>>(
-      `*[_type == "post" && defined(slug.current)] {
+      `${LISTED_POSTS} {
         "slug": slug.current,
         "updatedAt": coalesce(_updatedAt, publishedAt)
-      }`
+      }`,
+      { excluded: REDIRECTED_POST_SLUGS },
     );
     dynamicRoutes = posts.map((post) => `/blog/${post.slug}`);
     for (const post of posts) {
@@ -78,8 +80,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
 
     // Path-based blog pagination pages (/blog is page 1; extras are /blog/page/N)
-    const POSTS_PER_PAGE = 9;
-    const totalBlogPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+    const totalBlogPages = blogPageCount(posts.length);
     for (let p = 2; p <= totalBlogPages; p++) {
       dynamicRoutes.push(`/blog/page/${p}`);
     }

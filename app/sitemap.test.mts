@@ -8,6 +8,10 @@ loadEnvLocal();
 const sitemap = (await import("./sitemap.ts")).default;
 const entries = await sitemap();
 
+test("sitemap contains each public URL only once, even when CMS slugs repeat", () => {
+  assert.equal(new Set(entries.map((entry) => entry.url)).size, entries.length);
+});
+
 /** Share of entries that sit in the single largest identical-lastmod group. */
 function largestIdenticalShare(items: { lastModified?: string | Date }[]) {
   const counts = new Map<string, number>();

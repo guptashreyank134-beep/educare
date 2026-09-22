@@ -10,9 +10,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 import Pagination from "@/components/ui/Pagination";
 import { getMetaDataBySlug } from "@/utils/seoBuilder";
-import { redirectSources } from "@/data/redirects";
-
-export const POSTS_PER_PAGE = 9;
+import { POSTS_PER_PAGE, REDIRECTED_POST_SLUGS, LISTED_POSTS, blogPageCount } from "@/lib/blogPagination";
 
 function toPlainText(blocks: any[]): string {
   if (!blocks || !Array.isArray(blocks)) return "";
@@ -42,17 +40,11 @@ function getReadingTime(text: string): string {
  * and a crawler — through a 308, so they are excluded from the listing and its
  * page count, exactly as the sitemap excludes them.
  */
-const REDIRECTED_POST_SLUGS = [...redirectSources]
-  .filter((path) => path.startsWith("/blog/"))
-  .map((path) => path.replace("/blog/", ""));
-
-const LISTED_POSTS = `*[_type == "post" && !(slug.current in $excluded)]`;
-
 export async function getTotalBlogPages(): Promise<number> {
   const totalPosts = await client.fetch<number>(`count(${LISTED_POSTS})`, {
     excluded: REDIRECTED_POST_SLUGS,
   });
-  return Math.max(1, Math.ceil(totalPosts / POSTS_PER_PAGE));
+  return blogPageCount(totalPosts);
 }
 
 /**
@@ -80,7 +72,7 @@ export default async function BlogListingView({ page }: { page: number }) {
     getMetaDataBySlug("page", "blog"),
   ]);
 
-  const totalPages = Math.max(1, Math.ceil(totalPosts / POSTS_PER_PAGE));
+  const totalPages = blogPageCount(totalPosts);
 
   // A page beyond the last one (other than page 1) is a 404, not an empty list.
   if (validPage > 1 && posts.length === 0) {
