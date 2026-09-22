@@ -22,7 +22,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
   const { page } = await params;
-  const pageNum = parseInt(page, 10);
+  const pageNum = Number(page);
+  if (!/^\d+$/.test(page) || !Number.isSafeInteger(pageNum) || pageNum < 1) notFound();
 
   const data = await getMetaDataBySlug("page", "blog");
   const baseMeta = getMetadata(data, "https://www.drshreyankeducare.com/blog");
@@ -31,9 +32,11 @@ export async function generateMetadata({ params }: PageProps) {
   if (baseMeta && baseMeta.title) {
     return {
       ...baseMeta,
-      title: `${baseMeta.title} - Page ${pageNum}`,
-      description: `${baseMeta.description} (Page ${pageNum})`,
-      alternates: { canonical },
+      title: `Tutoring Tips & Study Guides | Page ${pageNum}`,
+      description: `Explore page ${pageNum} of our tutoring blog: math, science, coding and exam preparation guides for school and university students.`,
+      alternates: { canonical, languages: { "en-CA": canonical } },
+      openGraph: { ...baseMeta.openGraph, url: canonical, title: `Tutoring Tips & Study Guides | Page ${pageNum}` },
+      twitter: { ...baseMeta.twitter, title: `Tutoring Tips & Study Guides | Page ${pageNum}` },
     };
   }
   return { ...baseMeta, alternates: { canonical } };
@@ -41,10 +44,10 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function BlogPaginatedPage({ params }: PageProps) {
   const { page } = await params;
-  const pageNum = parseInt(page, 10);
+  const pageNum = Number(page);
 
   // Page 1 canonically lives at /blog; non-numeric is invalid.
-  if (Number.isNaN(pageNum)) notFound();
+  if (!/^\d+$/.test(page) || !Number.isSafeInteger(pageNum) || pageNum < 1) notFound();
   if (pageNum <= 1) permanentRedirect("/blog");
 
   return <BlogListingView page={pageNum} />;

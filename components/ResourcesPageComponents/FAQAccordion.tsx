@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { PortableText } from "@portabletext/react";
+import { resolveInternalHref } from "@/data/redirects";
 
 interface FAQItem {
     id?: number | string;
@@ -48,7 +49,7 @@ const faqPortableTextComponents = {
         ),
         em: ({ children }: any) => <em className="italic">{children}</em>,
         link: ({ children, value }: any) => {
-            const href: string = value?.href || "#";
+            const href = resolveInternalHref(String(value?.href || "#"));
             const isExternal =
                 /^https?:\/\//.test(href) && !href.includes("drshreyankeducare.com");
             return (

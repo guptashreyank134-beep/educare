@@ -18,6 +18,7 @@ import {
 
 import { getVerticalPageBySlug, verticalUrl, getVerticalSiblings } from "@/data/verticalPages";
 import { BUSINESS } from "@/data/businessInfo";
+import { correctSeoCopy } from "@/data/seoCopyCorrections";
 
 /** Build Next.js metadata for a vertical page. Used by each route's generateMetadata. */
 export async function verticalMetadata(slug: string): Promise<Metadata> {
@@ -26,8 +27,8 @@ export async function verticalMetadata(slug: string): Promise<Metadata> {
 
   // Editors can override the title/description in Studio; empty falls back.
   const content = await getLandingContent(slug);
-  const metaTitle = orFallback(content?.metaTitle, page.metaTitle);
-  const metaDescription = orFallback(content?.metaDescription, page.metaDescription);
+  const metaTitle = correctSeoCopy(orFallback(content?.metaTitle, page.metaTitle));
+  const metaDescription = correctSeoCopy(orFallback(content?.metaDescription, page.metaDescription));
 
   const url = verticalUrl(slug);
   return {

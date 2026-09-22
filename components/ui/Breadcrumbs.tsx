@@ -17,7 +17,6 @@ const SITE_ORIGIN = SITE_URL;
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
   const pathname = usePathname();
-  console.log(pathname);
   
 
   const breadcrumbItems = useMemo(() => {
@@ -66,7 +65,8 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
           href="/"
           className="inline-flex items-center text-slate-500 transition-colors hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
-          <Home size={16} className="text-primary" />
+          <Home size={16} className="text-primary" aria-hidden="true" />
+          <span className="sr-only">Home</span>
         </Link>
 
         {breadcrumbItems.map((item, index) => {

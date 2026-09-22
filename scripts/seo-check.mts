@@ -258,6 +258,9 @@ try {
       fail("redirect-target", `${from} went to ${location}, expected ${normalize(to)}`);
     }
     const hop = await fetchWithRetry(`${ORIGIN}${location}`);
+    if (hop.status !== 200) {
+      fail("redirect-target-status", `${from} -> ${location} returned ${hop.status}, expected 200`);
+    }
     if (hop.status >= 300 && hop.status < 400) {
       fail("redirect-chain", `${from} -> ${location} -> ${hop.headers.get("location")}`);
     }

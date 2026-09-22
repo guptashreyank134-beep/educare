@@ -4,6 +4,7 @@
 // which resolves outside the app's tsconfig paths.
 import { legacyRedirects } from "../redirects/legacy";
 import { policyRedirects } from "../content/page-policy";
+import { crawlRepairPairs } from "../redirects/seobility";
 
 // Single source of truth for 301/permanent redirects. Imported by
 // next.config.ts (to emit the redirects) and app/sitemap.ts (to EXCLUDE redirect
@@ -49,6 +50,7 @@ export const redirectPairs: [string, string][] = [
   ...legacyRedirects.map(({ from, to }): [string, string] => [from, to]),
   ...consolidationPairs,
   ...policyRedirects,
+  ...crawlRepairPairs,
 ];
 
 export const redirectSources = new Set(redirectPairs.map(([from]) => from));
@@ -61,6 +63,20 @@ const redirectMap = new Map(redirectPairs);
  * 308 hop once its target is consolidated away.
  */
 export function resolveInternalHref(href: string): string {
-  const path = href.replace(/\/+$/, "") || "/";
-  return redirectMap.get(path) ?? href;
+  // Normalize only our own absolute URLs; preserve external URLs and schemes.
+  let local = href;
+  if (/^https?:\/\//i.test(href)) {
+    const url = new URL(href);
+    if (!["drshreyankeducare.com", "www.drshreyankeducare.com"].includes(url.hostname) || url.port) return href;
+    local = `${url.pathname}${url.search}${url.hash}`;
+  }
+  if (!local.startsWith("/") || local.startsWith("//")) return href;
+  const [, rawPath, suffix = ""] = local.match(/^([^?#]*)(.*)$/)!;
+  let path = rawPath.replace(/\/+$/, "") || "/";
+  const visited = new Set<string>();
+  while (redirectMap.has(path) && !visited.has(path)) {
+    visited.add(path);
+    path = redirectMap.get(path)!;
+  }
+  return `${path}${suffix}`;
 }

@@ -12,8 +12,8 @@ const author = LEAD_AUTHOR;
 const url = authorUrl(author.slug);
 
 export const metadata: Metadata = {
-  title: `${author.name} — ${author.jobTitle} | Dr. Shreyank Educare`,
-  description: `${author.name}, ${credentialLabel(author.credential)}. Over 10 years teaching Math, Physics and Chemistry to students in Burnaby, Vancouver and online.`,
+  title: `${author.name} | Founder & Lead Tutor`,
+  description: "Meet Dr. Shreyank Gupta, PhD-qualified founder and lead tutor with 10+ years teaching math, physics and chemistry in Burnaby, Vancouver and online.",
   alternates: { canonical: url },
   openGraph: {
     title: `${author.name} — ${author.jobTitle}`,

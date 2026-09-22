@@ -2,6 +2,7 @@
 
 import { client } from "../sanity/lib/client";
 import { urlFor } from "../sanity/lib/image";
+import { correctSeoCopy } from "../data/seoCopyCorrections";
 
 export const getResourcePageData = async () => {
   try {
@@ -194,12 +195,12 @@ export function getMetadata(data, currentUrl = "", fallback = {}) {
   }
 
   if (seo.metaTitle) {
-    metadata.title = seo.metaTitle;
-    metadata.twitter.title = seo.metaTitle;
+    metadata.title = correctSeoCopy(seo.metaTitle);
+    metadata.twitter.title = metadata.title;
   }
   if (seo.metaDescription) {
-    metadata.description = seo.metaDescription;
-    metadata.twitter.description = seo.metaDescription;
+    metadata.description = correctSeoCopy(seo.metaDescription);
+    metadata.twitter.description = metadata.description;
   }
   if (seo.metaImage) {
     const imageUrl = urlFor(seo.metaImage).url() ?? "/assets/logo.png";

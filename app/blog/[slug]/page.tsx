@@ -12,6 +12,17 @@ import { notFound } from "next/navigation";
 import { JsonLd, getBlogPostSchema } from "@/components/SchemaMarkup";
 import AuthorBox from "@/components/AuthorBox";
 import { PortableText } from "@portabletext/react";
+import { redirectSources } from "@/data/redirects";
+import { repairContentLinks, resolveContentHref } from "@/lib/contentLinks";
+import { Children } from "react";
+
+// Build article HTML ahead of requests, with hourly ISR for CMS updates.
+export async function generateStaticParams() {
+  const posts = await client.fetch<{ slug: string }[]>(
+    `*[_type == "post" && defined(slug.current)]{"slug": slug.current}`,
+  );
+  return posts.filter(({ slug }) => !redirectSources.has(`/blog/${slug}`));
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -95,7 +106,7 @@ const portableTextComponents = {
       return (
         <div
           className="my-6 raw-html-block"
-          dangerouslySetInnerHTML={{ __html: value.html }}
+          dangerouslySetInnerHTML={{ __html: repairContentLinks(value.html) }}
         />
       );
     },
@@ -107,9 +118,9 @@ const portableTextComponents = {
       </p>
     ),
     h1: ({ children }: any) => (
-      <h1 className="text-3xl sm:text-4xl font-display font-bold mt-10 mb-4 text-slate-900 leading-tight">
+      <h2 className="text-3xl sm:text-4xl font-display font-bold mt-10 mb-4 text-slate-900 leading-tight">
         {children}
-      </h1>
+      </h2>
     ),
     h2: ({ children }: any) => (
       <h2 className="text-2xl sm:text-3xl font-display font-bold mt-8 mb-4 text-slate-900 leading-snug">
@@ -158,7 +169,8 @@ const portableTextComponents = {
       </code>
     ),
     link: ({ children, value }: any) => {
-      const href = value?.href;
+      const label = Children.toArray(children).filter((child) => typeof child === "string").join("");
+      const href = resolveContentHref(String(value?.href || "#"), label);
       const target =
         href && !href.startsWith("/") && !href.startsWith("https://www.drshreyankeducare.com")
           ? "_blank"
@@ -333,7 +345,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 {Array.isArray(post.body) ? (
                   <PortableText value={post.body} components={portableTextComponents} />
                 ) : (
-                  <div dangerouslySetInnerHTML={{ __html: post.body || "" }} />
+                  <div dangerouslySetInnerHTML={{ __html: repairContentLinks(post.body || "") }} />
                 )}
               </div>
 

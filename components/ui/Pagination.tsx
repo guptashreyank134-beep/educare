@@ -54,7 +54,8 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, basePa
           className="flex items-center justify-center w-10 h-10 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-primary hover:border-primary transition-all duration-200 shadow-sm"
           aria-label="Previous Page"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft className="w-5 h-5" aria-hidden="true" />
+          <span className="sr-only">Previous page</span>
         </Link>
       ) : (
         <span
@@ -106,7 +107,8 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, basePa
           className="flex items-center justify-center w-10 h-10 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-primary hover:border-primary transition-all duration-200 shadow-sm"
           aria-label="Next Page"
         >
-          <ChevronRight className="w-5 h-5" />
+          <ChevronRight className="w-5 h-5" aria-hidden="true" />
+          <span className="sr-only">Next page</span>
         </Link>
       ) : (
         <span

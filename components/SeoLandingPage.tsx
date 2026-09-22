@@ -20,6 +20,7 @@ import {
 import { getSeoPageBySlug, seoPageUrl, getSeoSiblings } from "@/data/seoPages";
 import { resolveInternalHref } from "@/data/redirects";
 import { BUSINESS } from "@/data/businessInfo";
+import { correctSeoCopy } from "@/data/seoCopyCorrections";
 
 const metrics = [
   { value: "PhD-Led", label: "by Dr. Shreyank Gupta" },
@@ -34,8 +35,8 @@ export async function seoPageMetadata(slug: string): Promise<Metadata> {
 
   // Editors can override the title/description in Studio; empty falls back.
   const content = await getLandingContent(slug);
-  const metaTitle = orFallback(content?.metaTitle, page.metaTitle);
-  const metaDescription = orFallback(content?.metaDescription, page.metaDescription);
+  const metaTitle = correctSeoCopy(orFallback(content?.metaTitle, page.metaTitle));
+  const metaDescription = correctSeoCopy(orFallback(content?.metaDescription, page.metaDescription));
 
   const url = seoPageUrl(slug);
   return {

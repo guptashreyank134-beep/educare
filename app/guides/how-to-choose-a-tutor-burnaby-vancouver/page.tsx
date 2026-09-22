@@ -15,10 +15,10 @@ const PUBLISHED_FALLBACK = "2026-07-14T00:00:00-07:00";
 const TITLE =
   "How to Choose a Tutor in Burnaby and Vancouver: Costs, Formats and Questions to Ask";
 const DESCRIPTION =
-  "A neutral, practical guide to choosing a tutor in Burnaby and Vancouver — independent tutor vs centre, one-on-one vs group, online vs in person, pricing, qualifications, the questions to ask and the warning signs.";
+  "Compare tutors in Burnaby and Vancouver: costs, qualifications, online and in-person formats, questions to ask and warning signs to watch for.";
 
 export const metadata: Metadata = {
-  title: "How to Choose a Tutor in Burnaby & Vancouver | Costs & Questions",
+  title: "Choosing a Tutor in Burnaby & Vancouver | Costs & Tips",
   description: DESCRIPTION,
   alternates: { canonical: URL },
   openGraph: { title: TITLE, description: DESCRIPTION, url: URL, images: "/assets/logo.png" },

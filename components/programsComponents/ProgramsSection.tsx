@@ -161,6 +161,25 @@ export default function ProgramsSection() {
             />
           ))}
         </div>
+        <nav aria-label="All tutoring programs" className="mt-12 border-t border-slate-200 pt-8">
+          <h2 className="text-2xl font-bricolage mb-5">Browse all tutoring programs</h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {programTabs.map((tab) => (
+              <div key={tab.label}>
+                <h3 className="font-semibold mb-3">{tab.label}</h3>
+                <ul className="space-y-2">
+                  {tab.programs.filter((program) => program.learnMoreHref).map((program) => (
+                    <li key={program.learnMoreHref}>
+                      <Link href={program.learnMoreHref!} className="text-primary underline underline-offset-4">
+                        {program.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </nav>
       </div>
     </section>
   );

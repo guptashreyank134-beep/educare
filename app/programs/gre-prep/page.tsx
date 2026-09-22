@@ -202,7 +202,7 @@ export default async function GrePrepProgramPage() {
                 </p>
               </div>
 
-              <SectionHeader icon={Sparkles} title="Frequently Asked Questions" />
+              <SectionHeader icon={Sparkles} title="Planning Your GRE Preparation" />
               <div className="ml-11 space-y-5 mb-4">
                 {[
                   {

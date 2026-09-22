@@ -92,11 +92,23 @@ export default async function BlogListingView({ page }: { page: number }) {
       <JsonLd schema={getPageSchema(data, "https://www.drshreyankeducare.com/blog")} />
       <GeneralHeroSection
         {...BlogsHeroSectionContent}
+        heading={`Tutoring Tips & Study Guides${validPage > 1 ? ` — Page ${validPage}` : ""}`}
+        description={`Browse tutoring tips and study guides for math, science, coding and exam preparation.${validPage > 1 ? ` This is page ${validPage} of the blog archive.` : " Find practical explanations for school and university coursework."}`}
         breadcrumb={<Breadcrumbs items={[{ label: "Blog" }]} />}
       />
 
       <main className="min-h-screen py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav aria-label="Blog archive pages" className="mb-10 flex flex-wrap items-center gap-3 text-sm">
+            <span className="font-semibold">Browse the archive:</span>
+            {Array.from({ length: totalPages }, (_, index) => index + 1).map((number) => (
+              <Link key={number} href={number === 1 ? "/blog" : `/blog/page/${number}`}
+                aria-current={number === validPage ? "page" : undefined}
+                className="text-primary underline underline-offset-4">
+                Page {number}
+              </Link>
+            ))}
+          </nav>
           {posts.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-2xl shadow-sm border border-slate-100">
               <h3 className="text-2xl font-display font-medium text-slate-700 mb-2">

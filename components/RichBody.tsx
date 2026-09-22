@@ -1,6 +1,7 @@
 /** @format */
 
 import Link from "next/link";
+import { resolveInternalHref } from "@/data/redirects";
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
 
 // Renders Sanity "Body Content" (faqAnswer / portable text) as prose with inline
@@ -42,7 +43,7 @@ const components: PortableTextComponents = {
     link: ({ value, children }) => {
       // Scheme allowlist — never let javascript:/data:/protocol-relative URLs
       // (which could arrive via direct Sanity API writes) reach the DOM.
-      const raw = String(value?.href || "#");
+      const raw = resolveInternalHref(String(value?.href || "#"));
       const isInternal = raw.startsWith("/") && !raw.startsWith("//");
       const isSafeExternal = /^(https?:|mailto:|tel:)/i.test(raw);
       const href = isInternal || isSafeExternal ? raw : "#";
