@@ -238,6 +238,8 @@ export default async function PreCalculusProgramPage() {
               courseExample={ENQUIRY.courseExample}
               courseLabel={ENQUIRY.courseLabel}
               testimonialTopic={ENQUIRY.testimonialTopic}
+              heading={ENQUIRY.heading}
+              showCredential={ENQUIRY.taughtByFounder}
             />
           </div>
 

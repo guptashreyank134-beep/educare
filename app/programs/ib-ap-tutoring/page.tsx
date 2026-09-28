@@ -248,6 +248,8 @@ export default async function IBAPTutoringPage() {
               courseExample={ENQUIRY.courseExample}
               courseLabel={ENQUIRY.courseLabel}
               testimonialTopic={ENQUIRY.testimonialTopic}
+              heading={ENQUIRY.heading}
+              showCredential={ENQUIRY.taughtByFounder}
             />
           </div>
 

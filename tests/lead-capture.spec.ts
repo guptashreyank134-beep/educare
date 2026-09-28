@@ -230,3 +230,80 @@ for (const { path, anchor, courseLabel } of PAGES) {
     });
   });
 }
+
+/**
+ * The four analytics events, asserted end to end in a browser.
+ *
+ * These exist because the events are the only evidence of whether any of the
+ * lead work converts, and nothing downstream consumes them yet: without GTM
+ * triggers a broken event would be invisible. See docs/analytics-setup.md.
+ */
+test.describe("analytics events", () => {
+  test("CTA click, form start, and generate_lead all fire with no personal data", async ({
+    page,
+  }) => {
+    await deleteTestLeads();
+    await captureDataLayer(page);
+    await page.goto("/programs/physics");
+
+    // 1. Clicking the consultation CTA.
+    await page.getByRole("link", { name: /Book a Free 30-Minute Consultation/i }).first().click();
+    expect((await firedEvents(page)).map((e) => e.event)).toContain("consultation_cta_click");
+
+    // 2. First edit of the form.
+    await page.getByLabel(/your name/i).fill(`${TEST_MARKER} analytics`);
+    expect((await firedEvents(page)).map((e) => e.event)).toContain("enquiry_form_start");
+
+    // enquiry_form_start fires once per interaction, not once per keystroke.
+    await page.getByLabel(/email address/i).fill("browser.test@example.invalid");
+    const starts = (await firedEvents(page)).filter((e) => e.event === "enquiry_form_start");
+    expect(starts).toHaveLength(1);
+
+    // 3. A confirmed capture.
+    await page.waitForTimeout(BOT_WINDOW_MS);
+    await page.getByRole("button", { name: /Book a Free 30-Minute Consultation/i }).click();
+    await expect(
+      page.locator("#physics-enquiry").getByText(/we have your enquiry/i),
+    ).toBeVisible({ timeout: 20_000 });
+
+    const fired = await firedEvents(page);
+    const lead = fired.find((e) => e.event === "generate_lead");
+    expect(lead, "generate_lead must fire after a confirmed capture").toBeTruthy();
+    expect(lead!.form_id).toBe("physics-enquiry");
+    expect(lead!.lead_subject).toBe("Physics");
+    expect(lead!.page).toBe("/programs/physics");
+
+    // Every event of ours carries a page. GTM's own gtm.js bootstrap push also
+    // lands in the dataLayer and is not ours to shape, so it is excluded.
+    const OURS = new Set([
+      "consultation_cta_click",
+      "enquiry_form_start",
+      "generate_lead",
+      "enquiry_form_error",
+    ]);
+    const ourEvents = fired.filter((e) => OURS.has(String(e.event)));
+    expect(ourEvents.length).toBeGreaterThanOrEqual(3);
+    expect(ourEvents.every((e) => typeof e.page === "string")).toBe(true);
+    const serialised = JSON.stringify(fired);
+    for (const personal of ["browser.test@example.invalid", TEST_MARKER, "analytics"]) {
+      expect(serialised, `${personal} must never reach analytics`).not.toContain(personal);
+    }
+  });
+
+  test("enquiry_form_error carries a reason code and no message text", async ({ page }) => {
+    await captureDataLayer(page);
+    await page.goto("/programs/physics");
+
+    await page.getByLabel(/your name/i).fill("Priya Sharma");
+    await page.getByLabel(/email address/i).fill("not-an-email@");
+    await page.waitForTimeout(BOT_WINDOW_MS);
+    await page.getByRole("button", { name: /Book a Free 30-Minute Consultation/i }).click();
+    await expect(page.getByText(/doesn't look right/i)).toBeVisible();
+
+    const error = (await firedEvents(page)).find((e) => e.event === "enquiry_form_error");
+    expect(error).toBeTruthy();
+    expect(error!.reason).toBe("validation_email");
+    // The visitor-facing message must not be shipped to analytics.
+    expect(JSON.stringify(error)).not.toContain("doesn't look right");
+  });
+});

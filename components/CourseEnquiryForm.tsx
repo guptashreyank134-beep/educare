@@ -26,6 +26,12 @@ interface CourseEnquiryFormProps {
   courseLabel?: string;
   /** Routes the notification and tags the lead. */
   vertical?: "local-k12" | "medical" | "quant";
+  /**
+   * The whole heading, not a fragment. Deriving it from `subject` produced
+   * "Ask about ib & ap tutoring" and "Ask about best math tutor in burnaby
+   * tutoring", because a lead subject is an identifier, not a noun phrase.
+   */
+  heading?: string;
 }
 
 /** Maps a server rejection to a coarse analytics reason; no message text is sent. */
@@ -58,6 +64,7 @@ export default function CourseEnquiryForm({
   courseExample,
   courseLabel = "University and course code",
   vertical = "local-k12",
+  heading = "Ask about tutoring",
 }: CourseEnquiryFormProps) {
   const uid = useId();
   const ids = {
@@ -179,7 +186,7 @@ export default function CourseEnquiryForm({
   return (
     <div className="relative rounded-[20px] border border-[#F1F5F9] bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)]">
       <p className="text-[22px] font-bricolage font-medium text-slate mb-1">
-        Ask about {subject.toLowerCase()} tutoring
+        {heading}
       </p>
       <p className="text-[14px] font-montserrat text-slate/70 mb-6">
         Takes under a minute. We reply within 24 hours on business days.

@@ -23,7 +23,11 @@ const programs = readdirSync("app/programs")
 
 const live = (path: string) => !redirectSources.has(path) && !retiredPaths.has(path);
 
+// Pages that render their own form directly rather than through a template.
+const STANDALONE = ["/", "/book"];
+
 const routes = [
+  ...STANDALONE,
   ...programs,
   ...cities.map((c) => cityPath(c.slug)),
   ...verticalPages.map((p) => verticalPath(p.slug)),
@@ -47,6 +51,7 @@ writeFileSync(
 );
 
 console.log(`wrote content/own-form-routes.ts`);
+console.log(`  standalone: ${STANDALONE.length}`);
 console.log(`  programs:  ${programs.length}`);
 console.log(`  cities:    ${cities.length}`);
 console.log(`  verticals: ${verticalPages.length}`);

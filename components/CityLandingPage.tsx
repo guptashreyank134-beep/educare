@@ -143,6 +143,8 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
               anchor={`math-tutor-${city.slug}-enquiry`}
               courseLabel="Student's grade or course"
               courseExample="Math 10, Pre-Calculus 11, or Calculus 12"
+              heading={`Ask about maths tutoring in ${city.name}`}
+              showCredential
             />
           </div>
         </div>

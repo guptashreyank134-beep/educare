@@ -5,6 +5,7 @@
 // must not also appear. Regenerate with `npm run seo:own-form-routes`.
 
 export const ROUTES_WITH_THEIR_OWN_FORM: ReadonlySet<string> = new Set([
+  "/",
   "/actuarial-exam-tutor-online",
   "/actuarial-science-tutor",
   "/ap-calculus-exam-prep-vancouver",
@@ -20,6 +21,7 @@ export const ROUTES_WITH_THEIR_OWN_FORM: ReadonlySet<string> = new Set([
   "/biology-11-tutor-vancouver",
   "/biology-12-tutor-burnaby",
   "/biology-12-tutor-vancouver",
+  "/book",
   "/calculus-1-tutor-online",
   "/calculus-12-tutor-burnaby",
   "/calculus-12-tutor-vancouver",

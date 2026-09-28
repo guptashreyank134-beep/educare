@@ -18,6 +18,7 @@ import {
 } from "@/components/SchemaMarkup";
 
 import { getSeoPageBySlug, seoPageUrl, getSeoSiblings } from "@/data/seoPages";
+import { founderTeaches } from "@/data/authors";
 import { resolveInternalHref } from "@/data/redirects";
 import { BUSINESS } from "@/data/businessInfo";
 import { correctSeoCopy } from "@/data/seoCopyCorrections";
@@ -134,6 +135,8 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
               anchor={`${slug}-enquiry`}
               courseLabel="Student's grade or course"
               courseExample="Math 10, Chemistry 12, or a first-year university course"
+              heading={page.location ? `Ask about tutoring in ${page.location}` : "Ask about tutoring"}
+              showCredential={founderTeaches(`${page.h1} ${page.cluster}`)}
             />
           </div>
         </div>
