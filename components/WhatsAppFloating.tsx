@@ -6,8 +6,9 @@ import React from "react";
 import { BUSINESS } from "@/data/businessInfo";
 
 const WhatsAppFloating = () => {
-  const phoneNumber = BUSINESS.phoneE164.replace("+", "");
-  const whatsappUrl = `https://wa.me/${phoneNumber}`;
+  // BUSINESS.whatsapp, not phoneE164: WhatsApp is registered on a different
+  // number from the one we publish for calls.
+  const whatsappUrl = BUSINESS.whatsapp;
 
   //deploy
 
