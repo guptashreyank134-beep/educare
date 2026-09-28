@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, MapPin, GraduationCap } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
-import TrialClassForm from "@/components/TrialClassForm";
+import CourseConsultationPanel from "@/components/CourseConsultationPanel";
 import VancouverHeroImage from "@/components/VancouverHeroImage";
 import VancouverAboutSection from "@/components/VancouverAboutSection";
 import VancouverWhyChooseSection from "@/components/VancouverWhyChooseSection";
@@ -138,19 +138,12 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
           <div className="relative mt-12 lg:mt-0">
             {/* Form-widget label, not a content heading — kept as <p> so it
                 stays out of the heading outline (avoids duplicate-heading). */}
-            <p className="text-[32px] font-bricolage font-medium text-slate text-center mb-3">
-              Book a Free <span className="text-primary">30-Minute</span>{" "}
-              Consultation
-            </p>
-            <p className="text-[15px] font-montserrat text-slate/70 text-center mb-6 leading-relaxed">
-              Meet with our team, discuss your child's current challenges and receive a recommended tutoring plan.
-            </p>
-
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[110%] bg-white/40 blur-3xl rounded-full -z-10" />
-            <TrialClassForm />
-            <p className="text-[14px] text-slate font-montserrat text-center mt-4 leading-relaxed">
-              ⓘ No obligation — we'll suggest a plan that fits your child.
-            </p>
+            <CourseConsultationPanel
+              subject={`Mathematics — ${city.name}`}
+              anchor={`math-tutor-${city.slug}-enquiry`}
+              courseLabel="Student's grade or course"
+              courseExample="Math 10, Pre-Calculus 11, or Calculus 12"
+            />
           </div>
         </div>
 
