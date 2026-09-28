@@ -129,6 +129,8 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
               anchor={`${page.slug}-enquiry`}
               courseLabel={page.leadSubjectLabel}
               courseExample={page.leadSubjectPlaceholder ?? "your course or exam"}
+              heading={page.leadHeading ?? "Ask about tutoring"}
+              showCredential={false}
             />
           </div>
         </div>

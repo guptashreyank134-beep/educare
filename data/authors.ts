@@ -74,6 +74,24 @@ export const LEAD_AUTHOR: Author = {
   knowsAbout: ["Mathematics", "Physics", "Chemistry", "Biology", "Computer Science"],
 };
 
+/**
+ * Whether the founder genuinely teaches a subject, used to decide where his
+ * credential may be shown.
+ *
+ * The roster names no French or Mandarin tutor at all, and medical and
+ * actuarial work belongs to other tutors, so a page outside these subjects must
+ * not carry "Taught by Dr. Shreyank Gupta".
+ */
+export function founderTeaches(text: string): boolean {
+  const haystack = text.toLowerCase();
+  const subjects = [
+    "math", "calculus", "algebra", "physics", "chemistry", "biology",
+    "computer science", "coding", "programming", "python", "javascript",
+    "science", "stem", "engineering",
+  ];
+  return subjects.some((subject) => haystack.includes(subject));
+}
+
 export const authorPath = (slug: string) => `/about/${slug}`;
 export const authorUrl = (slug: string) => `${SITE_URL}${authorPath(slug)}`;
 
