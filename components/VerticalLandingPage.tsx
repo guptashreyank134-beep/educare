@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Check, GraduationCap } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
-import LeadForm from "@/components/LeadForm";
+import CourseConsultationPanel from "@/components/CourseConsultationPanel";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
@@ -121,14 +121,14 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
             </div>
           </div>
 
-          {/* Right: segmented lead form */}
+          {/* Right: consultation panel. The vertical drives the lead subject
+              and the example, so a Medical enquiry is not filed as Quant. */}
           <div className="relative mt-4 lg:mt-0">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[110%] bg-white/40 blur-3xl rounded-full -z-10" />
-            <LeadForm
-              vertical={page.vertical}
-              heading={page.leadHeading}
-              subjectLabel={page.leadSubjectLabel}
-              subjectPlaceholder={page.leadSubjectPlaceholder}
+            <CourseConsultationPanel
+              subject={page.heroHeading}
+              anchor={`${page.slug}-enquiry`}
+              courseLabel={page.leadSubjectLabel}
+              courseExample={page.leadSubjectPlaceholder ?? "your course or exam"}
             />
           </div>
         </div>

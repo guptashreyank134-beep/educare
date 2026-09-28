@@ -17,7 +17,8 @@
     "seo:route-dates": "tsx scripts/build-route-dates.mts",
     "seo:check": "tsx scripts/seo-check.mts",
     "test:browser": "playwright test",
-    "verify:leads": "tsx scripts/verify-lead-delivery.mts"
+    "verify:leads": "tsx scripts/verify-lead-delivery.mts",
+    "seo:own-form-routes": "tsx scripts/build-own-form-routes.mts"
   },
   "dependencies": {
     "@portabletext/react": "^6.2.0",

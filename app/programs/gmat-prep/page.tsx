@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
 import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
@@ -10,14 +10,24 @@ import {
   LayoutGrid,
   Sparkles,
   Rocket,
-  Zap,
 } from "lucide-react";
 
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
 import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
+import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import {
+  ConsultationCtaLink,
+  StickyConsultationBar,
+} from "@/components/ConsultationCta";
+import { PROGRAM_ENQUIRY, programAnchor } from "@/content/program-enquiry";
+import { PRICING_TEXT } from "@/data/pricing";
 import { getProgramFaqs } from "@/sanity/lib/faqs";
+
+const ENQUIRY_ANCHOR = programAnchor("gmat-prep");
+const FORM_ID = ENQUIRY_ANCHOR;
+const ENQUIRY = PROGRAM_ENQUIRY["gmat-prep"];
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "gmat-prep");
@@ -93,6 +103,34 @@ export default async function GmatPrepProgramPage() {
                 The GMAT requires strong quantitative reasoning, verbal
                 ability, and strategic pacing. Our prep programs help students
                 improve efficiency and maximize scores.
+              </p>
+            </div>
+
+            {/* Consultation offer. The description and the response time are the
+                same ones published on /book and /contact. */}
+            <div className="mb-8 rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <ConsultationCtaLink
+                  targetId={ENQUIRY_ANCHOR}
+                  formId={FORM_ID}
+                  className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
+                >
+                  Book a Free 30-Minute Consultation
+                </ConsultationCtaLink>
+                <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
+                  One free, no-obligation 30-minute conversation: tell us which course
+                  the student is taking and where they are stuck, and we map out the
+                  level, tutor and schedule that would help. We reply within 24 hours on
+                  business days.
+                </p>
+              </div>
+              <p className="mt-4 text-[14px] font-montserrat text-slate/70">
+                One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
+                level — we confirm the rate for the course at the consultation. See{" "}
+                <Link href="/pricing" className="text-primary underline underline-offset-2">
+                  full pricing
+                </Link>
+                .
               </p>
             </div>
 
@@ -232,30 +270,13 @@ export default async function GmatPrepProgramPage() {
             </section>
           </div>
 
-          {/* Right Column: Image and Visuals */}
-          <div className="relative lg:pt-20 w-full lg:w-auto flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[378px] rounded-3xl overflow-hidden shadow-2xl transform rotate-1 group transition-transform hover:rotate-0 duration-500">
-              <Image
-                src="/assets/gmat.png"
-                alt="GMAT Prep"
-                width={378}
-                height={361}
-                className="h-[280px] sm:h-[361px] w-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
-              />
-
-              {/* Floating Badge */}
-              <div className="absolute bottom-8 left-0 bg-yellow-light text-slate px-4 py-2 rounded-r-xl shadow-lg flex items-center gap-2 animate-bounce-slow">
-                <Zap size={18} fill="currentColor" />
-                <p className="text-[14px] font-bricolage font-bold">
-                  Accelerated Learning
-                </p>
-              </div>
-            </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-primary/5 rounded-full blur-3xl animate-pulse" />
-          </div>
+          <CourseConsultationPanel
+            subject={ENQUIRY.subject}
+            anchor={ENQUIRY_ANCHOR}
+            courseExample={ENQUIRY.courseExample}
+            courseLabel={ENQUIRY.courseLabel}
+            testimonialTopic={ENQUIRY.testimonialTopic}
+          />
         </div>
       </div>
     
@@ -266,8 +287,11 @@ export default async function GmatPrepProgramPage() {
           </>
         )}
       
+        <StickyConsultationBar targetId={ENQUIRY_ANCHOR} formId={FORM_ID} />
+
         <ProgramNextSteps
           subject="GMAT"
+          consultationHref={`#${ENQUIRY_ANCHOR}`}
         />
       </main>
     </>

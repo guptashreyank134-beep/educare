@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Check, Link2 } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
-import TrialClassForm from "@/components/TrialClassForm";
+import CourseConsultationPanel from "@/components/CourseConsultationPanel";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ExtraRelatedLinks from "@/components/ExtraRelatedLinks";
 import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
@@ -127,17 +127,14 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
 
           {/* Right: lead form */}
           <div className="relative mt-4 lg:mt-0">
-            {/* Form-widget label, not a content heading — kept as <p> so it
-                stays out of the heading outline (avoids duplicate-heading). */}
-            <p className="text-[28px] font-bricolage font-medium text-slate text-center mb-3">
-              Book a Free <span className="text-primary">30-Minute</span>{" "}
-              Consultation
-            </p>
-            <p className="text-[15px] font-montserrat text-slate/70 text-center mb-6 leading-relaxed">
-              Meet with our team, discuss your child's current challenges and receive a recommended tutoring plan.
-            </p>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[110%] bg-white/40 blur-3xl rounded-full -z-10" />
-            <TrialClassForm />
+            {/* The page's own H1 becomes the lead subject, so an enquiry names
+                the page that produced it rather than a generic bucket. */}
+            <CourseConsultationPanel
+              subject={h1}
+              anchor={`${slug}-enquiry`}
+              courseLabel="Student's grade or course"
+              courseExample="Math 10, Chemistry 12, or a first-year university course"
+            />
           </div>
         </div>
 

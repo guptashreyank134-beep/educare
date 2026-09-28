@@ -20,18 +20,17 @@ import { getProgramFaqs, getProgramBodyContent } from "@/sanity/lib/faqs";
 import UniversityCourseTable from "@/components/UniversityCourseTable";
 import RelatedTutoringPages from "@/components/RelatedTutoringPages";
 import RichBody from "@/components/RichBody";
-import CourseEnquiryForm from "@/components/CourseEnquiryForm";
 import {
   ConsultationCtaLink,
   StickyConsultationBar,
 } from "@/components/ConsultationCta";
-import TestimonialQuote from "@/components/TestimonialQuote";
-import { LEAD_AUTHOR, authorPath, credentialLabel } from "@/data/authors";
+import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import { PROGRAM_ENQUIRY, programAnchor } from "@/content/program-enquiry";
 import { PRICING_TEXT } from "@/data/pricing";
-import { testimonialsFor } from "@/data/testimonials";
 
-const ENQUIRY_ANCHOR = "physics-enquiry";
-const FORM_ID = "physics-enquiry";
+const ENQUIRY_ANCHOR = programAnchor("physics");
+const FORM_ID = ENQUIRY_ANCHOR;
+const ENQUIRY = PROGRAM_ENQUIRY["physics"];
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "physics");
@@ -68,7 +67,6 @@ export default async function PhysicsProgramPage() {
   // FAQs are managed in Studio > Program Pages; empty means no section is shown.
   const faqs = await getProgramFaqs("physics");
   const bodyContent = await getProgramBodyContent("physics");
-  const physicsTestimonials = testimonialsFor("physics");
   const breadcrumbItems = [
     { label: "Programs", href: "/programs" },
     { label: "Academic", href: "/programs" },
@@ -151,46 +149,12 @@ export default async function PhysicsProgramPage() {
             </div>
           </div>
 
-          {/* Right column: who teaches it, and what a family said about it.
-              Evidence sits beside the consultation offer rather than below the
-              course detail. */}
-          <div className="w-full lg:w-[380px]">
-            {/* Credentials come from the author record, so this cannot drift
-                from the About page or the structured data. */}
-            <div className="rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5">
-              <p className="text-[14px] font-montserrat font-medium text-slate mb-1">
-                Taught by {LEAD_AUTHOR.name}
-              </p>
-              <p className="text-[14px] font-montserrat leading-relaxed text-slate/70">
-                {credentialLabel(LEAD_AUTHOR.credential)}, with over 10 years teaching
-                mathematics and physics.{" "}
-                <Link
-                  href={authorPath(LEAD_AUTHOR.slug)}
-                  className="text-primary underline underline-offset-2"
-                >
-                  Full profile
-                </Link>
-              </p>
-            </div>
-
-            {/* Published reviews tagged for this subject. The quote names the
-                course it refers to, so a reader can judge its relevance. */}
-            {physicsTestimonials.map((testimonial) => (
-              <div key={testimonial.author} className="mt-5">
-                <TestimonialQuote testimonial={testimonial} />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* The enquiry form follows the consultation offer directly, so a reader
-            meets it before the course detail rather than after it. */}
-        <div id={ENQUIRY_ANCHOR} className="mt-12 w-full max-w-[640px] scroll-mt-28">
-          <CourseEnquiryForm
-            subject="Physics"
-            formId={FORM_ID}
-            courseLabel="Student's grade or course"
-            courseExample="Physics 11, Physics 12, AP Physics 1, IB Physics HL, or UBC PHYS 117"
+          <CourseConsultationPanel
+            subject={ENQUIRY.subject}
+            anchor={ENQUIRY_ANCHOR}
+            courseExample={ENQUIRY.courseExample}
+            courseLabel={ENQUIRY.courseLabel}
+            testimonialTopic={ENQUIRY.testimonialTopic}
           />
         </div>
 
