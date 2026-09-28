@@ -254,8 +254,30 @@ function FooterBar() {
  * visitor has to decide which one to use.
  */
 const ROUTES_WITH_THEIR_OWN_FORM = new Set([
-  "/programs/university-physics",
+  "/programs/biology",
+  "/programs/burnaby-stem-tutoring",
+  "/programs/chemistry",
+  "/programs/computer-science",
+  "/programs/finance",
+  "/programs/french",
+  "/programs/gmat-prep",
+  "/programs/gre-prep",
+  "/programs/ib-ap-tutoring",
+  "/programs/javascript",
+  "/programs/mandarin",
+  "/programs/mathematics",
+  "/programs/mcat-prep",
   "/programs/physics",
+  "/programs/pre-calculus",
+  "/programs/python",
+  "/programs/sat-prep",
+  "/programs/university-biology",
+  "/programs/university-chemistry",
+  "/programs/university-finance",
+  "/programs/university-mathematics",
+  "/programs/university-physics",
+  "/programs/vancouver-math-tutoring",
+  "/programs/web-development",
 ]);
 
 export default function Footer() {
