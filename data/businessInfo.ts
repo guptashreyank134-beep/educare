@@ -56,9 +56,17 @@ export const BUSINESS = {
 
   // One phone format for every visible surface and every schema field. The site
   // previously displayed three variants, which reads as three NAP records.
-  phone: "+1-672-514-7587",
-  /** Digits-only form, for `tel:` and `wa.me` hrefs. */
-  phoneE164: "+16725147587",
+  phone: "+1-672-855-8577",
+  /** Digits-only form, for `tel:` hrefs. */
+  phoneE164: "+16728558577",
+
+  // WhatsApp is still registered on the previous number, so it is deliberately
+  // NOT the same as `phone`. Pointing wa.me at the new number would send every
+  // "Chat on WhatsApp" click to an account that does not exist.
+  //
+  // TODO(owner): once WhatsApp is moved to +1-672-855-8577, set both of these to
+  // the new number and the two records become one again.
+  whatsappE164: "+16725147587",
   whatsapp: "https://wa.me/16725147587",
   email: "info@drshreyankeducare.com",
 
