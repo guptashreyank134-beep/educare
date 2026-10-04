@@ -307,3 +307,122 @@ test.describe("analytics events", () => {
     expect(JSON.stringify(error)).not.toContain("doesn't look right");
   });
 });
+
+/**
+ * The consultation CTA must visibly arrive at the form.
+ *
+ * A plain anchor jumped thousands of pixels instantly, which reads as a broken
+ * button rather than as having moved. These assert the click lands with the
+ * cursor in the first field, so the visitor can type straight away.
+ */
+test.describe("consultation CTA lands in the form", () => {
+  for (const [label, width, height] of [
+    ["mobile", 390, 844],
+    ["narrow", 572, 690],
+    ["laptop", 1440, 780],
+    ["desktop", 1280, 900],
+    ["tall", 1280, 1200],
+  ] as [string, number, number][]) {
+    test(`${label}: the whole form is usable, submit included`, async ({ page }) => {
+      await page.setViewportSize({ width, height });
+      await page.goto("/programs/computer-science");
+
+      await page.getByRole("link", { name: /Book a Free 30-Minute Consultation/i }).first().click();
+      await page.waitForTimeout(1200);
+
+      const state = await page.evaluate(() => {
+        const form = document.getElementById("computer-science-enquiry")!;
+        const box = form.getBoundingClientRect();
+        const submit = form.querySelector('button[type="submit"]')!.getBoundingClientRect();
+        return {
+          submitVisible: submit.top >= 0 && submit.bottom <= window.innerHeight,
+          formOnScreen: box.top < window.innerHeight && box.bottom > 0,
+        };
+      });
+
+      // The button that completes the booking must be on screen. A top-aligned
+      // scroll left it below the fold, which is what made the form look cut off.
+      expect(state.submitVisible, "submit button must be visible after the click").toBe(true);
+      expect(state.formOnScreen).toBe(true);
+      expect(page.url()).toContain("#computer-science-enquiry");
+    });
+  }
+
+  test("on a tall viewport the cursor lands in the first field", async ({ page }) => {
+    // Where the form fits, it is top-aligned and the visitor can type at once.
+    await page.setViewportSize({ width: 1280, height: 1200 });
+    await page.goto("/programs/computer-science");
+    await page.getByRole("link", { name: /Book a Free 30-Minute Consultation/i }).first().click();
+
+    await expect(page.getByLabel(/your name/i)).toBeFocused({ timeout: 5_000 });
+    await page.keyboard.type("Priya Sharma");
+    await expect(page.getByLabel(/your name/i)).toHaveValue("Priya Sharma");
+  });
+
+  test("focus follows the scroll instead of staying on the link", async ({ page }) => {
+    // On a short viewport the form is bottom-aligned and the first field sits
+    // above the fold, so focus moves to the form itself. Leaving it on the CTA
+    // would strand a keyboard user thousands of pixels up the page.
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/programs/computer-science");
+    await page.getByRole("link", { name: /Book a Free 30-Minute Consultation/i }).first().click();
+    await page.waitForTimeout(1300);
+
+    const focus = await page.evaluate(() => {
+      const active = document.activeElement as HTMLElement | null;
+      const form = document.getElementById("computer-science-enquiry");
+      const box = active?.getBoundingClientRect();
+      return {
+        insideForm: Boolean(active && form && (active === form || form.contains(active))),
+        offScreen: box ? box.bottom < 0 || box.top > window.innerHeight : true,
+      };
+    });
+
+    expect(focus.insideForm, "focus should be on the form, not the CTA link").toBe(true);
+    expect(focus.offScreen, "focus must not sit off screen").toBe(false);
+  });
+});
+
+test.describe("one enquiry form per page", () => {
+  test("a page that owns a form shows only that one", async ({ page }) => {
+    for (const path of ["/", "/book", "/programs/physics", "/programs/university-physics"]) {
+      await page.goto(path);
+      const visible = await page
+        .locator("form")
+        .evaluateAll((forms) =>
+          forms.filter((f) => {
+            const style = window.getComputedStyle(f);
+            return style.display !== "none" && style.visibility !== "hidden" && f.clientHeight > 0;
+          }).length,
+        );
+      expect(visible, `${path} should show exactly one enquiry form`).toBe(1);
+    }
+  });
+
+  test("a page without its own form still shows the shared one", async ({ page }) => {
+    await page.goto("/about");
+    await expect(page.locator('[data-enquiry-section="shared"]').first()).toBeVisible();
+    await expect(page.locator('form[data-enquiry-form="shared"]').first()).toBeVisible();
+  });
+
+  test("the shared form is hidden even when the route check fails", async ({ page }) => {
+    // Production served the homepage with both forms although the route was in
+    // the stand-down list, so the route check cannot be the only defence. This
+    // reproduces that state directly: inject the shared section onto a page
+    // that owns a form, exactly as a failed check would, and the stylesheet
+    // must still keep it out of sight.
+    await page.goto("/programs/physics");
+    await page.evaluate(() => {
+      const section = document.createElement("section");
+      section.setAttribute("data-enquiry-section", "shared");
+      section.innerHTML =
+        '<h2>Book a Free 30-Minute Consultation</h2>' +
+        '<form data-enquiry-form="shared"><input name="name" /></form>';
+      document.body.append(section);
+    });
+
+    await expect(page.locator('[data-enquiry-section="shared"]')).toBeHidden();
+    await expect(page.locator('form[data-enquiry-form="shared"]')).toBeHidden();
+    await expect(page.locator('form[data-enquiry-form="page"]').first()).toBeVisible();
+  });
+});

@@ -56,3 +56,20 @@ body {
 .animate-bounce-slow {
   animation: bounce-slow 3s ease-in-out infinite;
 }
+
+/* One enquiry form per page.
+ *
+ * The footer renders a shared form on every page and stands down on the pages
+ * that have their own, which it decides from the current route. When that
+ * decision is wrong the visitor gets two forms competing for one submission —
+ * as happened on the homepage in production, where the footer form appeared
+ * below the hero form it was meant to defer to.
+ *
+ * This rule does not depend on knowing the route: if the page rendered a form
+ * of its own, the shared copy is not shown. The route check still runs, so in
+ * the normal case the shared form is never rendered at all; this only catches
+ * the case where it was.
+ */
+body:has(form[data-enquiry-form="page"]) [data-enquiry-section="shared"] {
+  display: none;
+}

@@ -95,7 +95,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
           {heading}
         </p>
       )}
-      <form onSubmit={handleSubmit} className="space-y-6 relative">
+      <form onSubmit={handleSubmit} data-enquiry-form="page" className="space-y-6 relative">
         <FormSpamFields />
         <Input
           label="Full Name"
