@@ -382,3 +382,47 @@ test.describe("consultation CTA lands in the form", () => {
     expect(focus.offScreen, "focus must not sit off screen").toBe(false);
   });
 });
+
+test.describe("one enquiry form per page", () => {
+  test("a page that owns a form shows only that one", async ({ page }) => {
+    for (const path of ["/", "/book", "/programs/physics", "/programs/university-physics"]) {
+      await page.goto(path);
+      const visible = await page
+        .locator("form")
+        .evaluateAll((forms) =>
+          forms.filter((f) => {
+            const style = window.getComputedStyle(f);
+            return style.display !== "none" && style.visibility !== "hidden" && f.clientHeight > 0;
+          }).length,
+        );
+      expect(visible, `${path} should show exactly one enquiry form`).toBe(1);
+    }
+  });
+
+  test("a page without its own form still shows the shared one", async ({ page }) => {
+    await page.goto("/about");
+    await expect(page.locator('[data-enquiry-section="shared"]').first()).toBeVisible();
+    await expect(page.locator('form[data-enquiry-form="shared"]').first()).toBeVisible();
+  });
+
+  test("the shared form is hidden even when the route check fails", async ({ page }) => {
+    // Production served the homepage with both forms although the route was in
+    // the stand-down list, so the route check cannot be the only defence. This
+    // reproduces that state directly: inject the shared section onto a page
+    // that owns a form, exactly as a failed check would, and the stylesheet
+    // must still keep it out of sight.
+    await page.goto("/programs/physics");
+    await page.evaluate(() => {
+      const section = document.createElement("section");
+      section.setAttribute("data-enquiry-section", "shared");
+      section.innerHTML =
+        '<h2>Book a Free 30-Minute Consultation</h2>' +
+        '<form data-enquiry-form="shared"><input name="name" /></form>';
+      document.body.append(section);
+    });
+
+    await expect(page.locator('[data-enquiry-section="shared"]')).toBeHidden();
+    await expect(page.locator('form[data-enquiry-form="shared"]')).toBeHidden();
+    await expect(page.locator('form[data-enquiry-form="page"]').first()).toBeVisible();
+  });
+});

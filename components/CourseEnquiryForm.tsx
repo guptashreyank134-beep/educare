@@ -192,7 +192,13 @@ export default function CourseEnquiryForm({
         Takes under a minute. We reply within 24 hours on business days.
       </p>
 
-      <form onSubmit={handleSubmit} onInput={handleFirstInput} className="space-y-5" noValidate>
+      <form
+        onSubmit={handleSubmit}
+        onInput={handleFirstInput}
+        data-enquiry-form="page"
+        className="space-y-5"
+        noValidate
+      >
         <FormSpamFields />
 
         <div>

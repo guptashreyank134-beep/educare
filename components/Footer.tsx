@@ -50,7 +50,10 @@ const FacebookIcon = () => (
 
 function ContactForm() {
   return (
-    <section className="relative overflow-hidden py-10 px-4 sm:px-6 lg:px-8">
+    <section
+      data-enquiry-section="shared"
+      className="relative overflow-hidden py-10 px-4 sm:px-6 lg:px-8"
+    >
       {/* Yellow grid background */}
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-46"
@@ -76,7 +79,7 @@ function ContactForm() {
 
         {/* One shared form across the whole site (fields, consent, tel/email
             types, single-submit conversion tracking all live in TrialClassForm). */}
-        <TrialClassForm />
+        <TrialClassForm scope="shared" />
       </div>
     </section>
   );
@@ -257,7 +260,13 @@ function FooterBar() {
 
 export default function Footer() {
   const pathname = usePathname();
-  const showGlobalForm = !pathname || !ROUTES_WITH_THEIR_OWN_FORM.has(pathname);
+
+  // The route list is written without a trailing slash, so "/about/" has to be
+  // reduced to "/about" or the lookup misses and the page gets two forms. An
+  // unknown path still shows the form: it is the only enquiry form on most
+  // pages, and a missing form costs an enquiry outright.
+  const route = pathname ? pathname.replace(/(.)\/+$/, "$1") : null;
+  const showGlobalForm = !route || !ROUTES_WITH_THEIR_OWN_FORM.has(route);
 
   return (
     <>

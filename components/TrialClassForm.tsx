@@ -12,7 +12,19 @@ import FormSpamFields from "@/components/FormSpamFields";
 // On success we redirect here (a distinct URL + dataLayer event) so bookings can
 // be measured as a conversion in GTM/GA4/Google Ads. Pass redirectTo={null} to
 // keep the old inline-confirmation behaviour instead.
-const TrialClassForm = ({ redirectTo = '/thank-you' }: { redirectTo?: string | null }) => {
+const TrialClassForm = ({
+  redirectTo = '/thank-you',
+  scope = 'page',
+}: {
+  redirectTo?: string | null;
+  /**
+   * 'shared' marks the single copy rendered by the footer on every page.
+   * 'page' marks a form the page itself owns. A stylesheet rule uses this to
+   * hide the shared copy whenever the page has its own, which holds even if
+   * the route-list check below mis-reads the current path.
+   */
+  scope?: 'page' | 'shared';
+}) => {
   const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   // Unique per instance: this form also renders inside the site footer, so a
@@ -79,7 +91,7 @@ Consent to contact: ${rawData.get('consent') ? 'Yes' : 'No'}
   return (
     <div className="bg-white rounded-[24px] shadow-[0_20px_80px_rgba(0,0,0,0.08)] p-8 border border-[#F1F5F9]">
 
-      <form onSubmit={handleSubmit} className="space-y-6 relative">
+      <form onSubmit={handleSubmit} data-enquiry-form={scope} className="space-y-6 relative">
         <FormSpamFields />
         <Input label="Parent or Student Name" placeholder="e.g. Priya Sharma" id={fieldId("parentName")} name="parentName" autoComplete="name" required />
 

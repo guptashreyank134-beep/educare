@@ -18,7 +18,8 @@
     "seo:check": "tsx scripts/seo-check.mts",
     "test:browser": "playwright test",
     "verify:leads": "tsx scripts/verify-lead-delivery.mts",
-    "seo:own-form-routes": "tsx scripts/build-own-form-routes.mts"
+    "seo:own-form-routes": "tsx scripts/build-own-form-routes.mts",
+    "seo:one-form": "tsx scripts/check-one-form.mts"
   },
   "dependencies": {
     "@portabletext/react": "^6.2.0",
