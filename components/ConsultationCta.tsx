@@ -5,11 +5,35 @@ import { useEffect, useRef, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * Anchor to the enquiry form that records the click.
+ * Moves the reader to the enquiry form and puts the cursor in it.
  *
- * A link rather than a button: it moves the reader to the form on the same page,
- * so it must behave like navigation for keyboard and middle-click alike.
+ * A plain anchor jumped up to 2,700px instantly on a phone, with no page change
+ * and no movement to follow, which reads as a broken button rather than as
+ * having arrived somewhere. Scrolling smoothly and then focusing the first field
+ * makes the click land visibly, and leaves the visitor able to type immediately.
+ *
+ * Still an `<a href="#...">`, so it works before hydration, honours middle-click
+ * and "open in new tab", and remains reachable by keyboard.
  */
+export function scrollToEnquiryForm(targetId: string): boolean {
+  const target = document.getElementById(targetId);
+  if (!target) return false;
+
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+
+  // Focus once the scroll has settled. `preventScroll` stops the browser from
+  // yanking the page a second time and undoing the smooth movement.
+  const field = target.querySelector<HTMLElement>(
+    'input:not([type="hidden"]):not([tabindex="-1"]), textarea',
+  );
+  window.setTimeout(() => field?.focus({ preventScroll: true }), reduceMotion ? 0 : 450);
+
+  // Keep the hash so the URL is shareable, without a second jump.
+  window.history.replaceState(null, "", `#${targetId}`);
+  return true;
+}
+
 export function ConsultationCtaLink({
   targetId,
   formId,
@@ -24,7 +48,13 @@ export function ConsultationCtaLink({
   return (
     <a
       href={`#${targetId}`}
-      onClick={() => trackEvent("consultation_cta_click", { form_id: formId })}
+      onClick={(event) => {
+        trackEvent("consultation_cta_click", { form_id: formId });
+        // Only take over when the target is really there; otherwise let the
+        // browser handle the link as it normally would.
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+        if (scrollToEnquiryForm(targetId)) event.preventDefault();
+      }}
       className={className}
     >
       {children}
@@ -76,7 +106,11 @@ export function StickyConsultationBar({
       <a
         href={`#${targetId}`}
         tabIndex={visible ? 0 : -1}
-        onClick={() => trackEvent("consultation_cta_click", { form_id: `${formId}-sticky` })}
+        onClick={(event) => {
+          trackEvent("consultation_cta_click", { form_id: `${formId}-sticky` });
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+          if (scrollToEnquiryForm(targetId)) event.preventDefault();
+        }}
         className="flex w-full items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white"
       >
         {label}

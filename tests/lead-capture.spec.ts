@@ -307,3 +307,43 @@ test.describe("analytics events", () => {
     expect(JSON.stringify(error)).not.toContain("doesn't look right");
   });
 });
+
+/**
+ * The consultation CTA must visibly arrive at the form.
+ *
+ * A plain anchor jumped thousands of pixels instantly, which reads as a broken
+ * button rather than as having moved. These assert the click lands with the
+ * cursor in the first field, so the visitor can type straight away.
+ */
+test.describe("consultation CTA lands in the form", () => {
+  for (const [label, width, height] of [
+    ["mobile", 390, 844],
+    ["narrow", 572, 690],
+    ["desktop", 1280, 900],
+  ] as [string, number, number][]) {
+    test(`${label}: click focuses the first field`, async ({ page }) => {
+      await page.setViewportSize({ width, height });
+      await page.goto("/programs/computer-science");
+
+      await page.getByRole("link", { name: /Book a Free 30-Minute Consultation/i }).first().click();
+
+      // The form is on screen...
+      await expect(page.locator("#computer-science-enquiry")).toBeInViewport({ timeout: 5_000 });
+
+      // ...and the cursor is already in it, so booking really is one click away.
+      await expect(page.getByLabel(/your name/i)).toBeFocused({ timeout: 5_000 });
+
+      // The hash is kept so the URL stays shareable.
+      expect(page.url()).toContain("#computer-science-enquiry");
+    });
+  }
+
+  test("typing works immediately after the click, with no second interaction", async ({ page }) => {
+    await page.goto("/programs/computer-science");
+    await page.getByRole("link", { name: /Book a Free 30-Minute Consultation/i }).first().click();
+    await expect(page.getByLabel(/your name/i)).toBeFocused({ timeout: 5_000 });
+
+    await page.keyboard.type("Priya Sharma");
+    await expect(page.getByLabel(/your name/i)).toHaveValue("Priya Sharma");
+  });
+});
