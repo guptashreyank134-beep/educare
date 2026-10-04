@@ -15,19 +15,57 @@ import { trackEvent } from "@/lib/analytics";
  * Still an `<a href="#...">`, so it works before hydration, honours middle-click
  * and "open in new tab", and remains reachable by keyboard.
  */
+/** Clearance for the sticky site header, so the form never lands behind it. */
+const HEADER_CLEARANCE = 96;
+const BOTTOM_PADDING = 24;
+
 export function scrollToEnquiryForm(targetId: string): boolean {
   const target = document.getElementById(targetId);
   if (!target) return false;
 
-  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-  target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  const box = target.getBoundingClientRect();
+  const viewport = window.innerHeight;
+  const pageTop = window.scrollY + box.top;
+  const usable = viewport - HEADER_CLEARANCE - BOTTOM_PADDING;
 
-  // Focus once the scroll has settled. `preventScroll` stops the browser from
-  // yanking the page a second time and undoing the smooth movement.
+  // Aligning the top is only right when the whole form fits. The form runs to
+  // ~889px against a 900px viewport, so a top-aligned scroll left the submit
+  // button below the fold and the form looked cut off. When it does not fit,
+  // bring the bottom into view instead, so the button that completes the
+  // booking is the thing the visitor can see.
+  const fits = box.height <= usable;
+  const top = fits
+    ? pageTop - HEADER_CLEARANCE
+    : pageTop + box.height - viewport + BOTTOM_PADDING;
+
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: Math.max(0, top), behavior: reduceMotion ? "auto" : "smooth" });
+
+  // Focus the first field only when it is actually on screen. On a short
+  // viewport the bottom-aligned scroll puts it above the fold, and focusing it
+  // there would scroll the page back and undo the alignment.
   const field = target.querySelector<HTMLElement>(
     'input:not([type="hidden"]):not([tabindex="-1"]), textarea',
   );
-  window.setTimeout(() => field?.focus({ preventScroll: true }), reduceMotion ? 0 : 450);
+  window.setTimeout(
+    () => {
+      const fieldBox = field?.getBoundingClientRect();
+      const fieldOnScreen =
+        fieldBox && fieldBox.top >= HEADER_CLEARANCE && fieldBox.bottom <= window.innerHeight;
+
+      if (fieldOnScreen) {
+        field!.focus({ preventScroll: true });
+        return;
+      }
+
+      // The field is above the fold after a bottom-aligned scroll. Focus must
+      // still move to the form, or it stays on the link far up the page and a
+      // keyboard user carries on tabbing from there rather than from here.
+      target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
+    },
+    reduceMotion ? 0 : 500,
+  );
 
   // Keep the hash so the URL is shareable, without a second jump.
   window.history.replaceState(null, "", `#${targetId}`);
