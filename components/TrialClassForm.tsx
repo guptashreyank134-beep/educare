@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 import { createLead } from '@/app/actions/lead'
 import FormSpamFields from "@/components/FormSpamFields";
+import { getAppointmentBooking } from "@/lib/appointmentBooking";
 
 // On success we redirect here (a distinct URL + dataLayer event) so bookings can
 // be measured as a conversion in GTM/GA4/Google Ads. Pass redirectTo={null} to
@@ -15,8 +16,10 @@ import FormSpamFields from "@/components/FormSpamFields";
 const TrialClassForm = ({
   redirectTo = '/thank-you',
   scope = 'page',
+  showAppointmentLink = true,
 }: {
   redirectTo?: string | null;
+  showAppointmentLink?: boolean;
   /**
    * 'shared' marks the single copy rendered by the footer on every page.
    * 'page' marks a form the page itself owns. A stylesheet rule uses this to
@@ -92,6 +95,13 @@ Consent to contact: ${rawData.get('consent') ? 'Yes' : 'No'}
     <div className="bg-white rounded-[24px] shadow-[0_20px_80px_rgba(0,0,0,0.08)] p-8 border border-[#F1F5F9]">
 
       <form onSubmit={handleSubmit} data-enquiry-form={scope} className="space-y-6 relative">
+        {showAppointmentLink && getAppointmentBooking() && (
+          <p className="rounded-xl bg-slate-50 p-4 text-sm">
+            Prefer to choose a time now?{" "}
+            <Link href="/book" className="text-primary font-semibold underline">View available appointments</Link>
+            . Or send an enquiry below.
+          </p>
+        )}
         <FormSpamFields />
         <Input label="Parent or Student Name" placeholder="e.g. Priya Sharma" id={fieldId("parentName")} name="parentName" autoComplete="name" required />
 
