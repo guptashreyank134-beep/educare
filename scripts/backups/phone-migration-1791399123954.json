@@ -1,0 +1,1623 @@
+[
+  {
+    "_createdAt": "2026-10-05T15:01:57Z",
+    "_id": "ddWoJVyficmu7X9I8k2Hlt",
+    "_rev": "ddWoJVyficmu7X9I8k2Hi3",
+    "_type": "post",
+    "_updatedAt": "2026-10-05T15:01:57Z",
+    "body": [
+      {
+        "_key": "5fd0a27d67ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ced12da2011e",
+            "_type": "span",
+            "marks": [],
+            "text": "When \"He's Just Not Getting Math\" Is Actually Something Fixable"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "467d15939cb0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d1a04b07a411",
+            "_type": "span",
+            "marks": [],
+            "text": "If you're searching for tutoring in Burnaby, there's usually a quiet worry behind it. Maybe your daughter used to like math and now dreads it. Maybe your son says he \"studied for hours\" and still came home with a disappointing Chemistry 11 test. Maybe the report card didn't say "
+          },
+          {
+            "_key": "2b3f2cc36259",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "struggling"
+          },
+          {
+            "_key": "661358a921d2",
+            "_type": "span",
+            "marks": [],
+            "text": " — it just slipped from an A to a C and nobody can quite explain why."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b05d500a9040",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "23261879a13b",
+            "_type": "span",
+            "marks": [],
+            "text": "Here's the reassuring part: in almost every case we see, the problem isn't ability. It's a small "
+          },
+          {
+            "_key": "451453daa9a3",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "concept gap"
+          },
+          {
+            "_key": "96519ce7a0eb",
+            "_type": "span",
+            "marks": [],
+            "text": " that got skipped early, never got filled, and then compounded. The student kept building new material on a shaky foundation until, one day, it stopped holding up. The grade is the symptom. The gap is the cause."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "aea05e20fdee",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "17b86223209d",
+            "_type": "span",
+            "marks": [],
+            "text": "That distinction matters enormously when you're choosing a tutor — because most tutoring treats the symptom (re-drilling the current chapter) instead of diagnosing the cause (finding the missing piece three units back). This guide walks you through how to tell the difference, what good tutoring actually looks like in Burnaby and across Metro Vancouver, and the questions worth asking before you commit."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "712a1d23f70b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a7051d17a010",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "Not sure where the gap actually is? "
+          },
+          {
+            "_key": "44c5ab759a71",
+            "_type": "span",
+            "marks": [
+              "em",
+              "fafe69869363"
+            ],
+            "text": "Book a free assessment"
+          },
+          {
+            "_key": "700722f4f9fe",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": " — no pressure, just clarity."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "fafe69869363",
+            "_type": "link",
+            "href": "https://drshreyankeducare.com/book"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "8eb97a494784",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "355f4974c884",
+            "_type": "span",
+            "marks": [],
+            "text": "The Two Kinds of \"Falling Behind\" — and Why They Need Different Help"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "e922744a36f8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d65155876c9e",
+            "_type": "span",
+            "marks": [],
+            "text": "Not all struggle is the same, and the right tutor should be able to tell these apart quickly."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2dbc9891859b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "db22311078e6",
+            "_type": "span",
+            "marks": [],
+            "text": "A "
+          },
+          {
+            "_key": "7160f4be4391",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "practice gap"
+          },
+          {
+            "_key": "8ea635a22ab1",
+            "_type": "span",
+            "marks": [],
+            "text": " is when a student understands the concept but hasn't done enough reps to be fast or confident. The fix is more guided practice. This is the easy case."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0e50cd937bf7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bc8ce58b47dd",
+            "_type": "span",
+            "marks": [],
+            "text": "A "
+          },
+          {
+            "_key": "962bf7186140",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "concept gap"
+          },
+          {
+            "_key": "4e6aa4e3e196",
+            "_type": "span",
+            "marks": [],
+            "text": " is when the foundation itself is missing. The student is trying to run before the underlying idea is in place — so no amount of practice sticks, because they're practising on sand. This is the case most tutors miss, and it's the one that matters most."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c9aa9e61bdad",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1474de91e4cd",
+            "_type": "span",
+            "marks": [],
+            "text": "Here's a concrete example. A Pre-Calculus 12 student can't factor a quadratic. A drill-based tutor hands them twenty more factoring problems. A diagnostic tutor asks one question and discovers the real issue is that the distributive property — Grade 8 material — never truly clicked. Fill "
+          },
+          {
+            "_key": "0c89f6d65565",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "that"
+          },
+          {
+            "_key": "cd115cda5309",
+            "_type": "span",
+            "marks": [],
+            "text": ", and factoring suddenly makes sense. Everything built on top of it steadies."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e7d126ed29e5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3cf78bf24896",
+            "_type": "span",
+            "marks": [],
+            "text": "This is the insight that shapes everything we do at Dr. Shreyank Educare: "
+          },
+          {
+            "_key": "5ea02535cd83",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "small concept gaps compound, and memorisation masks a shaky foundation until exam pressure exposes it."
+          },
+          {
+            "_key": "6ffe628d2613",
+            "_type": "span",
+            "marks": [],
+            "text": " The \"fog before the exam\" that so many students describe is almost always a foundation problem, not a willpower problem."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1ff917abffef",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5e81a1b47c1b",
+            "_type": "span",
+            "marks": [],
+            "text": "What Good Math & Science Tutoring in Burnaby Actually Looks Like"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "3ba17cad6528",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "44c9663f4d36",
+            "_type": "span",
+            "marks": [],
+            "text": "When you're comparing options for tutoring in Burnaby, look past the flyers and ask what "
+          },
+          {
+            "_key": "bc31c9aabf2f",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "actually happens"
+          },
+          {
+            "_key": "112e0ec6a2d6",
+            "_type": "span",
+            "marks": [],
+            "text": " in a session. Strong tutoring shares a few traits:"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "90f1c0758ab8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d46629408c4c",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "It starts with a diagnosis, not a worksheet."
+          },
+          {
+            "_key": "cc66e7e0c036",
+            "_type": "span",
+            "marks": [],
+            "text": " A good tutor finds the root gap before teaching anything new."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "5afefb540789",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5c8a6faeeb41",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "It's genuinely one-on-one."
+          },
+          {
+            "_key": "9827d69e34d7",
+            "_type": "span",
+            "marks": [],
+            "text": " Your child's gaps are specific. A room of eight students working through the same handout can't address them."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "de29c21b536b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "88b743033262",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "It teaches the "
+          },
+          {
+            "_key": "d9474fe9cdfc",
+            "_type": "span",
+            "marks": [
+              "strong",
+              "em"
+            ],
+            "text": "why"
+          },
+          {
+            "_key": "fbd4f64e4654",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": ", not just the steps."
+          },
+          {
+            "_key": "93ed9bbf139b",
+            "_type": "span",
+            "marks": [],
+            "text": " If a student can only follow a recipe, they're fine until the question is phrased differently. Understanding travels; memorisation doesn't."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6c0bd9258a5d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "65c6a8944aff",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "It connects to the real coursework."
+          },
+          {
+            "_key": "32d7e8bd061b",
+            "_type": "span",
+            "marks": [],
+            "text": " The tutor should work with your child's actual BC curriculum, unit tests, and provincial-exam format — not a generic parallel workbook."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "486c722dfa2e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e91631e4b2c2",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "It tracks progress honestly."
+          },
+          {
+            "_key": "d7376fda46f9",
+            "_type": "span",
+            "marks": [],
+            "text": " No vague \"he's doing better.\" You should hear what the gap was, what's been fixed, and what's next."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0ebddefa00c0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "cf728c168e6e",
+            "_type": "span",
+            "marks": [],
+            "text": "The BC curriculum is cumulative by design. Foundations of Math and Pre-Calculus 10 feeds Pre-Calculus 11, which feeds "
+          },
+          {
+            "_key": "d05f7c11c698",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Pre-Calculus 12"
+          },
+          {
+            "_key": "8a434a5d371b",
+            "_type": "span",
+            "marks": [],
+            "text": " and "
+          },
+          {
+            "_key": "516695dddc43",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Calculus 12"
+          },
+          {
+            "_key": "d5048fcd67df",
+            "_type": "span",
+            "marks": [],
+            "text": ". Chemistry 11 stoichiometry underpins all of Chemistry 12 equilibrium. If a tutor doesn't understand that chain, they can't find where it broke."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "9ff2257968f9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9e70c9632d17",
+            "_type": "span",
+            "marks": [],
+            "text": "A Peek Inside the Subjects — Where Students Actually Get Stuck"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "74e86d3d5370",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "cfc927c0c95e",
+            "_type": "span",
+            "marks": [],
+            "text": "The best way to judge a tutor is to see whether they understand "
+          },
+          {
+            "_key": "9db254d0917c",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "where"
+          },
+          {
+            "_key": "97370f35b387",
+            "_type": "span",
+            "marks": [],
+            "text": " students trip, and "
+          },
+          {
+            "_key": "7a8abfc8b6da",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "why"
+          },
+          {
+            "_key": "02475dfb4df4",
+            "_type": "span",
+            "marks": [],
+            "text": ". Here are a few real pinch points we see constantly across Burnaby and Metro Vancouver."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d047f4d98c2b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "918ac651c636",
+            "_type": "span",
+            "marks": [],
+            "text": "Chemistry 11: Stoichiometry Is a Translation Problem"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "9d830482d6f6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bdb69cb4fbdd",
+            "_type": "span",
+            "marks": [],
+            "text": "Most students who \"hate stoichiometry\" don't actually have a chemistry problem — they have a ratio problem wearing a lab coat. The entire skill rests on the mole and one conversion:"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2e9bb370d002",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e965e3523dba",
+            "_type": "span",
+            "marks": [],
+            "text": "n = (m) / (M)   — moles = mass (g) ÷ molar mass (g/mol)"
+          }
+        ],
+        "markDefs": [],
+        "style": "blockquote"
+      },
+      {
+        "_key": "133cc1d25c37",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4d41ef67cf15",
+            "_type": "span",
+            "marks": [],
+            "text": "Once a student truly sees that a balanced equation is just a ratio of moles, a question like \"how many grams of product form from 8.0 g of a reactant\" becomes three clean steps: grams → moles → mole ratio → grams. The students who struggle are almost always the ones memorising the steps without seeing the ratio underneath. Fix the "
+          },
+          {
+            "_key": "4ca9fc05d9bd",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "why"
+          },
+          {
+            "_key": "096d0696ab97",
+            "_type": "span",
+            "marks": [],
+            "text": ", and the whole unit opens up."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2e3427dc8fe8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "40d18293293e",
+            "_type": "span",
+            "marks": [],
+            "text": "Physics 11/12: Kinematics Is About Picking the Right Tool"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "c661e7affa48",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "454a3e4f8296",
+            "_type": "span",
+            "marks": [],
+            "text": "Students panic over kinematics because there seem to be five equations and no obvious way to choose. In reality, you choose based on "
+          },
+          {
+            "_key": "6b0b975c1853",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "what you're not given"
+          },
+          {
+            "_key": "da7c1ddff7c4",
+            "_type": "span",
+            "marks": [],
+            "text": ". The workhorse is:"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "cf44273564d4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "02d462fe8a94",
+            "_type": "span",
+            "marks": [],
+            "text": "Δx = v₀·t + ½·a·t²"
+          }
+        ],
+        "markDefs": [],
+        "style": "blockquote"
+      },
+      {
+        "_key": "462ead0192d8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "58dfc8cf650a",
+            "_type": "span",
+            "marks": [],
+            "text": "When there's no time involved, you reach for:"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1d3ec69d42b4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a9aa540bf585",
+            "_type": "span",
+            "marks": [],
+            "text": "v² = v₀² + 2·a·Δx"
+          }
+        ],
+        "markDefs": [],
+        "style": "blockquote"
+      },
+      {
+        "_key": "95861c4ca273",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c20a13e3c174",
+            "_type": "span",
+            "marks": [],
+            "text": "A good tutor doesn't make students memorise all five — they teach the student to list knowns and unknowns, then pick the equation that fits. That's a thinking skill, and it transfers to every physics problem that follows."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6d375d584101",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "45fb6a2cc3cf",
+            "_type": "span",
+            "marks": [],
+            "text": "Biology & the Dreaded Punnett Square"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "e988c488ef70",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "547d6057b03c",
+            "_type": "span",
+            "marks": [],
+            "text": "Genetics is the subject students most often try to survive by memorising — and the one where memorisation fails hardest. Take a classic monohybrid cross of two heterozygous parents (Aa × Aa). Memorisers just try to recall \"3 to 1.\" Understanders can "
+          },
+          {
+            "_key": "cdf6a3b0ce83",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "derive"
+          },
+          {
+            "_key": "09618e57d398",
+            "_type": "span",
+            "marks": [],
+            "text": " it every time:"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "7eef890bb051",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2a80a4776466",
+            "_type": "span",
+            "marks": [],
+            "text": "Aa × Aa → 1 AA : 2 Aa : 1 aa → phenotype ratio 3 : 1 (dominant : recessive)"
+          }
+        ],
+        "markDefs": [],
+        "style": "blockquote"
+      },
+      {
+        "_key": "a5c95e6c0fc8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "05bce766e1f6",
+            "_type": "span",
+            "marks": [],
+            "text": "When the exam throws a dihybrid cross or a test for independent assortment at them, the memoriser is stuck and the understander just extends the same logic. That's the whole difference."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "18b2897abf05",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f303aca1c683",
+            "_type": "span",
+            "marks": [],
+            "text": "This is why our approach to "
+          },
+          {
+            "_key": "d8bb053bc806",
+            "_type": "span",
+            "marks": [
+              "9af58c1c16bd"
+            ],
+            "text": "science tutoring"
+          },
+          {
+            "_key": "fe69badc7141",
+            "_type": "span",
+            "marks": [],
+            "text": " always goes for comprehension first. Memorisation isn't the strategy — it's the trap we pull students out of."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "9af58c1c16bd",
+            "_type": "link",
+            "href": "https://drshreyankeducare.com/programs/science-tutoring"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "d6a23526250a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c50572471c5d",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "Want your child to actually understand the \"why\" instead of cramming it? "
+          },
+          {
+            "_key": "42927cf3c966",
+            "_type": "span",
+            "marks": [
+              "em",
+              "b33ed1dba4b5"
+            ],
+            "text": "Book a free, no-pressure assessment"
+          },
+          {
+            "_key": "3ab6d79770bd",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": " and we'll show you exactly where the gap is."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "b33ed1dba4b5",
+            "_type": "link",
+            "href": "https://drshreyankeducare.com/book"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "9e0cca7e8748",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c8e5d93b650b",
+            "_type": "span",
+            "marks": [],
+            "text": "PhD-Led vs. the Rest: What That Phrase Should (and Shouldn't) Mean"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "ef6262c6cf15",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e17136ea5e2d",
+            "_type": "span",
+            "marks": [],
+            "text": "You'll see a lot of credentials advertised in Burnaby tutoring. Here's an honest way to read them."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "5f3ecfa47055",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "da412665069f",
+            "_type": "span",
+            "marks": [],
+            "text": "\"PhD-led\" doesn't mean a professor personally teaches every Grade 7 math session — and any tutoring service that implies otherwise is overselling. What it "
+          },
+          {
+            "_key": "4abab27b855d",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "should"
+          },
+          {
+            "_key": "7dfadf8c6b77",
+            "_type": "span",
+            "marks": [],
+            "text": " mean is that the "
+          },
+          {
+            "_key": "a6aa0c7e9755",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "method and the quality bar are set by someone with deep subject mastery"
+          },
+          {
+            "_key": "7259e2937098",
+            "_type": "span",
+            "marks": [],
+            "text": ", and a team of qualified tutors delivers that standard consistently across subjects."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "4283764e9510",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "790046593e2f",
+            "_type": "span",
+            "marks": [],
+            "text": "At Dr. Shreyank Educare, our practice is led by Dr. Shreyank Gupta (Ph.D.). He sets the understanding-first method — diagnose the concept gap, teach the "
+          },
+          {
+            "_key": "a220e50310a2",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "why"
+          },
+          {
+            "_key": "932bf1f6064c",
+            "_type": "span",
+            "marks": [],
+            "text": ", connect it to the real coursework — and oversees the tutors who deliver it. That combination is the point: rigour "
+          },
+          {
+            "_key": "059fba1289b4",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "plus"
+          },
+          {
+            "_key": "a1bcead53cc3",
+            "_type": "span",
+            "marks": [],
+            "text": " a method that fights memorisation "
+          },
+          {
+            "_key": "f3cc76dc5e42",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "plus"
+          },
+          {
+            "_key": "d87cbe41b4f3",
+            "_type": "span",
+            "marks": [],
+            "text": " coverage across the whole range of math and science, from elementary foundations to UBC calculus and SFU chemistry."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "901e6e570a8d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "646325f8b6e8",
+            "_type": "span",
+            "marks": [],
+            "text": "What this means for you as a parent: you're not gambling on whether you got the \"good\" tutor that day. The approach is consistent because it's structured, not improvised."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a383f6037fef",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8678bed1af10",
+            "_type": "span",
+            "marks": [],
+            "text": "In-Person in Burnaby or Online Across Metro Vancouver — Which Fits Your Child?"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "d1942c6ad92c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ef81cb302afd",
+            "_type": "span",
+            "marks": [],
+            "text": "One of the first practical choices is format, and there's no universally \"better\" answer — it depends on the learner."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "fe4639edee1c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "769eb51fde10",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "In-person tutoring in Burnaby"
+          },
+          {
+            "_key": "03a6117bd29d",
+            "_type": "span",
+            "marks": [],
+            "text": " tends to suit younger students (our K–7 foundational learners especially), students who are easily distracted, and families who value that face-to-face accountability. Sitting side by side, a tutor can read a furrowed brow and catch confusion the moment it appears."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "beb6aa63b958",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4bce31fe523e",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Online tutoring"
+          },
+          {
+            "_key": "59c57dd1a342",
+            "_type": "span",
+            "marks": [],
+            "text": " works beautifully for motivated high-schoolers and university students, and it opens the door to families in Vancouver, New Westminster, Coquitlam, Richmond, Surrey, and North Vancouver who can't easily travel. With a shared digital whiteboard, screen-sharing of actual lab reports, and recorded worked examples to review later, strong online sessions lose almost nothing — and save everyone the commute."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d2a92c4de2e8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ca74bd619da4",
+            "_type": "span",
+            "marks": [],
+            "text": "Many of our families mix both. A Coquitlam student might do most sessions online and come in before a big provincial exam. You can explore how both formats work on our "
+          },
+          {
+            "_key": "1caccee090ef",
+            "_type": "span",
+            "marks": [
+              "394585857f62"
+            ],
+            "text": "programs page"
+          },
+          {
+            "_key": "f46e86bd8aea",
+            "_type": "span",
+            "marks": [],
+            "text": ", or just ask us what we'd recommend for your child's age and subject."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "394585857f62",
+            "_type": "link",
+            "href": "https://drshreyankeducare.com/programs"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "823e822d0d66",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e460f7da7e79",
+            "_type": "span",
+            "marks": [],
+            "text": "From Elementary Foundations to UBC & SFU Coursework"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "2a3ffa06a6e3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c47954a1f08c",
+            "_type": "span",
+            "marks": [],
+            "text": "Good tutoring meets a student exactly where they are. The needs of a Grade 3 reader are nothing like those of a second-year university student drowning in organic chemistry — and the right practice handles both."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "77d6dc2cde6a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e5ffe8a72c06",
+            "_type": "span",
+            "marks": [],
+            "text": "For younger learners, it's about building the foundation before the gaps ever form: number sense, confidence, and reading fluency through "
+          },
+          {
+            "_key": "78440a39da69",
+            "_type": "span",
+            "marks": [
+              "1babe9c6a5e2"
+            ],
+            "text": "elementary foundational skills"
+          },
+          {
+            "_key": "93bced0158cc",
+            "_type": "span",
+            "marks": [],
+            "text": ". For Grades 8–12, it's subject mastery and exam strategy for BC provincials, AP, and IB. For "
+          },
+          {
+            "_key": "ea59e34cff72",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "SAT prep"
+          },
+          {
+            "_key": "9fb7b0aa4783",
+            "_type": "span",
+            "marks": [],
+            "text": ", it's targeted work on Math and Reading & Writing with real practice conditions."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "1babe9c6a5e2",
+            "_type": "link",
+            "href": "https://drshreyankeducare.com/programs/elementary-tutoring"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "afacc23924b1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6e4aae564a54",
+            "_type": "span",
+            "marks": [],
+            "text": "And for post-secondary students, the stakes rise fast. "
+          },
+          {
+            "_key": "904c70461da3",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Organic chemistry"
+          },
+          {
+            "_key": "06e35859c74a",
+            "_type": "span",
+            "marks": [],
+            "text": " — \"orgo\" — is the course that humbles strong students at UBC and SFU precisely because you can't memorise your way through reaction mechanisms; you have to understand how electrons move. First-year UBC calculus and SFU physics reward the same thing: conceptual fluency over recall. Our "
+          },
+          {
+            "_key": "6839cb857ffe",
+            "_type": "span",
+            "marks": [
+              "d34ca5bfe561"
+            ],
+            "text": "college and university tutoring"
+          },
+          {
+            "_key": "15700d6b2009",
+            "_type": "span",
+            "marks": [],
+            "text": " is built for exactly that — and adult learners upgrading their academics are just as welcome."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "d34ca5bfe561",
+            "_type": "link",
+            "href": "https://drshreyankeducare.com/programs/college-tutoring"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "229b355f9001",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "47bfa3b1ded2",
+            "_type": "span",
+            "marks": [],
+            "text": "Red Flags, Green Flags, and the Questions Worth Asking"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "45d1ce24b143",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2fae0c12c332",
+            "_type": "span",
+            "marks": [],
+            "text": "Before you book anyone for tutoring in Burnaby, a short conversation tells you most of what you need to know."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "5a717939ca7f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1ffa6ff11ba4",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Green flags:"
+          },
+          {
+            "_key": "022e9e3d586a",
+            "_type": "span",
+            "marks": [],
+            "text": " they ask about your child's specific coursework and recent tests; they want to diagnose before they teach; they explain "
+          },
+          {
+            "_key": "426a24a43387",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "why"
+          },
+          {
+            "_key": "c65697859025",
+            "_type": "span",
+            "marks": [],
+            "text": " a concept works, not just how; they're honest about timelines; and they offer a no-pressure way to start, like a free assessment."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "9f4f491a6a4d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6baf2ef4741f",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Red flags:"
+          },
+          {
+            "_key": "d281fa6204cb",
+            "_type": "span",
+            "marks": [],
+            "text": " they guarantee a specific grade (no honest tutor can promise an A — it isn't credible); they use high-pressure \"spots almost gone\" tactics; they jump straight into generic worksheets; or they talk down to your child. Dismissiveness — \"just study harder,\" \"it's easy\" — is the biggest red flag of all. If it were easy, you wouldn't be reading this."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ce5f9227e6a7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0c237a13a52d",
+            "_type": "span",
+            "marks": [],
+            "text": "Ask directly: "
+          },
+          {
+            "_key": "db0d34604568",
+            "_type": "span",
+            "marks": [
+              "em"
+            ],
+            "text": "How will you figure out what my child is actually missing?"
+          },
+          {
+            "_key": "6f071186773a",
+            "_type": "span",
+            "marks": [],
+            "text": " The answer reveals everything. A tutor who leads with diagnosis is a tutor who can actually move the needle. If you'd like, you can "
+          },
+          {
+            "_key": "2e2850c2cd01",
+            "_type": "span",
+            "marks": [
+              "b62b75bb2bf3"
+            ],
+            "text": "reach out with your questions"
+          },
+          {
+            "_key": "9401107bc142",
+            "_type": "span",
+            "marks": [],
+            "text": " before committing to anything."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "b62b75bb2bf3",
+            "_type": "link",
+            "href": "https://drshreyankeducare.com/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "df08e414c603",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "54fb381ef024",
+            "_type": "span",
+            "marks": [],
+            "text": "Ready to Turn Frustration Into Confidence?"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "787bffa466c2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "05774252e339",
+            "_type": "span",
+            "marks": [],
+            "text": "If your child has been stuck, quietly falling behind, or just lost their confidence in math or science, the next step is simple and risk-free. We'll start with a "
+          },
+          {
+            "_key": "9418a33f88d6",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "free assessment"
+          },
+          {
+            "_key": "5a76756e8689",
+            "_type": "span",
+            "marks": [],
+            "text": " to pinpoint the real concept gap — the one behind the grade — and show you exactly what a path forward looks like. No pressure, no obligation, no hard sell."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a06921b7168a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7db64d61f00e",
+            "_type": "span",
+            "marks": [],
+            "text": "👉 "
+          },
+          {
+            "_key": "a3114a79ba9f",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Book your free assessment at "
+          },
+          {
+            "_key": "b8f1314f5b54",
+            "_type": "span",
+            "marks": [
+              "strong",
+              "4194ad8e0869"
+            ],
+            "text": "drshreyankeducare.com/book"
+          },
+          {
+            "_key": "f1102d15afb7",
+            "_type": "span",
+            "marks": [],
+            "text": ", or simply call or text us at "
+          },
+          {
+            "_key": "9db9604e5c4d",
+            "_type": "span",
+            "marks": [
+              "935b12ae1083"
+            ],
+            "text": "672-514-7587"
+          },
+          {
+            "_key": "01cb74aa86af",
+            "_type": "span",
+            "marks": [],
+            "text": "."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "4194ad8e0869",
+            "_type": "link",
+            "href": "https://drshreyankeducare.com/book"
+          },
+          {
+            "_key": "935b12ae1083",
+            "_type": "link",
+            "href": "tel:+16725147587"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "e3de9ad7d8a4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "db976909b70e",
+            "_type": "span",
+            "marks": [],
+            "text": "We offer in-person tutoring in Burnaby and online tutoring across Metro Vancouver — Vancouver, New Westminster, Coquitlam, Richmond, Surrey, and North Vancouver. Let's find the gap, fix the foundation, and help the \"why\" finally click."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c87c38de11f4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "af395eec4683",
+            "_type": "span",
+            "marks": [],
+            "text": "Frequently Asked Questions"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "ef231198bd47",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7cd3f2100d51",
+            "_type": "span",
+            "marks": [],
+            "text": "How much does tutoring in Burnaby cost?"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "be0d70d3fc19",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ab3588406e44",
+            "_type": "span",
+            "marks": [],
+            "text": "Pricing depends on the subject, level, and whether sessions are in-person in Burnaby or online. The most useful first step is a free, no-pressure assessment — we'll diagnose the real concept gap and recommend a plan that fits your child before you commit to anything. Book one at drshreyankeducare.com/book or call/text 672-514-7587."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c72ba75a8db9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2bcc55954624",
+            "_type": "span",
+            "marks": [],
+            "text": "Does my child really need a tutor, or will they catch up on their own?"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "0225909da6c6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "956424cf4145",
+            "_type": "span",
+            "marks": [],
+            "text": "If the struggle is a short-term practice gap, students often recover with a little extra effort. But if a foundational concept was skipped — common in cumulative subjects like Pre-Calculus 12 or Chemistry 11 — it tends to compound rather than fix itself. A free assessment quickly tells you which situation you're in."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "db2000010714",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b2025ed188a7",
+            "_type": "span",
+            "marks": [],
+            "text": "Is online tutoring as effective as in-person tutoring in Burnaby?"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "0125a66ba9ba",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "362d3321245a",
+            "_type": "span",
+            "marks": [],
+            "text": "For motivated high-school and university students, online tutoring is highly effective with a shared whiteboard, screen-sharing, and recorded examples. Younger or easily distracted students often benefit more from in-person sessions in Burnaby. Many families mix both — we'll recommend what fits your child's age and subject."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "433816bec43e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f677da01845c",
+            "_type": "span",
+            "marks": [],
+            "text": "Can you help with university courses like UBC calculus or SFU organic chemistry?"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "af024f9d2b67",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ca78b14df54e",
+            "_type": "span",
+            "marks": [],
+            "text": "Yes. Our practice covers post-secondary coursework including first-year calculus and organic chemistry, as well as adult-learner academic upgrading. Orgo and university calculus reward conceptual understanding over memorisation — which is exactly the understanding-first method our PhD-led practice is built around."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "excerpt": "A warm, practical guide for Burnaby parents on choosing a math or science tutor who fixes concept gaps — not just symptoms. In-person or online across Metro Vancouver.",
+    "metaData": {
+      "_type": "metaData",
+      "canonical": "https://www.drshreyankeducare.com/blog/tutoring-burnaby-parents-guide-math-science-tutor",
+      "metaDescription": "Worried your child is falling behind in math or science? A Burnaby parent's guide to finding a tutor who fixes the real gap. Book a free assessment.",
+      "metaTitle": "Tutoring Burnaby: PhD-Led Math & Science Guide"
+    },
+    "publishedAt": "2026-10-05T15:01:55.913600+00:00",
+    "slug": {
+      "_type": "slug",
+      "current": "tutoring-burnaby-parents-guide-math-science-tutor"
+    },
+    "title": "Tutoring in Burnaby: A Parent's Guide to Finding the Right Math & Science Tutor"
+  }
+]

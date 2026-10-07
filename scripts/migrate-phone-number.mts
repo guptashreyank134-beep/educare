@@ -74,7 +74,10 @@ function transform(node: unknown): { value: unknown; changes: string[] } {
   return { value: walk(node), changes };
 }
 
-const docs = (await query(`*[!(_type match "sanity.*")]`)) as Record<string, unknown>[];
+// Lead records preserve what the visitor entered at submission time. Only
+// migrate authored site content; rewriting historical leads would corrupt the
+// original contact record.
+const docs = (await query(`*[!(_type match "sanity.*") && _type != "lead"]`)) as Record<string, unknown>[];
 const affected = docs.filter((d) => mentionsOld(JSON.stringify(d)));
 
 console.log(`${apply ? "APPLYING" : "DRY RUN"} — old ${OLD_DIGITS} -> new ${NEW_DIGITS}\n`);

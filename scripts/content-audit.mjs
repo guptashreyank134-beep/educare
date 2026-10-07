@@ -37,7 +37,7 @@ function walk(dir, out = []) {
   return out;
 }
 
-const PHONE = "6725147587"; // canonical, digits only
+const PHONE = "6728558577"; // canonical, digits only
 const ALLOWED_PRICE = new Set([75, 100, 185, 200, 280]);
 
 // Each rule: {id, level, test(line) -> boolean, note}
@@ -68,7 +68,7 @@ const rules = [
   {
     id: "old-phone",
     level: "ERROR",
-    note: "phone number that isn't +1 672-514-7587",
+    note: "phone number that isn't +1 672-855-8577",
     test: (line) => {
       // form placeholders show a fake example number on purpose — not a business phone
       if (/placeholder|e\.g\./i.test(line)) return false;
