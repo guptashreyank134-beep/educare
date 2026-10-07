@@ -14,14 +14,22 @@ export default function AppointmentBooking() {
       <div className="mb-5 flex flex-wrap gap-3" aria-label="Booking options">
         <button type="button" aria-pressed={!showEnquiry} onClick={() => setShowEnquiry(false)}
           className={`rounded-lg border px-4 py-3 ${!showEnquiry ? "bg-primary text-white" : "text-primary"}`}>
-          Choose an appointment time
+          Book a time
         </button>
         <button type="button" aria-pressed={showEnquiry} onClick={() => setShowEnquiry(true)}
           className={`rounded-lg border px-4 py-3 ${showEnquiry ? "bg-primary text-white" : "text-primary"}`}>
-          Ask us to contact you
+          Send an email enquiry
         </button>
       </div>
-      {showEnquiry ? <TrialClassForm showAppointmentLink={false} /> : (
+      {showEnquiry ? (
+        <section aria-label="Email enquiry">
+          <p className="mb-4 text-sm text-slate/80">
+            Send us your details without booking a time. Your enquiry will be emailed to our team,
+            and we&apos;ll reply within one business day.
+          </p>
+          <TrialClassForm showAppointmentLink={false} submitLabel="Send Email Enquiry" />
+        </section>
+      ) : (
         <section aria-label="Appointment scheduler">
           <p className="mb-4 text-sm text-slate/80">
             Choose an available time and confirm your appointment in the booking form.

@@ -79,7 +79,7 @@ export default function BookPage() {
 
             <p className="text-[14px] text-slate/60 leading-relaxed max-w-md">
               {booking
-                ? "Choose an appointment time using the calendar, or send an enquiry if you would like help arranging your assessment."
+                ? "Choose an appointment time using the calendar, or send us an email enquiry without booking a time."
                 : "Fill in the form and we'll be in touch to arrange your free assessment. It takes under a minute and commits you to nothing."}
             </p>
           </div>
@@ -92,7 +92,7 @@ export default function BookPage() {
                 Book a Free <span className="text-primary">30-Minute</span> Assessment
               </p>
               <p className="text-[14px] text-slate/70 text-center mb-6">
-                {booking ? "No cost, no obligation. Choose a time that suits you." : "No cost, no obligation. We usually reply within 24 hours."}
+                {booking ? "Book a time or email your enquiry. No cost, no obligation." : "No cost, no obligation. We usually reply within 24 hours."}
               </p>
               <AppointmentBooking />
             </div>

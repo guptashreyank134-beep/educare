@@ -13,10 +13,12 @@ test("booking page offers Calendly and preserves the enquiry option", async ({ p
   await expect(page.getByRole("link", { name: "Open the booking page in a new tab" }))
     .toHaveAttribute("href", "https://calendly.com/drshreyankeducare-info/30min");
 
-  await page.getByRole("button", { name: "Ask us to contact you" }).click();
+  await page.getByRole("button", { name: "Send an email enquiry" }).click();
   await expect(calendar).toHaveCount(0);
+  await expect(page.getByText("Send us your details without booking a time.")).toBeVisible();
   await expect(page.getByLabel("Parent or Student Name", { exact: true })).toBeVisible();
-  await page.getByRole("button", { name: "Choose an appointment time" }).click();
+  await expect(page.getByRole("button", { name: "Send Email Enquiry" })).toBeVisible();
+  await page.getByRole("button", { name: "Book a time" }).click();
   await expect(calendar).toBeVisible();
 
   await page.setViewportSize({ width: 390, height: 844 });
