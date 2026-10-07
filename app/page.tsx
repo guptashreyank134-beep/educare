@@ -112,13 +112,13 @@ export default async function Home() {
               Consultation
             </p>
             <p className="text-[15px] font-montserrat text-slate/70 text-center mb-6 leading-relaxed">
-              Meet with our team, discuss your child's current challenges and receive a recommended tutoring plan.
+              Select an available time to meet with our team and discuss your child&apos;s current challenges.
             </p>
 
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[110%] bg-white/40 blur-3xl rounded-full -z-10" />
             <TrialClassForm />
             <p className="text-[14px] text-slate font-montserrat text-center mt-4 leading-relaxed">
-              ⓘ No obligation — we'll suggest a plan that fits your child.
+            ⓘ No obligation — we&apos;ll suggest a plan that fits your child.
             </p>
           </div>
         </div>

@@ -20,3 +20,14 @@ test("booking page requires visitors to use Calendly", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
+
+test("homepage consultation card goes directly to required Calendly timeslots", async ({ page }) => {
+  await page.goto("/");
+
+  const bookingCard = page.locator('[data-enquiry-form="page"]');
+  await expect(bookingCard).toBeVisible();
+  await expect(bookingCard.locator("form")).toHaveCount(0);
+  await expect(bookingCard.getByRole("link", { name: "Choose an Available Timeslot" }))
+    .toHaveAttribute("href", "https://calendly.com/drshreyankeducare-info/30min");
+  await expect(bookingCard.getByLabel("Parent or Student Name", { exact: true })).toHaveCount(0);
+});

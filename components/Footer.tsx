@@ -72,13 +72,11 @@ function ContactForm() {
             Consultation
           </h2>
           <p className="text-[16px] font-montserrat text-slate">
-            Tell us about the learner and a member of our team will respond within
-            24 hours.
+            Select an available time to confirm your consultation. A timeslot is required.
           </p>
         </div>
 
-        {/* One shared form across the whole site (fields, consent, tel/email
-            types, single-submit conversion tracking all live in TrialClassForm). */}
+        {/* Shared calendar CTA. The page-level version hides this duplicate. */}
         <TrialClassForm scope="shared" />
       </div>
     </section>

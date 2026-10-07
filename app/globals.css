@@ -70,6 +70,6 @@ body {
  * the normal case the shared form is never rendered at all; this only catches
  * the case where it was.
  */
-body:has(form[data-enquiry-form="page"]) [data-enquiry-section="shared"] {
+body:has([data-enquiry-form="page"]) [data-enquiry-section="shared"] {
   display: none;
 }

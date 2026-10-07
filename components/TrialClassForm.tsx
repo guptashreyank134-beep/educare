@@ -1,159 +1,48 @@
-'use client'
-
-import React, { useId, useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { ArrowRight, Loader2 } from 'lucide-react'
-import { Input } from '@/components/ui/Input'
-import { Button } from '@/components/ui/Button'
-import { createLead } from '@/app/actions/lead'
-import FormSpamFields from "@/components/FormSpamFields";
+import { ArrowRight, CalendarDays } from "lucide-react";
 import { getAppointmentBooking } from "@/lib/appointmentBooking";
 
-// On success we redirect here (a distinct URL + dataLayer event) so bookings can
-// be measured as a conversion in GTM/GA4/Google Ads. Pass redirectTo={null} to
-// keep the old inline-confirmation behaviour instead.
 const TrialClassForm = ({
-  redirectTo = '/thank-you',
-  scope = 'page',
-  showAppointmentLink = true,
+  scope = "page",
 }: {
   redirectTo?: string | null;
   showAppointmentLink?: boolean;
-  /**
-   * 'shared' marks the single copy rendered by the footer on every page.
-   * 'page' marks a form the page itself owns. A stylesheet rule uses this to
-   * hide the shared copy whenever the page has its own, which holds even if
-   * the route-list check below mis-reads the current path.
-   */
-  scope?: 'page' | 'shared';
+  scope?: "page" | "shared";
 }) => {
-  const router = useRouter()
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  // Unique per instance: this form also renders inside the site footer, so a
-  // page that uses it directly would otherwise emit each id twice and leave
-  // every label bound to whichever field came first in the document.
-  const uid = useId();
-  const fieldId = (name: string) => `${uid}-${name}`;
-  const [feedback, setFeedback] = useState<{ success: boolean; message: string } | null>(null)
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setFeedback(null)
-
-    const formElement = e.currentTarget
-    const rawData = new FormData(formElement)
-
-    // Construct a specialized FormData to fit into our Sanity Lead schema smoothly
-    const formData = new FormData()
-    formData.append('firstName', rawData.get('parentName') as string)
-    formData.append('lastName', '') // Optional in backend
-    formData.append('email', rawData.get('email') as string)
-    formData.append('phone', rawData.get('phone') as string)
-    formData.append('subject', 'Consultation Request - ' + (rawData.get('subject') as string))
-    formData.append('vertical', 'local-k12')
-
-    const messageBody = `
-Parent's Name: ${rawData.get('parentName')}
-Student's Grade: ${rawData.get('grade')}
-Subject Required: ${rawData.get('subject')}
-Phone Number: ${rawData.get('phone')}
-Email ID: ${rawData.get('email')}
-Preferred Mode Of Classes: ${rawData.get('mode')}
-Consent to contact: ${rawData.get('consent') ? 'Yes' : 'No'}
-    `.trim()
-
-    formData.append('message', messageBody)
-
-    formData.append("company", (rawData.get("company") as string) || "")
-    formData.append("formStartedAt", (rawData.get("formStartedAt") as string) || "")
-
-    const result = await createLead(formData)
-
-    setIsSubmitting(false)
-
-    if (result.success) {
-      formElement.reset()
-      // Fire a conversion signal for GTM (create a Custom Event trigger on
-      // "generate_lead" and attach your GA4 / Google Ads conversion tag).
-      if (typeof window !== 'undefined') {
-        const w = window as unknown as { dataLayer?: Record<string, unknown>[] }
-        w.dataLayer = w.dataLayer || []
-        w.dataLayer.push({ event: 'generate_lead', form: 'consultation' })
-      }
-      if (redirectTo) {
-        router.push(redirectTo)
-        return
-      }
-    }
-
-    setFeedback(result)
-  }
+  const booking = getAppointmentBooking();
 
   return (
-    <div className="bg-white rounded-[24px] shadow-[0_20px_80px_rgba(0,0,0,0.08)] p-8 border border-[#F1F5F9]">
+    <div
+      data-enquiry-form={scope}
+      className="rounded-[24px] border border-[#F1F5F9] bg-white p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)]"
+    >
+      <div className="flex flex-col items-center text-center">
+        <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-light text-primary">
+          <CalendarDays className="h-6 w-6" aria-hidden="true" />
+        </span>
+        <p className="font-bricolage text-[24px] font-medium text-slate">
+          Select Your Required Timeslot
+        </p>
+        <p className="mt-3 max-w-md text-[15px] leading-relaxed text-slate/75">
+          A consultation is booked only after you select an available time and complete the
+          Calendly form. Times already occupied in our connected calendars are unavailable.
+        </p>
 
-      <form onSubmit={handleSubmit} data-enquiry-form={scope} className="space-y-6 relative">
-        {showAppointmentLink && getAppointmentBooking() && (
-          <p className="rounded-xl bg-slate-50 p-4 text-sm">
-            Prefer to choose a time now?{" "}
-            <Link href="/book" className="text-primary font-semibold underline">View available appointments</Link>
-            . Or send an enquiry below.
+        {booking ? (
+          <a
+            href={booking.url}
+            className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 font-medium text-white transition-colors hover:bg-primary/90"
+          >
+            Choose an Available Timeslot
+            <ArrowRight className="h-5 w-5" aria-hidden="true" />
+          </a>
+        ) : (
+          <p className="mt-6 rounded-xl bg-amber-50 p-4 text-sm text-amber-900">
+            Online appointment booking is temporarily unavailable. Please try again shortly.
           </p>
         )}
-        <FormSpamFields />
-        <Input label="Parent or Student Name" placeholder="e.g. Priya Sharma" id={fieldId("parentName")} name="parentName" autoComplete="name" required />
-
-        <div className="grid grid-cols-2 gap-4">
-          <Input label="Student's Grade or Course" placeholder="e.g. Grade 11 or a first-year university course" id={fieldId("grade")} name="grade" required />
-          <Input label="Subject Required" placeholder="e.g. Math, Chemistry, Physics or Coding" id={fieldId("subject")} name="subject" required />
-        </div>
-
-        <Input label="Phone Number" type="tel" inputMode="tel" autoComplete="tel" placeholder="e.g. (604) 123-4567" id={fieldId("phone")} name="phone" required />
-        <Input label="Email" type="email" inputMode="email" autoComplete="email" placeholder="e.g. you@example.com" id={fieldId("email")} name="email" required />
-        <Input label="Preferred Format" placeholder="Online, in person, or not sure" id={fieldId("mode")} name="mode" required />
-
-        <label htmlFor={fieldId("consent")} className="flex items-start gap-2 text-[13px] font-montserrat text-slate/70 leading-snug">
-          <input
-            type="checkbox"
-            id={fieldId("consent")}
-            name="consent"
-            required
-            className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
-          />
-          <span>
-            I agree to be contacted by Dr. Shreyank Educare about my enquiry by phone, email or
-            WhatsApp. See our{" "}
-            <Link href="/privacy" className="text-primary underline">privacy policy</Link>.
-          </span>
-        </label>
-
-        {feedback && (
-          <div className={`p-4 rounded-xl text-center text-sm font-medium ${feedback.success ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'}`}>
-            {feedback.message}
-          </div>
-        )}
-
-        <div className="pt-2 flex flex-col items-center">
-          <Button
-            type="submit"
-            disabled={isSubmitting}
-            iconRight={isSubmitting ? undefined : ArrowRight}
-            className="w-full sm:w-auto"
-          >
-            {isSubmitting ? (
-              <span className="flex items-center gap-2">
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Submitting...
-              </span>
-            ) : 'Book a Free 30-Minute Consultation'}
-          </Button>
-        </div>
-      </form>
+      </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default TrialClassForm
+export default TrialClassForm;
