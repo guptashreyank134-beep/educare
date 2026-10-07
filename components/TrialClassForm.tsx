@@ -17,11 +17,9 @@ const TrialClassForm = ({
   redirectTo = '/thank-you',
   scope = 'page',
   showAppointmentLink = true,
-  submitLabel = 'Book a Free 30-Minute Consultation',
 }: {
   redirectTo?: string | null;
   showAppointmentLink?: boolean;
-  submitLabel?: string;
   /**
    * 'shared' marks the single copy rendered by the footer on every page.
    * 'page' marks a form the page itself owns. A stylesheet rule uses this to
@@ -149,7 +147,7 @@ Consent to contact: ${rawData.get('consent') ? 'Yes' : 'No'}
                 <Loader2 className="w-5 h-5 animate-spin" />
                 Submitting...
               </span>
-            ) : submitLabel}
+            ) : 'Book a Free 30-Minute Consultation'}
           </Button>
         </div>
       </form>
