@@ -10,8 +10,15 @@ test("verified article anchor labels lead to the corresponding subject and autho
   assert.equal(resolveContentHref("/about", "Dr. Shreyank Gupta"), "/about/dr-shreyank-gupta");
 });
 
-test("all twenty crawl failures resolve directly to a non-redirect destination", () => {
-  assert.equal(crawlRepairPairs.length, 20);
+test("every crawl failure resolves directly to a non-redirect destination", () => {
+  // A fixed count made this fail whenever a pair was legitimately added, which
+  // is the normal way this table grows. The floor still catches a truncation,
+  // and the checks below are the ones that matter: no source listed twice, and
+  // every destination reached in one hop.
+  assert.ok(crawlRepairPairs.length >= 20, `only ${crawlRepairPairs.length} pairs`);
+  const sources = crawlRepairPairs.map(([from]) => from);
+  assert.equal(new Set(sources).size, sources.length, "a source is listed twice");
+
   for (const [from, to] of crawlRepairPairs) {
     assert.equal(resolveInternalHref(from), to);
     assert.equal(redirectSources.has(to), false, to);

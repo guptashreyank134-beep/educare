@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GeneralHeroSectionProps } from "./content";
 import HeroBreadcrumb from "./HeroBreadcrumb";
+import { ConsultationCtaLink } from "../ConsultationCta";
 
 
 const GeneralHeroSection = ({
@@ -16,6 +17,8 @@ const GeneralHeroSection = ({
     buttonVisiblity = true,
     breadcrumb,
 }: GeneralHeroSectionProps) => {
+    const href = image?.href || "/about";
+
     return (
         <section className="relative overflow-hidden min-h-[70vh] pt-24 pb-16 sm:pt-28 lg:pt-32 lg:pb-20">
             {/* Grid Background */}
@@ -45,11 +48,26 @@ const GeneralHeroSection = ({
                             {description}
                         </p>
                         {buttonVisiblity && (
-                            <Link href={image?.href || "/about"}>
-                                <div className="flex flex-wrap gap-4">
-                                    <Button iconRight={ArrowRight}>{buttonText}</Button>
-                                </div>
-                            </Link>
+                            /* An in-page target scrolls rather than navigates: the
+                               booking card is further down this same page, and a
+                               page change to reach it reads as having left. */
+                            href.startsWith("#") ? (
+                                <ConsultationCtaLink
+                                    targetId={href.slice(1)}
+                                    formId={`hero-${href.slice(1)}`}
+                                    className="inline-block"
+                                >
+                                    <div className="flex flex-wrap gap-4">
+                                        <Button iconRight={ArrowRight}>{buttonText}</Button>
+                                    </div>
+                                </ConsultationCtaLink>
+                            ) : (
+                                <Link href={href}>
+                                    <div className="flex flex-wrap gap-4">
+                                        <Button iconRight={ArrowRight}>{buttonText}</Button>
+                                    </div>
+                                </Link>
+                            )
                         )}
                     </div>
 

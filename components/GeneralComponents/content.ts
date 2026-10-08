@@ -24,7 +24,7 @@ export const AboutHeroSectionContent = {
   image: {
     src: "aboutUsPage/AboutHeroImg.webp",
     alt: "About Us Hero Image",
-    href: "/contact",
+    href: "#book-consultation",
   },
 };
 
@@ -36,7 +36,7 @@ export const ServicesHeroSectionContent = {
   image: {
     src: "servicesPage/ServicesHeroImg.webp",
     alt: "About Us Hero Image",
-    href: "/contact",
+    href: "#book-consultation",
   },
 };
 
@@ -49,7 +49,7 @@ export const ResourcesHeroSectionContent = {
   image: {
     src: "servicesPage/ServicesHeroImg.webp",
     alt: "About Us Hero Image",
-    href: "/contact",
+    href: "#book-consultation",
   },
 };
 
@@ -62,7 +62,7 @@ export const ProgramsHeroSectionContent = {
   image: {
     src: "programsHeroImage.jpg",
     alt: "Programs Hero Image",
-    href: "/contact",
+    href: "#book-consultation",
   },
 };
 
