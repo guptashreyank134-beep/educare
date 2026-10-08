@@ -388,21 +388,21 @@ test.describe("one enquiry form per page", () => {
     for (const path of ["/", "/book", "/programs/physics", "/programs/university-physics"]) {
       await page.goto(path);
       const visible = await page
-        .locator("form")
-        .evaluateAll((forms) =>
-          forms.filter((f) => {
-            const style = window.getComputedStyle(f);
-            return style.display !== "none" && style.visibility !== "hidden" && f.clientHeight > 0;
+        .locator("[data-enquiry-form]")
+        .evaluateAll((nodes) =>
+          nodes.filter((n) => {
+            const style = window.getComputedStyle(n);
+            return style.display !== "none" && style.visibility !== "hidden" && n.clientHeight > 0;
           }).length,
         );
-      expect(visible, `${path} should show exactly one enquiry form`).toBe(1);
+      expect(visible, `${path} should show exactly one way to enquire`).toBe(1);
     }
   });
 
   test("a page without its own form still shows the shared one", async ({ page }) => {
     await page.goto("/about");
     await expect(page.locator('[data-enquiry-section="shared"]').first()).toBeVisible();
-    await expect(page.locator('form[data-enquiry-form="shared"]').first()).toBeVisible();
+    await expect(page.locator('[data-enquiry-form="shared"]').first()).toBeVisible();
   });
 
   test("the shared form is hidden even when the route check fails", async ({ page }) => {
@@ -417,12 +417,51 @@ test.describe("one enquiry form per page", () => {
       section.setAttribute("data-enquiry-section", "shared");
       section.innerHTML =
         '<h2>Book a Free 30-Minute Consultation</h2>' +
-        '<form data-enquiry-form="shared"><input name="name" /></form>';
+        '<div data-enquiry-form="shared"><a href="#">Choose an Available Timeslot</a></div>';
       document.body.append(section);
     });
 
     await expect(page.locator('[data-enquiry-section="shared"]')).toBeHidden();
-    await expect(page.locator('form[data-enquiry-form="shared"]')).toBeHidden();
-    await expect(page.locator('form[data-enquiry-form="page"]').first()).toBeVisible();
+    await expect(page.locator('[data-enquiry-form="shared"]')).toBeHidden();
+    await expect(page.locator('[data-enquiry-form="page"]').first()).toBeVisible();
+  });
+});
+
+test.describe("hero CTA reaches the booking card on the same page", () => {
+  // These pages have no form of their own, so the footer's booking card is the
+  // only way to book on them. The hero button used to navigate to /contact,
+  // which left the page to do what the page already offered.
+  // /resources sets buttonVisiblity: false, so it has no hero button to click.
+  // Its href is retargeted all the same, so turning the button back on does not
+  // reintroduce the /contact detour.
+  const PAGES = ["/programs", "/about", "/services"];
+
+  for (const path of PAGES) {
+    test(`${path}: the hero button scrolls to the booking card`, async ({ page }) => {
+      await page.setViewportSize({ width: 1280, height: 800 });
+      await page.goto(path);
+
+      const cta = page.locator('a[href="#book-consultation"]').first();
+      await expect(cta, `${path} should have a hero CTA pointing at the booking card`).toBeVisible();
+
+      const target = page.locator("#book-consultation");
+      await expect(target, `${path} must render the booking card the CTA points at`).toHaveCount(1);
+
+      await cta.click();
+      await page.waitForTimeout(1300);
+
+      await expect(
+        page.getByRole("link", { name: /Choose an Available Timeslot/i }).first(),
+        `${path}: the booking control must be on screen after the click`,
+      ).toBeInViewport();
+      expect(page.url(), `${path} must stay on the same page`).toContain(path);
+    });
+  }
+
+  test("the booking card is named once per page", async ({ page }) => {
+    for (const path of PAGES) {
+      await page.goto(path);
+      await expect(page.locator("#book-consultation")).toHaveCount(1);
+    }
   });
 });

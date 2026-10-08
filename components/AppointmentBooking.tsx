@@ -11,7 +11,7 @@ export default function AppointmentBooking() {
   }
 
   return (
-    <section aria-label="Appointment scheduler">
+    <section aria-label="Appointment scheduler" data-enquiry-form="page">
       <p className="mb-4 text-sm text-slate/80">
         Select an available time to continue. Your consultation is confirmed only after you
         complete the Calendly booking form. Check the displayed time zone before booking.

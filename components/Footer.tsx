@@ -5,6 +5,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ROUTES_WITH_THEIR_OWN_FORM } from "@/content/own-form-routes";
+import { SHARED_ENQUIRY_ANCHOR } from "@/content/program-enquiry";
 import TrialClassForm from "./TrialClassForm";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
@@ -51,6 +52,7 @@ const FacebookIcon = () => (
 function ContactForm() {
   return (
     <section
+      id={SHARED_ENQUIRY_ANCHOR}
       data-enquiry-section="shared"
       className="relative overflow-hidden py-10 px-4 sm:px-6 lg:px-8"
     >

@@ -209,3 +209,11 @@ export function programEnquiryFor(slug: string): ProgramEnquiry | undefined {
 
 /** Element id and analytics form id for a program's enquiry form. */
 export const programAnchor = (slug: string) => `${slug}-enquiry`;
+
+/**
+ * The shared booking section the footer renders on pages without their own
+ * form. A hero button links here rather than to /contact: the booking card is
+ * already on the page, and sending the reader to another page to do what this
+ * one offers loses them on the way.
+ */
+export const SHARED_ENQUIRY_ANCHOR = "book-consultation";
