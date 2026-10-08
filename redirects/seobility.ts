@@ -15,6 +15,7 @@ export const crawlRepairPairs: [string, string][] = [
   ["/programs/adult-upgrading", "/blog/adult-upgrading-advising-vancouver"],
   ["/programs/adult-learners", "/blog/adult-upgrading-advising-vancouver"],
   ["/programs/elementary", "/blog/elementary-tutor-burnaby-k7-math-reading-foundations"],
+  ["/programs/elementary-tutoring", "/blog/elementary-tutor-burnaby-k7-math-reading-foundations"],
   ["/programs/exam-prep", "/final-exam-review-tutoring-burnaby"],
   ["/blog/concept-gaps-vs-practice-gaps", "/blog/one-on-one-math-tutoring-burnaby-close-concept-gaps"],
   ["/blog/in-person-vs-online-tutoring", "/blog/tutoring-burnaby-phd-led-guide-in-person-vs-online"],
