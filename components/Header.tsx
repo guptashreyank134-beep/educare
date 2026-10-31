@@ -15,7 +15,13 @@ type NavItem = { href?: string; label: string; children?: NavChild[] };
 const navLinks: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "School Tutoring" },
+  {
+    label: "School Tutoring",
+    children: [
+      { href: "/services", label: "School Tutoring Overview" },
+      { href: "/homework-help-burnaby", label: "Homework & Study Club" },
+    ],
+  },
   { href: "/programs/ib-ap-tutoring", label: "IB & AP" },
   { href: "/programs", label: "Exam Prep" },
   {

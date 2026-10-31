@@ -92,7 +92,7 @@ const PricingCard = ({
                         </p>
 
                     </div>
-                    <Link href={'/book'} className="w-full h-full flex items-center justify-center">
+                    <Link href={ctaHref ?? "/book"} className="w-full h-full flex items-center justify-center">
                     <Button
                         iconRight={ArrowRight}
                         onClick={onCtaClick}

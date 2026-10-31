@@ -38,14 +38,14 @@ function walk(dir, out = []) {
 }
 
 const PHONE = "6728558577"; // canonical, digits only
-const ALLOWED_PRICE = new Set([75, 100, 185, 200, 280]);
+const ALLOWED_PRICE = new Set([75, 100, 185, 200, 280, 299]);
 
 // Each rule: {id, level, test(line) -> boolean, note}
 const rules = [
   {
     id: "pricing-conflict",
     level: "ERROR",
-    note: "dollar amount near hour/session/month that isn't in data/pricing.ts ($75/100/185/200/280)",
+    note: "dollar amount near hour/session/month that isn't in data/pricing.ts ($75/100/185/200/280/299)",
     test: (line) => {
       const m = [...line.matchAll(/\$(\d{2,4})/g)];
       if (!m.length) return false;

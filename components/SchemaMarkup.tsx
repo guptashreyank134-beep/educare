@@ -45,6 +45,7 @@ const POSTAL_ADDRESS = {
 // OfferCatalog so AI answer engines can enumerate exactly which subjects we
 // cover (math, sciences, university and medical/MCAT prep) and link each one.
 export const TUTORING_SERVICES: { name: string; url: string }[] = [
+  { name: "Homework and Study Club (Grades 9–10)", url: `${SITE}/homework-help-burnaby` },
   { name: "Mathematics Tutoring (Grades 6–12)", url: `${SITE}/programs/mathematics` },
   { name: "Pre-Calculus 11 & 12 Tutoring", url: `${SITE}/programs/pre-calculus` },
   { name: "University Mathematics Tutoring", url: `${SITE}/programs/university-mathematics` },

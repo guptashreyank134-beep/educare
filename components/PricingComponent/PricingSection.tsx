@@ -43,6 +43,7 @@ interface PricingSectionProps {
                             priceMax={card.priceMax}
                             priceCaption={card.priceCaption}
                             ctaText={card.ctaText}
+                            ctaHref={card.ctaHref}
                         />
                     ))}
                 </div>

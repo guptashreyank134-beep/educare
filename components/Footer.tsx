@@ -110,6 +110,7 @@ const footerColumns = [
       { label: "IB & AP Tutoring", href: "/programs/ib-ap-tutoring" },
       { label: "SAT Prep", href: "/programs/sat-prep" },
       { label: "Coding (Python)", href: "/programs/python" },
+      { label: "Homework & Study Club", href: "/homework-help-burnaby" },
     ],
   },
   {
@@ -122,6 +123,7 @@ const footerColumns = [
       { label: "Contact", href: "/contact" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
+      { label: "Study Club Terms", href: "/homework-help-burnaby#programme-terms" },
     ],
   },
 ];

@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { CalendarDays, Users, Rocket } from "lucide-react";
+import { CalendarDays, Users, Rocket, BookOpenCheck } from "lucide-react";
 import type { PricingCardProps } from "@/components/PricingComponent/PricingCard";
 import { PRICING } from "@/data/pricing";
 
@@ -18,6 +18,22 @@ export const pricingSectionContent: {
     "Choose from personalized tutoring plans, exam prep programs, and monthly learning packages designed to fit your schedule and academic needs!",
   cards: [
     {
+      icon: BookOpenCheck,
+      title: "Homework and Study Club",
+      subtitle: "Exclusive opening offer for new Grades 9–10 students",
+      features: [
+        `${PRICING.studyClub.monthlySessions} ${PRICING.studyClub.sessionMinutes}-minute sessions per month`,
+        `Maximum ${PRICING.studyClub.maxGroupSize} students`,
+        "Maths and science homework guidance",
+        "Monthly parent update",
+        "In person in Burnaby",
+      ],
+      price: PRICING.studyClub.amount,
+      priceCaption: "per month; registering interest",
+      ctaText: "Register Your Interest",
+      ctaHref: "/homework-help-burnaby#register-interest",
+    },
+    {
       icon: CalendarDays,
       title: "Monthly Program",
       subtitle: "Best for consistent growth",
@@ -31,6 +47,7 @@ export const pricingSectionContent: {
       priceMax: PRICING.monthlyGroup.max,
       priceCaption: "per month, GST included",
       ctaText: "Book a Free 30-Minute Consultation",
+      ctaHref: "/book",
     },
     {
       icon: Users,
@@ -46,6 +63,7 @@ export const pricingSectionContent: {
       priceMax: PRICING.oneOnOne.max,
       priceCaption: "per 60-min session, GST incl. (varies by subject & level)",
       ctaText: "Book a Free 30-Minute Consultation",
+      ctaHref: "/book",
     },
     {
       icon: Rocket,
@@ -60,6 +78,7 @@ export const pricingSectionContent: {
       price: PRICING.examBooster.amount,
       priceCaption: `for the full ${PRICING.examBooster.hours}-hour course, GST included`,
       ctaText: "Book a Free 30-Minute Consultation",
+      ctaHref: "/book",
     },
   ],
   // Shared terms shown as small print under the cards, so pricing is unambiguous.

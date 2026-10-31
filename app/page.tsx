@@ -16,6 +16,7 @@ import TrustedBrands from "@/components/TrustedBrands";
 import Reviews from "@/components/Reviews";
 import { getPageData, getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
 import { BUSINESS } from "@/data/businessInfo";
+import StudyClubPromo from "@/components/StudyClubPromo";
 
 export async function generateMetadata() {
   // SEO metadata lives on the "home" page document — the same place every other
@@ -143,6 +144,7 @@ export default async function Home() {
         </div>
       </div>
 
+      <StudyClubPromo />
       <VancouverAboutSection />
       <VancouverWhyChooseSection />
       <VancouverExploreSubjectsSection />

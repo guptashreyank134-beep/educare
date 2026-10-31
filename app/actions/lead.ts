@@ -12,6 +12,7 @@ import {
   validateLead,
   type PreferredContact,
 } from "@/lib/leadGuard";
+import { validateStudyClubInterest } from "@/lib/studyClubInterest";
 
 // Route each vertical's lead notifications to its own inbox when configured,
 // falling back to the shared inbox so nothing is ever silently dropped.
@@ -323,4 +324,60 @@ ${lead.message}`,
     message:
       `Sorry — we couldn't save your enquiry. Please try again, or call or WhatsApp us at ${BUSINESS.phone} and we'll help right away.`,
   };
+}
+
+/** Validates and records the opening Study Club interest form. */
+export async function createStudyClubInterest(formData: FormData) {
+  const parentName = String(formData.get("parentName") || "").trim();
+  const email = String(formData.get("email") || "").trim();
+  const phone = String(formData.get("phone") || "").trim();
+  const grade = String(formData.get("grade") || "");
+  const subjectNeed = String(formData.get("subjectNeed") || "");
+  const weekdays = formData.getAll("preferredWeekdays").map(String);
+  const timeWindow = String(formData.get("timeWindow") || "");
+  const learningGoal = String(formData.get("learningGoal") || "").trim();
+  const consent = formData.get("consent") === "on";
+  const marketingOptIn = formData.get("marketingOptIn") === "on";
+
+  const validationError = validateStudyClubInterest({
+    parentName, grade, subjectNeed, weekdays, timeWindow, learningGoal, consent,
+  });
+  if (validationError) return { success: false, message: validationError };
+
+  const payload = new FormData();
+  payload.set("firstName", parentName);
+  payload.set("lastName", "");
+  payload.set("email", email);
+  payload.set("phone", phone);
+  payload.set("preferredContact", "email");
+  payload.set("subject", "Homework and Study Club interest");
+  payload.set("vertical", "local-k12");
+  payload.set("submissionId", String(formData.get("submissionId") || ""));
+  payload.set("company", String(formData.get("company") || ""));
+  payload.set("formStartedAt", String(formData.get("formStartedAt") || ""));
+  payload.set(
+    "message",
+    [
+      "Programme: Homework and Study Club",
+      `Parent or guardian: ${parentName}`,
+      `Student grade: ${grade}`,
+      `Subjects: ${subjectNeed}`,
+      `Preferred weekdays: ${weekdays.join(", ")}`,
+      `Preferred time: ${timeWindow || "Not specified"}`,
+      `Learning goal: ${learningGoal || "Not provided"}`,
+      `Parent phone: ${phone || "Not provided"}`,
+      "Enquiry consent: yes",
+      `Programme updates: ${marketingOptIn ? "yes" : "no"}`,
+    ].join("\n"),
+  );
+
+  const result = await createLead(payload);
+  if (result.success && "stored" in result && result.stored) {
+    return {
+      ...result,
+      message:
+        "Your enquiry has been received. We will contact you to discuss your child’s needs and the proposed group schedule. No payment has been taken and a place has not yet been reserved.",
+    };
+  }
+  return result;
 }

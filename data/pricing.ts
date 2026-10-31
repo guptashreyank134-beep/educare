@@ -30,6 +30,12 @@ export const PRICING = {
     amount: 280,
     hours: 5,
   },
+  studyClub: {
+    amount: 299,
+    monthlySessions: 12,
+    sessionMinutes: 60,
+    maxGroupSize: 6,
+  },
 } as const;
 
 const dash = "–"; // en dash
