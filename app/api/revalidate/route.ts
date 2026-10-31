@@ -29,6 +29,8 @@ function pathsForDocument({ _type: type, slug, pageSlug, pageType }: Payload): s
       return slug ? [`/blog/${slug}`, "/blog"] : ["/blog"];
     case "programPage":
       return slug ? [`/programs/${slug}`] : ["/programs"];
+    case "studyClubPage":
+      return ["/homework-help-burnaby", "/llms.txt", "/llms-full.txt"];
     case "page":
       // Standalone pages: "about" -> /about, "services" -> /services, etc.
       // The homepage is served at "/" — NOT "/home" — so it needs a special case,

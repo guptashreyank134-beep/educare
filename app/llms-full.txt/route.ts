@@ -58,6 +58,7 @@ export async function GET() {
     ["Services", "/services", "Tutoring services and formats."],
     ["Programs", "/programs", "All tutoring programs by subject and level."],
     ["Pricing", "/pricing", "Tutoring pricing and plans."],
+    ["Homework & Study Club", "/homework-help-burnaby", "Grades 9–10 small-group maths and science homework support in Burnaby: 12 one-hour sessions monthly for CAD $299."],
     ["Resources", "/resources", "Free study resources, practice exams and FAQs."],
     ["Blog", "/blog", "Study guides and subject articles by PhD-qualified educators."],
     ["Locations", "/locations", "Tutoring locations across Metro Vancouver."],

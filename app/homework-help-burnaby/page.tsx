@@ -14,25 +14,43 @@ import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/SchemaMarkup";
 import { BUSINESS, SITE_URL } from "@/data/businessInfo";
 import { STUDY_CLUB, STUDY_CLUB_PRICE } from "@/data/studyClub";
+import {
+  getStudyClubCmsContent,
+  resolveCmsText,
+} from "@/sanity/lib/studyClubPage";
 
 const canonical = `${SITE_URL}${STUDY_CLUB.path}`;
 
-export const metadata: Metadata = {
-  title: "Homework Help Burnaby Grades 9–10 | Dr Shreyank Educare",
-  description:
-    "Small group homework help in Burnaby for Grades 9–10. Maths and science support, 12 one-hour sessions monthly, CAD $299. Register your interest.",
-  alternates: { canonical },
-  openGraph: {
-    type: "website",
-    url: canonical,
-    title: "Homework and Study Club in Burnaby",
-    description:
-      "An exclusive opening cohort for new Grades 9–10 students: small-group maths and science support led by Dr. Shreyank and the Educare team.",
-    images: [BUSINESS.logo],
-  },
-};
+const DEFAULT_META_TITLE = "Homework Help Burnaby Grades 9–10 | Dr Shreyank Educare";
+const DEFAULT_META_DESCRIPTION =
+  "Small group homework help in Burnaby for Grades 9–10. Maths and science support, 12 one-hour sessions monthly, CAD $299. Register your interest.";
+const DEFAULT_OG_TITLE = "Homework and Study Club in Burnaby";
+const DEFAULT_OG_DESCRIPTION =
+  "An exclusive opening cohort for new Grades 9–10 students: small-group maths and science support led by Dr. Shreyank and the Educare team.";
 
-const faqs = [
+export async function generateMetadata(): Promise<Metadata> {
+  const cms = await getStudyClubCmsContent();
+  const title = resolveCmsText(cms?.metaTitle, DEFAULT_META_TITLE);
+  const description = resolveCmsText(cms?.metaDescription, DEFAULT_META_DESCRIPTION);
+
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title: resolveCmsText(cms?.openGraphTitle, cms?.metaTitle || DEFAULT_OG_TITLE),
+      description: resolveCmsText(
+        cms?.openGraphDescription,
+        cms?.metaDescription || DEFAULT_OG_DESCRIPTION,
+      ),
+      images: [BUSINESS.logo],
+    },
+  };
+}
+
+const defaultFaqs = [
   ["Which grades can join?", "Our opening Homework and Study Club group is for Grades 9 and 10. Please enquire about our existing tutoring programmes if your child is in another grade."],
   ["Which subjects are covered?", "The opening group focuses on mathematics and science. We also help students organise their work and prepare for school tests. Please confirm other subject needs before enrolling."],
   ["Does each student receive individual help?", "Yes. The tutor gives individual explanations and feedback while supporting a group of up to six students. Students also work independently, so this differs from a full hour of private tutoring."],
@@ -47,7 +65,7 @@ const faqs = [
   ["Is there a long-term contract?", "The proposed club operates month to month, with no automatic renewal charge in the opening pilot. Tell us before paying the next month’s invoice if you wish to stop."],
   ["Is there a free trial?", "You can book a free 30-minute consultation to discuss your child’s needs. It is a planning conversation rather than a teaching session; a free study-club lesson is not included."],
   ["Do you guarantee higher grades?", "No. We support understanding, practice and study habits. Results depend on the student’s starting point, attendance, effort and school requirements."],
-];
+].map(([question, answer]) => ({ question, answer }));
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -68,10 +86,51 @@ const serviceSchema = {
   },
 };
 
-export default function StudyClubPage() {
+export default async function StudyClubPage() {
+  const cms = await getStudyClubCmsContent();
+  const faqs = cms?.faqs?.length ? cms.faqs : defaultFaqs;
+  const answerSummary = resolveCmsText(
+    cms?.answerSummary,
+    "The Homework and Study Club is an in-person Burnaby programme for Grades 9–10 students who need regular mathematics and science homework support. A monthly plan includes 12 one-hour small-group sessions for up to six students at CAD $299.",
+  );
+  const serviceDescription = resolveCmsText(
+    cms?.serviceDescription,
+    "Small-group mathematics and science homework support for Grades 9–10 in Burnaby. The opening cohort is registering interest.",
+  );
+  const serviceAreas = cms?.serviceAreas?.filter(Boolean).length
+    ? cms.serviceAreas.filter(Boolean)
+    : ["Burnaby"];
+  const entities = cms?.entities?.filter(Boolean) ?? [];
+  const cmsServiceSchema = {
+    ...serviceSchema,
+    description: serviceDescription,
+    areaServed: serviceAreas.map((name) => ({ "@type": "City", name })),
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(({ question, answer }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer },
+    })),
+  };
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${canonical}#webpage`,
+    url: canonical,
+    name: resolveCmsText(cms?.metaTitle, DEFAULT_META_TITLE),
+    description: answerSummary,
+    about: entities.map((name) => ({ "@type": "Thing", name })),
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+  };
+
   return (
     <main className="bg-white text-slate">
-      <JsonLd schema={serviceSchema} />
+      <JsonLd schema={cmsServiceSchema} />
+      <JsonLd schema={faqSchema} />
+      <JsonLd schema={webPageSchema} />
       <section className="relative overflow-hidden bg-[#F8FAFC] pt-24 pb-20 sm:pt-28 lg:pt-32">
         <div className="absolute inset-0 opacity-35" style={{ backgroundImage: "url('/backgrounds/yellowGrid.svg')", backgroundSize: "cover" }} />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:items-center">
@@ -102,6 +161,7 @@ export default function StudyClubPage() {
             <p className="mt-4 text-[16px] leading-7 font-montserrat text-slate/75">
               Register your interest to discuss your child&apos;s needs and preferred days. We will share the timetable, start date, assigned tutor and full programme details before asking you to pay.
             </p>
+            <p className="mt-4 text-[15px] leading-7 font-montserrat text-slate/70">{answerSummary}</p>
             <p className="mt-5 rounded-xl bg-[#FFF8D8] p-4 text-[14px] leading-6 font-montserrat text-slate/80">
               An enquiry does not reserve a place or create a payment obligation. No tuition checkout is active for this opening stage.
             </p>
@@ -177,7 +237,7 @@ export default function StudyClubPage() {
       <section className="bg-bg-grey py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-[34px] font-bricolage font-semibold">Parent questions</h2>
-          <div className="mt-10 space-y-3">{faqs.map(([question, answer]) => <details key={question} className="group rounded-xl border border-[#E5EAF0] bg-white px-5 py-4"><summary className="cursor-pointer list-none text-[17px] font-montserrat font-semibold text-slate focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded">{question}<span className="float-right text-primary group-open:rotate-45 transition-transform">+</span></summary><p className="pt-4 text-[15px] leading-7 font-montserrat text-slate/70">{answer}</p></details>)}</div>
+          <div className="mt-10 space-y-3">{faqs.map(({ question, answer }) => <details key={question} className="group rounded-xl border border-[#E5EAF0] bg-white px-5 py-4"><summary className="cursor-pointer list-none text-[17px] font-montserrat font-semibold text-slate focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded">{question}<span className="float-right text-primary group-open:rotate-45 transition-transform">+</span></summary><p className="pt-4 text-[15px] leading-7 font-montserrat text-slate/70">{answer}</p></details>)}</div>
         </div>
       </section>
 

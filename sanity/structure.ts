@@ -11,8 +11,16 @@ export const structure: StructureResolver = (S) =>
     .items([
       // All document types except pageFaq, which gets the grouped view below.
       ...S.documentTypeListItems().filter(
-        (item) => item.getId() !== 'pageFaq'
+        (item) => !['pageFaq', 'studyClubPage'].includes(item.getId() ?? '')
       ),
+      S.listItem()
+        .title('Homework & Study Club — SEO, AEO & GEO')
+        .child(
+          S.document()
+            .schemaType('studyClubPage')
+            .documentId('studyClubPage')
+            .title('Homework & Study Club')
+        ),
       S.divider(),
       S.listItem()
         // These documents hold each landing page's SEO, copy AND FAQs — the old
