@@ -114,6 +114,17 @@ const footerColumns = [
     ],
   },
   {
+    title: "Vancouver Tutoring",
+    links: [
+      { label: "Tutoring in Vancouver", href: "/tutoring-vancouver" },
+      { label: "Math Tutor Vancouver", href: "/math-tutor-vancouver" },
+      { label: "Physics Tutor Vancouver", href: "/physics-tutor-vancouver" },
+      { label: "Biology Tutor Vancouver", href: "/biology-tutor-vancouver" },
+      { label: "AP Calculus Vancouver", href: "/ap-calculus-tutor-vancouver" },
+      { label: "IB Chemistry Vancouver", href: "/ib-chemistry-tutor-vancouver" },
+    ],
+  },
+  {
     title: "Company",
     links: [
       { label: "About", href: "/about" },
@@ -194,7 +205,7 @@ function FooterBar() {
             </div>
           </div>
         </div>
-        <nav className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8 mt-14">
+        <nav className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-8 mt-14">
           {footerColumns.map((col) => (
             <div key={col.title}>
               <p className="text-[13px] font-montserrat font-semibold text-white/50 uppercase tracking-widest mb-3">

@@ -1,0 +1,186 @@
+import { defineField, defineType } from "sanity";
+
+export const optimizationTask = defineType({
+  name: "optimizationTask",
+  title: "SEO / AEO / GEO Task",
+  type: "document",
+  groups: [
+    { name: "plan", title: "Plan", default: true },
+    { name: "evidence", title: "Evidence & Sources" },
+    { name: "review", title: "Review & Outcome" },
+  ],
+  fields: [
+    defineField({
+      name: "title",
+      title: "Task",
+      type: "string",
+      group: "plan",
+      validation: (Rule) => Rule.required().max(120),
+    }),
+    defineField({
+      name: "channel",
+      title: "Optimization channel",
+      type: "string",
+      group: "plan",
+      options: {
+        layout: "radio",
+        list: [
+          { title: "SEO — organic search", value: "seo" },
+          { title: "AEO — answer engines / featured answers", value: "aeo" },
+          { title: "GEO — generative AI mentions and citations", value: "geo" },
+          { title: "Local — Google Maps / local pack", value: "local" },
+          { title: "Technical", value: "technical" },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "status",
+      title: "Status",
+      type: "string",
+      group: "plan",
+      initialValue: "backlog",
+      options: {
+        list: [
+          { title: "Backlog", value: "backlog" },
+          { title: "Ready", value: "ready" },
+          { title: "In progress", value: "in-progress" },
+          { title: "Waiting for data", value: "waiting" },
+          { title: "Review", value: "review" },
+          { title: "Complete", value: "complete" },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "priority",
+      title: "Priority",
+      type: "string",
+      group: "plan",
+      initialValue: "medium",
+      options: {
+        list: [
+          { title: "Critical", value: "critical" },
+          { title: "High", value: "high" },
+          { title: "Medium", value: "medium" },
+          { title: "Low", value: "low" },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "targetPath",
+      title: "Target website path",
+      type: "string",
+      group: "plan",
+      description: "Canonical path such as /physics-tutor-vancouver. Use / for the homepage.",
+      validation: (Rule) =>
+        Rule.custom((value) =>
+          !value || value.startsWith("/") ? true : "Use a path beginning with /",
+        ),
+    }),
+    defineField({
+      name: "targetQuery",
+      title: "Target query or entity",
+      type: "string",
+      group: "plan",
+      description: "The search query, question or entity association this task is intended to improve.",
+    }),
+    defineField({
+      name: "audienceQuestion",
+      title: "Audience question",
+      type: "text",
+      rows: 3,
+      group: "plan",
+      description: "Useful for AEO/GEO: the real question the page should answer clearly.",
+    }),
+    defineField({
+      name: "recommendedAction",
+      title: "Recommended action",
+      type: "text",
+      rows: 5,
+      group: "plan",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "owner",
+      title: "Owner",
+      type: "string",
+      group: "plan",
+    }),
+    defineField({
+      name: "dueDate",
+      title: "Due date",
+      type: "date",
+      group: "plan",
+    }),
+    defineField({
+      name: "evidence",
+      title: "Why this task exists",
+      type: "text",
+      rows: 5,
+      group: "evidence",
+      description: "Record Search Console, crawl, rank, AI-answer or customer evidence. Avoid unsupported assumptions.",
+    }),
+    defineField({
+      name: "sourceUrls",
+      title: "Sources and references",
+      type: "array",
+      group: "evidence",
+      of: [{ type: "url" }],
+      description: "Primary sources used to verify claims or support citation-ready content.",
+      validation: (Rule) => Rule.unique(),
+    }),
+    defineField({
+      name: "baseline",
+      title: "Baseline",
+      type: "text",
+      rows: 3,
+      group: "evidence",
+      description: "Current impressions, clicks, rank, local visibility or observed AI-answer coverage.",
+    }),
+    defineField({
+      name: "successMetric",
+      title: "Success metric",
+      type: "text",
+      rows: 3,
+      group: "review",
+      description: "Define a measurable outcome without guaranteeing it.",
+    }),
+    defineField({
+      name: "lastCheckedAt",
+      title: "Last checked",
+      type: "datetime",
+      group: "review",
+    }),
+    defineField({
+      name: "outcomeNotes",
+      title: "Outcome and next check",
+      type: "text",
+      rows: 5,
+      group: "review",
+    }),
+  ],
+  orderings: [
+    {
+      title: "Priority and due date",
+      name: "priorityDue",
+      by: [
+        { field: "priority", direction: "asc" },
+        { field: "dueDate", direction: "asc" },
+      ],
+    },
+  ],
+  preview: {
+    select: {
+      title: "title",
+      channel: "channel",
+      status: "status",
+      targetPath: "targetPath",
+    },
+    prepare: ({ title, channel, status, targetPath }) => ({
+      title,
+      subtitle: [channel?.toUpperCase(), status, targetPath].filter(Boolean).join(" · "),
+    }),
+  },
+});

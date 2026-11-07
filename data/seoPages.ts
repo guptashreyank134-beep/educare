@@ -12,6 +12,7 @@
 
 import { redirectSources } from "./redirects";
 import { SITE_URL } from "./businessInfo";
+import { vancouverSeoPages } from "./vancouverSeoPages";
 
 export interface SeoSection {
   heading: string;
@@ -6222,6 +6223,14 @@ export const seoPages: SeoPage[] = [
     ],
   },
 ];
+
+// The Vancouver cluster is maintained as one reviewed set so each page has a
+// distinct intent and cannot drift into a city-name-swapped doorway page.
+for (const vancouverPage of vancouverSeoPages) {
+  const existingIndex = seoPages.findIndex((page) => page.slug === vancouverPage.slug);
+  if (existingIndex >= 0) seoPages[existingIndex] = vancouverPage;
+  else seoPages.push(vancouverPage);
+}
 
 export const getSeoPageBySlug = (slug: string): SeoPage | undefined =>
   seoPages.find((p) => p.slug === slug);

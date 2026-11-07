@@ -111,7 +111,11 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
 
             <div className="flex flex-wrap gap-4 mb-16">
               <Link href="/book">
-                <Button iconRight={ArrowRight}>Book a Free 30-Minute Consultation</Button>
+                <Button iconRight={ArrowRight}>
+                  {city.slug === "vancouver"
+                    ? "Book a Free Assessment Session"
+                    : "Book a Free 30-Minute Consultation"}
+                </Button>
               </Link>
               <a
                 href={BUSINESS.whatsapp}

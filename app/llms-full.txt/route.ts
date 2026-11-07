@@ -5,6 +5,7 @@ import { client } from "@/sanity/lib/client";
 import { REVIEW_RATING, REVIEW_COUNT } from "@/data/reviews";
 import { BUSINESS, SITE_URL } from "@/data/businessInfo";
 import { LEAD_AUTHOR, authorUrl, credentialLabel } from "@/data/authors";
+import { vancouverSeoPages } from "@/data/vancouverSeoPages";
 
 const BASE = SITE_URL;
 
@@ -65,6 +66,22 @@ export async function GET() {
     ["Contact", "/contact", "Book a free 30-minute consultation."],
   ];
   for (const [title, path, desc] of mainPages) lines.push(`- [${title}](${BASE}${path}): ${desc}`);
+  lines.push("");
+
+  // Citation-ready Vancouver service answers. This is the same reviewed copy
+  // used on the visible pages, not a hidden keyword variant.
+  lines.push("## Vancouver Tutoring Services");
+  for (const page of vancouverSeoPages) {
+    lines.push("");
+    lines.push(`### ${page.h1}`);
+    lines.push(`URL: ${BASE}/${page.slug}`);
+    lines.push(page.heroSubheading);
+    for (const paragraph of page.intro) lines.push(paragraph);
+    for (const faq of page.faqs) {
+      lines.push(`Q: ${faq.question}`);
+      lines.push(`A: ${faq.answer}`);
+    }
+  }
   lines.push("");
 
   // Local coverage

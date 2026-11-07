@@ -11,8 +11,50 @@ export const structure: StructureResolver = (S) =>
     .items([
       // All document types except pageFaq, which gets the grouped view below.
       ...S.documentTypeListItems().filter(
-        (item) => !['pageFaq', 'studyClubPage'].includes(item.getId() ?? '')
+        (item) => !['pageFaq', 'studyClubPage', 'optimizationTask'].includes(item.getId() ?? '')
       ),
+      S.listItem()
+        .title('SEO, AEO & GEO Optimization Tasks')
+        .child(
+          S.list()
+            .title('Optimization Tasks')
+            .items([
+              S.listItem()
+                .title('Active Tasks')
+                .child(
+                  S.documentList()
+                    .title('Active Tasks')
+                    .filter('_type == "optimizationTask" && status != "complete"')
+                    .defaultOrdering([{field: 'dueDate', direction: 'asc'}])
+                ),
+              S.listItem()
+                .title('AI Mentions & Citations (GEO)')
+                .child(
+                  S.documentList()
+                    .title('GEO Tasks')
+                    .filter('_type == "optimizationTask" && channel == "geo"')
+                    .defaultOrdering([{field: 'dueDate', direction: 'asc'}])
+                ),
+              S.listItem()
+                .title('Local / Google Maps')
+                .child(
+                  S.documentList()
+                    .title('Local Tasks')
+                    .filter('_type == "optimizationTask" && channel == "local"')
+                    .defaultOrdering([{field: 'dueDate', direction: 'asc'}])
+                ),
+              S.listItem()
+                .title('Completed')
+                .child(
+                  S.documentList()
+                    .title('Completed Tasks')
+                    .filter('_type == "optimizationTask" && status == "complete"')
+                    .defaultOrdering([{field: 'lastCheckedAt', direction: 'desc'}])
+                ),
+              S.divider(),
+              S.documentTypeListItem('optimizationTask').title('All Tasks'),
+            ])
+        ),
       S.listItem()
         .title('Homework & Study Club — SEO, AEO & GEO')
         .child(

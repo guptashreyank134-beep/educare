@@ -208,12 +208,12 @@ export const cities: City[] = [
     slug: "vancouver",
     name: "Vancouver",
     region: "BC",
-    metaTitle: "Math Tutor in Vancouver | Physics, Chemistry & Coding",
+    metaTitle: "Math Tutor Vancouver | Grades 6–12, Calculus & University",
     metaDescription:
-      "Expert Vancouver math, physics, chemistry & coding tutoring for Grades 6–12 and university. PhD-led, 5★ rated, BC curriculum. Free 30-minute consultation.",
-    heroHeading: "Online Math Tutor for Vancouver Students",
+      "PhD-led math tutoring for Vancouver students in Grades 6–12, calculus and university courses. Online across Vancouver or in person in Burnaby.",
+    heroHeading: "Math Tutor in Vancouver for Grades 6–12 and University",
     heroSubheading:
-      "Math, Physics, Chemistry and Coding tutoring for Grades 6–12, IB, AP and university — online across the city, or in person a SkyTrain ride away.",
+      "Understanding-first math tutoring for the BC curriculum, AP, IB and selected UBC/SFU courses—online across Vancouver or in person at our Burnaby studio.",
     intro: [
       "Vancouver students compete for university places against an unusually strong cohort, and the distance between an 86 and a 93 often decides an offer. A surprising amount of that gap is not ability. It is method: how a solution is set out, whether an answer gets sanity-checked, how time is rationed across a paper that was designed to be slightly too long.",
       "We teach that method alongside the content, across the BC curriculum, IB and AP. Sessions run online everywhere from Kitsilano and Dunbar to the East Side, and in person in Burnaby, which is a short SkyTrain ride for most Vancouver families.",
@@ -252,6 +252,20 @@ export const cities: City[] = [
           "University courses want justification: why this theorem applies, why the limit exists, why the step is permitted. Students trained to pattern-match to worked examples suddenly find that producing the right number earns very little. We work on that shift directly, along with the standard trouble spots in limits, series and linear algebra.",
         ],
       },
+      {
+        heading: "Online Math Tutoring in Vancouver or In Person in Burnaby",
+        body: [
+          "Dr. Shreyank Educare is based in Burnaby and does not claim a Vancouver office. Students around UBC, Downtown Vancouver, Kitsilano, Kerrisdale, Dunbar and East Vancouver can meet online, share their current course material and work through problems on a shared whiteboard.",
+          "Students who prefer to sit beside a tutor can attend the Burnaby studio on Madison Avenue. The academic method is the same in both formats: diagnose the first insecure step, explain why the method works, practise it and check whether the student can reproduce it independently.",
+        ],
+      },
+      {
+        heading: "Calculus and University Mathematics Support",
+        body: [
+          "Support extends from BC Foundations and Pre-Calculus through AP or school calculus and selected UBC and SFU mathematics courses. University students can ask about calculus, linear algebra, statistics and the mathematics used in physics, economics or engineering, with the exact course confirmed before a tutor is recommended.",
+          "The free 30-minute assessment is a planning conversation rather than a free lesson. We review the course, recent difficulties and preferred format, then suggest a realistic starting point without promising a specific grade.",
+        ],
+      },
     ],
     aboutHeading: "Chasing An Admission Average In Vancouver?",
     aboutBody: [
@@ -280,6 +294,21 @@ export const cities: City[] = [
         question: "Do you tutor UBC first-year calculus and linear algebra?",
         answer:
           "Yes, those two are among our most requested university courses. We also work with students in second-year courses and in the mathematics that sits inside physics, chemistry, economics and engineering coursework.",
+      },
+      {
+        question: "Where does in-person math tutoring for Vancouver students take place?",
+        answer:
+          "In-person appointments take place at our Burnaby studio at 2088 Madison Avenue. Vancouver students can also learn online from anywhere in the city; we do not operate a separate Vancouver office.",
+      },
+      {
+        question: "Which Vancouver math courses do you support?",
+        answer:
+          "We support Grades 6–12 mathematics, Foundations, Pre-Calculus, Calculus, AP and IB mathematics, and selected UBC and SFU courses including calculus and linear algebra.",
+      },
+      {
+        question: "Is the free assessment session a tutoring lesson?",
+        answer:
+          "No. It is a free 30-minute planning and needs-assessment conversation used to understand the course, current gaps and suitable next steps.",
       },
     ],
   },

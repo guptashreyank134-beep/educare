@@ -106,6 +106,36 @@ export default function LocationsPage() {
           })}
         </div>
 
+        <div className="max-w-4xl mt-14 rounded-2xl border border-[#F1F5F9] bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.03)]">
+          <h2 className="text-[22px] sm:text-[26px] font-bricolage font-medium text-slate mb-4">
+            Vancouver Subject Tutoring
+          </h2>
+          <p className="text-[#64748B] text-[16px] leading-relaxed mb-5">
+            Dr. Shreyank Educare is based in Burnaby. Vancouver students can
+            learn online across the city or attend an in-person appointment at
+            the Burnaby studio. Explore a subject page for course-specific
+            details.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {[
+              ["Tutoring in Vancouver", "/tutoring-vancouver"],
+              ["Math Tutor Vancouver", "/math-tutor-vancouver"],
+              ["Physics Tutor Vancouver", "/physics-tutor-vancouver"],
+              ["Biology Tutor Vancouver", "/biology-tutor-vancouver"],
+              ["AP Calculus Tutor Vancouver", "/ap-calculus-tutor-vancouver"],
+              ["IB Chemistry Tutor Vancouver", "/ib-chemistry-tutor-vancouver"],
+            ].map(([label, href]) => (
+              <Link
+                key={href}
+                href={href}
+                className="rounded-full border border-[#E2E8F0] px-4 py-2 text-[14px] font-medium text-primary hover:border-primary transition-colors"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* Online beyond Metro Vancouver */}
         <div className="max-w-3xl mt-14">
           <h2 className="text-[22px] sm:text-[26px] font-bricolage font-medium text-slate mb-4">
