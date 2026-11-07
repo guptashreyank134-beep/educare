@@ -28,10 +28,28 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+// Sanity currently contains two pairs of historically generated articles with
+// identical search titles. Keep their visible articles intact, but give each
+// canonical URL a truthful, distinct title so crawlers can tell the intent
+// apart while the editorial team reviews longer-term consolidation.
+const BLOG_TITLE_OVERRIDES: Record<string, string> = {
+  "tutoring-burnaby-phd-led-guide-choosing-math-science-tutor":
+    "Choosing a Math & Science Tutor in Burnaby | Parent Guide",
+  "tutoring-burnaby-parents-guide-math-science-tutor":
+    "Burnaby Math & Science Tutoring | What Parents Should Compare",
+  "tutoring-burnaby-phd-led-guide-in-person-vs-online":
+    "In-Person vs Online Tutoring in Burnaby | PhD Guide",
+  "tutoring-burnaby-parents-guide-right-fit":
+    "Finding the Right Burnaby Tutor | Parent Fit Guide",
+};
+
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const data = await getMetaDataBySlug("post", slug);
-  return getMetadata(data, `https://www.drshreyankeducare.com/blog/${slug}`);
+  const metadata = getMetadata(data, `https://www.drshreyankeducare.com/blog/${slug}`);
+  return BLOG_TITLE_OVERRIDES[slug]
+    ? { ...metadata, title: BLOG_TITLE_OVERRIDES[slug] }
+    : metadata;
 }
 
 // Helper to extract plain text from Portable Text blocks

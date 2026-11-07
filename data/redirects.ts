@@ -41,6 +41,7 @@ const consolidationPairs: [string, string][] = [
   ["/best-chemistry-tutor-burnaby", "/programs/chemistry"],
   ["/best-physics-tutor-burnaby", "/programs/physics"],
   ["/programs/physics-tutoring", "/programs/physics"],
+  ["/programs/sat", "/programs/sat-prep"],
   // Two university-physics pages competed; GSC shows /programs/university-physics
   // already ranks for "university physics tutor vancouver" (pos ~9), so keep it.
   ["/university-physics-tutor-vancouver", "/programs/university-physics"],
