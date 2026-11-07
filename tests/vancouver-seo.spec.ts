@@ -3,10 +3,12 @@ import { expect, test } from "@playwright/test";
 const vancouverPages = [
   "/tutoring-vancouver",
   "/math-tutor-vancouver",
+  "/science-tutoring-vancouver",
   "/ap-calculus-tutor-vancouver",
   "/ib-chemistry-tutor-vancouver",
   "/physics-tutor-vancouver",
   "/biology-tutor-vancouver",
+  "/english-tutor-vancouver",
 ];
 
 for (const path of vancouverPages) {

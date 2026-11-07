@@ -29,6 +29,12 @@ const metrics = [
   { value: "Rated 5.0", label: "on Google by parents & students" },
 ];
 
+const englishTutorMetrics = [
+  { value: "20+ Years", label: "of teaching experience" },
+  { value: "2 Master’s", label: "in Education and English" },
+  { value: "Grades 1–10", label: "English and ESL support" },
+];
+
 /** Build Next.js metadata for an SEO landing page. */
 export async function seoPageMetadata(slug: string): Promise<Metadata> {
   const page = getSeoPageBySlug(slug);
@@ -73,6 +79,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
   const intro = orFallback(content?.intro, page.intro);
   const sections = orFallback(content?.sections, page.sections);
   const faqs = orFallback(content?.faqs, page.faqs);
+  const trustMetrics = slug === "english-tutor-vancouver" ? englishTutorMetrics : metrics;
 
   return (
     <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
@@ -148,7 +155,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
         {/* Trust badges */}
         <div className="mt-20">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {metrics.map((metric, index) => (
+            {trustMetrics.map((metric, index) => (
               <div
                 key={index}
                 className="bg-white p-8 rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-[#F1F5F9] flex flex-col items-center text-center transform hover:-translate-y-1 transition-all"

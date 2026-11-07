@@ -118,8 +118,10 @@ const footerColumns = [
     links: [
       { label: "Tutoring in Vancouver", href: "/tutoring-vancouver" },
       { label: "Math Tutor Vancouver", href: "/math-tutor-vancouver" },
+      { label: "Science Grades 1–10", href: "/science-tutoring-vancouver" },
       { label: "Physics Tutor Vancouver", href: "/physics-tutor-vancouver" },
       { label: "Biology Tutor Vancouver", href: "/biology-tutor-vancouver" },
+      { label: "English & ESL Vancouver", href: "/english-tutor-vancouver" },
       { label: "AP Calculus Vancouver", href: "/ap-calculus-tutor-vancouver" },
       { label: "IB Chemistry Vancouver", href: "/ib-chemistry-tutor-vancouver" },
     ],

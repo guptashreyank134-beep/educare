@@ -208,10 +208,10 @@ export const cities: City[] = [
     slug: "vancouver",
     name: "Vancouver",
     region: "BC",
-    metaTitle: "Math Tutor Vancouver | Grades 6–12, Calculus & University",
+    metaTitle: "Math Tutor Vancouver | Grades 1–12, Calculus & University",
     metaDescription:
-      "PhD-led math tutoring for Vancouver students in Grades 6–12, calculus and university courses. Online across Vancouver or in person in Burnaby.",
-    heroHeading: "Math Tutor in Vancouver for Grades 6–12 and University",
+      "Math tutoring for Vancouver students in Grades 1–12, calculus and university courses. BC curriculum support online or in person in Burnaby.",
+    heroHeading: "Math Tutor in Vancouver for Grades 1–12 and University",
     heroSubheading:
       "Understanding-first math tutoring for the BC curriculum, AP, IB and selected UBC/SFU courses—online across Vancouver or in person at our Burnaby studio.",
     intro: [
@@ -257,6 +257,13 @@ export const cities: City[] = [
         body: [
           "Dr. Shreyank Educare is based in Burnaby and does not claim a Vancouver office. Students around UBC, Downtown Vancouver, Kitsilano, Kerrisdale, Dunbar and East Vancouver can meet online, share their current course material and work through problems on a shared whiteboard.",
           "Students who prefer to sit beside a tutor can attend the Burnaby studio on Madison Avenue. The academic method is the same in both formats: diagnose the first insecure step, explain why the method works, practise it and check whether the student can reproduce it independently.",
+        ],
+      },
+      {
+        heading: "Elementary and Grade 1–10 Math Tutoring with Niti",
+        body: [
+          "Niti provides BC curriculum Mathematics support through Grade 10. For elementary students in Grades 1–5, tutoring can reinforce number sense, arithmetic, place value, fractions, measurement, geometry and word-problem language at an age-appropriate pace.",
+          "For Grades 6–10, lessons can address ratios, percentages, integers, algebra, equations, geometry, data and the foundations needed for senior secondary mathematics. Niti begins with an informal assessment, actively teaches each concept, uses guided practice and reviews independent assignments and mistakes.",
         ],
       },
       {

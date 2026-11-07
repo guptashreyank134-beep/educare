@@ -40,6 +40,7 @@ export const ROUTES_WITH_THEIR_OWN_FORM: ReadonlySet<string> = new Set([
   "/dr-shreyank-educare-reviews",
   "/engineering-dynamics-tutor",
   "/engineering-statics-tutor",
+  "/english-tutor-vancouver",
   "/exam-prep-tutor-vancouver",
   "/final-exam-review-tutoring-burnaby",
   "/first-year-engineering-tutor",

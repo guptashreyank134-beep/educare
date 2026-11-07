@@ -120,8 +120,10 @@ export default function LocationsPage() {
             {[
               ["Tutoring in Vancouver", "/tutoring-vancouver"],
               ["Math Tutor Vancouver", "/math-tutor-vancouver"],
+              ["Science Tutor Grades 1–10", "/science-tutoring-vancouver"],
               ["Physics Tutor Vancouver", "/physics-tutor-vancouver"],
               ["Biology Tutor Vancouver", "/biology-tutor-vancouver"],
+              ["English & ESL Tutor Vancouver", "/english-tutor-vancouver"],
               ["AP Calculus Tutor Vancouver", "/ap-calculus-tutor-vancouver"],
               ["IB Chemistry Tutor Vancouver", "/ib-chemistry-tutor-vancouver"],
             ].map(([label, href]) => (
