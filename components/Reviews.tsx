@@ -20,43 +20,10 @@ interface Review {
 const fallbackReviews: Review[] = [
   {
     author: "Parag Jawkar",
-    avatar: "/assets/team-1.png",
+    avatar: null,
     rating: 5,
-    relativeTime: "1 month ago",
-    text: "Dr has been an excellent tutor for my daughter's university Physics course. His clear explanations and patient approach helped her gain confidence and truly understand the subject. We're very thankful for his professionalism, his passion and dedication...",
-    role: "Parent",
-  },
-  {
-    author: "Sanjay Mehta",
-    avatar: "/assets/team-2.png",
-    rating: 5,
-    relativeTime: "2 weeks ago",
-    text: "Dr. Shreyank has been tutoring my son in Grade 12 Math and Physics. He is very patient and explains the concepts extremely well. My son's grades and confidence improved significantly.",
-    role: "Parent",
-  },
-  {
-    author: "Aarav Patel",
-    avatar: "/assets/team-3.png",
-    rating: 5,
-    relativeTime: "3 weeks ago",
-    text: "Excellent tutor for university-level calculus. He breaks down complex topics step-by-step and helps with exam preparation. Highly recommended for any engineering or science student.",
-    role: "University Student",
-  },
-  {
-    author: "Sarah L.",
-    avatar: "/assets/team-4.png",
-    rating: 5,
-    relativeTime: "2 months ago",
-    text: "Amazing tutoring experience! Chemistry was my weakest subject, but the classes made it so easy to understand. I got an A on my final exam.",
-    role: "High School Student",
-  },
-  {
-    author: "Emily Chen",
-    avatar: "/assets/team-5.png",
-    rating: 5,
-    relativeTime: "1 week ago",
-    text: "Highly professional and dedicated. The structured study plan helped my son stay on track. He looks forward to his classes every week.",
-    role: "Parent",
+    relativeTime: "Google review",
+    text: "Dr has been an excellent tutor for my daughter's university Physics course. His clear explanations and patient approach helped her gain confidence and truly understand the subject. We're very thankful for his professionalism, his passion and dedication, and I highly recommend him to any student seeking strong guidance in physics.",
   },
 ];
 
@@ -90,18 +57,15 @@ export default function Reviews() {
         const response = await fetch("/api/reviews");
         const data = await response.json();
         if (data.reviews && data.reviews.length > 0) {
-          // Map avatars if null and inject realistic roles to match design
-          const formatted = data.reviews.map((r: Review, idx: number) => ({
-            ...r,
-            avatar: r.avatar || `/assets/team-${(idx % 6) + 1}.png`,
-            role: idx % 2 === 0 ? "Parent" : "Student",
-          }));
-          setReviews(formatted);
+          setReviews(data.reviews);
         }
         // Only the review CARDS come from the live API; the headline rating/count
         // stay pinned to the controlled values above for consistency.
       } catch (error) {
-        console.error("Failed to load reviews from API, using fallback data:", error);
+        console.error(
+          "Failed to load reviews from API, using fallback data:",
+          error,
+        );
       }
     }
 
@@ -112,22 +76,24 @@ export default function Reviews() {
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex + 1 >= reviews.length - visibleCards + 1 ? 0 : prevIndex + 1
+      prevIndex + 1 >= reviews.length - visibleCards + 1 ? 0 : prevIndex + 1,
     );
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? Math.max(0, reviews.length - visibleCards) : prevIndex - 1
+      prevIndex === 0
+        ? Math.max(0, reviews.length - visibleCards)
+        : prevIndex - 1,
     );
   };
 
-  const writeReviewUrl = "https://search.google.com/local/writereview?placeid=ChIJA3uGz9t2hlQRjL_aWv6iW2s";
+  const writeReviewUrl =
+    "https://search.google.com/local/writereview?placeid=ChIJA3uGz9t2hlQRjL_aWv6iW2s";
 
   return (
     <section className="py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Title Heading */}
         <h2 className="text-[32px] sm:text-[32px] font-bricolage font-display font-normal text-slate text-center leading-tight mb-16 max-w-3xl mx-auto">
           Student Experiences That Reflect Meaningful Progress
@@ -160,7 +126,6 @@ export default function Reviews() {
 
         {/* Carousel Slider */}
         <div className="relative flex items-center w-full">
-
           {/* Left Arrow Button */}
           <button
             onClick={handlePrev}
@@ -189,7 +154,12 @@ export default function Reviews() {
                       {/* Stars */}
                       <div className="flex text-yellow-400 gap-0.5 mb-3">
                         {[...Array(review.rating)].map((_, i) => (
-                          <Star key={i} size={18} fill="currentColor" className="text-yellow-400" />
+                          <Star
+                            key={i}
+                            size={18}
+                            fill="currentColor"
+                            className="text-yellow-400"
+                          />
                         ))}
                       </div>
 
@@ -227,7 +197,7 @@ export default function Reviews() {
                         {review.author}
                       </h4>
                       <p className="text-[13px] text-slate opacity-60 mb-4">
-                        {review.role || "Parent"}
+                        {review.role || "Google reviewer"}
                       </p>
 
                       {review.avatar && (
@@ -255,7 +225,6 @@ export default function Reviews() {
           >
             <ChevronRight size={24} />
           </button>
-
         </div>
       </div>
     </section>

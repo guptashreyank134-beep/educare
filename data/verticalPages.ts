@@ -44,6 +44,8 @@ export interface VerticalPage {
   whoFor: string[];
   faqs: LandingFAQ[];
   relatedLinks?: RelatedLink[];
+  /** IDs from the verified About-page roster. Omit rather than guessing. */
+  tutorIds?: number[];
   /** Lead form copy overrides. */
   leadHeading?: string;
   leadSubjectLabel?: string;
@@ -59,8 +61,7 @@ export const verticalPages: VerticalPage[] = [
   {
     slug: "online-medical-tutoring",
     vertical: "medical",
-    metaTitle:
-      "Online Medical Tutoring | USA & Caribbean | MD-Led",
+    metaTitle: "Online Medical Tutoring | USA & Caribbean | MD-Led",
     metaDescription:
       "MD-led online medical tutoring for USA & Caribbean students — physiology, pathology, pharmacology and USMLE prep. Book a free consultation.",
     heroHeading: "MD-Led Online Medical Tutoring for USA & Caribbean Students",
@@ -127,9 +128,13 @@ export const verticalPages: VerticalPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "University & Professional Tutoring", href: "/university-professional" },
+      {
+        label: "University & Professional Tutoring",
+        href: "/university-professional",
+      },
       { label: "Book a Free Consultation", href: "/contact" },
     ],
+    tutorIds: [6, 8],
     leadHeading: "Book a Free Medical Tutoring Consultation",
     leadSubjectLabel: "Subject / Exam",
     leadSubjectPlaceholder: "e.g. Pharmacology, USMLE Step 1",
@@ -138,9 +143,9 @@ export const verticalPages: VerticalPage[] = [
   // ── QUANT / UNIVERSITY & PROFESSIONAL HUB ───────────────────
   {
     slug: "university-professional",
+    tutorIds: [7],
     vertical: "quant",
-    metaTitle:
-      "University & Professional Tutoring | Economics & Stats",
+    metaTitle: "University & Professional Tutoring | Economics & Stats",
     metaDescription:
       "Expert online tutoring in Economics, Statistics, Actuarial Science and R for university and professional learners worldwide. Free consultation.",
     heroHeading:
@@ -219,9 +224,9 @@ export const verticalPages: VerticalPage[] = [
   // ── MEDICAL SUBJECT PAGES ───────────────────────────────────
   {
     slug: "medical-sciences-tutor",
+    tutorIds: [6, 8],
     vertical: "medical",
-    metaTitle:
-      "Medical Sciences Tutor | USA & Caribbean | MD-Led",
+    metaTitle: "Medical Sciences Tutor | USA & Caribbean | MD-Led",
     metaDescription:
       "MD-led online medical sciences tutoring for USA & Caribbean students — physiology, pathology, pharmacology, anatomy and more. Free consultation.",
     heroHeading: "Online Medical Sciences Tutor — USA & Caribbean",
@@ -275,7 +280,10 @@ export const verticalPages: VerticalPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "Online Medical Tutoring (overview)", href: "/online-medical-tutoring" },
+      {
+        label: "Online Medical Tutoring (overview)",
+        href: "/online-medical-tutoring",
+      },
       { label: "Physiology Tutor", href: "/online-physiology-tutor" },
       { label: "Book a Free Consultation", href: "/contact" },
     ],
@@ -285,9 +293,9 @@ export const verticalPages: VerticalPage[] = [
   },
   {
     slug: "online-physiology-tutor",
+    tutorIds: [6, 8],
     vertical: "medical",
-    metaTitle:
-      "Online Physiology Tutor | USA & Caribbean | MD-Led",
+    metaTitle: "Online Physiology Tutor | USA & Caribbean | MD-Led",
     metaDescription:
       "MD-led online physiology tutoring for USA and Caribbean medical students. One-on-one help with systems physiology and board prep. Book a free consultation.",
     heroHeading: "Online Physiology Tutor — USA & Caribbean",
@@ -341,7 +349,10 @@ export const verticalPages: VerticalPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "Online Medical Tutoring (overview)", href: "/online-medical-tutoring" },
+      {
+        label: "Online Medical Tutoring (overview)",
+        href: "/online-medical-tutoring",
+      },
       { label: "Pathology Tutor", href: "/online-pathology-tutor" },
       { label: "Book a Free Consultation", href: "/contact" },
     ],
@@ -351,9 +362,9 @@ export const verticalPages: VerticalPage[] = [
   },
   {
     slug: "online-pathology-tutor",
+    tutorIds: [6, 8],
     vertical: "medical",
-    metaTitle:
-      "Online Pathology Tutor | USA & Caribbean | MD-Led",
+    metaTitle: "Online Pathology Tutor | USA & Caribbean | MD-Led",
     metaDescription:
       "MD-led online pathology tutoring for USA & Caribbean students — general and systemic pathology and board prep. Free consultation.",
     heroHeading: "Online Pathology Tutor — USA & Caribbean",
@@ -407,7 +418,10 @@ export const verticalPages: VerticalPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "Online Medical Tutoring (overview)", href: "/online-medical-tutoring" },
+      {
+        label: "Online Medical Tutoring (overview)",
+        href: "/online-medical-tutoring",
+      },
       { label: "Pharmacology Tutor", href: "/online-pharmacology-tutor" },
       { label: "Book a Free Consultation", href: "/contact" },
     ],
@@ -417,9 +431,9 @@ export const verticalPages: VerticalPage[] = [
   },
   {
     slug: "online-pharmacology-tutor",
+    tutorIds: [6, 8],
     vertical: "medical",
-    metaTitle:
-      "Online Pharmacology Tutor | USA & Caribbean | MD-Led",
+    metaTitle: "Online Pharmacology Tutor | USA & Caribbean | MD-Led",
     metaDescription:
       "MD-led online pharmacology tutoring for USA & Caribbean students — drug classes, mechanisms and board prep. Free consultation.",
     heroHeading: "Online Pharmacology Tutor — USA & Caribbean",
@@ -473,7 +487,10 @@ export const verticalPages: VerticalPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "Online Medical Tutoring (overview)", href: "/online-medical-tutoring" },
+      {
+        label: "Online Medical Tutoring (overview)",
+        href: "/online-medical-tutoring",
+      },
       { label: "Medical Exam Prep", href: "/medical-exam-prep-tutor-online" },
       { label: "Book a Free Consultation", href: "/contact" },
     ],
@@ -483,9 +500,9 @@ export const verticalPages: VerticalPage[] = [
   },
   {
     slug: "medical-exam-prep-tutor-online",
+    tutorIds: [6, 8],
     vertical: "medical",
-    metaTitle:
-      "Medical Exam Prep Tutor | USA & Caribbean | MD-Led",
+    metaTitle: "Medical Exam Prep Tutor | USA & Caribbean | MD-Led",
     metaDescription:
       "MD-led online medical board and licensing exam prep for USA and Caribbean students. Structured, high-yield, one-on-one tutoring. Book a free consultation.",
     heroHeading: "Online Medical Exam Prep — USA & Caribbean",
@@ -539,7 +556,10 @@ export const verticalPages: VerticalPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "Online Medical Tutoring (overview)", href: "/online-medical-tutoring" },
+      {
+        label: "Online Medical Tutoring (overview)",
+        href: "/online-medical-tutoring",
+      },
       { label: "Medical Sciences Tutor", href: "/medical-sciences-tutor" },
       { label: "Book a Free Consultation", href: "/contact" },
     ],
@@ -552,8 +572,7 @@ export const verticalPages: VerticalPage[] = [
   {
     slug: "online-statistics-tutor",
     vertical: "quant",
-    metaTitle:
-      "Online Statistics Tutor | University & Professional",
+    metaTitle: "Online Statistics Tutor | University & Professional",
     metaDescription:
       "Expert online statistics tutoring worldwide — probability, inference, regression and more for university students and professionals. Free consultation.",
     heroHeading: "Online Statistics Tutor — University & Professional",
@@ -607,7 +626,10 @@ export const verticalPages: VerticalPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "University & Professional (overview)", href: "/university-professional" },
+      {
+        label: "University & Professional (overview)",
+        href: "/university-professional",
+      },
       { label: "Statistics with R Tutor", href: "/statistics-with-r-tutor" },
       { label: "Book a Free Consultation", href: "/contact" },
     ],
@@ -617,9 +639,9 @@ export const verticalPages: VerticalPage[] = [
   },
   {
     slug: "online-economics-tutor",
+    tutorIds: [7],
     vertical: "quant",
-    metaTitle:
-      "Online Economics Tutor | University & Professional",
+    metaTitle: "Online Economics Tutor | University & Professional",
     metaDescription:
       "Expert online economics tutoring for university students worldwide — micro, macro and econometrics. One-on-one, exam-focused. Free consultation.",
     heroHeading: "Online Economics Tutor — University & Professional",
@@ -673,7 +695,10 @@ export const verticalPages: VerticalPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "University & Professional (overview)", href: "/university-professional" },
+      {
+        label: "University & Professional (overview)",
+        href: "/university-professional",
+      },
       { label: "Statistics Tutor", href: "/online-statistics-tutor" },
       { label: "Book a Free Consultation", href: "/contact" },
     ],
@@ -684,8 +709,7 @@ export const verticalPages: VerticalPage[] = [
   {
     slug: "r-programming-tutor",
     vertical: "quant",
-    metaTitle:
-      "R Programming Tutor | University & Professional",
+    metaTitle: "R Programming Tutor | University & Professional",
     metaDescription:
       "Expert online R programming tutoring for UK, USA and worldwide students and professionals — from basics to data analysis and visualisation. Free consultation.",
     heroHeading: "Online R Programming Tutor — University & Professional",
@@ -739,7 +763,10 @@ export const verticalPages: VerticalPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "University & Professional (overview)", href: "/university-professional" },
+      {
+        label: "University & Professional (overview)",
+        href: "/university-professional",
+      },
       { label: "Statistics with R Tutor", href: "/statistics-with-r-tutor" },
       { label: "Book a Free Consultation", href: "/contact" },
     ],
@@ -749,9 +776,9 @@ export const verticalPages: VerticalPage[] = [
   },
   {
     slug: "actuarial-science-tutor",
+    tutorIds: [7],
     vertical: "quant",
-    metaTitle:
-      "Actuarial Science Tutor | University & Professional",
+    metaTitle: "Actuarial Science Tutor | University & Professional",
     metaDescription:
       "Expert online actuarial science tutoring for UK, USA and worldwide students and candidates — probability, financial maths and models. Free consultation.",
     heroHeading: "Online Actuarial Science Tutor — University & Professional",
@@ -805,7 +832,10 @@ export const verticalPages: VerticalPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "University & Professional (overview)", href: "/university-professional" },
+      {
+        label: "University & Professional (overview)",
+        href: "/university-professional",
+      },
       { label: "Actuarial Exam Prep", href: "/actuarial-exam-tutor-online" },
       { label: "Book a Free Consultation", href: "/contact" },
     ],
@@ -816,8 +846,7 @@ export const verticalPages: VerticalPage[] = [
   {
     slug: "statistics-with-r-tutor",
     vertical: "quant",
-    metaTitle:
-      "Statistics with R Tutor | University & Professional",
+    metaTitle: "Statistics with R Tutor | University & Professional",
     metaDescription:
       "Expert online 'Statistics with R' tutoring for UK, USA and worldwide students and professionals — applied statistics using R. One-on-one. Free consultation.",
     heroHeading: "Statistics with R Tutor — University & Professional",
@@ -871,7 +900,10 @@ export const verticalPages: VerticalPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "University & Professional (overview)", href: "/university-professional" },
+      {
+        label: "University & Professional (overview)",
+        href: "/university-professional",
+      },
       { label: "Statistics Tutor", href: "/online-statistics-tutor" },
       { label: "R Programming Tutor", href: "/r-programming-tutor" },
     ],
@@ -881,9 +913,9 @@ export const verticalPages: VerticalPage[] = [
   },
   {
     slug: "actuarial-exam-tutor-online",
+    tutorIds: [7],
     vertical: "quant",
-    metaTitle:
-      "Actuarial Exam Tutor | University & Professional",
+    metaTitle: "Actuarial Exam Tutor | University & Professional",
     metaDescription:
       "Expert online actuarial exam tutoring worldwide — structured, problem-focused preparation for professional actuarial exams. Free consultation.",
     heroHeading: "Online Actuarial Exam Tutor — University & Professional",
@@ -937,7 +969,10 @@ export const verticalPages: VerticalPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "University & Professional (overview)", href: "/university-professional" },
+      {
+        label: "University & Professional (overview)",
+        href: "/university-professional",
+      },
       { label: "Actuarial Science Tutor", href: "/actuarial-science-tutor" },
       { label: "Book a Free Consultation", href: "/contact" },
     ],
@@ -952,7 +987,9 @@ export const getVerticalPageBySlug = (slug: string): VerticalPage | undefined =>
 
 /** Sibling links within the same vertical (medical / quant) for internal-link
  *  coverage — every vertical page links to, and is linked by, its peers. */
-export function getVerticalSiblings(slug: string): { label: string; href: string }[] {
+export function getVerticalSiblings(
+  slug: string,
+): { label: string; href: string }[] {
   const page = verticalPages.find((p) => p.slug === slug);
   if (!page) return [];
   return verticalPages

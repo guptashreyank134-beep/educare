@@ -9,6 +9,7 @@ import CourseConsultationPanel from "@/components/CourseConsultationPanel";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
+import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   JsonLd,
@@ -16,7 +17,11 @@ import {
   getFAQSchema,
 } from "@/components/SchemaMarkup";
 
-import { getVerticalPageBySlug, verticalUrl, getVerticalSiblings } from "@/data/verticalPages";
+import {
+  getVerticalPageBySlug,
+  verticalUrl,
+  getVerticalSiblings,
+} from "@/data/verticalPages";
 import { BUSINESS } from "@/data/businessInfo";
 import { correctSeoCopy } from "@/data/seoCopyCorrections";
 
@@ -27,8 +32,12 @@ export async function verticalMetadata(slug: string): Promise<Metadata> {
 
   // Editors can override the title/description in Studio; empty falls back.
   const content = await getLandingContent(slug);
-  const metaTitle = correctSeoCopy(orFallback(content?.metaTitle, page.metaTitle));
-  const metaDescription = correctSeoCopy(orFallback(content?.metaDescription, page.metaDescription));
+  const metaTitle = correctSeoCopy(
+    orFallback(content?.metaTitle, page.metaTitle),
+  );
+  const metaDescription = correctSeoCopy(
+    orFallback(content?.metaDescription, page.metaDescription),
+  );
 
   const url = verticalUrl(slug);
   return {
@@ -60,7 +69,10 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
   // Content is editable in Sanity; each field falls back to the code value.
   const content = await getLandingContent(slug);
   const heroHeading = orFallback(content?.heading, page.heroHeading);
-  const heroSubheading = orFallback(content?.heroSubheading, page.heroSubheading);
+  const heroSubheading = orFallback(
+    content?.heroSubheading,
+    page.heroSubheading,
+  );
   const intro = orFallback(content?.intro, page.intro);
   const sections = orFallback(content?.sections, page.sections);
   const faqs = orFallback(content?.faqs, page.faqs);
@@ -108,7 +120,9 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
 
             <div className="flex flex-wrap gap-4">
               <Link href="/book">
-                <Button iconRight={ArrowRight}>Book a Free 30-Minute Consultation</Button>
+                <Button iconRight={ArrowRight}>
+                  Book a Free 30-Minute Consultation
+                </Button>
               </Link>
               <a
                 href={BUSINESS.whatsapp}
@@ -119,6 +133,24 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
                 Chat on WhatsApp
               </a>
             </div>
+
+            <div className="mt-8 space-y-4 rounded-[16px] border border-[#F1F5F9] bg-white/75 p-5 sm:p-6">
+              <h2 className="text-[22px] font-bricolage font-medium text-slate">
+                Tutoring Built Around Your Course
+              </h2>
+              {intro.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-[15px] sm:text-[16px] font-montserrat text-slate/75 leading-relaxed"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            {page.tutorIds && (
+              <RelevantTutorProfiles tutorIds={page.tutorIds} />
+            )}
           </div>
 
           {/* Right: consultation panel. The vertical drives the lead subject
@@ -128,27 +160,15 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
               subject={page.heroHeading}
               anchor={`${page.slug}-enquiry`}
               courseLabel={page.leadSubjectLabel}
-              courseExample={page.leadSubjectPlaceholder ?? "your course or exam"}
+              courseExample={
+                page.leadSubjectPlaceholder ?? "your course or exam"
+              }
               heading={page.leadHeading ?? "Ask about tutoring"}
               showCredential={false}
             />
           </div>
         </div>
       </div>
-
-      {/* Intro */}
-      <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pb-8">
-        <div className="space-y-5">
-          {intro.map((paragraph, index) => (
-            <p
-              key={index}
-              className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed"
-            >
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </section>
 
       {/* Content sections */}
       <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-12">
@@ -224,7 +244,7 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
           vertical page cross-linked rather than orphaned. */}
       {(() => {
         const siblings = getVerticalSiblings(slug).filter(
-          (s) => !(page.relatedLinks || []).some((r) => r.href === s.href)
+          (s) => !(page.relatedLinks || []).some((r) => r.href === s.href),
         );
         if (!siblings.length) return null;
         return (

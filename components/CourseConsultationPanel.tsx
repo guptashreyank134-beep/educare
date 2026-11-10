@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import CourseEnquiryForm from "@/components/CourseEnquiryForm";
 import TestimonialQuote from "@/components/TestimonialQuote";
@@ -44,29 +45,45 @@ export default function CourseConsultationPanel({
    */
   showCredential?: boolean;
 }) {
-  const testimonials = testimonialTopic ? testimonialsFor(testimonialTopic) : [];
+  const testimonials = testimonialTopic
+    ? testimonialsFor(testimonialTopic)
+    : [];
 
   return (
     <div className="w-full lg:w-[400px]">
       {showCredential && (
-        <div className="rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5">
-          <p className="text-[14px] font-montserrat font-medium text-slate mb-1">
-            Taught by {LEAD_AUTHOR.name}
-          </p>
-          <p className="text-[14px] font-montserrat leading-relaxed text-slate/70">
-            {credentialLabel(LEAD_AUTHOR.credential)}, with over 10 years of teaching
-            experience.{" "}
-            <Link
-              href={authorPath(LEAD_AUTHOR.slug)}
-              className="text-primary underline underline-offset-2"
-            >
-              Full profile
-            </Link>
-          </p>
+        <div className="flex gap-4 rounded-[16px] border border-[#F1F5F9] bg-white/90 p-5 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+          <div className="relative h-20 w-16 shrink-0 overflow-hidden rounded-xl bg-bg-grey">
+            <Image
+              src="/assets/drShreyank.webp"
+              alt={`${LEAD_AUTHOR.name}, founder and lead instructor`}
+              fill
+              sizes="64px"
+              className="object-cover object-top"
+            />
+          </div>
+          <div>
+            <p className="text-[14px] font-montserrat font-medium text-slate mb-1">
+              Taught by {LEAD_AUTHOR.name}
+            </p>
+            <p className="text-[13px] font-montserrat leading-relaxed text-slate/70">
+              {credentialLabel(LEAD_AUTHOR.credential)}, with over 10 years of
+              teaching experience.{" "}
+              <Link
+                href={authorPath(LEAD_AUTHOR.slug)}
+                className="text-primary underline underline-offset-2"
+              >
+                Full profile
+              </Link>
+            </p>
+          </div>
         </div>
       )}
 
-      <div id={anchor} className={showCredential ? "mt-5 scroll-mt-28" : "scroll-mt-28"}>
+      <div
+        id={anchor}
+        className={showCredential ? "mt-5 scroll-mt-28" : "scroll-mt-28"}
+      >
         <CourseEnquiryForm
           subject={subject}
           formId={anchor}
