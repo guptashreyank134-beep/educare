@@ -32,6 +32,8 @@ interface CourseEnquiryFormProps {
    * tutoring", because a lead subject is an identifier, not a noun phrase.
    */
   heading?: string;
+  /** Two-column fields when the form has its own full-width page section. */
+  wide?: boolean;
 }
 
 /** Maps a server rejection to a coarse analytics reason; no message text is sent. */
@@ -65,6 +67,7 @@ export default function CourseEnquiryForm({
   courseLabel = "University and course code",
   vertical = "local-k12",
   heading = "Ask about tutoring",
+  wide = false,
 }: CourseEnquiryFormProps) {
   const uid = useId();
   const ids = {
@@ -196,7 +199,7 @@ export default function CourseEnquiryForm({
         onSubmit={handleSubmit}
         onInput={handleFirstInput}
         data-enquiry-form="page"
-        className="space-y-5"
+        className={wide ? "grid gap-5 md:grid-cols-2" : "space-y-5"}
         noValidate
       >
         <FormSpamFields />
@@ -293,7 +296,7 @@ export default function CourseEnquiryForm({
           </div>
         )}
 
-        <div>
+        <div className={wide ? "md:col-span-2" : undefined}>
           <label htmlFor={ids.help} className={labelClass}>
             What do you need help with?{" "}
             <span className="font-normal text-slate/50">(optional)</span>
@@ -307,7 +310,7 @@ export default function CourseEnquiryForm({
           />
         </div>
 
-        <label className="flex items-start gap-3 text-[14px] font-montserrat text-slate/70">
+        <label className={`flex items-start gap-3 text-[14px] font-montserrat text-slate/70 ${wide ? "md:col-span-2" : ""}`}>
           <input
             type="checkbox"
             name="marketingOptIn"
@@ -320,7 +323,7 @@ export default function CourseEnquiryForm({
         </label>
 
         {/* The live region announces both failures and the pending state. */}
-        <div id={ids.status} aria-live="polite" className="min-h-0">
+        <div id={ids.status} aria-live="polite" className={`${wide ? "md:col-span-2 " : ""}${error ? "min-h-0" : "sr-only"}`}>
           {error && (
             <p className="rounded-[8px] border border-red-200 bg-red-50 px-4 py-3 text-[14px] font-montserrat text-red-700">
               {error}
@@ -332,7 +335,7 @@ export default function CourseEnquiryForm({
           type="submit"
           disabled={isSubmitting}
           aria-describedby={ids.status}
-          className="w-full justify-center"
+          className={`w-full justify-center ${wide ? "md:col-span-2" : ""}`}
         >
           {isSubmitting ? (
             <span className="inline-flex items-center gap-2">
@@ -344,7 +347,7 @@ export default function CourseEnquiryForm({
           )}
         </Button>
 
-        <p className="text-[13px] font-montserrat text-slate/60 leading-relaxed">
+        <p className={`text-[13px] font-montserrat text-slate/60 leading-relaxed ${wide ? "md:col-span-2" : ""}`}>
           We use your details only to reply to this enquiry. See our{" "}
           <Link href="/privacy" className="text-primary underline underline-offset-2">
             privacy policy

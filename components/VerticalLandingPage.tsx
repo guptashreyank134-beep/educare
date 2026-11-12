@@ -104,8 +104,8 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
           <Breadcrumbs items={[{ label: heroHeading }]} />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-start">
-          {/* Left: content + CTA above the fold */}
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8">
+          {/* Content flows directly into the enquiry section at every width. */}
           <div className="flex flex-col">
             <span className="inline-flex items-center gap-2 self-start bg-yellow-light/60 text-slate text-[13px] font-montserrat px-3 py-1.5 rounded-full border border-[#F1F5F9] mb-5">
               <GraduationCap className="w-4 h-4 text-primary" />
@@ -114,7 +114,7 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
             <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
               {heroHeading}
             </h1>
-            <p className="text-[#64748B] text-[16px] sm:text-[18px] leading-relaxed max-w-[560px] mb-8">
+            <p className="text-[#64748B] text-[16px] sm:text-[18px] leading-relaxed max-w-3xl mb-8">
               {heroSubheading}
             </p>
 
@@ -134,7 +134,7 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
               </a>
             </div>
 
-            <div className="mt-8 space-y-4 rounded-[16px] border border-[#F1F5F9] bg-white/75 p-5 sm:p-6">
+            <div data-landing-introduction className="mt-8 space-y-4 rounded-[16px] border border-[#F1F5F9] bg-white/75 p-5 sm:p-6">
               <h2 className="text-[22px] font-bricolage font-medium text-slate">
                 Tutoring Built Around Your Course
               </h2>
@@ -149,11 +149,11 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
             </div>
           </div>
 
-          {/* Right: consultation panel. The vertical drives the lead subject
+          {/* Full-width consultation panel. The vertical drives the lead subject
               and the example, so a Medical enquiry is not filed as Quant. */}
-          <div className="relative mt-4 lg:mt-0">
+          <div data-landing-enquiry className="relative">
             <CourseConsultationPanel
-              fluid
+              wide
               subject={page.heroHeading}
               anchor={`${page.slug}-enquiry`}
               courseLabel={page.leadSubjectLabel}

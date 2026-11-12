@@ -111,13 +111,13 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
           <Breadcrumbs items={[{ label: h1 }]} />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-start">
-          {/* Left: content + CTA above the fold */}
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8">
+          {/* Content flows directly into the enquiry section at every width. */}
           <div className="flex flex-col">
             <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
               {h1}
             </h1>
-            <p className="text-[#64748B] text-[16px] sm:text-[18px] leading-relaxed max-w-[520px] mb-8">
+            <p className="text-[#64748B] text-[16px] sm:text-[18px] leading-relaxed max-w-3xl mb-8">
               {heroSubheading}
             </p>
 
@@ -139,7 +139,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
               </a>
             </div>
 
-            <div className="mt-8 space-y-4 rounded-[16px] border border-[#F1F5F9] bg-white/75 p-5 sm:p-6">
+            <div data-landing-introduction className="mt-8 space-y-4 rounded-[16px] border border-[#F1F5F9] bg-white/75 p-5 sm:p-6">
               <h2 className="text-[22px] font-bricolage font-medium text-slate">
                 Tutoring Built Around the Student
               </h2>
@@ -154,12 +154,12 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
             </div>
           </div>
 
-          {/* Right: lead form */}
-          <div className="relative mt-4 lg:mt-0">
+          {/* Full-width enquiry avoids a tall sidebar leaving an empty column. */}
+          <div data-landing-enquiry className="relative">
             {/* The page's own H1 becomes the lead subject, so an enquiry names
                 the page that produced it rather than a generic bucket. */}
             <CourseConsultationPanel
-              fluid
+              wide
               subject={h1}
               anchor={`${slug}-enquiry`}
               courseLabel="Student's grade or course"

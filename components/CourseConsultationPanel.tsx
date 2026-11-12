@@ -26,7 +26,7 @@ export default function CourseConsultationPanel({
   testimonialTopic,
   heading,
   showCredential = false,
-  fluid = false,
+  wide = false,
 }: {
   /** Recorded as the lead subject. Set by the page, never typed by the visitor. */
   subject: string;
@@ -45,15 +45,15 @@ export default function CourseConsultationPanel({
    * the roster has no French or Mandarin tutor to name instead.
    */
   showCredential?: boolean;
-  /** Fill explicitly sized grid columns; keep auto-sized program columns compact. */
-  fluid?: boolean;
+  /** A full-width section with compact two-column fields on larger screens. */
+  wide?: boolean;
 }) {
   const testimonials = testimonialTopic
     ? testimonialsFor(testimonialTopic)
     : [];
 
   return (
-    <div className={fluid ? "w-full" : "w-full lg:w-[400px]"}>
+    <div data-course-consultation className={wide ? "w-full" : "w-full lg:w-[400px]"}>
       {showCredential && (
         <div className="flex gap-4 rounded-[16px] border border-[#F1F5F9] bg-white/90 p-5 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
           <div className="relative h-20 w-16 shrink-0 overflow-hidden rounded-xl bg-bg-grey">
@@ -93,6 +93,7 @@ export default function CourseConsultationPanel({
           courseExample={courseExample}
           courseLabel={courseLabel}
           heading={heading}
+          wide={wide}
         />
       </div>
 

@@ -100,7 +100,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
           <Breadcrumbs items={breadcrumbItems} />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-start">
+        <div data-landing-introduction className="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-center">
           {/* Left Column: Content & Images */}
           <div className="flex flex-col">
             <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
@@ -110,7 +110,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
               {heroSubheading}
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex flex-wrap gap-4">
               <Link href="/book">
                 <Button iconRight={ArrowRight}>
                   {city.slug === "vancouver"
@@ -135,16 +135,18 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
               </a>
             </div>
 
-            {/* Hero Image Component */}
+          </div>
+          <div className="mx-auto w-full max-w-[500px]">
             <VancouverHeroImage />
           </div>
+        </div>
 
-          {/* Right Column: Lead Form */}
-          <div className="relative">
+          {/* The form has its own row, so it cannot leave a void under the hero. */}
+          <div data-landing-enquiry className="relative mx-auto mt-8 max-w-5xl">
             {/* Form-widget label, not a content heading — kept as <p> so it
                 stays out of the heading outline (avoids duplicate-heading). */}
             <CourseConsultationPanel
-              fluid
+              wide
               subject={`Mathematics — ${city.name}`}
               anchor={`math-tutor-${city.slug}-enquiry`}
               courseLabel="Student's grade or course"
@@ -153,7 +155,6 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
               showCredential
             />
           </div>
-        </div>
 
         <div className="mx-auto max-w-5xl pt-10 lg:pt-14">
           <RelevantTutorProfiles tutorIds={[0, 9]} />

@@ -90,7 +90,7 @@ export default async function BiologyProgramPage() {
       <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-[100px] pb-12 lg:pb-16 relative z-10">
         <Breadcrumbs items={breadcrumbItems} />
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 mt-10 items-start">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 mt-10 items-start">
           {/* Left Column: Content */}
           <div>
             <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
@@ -223,6 +223,7 @@ export default async function BiologyProgramPage() {
           </div>
 
           <CourseConsultationPanel
+            wide
             subject={ENQUIRY.subject}
             anchor={ENQUIRY_ANCHOR}
             courseExample={ENQUIRY.courseExample}
