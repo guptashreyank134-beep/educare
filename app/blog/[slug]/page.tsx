@@ -14,6 +14,11 @@ import AuthorBox from "@/components/AuthorBox";
 import { PortableText } from "@portabletext/react";
 import { redirectSources } from "@/data/redirects";
 import { repairContentLinks, resolveContentHref } from "@/lib/contentLinks";
+import {
+  blogFamilyPattern,
+  selectTopicNeighbours,
+  type RelatedBlogPost,
+} from "@/lib/blogRelatedPosts";
 import { Children } from "react";
 
 // Build article HTML ahead of requests, with hourly ISR for CMS updates.
@@ -260,17 +265,20 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  // Fetch related posts (excluding the current one)
-  const relatedQuery = `*[_type == "post" && slug.current != $slug] | order(publishedAt desc)[0...2] {
+  // Build reciprocal topic clusters instead of recommending the same two
+  // newest posts from unrelated subjects on every article.
+  const relatedQuery = `*[_type == "post" && slug.current match $familyPattern] | order(slug.current asc)[0...50] {
     _id,
     title,
     "slug": slug.current,
     publishedAt,
-    body,
     mainImage
   }`;
 
-  const relatedPosts = await client.fetch(relatedQuery, { slug });
+  const relatedCandidates = await client.fetch<RelatedBlogPost[]>(relatedQuery, {
+    familyPattern: blogFamilyPattern(slug),
+  });
+  const relatedPosts = selectTopicNeighbours(relatedCandidates, slug, redirectSources);
 
   const plainTextBody = Array.isArray(post.body)
     ? toPlainText(post.body)
@@ -403,7 +411,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               Recommended Reads
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {relatedPosts.map((relPost: any) => {
+              {relatedPosts.map((relPost) => {
                 const relDate = relPost.publishedAt
                   ? new Date(relPost.publishedAt).toLocaleDateString("en-US", {
                       year: "numeric",
@@ -415,11 +423,6 @@ export default async function BlogPostPage({ params }: PageProps) {
                 const relImg = relPost.mainImage
                   ? urlFor(relPost.mainImage).url()
                   : "/assets/aboutUsPage/AboutHeroImg.webp";
-
-                const relPlainBody = Array.isArray(relPost.body)
-                  ? toPlainText(relPost.body)
-                  : stripHtml(relPost.body || "");
-                const relReadingTime = getReadingTime(relPlainBody);
 
                 return (
                   <Link
@@ -437,13 +440,11 @@ export default async function BlogPostPage({ params }: PageProps) {
                       />
                     </div>
                     <div className="p-6">
-                      <div className="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                      <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
                         <span className="flex items-center gap-1">
                           <CalendarDays className="w-3.5 h-3.5" />
                           {relDate}
                         </span>
-                        <span className="w-1 h-1 rounded-full bg-slate-200" />
-                        <span>{relReadingTime}</span>
                       </div>
                       <h3 className="font-display font-bold text-slate-800 text-lg leading-snug group-hover:text-primary transition-colors line-clamp-2">
                         {relPost.title}
