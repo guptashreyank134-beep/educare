@@ -95,12 +95,12 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-32 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-28 sm:pt-32 pb-10 lg:pb-12">
         <div className="mb-8">
           <Breadcrumbs items={breadcrumbItems} />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-start">
           {/* Left Column: Content & Images */}
           <div className="flex flex-col">
             <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
@@ -110,7 +110,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
               {heroSubheading}
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-16">
+            <div className="flex flex-wrap gap-4 mb-8">
               <Link href="/book">
                 <Button iconRight={ArrowRight}>
                   {city.slug === "vancouver"
@@ -140,10 +140,11 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
           </div>
 
           {/* Right Column: Lead Form */}
-          <div className="relative mt-12 lg:mt-0">
+          <div className="relative">
             {/* Form-widget label, not a content heading — kept as <p> so it
                 stays out of the heading outline (avoids duplicate-heading). */}
             <CourseConsultationPanel
+              fluid
               subject={`Mathematics — ${city.name}`}
               anchor={`math-tutor-${city.slug}-enquiry`}
               courseLabel="Student's grade or course"
@@ -155,11 +156,11 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
         </div>
 
         <div className="mx-auto max-w-5xl pt-10 lg:pt-14">
-          <RelevantTutorProfiles tutorIds={[0]} />
+          <RelevantTutorProfiles tutorIds={[0, 9]} />
         </div>
 
         {/* Trust Badges */}
-        <div className="mt-24">
+        <div className="mt-10 lg:mt-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {metrics.map((metric, index) => (
               <div

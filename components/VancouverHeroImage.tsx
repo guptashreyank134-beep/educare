@@ -16,6 +16,8 @@ export default function VancouverHeroImage() {
           alt="Classroom Tutoring"
           fill
           fetchPriority="high"
+          loading="eager"
+          sizes="(max-width: 639px) calc(100vw - 32px), 500px"
           className="object-cover"
         />
       </div>

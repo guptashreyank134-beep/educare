@@ -25,12 +25,12 @@ function pathsForDocument({ _type: type, slug, pageSlug, pageType }: Payload): s
     case "resourcePage":
       return ["/resources"];
     case "post":
-      // The individual post and the blog listing (which shows recent posts).
-      return slug ? [`/blog/${slug}`, "/blog"] : ["/blog"];
+      // Posts also change sitemap URLs, pagination and modification dates.
+      return slug ? [`/blog/${slug}`, "/blog", "/sitemap.xml"] : ["/blog", "/sitemap.xml"];
     case "programPage":
-      return slug ? [`/programs/${slug}`] : ["/programs"];
+      return slug ? [`/programs/${slug}`, "/sitemap.xml"] : ["/programs", "/sitemap.xml"];
     case "studyClubPage":
-      return ["/homework-help-burnaby", "/llms.txt", "/llms-full.txt"];
+      return ["/homework-help-burnaby", "/llms.txt", "/llms-full.txt", "/sitemap.xml"];
     case "page":
       // Standalone pages: "about" -> /about, "services" -> /services, etc.
       // The homepage is served at "/" — NOT "/home" — so it needs a special case,
@@ -41,7 +41,7 @@ function pathsForDocument({ _type: type, slug, pageSlug, pageType }: Payload): s
       // Landing-page FAQs, keyed by pageSlug. City pages live at
       // /math-tutor-<slug>; vertical and SEO pages at /<slug>.
       if (!pageSlug) return [];
-      return [pageType === "city" ? `/math-tutor-${pageSlug}` : `/${pageSlug}`];
+      return [pageType === "city" ? `/math-tutor-${pageSlug}` : `/${pageSlug}`, "/sitemap.xml"];
     default:
       return [];
   }

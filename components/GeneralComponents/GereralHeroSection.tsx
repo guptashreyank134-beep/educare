@@ -20,7 +20,7 @@ const GeneralHeroSection = ({
     const href = image?.href || "/about";
 
     return (
-        <section className="relative overflow-hidden min-h-[70vh] pt-24 pb-16 sm:pt-28 lg:pt-32 lg:pb-20">
+        <section className="relative overflow-hidden pt-24 pb-10 sm:pt-28 lg:pt-32 lg:pb-12">
             {/* Grid Background */}
             <div
                 className="absolute inset-0 z-0 opacity-100 pointer-events-none"
@@ -72,7 +72,7 @@ const GeneralHeroSection = ({
                     </div>
 
                     {/* Hero Image / Grid */}
-                    <div className="relative lg:mt-0 mt-12 flex justify-center lg:justify-end">
+                    <div className="relative flex justify-center lg:justify-end">
                         <div className="relative max-w-[341px] w-full">
                             {/* Decorative background circle */}
                             <div className="absolute -top-12 -right-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl hidden sm:block" />
@@ -85,8 +85,8 @@ const GeneralHeroSection = ({
                                         width={341}
                                         height={326}
                                         className="w-full max-w-[341px] h-auto object-cover rounded-xl"
-                                        priority
                                         fetchPriority="high"
+                                        loading="eager"
                                     />
                                 </div>
                                 <div className="absolute p-1 -bottom-4 left-0 sm:-left-7 h-11 w-[215px] bg-yellow-light rounded-lg flex gap-2.5 items-center justify-center z-10 shadow-lg">

@@ -74,17 +74,20 @@ export default function Reviews() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const cardsPerView = Math.max(1, Math.min(visibleCards, reviews.length));
+  const lastIndex = Math.max(0, reviews.length - cardsPerView);
+  const displayedIndex = Math.min(currentIndex, lastIndex);
+  const canSlide = lastIndex > 0;
+
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex + 1 >= reviews.length - visibleCards + 1 ? 0 : prevIndex + 1,
+      Math.min(prevIndex, lastIndex) >= lastIndex ? 0 : prevIndex + 1,
     );
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0
-        ? Math.max(0, reviews.length - visibleCards)
-        : prevIndex - 1,
+      prevIndex === 0 ? lastIndex : Math.min(prevIndex, lastIndex) - 1,
     );
   };
 
@@ -92,7 +95,7 @@ export default function Reviews() {
     "https://search.google.com/local/writereview?placeid=ChIJA3uGz9t2hlQRjL_aWv6iW2s";
 
   return (
-    <section className="py-24 overflow-hidden">
+    <section className="py-12 sm:py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title Heading */}
         <h2 className="text-[32px] sm:text-[32px] font-bricolage font-display font-normal text-slate text-center leading-tight mb-16 max-w-3xl mx-auto">
@@ -127,27 +130,27 @@ export default function Reviews() {
         {/* Carousel Slider */}
         <div className="relative flex items-center w-full">
           {/* Left Arrow Button */}
-          <button
+          {canSlide && <button
             onClick={handlePrev}
             className="absolute left-1 md:left-[-25px] lg:left-[-50px] z-20 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md text-slate hover:text-primary transition-colors focus:outline-none border border-slate/5"
             aria-label="Previous review"
           >
             <ChevronLeft size={24} />
-          </button>
+          </button>}
 
           {/* Review Cards Window */}
           <div className="w-full overflow-hidden py-4">
             <div
               className="flex transition-transform duration-500 ease-out"
               style={{
-                transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
+                transform: `translateX(-${displayedIndex * (100 / cardsPerView)}%)`,
               }}
             >
               {reviews.map((review, index) => (
                 <div
                   key={index}
                   className="px-3 shrink-0"
-                  style={{ width: `${100 / visibleCards}%` }}
+                  style={{ width: `${100 / cardsPerView}%` }}
                 >
                   <div className="bg-white rounded-[20px] shadow-[0px_0px_30px_0px_#57575614] p-8 h-full flex flex-col justify-between border border-slate/5 transition-transform duration-300 hover:translate-y-[-4px]">
                     <div>
@@ -186,7 +189,7 @@ export default function Reviews() {
                       </div>
 
                       {/* Review Text */}
-                      <p className="text-[15px] font-normal leading-relaxed text-slate opacity-80 mb-6 line-clamp-6">
+                      <p className="text-[15px] font-normal leading-relaxed text-slate opacity-80 mb-6">
                         {review.text}
                       </p>
                     </div>
@@ -218,13 +221,13 @@ export default function Reviews() {
           </div>
 
           {/* Right Arrow Button */}
-          <button
+          {canSlide && <button
             onClick={handleNext}
             className="absolute right-1 md:right-[-25px] lg:right-[-50px] z-20 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md text-slate hover:text-primary transition-colors focus:outline-none border border-slate/5"
             aria-label="Next review"
           >
             <ChevronRight size={24} />
-          </button>
+          </button>}
         </div>
       </div>
     </section>

@@ -9,6 +9,7 @@
 // about an institution that never agreed to it.
 
 import { SITE_URL } from "./businessInfo";
+import { tutorIdsForContext } from "./tutorAssignments";
 
 export interface AcademicCredential {
   /** e.g. "Ph.D." */
@@ -83,13 +84,7 @@ export const LEAD_AUTHOR: Author = {
  * not carry "Taught by Dr. Shreyank Gupta".
  */
 export function founderTeaches(text: string): boolean {
-  const haystack = text.toLowerCase();
-  const subjects = [
-    "math", "calculus", "algebra", "physics", "chemistry", "biology",
-    "computer science", "coding", "programming", "python", "javascript",
-    "science", "stem", "engineering",
-  ];
-  return subjects.some((subject) => haystack.includes(subject));
+  return tutorIdsForContext(text).includes(0);
 }
 
 export const authorPath = (slug: string) => `/about/${slug}`;

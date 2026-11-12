@@ -30,7 +30,7 @@ const AboutUs = async () => {
         breadcrumb={<Breadcrumbs />}
       />
       <main className="min-h-screen m-auto bg-white w-[100vw] md:w-full">
-        <div className="max-w-[1296px] mx-auto h-auto flex flex-col gap-16 sm:gap-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="max-w-[1296px] mx-auto h-auto flex flex-col gap-8 sm:gap-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
           <MakesUsDifferenceSection />
           <LearningProcess />
           <ReadAboutTutors />

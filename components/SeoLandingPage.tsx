@@ -106,12 +106,12 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-32 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-28 sm:pt-32 pb-10 lg:pb-12">
         <div className="mb-8">
           <Breadcrumbs items={[{ label: h1 }]} />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-start">
           {/* Left: content + CTA above the fold */}
           <div className="flex flex-col">
             <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
@@ -159,6 +159,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
             {/* The page's own H1 becomes the lead subject, so an enquiry names
                 the page that produced it rather than a generic bucket. */}
             <CourseConsultationPanel
+              fluid
               subject={h1}
               anchor={`${slug}-enquiry`}
               courseLabel="Student's grade or course"
@@ -177,7 +178,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
         )}
 
         {/* Trust badges */}
-        <div className="mt-20">
+        <div className="mt-10 lg:mt-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {trustMetrics.map((metric, index) => (
               <div

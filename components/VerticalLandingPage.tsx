@@ -99,12 +99,12 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-32 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-28 sm:pt-32 pb-10 lg:pb-12">
         <div className="mb-8">
           <Breadcrumbs items={[{ label: heroHeading }]} />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-start">
           {/* Left: content + CTA above the fold */}
           <div className="flex flex-col">
             <span className="inline-flex items-center gap-2 self-start bg-yellow-light/60 text-slate text-[13px] font-montserrat px-3 py-1.5 rounded-full border border-[#F1F5F9] mb-5">
@@ -153,6 +153,7 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
               and the example, so a Medical enquiry is not filed as Quant. */}
           <div className="relative mt-4 lg:mt-0">
             <CourseConsultationPanel
+              fluid
               subject={page.heroHeading}
               anchor={`${page.slug}-enquiry`}
               courseLabel={page.leadSubjectLabel}

@@ -66,3 +66,44 @@ test("sitemap lists no redirected or noindexed URL", async () => {
     assert.ok(!noindexPaths.has(path), `${path} is noindexed but is in the sitemap`);
   }
 });
+
+test("Study Club CMS updates supply the canonical page's lastmod", async (t) => {
+  const { client } = await import("../sanity/lib/client.ts");
+  const { STUDY_CLUB } = await import("../data/studyClub.ts");
+  const { SITE_URL } = await import("../data/businessInfo.ts");
+  const updatedAt = "2026-10-30T12:30:00.000Z";
+  let calls = 0;
+  t.mock.method(client, "fetch", async (query: string, params: Record<string, unknown>) => {
+    if (calls++ === 0) return [];
+    assert.match(query, /_type == "studyClubPage" && _id == "studyClubPage"/);
+    assert.match(query, /_type == "studyClubPage" => \$studyClubPath/);
+    assert.equal(params.studyClubPath, STUDY_CLUB.path);
+    return [{ path: params.studyClubPath, updatedAt }];
+  });
+
+  const result = await sitemap();
+  const studyClubEntries = result.filter((entry) => entry.url === `${SITE_URL}${STUDY_CLUB.path}`);
+  assert.equal(calls, 2);
+  assert.equal(studyClubEntries.length, 1);
+  assert.equal(new Date(studyClubEntries[0].lastModified!).toISOString(), updatedAt);
+});
+
+test("CMS outages are reported and keep Study Club's recorded fallback date", async (t) => {
+  const { client } = await import("../sanity/lib/client.ts");
+  const { STUDY_CLUB } = await import("../data/studyClub.ts");
+  const { SITE_URL } = await import("../data/businessInfo.ts");
+  const { readFileSync } = await import("node:fs");
+  const dates: Record<string, string> = JSON.parse(readFileSync(new URL("../data/route-dates.json", import.meta.url), "utf8"));
+  const unavailable = new Error("Fixture: CMS unavailable");
+  t.mock.method(client, "fetch", async () => { throw unavailable; });
+  const errors = t.mock.method(console, "error", () => {});
+
+  const first = await sitemap();
+  const second = await sitemap();
+  assert.deepEqual(first, second, "an outage must not replace content dates with the current time");
+  assert.equal(errors.mock.callCount(), 4, "each failed CMS query must remain visible in server logs");
+  assert.ok(errors.mock.calls.every((call) => call.arguments[1] === unavailable));
+  const entry = first.find((item) => item.url === `${SITE_URL}${STUDY_CLUB.path}`);
+  assert.ok(entry?.lastModified);
+  assert.equal(new Date(entry.lastModified).toISOString(), new Date(dates[STUDY_CLUB.path]).toISOString());
+});

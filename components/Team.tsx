@@ -1,113 +1,54 @@
-/** @format */
-
-import { Button } from "./ui/Button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-const teamMembers = [
-  {
-    id: 0,
-    name: "Dr. Shreyank",
-    role: "PhD in Ultrasound Signal & Image Processing",
-    credentials: "Founder & Lead Instructor",
-    image: "/assets/drShreyank.webp",
-  },
-  {
-    id: 1,
-    name: "Prashanth Karupothula",
-    role: "Fluid Sciences, Heat Transfer,",
-    credentials: "and Numerical Methods.",
-    image: "/assets/team-1.png",
-  },
-  {
-    id: 4,
-    name: "Zeba Shaikh",
-    role: "Expert Biology Tutor",
-    credentials: "Msc. (Biochemistry)",
-    image: "/assets/team-4.png",
-  },
-  {
-    id: 6,
-    name: "Dr. Sabiha Arshed",
-    role: "Health Sciences & Medical Tutor",
-    credentials: "MD, MSc in Health Sciences",
-    image: "/assets/tutors/sabiha.webp",
-  },
-  {
-    id: 7,
-    name: "Aanchal Kanotra",
-    role: "Actuarial, Economics & School Subjects Tutor",
-    credentials: "Actuarial Exam Coach — CM1, CB1, CB2, CS1, CS2 & more",
-    image: "/assets/tutors/aanchal.webp",
-  },
-  {
-    id: 8,
-    name: "Dr. Vishal Sehgal",
-    role: "Physician & Healthcare Education Tutor",
-    credentials: "Physician & Healthcare Educator",
-    image: "/assets/tutors/vishal.webp",
-  },
-  {
-    id: 9,
-    name: "Niti",
-    role: "English, ESL, Mathematics & Science Tutor",
-    credentials: "B.Sc.; Master’s degrees in Education and English; 20+ years’ experience",
-    image: "/assets/tutors/niti-placeholder.svg",
-  },
-];
+import { tutors } from "@/components/aboutUsComponents/tutorsData";
+import { authorPath } from "@/data/authors";
 
 export default function Team() {
   return (
-    <section className="py-24 overflow-hidden">
+    <section className="py-12 sm:py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-[32px] font-bricolage font-display font-normal text-slate leading-[36px] mb-[12px]">
-            Learn From Expert Instructors,
-            <br />
-            Focused On Growth!
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <h2 className="text-[32px] font-bricolage font-normal text-slate leading-[36px] mb-3">
+            Learn From Expert Instructors, Focused On Growth!
           </h2>
-          <p className="text-[16px] font-sans font-normal text-slate opacity-80 leading-relaxed max-w-xl mx-auto">
-            Our experienced instructors combine academic excellence with
-            real-world teaching, ensuring students grasp concepts thoroughly.
+          <p className="text-[16px] text-slate/80 leading-relaxed max-w-xl mx-auto">
+            Get to know the people behind your lessons: their qualifications,
+            subjects and approach to helping students understand each concept.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 max-w-[1000px] mx-auto">
-          {teamMembers.map((member) => (
-            <div
-              key={member.id}
-              className="bg-white rounded-[8px] p-3 shadow-[0px_0px_30px_0px_#57575614] border border-gray-50 flex flex-col transform hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="rounded-[8px] overflow-hidden mb-5 bg-gray-100 aspect-[4/3] relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 max-w-5xl mx-auto">
+          {tutors.map((tutor) => (
+            <article key={tutor.id} className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm flex flex-col">
+              <div className="rounded-xl overflow-hidden mb-5 bg-bg-grey aspect-[4/3] relative">
                 <Image
-                  src={member.image}
-                  alt={member.name}
+                  src={tutor.image}
+                  alt={`${tutor.name}, ${tutor.role}`}
                   fill
                   className="object-cover object-top"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 767px) calc(100vw - 64px), (max-width: 1023px) 45vw, 300px"
                 />
               </div>
-              <div className="px-1 text-left flex flex-col flex-grow">
-                <div className="mb-2">
-                  <h3 className="text-[20px] font-bricolage font-display font-medium text-slate inline-block border-b-2 border-yellow-light">
-                    {member.name}
-                  </h3>
-                </div>
-                <p className="text-[16px] font-sans font-medium text-slate opacity-90 leading-relaxed">
-                  {member.role}
-                </p>
-                <p className="text-[16px] font-sans font-normal text-slate opacity-70 leading-relaxed">
-                  {member.credentials}
-                </p>
-              </div>
-            </div>
+              <h3 className="text-[22px] font-bricolage font-medium text-slate">{tutor.name}</h3>
+              <p className="mt-1 text-sm font-semibold text-primary">{tutor.role}</p>
+              <ul className="mt-3 space-y-1 text-sm leading-relaxed text-slate/75">
+                {tutor.education.map((credential) => <li key={credential}>{credential}</li>)}
+              </ul>
+              <p className="mt-3 text-sm leading-relaxed text-slate/75">{tutor.belowshortDescription}</p>
+              <Link
+                href={tutor.authorSlug ? authorPath(tutor.authorSlug) : `/about#tutor-${tutor.id}`}
+                className="mt-auto pt-5 text-sm font-medium text-primary underline decoration-yellow-light decoration-2 underline-offset-4"
+              >
+                Read {tutor.name}’s profile
+              </Link>
+            </article>
           ))}
         </div>
 
         <div className="flex justify-center">
-          <Link href="/about">
-            <Button iconRight={ArrowRight}>Read About Our Team</Button>
+          <Link href="/about#tutor-heading" className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 font-medium text-white hover:bg-primary/90">
+            Read About Our Team <ArrowRight className="h-5 w-5" aria-hidden="true" />
           </Link>
         </div>
       </div>

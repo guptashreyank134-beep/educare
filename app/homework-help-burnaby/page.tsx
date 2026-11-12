@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 
 import StudyClubInterestForm from "@/components/StudyClubInterestForm";
+import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/SchemaMarkup";
 import { BUSINESS, SITE_URL } from "@/data/businessInfo";
@@ -131,7 +132,7 @@ export default async function StudyClubPage() {
       <JsonLd schema={cmsServiceSchema} />
       <JsonLd schema={faqSchema} />
       <JsonLd schema={webPageSchema} />
-      <section className="relative overflow-hidden bg-[#F8FAFC] pt-24 pb-20 sm:pt-28 lg:pt-32">
+      <section className="relative overflow-hidden bg-[#F8FAFC] pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32">
         <div className="absolute inset-0 opacity-35" style={{ backgroundImage: "url('/backgrounds/yellowGrid.svg')", backgroundSize: "cover" }} />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:items-center">
           <div>
@@ -169,7 +170,7 @@ export default async function StudyClubPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-3">
           {[
             [BookOpenCheck, "Current schoolwork", "Maths homework, Grade 9–10 science assignments, revision and extra practice when a concept needs more attention."],
@@ -182,7 +183,7 @@ export default async function StudyClubPage() {
         </div>
       </section>
 
-      <section className="bg-bg-grey py-20">
+      <section className="bg-bg-grey py-12 sm:py-16">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <p className="text-[14px] font-montserrat font-semibold uppercase tracking-widest text-primary">How sessions work</p>
@@ -198,6 +199,20 @@ export default async function StudyClubPage() {
           </div>
         </div>
       </section>
+
+      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <RelevantTutorProfiles tutorIds={[0]} heading="Meet Your Study Club Supervisor" />
+        <p className="mt-5 text-[15px] font-montserrat leading-relaxed text-slate/70">
+          Dr. Shreyank oversees the opening programme. The tutor assigned to each
+          group and the subjects they will cover are confirmed before enrolment.
+          You can also{" "}
+          <Link href="/about" className="font-medium text-primary underline underline-offset-4">
+            meet the wider Educare team
+          </Link>{" "}
+          and discuss individual tutoring if your child needs more sustained
+          one-to-one support.
+        </p>
+      </div>
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">

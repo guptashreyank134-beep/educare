@@ -9,6 +9,7 @@ import routeDates from "@/data/route-dates.json";
 import { LEAD_AUTHOR } from "@/data/authors";
 import { answerPagePath, publishedAnswerPages } from "@/content/answer-pages";
 import { SITE_URL } from "@/data/businessInfo";
+import { STUDY_CLUB } from "@/data/studyClub";
 import { LISTED_POSTS, REDIRECTED_POST_SLUGS, blogPageCount } from "@/lib/blogPagination";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -25,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/blog",
     "/book",
     "/contact",
-    "/homework-help-burnaby",
+    STUDY_CLUB.path,
     "/pricing",
     "/privacy",
     "/locations",
@@ -89,18 +90,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Error fetching posts for sitemap:", error);
   }
 
-  // Landing and program pages render Sanity overrides on top of their code
+  // Landing, program and Study Club pages render Sanity overrides on top of their code
   // definition, so when an override exists its _updatedAt is the truer "last
   // changed" for that URL than the commit that last touched the data file.
   try {
     const overrides = await client.fetch<Array<{ path?: string; updatedAt?: string }>>(
-      `*[_type in ["pageFaq", "programPage"]] {
+      `*[_type in ["pageFaq", "programPage"] || (_type == "studyClubPage" && _id == "studyClubPage")] {
         "path": select(
           _type == "pageFaq" => "/" + pageSlug,
-          _type == "programPage" => "/programs/" + slug.current
+          _type == "programPage" => "/programs/" + slug.current,
+          _type == "studyClubPage" => $studyClubPath
         ),
         "updatedAt": _updatedAt
-      }`
+      }`,
+      { studyClubPath: STUDY_CLUB.path },
     );
     for (const override of overrides) {
       if (override.path && override.updatedAt) cmsDates.set(override.path, override.updatedAt);
