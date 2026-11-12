@@ -147,10 +147,6 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
                 </p>
               ))}
             </div>
-
-            {page.tutorIds && (
-              <RelevantTutorProfiles tutorIds={page.tutorIds} />
-            )}
           </div>
 
           {/* Right: consultation panel. The vertical drives the lead subject
@@ -168,6 +164,12 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
             />
           </div>
         </div>
+
+        {page.tutorIds && (
+          <div className="mx-auto max-w-5xl pt-10 lg:pt-14">
+            <RelevantTutorProfiles tutorIds={page.tutorIds} />
+          </div>
+        )}
       </div>
 
       {/* Content sections */}
