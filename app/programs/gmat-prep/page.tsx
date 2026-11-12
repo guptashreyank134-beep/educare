@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
 import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
@@ -33,31 +34,6 @@ export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "gmat-prep");
   return getMetadata(data, "https://www.drshreyankeducare.com/programs/gmat-prep");
 }
-
-const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
-  <div className="flex items-center gap-3 mb-[14px]">
-    <div className="bg-yellow-light h-8 w-8 flex items-center justify-center rounded-lg text-slate shadow-sm">
-      <Icon size={24} />
-    </div>
-    <h2 className="text-[22px] font-bricolage font-normal text-slate">
-      {title}
-    </h2>
-  </div>
-);
-
-const ListItems = ({ items }: { items: string[] }) => (
-  <ul className="space-y-1 mb-8 ml-11">
-    {items.map((item, index) => (
-      <li
-        key={index}
-        className="text-[16px] font-montserrat font-normal text-slate flex items-start"
-      >
-        <span className="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
-        {item}
-      </li>
-    ))}
-  </ul>
-);
 
 export default async function GmatPrepProgramPage() {
   const data = await getMetaDataBySlug("programPage", "gmat-prep");
@@ -134,140 +110,134 @@ export default async function GmatPrepProgramPage() {
               </p>
             </div>
 
-            <section>
-              <SectionHeader icon={Layers} title="What We Cover" />
-              <ListItems
-                items={[
-                  "Quantitative Reasoning",
-                  "Verbal Reasoning",
-                  "Data Insights",
-                  "Critical Reasoning",
-                  "Time Management",
-                  "Mock Testing",
-                ]}
-              />
+            <ProgramOverview>
+              <ProgramInfoCard icon={Layers} title="What We Cover">
+                <ProgramBulletList
+                  items={[
+                    "Quantitative Reasoning",
+                    "Verbal Reasoning",
+                    "Data Insights",
+                    "Critical Reasoning",
+                    "Time Management",
+                    "Mock Testing",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={FileText} title="Who Is This For" />
-              <ListItems
-                items={[
-                  "MBA applicants",
-                  "Business school applicants",
-                  "Working professionals",
-                  "Students retaking GMAT exams",
-                ]}
-              />
+              <ProgramInfoCard icon={FileText} title="Who Is This For">
+                <ProgramBulletList
+                  items={[
+                    "MBA applicants",
+                    "Business school applicants",
+                    "Working professionals",
+                    "Students retaking GMAT exams",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={LayoutGrid} title="Program Format" />
-              <ListItems
-                items={[
-                  "Group Programs",
-                  "Private Intensive Coaching",
-                  "Mock Testing",
-                  "Progress Analytics",
-                ]}
-              />
+              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                <ProgramBulletList
+                  items={[
+                    "Group Programs",
+                    "Private Intensive Coaching",
+                    "Mock Testing",
+                    "Progress Analytics",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Sparkles} title="Expected Outcomes" />
-              <ListItems
-                items={[
-                  "Target Score: 675-750+ GMAT",
-                  "Higher MBA admission competitiveness",
-                  "Improved test confidence",
-                  "Stronger quant and verbal performance",
-                ]}
-              />
+              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                <ProgramBulletList
+                  items={[
+                    "Target Score: 675-750+ GMAT",
+                    "Higher MBA admission competitiveness",
+                    "Improved test confidence",
+                    "Stronger quant and verbal performance",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Rocket} title="Our Approach" />
-              <div className="ml-11 space-y-4">
-                {[
-                  {
-                    title: "Adaptive Exam Strategy",
-                    desc: "Learn how to navigate adaptive scoring systems.",
-                  },
-                  {
-                    title: "Data Insights Practice",
-                    desc: "Master modern GMAT Focus requirements.",
-                  },
-                  {
-                    title: "Mock Testing",
-                    desc: "Simulate real exam conditions.",
-                  },
-                  {
-                    title: "Personalized Score Planning",
-                    desc: "Build strategies based on your target school goals.",
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="text-[16px] font-montserrat leading-tight text-slate"
-                  >
-                    <div className="flex items-start gap-2">
-                      <span className="shrink-0">·</span>
-                      <div>
-                        <p className="font-medium mb-0.5">{item.title}</p>
-                        <p className="font-normal opacity-90">{item.desc}</p>
-                      </div>
+              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                <ProgramApproach
+                  items={[
+                    {
+                      title: "Adaptive Exam Strategy",
+                      desc: "Learn how to navigate adaptive scoring systems.",
+                    },
+                    {
+                      title: "Data Insights Practice",
+                      desc: "Master modern GMAT Focus requirements.",
+                    },
+                    {
+                      title: "Mock Testing",
+                      desc: "Simulate real exam conditions.",
+                    },
+                    {
+                      title: "Personalized Score Planning",
+                      desc: "Build strategies based on your target school goals.",
+                    },
+                  ]}
+                />
+              </ProgramInfoCard>
+
+              <ProgramInfoCard icon={FileText} title="Why Prepare With Dr. Shreyank Educare" wide>
+                <div className="space-y-4 text-[16px] leading-[24px] font-montserrat text-slate">
+                  <p>
+                    The GMAT Focus Edition rewards accuracy under time pressure far
+                    more than raw content knowledge. Our coaching is built around
+                    that reality: we diagnose exactly where you lose points — pacing,
+                    careless errors, or specific question types — and rebuild your
+                    approach so every minute in the exam counts. You work one-on-one
+                    or in small groups with experienced quantitative and verbal
+                    tutors who have helped applicants reach competitive scores for
+                    top business schools.
+                  </p>
+                  <p>
+                    Every plan starts with a full-length diagnostic mock, followed by
+                    a week-by-week schedule mapped to your test date. We alternate
+                    focused concept sessions with timed practice and detailed review,
+                    so you are constantly converting weaknesses into reliable points.
+                    Progress analytics keep the plan honest — you always know your
+                    current standing and what to work on next.
+                  </p>
+                  <p>
+                    Whether you are aiming for a top MBA program, retaking the exam to
+                    push past a plateau, or balancing preparation with a full-time
+                    job, we tailor the intensity and format to your goals and
+                    timeline. The result is a calmer, more strategic test day and a
+                    score that strengthens your application.
+                  </p>
+                </div>
+              </ProgramInfoCard>
+
+              <ProgramInfoCard icon={Sparkles} title="Planning Your GMAT Preparation" wide>
+                <div className="space-y-5">
+                  {[
+                    {
+                      q: "How long does GMAT preparation usually take?",
+                      a: "Most students prepare over 8–12 weeks, though we build the schedule around your target score and test date. Intensive plans can compress this when needed.",
+                    },
+                    {
+                      q: "Do you cover the GMAT Focus Edition and Data Insights?",
+                      a: "Yes. Our coaching is fully aligned to the current GMAT Focus Edition, including the Data Insights section, with dedicated strategy and practice for each area.",
+                    },
+                    {
+                      q: "Are sessions online or in person?",
+                      a: "Both. We offer flexible online sessions as well as in-person coaching in person in Burnaby, whichever suits you best.",
+                    },
+                    {
+                      q: "Can you help if I've already taken the GMAT before?",
+                      a: "Absolutely. For retakers we start with a diagnostic to pinpoint the exact gaps holding your score back, then target them directly.",
+                    },
+                  ].map((item, idx) => (
+                    <div key={idx} className="text-[16px] font-montserrat text-slate">
+                      <p className="font-medium mb-1">{item.q}</p>
+                      <p className="font-normal opacity-90 leading-[24px]">{item.a}</p>
                     </div>
-                  </div>
-                ))}
-              </div>
-
-              <SectionHeader icon={FileText} title="Why Prepare With Dr. Shreyank Educare" />
-              <div className="ml-11 space-y-4 text-[16px] leading-[24px] font-montserrat text-slate mb-8">
-                <p>
-                  The GMAT Focus Edition rewards accuracy under time pressure far
-                  more than raw content knowledge. Our coaching is built around
-                  that reality: we diagnose exactly where you lose points — pacing,
-                  careless errors, or specific question types — and rebuild your
-                  approach so every minute in the exam counts. You work one-on-one
-                  or in small groups with experienced quantitative and verbal
-                  tutors who have helped applicants reach competitive scores for
-                  top business schools.
-                </p>
-                <p>
-                  Every plan starts with a full-length diagnostic mock, followed by
-                  a week-by-week schedule mapped to your test date. We alternate
-                  focused concept sessions with timed practice and detailed review,
-                  so you are constantly converting weaknesses into reliable points.
-                  Progress analytics keep the plan honest — you always know your
-                  current standing and what to work on next.
-                </p>
-                <p>
-                  Whether you are aiming for a top MBA program, retaking the exam to
-                  push past a plateau, or balancing preparation with a full-time
-                  job, we tailor the intensity and format to your goals and
-                  timeline. The result is a calmer, more strategic test day and a
-                  score that strengthens your application.
-                </p>
-              </div>
-
-              <SectionHeader icon={Sparkles} title="Planning Your GMAT Preparation" />
-              <div className="ml-11 space-y-5 mb-4">
-                {[
-                  {
-                    q: "How long does GMAT preparation usually take?",
-                    a: "Most students prepare over 8–12 weeks, though we build the schedule around your target score and test date. Intensive plans can compress this when needed.",
-                  },
-                  {
-                    q: "Do you cover the GMAT Focus Edition and Data Insights?",
-                    a: "Yes. Our coaching is fully aligned to the current GMAT Focus Edition, including the Data Insights section, with dedicated strategy and practice for each area.",
-                  },
-                  {
-                    q: "Are sessions online or in person?",
-                    a: "Both. We offer flexible online sessions as well as in-person coaching in person in Burnaby, whichever suits you best.",
-                  },
-                  {
-                    q: "Can you help if I've already taken the GMAT before?",
-                    a: "Absolutely. For retakers we start with a diagnostic to pinpoint the exact gaps holding your score back, then target them directly.",
-                  },
-                ].map((item, idx) => (
-                  <div key={idx} className="text-[16px] font-montserrat text-slate">
-                    <p className="font-medium mb-1">{item.q}</p>
-                    <p className="font-normal opacity-90 leading-[24px]">{item.a}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
+                  ))}
+                </div>
+              </ProgramInfoCard>
+            </ProgramOverview>
           </div>
 
           <CourseConsultationPanel

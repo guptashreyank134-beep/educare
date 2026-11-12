@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
 import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
@@ -36,31 +37,6 @@ export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "chemistry");
   return getMetadata(data, "https://www.drshreyankeducare.com/programs/chemistry");
 }
-
-const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
-  <div className="flex items-center gap-3 mb-[14px]">
-    <div className="bg-yellow-light h-8 w-8  flex items-center justify-center rounded-lg text-slate shadow-sm">
-      <Icon size={24} />
-    </div>
-    <h2 className="text-[22px] font-bricolage font-normal text-slate">
-      {title}
-    </h2>
-  </div>
-);
-
-const ListItems = ({ items }: { items: string[] }) => (
-  <ul className="space-y-1 mb-8 ml-11">
-    {items.map((item, index) => (
-      <li
-        key={index}
-        className="text-[16px] font-montserrat font-normal text-slate flex items-start"
-      >
-        <span className="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
-        {item}
-      </li>
-    ))}
-  </ul>
-);
 
 export default async function ChemistryProgramPage() {
   const data = await getMetaDataBySlug("programPage", "chemistry");
@@ -145,86 +121,78 @@ export default async function ChemistryProgramPage() {
               </p>
             </div>
 
-            <section>
-              <SectionHeader icon={Layers} title="What We Cover" />
-              <ListItems
-                items={[
-                  "Organic Chemistry",
-                  "Inorganic Chemistry",
-                  "Physical Chemistry",
-                  "Chemical Reactions & Stoichiometry",
-                  "Acids, Bases & Equilibrium",
-                  "Lab Analysis & Report Writing",
-                  "Problem-Solving Techniques",
-                ]}
-              />
+            <ProgramOverview>
+              <ProgramInfoCard icon={Layers} title="What We Cover">
+                <ProgramBulletList
+                  items={[
+                    "Organic Chemistry",
+                    "Inorganic Chemistry",
+                    "Physical Chemistry",
+                    "Chemical Reactions & Stoichiometry",
+                    "Acids, Bases & Equilibrium",
+                    "Lab Analysis & Report Writing",
+                    "Problem-Solving Techniques",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={FileText} title="Who Is This For" />
-              <ListItems
-                items={[
-                  "High school students preparing for Chemistry 11 & 12",
-                  "College and university students taking advanced chemistry courses",
-                  "Students struggling with theory-heavy topics",
-                  "Learners needing help with labs and assignments",
-                  "Students preparing for exams and improving grades",
-                ]}
-              />
+              <ProgramInfoCard icon={FileText} title="Who Is This For">
+                <ProgramBulletList
+                  items={[
+                    "High school students preparing for Chemistry 11 & 12",
+                    "College and university students taking advanced chemistry courses",
+                    "Students struggling with theory-heavy topics",
+                    "Learners needing help with labs and assignments",
+                    "Students preparing for exams and improving grades",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={LayoutGrid} title="Program Format" />
-              <ListItems
-                items={[
-                  "One-on-One Tutoring",
-                  "Lab Support",
-                  "Assignment Help",
-                  "Exam Prep Sessions",
-                ]}
-              />
+              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                <ProgramBulletList
+                  items={[
+                    "One-on-One Tutoring",
+                    "Lab Support",
+                    "Assignment Help",
+                    "Exam Prep Sessions",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Sparkles} title="Expected Outcomes" />
-              <ListItems
-                items={[
-                  "Better lab performance",
-                  "Higher grades",
-                  "Improved concept retention",
-                  "Stronger exam preparation",
-                ]}
-              />
+              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                <ProgramBulletList
+                  items={[
+                    "Better lab performance",
+                    "Higher grades",
+                    "Improved concept retention",
+                    "Stronger exam preparation",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Rocket} title="Our Approach" />
-              <div className="ml-11 space-y-4">
-                {[
-                  {
-                    title: "Strengthening Conceptual Understanding",
-                    desc: "Chemistry concepts build on one another. We help students develop strong foundations before moving into advanced topics.",
-                  },
-                  {
-                    title: "Improving Problem-Solving Skills",
-                    desc: "From balancing equations to numerical chemistry problems, we teach structured approaches that improve speed and accuracy.",
-                  },
-                  {
-                    title: "Supporting Lab Work and Reports",
-                    desc: "We help students understand experiments, analyze outcomes, and confidently complete lab assignments.",
-                  },
-                  {
-                    title: "Making Complex Topics Easier to Understand",
-                    desc: "Our tutors simplify difficult concepts into manageable lessons that improve retention and confidence.",
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="text-[16px] font-montserrat leading-tight text-slate"
-                  >
-                    <div className="flex items-start gap-2">
-                      <span className="shrink-0">·</span>
-                      <div>
-                        <p className="font-medium mb-0.5">{item.title}</p>
-                        <p className="font-normal opacity-90">{item.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                <ProgramApproach
+                  items={[
+                    {
+                      title: "Strengthening Conceptual Understanding",
+                      desc: "Chemistry concepts build on one another. We help students develop strong foundations before moving into advanced topics.",
+                    },
+                    {
+                      title: "Improving Problem-Solving Skills",
+                      desc: "From balancing equations to numerical chemistry problems, we teach structured approaches that improve speed and accuracy.",
+                    },
+                    {
+                      title: "Supporting Lab Work and Reports",
+                      desc: "We help students understand experiments, analyze outcomes, and confidently complete lab assignments.",
+                    },
+                    {
+                      title: "Making Complex Topics Easier to Understand",
+                      desc: "Our tutors simplify difficult concepts into manageable lessons that improve retention and confidence.",
+                    },
+                  ]}
+                />
+              </ProgramInfoCard>
+            </ProgramOverview>
           </div>
 
           <CourseConsultationPanel

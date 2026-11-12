@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
 import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
@@ -36,31 +37,6 @@ export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "university-mathematics");
   return getMetadata(data, "https://www.drshreyankeducare.com/programs/university-mathematics");
 }
-
-const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
-  <div className="flex items-center gap-3 mb-[14px]">
-    <div className="bg-yellow-light h-8 w-8 flex items-center justify-center rounded-lg text-slate shadow-sm">
-      <Icon size={24} />
-    </div>
-    <h2 className="text-[22px] font-bricolage font-normal text-slate">
-      {title}
-    </h2>
-  </div>
-);
-
-const ListItems = ({ items }: { items: string[] }) => (
-  <ul className="space-y-1 mb-8 ml-11">
-    {items.map((item, index) => (
-      <li
-        key={index}
-        className="text-[16px] font-montserrat font-normal text-slate flex items-start"
-      >
-        <span className="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
-        {item}
-      </li>
-    ))}
-  </ul>
-);
 
 export default async function UniversityMathematicsPage() {
   const data = await getMetaDataBySlug("programPage", "university-mathematics");
@@ -141,89 +117,81 @@ export default async function UniversityMathematicsPage() {
               </p>
             </div>
 
-            <section>
-              <SectionHeader icon={Layers} title="What We Cover" />
-              <ListItems
-                items={[
-                  "Calculus I & II",
-                  "Linear Algebra",
-                  "Differential Equations",
-                  "Statistics",
-                  "Probability",
-                  "Mathematical Modeling",
-                  "Applied Mathematics",
-                  "Cryptography",
-                  "Operations Research",
-                ]}
-              />
+            <ProgramOverview>
+              <ProgramInfoCard icon={Layers} title="What We Cover">
+                <ProgramBulletList
+                  items={[
+                    "Calculus I & II",
+                    "Linear Algebra",
+                    "Differential Equations",
+                    "Statistics",
+                    "Probability",
+                    "Mathematical Modeling",
+                    "Applied Mathematics",
+                    "Cryptography",
+                    "Operations Research",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={FileText} title="Who Is This For" />
-              <ListItems
-                items={[
-                  "Undergraduate math students",
-                  "Engineering students",
-                  "Business students taking statistics/math courses",
-                  "Students struggling with advanced problem-solving",
-                  "Students preparing for finals and major assessments",
-                ]}
-              />
+              <ProgramInfoCard icon={FileText} title="Who Is This For">
+                <ProgramBulletList
+                  items={[
+                    "Undergraduate math students",
+                    "Engineering students",
+                    "Business students taking statistics/math courses",
+                    "Students struggling with advanced problem-solving",
+                    "Students preparing for finals and major assessments",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={LayoutGrid} title="Program Format" />
-              <ListItems
-                items={[
-                  "One-on-One Tutoring",
-                  "Assignment Support",
-                  "Exam Preparation",
-                  "Weekly Concept Reinforcement Sessions",
-                ]}
-              />
+              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                <ProgramBulletList
+                  items={[
+                    "One-on-One Tutoring",
+                    "Assignment Support",
+                    "Exam Preparation",
+                    "Weekly Concept Reinforcement Sessions",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Sparkles} title="Expected Outcomes" />
-              <ListItems
-                items={[
-                  "Higher academic performance",
-                  "Better problem-solving speed",
-                  "Improved exam confidence",
-                  "Stronger conceptual understanding",
-                  "Better preparedness for advanced coursework",
-                ]}
-              />
+              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                <ProgramBulletList
+                  items={[
+                    "Higher academic performance",
+                    "Better problem-solving speed",
+                    "Improved exam confidence",
+                    "Stronger conceptual understanding",
+                    "Better preparedness for advanced coursework",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Rocket} title="Our Approach" />
-              <div className="ml-11 space-y-4">
-                {[
-                  {
-                    title: "Building Conceptual Clarity",
-                    desc: "We simplify advanced formulas and theories into easy-to-understand concepts.",
-                  },
-                  {
-                    title: "Step-by-Step Problem Solving",
-                    desc: "Students learn how to solve complex mathematical questions with confidence.",
-                  },
-                  {
-                    title: "Assignment & Exam Support",
-                    desc: "Support for coursework, assignments, quizzes, and final exams.",
-                  },
-                  {
-                    title: "Applied Learning Methods",
-                    desc: "We help students understand how mathematics applies to real-world industries and careers.",
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="text-[16px] font-montserrat leading-tight text-slate"
-                  >
-                    <div className="flex items-start gap-2">
-                      <span className="shrink-0">·</span>
-                      <div>
-                        <p className="font-medium mb-0.5">{item.title}</p>
-                        <p className="font-normal opacity-90">{item.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                <ProgramApproach
+                  items={[
+                    {
+                      title: "Building Conceptual Clarity",
+                      desc: "We simplify advanced formulas and theories into easy-to-understand concepts.",
+                    },
+                    {
+                      title: "Step-by-Step Problem Solving",
+                      desc: "Students learn how to solve complex mathematical questions with confidence.",
+                    },
+                    {
+                      title: "Assignment & Exam Support",
+                      desc: "Support for coursework, assignments, quizzes, and final exams.",
+                    },
+                    {
+                      title: "Applied Learning Methods",
+                      desc: "We help students understand how mathematics applies to real-world industries and careers.",
+                    },
+                  ]}
+                />
+              </ProgramInfoCard>
+            </ProgramOverview>
           </div>
 
           <CourseConsultationPanel

@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
 import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
@@ -33,31 +34,6 @@ export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "python");
   return getMetadata(data, "https://www.drshreyankeducare.com/programs/python");
 }
-
-const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
-  <div className="flex items-center gap-3 mb-[14px]">
-    <div className="bg-yellow-light h-8 w-8 flex items-center justify-center rounded-lg text-slate shadow-sm">
-      <Icon size={24} />
-    </div>
-    <h2 className="text-[22px] font-bricolage font-normal text-slate">
-      {title}
-    </h2>
-  </div>
-);
-
-const ListItems = ({ items }: { items: string[] }) => (
-  <ul className="space-y-1 mb-8 ml-11">
-    {items.map((item, index) => (
-      <li
-        key={index}
-        className="text-[16px] font-montserrat font-normal text-slate flex items-start"
-      >
-        <span className="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
-        {item}
-      </li>
-    ))}
-  </ul>
-);
 
 export default async function PythonProgramPage() {
   const data = await getMetaDataBySlug("programPage", "python");
@@ -137,83 +113,75 @@ export default async function PythonProgramPage() {
               </p>
             </div>
 
-            <section>
-              <SectionHeader icon={Layers} title="What We Cover" />
-              <ListItems
-                items={[
-                  "Variables and data types",
-                  "Loops and conditionals",
-                  "Functions and logic building",
-                  "Basic syntax and program structure",
-                  "Debugging and error handling",
-                ]}
-              />
+            <ProgramOverview>
+              <ProgramInfoCard icon={Layers} title="What We Cover">
+                <ProgramBulletList
+                  items={[
+                    "Variables and data types",
+                    "Loops and conditionals",
+                    "Functions and logic building",
+                    "Basic syntax and program structure",
+                    "Debugging and error handling",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={FileText} title="Who Is This For" />
-              <ListItems
-                items={[
-                  "Kids and beginners with no prior coding experience",
-                  "Students interested in technology and programming",
-                  "Learners who enjoy problem-solving and creativity",
-                  "Students looking to build future-ready digital skills",
-                ]}
-              />
+              <ProgramInfoCard icon={FileText} title="Who Is This For">
+                <ProgramBulletList
+                  items={[
+                    "Kids and beginners with no prior coding experience",
+                    "Students interested in technology and programming",
+                    "Learners who enjoy problem-solving and creativity",
+                    "Students looking to build future-ready digital skills",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={LayoutGrid} title="Program Format" />
-              <ListItems
-                items={[
-                  "One-on-one sessions for personalized guidance",
-                  "Small group classes for collaborative learning",
-                  "Interactive sessions focused on practical coding",
-                ]}
-              />
+              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                <ProgramBulletList
+                  items={[
+                    "One-on-one sessions for personalized guidance",
+                    "Small group classes for collaborative learning",
+                    "Interactive sessions focused on practical coding",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Sparkles} title="Expected Outcomes" />
-              <ListItems
-                items={[
-                  "Strong programming fundamentals",
-                  "Improved logical and analytical thinking",
-                  "Ability to build simple applications and projects",
-                  "Confidence in problem-solving and debugging",
-                  "Early exposure to real-world tech skills",
-                ]}
-              />
+              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                <ProgramBulletList
+                  items={[
+                    "Strong programming fundamentals",
+                    "Improved logical and analytical thinking",
+                    "Ability to build simple applications and projects",
+                    "Confidence in problem-solving and debugging",
+                    "Early exposure to real-world tech skills",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Rocket} title="Our Approach" />
-              <div className="ml-11 space-y-4">
-                {[
-                  {
-                    title: "Building Strong Fundamentals",
-                    desc: "We focus on building logic and solving problems, ensuring a solid foundation for future learning.",
-                  },
-                  {
-                    title: "Breaking Down Complex Problems",
-                    desc: "Difficult questions are simplified into step-by-step methods, helping students approach them with clarity and confidence.",
-                  },
-                  {
-                    title: "Making Learning Engaging and Structured",
-                    desc: "Our sessions are designed to be interactive and supportive, encouraging students to ask questions, practice regularly, and stay motivated.",
-                  },
-                  {
-                    title: "Focusing on Concept Clarity Over Memorization",
-                    desc: "We prioritize understanding over rote learning, ensuring students can apply concepts effectively in exams and real-world situations.",
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="text-[16px] font-montserrat leading-tight text-slate"
-                  >
-                    <div className="flex items-start gap-2">
-                      <span className="shrink-0">·</span>
-                      <div>
-                        <p className="font-medium mb-0.5">{item.title}</p>
-                        <p className="font-normal opacity-90">{item.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                <ProgramApproach
+                  items={[
+                    {
+                      title: "Building Strong Fundamentals",
+                      desc: "We focus on building logic and solving problems, ensuring a solid foundation for future learning.",
+                    },
+                    {
+                      title: "Breaking Down Complex Problems",
+                      desc: "Difficult questions are simplified into step-by-step methods, helping students approach them with clarity and confidence.",
+                    },
+                    {
+                      title: "Making Learning Engaging and Structured",
+                      desc: "Our sessions are designed to be interactive and supportive, encouraging students to ask questions, practice regularly, and stay motivated.",
+                    },
+                    {
+                      title: "Focusing on Concept Clarity Over Memorization",
+                      desc: "We prioritize understanding over rote learning, ensuring students can apply concepts effectively in exams and real-world situations.",
+                    },
+                  ]}
+                />
+              </ProgramInfoCard>
+            </ProgramOverview>
           </div>
 
           <CourseConsultationPanel

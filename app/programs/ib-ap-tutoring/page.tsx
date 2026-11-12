@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
@@ -43,31 +44,6 @@ export async function generateMetadata(): Promise<Metadata> {
     };
   }
 }
-
-const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
-  <div className="flex items-center gap-3 mb-[14px]">
-    <div className="bg-yellow-light h-8 w-8 flex items-center justify-center rounded-lg text-slate shadow-sm">
-      <Icon size={24} />
-    </div>
-    <h2 className="text-[22px] font-bricolage font-normal text-slate">
-      {title}
-    </h2>
-  </div>
-);
-
-const ListItems = ({ items }: { items: string[] }) => (
-  <ul className="space-y-1 mb-8 ml-11">
-    {items.map((item, index) => (
-      <li
-        key={index}
-        className="text-[16px] font-montserrat font-normal text-slate flex items-start"
-      >
-        <span className="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
-        {item}
-      </li>
-    ))}
-  </ul>
-);
 
 export default async function IBAPTutoringPage() {
   // FAQs are managed in Studio > Program Pages; empty means no section is shown.
@@ -158,88 +134,83 @@ export default async function IBAPTutoringPage() {
                 </p>
               </div>
 
-              <section>
-                <SectionHeader icon={Layers} title="Subjects We Cover" />
-                <ListItems
-                  items={[
-                    "IB Mathematics: Analysis & Approaches (SL & HL)",
-                    "IB Mathematics: Applications & Interpretation (SL & HL)",
-                    "IB Physics SL & HL",
-                    "IB Chemistry SL & HL",
-                    "IB Biology SL & HL",
-                    "AP Calculus AB & BC",
-                    "AP Physics 1, 2 & C",
-                    "AP Chemistry & AP Biology",
-                    "AP Statistics",
-                  ]}
-                />
+              <ProgramOverview>
+                <ProgramInfoCard icon={Layers} title="Subjects We Cover">
+                  <ProgramBulletList
+                    items={[
+                      "IB Mathematics: Analysis & Approaches (SL & HL)",
+                      "IB Mathematics: Applications & Interpretation (SL & HL)",
+                      "IB Physics SL & HL",
+                      "IB Chemistry SL & HL",
+                      "IB Biology SL & HL",
+                      "AP Calculus AB & BC",
+                      "AP Physics 1, 2 & C",
+                      "AP Chemistry & AP Biology",
+                      "AP Statistics",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={FileText} title="Who Is This For" />
-                <ListItems
-                  items={[
-                    "IB Diploma Programme (DP) students in Years 1 & 2",
-                    "Students enrolled in AP courses seeking higher scores",
-                    "Learners struggling with IB Internal Assessments (IAs)",
-                    "Students aiming for 6s and 7s on IB exams",
-                    "AP students targeting a 4 or 5 on their exams",
-                    "Students applying to competitive universities",
-                  ]}
-                />
+                <ProgramInfoCard icon={FileText} title="Who Is This For">
+                  <ProgramBulletList
+                    items={[
+                      "IB Diploma Programme (DP) students in Years 1 & 2",
+                      "Students enrolled in AP courses seeking higher scores",
+                      "Learners struggling with IB Internal Assessments (IAs)",
+                      "Students aiming for 6s and 7s on IB exams",
+                      "AP students targeting a 4 or 5 on their exams",
+                      "Students applying to competitive universities",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={LayoutGrid} title="Program Format" />
-                <ListItems
-                  items={[
-                    "One-on-One Specialized Tutoring (online)",
-                    "IA & Extended Essay (EE) Guidance",
-                    "Past Paper Practice & Timed Exams",
-                    "AP Free-Response Question Coaching",
-                    "Flexible scheduling around IB/AP deadlines",
-                  ]}
-                />
+                <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                  <ProgramBulletList
+                    items={[
+                      "One-on-One Specialized Tutoring (online)",
+                      "IA & Extended Essay (EE) Guidance",
+                      "Past Paper Practice & Timed Exams",
+                      "AP Free-Response Question Coaching",
+                      "Flexible scheduling around IB/AP deadlines",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={Sparkles} title="Expected Outcomes" />
-                <ListItems
-                  items={[
-                    "Higher IB subject scores (targeting 6 & 7)",
-                    "Stronger AP exam scores (targeting 4 & 5)",
-                    "Confident Internal Assessment completion",
-                    "Better time management across heavy IB/AP workloads",
-                    "University credit and advanced standing",
-                  ]}
-                />
+                <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                  <ProgramBulletList
+                    items={[
+                      "Higher IB subject scores (targeting 6 & 7)",
+                      "Stronger AP exam scores (targeting 4 & 5)",
+                      "Confident Internal Assessment completion",
+                      "Better time management across heavy IB/AP workloads",
+                      "University credit and advanced standing",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={Rocket} title="Our Approach" />
-                <div className="ml-11 space-y-4">
-                  {[
-                    {
-                      title: "Syllabus-Specific Expertise",
-                      desc: "Our tutors know the IB and AP syllabi in detail — including command terms, mark schemes, and assessment criteria — so students are always practising in exactly the right way.",
-                    },
-                    {
-                      title: "Internal Assessment Support",
-                      desc: "IB IAs can be daunting. We guide students through topic selection, methodology, data analysis, and report writing to understand the assessment criteria and improve their own reasoning, analysis and communication.",
-                    },
-                    {
-                      title: "Past Paper Mastery",
-                      desc: "We use official past papers from IB and College Board to simulate real exam conditions, helping students build speed, accuracy, and exam confidence.",
-                    },
-                    {
-                      title: "Depth Over Surface Coverage",
-                      desc: "IB and AP reward genuine understanding. We go deep into concepts rather than teaching to the test, ensuring students can handle any question the exam throws at them.",
-                    },
-                  ].map((item, idx) => (
-                    <div key={idx} className="text-[16px] font-montserrat leading-tight text-slate">
-                      <div className="flex items-start gap-2">
-                        <span className="shrink-0">·</span>
-                        <div>
-                          <p className="font-medium mb-0.5">{item.title}</p>
-                          <p className="font-normal opacity-90">{item.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
+                <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                  <ProgramApproach
+                    items={[
+                      {
+                        title: "Syllabus-Specific Expertise",
+                        desc: "Our tutors know the IB and AP syllabi in detail — including command terms, mark schemes, and assessment criteria — so students are always practising in exactly the right way.",
+                      },
+                      {
+                        title: "Internal Assessment Support",
+                        desc: "IB IAs can be daunting. We guide students through topic selection, methodology, data analysis, and report writing to understand the assessment criteria and improve their own reasoning, analysis and communication.",
+                      },
+                      {
+                        title: "Past Paper Mastery",
+                        desc: "We use official past papers from IB and College Board to simulate real exam conditions, helping students build speed, accuracy, and exam confidence.",
+                      },
+                      {
+                        title: "Depth Over Surface Coverage",
+                        desc: "IB and AP reward genuine understanding. We go deep into concepts rather than teaching to the test, ensuring students can handle any question the exam throws at them.",
+                      },
+                    ]}
+                  />
+                </ProgramInfoCard>
+              </ProgramOverview>
             </div>
 
             <CourseConsultationPanel

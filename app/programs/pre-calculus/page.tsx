@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
@@ -42,31 +43,6 @@ export async function generateMetadata(): Promise<Metadata> {
     };
   }
 }
-
-const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
-  <div className="flex items-center gap-3 mb-[14px]">
-    <div className="bg-yellow-light h-8 w-8 flex items-center justify-center rounded-lg text-slate shadow-sm">
-      <Icon size={24} />
-    </div>
-    <h2 className="text-[22px] font-bricolage font-normal text-slate">
-      {title}
-    </h2>
-  </div>
-);
-
-const ListItems = ({ items }: { items: string[] }) => (
-  <ul className="space-y-1 mb-8 ml-11">
-    {items.map((item, index) => (
-      <li
-        key={index}
-        className="text-[16px] font-montserrat font-normal text-slate flex items-start"
-      >
-        <span className="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
-        {item}
-      </li>
-    ))}
-  </ul>
-);
 
 export default async function PreCalculusProgramPage() {
   // FAQs are managed in Studio > Program Pages; empty means no section is shown.
@@ -151,85 +127,80 @@ export default async function PreCalculusProgramPage() {
                 </p>
               </div>
 
-              <section>
-                <SectionHeader icon={Layers} title="What We Cover" />
-                <ListItems
-                  items={[
-                    "Quadratic Functions & Equations",
-                    "Polynomial Functions & Rational Expressions",
-                    "Trigonometry (Unit Circle, Identities, Equations)",
-                    "Exponential & Logarithmic Functions",
-                    "Sequences, Series & Binomial Theorem",
-                    "Permutations, Combinations & Probability",
-                    "Limits & Derivatives — optional Calculus 12 bridge",
-                  ]}
-                />
+              <ProgramOverview>
+                <ProgramInfoCard icon={Layers} title="What We Cover">
+                  <ProgramBulletList
+                    items={[
+                      "Quadratic Functions & Equations",
+                      "Polynomial Functions & Rational Expressions",
+                      "Trigonometry (Unit Circle, Identities, Equations)",
+                      "Exponential & Logarithmic Functions",
+                      "Sequences, Series & Binomial Theorem",
+                      "Permutations, Combinations & Probability",
+                      "Limits & Derivatives — optional Calculus 12 bridge",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={FileText} title="Who Is This For" />
-                <ListItems
-                  items={[
-                    "Students enrolled in Pre-Calculus 11 or 12",
-                    "Students who struggled with Foundations of Math 10",
-                    "Learners preparing for school tests, final exams and BC curriculum-aligned coursework",
-                    "Students aiming for science, engineering, or business programs",
-                    "Anyone wanting a strong head start on university math",
-                  ]}
-                />
+                <ProgramInfoCard icon={FileText} title="Who Is This For">
+                  <ProgramBulletList
+                    items={[
+                      "Students enrolled in Pre-Calculus 11 or 12",
+                      "Students who struggled with Foundations of Math 10",
+                      "Learners preparing for school tests, final exams and BC curriculum-aligned coursework",
+                      "Students aiming for science, engineering, or business programs",
+                      "Anyone wanting a strong head start on university math",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={LayoutGrid} title="Program Format" />
-                <ListItems
-                  items={[
-                    "One-on-One Tutoring (online)",
-                    "Chapter-by-chapter review sessions",
-                    "Practice problem sets & worked solutions",
-                    "School test, unit assessment and final exam preparation",
-                    "Flexible scheduling — evenings & weekends",
-                  ]}
-                />
+                <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                  <ProgramBulletList
+                    items={[
+                      "One-on-One Tutoring (online)",
+                      "Chapter-by-chapter review sessions",
+                      "Practice problem sets & worked solutions",
+                      "School test, unit assessment and final exam preparation",
+                      "Flexible scheduling — evenings & weekends",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={Sparkles} title="Expected Outcomes" />
-                <ListItems
-                  items={[
-                    "Higher grades in Pre-Calculus 11 & 12",
-                    "Stronger performance on school tests and final examinations",
-                    "Readiness for university-level calculus",
-                    "Confident approach to multi-step problems",
-                    "Clear understanding of all key unit concepts",
-                  ]}
-                />
+                <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                  <ProgramBulletList
+                    items={[
+                      "Higher grades in Pre-Calculus 11 & 12",
+                      "Stronger performance on school tests and final examinations",
+                      "Readiness for university-level calculus",
+                      "Confident approach to multi-step problems",
+                      "Clear understanding of all key unit concepts",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={Rocket} title="Our Approach" />
-                <div className="ml-11 space-y-4">
-                  {[
-                    {
-                      title: "Unit-by-Unit Mastery",
-                      desc: "We work through each unit systematically — ensuring no concept is left unclear before moving forward. Every topic is revisited until the student is fully confident.",
-                    },
-                    {
-                      title: "Exam-Focused Practice",
-                      desc: "We use BC curriculum-aligned practice problems and past exam questions to ensure students know exactly what to expect on test day.",
-                    },
-                    {
-                      title: "Bridging the Gap to Calculus",
-                      desc: "For students heading to university, we place special emphasis on concepts like limits and function analysis that form the foundation of first-year calculus.",
-                    },
-                    {
-                      title: "Flexible and Responsive Sessions",
-                      desc: "Every student progresses at their own pace. Sessions adapt week to week based on what the student is currently studying in class.",
-                    },
-                  ].map((item, idx) => (
-                    <div key={idx} className="text-[16px] font-montserrat leading-tight text-slate">
-                      <div className="flex items-start gap-2">
-                        <span className="shrink-0">·</span>
-                        <div>
-                          <p className="font-medium mb-0.5">{item.title}</p>
-                          <p className="font-normal opacity-90">{item.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
+                <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                  <ProgramApproach
+                    items={[
+                      {
+                        title: "Unit-by-Unit Mastery",
+                        desc: "We work through each unit systematically — ensuring no concept is left unclear before moving forward. Every topic is revisited until the student is fully confident.",
+                      },
+                      {
+                        title: "Exam-Focused Practice",
+                        desc: "We use BC curriculum-aligned practice problems and past exam questions to ensure students know exactly what to expect on test day.",
+                      },
+                      {
+                        title: "Bridging the Gap to Calculus",
+                        desc: "For students heading to university, we place special emphasis on concepts like limits and function analysis that form the foundation of first-year calculus.",
+                      },
+                      {
+                        title: "Flexible and Responsive Sessions",
+                        desc: "Every student progresses at their own pace. Sessions adapt week to week based on what the student is currently studying in class.",
+                      },
+                    ]}
+                  />
+                </ProgramInfoCard>
+              </ProgramOverview>
             </div>
 
             <CourseConsultationPanel

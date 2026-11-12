@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
@@ -41,31 +42,6 @@ export async function generateMetadata(): Promise<Metadata> {
     };
   }
 }
-
-const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
-  <div className="flex items-center gap-3 mb-[14px]">
-    <div className="bg-yellow-light h-8 w-8 flex items-center justify-center rounded-lg text-slate shadow-sm">
-      <Icon size={24} />
-    </div>
-    <h2 className="text-[22px] font-bricolage font-normal text-slate">
-      {title}
-    </h2>
-  </div>
-);
-
-const ListItems = ({ items }: { items: string[] }) => (
-  <ul className="space-y-1 mb-8 ml-11">
-    {items.map((item, index) => (
-      <li
-        key={index}
-        className="text-[16px] font-montserrat font-normal text-slate flex items-start"
-      >
-        <span className="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
-        {item}
-      </li>
-    ))}
-  </ul>
-);
 
 export default async function VancouverMathTutoringPage() {
   // FAQs are managed in Studio > Program Pages; empty means no section is shown.
@@ -154,86 +130,78 @@ export default async function VancouverMathTutoringPage() {
                 </p>
               </div>
 
-              <section>
-                <SectionHeader icon={Layers} title="What We Cover" />
-                <ListItems
-                  items={[
-                    "Algebra & Functions (Grades 8–12)",
-                    "Pre-Calculus 11 & 12",
-                    "Foundations of Mathematics 10, 11, 12",
-                    "Calculus (Limits, Derivatives, Integration)",
-                    "Statistics and Probability",
-                    "Word Problems & Exam Strategies",
-                  ]}
-                />
+              <ProgramOverview>
+                <ProgramInfoCard icon={Layers} title="What We Cover">
+                  <ProgramBulletList
+                    items={[
+                      "Algebra & Functions (Grades 8–12)",
+                      "Pre-Calculus 11 & 12",
+                      "Foundations of Mathematics 10, 11, 12",
+                      "Calculus (Limits, Derivatives, Integration)",
+                      "Statistics and Probability",
+                      "Word Problems & Exam Strategies",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={FileText} title="Who Is This For" />
-                <ListItems
-                  items={[
-                    "Vancouver students in Grades 8 through 12",
-                    "University students in introductory math courses",
-                    "Students falling behind or needing to accelerate",
-                    "Learners preparing for final exams and BC curriculum-aligned coursework",
-                    "Students who want structured, consistent support",
-                  ]}
-                />
+                <ProgramInfoCard icon={FileText} title="Who Is This For">
+                  <ProgramBulletList
+                    items={[
+                      "Vancouver students in Grades 8 through 12",
+                      "University students in introductory math courses",
+                      "Students falling behind or needing to accelerate",
+                      "Learners preparing for final exams and BC curriculum-aligned coursework",
+                      "Students who want structured, consistent support",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={LayoutGrid} title="Program Format" />
-                <ListItems
-                  items={[
-                    "One-on-One Online Tutoring",
-                    "Flexible scheduling — evenings & weekends",
-                    "Homework Help & Assignment Support",
-                    "Exam Preparation Sessions",
-                  ]}
-                />
+                <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                  <ProgramBulletList
+                    items={[
+                      "One-on-One Online Tutoring",
+                      "Flexible scheduling — evenings & weekends",
+                      "Homework Help & Assignment Support",
+                      "Exam Preparation Sessions",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={Sparkles} title="Expected Outcomes" />
-                <ListItems
-                  items={[
-                    "Improved report card grades",
-                    "Stronger exam performance",
-                    "Greater confidence in approaching math problems",
-                    "Solid foundation for future courses",
-                    "Reduced math anxiety",
-                  ]}
-                />
+                <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                  <ProgramBulletList
+                    items={[
+                      "Improved report card grades",
+                      "Stronger exam performance",
+                      "Greater confidence in approaching math problems",
+                      "Solid foundation for future courses",
+                      "Reduced math anxiety",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={Rocket} title="Our Approach" />
-                <div className="ml-11 space-y-4">
-                  {[
-                    {
-                      title: "Personalized to Each Student",
-                      desc: "Every Vancouver student learns differently. We tailor each session to match the student's current level, pace, and BC curriculum requirements.",
-                    },
-                    {
-                      title: "BC Curriculum Aligned",
-                      desc: "Our tutors are familiar with the BC Math curriculum and ensure sessions directly support what students are learning in class.",
-                    },
-                    {
-                      title: "Building Long-Term Understanding",
-                      desc: "Rather than quick fixes, we build lasting conceptual understanding so students are prepared for each next step in their math journey.",
-                    },
-                    {
-                      title: "Consistent Progress Tracking",
-                      desc: "We monitor student progress and adjust our approach to ensure continuous improvement and growing confidence.",
-                    },
-                  ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="text-[16px] font-montserrat leading-tight text-slate"
-                    >
-                      <div className="flex items-start gap-2">
-                        <span className="shrink-0">·</span>
-                        <div>
-                          <p className="font-medium mb-0.5">{item.title}</p>
-                          <p className="font-normal opacity-90">{item.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
+                <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                  <ProgramApproach
+                    items={[
+                      {
+                        title: "Personalized to Each Student",
+                        desc: "Every Vancouver student learns differently. We tailor each session to match the student's current level, pace, and BC curriculum requirements.",
+                      },
+                      {
+                        title: "BC Curriculum Aligned",
+                        desc: "Our tutors are familiar with the BC Math curriculum and ensure sessions directly support what students are learning in class.",
+                      },
+                      {
+                        title: "Building Long-Term Understanding",
+                        desc: "Rather than quick fixes, we build lasting conceptual understanding so students are prepared for each next step in their math journey.",
+                      },
+                      {
+                        title: "Consistent Progress Tracking",
+                        desc: "We monitor student progress and adjust our approach to ensure continuous improvement and growing confidence.",
+                      },
+                    ]}
+                  />
+                </ProgramInfoCard>
+              </ProgramOverview>
             </div>
 
             <CourseConsultationPanel

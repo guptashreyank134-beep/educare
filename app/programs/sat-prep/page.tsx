@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
 import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
@@ -33,31 +34,6 @@ export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "sat-prep");
   return getMetadata(data, "https://www.drshreyankeducare.com/programs/sat-prep");
 }
-
-const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
-  <div className="flex items-center gap-3 mb-[14px]">
-    <div className="bg-yellow-light h-8 w-8 flex items-center justify-center rounded-lg text-slate shadow-sm">
-      <Icon size={24} />
-    </div>
-    <h2 className="text-[22px] font-bricolage font-normal text-slate">
-      {title}
-    </h2>
-  </div>
-);
-
-const ListItems = ({ items }: { items: string[] }) => (
-  <ul className="space-y-1 mb-8 ml-11">
-    {items.map((item, index) => (
-      <li
-        key={index}
-        className="text-[16px] font-montserrat font-normal text-slate flex items-start"
-      >
-        <span className="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
-        {item}
-      </li>
-    ))}
-  </ul>
-);
 
 export default async function SatPrepProgramPage() {
   const data = await getMetaDataBySlug("programPage", "sat-prep");
@@ -136,84 +112,76 @@ export default async function SatPrepProgramPage() {
               </p>
             </div>
 
-            <section>
-              <SectionHeader icon={Layers} title="What We Cover" />
-              <ListItems
-                items={[
-                  "SAT Math",
-                  "Evidence-Based Reading",
-                  "Writing & Grammar",
-                  "Time Management Strategies",
-                  "Adaptive Test Practice",
-                  "Critical Thinking Techniques",
-                ]}
-              />
+            <ProgramOverview>
+              <ProgramInfoCard icon={Layers} title="What We Cover">
+                <ProgramBulletList
+                  items={[
+                    "SAT Math",
+                    "Evidence-Based Reading",
+                    "Writing & Grammar",
+                    "Time Management Strategies",
+                    "Adaptive Test Practice",
+                    "Critical Thinking Techniques",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={FileText} title="Who Is This For" />
-              <ListItems
-                items={[
-                  "High school students preparing for PSAT",
-                  "Students preparing for SAT admissions tests",
-                  "Scholarship-focused students",
-                  "Students looking to improve test confidence",
-                ]}
-              />
+              <ProgramInfoCard icon={FileText} title="Who Is This For">
+                <ProgramBulletList
+                  items={[
+                    "High school students preparing for PSAT",
+                    "Students preparing for SAT admissions tests",
+                    "Scholarship-focused students",
+                    "Students looking to improve test confidence",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={LayoutGrid} title="Program Format" />
-              <ListItems
-                items={[
-                  "Group Classes",
-                  "Private Coaching",
-                  "Practice Tests",
-                  "Progress Tracking",
-                ]}
-              />
+              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                <ProgramBulletList
+                  items={[
+                    "Group Classes",
+                    "Private Coaching",
+                    "Practice Tests",
+                    "Progress Tracking",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Sparkles} title="Expected Outcomes" />
-              <ListItems
-                items={[
-                  "Target Score: 1350-1550+ SAT",
-                  "Stronger scholarship eligibility through PSAT performance",
-                  "Higher college admission competitiveness",
-                  "Improved speed and test confidence",
-                ]}
-              />
+              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                <ProgramBulletList
+                  items={[
+                    "Target Score: 1350-1550+ SAT",
+                    "Stronger scholarship eligibility through PSAT performance",
+                    "Higher college admission competitiveness",
+                    "Improved speed and test confidence",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Rocket} title="Our Approach" />
-              <div className="ml-11 space-y-4">
-                {[
-                  {
-                    title: "Diagnostic-Based Planning",
-                    desc: "We identify current performance levels and create a personalized roadmap.",
-                  },
-                  {
-                    title: "Reading & Writing Mastery",
-                    desc: "Strengthen formulas, shortcuts, and problem-solving speed.",
-                  },
-                  {
-                    title: "Math Performance Drills",
-                    desc: "Our sessions are designed to be interactive and supportive, encouraging students to ask questions, practice regularly, and stay motivated.",
-                  },
-                  {
-                    title: "Full-Length Mock Testing",
-                    desc: "Practice under real exam conditions.",
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="text-[16px] font-montserrat leading-tight text-slate"
-                  >
-                    <div className="flex items-start gap-2">
-                      <span className="shrink-0">·</span>
-                      <div>
-                        <p className="font-medium mb-0.5">{item.title}</p>
-                        <p className="font-normal opacity-90">{item.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                <ProgramApproach
+                  items={[
+                    {
+                      title: "Diagnostic-Based Planning",
+                      desc: "We identify current performance levels and create a personalized roadmap.",
+                    },
+                    {
+                      title: "Reading & Writing Mastery",
+                      desc: "Strengthen formulas, shortcuts, and problem-solving speed.",
+                    },
+                    {
+                      title: "Math Performance Drills",
+                      desc: "Our sessions are designed to be interactive and supportive, encouraging students to ask questions, practice regularly, and stay motivated.",
+                    },
+                    {
+                      title: "Full-Length Mock Testing",
+                      desc: "Practice under real exam conditions.",
+                    },
+                  ]}
+                />
+              </ProgramInfoCard>
+            </ProgramOverview>
           </div>
 
           <CourseConsultationPanel

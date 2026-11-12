@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
@@ -41,31 +42,6 @@ export async function generateMetadata(): Promise<Metadata> {
     };
   }
 }
-
-const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
-  <div className="flex items-center gap-3 mb-[14px]">
-    <div className="bg-yellow-light h-8 w-8 flex items-center justify-center rounded-lg text-slate shadow-sm">
-      <Icon size={24} />
-    </div>
-    <h2 className="text-[22px] font-bricolage font-normal text-slate">
-      {title}
-    </h2>
-  </div>
-);
-
-const ListItems = ({ items }: { items: string[] }) => (
-  <ul className="space-y-1 mb-8 ml-11">
-    {items.map((item, index) => (
-      <li
-        key={index}
-        className="text-[16px] font-montserrat font-normal text-slate flex items-start"
-      >
-        <span className="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
-        {item}
-      </li>
-    ))}
-  </ul>
-);
 
 export default async function BurnabySTEMTutoringPage() {
   // FAQs are managed in Studio > Program Pages; empty means no section is shown.
@@ -153,83 +129,78 @@ export default async function BurnabySTEMTutoringPage() {
                 </p>
               </div>
 
-              <section>
-                <SectionHeader icon={Layers} title="Subjects We Cover" />
-                <ListItems
-                  items={[
-                    "Mathematics (Grades 8–12 & University)",
-                    "Physics 11 & 12 / University Physics",
-                    "Chemistry 11 & 12 / University Chemistry",
-                    "Biology 11 & 12 / University Biology",
-                    "Computer Science & Programming",
-                    "Statistics & Data Analysis",
-                  ]}
-                />
+              <ProgramOverview>
+                <ProgramInfoCard icon={Layers} title="Subjects We Cover">
+                  <ProgramBulletList
+                    items={[
+                      "Mathematics (Grades 8–12 & University)",
+                      "Physics 11 & 12 / University Physics",
+                      "Chemistry 11 & 12 / University Chemistry",
+                      "Biology 11 & 12 / University Biology",
+                      "Computer Science & Programming",
+                      "Statistics & Data Analysis",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={FileText} title="Who Is This For" />
-                <ListItems
-                  items={[
-                    "Burnaby high school students (Grades 8–12)",
-                    "SFU and other university students",
-                    "Students struggling with one or more STEM subjects",
-                    "Learners preparing for final exams and unit assessments",
-                    "Students aiming for post-secondary STEM programs",
-                  ]}
-                />
+                <ProgramInfoCard icon={FileText} title="Who Is This For">
+                  <ProgramBulletList
+                    items={[
+                      "Burnaby high school students (Grades 8–12)",
+                      "SFU and other university students",
+                      "Students struggling with one or more STEM subjects",
+                      "Learners preparing for final exams and unit assessments",
+                      "Students aiming for post-secondary STEM programs",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={LayoutGrid} title="Program Format" />
-                <ListItems
-                  items={[
-                    "One-on-One Online Tutoring",
-                    "Subject-Specific Deep Dives",
-                    "Homework & Assignment Assistance",
-                    "Flexible scheduling for busy students",
-                  ]}
-                />
+                <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                  <ProgramBulletList
+                    items={[
+                      "One-on-One Online Tutoring",
+                      "Subject-Specific Deep Dives",
+                      "Homework & Assignment Assistance",
+                      "Flexible scheduling for busy students",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={Sparkles} title="Expected Outcomes" />
-                <ListItems
-                  items={[
-                    "Improved grades across all STEM subjects",
-                    "Stronger problem-solving and analytical skills",
-                    "Greater confidence in lab work and assignments",
-                    "Better preparation for post-secondary programs",
-                    "Reduced subject-specific anxiety",
-                  ]}
-                />
+                <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                  <ProgramBulletList
+                    items={[
+                      "Improved grades across all STEM subjects",
+                      "Stronger problem-solving and analytical skills",
+                      "Greater confidence in lab work and assignments",
+                      "Better preparation for post-secondary programs",
+                      "Reduced subject-specific anxiety",
+                    ]}
+                  />
+                </ProgramInfoCard>
 
-                <SectionHeader icon={Rocket} title="Our Approach" />
-                <div className="ml-11 space-y-4">
-                  {[
-                    {
-                      title: "Cross-Subject Connections",
-                      desc: "STEM subjects interconnect. We help students see how math supports physics, and how chemistry relates to biology — building a richer, more cohesive understanding.",
-                    },
-                    {
-                      title: "BC Curriculum Aligned",
-                      desc: "Our tutors are familiar with Burnaby school curricula and university course structures, ensuring sessions are always relevant and practical.",
-                    },
-                    {
-                      title: "Targeted Concept Reinforcement",
-                      desc: "We identify the specific gaps holding each student back and address them systematically, so no weak area is left unresolved.",
-                    },
-                    {
-                      title: "Exam & Assignment Focus",
-                      desc: "Practical, outcome-focused sessions ensure students are prepared not just to understand material, but to perform well in assessments.",
-                    },
-                  ].map((item, idx) => (
-                    <div key={idx} className="text-[16px] font-montserrat leading-tight text-slate">
-                      <div className="flex items-start gap-2">
-                        <span className="shrink-0">·</span>
-                        <div>
-                          <p className="font-medium mb-0.5">{item.title}</p>
-                          <p className="font-normal opacity-90">{item.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
+                <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                  <ProgramApproach
+                    items={[
+                      {
+                        title: "Cross-Subject Connections",
+                        desc: "STEM subjects interconnect. We help students see how math supports physics, and how chemistry relates to biology — building a richer, more cohesive understanding.",
+                      },
+                      {
+                        title: "BC Curriculum Aligned",
+                        desc: "Our tutors are familiar with Burnaby school curricula and university course structures, ensuring sessions are always relevant and practical.",
+                      },
+                      {
+                        title: "Targeted Concept Reinforcement",
+                        desc: "We identify the specific gaps holding each student back and address them systematically, so no weak area is left unresolved.",
+                      },
+                      {
+                        title: "Exam & Assignment Focus",
+                        desc: "Practical, outcome-focused sessions ensure students are prepared not just to understand material, but to perform well in assessments.",
+                      },
+                    ]}
+                  />
+                </ProgramInfoCard>
+              </ProgramOverview>
             </div>
 
             <CourseConsultationPanel

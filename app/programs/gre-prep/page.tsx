@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
 import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
@@ -33,31 +34,6 @@ export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "gre-prep");
   return getMetadata(data, "https://www.drshreyankeducare.com/programs/gre-prep");
 }
-
-const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
-  <div className="flex items-center gap-3 mb-[14px]">
-    <div className="bg-yellow-light h-8 w-8 flex items-center justify-center rounded-lg text-slate shadow-sm">
-      <Icon size={24} />
-    </div>
-    <h2 className="text-[22px] font-bricolage font-normal text-slate">
-      {title}
-    </h2>
-  </div>
-);
-
-const ListItems = ({ items }: { items: string[] }) => (
-  <ul className="space-y-1 mb-8 ml-11">
-    {items.map((item, index) => (
-      <li
-        key={index}
-        className="text-[16px] font-montserrat font-normal text-slate flex items-start"
-      >
-        <span className="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
-        {item}
-      </li>
-    ))}
-  </ul>
-);
 
 export default async function GrePrepProgramPage() {
   const data = await getMetaDataBySlug("programPage", "gre-prep");
@@ -134,139 +110,133 @@ export default async function GrePrepProgramPage() {
               </p>
             </div>
 
-            <section>
-              <SectionHeader icon={Layers} title="What We Cover" />
-              <ListItems
-                items={[
-                  "Quantitative Reasoning",
-                  "Verbal Reasoning",
-                  "Vocabulary Systems",
-                  "Analytical Writing",
-                  "Time Management",
-                  "Mock Testing",
-                ]}
-              />
+            <ProgramOverview>
+              <ProgramInfoCard icon={Layers} title="What We Cover">
+                <ProgramBulletList
+                  items={[
+                    "Quantitative Reasoning",
+                    "Verbal Reasoning",
+                    "Vocabulary Systems",
+                    "Analytical Writing",
+                    "Time Management",
+                    "Mock Testing",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={FileText} title="Who Is This For" />
-              <ListItems
-                items={[
-                  "Graduate school applicants",
-                  "Students preparing for masters programs",
-                  "International applicants",
-                  "Students improving previous scores",
-                ]}
-              />
+              <ProgramInfoCard icon={FileText} title="Who Is This For">
+                <ProgramBulletList
+                  items={[
+                    "Graduate school applicants",
+                    "Students preparing for masters programs",
+                    "International applicants",
+                    "Students improving previous scores",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={LayoutGrid} title="Program Format" />
-              <ListItems
-                items={[
-                  "Group Programs",
-                  "Private Intensive Coaching",
-                  "Mock Testing",
-                  "Progress Analytics",
-                ]}
-              />
+              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                <ProgramBulletList
+                  items={[
+                    "Group Programs",
+                    "Private Intensive Coaching",
+                    "Mock Testing",
+                    "Progress Analytics",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Sparkles} title="Expected Outcomes" />
-              <ListItems
-                items={[
-                  "Target Score: 320-335+ GRE",
-                  "Improved verbal and quant performance",
-                  "Stronger essay writing score",
-                  "Better graduate admissions opportunities",
-                ]}
-              />
+              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                <ProgramBulletList
+                  items={[
+                    "Target Score: 320-335+ GRE",
+                    "Improved verbal and quant performance",
+                    "Stronger essay writing score",
+                    "Better graduate admissions opportunities",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Rocket} title="Our Approach" />
-              <div className="ml-11 space-y-4">
-                {[
-                  {
-                    title: "Quant Efficiency Training",
-                    desc: "Solve faster with smarter shortcuts.",
-                  },
-                  {
-                    title: "Vocabulary Systems",
-                    desc: "Learn retention-focused vocab methods.",
-                  },
-                  {
-                    title: "Essay Feedback",
-                    desc: "Receive writing reviews from instructors.",
-                  },
-                  {
-                    title: "Practice Simulations",
-                    desc: "Build familiarity and confidence.",
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="text-[16px] font-montserrat leading-tight text-slate"
-                  >
-                    <div className="flex items-start gap-2">
-                      <span className="shrink-0">·</span>
-                      <div>
-                        <p className="font-medium mb-0.5">{item.title}</p>
-                        <p className="font-normal opacity-90">{item.desc}</p>
-                      </div>
+              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                <ProgramApproach
+                  items={[
+                    {
+                      title: "Quant Efficiency Training",
+                      desc: "Solve faster with smarter shortcuts.",
+                    },
+                    {
+                      title: "Vocabulary Systems",
+                      desc: "Learn retention-focused vocab methods.",
+                    },
+                    {
+                      title: "Essay Feedback",
+                      desc: "Receive writing reviews from instructors.",
+                    },
+                    {
+                      title: "Practice Simulations",
+                      desc: "Build familiarity and confidence.",
+                    },
+                  ]}
+                />
+              </ProgramInfoCard>
+
+              <ProgramInfoCard icon={FileText} title="Why Prepare With Dr. Shreyank Educare" wide>
+                <div className="space-y-4 text-[16px] leading-[24px] font-montserrat text-slate">
+                  <p>
+                    A strong GRE score can open doors to competitive graduate and
+                    PhD programs, and it rewards preparation that is precise rather
+                    than generic. Our coaching pinpoints exactly where you lose marks
+                    — quant pacing, vocabulary gaps, or analytical writing structure —
+                    and rebuilds each area with proven, repeatable methods. You work
+                    directly with experienced verbal and quantitative tutors who know
+                    the exam inside out.
+                  </p>
+                  <p>
+                    We begin with a full diagnostic and a week-by-week plan mapped to
+                    your target score and test date, alternating focused concept work
+                    with timed section practice and detailed review. For the
+                    Analytical Writing tasks, you receive personalised feedback on
+                    real essays, so your Issue and Argument responses become sharper
+                    and better structured with each attempt.
+                  </p>
+                  <p>
+                    Whether you are applying to graduate or doctoral programs, or
+                    retaking the GRE to strengthen your application, we adapt the
+                    intensity and format — online or in person in Burnaby —
+                    to your goals and schedule, so you walk into the exam prepared and
+                    confident.
+                  </p>
+                </div>
+              </ProgramInfoCard>
+
+              <ProgramInfoCard icon={Sparkles} title="Planning Your GRE Preparation" wide>
+                <div className="space-y-5">
+                  {[
+                    {
+                      q: "How long should I prepare for the GRE?",
+                      a: "Most students prepare over 8–12 weeks, but we tailor the schedule to your target score and test date, including intensive options when time is short.",
+                    },
+                    {
+                      q: "Do you help with the Analytical Writing (AWA) section?",
+                      a: "Yes. You receive individual feedback on real Issue and Argument essays so your writing score improves steadily.",
+                    },
+                    {
+                      q: "Are sessions online or in person?",
+                      a: "Both. We offer flexible online sessions and in-person coaching in person in Burnaby.",
+                    },
+                    {
+                      q: "Can you help me improve a previous GRE score?",
+                      a: "Definitely. For retakers we run a diagnostic to identify the exact gaps limiting your score, then target them with a focused plan.",
+                    },
+                  ].map((item, idx) => (
+                    <div key={idx} className="text-[16px] font-montserrat text-slate">
+                      <p className="font-medium mb-1">{item.q}</p>
+                      <p className="font-normal opacity-90 leading-[24px]">{item.a}</p>
                     </div>
-                  </div>
-                ))}
-              </div>
-
-              <SectionHeader icon={FileText} title="Why Prepare With Dr. Shreyank Educare" />
-              <div className="ml-11 space-y-4 text-[16px] leading-[24px] font-montserrat text-slate mb-8">
-                <p>
-                  A strong GRE score can open doors to competitive graduate and
-                  PhD programs, and it rewards preparation that is precise rather
-                  than generic. Our coaching pinpoints exactly where you lose marks
-                  — quant pacing, vocabulary gaps, or analytical writing structure —
-                  and rebuilds each area with proven, repeatable methods. You work
-                  directly with experienced verbal and quantitative tutors who know
-                  the exam inside out.
-                </p>
-                <p>
-                  We begin with a full diagnostic and a week-by-week plan mapped to
-                  your target score and test date, alternating focused concept work
-                  with timed section practice and detailed review. For the
-                  Analytical Writing tasks, you receive personalised feedback on
-                  real essays, so your Issue and Argument responses become sharper
-                  and better structured with each attempt.
-                </p>
-                <p>
-                  Whether you are applying to graduate or doctoral programs, or
-                  retaking the GRE to strengthen your application, we adapt the
-                  intensity and format — online or in person in Burnaby —
-                  to your goals and schedule, so you walk into the exam prepared and
-                  confident.
-                </p>
-              </div>
-
-              <SectionHeader icon={Sparkles} title="Planning Your GRE Preparation" />
-              <div className="ml-11 space-y-5 mb-4">
-                {[
-                  {
-                    q: "How long should I prepare for the GRE?",
-                    a: "Most students prepare over 8–12 weeks, but we tailor the schedule to your target score and test date, including intensive options when time is short.",
-                  },
-                  {
-                    q: "Do you help with the Analytical Writing (AWA) section?",
-                    a: "Yes. You receive individual feedback on real Issue and Argument essays so your writing score improves steadily.",
-                  },
-                  {
-                    q: "Are sessions online or in person?",
-                    a: "Both. We offer flexible online sessions and in-person coaching in person in Burnaby.",
-                  },
-                  {
-                    q: "Can you help me improve a previous GRE score?",
-                    a: "Definitely. For retakers we run a diagnostic to identify the exact gaps limiting your score, then target them with a focused plan.",
-                  },
-                ].map((item, idx) => (
-                  <div key={idx} className="text-[16px] font-montserrat text-slate">
-                    <p className="font-medium mb-1">{item.q}</p>
-                    <p className="font-normal opacity-90 leading-[24px]">{item.a}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
+                  ))}
+                </div>
+              </ProgramInfoCard>
+            </ProgramOverview>
           </div>
 
           <CourseConsultationPanel

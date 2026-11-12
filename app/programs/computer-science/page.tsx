@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
 import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
@@ -35,31 +36,6 @@ export async function generateMetadata() {
   const data = await getMetaDataBySlug("programPage", "computer-science");
   return getMetadata(data, "https://www.drshreyankeducare.com/programs/computer-science");
 }
-
-const SectionHeader = ({ icon: Icon, title }: { icon: any; title: string }) => (
-  <div className="flex items-center gap-3 mb-[14px]">
-    <div className="bg-yellow-light h-8 w-8 flex items-center justify-center rounded-lg text-slate shadow-sm">
-      <Icon size={24} />
-    </div>
-    <h2 className="text-[22px] font-bricolage font-normal text-slate">
-      {title}
-    </h2>
-  </div>
-);
-
-const ListItems = ({ items }: { items: string[] }) => (
-  <ul className="space-y-1 mb-8 ml-11">
-    {items.map((item, index) => (
-      <li
-        key={index}
-        className="text-[16px] font-montserrat font-normal text-slate flex items-start"
-      >
-        <span className="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
-        {item}
-      </li>
-    ))}
-  </ul>
-);
 
 export default async function ComputerScienceProgramPage() {
   const data = await getMetaDataBySlug("programPage", "computer-science");
@@ -140,86 +116,78 @@ export default async function ComputerScienceProgramPage() {
               </p>
             </div>
 
-            <section>
-              <SectionHeader icon={Layers} title="What We Cover" />
-              <ListItems
-                items={[
-                  "Python programming, from first steps to intermediate",
-                  "Java and JavaScript fundamentals",
-                  "Data structures and algorithms",
-                  "Object-oriented programming",
-                  "Databases and SQL",
-                  "Web development (HTML, CSS, JavaScript)",
-                  "Debugging and problem-solving techniques",
-                ]}
-              />
+            <ProgramOverview>
+              <ProgramInfoCard icon={Layers} title="What We Cover">
+                <ProgramBulletList
+                  items={[
+                    "Python programming, from first steps to intermediate",
+                    "Java and JavaScript fundamentals",
+                    "Data structures and algorithms",
+                    "Object-oriented programming",
+                    "Databases and SQL",
+                    "Web development (HTML, CSS, JavaScript)",
+                    "Debugging and problem-solving techniques",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={FileText} title="Who Is This For" />
-              <ListItems
-                items={[
-                  "School students beginning to code",
-                  "AP and high-school computer science students",
-                  "College and university computer science students",
-                  "Students who need help understanding assignments and projects",
-                  "Anyone stuck on debugging or a specific concept",
-                ]}
-              />
+              <ProgramInfoCard icon={FileText} title="Who Is This For">
+                <ProgramBulletList
+                  items={[
+                    "School students beginning to code",
+                    "AP and high-school computer science students",
+                    "College and university computer science students",
+                    "Students who need help understanding assignments and projects",
+                    "Anyone stuck on debugging or a specific concept",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={LayoutGrid} title="Program Format" />
-              <ListItems
-                items={[
-                  "One-on-One Tutoring",
-                  "Online Learning",
-                  "Assignment & Exam Support",
-                ]}
-              />
+              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                <ProgramBulletList
+                  items={[
+                    "One-on-One Tutoring",
+                    "Online Learning",
+                    "Assignment & Exam Support",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Sparkles} title="Expected Outcomes" />
-              <ListItems
-                items={[
-                  "Stronger coding confidence",
-                  "Better assignment and project performance",
-                  "Improved problem-solving abilities",
-                  "Higher grades in technical courses",
-                  "Better readiness for internships and tech careers",
-                ]}
-              />
+              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                <ProgramBulletList
+                  items={[
+                    "Stronger coding confidence",
+                    "Better assignment and project performance",
+                    "Improved problem-solving abilities",
+                    "Higher grades in technical courses",
+                    "Better readiness for internships and tech careers",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <SectionHeader icon={Rocket} title="Our Approach" />
-              <div className="ml-11 space-y-4">
-                {[
-                  {
-                    title: "Breaking Down Complex Concepts",
-                    desc: "We simplify technical topics into structured lessons that are easier to understand and apply.",
-                  },
-                  {
-                    title: "Hands-On Coding Practice",
-                    desc: "Students learn by building projects, writing code, and solving practical programming problems.",
-                  },
-                  {
-                    title: "Debugging and Assignment Support",
-                    desc: "We help students troubleshoot errors, improve coding logic, and complete assignments confidently.",
-                  },
-                  {
-                    title: "Career-Focused Learning",
-                    desc: "Beyond academics, students gain exposure to industry tools, best practices, and emerging technologies.",
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="text-[16px] font-montserrat leading-tight text-slate"
-                  >
-                    <div className="flex items-start gap-2">
-                      <span className="shrink-0">·</span>
-                      <div>
-                        <p className="font-medium mb-0.5">{item.title}</p>
-                        <p className="font-normal opacity-90">{item.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                <ProgramApproach
+                  items={[
+                    {
+                      title: "Breaking Down Complex Concepts",
+                      desc: "We simplify technical topics into structured lessons that are easier to understand and apply.",
+                    },
+                    {
+                      title: "Hands-On Coding Practice",
+                      desc: "Students learn by building projects, writing code, and solving practical programming problems.",
+                    },
+                    {
+                      title: "Debugging and Assignment Support",
+                      desc: "We help students troubleshoot errors, improve coding logic, and complete assignments confidently.",
+                    },
+                    {
+                      title: "Career-Focused Learning",
+                      desc: "Beyond academics, students gain exposure to industry tools, best practices, and emerging technologies.",
+                    },
+                  ]}
+                />
+              </ProgramInfoCard>
+            </ProgramOverview>
           </div>
 
           <CourseConsultationPanel
