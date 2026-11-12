@@ -5,8 +5,32 @@ import { loadEnvLocal } from "../scripts/test-env.mts";
 
 loadEnvLocal();
 
-const sitemap = (await import("./sitemap.ts")).default;
+const { default: sitemap, revalidate } = await import("./sitemap.ts");
 const entries = await sitemap();
+
+test("sitemap expires its route and CMS collection cache and includes every listed post", async (t) => {
+  const { client } = await import("../sanity/lib/client.ts");
+  const { BLOG_CACHE_TAG } = await import("../lib/blogPagination.ts");
+  const { SITE_URL } = await import("../data/businessInfo.ts");
+  assert.equal(revalidate, 3600, "the sitemap must not retain an indefinite build snapshot");
+  const posts = Array.from({ length: 136 }, (_, i) => ({ slug: `current-post-${i}` }));
+  let calls = 0;
+  t.mock.method(client, "fetch", async (_query: string, _params: unknown, options: { next: { revalidate: number; tags?: string[] } }) => {
+    assert.equal(options.next.revalidate, 3600);
+    if (calls++ === 0) {
+      assert.ok(options.next.tags?.includes(BLOG_CACHE_TAG));
+      return posts;
+    }
+    return [];
+  });
+  const currentEntries = await sitemap();
+  for (const post of posts) {
+    assert.ok(currentEntries.some((entry) => entry.url === `${SITE_URL}/blog/${post.slug}`));
+  }
+  assert.ok(currentEntries.some((entry) => entry.url === `${SITE_URL}/blog/page/16`));
+  assert.ok(!currentEntries.some((entry) => entry.url === `${SITE_URL}/blog/page/17`));
+  assert.equal(calls, 2);
+});
 
 test("sitemap contains each public URL only once, even when CMS slugs repeat", () => {
   assert.equal(new Set(entries.map((entry) => entry.url)).size, entries.length);

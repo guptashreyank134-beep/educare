@@ -19,7 +19,7 @@ const GeneralHeroSection = ({
     const href = image?.href || "/about";
 
     return (
-        <section className="relative overflow-hidden pt-24 pb-10 sm:pt-28 lg:pt-32 lg:pb-12">
+    <section className="relative overflow-hidden pt-10 pb-10 sm:pt-16 lg:pb-12">
             {/* Grid Background */}
             <div
                 className="absolute inset-0 z-0 opacity-100 pointer-events-none"

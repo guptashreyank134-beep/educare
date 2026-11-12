@@ -96,7 +96,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-28 sm:pt-32 pb-10 lg:pb-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-10 sm:pt-16 pb-10 lg:pb-12">
         <div className="mb-8">
           <Breadcrumbs items={breadcrumbItems} />
         </div>

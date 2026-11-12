@@ -140,7 +140,7 @@ export default function StudyClubInterestForm() {
       <div>
         <label htmlFor={id("learningGoal")} className={labelClass}>Brief learning goal <span className="font-normal text-slate/50">(optional)</span></label>
         <textarea id={id("learningGoal")} name="learningGoal" rows={4} maxLength={500} className={fieldClass} placeholder="For example: build a consistent homework routine and prepare for maths tests" />
-        <p className="mt-2 text-[12px] font-montserrat text-slate/60">Please do not include medical details, school passwords or confidential documents.</p>
+          <p className="mt-2 text-[12px] font-montserrat text-slate/75">Please do not include medical details, school passwords or confidential documents.</p>
       </div>
 
       <label className="flex items-start gap-3 text-[14px] font-montserrat text-slate/80 leading-relaxed">

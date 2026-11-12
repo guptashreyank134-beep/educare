@@ -10,7 +10,10 @@ import { LEAD_AUTHOR } from "@/data/authors";
 import { answerPagePath, publishedAnswerPages } from "@/content/answer-pages";
 import { SITE_URL } from "@/data/businessInfo";
 import { STUDY_CLUB } from "@/data/studyClub";
-import { LISTED_POSTS, REDIRECTED_POST_SLUGS, blogPageCount } from "@/lib/blogPagination";
+import { LISTED_POSTS, REDIRECTED_POST_SLUGS, BLOG_FETCH_OPTIONS, blogPageCount } from "@/lib/blogPagination";
+
+// Metadata routes otherwise retain their build-time response indefinitely.
+export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_URL;
@@ -75,6 +78,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         "updatedAt": coalesce(_updatedAt, publishedAt)
       }`,
       { excluded: REDIRECTED_POST_SLUGS },
+      BLOG_FETCH_OPTIONS,
     );
     dynamicRoutes = posts.map((post) => `/blog/${post.slug}`);
     for (const post of posts) {
@@ -105,6 +109,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         "updatedAt": _updatedAt
       }`,
       { studyClubPath: STUDY_CLUB.path },
+      { next: { revalidate: 3600 } },
     );
     for (const override of overrides) {
       if (override.path && override.updatedAt) cmsDates.set(override.path, override.updatedAt);

@@ -10,7 +10,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 import Pagination from "@/components/ui/Pagination";
 import { getMetaDataBySlug } from "@/utils/seoBuilder";
-import { POSTS_PER_PAGE, REDIRECTED_POST_SLUGS, LISTED_POSTS, blogPageCount } from "@/lib/blogPagination";
+import { POSTS_PER_PAGE, REDIRECTED_POST_SLUGS, LISTED_POSTS, BLOG_LISTING_QUERY, BLOG_FETCH_OPTIONS, blogPageCount } from "@/lib/blogPagination";
 
 function toPlainText(blocks: any[]): string {
   if (!blocks || !Array.isArray(blocks)) return "";
@@ -43,7 +43,7 @@ function getReadingTime(text: string): string {
 export async function getTotalBlogPages(): Promise<number> {
   const totalPosts = await client.fetch<number>(`count(${LISTED_POSTS})`, {
     excluded: REDIRECTED_POST_SLUGS,
-  });
+  }, BLOG_FETCH_OPTIONS);
   return blogPageCount(totalPosts);
 }
 
@@ -56,19 +56,8 @@ export default async function BlogListingView({ page }: { page: number }) {
   const start = (validPage - 1) * POSTS_PER_PAGE;
   const end = validPage * POSTS_PER_PAGE;
 
-  const postsQuery = `${LISTED_POSTS} | order(publishedAt desc) [$start...$end] {
-    _id,
-    title,
-    "slug": slug.current,
-    publishedAt,
-    excerpt,
-    body,
-    mainImage
-  }`;
-
-  const [posts, totalPosts, data] = await Promise.all([
-    client.fetch(postsQuery, { start, end, excluded: REDIRECTED_POST_SLUGS }),
-    client.fetch(`count(${LISTED_POSTS})`, { excluded: REDIRECTED_POST_SLUGS }),
+  const [{ posts, totalPosts }, data] = await Promise.all([
+    client.fetch(BLOG_LISTING_QUERY, { start, end, excluded: REDIRECTED_POST_SLUGS }, BLOG_FETCH_OPTIONS),
     getMetaDataBySlug("page", "blog"),
   ]);
 

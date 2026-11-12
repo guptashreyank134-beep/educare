@@ -52,7 +52,7 @@ export default async function Home() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-32 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-10 sm:pt-16 pb-12 sm:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
           {/* Left Column: Content & Images */}
           <div className="flex flex-col">

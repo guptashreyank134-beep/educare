@@ -9,10 +9,12 @@
 //   1. npm run build && npm start        (serve the production build)
 //   2. npm run seo:audit                 (defaults to http://localhost:3000)
 //   SEO_AUDIT_BASE=https://www.drshreyankeducare.com npm run seo:audit
+// For a local preview, set SEO_AUDIT_CANONICAL_BASE to the production origin.
 //
 // Exits non-zero if any ERROR-level problem is found, so it can gate CI.
 
 const BASE = (process.env.SEO_AUDIT_BASE || "http://localhost:3000").replace(/\/$/, "");
+const CANONICAL_BASE = (process.env.SEO_AUDIT_CANONICAL_BASE || BASE).replace(/\/$/, "");
 const CONCURRENCY = 8;
 
 const pick = (re, html) => { const m = html.match(re); return m ? m[1].trim() : null; };
@@ -46,14 +48,14 @@ async function audit(url) {
   const imgsNoAlt = imgs.filter((m) => !/\balt\s*=\s*["'][^"']*\S[^"']*["']/i.test(m[0])).length;
 
   // Internal links (same-host <a href>), normalised to path only.
-  const host = new URL(BASE).host;
+  const hosts = new Set([new URL(BASE).host, new URL(CANONICAL_BASE).host]);
   const links = new Set();
   for (const m of html.matchAll(/<a\b[^>]*\bhref=["']([^"']+)["']/gi)) {
     const raw = m[1];
     if (/^(#|mailto:|tel:|javascript:|https?:\/\/(?!)|data:)/i.test(raw)) continue;
     let abs;
     try { abs = new URL(raw, url); } catch { continue; }
-    if (abs.host !== host) continue;
+    if (!hosts.has(abs.host)) continue;
     links.add(abs.pathname.replace(/\/+$/, "") || "/");
   }
 
@@ -95,7 +97,7 @@ const W = (u, m) => warnings.push(`${u}\n     ${m}`);
     if (!p.desc) W(p.url, "missing meta description");
     else { const k = norm(p.desc); descs.set(k, [...(descs.get(k) || []), p.url]); }
     if (!p.canonical) E(p.url, "missing canonical");
-    else if (urlNorm(p.canonical) !== urlNorm(p.url)) W(p.url, `canonical points elsewhere: ${p.canonical}`);
+    else if (urlNorm(p.canonical) !== urlNorm(p.url.replace(BASE, CANONICAL_BASE))) W(p.url, `canonical points elsewhere: ${p.canonical}`);
     if (p.robots && /\b(?:noindex|none)\b/i.test(p.robots)) E(p.url, `noindex on an indexable page (robots="${p.robots}")`);
     if (p.robotsHeader && /\b(?:noindex|none)\b/i.test(p.robotsHeader)) E(p.url, `indexing blocked by X-Robots-Tag: ${p.robotsHeader}`);
     if (p.h1s === 0) E(p.url, "no <h1>");

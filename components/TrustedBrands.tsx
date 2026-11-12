@@ -45,7 +45,7 @@ export default function TrustedBrands() {
               ))}
             </div>
           </div>
-          <p className="text-[12px] text-slate/60 mt-6 font-montserrat max-w-2xl mx-auto">
+        <p className="text-[12px] text-slate/75 mt-6 font-montserrat max-w-2xl mx-auto">
             We support students enrolled at universities and colleges across Canada, including SFU, McGill and the University of Waterloo. These logos indicate where some of our students study or have been accepted — they do not imply any official partnership or endorsement by the institutions.
           </p>
         </div>

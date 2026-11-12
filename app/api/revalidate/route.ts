@@ -1,5 +1,6 @@
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
+import { BLOG_CACHE_TAG } from "@/lib/blogPagination";
 
 /**
  * On-demand revalidation webhook for Sanity.
@@ -25,8 +26,8 @@ function pathsForDocument({ _type: type, slug, pageSlug, pageType }: Payload): s
     case "resourcePage":
       return ["/resources"];
     case "post":
-      // Posts also change sitemap URLs, pagination and modification dates.
-      return slug ? [`/blog/${slug}`, "/blog", "/sitemap.xml"] : ["/blog", "/sitemap.xml"];
+      // A new/deleted post moves cards across every archive page, not only page 1.
+      return [slug ? `/blog/${slug}` : "/blog/[slug]", "/blog", "/blog/page/[page]", "/sitemap.xml"];
     case "programPage":
       return slug ? [`/programs/${slug}`, "/sitemap.xml"] : ["/programs", "/sitemap.xml"];
     case "studyClubPage":
@@ -79,8 +80,17 @@ export async function POST(request: NextRequest) {
     });
   }
 
+  if (body._type === "post") {
+    // Sanity's webhook requires the next request to see the updated collection.
+    revalidateTag(BLOG_CACHE_TAG, { expire: 0 });
+  }
+
   for (const path of paths) {
-    revalidatePath(path);
+    if (path === "/blog/page/[page]" || path === "/blog/[slug]") {
+      revalidatePath(path, "page");
+    } else {
+      revalidatePath(path);
+    }
   }
 
   return NextResponse.json({ revalidated: true, paths });
