@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-labelledby="title desc">
+  <title id="title">Niti tutor profile placeholder</title>
+  <desc id="desc">A branded placeholder with the initials N for Niti</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef3ff"/>
+      <stop offset="1" stop-color="#dce7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#background)"/>
+  <circle cx="300" cy="330" r="145" fill="#44619b"/>
+  <text x="300" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="180" font-weight="700" fill="#ffffff">N</text>
+  <text x="300" y="590" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#1e293b">NITI</text>
+  <text x="300" y="650" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" fill="#475569">Tutor profile</text>
+</svg>

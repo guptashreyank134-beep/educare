@@ -6,6 +6,7 @@ import { ArrowRight, MapPin, GraduationCap } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
 import VancouverHeroImage from "@/components/VancouverHeroImage";
 import VancouverAboutSection from "@/components/VancouverAboutSection";
 import VancouverWhyChooseSection from "@/components/VancouverWhyChooseSection";
@@ -151,6 +152,10 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
               showCredential
             />
           </div>
+        </div>
+
+        <div className="mx-auto max-w-5xl pt-10 lg:pt-14">
+          <RelevantTutorProfiles tutorIds={[0]} />
         </div>
 
         {/* Trust Badges */}

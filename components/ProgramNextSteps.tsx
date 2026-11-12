@@ -1,4 +1,6 @@
 import Link from "next/link";
+import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
+import { tutorIdsForContext } from "@/data/tutorAssignments";
 
 /**
  * Contextual links at the foot of a program page.
@@ -26,8 +28,15 @@ export default function ProgramNextSteps({
    */
   consultationHref?: string;
 }) {
+  const tutorIds = tutorIdsForContext(subject);
+
   return (
     <section className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      {tutorIds.length > 0 && (
+        <div className="mx-auto mb-14 max-w-5xl">
+          <RelevantTutorProfiles tutorIds={tutorIds} />
+        </div>
+      )}
       <div className="rounded-[20px] border border-[#F1F5F9] bg-bg-grey p-8 sm:p-10">
         <h2 className="text-[24px] sm:text-[28px] font-bricolage font-normal text-slate mb-3">
           Next steps

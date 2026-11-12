@@ -48,6 +48,13 @@ const teamMembers = [
     credentials: "Physician & Healthcare Educator",
     image: "/assets/tutors/vishal.webp",
   },
+  {
+    id: 9,
+    name: "Niti",
+    role: "English, ESL, Mathematics & Science Tutor",
+    credentials: "B.Sc.; Master’s degrees in Education and English; 20+ years’ experience",
+    image: "/assets/tutors/niti-placeholder.svg",
+  },
 ];
 
 export default function Team() {

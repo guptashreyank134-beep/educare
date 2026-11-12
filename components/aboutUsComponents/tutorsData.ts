@@ -199,4 +199,27 @@ export const tutors: Tutor[] = [
     ],
   },
 
+  {
+    id: 9,
+    name: "Niti",
+    role: "English, ESL, Mathematics & Science Tutor",
+    image: "/assets/tutors/niti-placeholder.svg",
+    belowshortDescription:
+      "Niti actively explains concepts, demonstrates examples and uses guided practice before students work independently. Lessons begin with an informal assessment and adapt to each learner’s needs.",
+    fullDescription:
+      "Niti is an experienced educator who teaches English and English as a Second Language for Grades 1–10, as well as Mathematics and Science through Grade 10 with BC curriculum support. She begins with an informal assessment, teaches concepts interactively and reviews assignments and mistakes so students understand the reasoning behind each correction.\n\nShe holds a Bachelor’s degree in Science and Master’s degrees in Education and English. Across more than 20 years of teaching, she has taught Science to Grades 6–10 and Mathematics and English at the elementary level, adapting her methods to the way each child learns.",
+    education: [
+      "Bachelor’s degree in Science",
+      "Master’s degrees in Education and English",
+      "20+ years of teaching experience",
+    ],
+    expertise: "BC Curriculum English, ESL, Mathematics & Science through Grade 10",
+    strengths: [
+      "English and ESL support for Grades 1–10",
+      "Mathematics and Science through Grade 10",
+      "Informal assessment before regular lessons",
+      "Interactive explanation, guided practice, assignments and mistake review",
+    ],
+  },
+
 ];

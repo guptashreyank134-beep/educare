@@ -6,6 +6,7 @@ import { ArrowRight, Check, Link2 } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ExtraRelatedLinks from "@/components/ExtraRelatedLinks";
 import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
@@ -22,6 +23,7 @@ import { founderTeaches } from "@/data/authors";
 import { resolveInternalHref } from "@/data/redirects";
 import { BUSINESS } from "@/data/businessInfo";
 import { correctSeoCopy } from "@/data/seoCopyCorrections";
+import { tutorIdsForContext } from "@/data/tutorAssignments";
 
 const metrics = [
   { value: "PhD-Led", label: "by Dr. Shreyank Gupta" },
@@ -80,6 +82,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
   const sections = orFallback(content?.sections, page.sections);
   const faqs = orFallback(content?.faqs, page.faqs);
   const trustMetrics = slug === "english-tutor-vancouver" ? englishTutorMetrics : metrics;
+  const tutorIds = tutorIdsForContext(`${page.h1} ${page.cluster} ${slug}`);
 
   return (
     <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
@@ -118,7 +121,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
               {heroSubheading}
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-16">
+            <div className="flex flex-wrap gap-4">
               <Link href="/book">
                 <Button iconRight={ArrowRight}>
                   {page.location === "Vancouver"
@@ -135,6 +138,20 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
                 Chat on WhatsApp
               </a>
             </div>
+
+            <div className="mt-8 space-y-4 rounded-[16px] border border-[#F1F5F9] bg-white/75 p-5 sm:p-6">
+              <h2 className="text-[22px] font-bricolage font-medium text-slate">
+                Tutoring Built Around the Student
+              </h2>
+              {intro.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-[15px] sm:text-[16px] font-montserrat text-slate/75 leading-relaxed"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
 
           {/* Right: lead form */}
@@ -147,10 +164,17 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
               courseLabel="Student's grade or course"
               courseExample="Math 10, Chemistry 12, or a first-year university course"
               heading={page.location ? `Ask about tutoring in ${page.location}` : "Ask about tutoring"}
+              testimonialTopic={/university.*physics/i.test(`${page.h1} ${page.cluster}`) ? "university-physics" : undefined}
               showCredential={founderTeaches(`${page.h1} ${page.cluster}`)}
             />
           </div>
         </div>
+
+        {tutorIds.length > 0 && (
+          <div className="mx-auto max-w-5xl pt-10 lg:pt-14">
+            <RelevantTutorProfiles tutorIds={tutorIds} />
+          </div>
+        )}
 
         {/* Trust badges */}
         <div className="mt-20">
@@ -171,20 +195,6 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
           </div>
         </div>
       </div>
-
-      {/* Intro */}
-      <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pb-8">
-        <div className="space-y-5">
-          {intro.map((paragraph, index) => (
-            <p
-              key={index}
-              className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed"
-            >
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </section>
 
       {/* Content sections */}
       <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-12">
