@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check, Link2 } from "lucide-react";
 
-import { Button } from "@/components/ui/Button";
+import { ButtonLink } from "@/components/ui/Button";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
 import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
@@ -78,6 +78,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
   const content = await getLandingContent(slug);
   const h1 = orFallback(content?.heading, page.h1);
   const heroSubheading = orFallback(content?.heroSubheading, page.heroSubheading);
+  const metaDescription = correctSeoCopy(orFallback(content?.metaDescription, page.metaDescription));
   const intro = orFallback(content?.intro, page.intro);
   const sections = orFallback(content?.sections, page.sections);
   const faqs = orFallback(content?.faqs, page.faqs);
@@ -85,17 +86,18 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
   const tutorIds = tutorIdsForContext(`${page.h1} ${page.cluster} ${slug}`);
 
   return (
-    <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
+    <main className="min-h-screen bg-white font-montserrat relative overflow-hidden">
       <JsonLd
         schema={getServiceSchema({
           name: h1,
-          description: page.metaDescription,
+          description: metaDescription,
           url,
           areaServed: page.location ? [`${page.location}, BC`] : ["Burnaby, BC", "Vancouver, BC"],
         })}
       />
       <JsonLd schema={getFAQSchema(faqs)} />
 
+      <section className="relative">
       {/* Yellow Grid Background */}
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-40"
@@ -122,18 +124,16 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Link href="/book">
-                <Button iconRight={ArrowRight}>
-                  {page.location === "Vancouver"
-                    ? "Book a Free Assessment Session"
-                    : "Book a Free 30-Minute Consultation"}
-                </Button>
-              </Link>
+              <ButtonLink href="/book" iconRight={ArrowRight}>
+                {page.location === "Vancouver"
+                  ? "Book a Free Assessment Session"
+                  : "Book a Free 30-Minute Consultation"}
+              </ButtonLink>
               <a
                 href={BUSINESS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#25D366] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
+                className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#15803D] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
               >
                 Chat on WhatsApp
               </a>
@@ -196,6 +196,8 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
           </div>
         </div>
       </div>
+
+      </section>
 
       {/* Content sections */}
       <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-12">
@@ -283,6 +285,6 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
       <VancouverCTABanner />
       <VancouverFAQSection faqs={faqs} />
       <ExtraRelatedLinks links={content?.relatedLinks} />
-    </div>
+    </main>
   );
 }

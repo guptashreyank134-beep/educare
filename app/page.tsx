@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
+import { ButtonLink } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import TrialClassForm from "@/components/TrialClassForm";
 import VancouverHeroImage from "@/components/VancouverHeroImage";
@@ -40,7 +40,8 @@ export default async function Home() {
   const data = await getPageData("vancouverPage");
 
   return (
-    <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
+    <main className="min-h-screen bg-white font-montserrat relative overflow-hidden">
+      <section className="relative">
       {/* Yellow Grid Background */}
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-40"
@@ -79,14 +80,12 @@ export default async function Home() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-16">
-              <Link href="/book">
-                <Button iconRight={ArrowRight}>Book a Free 30-Minute Consultation</Button>
-              </Link>
+              <ButtonLink href="/book" iconRight={ArrowRight}>Book a Free 30-Minute Consultation</ButtonLink>
               <a
                 href={BUSINESS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#25D366] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
+                className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#15803D] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -144,6 +143,8 @@ export default async function Home() {
         </div>
       </div>
 
+      </section>
+
       <StudyClubPromo />
       <VancouverAboutSection />
       <VancouverWhyChooseSection />
@@ -199,7 +200,7 @@ export default async function Home() {
       <VancouverCTABanner />
       <VancouverFAQSection faqs={data?.faqs} />
       <ExtraRelatedLinks links={data?.relatedLinks} />
-    </div>
+    </main>
   );
 }
 

@@ -1,6 +1,6 @@
 /** @format */
 
-import { Button } from "./ui/Button";
+import { ButtonLink } from "./ui/Button";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -105,9 +105,7 @@ export default function ExplorePrograms() {
 
         {/* CTA */}
         <div className="flex justify-center">
-          <Link href="/programs">
-            <Button iconRight={ArrowRight}>Explore Our Programs</Button>
-          </Link>
+          <ButtonLink href="/programs" iconRight={ArrowRight}>Explore Our Programs</ButtonLink>
         </div>
       </div>
     </section>

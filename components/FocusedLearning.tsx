@@ -1,9 +1,8 @@
 /** @format */
 
-import { Button } from "./ui/Button";
+import { ButtonLink } from "./ui/Button";
 import { ArrowRight, Zap } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function FocusedLearning() {
   return (
@@ -45,7 +44,7 @@ export default function FocusedLearning() {
             <p className="text-[16px] font-sans font-normal text-slate leading-relaxed mb-5 opacity-80">
               At Dr. Shreyank Educare, we focus on simplifying concepts,
               building structured learning paths, and ensuring every session
-              leads to measurable progress. The goal isn't just to complete the
+              leads to measurable progress. The goal isn&apos;t just to complete the
               syllabus, but to help students truly understand, apply, and
               improve consistently.
             </p>
@@ -78,9 +77,7 @@ export default function FocusedLearning() {
               </ul>
             </div>
 
-            <Link href="/about">
-              <Button iconRight={ArrowRight}>More About Us</Button>
-            </Link>
+            <ButtonLink href="/about" iconRight={ArrowRight}>More About Us</ButtonLink>
           </div>
         </div>
       </div>

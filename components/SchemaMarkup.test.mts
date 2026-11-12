@@ -1,6 +1,9 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
+import { loadEnvLocal } from "../scripts/test-env.mts";
+
+loadEnvLocal();
 
 /**
  * Asserts against the real build output rather than the helper return values,
@@ -142,5 +145,77 @@ test("no page claims an unverified alumniOf", { skip: !buildPresent }, () => {
   for (const [name, file] of Object.entries(PAGES)) {
     const html = readFileSync(file, "utf8");
     assert.ok(!/University of Quebec/i.test(html), `${name} still claims an unverified institution`);
+  }
+});
+
+test("JSON-LD preserves CMS text without allowing script termination", async () => {
+  const { JsonLd } = await import("./SchemaMarkup.tsx");
+  const { renderToStaticMarkup } = await import("react-dom/server");
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Thing",
+    name: '</script><script>alert("example")</script>',
+    description: "Compare x < 5 and x > 1",
+  };
+  const html = renderToStaticMarkup(JsonLd({ schema }));
+  assert.equal([...html.matchAll(/<script\b/g)].length, 1);
+  const body = html.match(/<script[^>]*>([\s\S]*?)<\/script>/)?.[1];
+  assert.ok(body);
+  assert.ok(!body.includes("<"));
+  assert.deepEqual(JSON.parse(body), schema);
+});
+
+test("blog schema uses only real supplied publication and modification dates", async () => {
+  const { getBlogPostSchema } = await import("./SchemaMarkup.tsx");
+  const url = "https://www.drshreyankeducare.com/blog/example";
+  for (const post of [{ title: "Example" }, { title: "Example", publishedAt: "not-a-date", _updatedAt: "" }]) {
+    const schema = getBlogPostSchema(post, url);
+    assert.ok(!("datePublished" in schema));
+    assert.ok(!("dateModified" in schema));
+  }
+  const publishedAt = "2026-09-01T10:00:00.000Z";
+  const updatedAt = "2026-09-03T11:00:00.000Z";
+  const published = getBlogPostSchema({ title: "Example", publishedAt }, url);
+  assert.equal(published.datePublished, publishedAt);
+  assert.equal(published.dateModified, publishedAt);
+  const updated = getBlogPostSchema({ title: "Example", publishedAt, _updatedAt: updatedAt }, url);
+  assert.equal(updated.datePublished, publishedAt);
+  assert.equal(updated.dateModified, updatedAt);
+});
+
+/** Read the server component's emitted schema without executing client widgets. */
+function emittedSchema(node: unknown, type: string): Record<string, unknown> | undefined {
+  if (Array.isArray(node)) {
+    for (const child of node) {
+      const result = emittedSchema(child, type);
+      if (result) return result;
+    }
+  } else if (node && typeof node === "object") {
+    const { props } = node as { props?: { schema?: Record<string, unknown>; children?: unknown } };
+    if (props?.schema?.["@type"] === type) return props.schema;
+    return emittedSchema(props?.children, type);
+  }
+}
+
+test("landing-page schema descriptions follow CMS metadata edits", async (t) => {
+  const { client } = await import("../sanity/lib/client.ts");
+  const [{ default: SeoPage, seoPageMetadata }, { default: VerticalPage, verticalMetadata }, { default: CityPage, cityMetadata }] = await Promise.all([
+    import("./SeoLandingPage.tsx"),
+    import("./VerticalLandingPage.tsx"),
+    import("./CityLandingPage.tsx"),
+  ]);
+  const metaDescription = "Updated curriculum and tutoring formats confirmed by the content team.";
+  t.mock.method(client, "fetch", async () => ({ metaDescription }));
+
+  for (const [Page, metadata, slug, schemaType] of [
+    [SeoPage, seoPageMetadata, "english-tutor-vancouver", "Service"],
+    [VerticalPage, verticalMetadata, "online-medical-tutoring", "Service"],
+    [CityPage, cityMetadata, "burnaby", "EducationalOrganization"],
+  ] as const) {
+    const [tree, meta] = await Promise.all([Page({ slug }), metadata(slug)]);
+    const schema = emittedSchema(tree, schemaType);
+    assert.ok(schema, `${slug} did not emit its page schema`);
+    assert.equal(meta.description, metaDescription);
+    assert.equal(schema.description, meta.description, `${slug} retained stale schema copy`);
   }
 });

@@ -97,6 +97,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const overrides = await client.fetch<Array<{ path?: string; updatedAt?: string }>>(
       `*[_type in ["pageFaq", "programPage"] || (_type == "studyClubPage" && _id == "studyClubPage")] {
         "path": select(
+          _type == "pageFaq" && pageType == "city" => "/math-tutor-" + pageSlug,
           _type == "pageFaq" => "/" + pageSlug,
           _type == "programPage" => "/programs/" + slug.current,
           _type == "studyClubPage" => $studyClubPath

@@ -103,9 +103,9 @@ export default async function BlogListingView({ page }: { page: number }) {
           </nav>
           {posts.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-2xl shadow-sm border border-slate-100">
-              <h3 className="text-2xl font-display font-medium text-slate-700 mb-2">
+              <h2 className="text-2xl font-display font-medium text-slate-700 mb-2">
                 No articles found
-              </h3>
+              </h2>
               <p className="text-slate-500 mb-6">
                 Check back soon for new educational insights and guides!
               </p>
@@ -146,7 +146,7 @@ export default async function BlogListingView({ page }: { page: number }) {
                           alt={post.title}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
-                          sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
+                          sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1023px) 50vw, 33vw"
                         />
                       </div>
 
@@ -163,9 +163,9 @@ export default async function BlogListingView({ page }: { page: number }) {
                           </span>
                         </div>
 
-                        <h3 className="text-xl font-display font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                        <h2 className="text-xl font-display font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
                           <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                        </h3>
+                        </h2>
 
                         <p className="text-slate-600 font-sans text-sm leading-relaxed mb-6 line-clamp-3">
                           {postExcerpt}

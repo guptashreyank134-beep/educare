@@ -128,6 +128,7 @@ for (const file of files) {
 const plain = (a) =>
   Array.isArray(a) ? a.map((b) => (b.children || []).map((x) => x.text).join("")).join(" ") : a || "";
 
+let sanityScanCompleted = false;
 async function scanSanity() {
   const out = [];
   let env = {};
@@ -168,18 +169,28 @@ async function scanSanity() {
       }
     }
   }
+  sanityScanCompleted = true;
   return out;
 }
 
-const sanityFindings = await scanSanity();
+let sanityFindings = [];
+let sanityScanFailed = false;
+try {
+  sanityFindings = await scanSanity();
+} catch {
+  // Sanity errors may carry request headers, including the authorization token.
+  // Report an incomplete audit without serializing the authenticated request.
+  sanityScanFailed = true;
+  console.error("Sanity FAQ scan failed. Check network access and CMS credentials; the content audit is incomplete.");
+}
 const all = [...findings, ...sanityFindings];
 const errors = all.filter((f) => f.rule.level === "ERROR");
 const warns = all.filter((f) => f.rule.level === "WARN");
 
-console.log(`\nContent audit — scanned ${files.length} source files + Sanity FAQs\n`);
+console.log(`\nContent audit — scanned ${files.length} source files${sanityScanCompleted ? " + Sanity FAQs" : sanityScanFailed ? " (Sanity FAQ scan failed)" : " (Sanity FAQ scan skipped)"}\n`);
 for (const f of all) {
   console.log(`  ${f.rule.level === "ERROR" ? "✗" : "!"} [${f.rule.id}] ${f.file}${f.line ? ":" + f.line : ""}`);
   console.log(`      ${f.text}`);
 }
 console.log(`\nSummary: ${errors.length} errors, ${warns.length} warnings.`);
-if (errors.length) process.exit(1);
+if (errors.length || sanityScanFailed) process.exit(1);

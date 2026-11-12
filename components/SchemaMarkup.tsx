@@ -20,7 +20,7 @@ export function JsonLd({ schema }: { schema: Record<string, any> }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
     />
   );
 }
@@ -389,6 +389,14 @@ export function getBlogPostSchema(post: any, currentUrl: string): Record<string,
   const seo = post?.metaData;
   const title = seo?.metaTitle || post?.title || "Blog Post";
   const description = seo?.metaDescription || post?.excerpt || "Expert academic tutoring, coding classes, and test preparation.";
+  // Missing or invalid CMS dates are unknown; rendering a page is not a
+  // publication or editorial update and must not manufacture those dates.
+  const validDate = (value: unknown): string | undefined =>
+    typeof value === "string" && value.trim() && !Number.isNaN(Date.parse(value))
+      ? value
+      : undefined;
+  const datePublished = validDate(post.publishedAt);
+  const dateModified = validDate(post._updatedAt) ?? datePublished;
 
   let imageUrl: string = BUSINESS.logo;
   if (post?.mainImage) {
@@ -451,8 +459,8 @@ export function getBlogPostSchema(post: any, currentUrl: string): Record<string,
         "url": BUSINESS.logo,
       },
     },
-    "datePublished": post.publishedAt || new Date().toISOString(),
-    "dateModified": post._updatedAt || post.publishedAt || new Date().toISOString(),
+    ...(datePublished ? { datePublished } : {}),
+    ...(dateModified ? { dateModified } : {}),
   };
 }
 

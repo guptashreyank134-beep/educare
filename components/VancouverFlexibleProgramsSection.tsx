@@ -1,7 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from '@/components/ui/Button';
+import { ButtonLink } from '@/components/ui/Button';
 import { ArrowRight } from 'lucide-react';
 
 export default function VancouverFlexibleProgramsSection() {
@@ -73,11 +72,7 @@ export default function VancouverFlexibleProgramsSection() {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <Link href="/book">
-            <Button iconRight={ArrowRight} className="px-8 py-4 text-[16px]">
-              Book a Free 30-Minute Consultation
-            </Button>
-          </Link>
+          <ButtonLink href="/book" iconRight={ArrowRight} className="px-8 py-4 text-[16px]">Book a Free 30-Minute Consultation</ButtonLink>
         </div>
 
       </div>

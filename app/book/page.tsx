@@ -29,7 +29,7 @@ const TRUST = [
 export default function BookPage() {
   const booking = getAppointmentBooking();
   return (
-    <div className="min-h-screen bg-bg-grey font-montserrat relative overflow-hidden">
+    <main className="min-h-screen bg-bg-grey font-montserrat relative overflow-hidden">
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-40"
         style={{
@@ -99,7 +99,7 @@ export default function BookPage() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

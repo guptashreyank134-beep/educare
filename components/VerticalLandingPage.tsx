@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check, GraduationCap } from "lucide-react";
 
-import { Button } from "@/components/ui/Button";
+import { ButtonLink } from "@/components/ui/Button";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
@@ -69,6 +69,7 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
   // Content is editable in Sanity; each field falls back to the code value.
   const content = await getLandingContent(slug);
   const heroHeading = orFallback(content?.heading, page.heroHeading);
+  const metaDescription = correctSeoCopy(orFallback(content?.metaDescription, page.metaDescription));
   const heroSubheading = orFallback(
     content?.heroSubheading,
     page.heroSubheading,
@@ -78,17 +79,18 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
   const faqs = orFallback(content?.faqs, page.faqs);
 
   return (
-    <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
+    <main className="min-h-screen bg-white font-montserrat relative overflow-hidden">
       <JsonLd
         schema={getServiceSchema({
           name: heroHeading,
-          description: page.metaDescription,
+          description: metaDescription,
           url,
           areaServed: page.regionsServed,
         })}
       />
       <JsonLd schema={getFAQSchema(faqs)} />
 
+      <section className="relative">
       {/* Yellow Grid Background */}
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-40"
@@ -119,16 +121,14 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Link href="/book">
-                <Button iconRight={ArrowRight}>
-                  Book a Free 30-Minute Consultation
-                </Button>
-              </Link>
+              <ButtonLink href="/book" iconRight={ArrowRight}>
+                Book a Free 30-Minute Consultation
+              </ButtonLink>
               <a
                 href={BUSINESS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#25D366] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
+                className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#15803D] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
               >
                 Chat on WhatsApp
               </a>
@@ -172,6 +172,8 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
           </div>
         )}
       </div>
+
+      </section>
 
       {/* Content sections */}
       <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-12">
@@ -272,6 +274,6 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
 
       <VancouverCTABanner />
       <VancouverFAQSection faqs={faqs} />
-    </div>
+    </main>
   );
 }

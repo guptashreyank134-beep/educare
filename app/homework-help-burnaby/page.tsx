@@ -11,7 +11,7 @@ import {
 
 import StudyClubInterestForm from "@/components/StudyClubInterestForm";
 import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
-import { Button } from "@/components/ui/Button";
+import { ButtonLink } from "@/components/ui/Button";
 import { JsonLd } from "@/components/SchemaMarkup";
 import { BUSINESS, SITE_URL } from "@/data/businessInfo";
 import { STUDY_CLUB, STUDY_CLUB_PRICE } from "@/data/studyClub";
@@ -152,8 +152,8 @@ export default async function StudyClubPage() {
               <span className="rounded-lg bg-white px-4 py-3 shadow-sm">Maximum {STUDY_CLUB.capacity} students</span>
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#register-interest"><Button iconRight={ArrowRight}>Register Your Interest</Button></a>
-              <Link href={STUDY_CLUB.consultationPath}><Button variant="ghost">Book a Free 30-Minute Consultation</Button></Link>
+              <ButtonLink href="#register-interest" iconRight={ArrowRight}>Register Your Interest</ButtonLink>
+              <ButtonLink href={STUDY_CLUB.consultationPath} variant="ghost">Book a Free 30-Minute Consultation</ButtonLink>
             </div>
           </div>
           <div className="rounded-3xl border border-yellow-light/80 bg-white p-7 sm:p-9 shadow-[0_24px_80px_rgba(68,97,155,0.12)]">

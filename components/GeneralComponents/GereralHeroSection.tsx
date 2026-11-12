@@ -1,9 +1,8 @@
 /** @format */
 
-import { Button } from "../ui/Button";
+import { ButtonLink, buttonClassName } from "../ui/Button";
 import { ArrowRight, Zap } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { GeneralHeroSectionProps } from "./content";
 import HeroBreadcrumb from "./HeroBreadcrumb";
 import { ConsultationCtaLink } from "../ConsultationCta";
@@ -55,18 +54,13 @@ const GeneralHeroSection = ({
                                 <ConsultationCtaLink
                                     targetId={href.slice(1)}
                                     formId={`hero-${href.slice(1)}`}
-                                    className="inline-block"
+                                    className={buttonClassName()}
                                 >
-                                    <div className="flex flex-wrap gap-4">
-                                        <Button iconRight={ArrowRight}>{buttonText}</Button>
-                                    </div>
+                                    <span>{buttonText}</span>
+                                    <ArrowRight size={20} aria-hidden="true" />
                                 </ConsultationCtaLink>
                             ) : (
-                                <Link href={href}>
-                                    <div className="flex flex-wrap gap-4">
-                                        <Button iconRight={ArrowRight}>{buttonText}</Button>
-                                    </div>
-                                </Link>
+                                <ButtonLink href={href} iconRight={ArrowRight}>{buttonText}</ButtonLink>
                             )
                         )}
                     </div>

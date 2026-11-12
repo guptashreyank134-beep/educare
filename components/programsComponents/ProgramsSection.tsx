@@ -179,6 +179,14 @@ export default function ProgramsSection() {
               </div>
             ))}
           </div>
+          <p className="mt-6 max-w-3xl text-[16px] font-montserrat leading-relaxed text-slate/75">
+            For a mathematics plan covering school coursework and introductory
+            university topics, explore our{" "}
+            <Link href="/programs/vancouver-math-tutoring" className="font-medium text-primary underline underline-offset-4">
+              Vancouver mathematics tutoring program
+            </Link>.
+            Sessions are available online or in person at our Burnaby location.
+          </p>
         </nav>
       </div>
     </section>

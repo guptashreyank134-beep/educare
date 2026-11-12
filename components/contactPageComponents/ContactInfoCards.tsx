@@ -58,9 +58,9 @@ const ContactInfoCards = ({ cards }: ContactInfoCardsProps) => {
                 <Icon className="h-7 w-7" strokeWidth={2.25} aria-hidden="true" />
               </div>
 
-              <h3 className="relative inline-block font-bricolage text-[22px] font-normal capitalize leading-[22px] text-[#2C3340] after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-[#E7DA73]">
+              <h2 className="relative inline-block font-bricolage text-[22px] font-normal capitalize leading-[22px] text-[#2C3340] after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-[#E7DA73]">
                 {card.title}
-              </h3>
+              </h2>
             </div>
 
             <div className="flex flex-1 items-center justify-center pt-8">

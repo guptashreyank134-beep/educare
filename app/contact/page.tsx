@@ -44,7 +44,7 @@ const ContactPage = async () => {
       <JsonLd
         schema={getPageSchema(data, "https://www.drshreyankeducare.com/contact")}
       />
-      <section className="relative overflow-hidden bg-white pt-24 pb-16 sm:pt-28 lg:pt-32 lg:pb-20">
+      <main className="relative overflow-hidden bg-white pt-24 pb-16 sm:pt-28 lg:pt-32 lg:pb-20">
         <div
           className="absolute inset-0 z-0 opacity-150 pointer-events-none"
           style={{
@@ -133,7 +133,7 @@ const ContactPage = async () => {
             </div>
           </div>
         </div>
-      </section>
+      </main>
     </>
   );
 };

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { REVIEW_RATING, REVIEW_COUNT } from "@/data/reviews";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import { Button } from "./ui/Button";
+import { ButtonLink } from "./ui/Button";
 
 interface Review {
   author: string;
@@ -120,11 +120,7 @@ export default function Reviews() {
             </div>
           </div>
 
-          <a href={writeReviewUrl} target="_blank" rel="noopener noreferrer">
-            <Button className="!bg-[#3b5a98] hover:!bg-[#2e477a] text-white font-medium rounded-lg px-6 py-3 transition-colors">
-              Leave A Review
-            </Button>
-          </a>
+          <ButtonLink href={writeReviewUrl} target="_blank" rel="noopener noreferrer" className="!bg-[#3b5a98] hover:!bg-[#2e477a] text-white font-medium rounded-lg px-6 py-3 transition-colors">Leave A Review</ButtonLink>
         </div>
 
         {/* Carousel Slider */}
@@ -199,7 +195,7 @@ export default function Reviews() {
                       <h4 className="text-[16px] font-semibold text-slate mb-0.5">
                         {review.author}
                       </h4>
-                      <p className="text-[13px] text-slate opacity-60 mb-4">
+                      <p className="text-[13px] text-slate opacity-80 mb-4">
                         {review.role || "Google reviewer"}
                       </p>
 

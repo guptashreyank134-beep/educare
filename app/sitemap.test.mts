@@ -107,3 +107,24 @@ test("CMS outages are reported and keep Study Club's recorded fallback date", as
   assert.ok(entry?.lastModified);
   assert.equal(new Date(entry.lastModified).toISOString(), new Date(dates[STUDY_CLUB.path]).toISOString());
 });
+
+test("city CMS dates update canonical math-tutor URLs", async (t) => {
+  const { client } = await import("../sanity/lib/client.ts");
+  const { SITE_URL } = await import("../data/businessInfo.ts");
+  const updatedAt = "2026-10-29T10:15:00.000Z";
+  let calls = 0;
+  t.mock.method(client, "fetch", async (query: string) => {
+    if (calls++ === 0) return [];
+    const cityBranch = query.indexOf('_type == "pageFaq" && pageType == "city" => "/math-tutor-" + pageSlug');
+    const genericBranch = query.indexOf('_type == "pageFaq" => "/" + pageSlug');
+    assert.ok(cityBranch >= 0 && cityBranch < genericBranch, "city slugs need their canonical prefix before the generic landing-page branch");
+    return [{ path: "/math-tutor-burnaby", updatedAt }];
+  });
+
+  const result = await sitemap();
+  const city = result.find((entry) => entry.url === `${SITE_URL}/math-tutor-burnaby`);
+  assert.equal(calls, 2);
+  assert.ok(city?.lastModified);
+  assert.equal(new Date(city.lastModified).toISOString(), updatedAt);
+  assert.ok(!result.some((entry) => entry.url === `${SITE_URL}/burnaby`));
+});

@@ -62,7 +62,8 @@ async function audit(url) {
   let badJsonLd = 0;
   for (const block of jsonld) { try { JSON.parse(block.trim()); } catch { badJsonLd++; } }
 
-  return { url, status, title, desc, canonical, robots, h1s, imgCount: imgs.length, imgsNoAlt, links: [...links], jsonldCount: jsonld.length, badJsonLd };
+  const robotsHeader = res.headers.get("x-robots-tag");
+  return { url, status, title, desc, canonical, robots, robotsHeader, h1s, imgCount: imgs.length, imgsNoAlt, links: [...links], jsonldCount: jsonld.length, badJsonLd };
 }
 
 async function pool(items, n, fn) {
@@ -79,7 +80,7 @@ const W = (u, m) => warnings.push(`${u}\n     ${m}`);
 
 (async () => {
   const urls = await getSitemapUrls();
-  if (!urls.length) { console.error(`No sitemap URLs from ${BASE}/sitemap.xml — is the server running?`); process.exit(2); }
+  if (!urls.length) { console.error(`No sitemap URLs from ${BASE}/sitemap.xml — is the server running?`); process.exitCode = 2; return; }
   console.log(`SEO audit of ${urls.length} sitemap URLs at ${BASE}\n`);
 
   const pages = await pool(urls, CONCURRENCY, audit);
@@ -95,7 +96,8 @@ const W = (u, m) => warnings.push(`${u}\n     ${m}`);
     else { const k = norm(p.desc); descs.set(k, [...(descs.get(k) || []), p.url]); }
     if (!p.canonical) E(p.url, "missing canonical");
     else if (urlNorm(p.canonical) !== urlNorm(p.url)) W(p.url, `canonical points elsewhere: ${p.canonical}`);
-    if (p.robots && /noindex/i.test(p.robots)) E(p.url, `noindex on an indexable page (robots="${p.robots}")`);
+    if (p.robots && /\b(?:noindex|none)\b/i.test(p.robots)) E(p.url, `noindex on an indexable page (robots="${p.robots}")`);
+    if (p.robotsHeader && /\b(?:noindex|none)\b/i.test(p.robotsHeader)) E(p.url, `indexing blocked by X-Robots-Tag: ${p.robotsHeader}`);
     if (p.h1s === 0) E(p.url, "no <h1>");
     else if (p.h1s > 1) W(p.url, `${p.h1s} <h1> tags`);
     if (p.imgsNoAlt > 0) W(p.url, `${p.imgsNoAlt} of ${p.imgCount} images missing alt text`);
@@ -107,14 +109,25 @@ const W = (u, m) => warnings.push(`${u}\n     ${m}`);
   const okPaths = new Set(pages.filter((p) => p.status === 200).map((p) => new URL(p.url).pathname.replace(/\/+$/, "") || "/"));
   const linkTargets = new Set();
   const linkSource = new Map();
-  for (const p of pages) for (const t of (p.links || [])) { linkTargets.add(t); if (!linkSource.has(t)) linkSource.set(t, p.url); }
+  const linkedFromOtherPages = new Set();
+  for (const p of pages) for (const t of (p.links || [])) {
+    linkTargets.add(t);
+    if (!linkSource.has(t)) linkSource.set(t, p.url);
+    if (t !== (new URL(p.url).pathname.replace(/\/+$/, "") || "/")) linkedFromOtherPages.add(t);
+  }
+  for (const p of pages) {
+    const path = new URL(p.url).pathname.replace(/\/+$/, "") || "/";
+    if (p.status === 200 && path !== "/" && !linkedFromOtherPages.has(path)) {
+      W(p.url, "orphaned sitemap URL: no incoming link from another sitemap page");
+    }
+  }
   const unknown = [...linkTargets].filter((t) => !okPaths.has(t));
   const linkStatuses = await pool(unknown, CONCURRENCY, async (path) => {
     const r = await fetch(`${BASE}${path}`, { method: "GET", redirect: "manual", cache: "no-store" });
     return { path, status: r.status, to: r.headers.get("location") };
   });
   for (const ls of linkStatuses) {
-    if (ls.error) continue;
+    if (ls.error) { E(linkSource.get(ls.url) || ls.url, `internal link could not be checked: ${ls.error}`); continue; }
     const from = linkSource.get(ls.path);
     if (ls.status >= 400 || ls.status === 0) E(from, `broken internal link -> ${ls.path} (HTTP ${ls.status})`);
     else if (ls.status >= 300 && ls.status < 400) W(from, `internal link to a redirect -> ${ls.path} (${ls.status} -> ${ls.to})`);
@@ -126,5 +139,5 @@ const W = (u, m) => warnings.push(`${u}\n     ${m}`);
   if (warnings.length) { console.log(`WARNINGS (${warnings.length}):`); for (const w of warnings) console.log("  ! " + w); console.log(""); }
   if (!errors.length && !warnings.length) console.log("Clean — no SEO issues found.");
   console.log(`\nSummary: ${pages.length} pages, ${errors.length} errors, ${warnings.length} warnings.`);
-  process.exit(errors.length ? 1 : 0);
+  process.exitCode = errors.length ? 1 : 0;
 })();

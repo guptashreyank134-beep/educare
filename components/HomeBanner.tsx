@@ -1,9 +1,8 @@
 /** @format */
 
-import { Button } from "./ui/Button";
+import { ButtonLink } from "./ui/Button";
 import { ArrowRight, Code, BookOpen } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 const metrics = [
   { value: "10+ Years", label: "of teaching experience" },
@@ -36,14 +35,8 @@ export default function HomeBanner() {
               consistent academic improvement.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/programs">
-                <Button iconRight={ArrowRight}>Explore Our Programs</Button>
-              </Link>
-              <Link href="/book">
-                <Button variant="ghost" iconRight={ArrowRight}>
-                  Book a Free 30-Minute Consultation
-                </Button>
-              </Link>
+              <ButtonLink href="/programs" iconRight={ArrowRight}>Explore Our Programs</ButtonLink>
+              <ButtonLink href="/book" variant="ghost" iconRight={ArrowRight}>Book a Free 30-Minute Consultation</ButtonLink>
             </div>
           </div>
 

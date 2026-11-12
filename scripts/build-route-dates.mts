@@ -10,7 +10,7 @@
  *
  * Routes backed by a shared data file (the 100+ seoPages all live in
  * data/seoPages.ts) are dated per entry, by finding the most recent commit whose
- * diff of that file touched the entry's own slug. Dating them all by the file's
+ * snapshot changed the entry's actual content. Dating them all by the file's
  * mtime would put one identical date on a third of the sitemap.
  *
  * Run: npm run seo:route-dates
@@ -18,18 +18,24 @@
 
 import { execFileSync } from "node:child_process";
 import { writeFileSync } from "node:fs";
+import { parseArgs } from "node:util";
+import { routeEntryFingerprints, routeDatesFromSnapshots, type RouteSnapshot } from "./route-date-history.mts";
 
 const { cities, cityPath } = await import("../data/cities.ts");
 const { seoPages, seoPagePath } = await import("../data/seoPages.ts");
+const { vancouverSeoPages } = await import("../data/vancouverSeoPages.ts");
 const { verticalPages, verticalPath } = await import("../data/verticalPages.ts");
 const { retiredPaths } = await import("../content/page-policy.ts");
 
-// A literal NUL would be stripped by editors and formatters; a text sentinel
-// that cannot appear in a diff line is safer.
-const COMMIT_MARKER = "@@COMMIT@@";
+const { values } = parseArgs({ options: { output: { type: "string", default: "data/route-dates.json" } } });
+const outputPath = values.output!;
 
 const git = (args: string[]) =>
   execFileSync("git", args, { encoding: "utf8", maxBuffer: 256 * 1024 * 1024 });
+
+if (git(["rev-parse", "--is-shallow-repository"]).trim() === "true") {
+  throw new Error("Complete Git history is required to generate truthful route dates. Fetch full history before running this script.");
+}
 
 /** Most recent commit date per tracked file, from a single history walk. */
 function lastCommitDateByFile(): Map<string, string> {
@@ -49,30 +55,24 @@ function lastCommitDateByFile(): Map<string, string> {
 }
 
 /**
- * Most recent commit date per slug inside one data file, by scanning the diffs
- * of that file newest-first and taking the first commit that mentions the slug.
+ * Compare AST-normalized entry content across real Git snapshots. Looking only
+ * for changed `slug:` lines misses normal heading/body edits, while whole-file
+ * dates incorrectly change every neighbouring page's date.
  */
-function lastCommitDateBySlug(file: string, slugs: string[]): Map<string, string> {
-  const found = new Map<string, string>();
-  const remaining = new Set(slugs);
-  const log = git(["log", `--format=${COMMIT_MARKER}%cI`, "-p", "--no-color", "--no-renames", "--", file]);
-
-  let currentDate = "";
-  for (const line of log.split("\n")) {
-    if (line.startsWith(COMMIT_MARKER)) {
-      currentDate = line.slice(COMMIT_MARKER.length).trim();
-      continue;
-    }
-    if (!line.startsWith("+") && !line.startsWith("-")) continue;
-    const match = line.match(/slug:\s*"([^"]+)"/);
-    if (!match) continue;
-    const slug = match[1];
-    if (remaining.has(slug)) {
-      found.set(slug, currentDate);
-      remaining.delete(slug);
+function lastCommitDateBySlug(file: string, arrayName: string, slugs: string[]): Map<string, string> {
+  const commits = git(["log", "--first-parent", "--format=%H %cI", "--", file]).trim().split("\n").filter(Boolean);
+  function* snapshots(): Generator<RouteSnapshot> {
+    for (const line of commits) {
+      const [commit, date] = line.trim().split(" ");
+      const source = git(["show", `${commit}:${file}`]);
+      yield { date, entries: routeEntryFingerprints(source, arrayName) };
     }
   }
-  return found;
+  const dates = routeDatesFromSnapshots(snapshots(), slugs);
+  for (const slug of slugs) {
+    if (!dates.has(slug)) throw new Error(`No committed content history for ${file}: ${slug}. Commit content before generating dates.`);
+  }
+  return dates;
 }
 
 const fileDates = lastCommitDateByFile();
@@ -92,6 +92,7 @@ const FILE_ROUTES: [string, string][] = [
   ["/blog", "app/blog/page.tsx"],
   ["/book", "app/book/page.tsx"],
   ["/contact", "app/contact/page.tsx"],
+  ["/homework-help-burnaby", "app/homework-help-burnaby/page.tsx"],
   ["/pricing", "app/pricing/page.tsx"],
   ["/privacy", "app/privacy/page.tsx"],
   ["/terms", "app/terms/page.tsx"],
@@ -113,29 +114,33 @@ for (const [file, date] of fileDates) {
 }
 
 // Data-file-backed routes, dated per entry.
-const cityDates = lastCommitDateBySlug("data/cities.ts", cities.map((c) => c.slug));
+const cityDates = lastCommitDateBySlug("data/cities.ts", "cities", cities.map((c) => c.slug));
 for (const city of cities) {
-  record(cityPath(city.slug), cityDates.get(city.slug) ?? fileDates.get("data/cities.ts"));
+  record(cityPath(city.slug), cityDates.get(city.slug));
 }
 
-const seoDates = lastCommitDateBySlug("data/seoPages.ts", seoPages.map((p) => p.slug));
+// These reviewed entries replace (or extend) the base SEO array at runtime.
+const vancouverSlugs = new Set(vancouverSeoPages.map((page) => page.slug));
+const seoDates = lastCommitDateBySlug("data/seoPages.ts", "seoPages", seoPages.filter((page) => !vancouverSlugs.has(page.slug)).map((page) => page.slug));
+const vancouverDates = lastCommitDateBySlug("data/vancouverSeoPages.ts", "vancouverSeoPages", [...vancouverSlugs]);
 for (const page of seoPages) {
-  record(seoPagePath(page.slug), seoDates.get(page.slug) ?? fileDates.get("data/seoPages.ts"));
+  record(seoPagePath(page.slug), vancouverDates.get(page.slug) ?? seoDates.get(page.slug));
 }
 
 const verticalDates = lastCommitDateBySlug(
   "data/verticalPages.ts",
+  "verticalPages",
   verticalPages.map((p) => p.slug),
 );
 for (const page of verticalPages) {
   record(
     verticalPath(page.slug),
-    verticalDates.get(page.slug) ?? fileDates.get("data/verticalPages.ts"),
+    verticalDates.get(page.slug),
   );
 }
 
 const sorted = Object.fromEntries(Object.entries(routeDates).sort(([a], [b]) => a.localeCompare(b)));
-writeFileSync("data/route-dates.json", `${JSON.stringify(sorted, null, 2)}\n`, "utf8");
+writeFileSync(outputPath, `${JSON.stringify(sorted, null, 2)}\n`, "utf8");
 
 const distinct = new Set(Object.values(sorted)).size;
 const total = Object.keys(sorted).length;
@@ -143,7 +148,7 @@ const counts = new Map<string, number>();
 for (const date of Object.values(sorted)) counts.set(date, (counts.get(date) ?? 0) + 1);
 const largest = [...counts.values()].sort((a, b) => b - a)[0] ?? 0;
 
-console.log(`wrote data/route-dates.json`);
+console.log(`wrote ${outputPath}`);
 console.log(`routes dated:     ${total}`);
 console.log(`distinct dates:   ${distinct}`);
 console.log(`largest same-date group: ${largest} (${((largest / total) * 100).toFixed(1)}%)`);

@@ -49,7 +49,7 @@ export default function ThankYouPage() {
             href={BUSINESS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-[8px] border border-[#25D366] px-5 py-3 text-[#25D366] font-medium text-[16px] hover:bg-[#25D366]/10 transition-all"
+            className="inline-flex items-center justify-center gap-2 rounded-[8px] border border-[#25D366] px-5 py-3 text-[#15803D] font-medium text-[16px] hover:bg-[#25D366]/10 transition-all"
           >
             <MessageCircle className="w-5 h-5" />
             Message us on WhatsApp

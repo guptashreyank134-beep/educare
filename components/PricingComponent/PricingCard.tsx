@@ -1,6 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@/components/ui/Button";
+import { ButtonLink } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 
 export interface PricingCardProps {
@@ -92,16 +91,7 @@ const PricingCard = ({
                         </p>
 
                     </div>
-                    <Link href={ctaHref ?? "/book"} className="w-full h-full flex items-center justify-center">
-                    <Button
-                        iconRight={ArrowRight}
-                        onClick={onCtaClick}
-                        className="w-full"
-                    >
-                        
-                        {ctaText}
-                    </Button>
-                        </Link>
+                    <ButtonLink href={ctaHref ?? "/book"} iconRight={ArrowRight} onClick={onCtaClick} className="w-full">{ctaText}</ButtonLink>
                 </div>
             </div>
         </div>

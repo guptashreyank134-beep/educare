@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "./ui/Button";
+import { ButtonLink } from "./ui/Button";
 import { ArrowRight, Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -111,9 +111,7 @@ export default function Header() {
 
           {/* Desktop Contact Button */}
           <div className="hidden xl:flex items-center">
-            <Link href="/contact">
-              <Button iconRight={ArrowRight}>Contact Us</Button>
-            </Link>
+            <ButtonLink href="/contact" iconRight={ArrowRight}>Contact Us</ButtonLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -190,11 +188,7 @@ export default function Header() {
             ),
           )}
           <div className="pt-4 border-t border-slate-50 px-3">
-            <Link href="/contact" onClick={closeMobile} className="block w-full">
-              <Button iconRight={ArrowRight} className="w-full justify-center">
-                Contact Us
-              </Button>
-            </Link>
+            <ButtonLink href="/contact" onClick={closeMobile} iconRight={ArrowRight} className="w-full justify-center">Contact Us</ButtonLink>
           </div>
         </div>
       </div>

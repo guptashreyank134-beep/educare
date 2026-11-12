@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { ButtonLink } from "@/components/ui/Button";
 
 // A useful 404: instead of a dead end, route lost visitors to the pages people
 // actually search for (from Search Console) plus the primary conversion path.
@@ -34,12 +34,8 @@ export default function NotFound() {
       </p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
-        <Link href="/book">
-          <Button iconRight={ArrowRight}>Book a Free 30-Minute Consultation</Button>
-        </Link>
-        <Link href="/">
-          <Button variant="ghost">Back to Home</Button>
-        </Link>
+        <ButtonLink href="/book" iconRight={ArrowRight}>Book a Free 30-Minute Consultation</ButtonLink>
+        <ButtonLink href="/" variant="ghost">Back to Home</ButtonLink>
       </div>
 
       <div className="mt-14 text-left">
