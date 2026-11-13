@@ -8,9 +8,9 @@ import { BUSINESS } from "@/data/businessInfo";
 import {
   escapeHtml,
   isInternationalPhone,
+  normalizePreferredContact,
   screenForBot,
   validateLead,
-  type PreferredContact,
 } from "@/lib/leadGuard";
 import { validateStudyClubInterest } from "@/lib/studyClubInterest";
 
@@ -147,8 +147,7 @@ export async function createLead(formData: FormData) {
   const subject = (formData.get("subject") as string) || "Website Contact Form";
   const message = (formData.get("message") as string) || "";
   const vertical = (formData.get("vertical") as string) || "local-k12";
-  const preferredContact =
-    ((formData.get("preferredContact") as string) || "both") as PreferredContact;
+  const preferredContact = normalizePreferredContact(formData.get("preferredContact"));
 
   // Client-generated id, reused when the visitor retries after a failure, so a
   // second attempt updates the same document instead of creating a duplicate.
@@ -259,10 +258,11 @@ export async function createLead(formData: FormData) {
   // and an unescaped one lets a submitter place arbitrary markup — a plausible
   // link, say — inside a notification that looks like it came from our own site.
   const originNote = isInternationalPhone(lead.phone) ? " (international number)" : "";
+  const phoneDisplay = lead.phone || "Not provided";
   const safe = {
     name: escapeHtml(`${lead.firstName} ${lead.lastName}`.trim()),
     email: escapeHtml(lead.email),
-    phone: escapeHtml(lead.phone) + originNote,
+    phone: escapeHtml(phoneDisplay) + originNote,
     subject: escapeHtml(lead.subject),
     message: escapeHtml(lead.message).replace(/\n/g, "<br>"),
   };
@@ -275,7 +275,7 @@ export async function createLead(formData: FormData) {
 Vertical: ${verticalLabel}
 Name: ${lead.firstName} ${lead.lastName}
 Email: ${lead.email}
-Phone: ${lead.phone}${originNote}
+Phone: ${phoneDisplay}${originNote}
 Subject: ${lead.subject}
 
 Message:

@@ -7,6 +7,7 @@ import {
   isValidEmail,
   isValidPhone,
   looksRandom,
+  normalizePreferredContact,
   phoneDigits,
   screenForBot,
   validateLead,
@@ -131,10 +132,10 @@ test("email validation accepts real addresses and rejects malformed ones", () =>
 });
 
 test("phone validation accepts real formats and rejects filler", () => {
-  for (const phone of ["(604) 123-4567", "+1 672-514-7587", "6337166447", "+44 20 7946 0958"]) {
+  for (const phone of ["(604) 123-4567", "+1 672-514-7587", "6337166447", "+44 20 7946 0958", "0044 20 7946 0958", "+45 32 12 34 56"]) {
     assert.equal(isValidPhone(phone), true, `${phone} should be accepted`);
   }
-  for (const phone of ["", "123", "1111111111", "1234567890", "0987654321", "abcdefghij"]) {
+  for (const phone of ["", "   ", "123", "5550123", "1111111111", "1234567890", "0987654321", "abcdefghij", "Call +44 20 7946 0958", "+999 12345678", "+44 20 7946 0958123456"]) {
     assert.equal(isValidPhone(phone), false, `${phone} should be rejected`);
   }
 });
@@ -144,7 +145,18 @@ test("phone origin is reported, not blocked", () => {
   assert.equal(isInternationalPhone("+1 672-514-7587"), false);
   assert.equal(isInternationalPhone("6337166447"), false); // 10 digits reads as NANP
   assert.equal(isInternationalPhone("+44 20 7946 0958"), true);
+  assert.equal(isInternationalPhone("0044 20 7946 0958"), true);
+  assert.equal(isInternationalPhone("+45 32 12 34 56"), true, "ten digits with an explicit overseas calling code are not NANP");
+  for (const value of ["", "   ", "not a number", "123", "+999 12345678"]) {
+    assert.equal(isInternationalPhone(value), false, "missing or invalid numbers have no inferred origin");
+  }
   assert.equal(phoneDigits("+1 (604) 123-4567"), "16041234567");
+});
+
+test("phone length limit is enforced on the server as well as in the browser", () => {
+  const overlong = `+44${" ".repeat(41)}20 7946 0958`;
+  assert.equal(isValidPhone(overlong), false);
+  assert.equal(isInternationalPhone(overlong), false);
 });
 
 test("validateLead returns a usable lead or a field-specific message", () => {
@@ -180,7 +192,7 @@ test("html is escaped before it reaches the notification email", () => {
   assert.equal(escapeHtml("Tom & Jerry's"), "Tom &amp; Jerry&#39;s");
 });
 
-test("preferred contact decides which channel is required", () => {
+test("phone is required for every preference; phone-first enquiries can omit email", () => {
   const base = {
     firstName: "Priya",
     lastName: "Sharma",
@@ -188,14 +200,16 @@ test("preferred contact decides which channel is required", () => {
     message: "Stuck on rotational dynamics.",
   };
 
-  // Email chosen: no phone number is collected, and none is required.
+  // Choosing email as the reply channel does not remove the phone requirement.
   const emailOnly = validateLead({
     ...base,
     email: "priya@example.com",
     phone: "",
     preferredContact: "email",
   });
-  assert.equal(emailOnly.ok, true, "email-only enquiry should validate");
+  assert.equal(emailOnly.ok, false, "email-only enquiry must supply a phone number");
+  if (!emailOnly.ok) assert.equal(emailOnly.field, "phone");
+  assert.equal(validateLead({ ...base, email: "priya@example.com", phone: "+44 20 7946 0958", preferredContact: "email" }).ok, true);
 
   // Phone chosen: likewise, with no email address.
   const phoneOnly = validateLead({
@@ -216,8 +230,7 @@ test("preferred contact decides which channel is required", () => {
   assert.equal(badChosen.ok, false);
   if (!badChosen.ok) assert.equal(badChosen.field, "email");
 
-  // A malformed value in the channel they did not choose is still rejected,
-  // so nothing unusable reaches the notification.
+  // A malformed required phone is rejected even when email is preferred.
   const badUnchosen = validateLead({
     ...base,
     email: "priya@example.com",
@@ -226,6 +239,20 @@ test("preferred contact decides which channel is required", () => {
   });
   assert.equal(badUnchosen.ok, false);
   if (!badUnchosen.ok) assert.equal(badUnchosen.field, "phone");
+});
+
+test("an unknown runtime contact preference cannot bypass required contact details", () => {
+  for (const preference of [undefined, "", "fax", {}, null]) {
+    assert.equal(normalizePreferredContact(preference), "both");
+  }
+  for (const preference of ["email", "phone", "both"] as const) {
+    assert.equal(normalizePreferredContact(preference), preference);
+    const result = validateLead({ ...REAL_SPAM, firstName: "Test Parent", email: "parent@example.com", phone: "", preferredContact: preference });
+    assert.equal(result.ok, false);
+    if (!result.ok) assert.equal(result.field, "phone");
+  }
+  const result = validateLead({ ...REAL_SPAM, firstName: "Test Parent", email: "parent@example.com", phone: "", preferredContact: "fax" as never });
+  assert.equal(result.ok, false);
 });
 
 test("omitting preferredContact keeps the older forms' behaviour", () => {

@@ -96,8 +96,11 @@ export default function StudyClubInterestForm() {
       </div>
 
       <div>
-        <label htmlFor={id("phone")} className={labelClass}>Parent phone <span className="font-normal text-slate/50">(optional)</span></label>
-        <input id={id("phone")} name="phone" type="tel" maxLength={40} autoComplete="tel" className={fieldClass} placeholder="International formats are welcome" />
+        <label htmlFor={id("phone")} className={labelClass}>Parent phone (required)</label>
+        <input id={id("phone")} name="phone" type="tel" inputMode="tel" required maxLength={40} autoComplete="tel" aria-describedby={id("phone-hint")} className={fieldClass} placeholder="e.g. +1 604 555 0123" />
+        <p id={id("phone-hint")} className="mt-2 text-[13px] font-montserrat text-slate/75 leading-relaxed">
+          Canada/US: include your area code. Other countries: start with + and your country code.
+        </p>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">

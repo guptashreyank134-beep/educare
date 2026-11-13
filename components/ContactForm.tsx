@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useId, useState } from 'react'
 import { Send, Loader2 } from 'lucide-react'
 import { Input } from '@/components/ui/Input'
 import { Textarea } from '@/components/ui/TextArea'
@@ -9,6 +9,7 @@ import { createLead } from '@/app/actions/lead'
 import FormSpamFields from "@/components/FormSpamFields";
 
 const ContactForm = () => {
+  const uid = useId()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [feedback, setFeedback] = useState<{ success: boolean; message: string } | null>(null)
 
@@ -39,7 +40,12 @@ const ContactForm = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Input label="Email ID" type="email" placeholder="enter email ID" id="email" name="email" required />
-          <Input label="Phone Number" type="tel" placeholder="enter phone number" id="phone" name="phone" required />
+          <div>
+            <Input label="Phone Number (required)" type="tel" inputMode="tel" autoComplete="tel" maxLength={40} placeholder="e.g. +1 604 555 0123" id={`${uid}-phone`} name="phone" aria-describedby={`${uid}-phone-hint`} required />
+            <p id={`${uid}-phone-hint`} className="mt-2 text-[13px] font-montserrat text-slate/75 leading-relaxed">
+              Canada/US: include your area code. Other countries: start with + and your country code.
+            </p>
+          </div>
         </div>
         
         <Input label="Subject" placeholder="enter subject" id="subject" name="subject" required />

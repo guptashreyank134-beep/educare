@@ -113,14 +113,23 @@ const LeadForm: React.FC<LeadFormProps> = ({
             name="email"
             required
           />
-          <Input
-            label="Phone / WhatsApp"
-            type="tel"
-            placeholder="enter your phone"
-            id={fieldId("phone")}
-            name="phone"
-            required
-          />
+          <div>
+            <Input
+              label="Phone / WhatsApp (required)"
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
+              maxLength={40}
+              placeholder="e.g. +1 604 555 0123"
+              id={fieldId("phone")}
+              name="phone"
+              aria-describedby={fieldId("phone-hint")}
+              required
+            />
+            <p id={fieldId("phone-hint")} className="mt-2 text-[13px] font-montserrat text-slate/75 leading-relaxed">
+              Canada/US: include your area code. Other countries: start with + and your country code.
+            </p>
+          </div>
         </div>
         <Input
           label={subjectLabel}

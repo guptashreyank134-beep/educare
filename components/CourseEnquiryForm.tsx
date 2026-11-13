@@ -52,9 +52,9 @@ const fieldClass =
 /**
  * Compact enquiry form for a single course page.
  *
- * Asks for one contact method rather than both: requiring an email from someone
- * who wants a phone call is a reason to abandon the form, and the server
- * validates whichever channel was chosen.
+ * Collects a phone number for every enquiry and an email address when the
+ * visitor prefers an email reply. The phone field stays mounted when switching
+ * preference, so an entered number is preserved.
  *
  * Success is shown only when the server confirms the lead was stored durably —
  * a sent notification alone is not treated as capture — and the entered values
@@ -75,6 +75,7 @@ export default function CourseEnquiryForm({
     course: `${uid}-course`,
     email: `${uid}-email`,
     phone: `${uid}-phone`,
+    phoneHint: `${uid}-phone-hint`,
     help: `${uid}-help`,
     status: `${uid}-status`,
   };
@@ -200,7 +201,6 @@ export default function CourseEnquiryForm({
         onInput={handleFirstInput}
         data-enquiry-form="page"
         className={wide ? "grid gap-5 md:grid-cols-2" : "space-y-5"}
-        noValidate
       >
         <FormSpamFields />
 
@@ -233,8 +233,8 @@ export default function CourseEnquiryForm({
           />
         </div>
 
-        <fieldset>
-          <legend className={labelClass}>How should we reach you?</legend>
+        <fieldset className={wide ? "md:col-span-2" : undefined}>
+          <legend className={labelClass}>How would you prefer us to reply?</legend>
           <div className="flex gap-3">
             {(["email", "phone"] as ContactMethod[]).map((method) => {
               const selected = contactMethod === method;
@@ -262,7 +262,7 @@ export default function CourseEnquiryForm({
           </div>
         </fieldset>
 
-        {contactMethod === "email" ? (
+        {contactMethod === "email" && (
           <div>
             <label htmlFor={ids.email} className={labelClass}>
               Email address
@@ -278,23 +278,28 @@ export default function CourseEnquiryForm({
               placeholder="e.g. you@example.com"
             />
           </div>
-        ) : (
-          <div>
-            <label htmlFor={ids.phone} className={labelClass}>
-              Phone number
-            </label>
-            <input
-              id={ids.phone}
-              name="phone"
-              type="tel"
-              inputMode="tel"
-              autoComplete="tel"
-              required
-              className={fieldClass}
-              placeholder="e.g. (604) 123-4567"
-            />
-          </div>
         )}
+
+        <div className={wide && contactMethod === "phone" ? "md:col-span-2" : undefined}>
+          <label htmlFor={ids.phone} className={labelClass}>
+            Phone number (required)
+          </label>
+          <input
+            id={ids.phone}
+            name="phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            maxLength={40}
+            aria-describedby={ids.phoneHint}
+            required
+            className={fieldClass}
+            placeholder="e.g. +1 604 555 0123"
+          />
+          <p id={ids.phoneHint} className="mt-2 text-[13px] font-montserrat text-slate/75 leading-relaxed">
+            Canada/US: include your area code. Other countries: start with + and your country code.
+          </p>
+        </div>
 
         <div className={wide ? "md:col-span-2" : undefined}>
           <label htmlFor={ids.help} className={labelClass}>

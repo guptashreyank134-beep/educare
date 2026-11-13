@@ -46,14 +46,14 @@ test("a lead that cannot be stored is reported as a failure, not a success", asy
   assert.match(result.message, /try again/i, "the visitor should be invited to retry");
 });
 
-test("an email-only enquiry passes validation and reaches the capture step", async () => {
+test("an email-preferred enquiry without a phone is rejected before capture", async () => {
   const result = await createLead(
     form({ ...VALID, phone: "", preferredContact: "email" }),
   );
-  // Reaching the storage step means validation accepted it; storage then fails
-  // because no token is configured in this environment.
-  assert.equal(result.stored, false);
-  assert.doesNotMatch(result.message, /phone number doesn't look right/i);
+  assert.equal(result.success, false);
+  assert.equal(result.stored, undefined);
+  assert.match(result.message, /valid phone number/i);
+  assert.match(result.message, /country code/i);
 });
 
 test("a phone-only enquiry passes validation and reaches the capture step", async () => {
@@ -79,7 +79,7 @@ test("an invalid phone is rejected before any capture is attempted", async () =>
   );
   assert.equal(result.success, false);
   assert.equal(result.stored, undefined);
-  assert.match(result.message, /phone number doesn't look right/i);
+  assert.match(result.message, /valid phone number/i);
 });
 
 test("an automated submission is accepted silently and never stored", async () => {

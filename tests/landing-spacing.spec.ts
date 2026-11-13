@@ -58,6 +58,9 @@ for (const width of [390, 768, 1024, 1280, 1440]) {
           // Simulate a network failure locally: no submitted request reaches
           // the server, and the live error message must still fit the layout.
           await page.route("**/*", (request) => request.request().method() === "POST" ? request.abort() : request.continue());
+          await form.locator('input[name="fullName"]').fill("Layout Validation Test");
+          await form.locator('input[name="email"]').fill("layout@example.invalid");
+          await form.locator('input[name="phone"]').fill("604 555 0123");
           await form.getByRole("button", { name: "Book a Free 30-Minute Consultation", exact: true }).click();
           await expect(form.locator('[aria-live="polite"]')).toContainText("Something went wrong sending your enquiry");
           await expect(form.locator('[aria-live="polite"]')).toBeVisible();

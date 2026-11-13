@@ -9,8 +9,8 @@ import { existsSync, readFileSync } from "node:fs";
  * stored and no notification is sent to staff. Every lead created here carries
  * TEST_MARKER in its name and is deleted afterwards.
  *
- * This is what markup inspection cannot show: that the contact toggle swaps the
- * required field, that a submission reaches the database, that a double click
+ * This is what markup inspection cannot show: that phone stays required across
+ * contact preferences, that a submission reaches the database, that a double click
  * files one enquiry rather than two, and that the analytics events actually
  * fire with no personal data in them.
  */
@@ -136,10 +136,11 @@ for (const { path, anchor, courseLabel } of PAGES) {
       }
     });
 
-    test("contact toggle swaps which field is shown and required", async ({ page }) => {
+    test("contact toggle keeps phone required and changes the email requirement", async ({ page }) => {
       await page.goto(path);
       await expect(page.getByLabel(/email address/i)).toBeVisible();
-      await expect(page.getByLabel(/phone number/i)).toHaveCount(0);
+      await expect(page.getByLabel(/phone number/i)).toBeVisible();
+      await expect(page.getByLabel(/phone number/i)).toHaveAttribute("required", "");
 
       await chooseContact(page, "phone");
       await expect(page.getByLabel(/phone number/i)).toBeVisible();
@@ -147,6 +148,7 @@ for (const { path, anchor, courseLabel } of PAGES) {
 
       await chooseContact(page, "email");
       await expect(page.getByLabel(/email address/i)).toBeVisible();
+      await expect(page.getByLabel(/phone number/i)).toHaveAttribute("required", "");
     });
 
     test("invalid input is rejected, values survive, and no lead is counted", async ({ page }) => {
@@ -156,7 +158,9 @@ for (const { path, anchor, courseLabel } of PAGES) {
       await page.goto(path);
 
       await page.getByLabel(/your name/i).fill(`${TEST_MARKER} invalid`);
-      await page.getByLabel(/email address/i).fill("not-an-email@");
+      // HTML email validation accepts a bare domain; server validation rejects it.
+      await page.getByLabel(/email address/i).fill("invalid@localhost");
+      await page.getByLabel(/phone number/i).fill("604 555 0123");
       await page.waitForTimeout(BOT_WINDOW_MS);
       await page.getByRole("button", { name: /Book a Free 30-Minute Consultation/i }).click();
 
@@ -178,6 +182,7 @@ for (const { path, anchor, courseLabel } of PAGES) {
       await page.getByLabel(/your name/i).fill(`${TEST_MARKER} ${anchor}`);
       await page.getByLabel(courseLabel).fill("Physics 12");
       await page.getByLabel(/email address/i).fill("browser.test@example.invalid");
+      await page.getByLabel(/phone number/i).fill("604 555 0123");
       await page.waitForTimeout(BOT_WINDOW_MS);
       await page.getByRole("button", { name: /Book a Free 30-Minute Consultation/i }).click();
 
@@ -209,6 +214,7 @@ for (const { path, anchor, courseLabel } of PAGES) {
 
       await page.getByLabel(/your name/i).fill(`${TEST_MARKER} double`);
       await page.getByLabel(/email address/i).fill("browser.test@example.invalid");
+      await page.getByLabel(/phone number/i).fill("604 555 0123");
       await page.waitForTimeout(BOT_WINDOW_MS);
 
       // Two clicks as close together as the browser will deliver them. The
@@ -256,6 +262,7 @@ test.describe("analytics events", () => {
 
     // enquiry_form_start fires once per interaction, not once per keystroke.
     await page.getByLabel(/email address/i).fill("browser.test@example.invalid");
+    await page.getByLabel(/phone number/i).fill("604 555 0123");
     const starts = (await firedEvents(page)).filter((e) => e.event === "enquiry_form_start");
     expect(starts).toHaveLength(1);
 
@@ -295,7 +302,8 @@ test.describe("analytics events", () => {
     await page.goto("/programs/physics");
 
     await page.getByLabel(/your name/i).fill("Priya Sharma");
-    await page.getByLabel(/email address/i).fill("not-an-email@");
+    await page.getByLabel(/email address/i).fill("invalid@localhost");
+    await page.getByLabel(/phone number/i).fill("604 555 0123");
     await page.waitForTimeout(BOT_WINDOW_MS);
     await page.getByRole("button", { name: /Book a Free 30-Minute Consultation/i }).click();
     await expect(page.getByText(/doesn't look right/i)).toBeVisible();

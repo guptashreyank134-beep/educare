@@ -1,5 +1,7 @@
 /** @format */
 
+import { parsePhoneNumberFromString } from "libphonenumber-js/min";
+
 // Validation and spam screening for the lead form.
 //
 // Everything here runs on the server. Client-side `required` and `type="email"`
@@ -16,10 +18,15 @@
 /**
  * Which channel the visitor asked to be contacted on.
  *
- * "both" is the default so the older forms, which require an email and a phone
- * number, keep validating exactly as before.
+ * A phone number is required for every enquiry. The preference controls whether
+ * email is also required; "both" remains the default for older forms.
  */
 export type PreferredContact = "email" | "phone" | "both";
+
+/** Unknown runtime values must not bypass either required contact field. */
+export function normalizePreferredContact(value: unknown): PreferredContact {
+  return value === "email" || value === "phone" || value === "both" ? value : "both";
+}
 
 export interface LeadInput {
   firstName: string;
@@ -94,27 +101,33 @@ export function phoneDigits(raw: string): string {
 /**
  * A plausible phone number anywhere in the world.
  *
- * Length is checked against the E.164 range rather than the North American
- * pattern: this business tutors students online internationally, so rejecting
- * non-NANP numbers would discard real enquiries. Structure is validated; origin
- * is reported, not blocked.
+ * Local numbers are interpreted as Canadian/NANP. Overseas numbers should carry
+ * their country code, with either + or 00 accepted. Possible length/structure
+ * is checked without claiming the number is reachable or ownership verified.
  */
-export function isValidPhone(raw: string): boolean {
+function parsePossiblePhone(raw: string) {
+  if (raw.trim().length > 40) return undefined;
   const digits = phoneDigits(raw);
-  if (digits.length < 7 || digits.length > 15) return false;
   // A single repeated digit, or a straight run, is filler rather than a number.
-  if (/^(\d)\1+$/.test(digits)) return false;
-  if ("01234567890123456789".includes(digits)) return false;
-  if ("98765432109876543210".includes(digits)) return false;
-  return true;
+  if (!digits || /^(\d)\1+$/.test(digits)) return undefined;
+  if ("01234567890123456789".includes(digits)) return undefined;
+  if ("98765432109876543210".includes(digits)) return undefined;
+  const input = raw.trim().replace(/^00/, "+");
+  const phone = parsePhoneNumberFromString(input, { defaultCountry: "CA", extract: false });
+  // Seven-digit local NANP numbers can be "possible" to the library, but an
+  // enquiry needs an area code so the business can place the return call.
+  if (phone?.countryCallingCode === "1" && phone.nationalNumber.length !== 10) return undefined;
+  return phone?.isPossible() ? phone : undefined;
+}
+
+export function isValidPhone(raw: string): boolean {
+  return Boolean(parsePossiblePhone(raw));
 }
 
 /** True when the number is not a North American (NANP) number. */
 export function isInternationalPhone(raw: string): boolean {
-  const digits = phoneDigits(raw);
-  if (digits.length === 10) return false;
-  if (digits.length === 11 && digits.startsWith("1")) return false;
-  return true;
+  const phone = parsePossiblePhone(raw);
+  return Boolean(phone && phone.countryCallingCode !== "1");
 }
 
 /**
@@ -155,17 +168,15 @@ export function validateLead(input: LeadInput): ValidationResult {
   const firstName = input.firstName.trim();
   const lastName = input.lastName.trim();
   const name = `${firstName} ${lastName}`.trim();
-  const preferred: PreferredContact = input.preferredContact ?? "both";
+  const preferred = normalizePreferredContact(input.preferredContact);
 
   if (name.length < 2 || name.length > 100) {
     return { ok: false, field: "name", message: "Please enter your name." };
   }
 
-  // Only the channel the visitor chose is required. Asking someone who wants a
-  // phone call to supply an email as well is a reason to abandon the form, and
-  // the field they did not choose is not shown to them at all.
+  // Every enquiry includes a phone number, even when email is the preferred
+  // reply channel. Phone-first enquiries can still omit their email address.
   const needsEmail = preferred === "email" || preferred === "both";
-  const needsPhone = preferred === "phone" || preferred === "both";
 
   if (needsEmail && !isValidEmail(input.email)) {
     return {
@@ -175,11 +186,11 @@ export function validateLead(input: LeadInput): ValidationResult {
     };
   }
 
-  if (needsPhone && !isValidPhone(input.phone)) {
+  if (!isValidPhone(input.phone)) {
     return {
       ok: false,
       field: "phone",
-      message: "That phone number doesn't look right — please check it and try again.",
+      message: "Please enter a valid phone number with an area code for Canada or the US. For other countries, start with + and the country code.",
     };
   }
 
@@ -192,14 +203,6 @@ export function validateLead(input: LeadInput): ValidationResult {
       message: "That email address doesn't look right — please check it and try again.",
     };
   }
-  if (!needsPhone && input.phone.trim() && !isValidPhone(input.phone)) {
-    return {
-      ok: false,
-      field: "phone",
-      message: "That phone number doesn't look right — please check it and try again.",
-    };
-  }
-
   return {
     ok: true,
     lead: {
