@@ -2,8 +2,9 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { REVIEW_RATING, REVIEW_COUNT } from "@/data/reviews";
+import { SOCIAL_PROFILES } from "@/data/businessInfo";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { ButtonLink } from "./ui/Button";
@@ -27,7 +28,23 @@ const fallbackReviews: Review[] = [
   },
 ];
 
-export default function Reviews() {
+export default function Reviews({
+  context = "general",
+  heading,
+  description,
+}: {
+  /** Service pages show business-wide feedback without claiming subject-specific results. */
+  context?: "general" | "service";
+  heading?: string;
+  description?: string;
+}) {
+  const headingId = useId();
+  const title = heading ?? (context === "service"
+    ? "Student and Parent Reviews of Dr. Shreyank Educare"
+    : "Student Experiences That Reflect Meaningful Progress");
+  const introduction = description ?? (context === "service"
+    ? "These Google reviews cover experiences across our tutoring services. Individual reviewers may discuss different subjects."
+    : undefined);
   const [reviews, setReviews] = useState<Review[]>(fallbackReviews);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
@@ -91,19 +108,23 @@ export default function Reviews() {
     );
   };
 
-  const writeReviewUrl =
-    "https://search.google.com/local/writereview?placeid=ChIJA3uGz9t2hlQRjL_aWv6iW2s";
-
   return (
-    <section className="py-12 sm:py-16 overflow-hidden">
+    <section data-tutoring-reviews={context} aria-labelledby={headingId} className="py-10 sm:py-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title Heading */}
-        <h2 className="text-[32px] sm:text-[32px] font-bricolage font-display font-normal text-slate text-center leading-tight mb-16 max-w-3xl mx-auto">
-          Student Experiences That Reflect Meaningful Progress
-        </h2>
+        <div className="mb-8 max-w-3xl mx-auto text-center">
+          <h2 id={headingId} className="text-[28px] sm:text-[32px] font-bricolage font-display font-normal text-slate leading-tight">
+            {title}
+          </h2>
+          {introduction && (
+            <p className="mt-4 text-[15px] leading-relaxed text-slate/75">
+              {introduction}
+            </p>
+          )}
+        </div>
 
         {/* Info Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-6">
           <div>
             <h3 className="text-[20px] font-semibold text-slate mb-2">
               Customer reviews on Google
@@ -120,7 +141,9 @@ export default function Reviews() {
             </div>
           </div>
 
-          <ButtonLink href={writeReviewUrl} target="_blank" rel="noopener noreferrer" className="!bg-[#3b5a98] hover:!bg-[#2e477a] text-white font-medium rounded-lg px-6 py-3 transition-colors">Leave A Review</ButtonLink>
+          {SOCIAL_PROFILES.googleBusinessProfile && (
+            <ButtonLink href={SOCIAL_PROFILES.googleBusinessProfile} target="_blank" rel="noopener noreferrer" className="!bg-[#3b5a98] hover:!bg-[#2e477a] text-white font-medium rounded-lg px-6 py-3 transition-colors">Read Google reviews</ButtonLink>
+          )}
         </div>
 
         {/* Carousel Slider */}
@@ -151,13 +174,14 @@ export default function Reviews() {
                   <div className="bg-white rounded-[20px] shadow-[0px_0px_30px_0px_#57575614] p-8 h-full flex flex-col justify-between border border-slate/5 transition-transform duration-300 hover:translate-y-[-4px]">
                     <div>
                       {/* Stars */}
-                      <div className="flex text-yellow-400 gap-0.5 mb-3">
+                      <div className="flex text-yellow-400 gap-0.5 mb-3" role="img" aria-label={`Rated ${review.rating} out of 5`}>
                         {[...Array(review.rating)].map((_, i) => (
                           <Star
                             key={i}
                             size={18}
                             fill="currentColor"
                             className="text-yellow-400"
+                            aria-hidden="true"
                           />
                         ))}
                       </div>

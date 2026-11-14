@@ -1,6 +1,9 @@
 import Link from "next/link";
 import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
+import Reviews from "@/components/Reviews";
 import { tutorIdsForContext } from "@/data/tutorAssignments";
+import { PROGRAM_ENQUIRY } from "@/content/program-enquiry";
+import { testimonialsFor } from "@/data/testimonials";
 
 /**
  * Contextual links at the foot of a program page.
@@ -29,6 +32,11 @@ export default function ProgramNextSteps({
   consultationHref?: string;
 }) {
   const tutorIds = tutorIdsForContext(subject);
+  const testimonialTopic = Object.values(PROGRAM_ENQUIRY)
+    .find((program) => program.subject === subject)?.testimonialTopic;
+  const hasDedicatedTestimonial = Boolean(
+    testimonialTopic && testimonialsFor(testimonialTopic).length > 0,
+  );
 
   return (
     <section className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pb-20">
@@ -37,6 +45,9 @@ export default function ProgramNextSteps({
           <RelevantTutorProfiles tutorIds={tutorIds} />
         </div>
       )}
+      {/* A subject-matched review already shown beside the enquiry takes
+          precedence over repeating it as the general widget's fallback. */}
+      {!hasDedicatedTestimonial && <Reviews context="service" />}
       <div className="rounded-[20px] border border-[#F1F5F9] bg-bg-grey p-8 sm:p-10">
         <h2 className="text-[24px] sm:text-[28px] font-bricolage font-normal text-slate mb-3">
           Next steps

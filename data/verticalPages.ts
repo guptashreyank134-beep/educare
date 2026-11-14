@@ -71,6 +71,7 @@ export const verticalPages: VerticalPage[] = [
     intro: [
       "Dr. Shreyank Educare provides MD-led online medical tutoring for medical students across the USA and the Caribbean. Every session is one-on-one and taught by qualified doctors who know exactly where students struggle and how to make dense material click.",
       "Whether you are working through the pre-clinical sciences or preparing for board exams, we build a focused study plan around your curriculum, your timeline, and your goals — entirely online, wherever you study.",
+      "Bring your course outline, current organ-system block and a question you have already attempted to the consultation. This helps the tutor distinguish a gap in the underlying science from difficulty applying it to a case. Lessons connect mechanisms, diagrams and question reasoning, with priorities agreed around your course and available study time.",
     ],
     sections: [
       {
@@ -236,6 +237,7 @@ export const verticalPages: VerticalPage[] = [
     intro: [
       "Dr. Shreyank Educare provides MD-led online tutoring across the full range of medical sciences for USA and Caribbean medical students. Every session is one-on-one with a qualified doctor who connects each concept to its clinical relevance.",
       "We build a focused plan around the subjects you find hardest — from physiology to pharmacology — so you understand the material deeply rather than memorising it for a single test.",
+      "A single case can draw on several subjects, so lessons help you connect normal function, disease mechanisms and drug effects instead of revising each in isolation. Share the current block and your attempted questions so the tutor can identify where the reasoning breaks down. You then practise explaining the links in your own words before working through another example.",
     ],
     sections: [
       {
@@ -305,6 +307,7 @@ export const verticalPages: VerticalPage[] = [
     intro: [
       "Physiology is the foundation everything else in medicine builds on. Dr. Shreyank Educare's MD-led tutors help USA and Caribbean medical students master it system by system, with clear cause-and-effect reasoning instead of rote recall.",
       "We focus on the high-yield mechanisms that recur throughout your courses and board exams, so your understanding compounds across subjects.",
+      "Sessions can work through a pressure-volume loop, a change in ventilation or the response to altered renal handling step by step. You explain what changes first and why, then use a diagram, graph or equation to test that explanation. Bring the systems and questions from your course so practice stays relevant to the material you are learning.",
     ],
     sections: [
       {
@@ -374,6 +377,7 @@ export const verticalPages: VerticalPage[] = [
     intro: [
       "Pathology ties the basic sciences to real disease. Dr. Shreyank Educare's MD-led tutors help USA and Caribbean medical students master general and systemic pathology with clear, mechanism-driven explanations.",
       "We emphasise the disease processes and high-yield associations that dominate board exams, so you can recognise patterns quickly and reason to a diagnosis.",
+      "We can work from a clinical vignette back to the underlying disease process: which findings matter, what mechanism explains them and why an alternative answer is less consistent. Comparing related conditions helps turn a list of features into an organised explanation. Your course topics and attempted questions guide the level and pace of each lesson.",
     ],
     sections: [
       {
@@ -443,6 +447,7 @@ export const verticalPages: VerticalPage[] = [
     intro: [
       "Pharmacology overwhelms many students with sheer volume. Dr. Shreyank Educare's MD-led tutors help USA and Caribbean medical students organise it into logical drug classes and mechanisms that actually stick.",
       "We focus on the high-yield drugs, side effects and interactions that recur on board exams, tied back to the physiology and pathology they act on.",
+      "A useful starting point is a drug class you find difficult, together with a question you have attempted. We connect the target and mechanism to expected effects, adverse effects and relevant interactions, then compare similar agents. Explaining those connections and applying them to practice questions helps you build a framework for revision.",
     ],
     sections: [
       {
@@ -512,6 +517,7 @@ export const verticalPages: VerticalPage[] = [
     intro: [
       "Dr. Shreyank Educare helps USA and Caribbean medical students prepare for their board and licensing exams with MD-led, one-on-one tutoring. We turn a huge syllabus into a structured, high-yield plan you can actually follow.",
       "Sessions target the topics and question styles that carry the most marks, with steady review and practice so you peak on exam day.",
+      "Share the exam you are preparing for, your planned date and the areas you find difficult so the tutor can discuss a suitable scope of support. Reviewing attempted questions helps distinguish knowledge gaps from interpretation or timing problems. Revision then combines targeted explanations, practice and review of errors, with priorities adjusted as your understanding develops.",
     ],
     sections: [
       {

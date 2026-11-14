@@ -10,6 +10,7 @@ import VancouverFAQSection from "@/components/VancouverFAQSection";
 import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
 import VancouverCTABanner from "@/components/VancouverCTABanner";
 import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
+import Reviews from "@/components/Reviews";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   JsonLd,
@@ -272,6 +273,7 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
         );
       })()}
 
+      <Reviews context="service" />
       <VancouverCTABanner />
       <VancouverFAQSection faqs={faqs} />
     </main>

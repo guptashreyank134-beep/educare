@@ -13,6 +13,8 @@ export interface Tutor {
   name: string;
   role: string;
   image: string;
+  /** Keep the face visible when a portrait is cropped into a profile card. */
+  imagePosition?: "top" | "center";
   belowshortDescription: string;
   fullDescription: string;
   /** Free-text credential lines already shown on the About page. */
@@ -175,6 +177,7 @@ export const tutors: Tutor[] = [
     name: "Dr. Vishal Sehgal",
     role: "Physician & Healthcare Education Tutor",
     image: "/assets/tutors/vishal.webp",
+    imagePosition: "center",
 
     belowshortDescription:
       "Dr. Sehgal bridges the gap between theory and real-world clinical practice, drawing on hands-on healthcare experience to bring concepts to life.",

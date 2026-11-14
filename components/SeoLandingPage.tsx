@@ -7,6 +7,7 @@ import { ArrowRight, Check, Link2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
 import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
+import Reviews from "@/components/Reviews";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ExtraRelatedLinks from "@/components/ExtraRelatedLinks";
 import { getLandingContent, orFallback } from "@/sanity/lib/faqs";
@@ -24,6 +25,7 @@ import { resolveInternalHref } from "@/data/redirects";
 import { BUSINESS } from "@/data/businessInfo";
 import { correctSeoCopy } from "@/data/seoCopyCorrections";
 import { tutorIdsForContext } from "@/data/tutorAssignments";
+import { testimonialsFor } from "@/data/testimonials";
 
 const metrics = [
   { value: "PhD-Led", label: "by Dr. Shreyank Gupta" },
@@ -84,6 +86,11 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
   const faqs = orFallback(content?.faqs, page.faqs);
   const trustMetrics = slug === "english-tutor-vancouver" ? englishTutorMetrics : metrics;
   const tutorIds = tutorIdsForContext(`${page.h1} ${page.cluster} ${slug}`);
+  const testimonialTopic = /university.*physics/i.test(`${page.h1} ${page.cluster}`)
+    ? "university-physics" : undefined;
+  const hasDedicatedTestimonial = Boolean(
+    testimonialTopic && testimonialsFor(testimonialTopic).length > 0,
+  );
 
   return (
     <main className="min-h-screen bg-white font-montserrat relative overflow-hidden">
@@ -165,7 +172,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
               courseLabel="Student's grade or course"
               courseExample="Math 10, Chemistry 12, or a first-year university course"
               heading={page.location ? `Ask about tutoring in ${page.location}` : "Ask about tutoring"}
-              testimonialTopic={/university.*physics/i.test(`${page.h1} ${page.cluster}`) ? "university-physics" : undefined}
+              testimonialTopic={testimonialTopic}
               showCredential={founderTeaches(`${page.h1} ${page.cluster}`)}
             />
           </div>
@@ -282,6 +289,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
         );
       })()}
 
+      {!hasDedicatedTestimonial && <Reviews context="service" />}
       <VancouverCTABanner />
       <VancouverFAQSection faqs={faqs} />
       <ExtraRelatedLinks links={content?.relatedLinks} />

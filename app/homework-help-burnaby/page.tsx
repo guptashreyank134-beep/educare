@@ -11,6 +11,7 @@ import {
 
 import StudyClubInterestForm from "@/components/StudyClubInterestForm";
 import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
+import Reviews from "@/components/Reviews";
 import { ButtonLink } from "@/components/ui/Button";
 import { JsonLd } from "@/components/SchemaMarkup";
 import { BUSINESS, SITE_URL } from "@/data/businessInfo";
@@ -267,6 +268,8 @@ export default async function StudyClubPage() {
         </div>
         <p className="mt-6 text-[14px] font-montserrat text-slate/65">These programme terms apply alongside our <Link href="/terms" className="text-primary underline">general terms</Link> and <Link href="/privacy" className="text-primary underline">privacy policy</Link>. The exact calendar and assigned tutor are provided before enrolment.</p>
       </section>
+
+      <Reviews context="service" />
 
       <section id="register-interest" className="scroll-mt-24 bg-[#F7F9FC] py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8 lg:items-start">

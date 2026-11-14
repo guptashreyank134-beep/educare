@@ -52,7 +52,8 @@ export default function RelevantTutorProfiles({
                     alt={`${tutor.name}, ${tutor.role}`}
                     fill
                     sizes="(max-width: 767px) 160px, 190px"
-                    className="object-cover object-top"
+                    className="object-cover"
+                    style={{ objectPosition: tutor.imagePosition ?? "top" }}
                   />
                 </div>
               </div>

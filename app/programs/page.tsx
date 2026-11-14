@@ -7,6 +7,7 @@ import ProgramsSection from "@/components/programsComponents/ProgramsSection";
 import { getMetaDataBySlug, getMetadata } from "@/utils/seoBuilder";
 import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
+import Reviews from "@/components/Reviews";
 
 export async function generateMetadata() {
   const data = await getMetaDataBySlug("page", "programs");
@@ -43,6 +44,7 @@ const ProgramsPage = async () => {
           </p>
           <RelevantTutorProfiles tutorIds={[0, 9]} />
         </div>
+        <Reviews context="service" />
       </main>
     </>
   );

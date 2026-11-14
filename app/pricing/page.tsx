@@ -10,6 +10,7 @@ export async function generateMetadata() {
     return getMetadata(data, "https://www.drshreyankeducare.com/pricing");
 }
 import LearningProcess from "@/components/LearningProcess";
+import Reviews from "@/components/Reviews";
 import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 
 const PricingPage = async () => {
@@ -91,6 +92,7 @@ const PricingPage = async () => {
 
             </section>
 
+            <Reviews context="service" />
         </>
 
     );

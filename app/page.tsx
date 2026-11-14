@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { ButtonLink } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import TrialClassForm from "@/components/TrialClassForm";
 import VancouverHeroImage from "@/components/VancouverHeroImage";
@@ -41,7 +40,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-white font-montserrat relative overflow-hidden">
-      <section className="relative">
+      <section data-home-hero aria-labelledby="home-heading" className="relative">
       {/* Yellow Grid Background */}
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-40"
@@ -53,21 +52,51 @@ export default async function Home() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 pt-10 sm:pt-16 pb-12 sm:pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
-          {/* Left Column: Content & Images */}
-          <div className="flex flex-col">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-x-8 gap-y-6 lg:gap-x-12 lg:gap-y-4 items-start">
+          <div data-home-introduction className="min-w-0 lg:col-start-1 lg:row-start-1">
             {/* "Best" was an unsupportable superlative; "PhD-Led" states a fact
                 we can stand behind and still leads with the subjects + locations. */}
-            <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
+            <h1 id="home-heading" className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-5">
               PhD-Led Math, Physics, Chemistry &amp; Coding Tutoring in Burnaby
               and Vancouver
             </h1>
-            <p className="text-[#64748B] text-[16px] leading-relaxed max-w-[500px] mb-4">
+            <p className="text-[#64748B] text-[16px] leading-relaxed">
               Personalized tutoring that helps students build confidence, master
               difficult concepts, and improve grades through clear, step-by-step
               teaching.
             </p>
-            <p className="text-[#64748B] text-[15px] leading-relaxed max-w-[520px] mb-8">
+          </div>
+
+          <div data-home-booking className="min-w-0 lg:col-start-2 lg:row-start-1 lg:row-span-2">
+            <TrialClassForm
+              title="Your Free 30-Minute Consultation"
+              buttonLabel="Book a Free Consultation"
+            />
+            <p className="text-[14px] text-slate font-montserrat text-center mt-4 leading-relaxed">
+              No obligation — we&apos;ll discuss your course, current challenges
+              and a suitable next step.
+            </p>
+            <p className="mt-3 text-center text-[14px] leading-relaxed text-slate/75">
+              Have a question first?{" "}
+              <a
+                href={BUSINESS.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#15803D] underline underline-offset-4 hover:text-[#166534] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                Chat on WhatsApp
+              </a>
+            </p>
+          </div>
+
+          <div data-home-details className="min-w-0 lg:col-start-1 lg:row-start-2">
+            <p className="text-[#64748B] text-[16px] leading-relaxed mb-4">
+              Based in Burnaby, we offer in-person lessons at our tutoring centre
+              and online support for Vancouver students. Lessons are matched to
+              your school or university course, with guided practice and time to
+              work through the concepts you find difficult.
+            </p>
+            <p className="text-[#64748B] text-[15px] leading-relaxed">
               Popular:{" "}
               <Link href="/math-tutor-burnaby" className="text-primary underline decoration-yellow-light decoration-2 underline-offset-2 hover:text-primary/80">
                 math tutoring in Burnaby
@@ -78,63 +107,25 @@ export default async function Home() {
               </Link>
               .
             </p>
-
-            <div className="flex flex-wrap gap-4 mb-16">
-              <ButtonLink href="/book" iconRight={ArrowRight}>Book a Free 30-Minute Consultation</ButtonLink>
-              <a
-                href={BUSINESS.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#15803D] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5 fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                </svg>
-                Chat on WhatsApp
-              </a>
-            </div>
-
-            {/* Hero Image Component */}
-            <VancouverHeroImage />
-          </div>
-
-          {/* Right Column: Lead Form */}
-          <div className="relative mt-12 lg:mt-0">
-            {/* Decorative glow behind form */}
-            {/* Form-widget label, not a content heading — kept as <p> so it
-                stays out of the heading outline (avoids duplicate-heading). */}
-            <p className="text-[32px] font-bricolage font-medium text-slate text-center mb-3">
-              Book a Free <span className="text-primary">30-Minute</span>{" "}
-              Consultation
-            </p>
-            <p className="text-[15px] font-montserrat text-slate/70 text-center mb-6 leading-relaxed">
-              Select an available time to meet with our team and discuss your child&apos;s current challenges.
-            </p>
-
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[110%] bg-white/40 blur-3xl rounded-full -z-10" />
-            <TrialClassForm />
-            <p className="text-[14px] text-slate font-montserrat text-center mt-4 leading-relaxed">
-            ⓘ No obligation — we&apos;ll suggest a plan that fits your child.
-            </p>
           </div>
         </div>
 
-        {/* Bottom Badges Section */}
-        <div className="mt-24">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {/* Booking precedes imagery on mobile; the image and trust facts share
+            the space below the introduction on larger screens. */}
+        <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 items-center">
+          <div data-home-visual className="flex justify-center px-6 sm:px-8">
+            <VancouverHeroImage />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
             {metrics.map((metric, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-[#F1F5F9] flex flex-col items-center text-center transform hover:-translate-y-1 transition-all"
+                className="bg-white p-5 rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-[#F1F5F9] flex flex-col items-center text-center"
               >
-                <p className="text-[34px] font-bricolage font-medium text-[#44619B] leading-tight mb-2">
+                <p className="text-[28px] font-bricolage font-medium text-[#44619B] leading-tight mb-1">
                   {metric.value}
                 </p>
-                <p className="text-[20px] font-montserrat font-normal text-[#64748B]">
+                <p className="text-[16px] font-montserrat font-normal text-[#64748B]">
                   {metric.label}
                 </p>
               </div>

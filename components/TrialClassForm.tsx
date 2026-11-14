@@ -3,10 +3,14 @@ import { getAppointmentBooking } from "@/lib/appointmentBooking";
 
 const TrialClassForm = ({
   scope = "page",
+  title = "Select Your Required Timeslot",
+  buttonLabel = "Choose an Available Timeslot",
 }: {
   redirectTo?: string | null;
   showAppointmentLink?: boolean;
   scope?: "page" | "shared";
+  title?: string;
+  buttonLabel?: string;
 }) => {
   const booking = getAppointmentBooking();
 
@@ -20,7 +24,7 @@ const TrialClassForm = ({
           <CalendarDays className="h-6 w-6" aria-hidden="true" />
         </span>
         <p className="font-bricolage text-[24px] font-medium text-slate">
-          Select Your Required Timeslot
+          {title}
         </p>
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-slate/75">
           A consultation is booked only after you select an available time and complete the
@@ -32,7 +36,7 @@ const TrialClassForm = ({
             href={booking.url}
             className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 font-medium text-white transition-colors hover:bg-primary/90"
           >
-            Choose an Available Timeslot
+            {buttonLabel}
             <ArrowRight className="h-5 w-5" aria-hidden="true" />
           </a>
         ) : (

@@ -1436,6 +1436,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "IB Mathematics is rigorous and distinct from the BC curriculum, with its own AA and AI streams, SL and HL levels, and the Internal Assessment. Specialist help makes a real difference.",
       "Our Burnaby IB Math tutoring is tailored to your exact course and level, and includes guidance on the IA.",
+      "At the consultation, tell us whether you take Analysis and Approaches or Applications and Interpretation, and whether you study at SL or HL. We can then connect lessons to your current unit, calculator requirements and written reasoning. Internal Assessment guidance focuses on understanding the mathematics and evaluating your own ideas; the investigation and final work remain yours.",
     ],
     sections: [
       {
@@ -2266,6 +2267,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "When the exam is close, an intensive crash course beats scattered self-study. We compress Pre-Calculus 12 into focused sessions on the highest-yield topics and your weak spots.",
       "It's fast, targeted, and built to lift your score quickly.",
+      "Bring your exam date, a recent marked test and the topics your class has covered. We use these to prioritise gaps in functions, trigonometry, exponentials and logarithms, then combine worked examples with questions you solve independently. Reviewing why an approach failed is part of revision; the plan depends on the time available and your starting point.",
     ],
     sections: [
       {
@@ -3312,6 +3314,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "AP courses reward students who master content and exam technique. Our Vancouver AP tutoring spans the STEM APs, with concept depth and format-specific practice for each.",
       "Sessions are online across Vancouver, or in person nearby in Burnaby.",
+      "Start with the AP subject, current unit and exam date so we can match the support to your course. A calculus question, a physics explanation and a chemistry calculation each require different reasoning. Lessons combine topic review with multiple-choice and free-response practice, including how to show working and learn from mistakes between sessions.",
     ],
     sections: [
       {
@@ -3420,6 +3423,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "IB Physics blends conceptual depth with mathematical rigour and its own assessment style. Our Vancouver IB Physics tutoring is tailored to SL and HL.",
       "We build understanding and exam technique, and support the Internal Assessment.",
+      "Bring a recent question or class topic so your tutor can see whether the difficulty is the physical model, the mathematics or the way the answer is communicated. Lessons link diagrams, graphs, units and equations before moving to independent practice. For the Internal Assessment, support centres on experimental reasoning, uncertainty and explaining your own analysis.",
     ],
     sections: [
       {
@@ -3474,6 +3478,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "IB Math SL still demands solid command of functions, calculus and statistics, plus IB exam technique. Our Vancouver IB Math SL tutoring covers both AA and AI at SL.",
       "We make the content clear and guide the Internal Assessment.",
+      "The starting point is your course: Analysis and Approaches places a different emphasis on symbolic reasoning from Applications and Interpretation. We work through current topics using examples, calculator interpretation where appropriate, and explanations of each step. For the Internal Assessment, you develop and write your own exploration with guidance on the mathematics and clarity of reasoning.",
     ],
     sections: [
       {
@@ -3528,6 +3533,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "The IB is rigorous and distinct, with its own assessment style, IAs and exam technique. Our Vancouver IB tutoring spans Math, Physics and Chemistry at SL and HL.",
       "Students juggling multiple IB subjects benefit from a coordinated, IB-savvy approach.",
+      "Tell us your subjects, SL or HL levels and upcoming assessment dates so we can identify where support is most useful. Lessons address the current concept before applying it to the way IB questions ask you to explain, calculate or evaluate. Guidance on internal assessments helps you understand the task and improve your own reasoning while keeping the submitted work independent.",
     ],
     sections: [
       {
@@ -3692,6 +3698,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "University calculus (Calculus I, II and beyond) is a common hurdle for STEM, commerce and science students. Our Vancouver university calculus tutoring makes it manageable.",
       "We clarify the concepts and drill the problem-solving that exams demand.",
+      "Share your course code, outline and a recent problem before the consultation. We use them to distinguish prerequisite gaps from difficulty with a new idea, then connect limits, derivatives or integrals to the problems your course actually assigns. You practise choosing a method, justifying the steps and checking whether the result makes sense.",
     ],
     sections: [
       {
@@ -3746,6 +3753,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "First-year university physics combines demanding concepts with heavy math. Our Vancouver university physics tutoring helps students keep pace and excel.",
       "We strengthen both the physics and the underlying calculus and algebra.",
+      "A useful session starts with a diagram and an explanation of the physical situation before the algebra begins. Bring your course outline and a problem you have attempted so we can work on modelling, units, assumptions and the relevant mathematics together. Support follows the level of your course and helps you explain your own solutions.",
     ],
     sections: [
       {
@@ -3852,6 +3860,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "Calculus 2 is notoriously tricky, with integration techniques, sequences and series that demand real fluency. Our online Calculus 2 tutoring builds that fluency.",
       "Students across Canada get expert, one-on-one help on their schedule.",
+      "We work on the decisions behind a solution: when to use substitution or integration by parts, how to recognise an improper integral, and which convergence test applies to a series. A shared worked example is followed by a related problem for you to attempt. The aim is to make the reasoning reusable when a question looks unfamiliar.",
     ],
     sections: [
       {
@@ -3906,6 +3915,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "Linear algebra is abstract, and many students hit a wall with vector spaces and eigenvalues. Our online linear algebra tutoring makes the abstraction concrete.",
       "University students across Canada get expert, one-on-one help on their schedule.",
+      "Lessons connect row operations to systems of equations and link matrices to geometric transformations before moving to more abstract ideas. You practise explaining span, independence, basis and eigenvectors in words as well as calculations. Bring your syllabus so the balance of proofs, computation and applications matches your university course.",
     ],
     sections: [
       {
@@ -4065,6 +4075,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "Dynamics builds on statics and calculus, adding motion and time. It's a demanding course where a clear method matters. Our online dynamics tutoring provides exactly that.",
       "Engineering students get expert, one-on-one help on their schedule.",
+      "We begin by identifying the system, choosing axes and drawing the diagrams that make the motion clear. From there, we compare kinematics, force-and-acceleration, work-and-energy and impulse-and-momentum methods rather than treating every question as a formula search. Your course outline and attempted problems help set the pace and level of the session.",
     ],
     sections: [
       {
@@ -4171,6 +4182,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "University Physics 1 focuses on mechanics and demands both conceptual clarity and strong calculus. Our online Physics 1 tutoring builds both.",
       "Students across Canada get expert, one-on-one help on their schedule.",
+      "Physics 1 courses differ in how much calculus they use, so share your syllabus and current mechanics unit when you enquire. Lessons connect free-body diagrams and conservation principles to equations, with attention to signs, units and assumptions. After a guided example, you attempt a related question and explain why the method applies.",
     ],
     sections: [
       {
@@ -4333,6 +4345,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "IB Math is consistent worldwide, which makes it ideal for online tutoring. Our online IB Math tutoring supports students across Canada in both AA and AI at SL and HL.",
       "We teach to the IB's assessment style and guide the Internal Assessment.",
+      "Tell us your AA or AI course and SL or HL level so the online lesson follows the mathematics you are studying. Shared working lets the tutor see each step, discuss calculator output where relevant and address errors as they occur. Internal Assessment support helps you develop the mathematical reasoning in your own exploration without replacing independent work.",
     ],
     sections: [
       {
@@ -4439,6 +4452,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "Physics rewards clear concepts and systematic problem-solving. Our online physics tutoring builds both for students across Canada, high school through university.",
       "We strengthen the math physics relies on alongside the concepts.",
+      "Support is matched to your current level, from school mechanics and electricity to the mathematical demands of university physics. We use diagrams and step-by-step working to connect the physical idea with the calculation, then review a question you attempt independently. Sharing your curriculum or course outline helps us choose relevant examples and revision priorities.",
     ],
     sections: [
       {
@@ -4545,6 +4559,7 @@ export const seoPages: SeoPage[] = [
     intro: [
       "AP exams are the same across the country, making AP Calculus ideal for online tutoring. Our online AP Calculus tutoring covers AB and BC for students anywhere in Canada.",
       "We combine concept mastery with AP-format practice, paced to your exam date.",
+      "Tell us whether you are taking AB or BC so revision covers the right scope. Both courses need a clear understanding of limits, derivatives and integrals; BC also brings topics such as parametric and polar functions and series. Lessons pair explanations with calculator and non-calculator practice, including the written reasoning needed in free-response answers.",
     ],
     sections: [
       {

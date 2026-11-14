@@ -6,6 +6,7 @@ import { ArrowRight, MapPin, GraduationCap } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
 import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
+import Reviews from "@/components/Reviews";
 import VancouverHeroImage from "@/components/VancouverHeroImage";
 import VancouverAboutSection from "@/components/VancouverAboutSection";
 import VancouverWhyChooseSection from "@/components/VancouverWhyChooseSection";
@@ -306,6 +307,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
       />
       <VancouverWhyChooseSection />
       <VancouverFlexibleProgramsSection />
+      <Reviews context="service" />
       <VancouverCTABanner />
       <VancouverFAQSection faqs={faqs} />
       <ExtraRelatedLinks links={content?.relatedLinks} />

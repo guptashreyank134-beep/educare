@@ -3,14 +3,16 @@
 "use client";
 
 import React from "react";
+import { usePathname } from "next/navigation";
 import { BUSINESS } from "@/data/businessInfo";
 
 const WhatsAppFloating = () => {
-  // BUSINESS.whatsapp, not phoneE164: WhatsApp is registered on a different
-  // number from the one we publish for calls.
-  const whatsappUrl = BUSINESS.whatsapp;
+  const pathname = usePathname();
+  // The homepage offers a quieter WhatsApp text link beside its main booking
+  // action. Keep the floating shortcut on the rest of the site.
+  if (pathname === "/") return null;
 
-  //deploy
+  const whatsappUrl = BUSINESS.whatsapp;
 
   return (
     <a

@@ -26,7 +26,8 @@ export default function Team() {
                   src={tutor.image}
                   alt={`${tutor.name}, ${tutor.role}`}
                   fill
-                  className="object-cover object-top"
+                      className="object-cover"
+                      style={{ objectPosition: tutor.imagePosition ?? "top" }}
                   sizes="(max-width: 767px) calc(100vw - 64px), (max-width: 1023px) 45vw, 300px"
                 />
               </div>

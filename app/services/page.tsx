@@ -13,6 +13,7 @@ import LearningProgramsSection from '@/components/servicesPageComponents/Learnin
 import HowSessionsWork from '@/components/servicesPageComponents/HowSessionsWork';
 import { JsonLd, getPageSchema } from "@/components/SchemaMarkup";
 import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
+import Reviews from "@/components/Reviews";
 
 const page = async () => {
   const data = await getMetaDataBySlug("page", "services");
@@ -42,6 +43,7 @@ const page = async () => {
             <RelevantTutorProfiles tutorIds={[0, 9]} />
           </div>
         </div>
+        <Reviews context="service" />
       </main>
     </>
   )
