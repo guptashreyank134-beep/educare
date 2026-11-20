@@ -340,7 +340,7 @@ export default function CourseEnquiryForm({
           type="submit"
           disabled={isSubmitting}
           aria-describedby={ids.status}
-          className={`w-full justify-center ${wide ? "md:col-span-2" : ""}`}
+          className={`min-h-12 w-full justify-center whitespace-normal text-center !leading-snug ${wide ? "md:col-span-2" : ""}`}
         >
           {isSubmitting ? (
             <span className="inline-flex items-center gap-2">

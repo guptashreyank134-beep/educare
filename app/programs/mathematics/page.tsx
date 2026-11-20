@@ -3,7 +3,6 @@
 import React from "react";
 import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
-import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   Layers,
@@ -18,6 +17,7 @@ import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import ConsultationLayout from "@/components/ConsultationLayout";
 import {
   ConsultationCtaLink,
   StickyConsultationBar,
@@ -63,143 +63,145 @@ export default async function MathematicsProgramPage() {
         }}
       />
 
-      <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-[100px] pb-12 lg:pb-16 relative z-10">
+      <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-12 lg:pb-16 relative z-10">
         <Breadcrumbs items={breadcrumbItems} />
 
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 mt-10 items-start">
-          {/* Left Column: Content */}
-          <div>
-            <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
-              Mathematics Tutoring
-            </h1>
+        <ConsultationLayout
+          className="mt-10"
+          intro={
+            <div>
+              <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
+                Mathematics Tutoring
+              </h1>
 
-            <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
-              <p>
-                At Dr. Shreyank Educare, we help students approach mathematics
-                with clarity and confidence. Through personalized one-on-one
-                sessions and small group learning, each student receives focused
-                support tailored to their level, learning style, and academic
-                goals.
-              </p>
-              <p>
-                Our teaching approach emphasizes concept clarity, consistent
-                practice, and structured guidance, helping students improve not
-                just their grades, but their overall understanding of
-                mathematics.
-              </p>
-            </div>
-
-            {/* Consultation offer. The description and the response time are the
-                same ones published on /book and /contact. */}
-            <div className="mb-8 rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <ConsultationCtaLink
-                  targetId={ENQUIRY_ANCHOR}
-                  formId={FORM_ID}
-                  className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
-                >
-                  Book a Free 30-Minute Consultation
-                </ConsultationCtaLink>
-                <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
-                  One free, no-obligation 30-minute conversation: tell us which course
-                  the student is taking and where they are stuck, and we map out the
-                  level, tutor and schedule that would help. We reply within 24 hours on
-                  business days.
+              <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
+                <p>
+                  At Dr. Shreyank Educare, we help students approach mathematics
+                  with clarity and confidence. Through personalized one-on-one
+                  sessions and small group learning, each student receives focused
+                  support tailored to their level, learning style, and academic
+                  goals.
+                </p>
+                <p>
+                  Our teaching approach emphasizes concept clarity, consistent
+                  practice, and structured guidance, helping students improve not
+                  just their grades, but their overall understanding of
+                  mathematics.
                 </p>
               </div>
-              <p className="mt-4 text-[14px] font-montserrat text-slate/70">
-                One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
-                level — we confirm the rate for the course at the consultation. See{" "}
-                <Link href="/pricing" className="text-primary underline underline-offset-2">
-                  full pricing
-                </Link>
-                .
-              </p>
+
+              {/* Consultation offer. The description and the response time are the
+                  same ones published on /book and /contact. */}
+              <div className="rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
+                <div className="flex flex-col items-start gap-4">
+                  <ConsultationCtaLink
+                    targetId={ENQUIRY_ANCHOR}
+                    formId={FORM_ID}
+                    className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
+                  >
+                    Book a Free 30-Minute Consultation
+                  </ConsultationCtaLink>
+                  <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
+                    One free, no-obligation 30-minute conversation: tell us which course
+                    the student is taking and where they are stuck, and we map out the
+                    level, tutor and schedule that would help. We reply within 24 hours on
+                    business days.
+                  </p>
+                </div>
+                <p className="mt-4 text-[14px] font-montserrat text-slate/70">
+                  One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
+                  level — we confirm the rate for the course at the consultation. See{" "}
+                  <Link href="/pricing" className="text-primary underline underline-offset-2">
+                    full pricing
+                  </Link>
+                  .
+                </p>
+              </div>
             </div>
+          }
+          consultation={
+            <CourseConsultationPanel
+              subject={ENQUIRY.subject}
+              anchor={ENQUIRY_ANCHOR}
+              courseExample={ENQUIRY.courseExample}
+              courseLabel={ENQUIRY.courseLabel}
+              testimonialTopic={ENQUIRY.testimonialTopic}
+              heading={ENQUIRY.heading}
+              showCredential={ENQUIRY.taughtByFounder}
+            />
+          }
+        >
+          <ProgramOverview>
+            <ProgramInfoCard icon={Layers} title="What We Cover">
+              <ProgramBulletList
+                items={[
+                  "Algebra and Functions",
+                  "Calculus (Limits, Derivatives, Integration)",
+                  "Geometry and Trigonometry",
+                  "Statistics and Data Interpretation",
+                  "Problem-Solving Techniques",
+                ]}
+              />
+            </ProgramInfoCard>
 
-            <ProgramOverview>
-              <ProgramInfoCard icon={Layers} title="What We Cover">
-                <ProgramBulletList
-                  items={[
-                    "Algebra and Functions",
-                    "Calculus (Limits, Derivatives, Integration)",
-                    "Geometry and Trigonometry",
-                    "Statistics and Data Interpretation",
-                    "Problem-Solving Techniques",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={FileText} title="Who Is This For">
+              <ProgramBulletList
+                items={[
+                  "Middle and high school students (Grades 6-12)",
+                  "Students preparing for exams and assessments",
+                  "University students (including statistics and linear algebra)",
+                  "Learners struggling with foundational concepts",
+                  "Students aiming to improve performance and confidence",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={FileText} title="Who Is This For">
-                <ProgramBulletList
-                  items={[
-                    "Middle and high school students (Grades 6-12)",
-                    "Students preparing for exams and assessments",
-                    "University students (including statistics and linear algebra)",
-                    "Learners struggling with foundational concepts",
-                    "Students aiming to improve performance and confidence",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+              <ProgramBulletList
+                items={[
+                  "One-on-One Tutoring",
+                  "Small Group Sessions",
+                  "On-Demand Support",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
-                <ProgramBulletList
-                  items={[
-                    "One-on-One Tutoring",
-                    "Small Group Sessions",
-                    "On-Demand Support",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+              <ProgramBulletList
+                items={[
+                  "Improved grades and exam performance",
+                  "Strong conceptual understanding",
+                  "Faster and more accurate problem-solving",
+                  "Increased confidence in tackling complex questions",
+                  "Better academic consistency over time",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
-                <ProgramBulletList
-                  items={[
-                    "Improved grades and exam performance",
-                    "Strong conceptual understanding",
-                    "Faster and more accurate problem-solving",
-                    "Increased confidence in tackling complex questions",
-                    "Better academic consistency over time",
-                  ]}
-                />
-              </ProgramInfoCard>
-
-              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
-                <ProgramApproach
-                  items={[
-                    {
-                      title: "Building Strong Fundamentals",
-                      desc: "Mathematics is cumulative, and gaps in understanding can affect future learning. We identify weak areas early and strengthen core concepts to build a solid foundation.",
-                    },
-                    {
-                      title: "Breaking Down Complex Problems",
-                      desc: "Difficult questions are simplified into step-by-step methods, helping students approach them with clarity and confidence.",
-                    },
-                    {
-                      title: "Making Learning Engaging and Structured",
-                      desc: "Our sessions are designed to be interactive and supportive, encouraging students to ask questions, practice regularly, and stay motivated.",
-                    },
-                    {
-                      title: "Focusing on Concept Clarity Over Memorization",
-                      desc: "We prioritize understanding over rote learning, ensuring students can apply concepts effectively in exams and real-world situations.",
-                    },
-                  ]}
-                />
-              </ProgramInfoCard>
-            </ProgramOverview>
-          </div>
-
-          <CourseConsultationPanel
-            wide
-            subject={ENQUIRY.subject}
-            anchor={ENQUIRY_ANCHOR}
-            courseExample={ENQUIRY.courseExample}
-            courseLabel={ENQUIRY.courseLabel}
-            testimonialTopic={ENQUIRY.testimonialTopic}
-            heading={ENQUIRY.heading}
-            showCredential={ENQUIRY.taughtByFounder}
-          />
-        </div>
+            <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+              <ProgramApproach
+                items={[
+                  {
+                    title: "Building Strong Fundamentals",
+                    desc: "Mathematics is cumulative, and gaps in understanding can affect future learning. We identify weak areas early and strengthen core concepts to build a solid foundation.",
+                  },
+                  {
+                    title: "Breaking Down Complex Problems",
+                    desc: "Difficult questions are simplified into step-by-step methods, helping students approach them with clarity and confidence.",
+                  },
+                  {
+                    title: "Making Learning Engaging and Structured",
+                    desc: "Our sessions are designed to be interactive and supportive, encouraging students to ask questions, practice regularly, and stay motivated.",
+                  },
+                  {
+                    title: "Focusing on Concept Clarity Over Memorization",
+                    desc: "We prioritize understanding over rote learning, ensuring students can apply concepts effectively in exams and real-world situations.",
+                  },
+                ]}
+              />
+            </ProgramInfoCard>
+          </ProgramOverview>
+        </ConsultationLayout>
 
         {/* Bottom Section: Courses We Support */}
         <section className="mt-12 lg:mt-16">
@@ -280,7 +282,7 @@ export default async function MathematicsProgramPage() {
           </div>
         </section>
       </div>
-    
+
         {faqs.length > 0 && (
           <>
             <JsonLd schema={getFAQSchema(faqs)} />
@@ -290,7 +292,7 @@ export default async function MathematicsProgramPage() {
       <RichBody value={bodyContent} />
       <RelatedTutoringPages pillar="/programs/mathematics" programSlug="mathematics" />
 
-      
+
         <StickyConsultationBar targetId={ENQUIRY_ANCHOR} formId={FORM_ID} />
 
         <ProgramNextSteps

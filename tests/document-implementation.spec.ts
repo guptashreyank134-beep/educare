@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { expectConsultationLayout, expectProfilesAfterContent, readOnlyPage } from "./helpers/consultation-layout";
 
 const medicalPaths = [
   "/online-medical-tutoring",
@@ -8,23 +9,6 @@ const medicalPaths = [
   "/online-pharmacology-tutor",
   "/medical-exam-prep-tutor-online",
 ];
-
-// Render the existing, genuine fallback consistently, and never create a lead,
-// appointment, or external message while checking the document's requirements.
-async function readOnlyPage(page: Page) {
-  await page.route("**/*", async (route) => {
-    const request = route.request();
-    if (!["GET", "HEAD", "OPTIONS"].includes(request.method())) {
-      await route.abort("blockedbyclient");
-      return;
-    }
-    if (new URL(request.url()).pathname === "/api/reviews") {
-      await route.fulfill({ json: { reviews: [] } });
-      return;
-    }
-    await route.continue();
-  });
-}
 
 async function expectGeneralReviews(page: Page) {
   const reviews = page.locator('[data-tutoring-reviews="service"]');
@@ -53,13 +37,8 @@ for (const width of [390, 1280]) {
         const intro = page.locator("[data-landing-introduction]");
         expect(await intro.locator("p").count()).toBeGreaterThanOrEqual(2);
         expect((await intro.innerText()).length).toBeGreaterThan(300);
-        const introBox = (await intro.boundingBox())!;
-        const enquiryBox = (await page.locator("[data-landing-enquiry]").boundingBox())!;
-        // The form must flow below the introduction instead of reserving an
-        // empty desktop column as shown in the document's marked screenshot.
-        const gap = enquiryBox.y - (introBox.y + introBox.height);
-        expect(gap).toBeGreaterThanOrEqual(24);
-        expect(gap).toBeLessThanOrEqual(40);
+        await expectConsultationLayout(page, width);
+        await expectProfilesAfterContent(page);
 
         for (const profile of [
           { id: 6, name: "Dr. Sabiha Arshed", credential: "MD, MSc in Health Sciences" },
@@ -117,6 +96,27 @@ for (const width of [390, 1280]) {
         expect(visualBox.y).toBeGreaterThanOrEqual(bookingBox.y + bookingBox.height);
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
+    });
+
+    test("program navigation distinguishes academic and university finance", async ({ page }) => {
+      await page.goto("/programs");
+      await page.getByRole("button", { name: "Finance Tutoring", exact: true }).click();
+      await expect(page.getByRole("link", { name: "Explore our Finance Tutoring", exact: true }))
+        .toHaveAttribute("href", "/programs/finance");
+      const directory = page.getByRole("navigation", { name: "All tutoring programs" });
+      await expect(directory.getByRole("link", { name: "Finance Tutoring", exact: true }))
+        .toHaveAttribute("href", "/programs/finance");
+      await expect(directory.getByRole("link", { name: "Finance", exact: true }))
+        .toHaveAttribute("href", "/programs/university-finance");
+
+      const studyClub = page.locator("footer").getByRole("link", { name: "Study Club Terms", exact: true });
+      await expect(studyClub).toHaveAttribute("href", "/homework-help-burnaby");
+      const response = await page.goto("/homework-help-burnaby");
+      expect(response?.status()).toBe(200);
+      await expect(page.locator("#programme-terms")).toHaveCount(1);
+      const comparisonBox = (await page.getByRole("table").boundingBox())!;
+      const profileBox = (await page.locator("#subject-tutor-0").boundingBox())!;
+      expect(profileBox.y).toBeGreaterThan(comparisonBox.y + comparisonBox.height);
     });
   });
 }

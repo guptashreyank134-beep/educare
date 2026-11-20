@@ -1,13 +1,15 @@
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 
-/** Related program facts share the available width instead of forming one
- * narrow list down the left side of a full-width page. */
+/** Cards follow their content column's width, including when a consultation
+ * form occupies the other desktop column. */
 export function ProgramOverview({ children }: { children: ReactNode }) {
   return (
-    <section data-program-overview className="grid min-w-0 gap-5 md:grid-cols-2">
-      {children}
-    </section>
+    <div className="@container/program-overview min-w-0">
+      <section data-program-overview className="grid min-w-0 gap-5 @[36rem]/program-overview:grid-cols-2">
+        {children}
+      </section>
+    </div>
   );
 }
 
@@ -25,7 +27,7 @@ export function ProgramInfoCard({
   return (
     <article
       data-program-card
-      className={`min-w-0 rounded-2xl border border-[#E2E8F0] bg-white p-5 shadow-sm sm:p-6 ${wide ? "md:col-span-2" : ""}`}
+      className={`min-w-0 rounded-2xl border border-[#E2E8F0] bg-white p-5 shadow-sm sm:p-6 ${wide ? "@[36rem]/program-overview:col-span-2" : ""}`}
     >
       <div className="mb-5 flex items-center gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-yellow-light text-slate">
@@ -53,7 +55,7 @@ export function ProgramBulletList({ items }: { items: string[] }) {
 
 export function ProgramApproach({ items }: { items: { title: string; desc: string }[] }) {
   return (
-    <div data-program-approach className="grid gap-4 sm:grid-cols-2">
+    <div data-program-approach className="grid gap-4 @[36rem]/program-overview:grid-cols-2">
       {items.map((item) => (
         <div key={item.title} className="rounded-xl border border-[#E2E8F0] bg-bg-grey p-4">
           <h3 className="mb-2 text-[16px] font-montserrat font-semibold text-slate">{item.title}</h3>

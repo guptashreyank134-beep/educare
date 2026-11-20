@@ -2,6 +2,11 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import { loadEnvLocal } from "../scripts/test-env.mts";
+import { readFileSync } from "node:fs";
+
+const recordedDates: Record<string, string> = JSON.parse(
+  readFileSync(new URL("../data/route-dates.json", import.meta.url), "utf8"),
+);
 
 loadEnvLocal();
 
@@ -36,39 +41,25 @@ test("sitemap contains each public URL only once, even when CMS slugs repeat", (
   assert.equal(new Set(entries.map((entry) => entry.url)).size, entries.length);
 });
 
-/** Share of entries that sit in the single largest identical-lastmod group. */
-function largestIdenticalShare(items: { lastModified?: string | Date }[]) {
-  const counts = new Map<string, number>();
-  for (const item of items) {
-    if (!item.lastModified) continue;
-    const key = new Date(item.lastModified).toISOString();
-    counts.set(key, (counts.get(key) ?? 0) + 1);
+test("sitemap dates come from recorded content, including legitimate bulk edits", async (t) => {
+  const { client } = await import("../sanity/lib/client.ts");
+  const { publishedAnswerPages, answerPagePath } = await import("../content/answer-pages.ts");
+  // A real bulk edit may give many URLs one commit date; an arbitrary build
+  // timestamp must still fail this provenance check.
+  t.mock.method(client, "fetch", async () => []);
+  const answerDates = new Map(publishedAnswerPages.map((page) => [answerPagePath(page.slug), page.lastReviewed]));
+  const result = await sitemap();
+  for (const entry of result) {
+    const path = new URL(entry.url).pathname;
+    const known = [recordedDates[path], answerDates.get(path)].filter((value): value is string => Boolean(value));
+    if (!known.length) {
+      assert.equal(entry.lastModified, undefined, path + " has no recorded content date");
+      continue;
+    }
+    const newest = Math.max(...known.map((value) => Date.parse(value)));
+    assert.equal(new Date(entry.lastModified!).getTime(), newest, path + " must use an actual content date");
   }
-  const largest = Math.max(0, ...counts.values());
-  return { share: largest / items.length, largest, distinct: counts.size };
-}
-
-test("the identical-lastmod guard catches a build-time stamp", () => {
-  // The regression this protects against: one `new Date()` for every URL.
-  const stamped = Array.from({ length: 50 }, () => ({ lastModified: new Date("2026-09-07") }));
-  assert.ok(largestIdenticalShare(stamped).share > 0.2);
-
-  const varied = Array.from({ length: 50 }, (_, i) => ({
-    lastModified: new Date(2026, 0, i + 1),
-  }));
-  assert.ok(largestIdenticalShare(varied).share <= 0.2);
 });
-
-test("sitemap does not stamp one build time across every URL", () => {
-  const { share, largest, distinct } = largestIdenticalShare(entries);
-  assert.ok(
-    share <= 0.2,
-    `${largest} of ${entries.length} entries (${(share * 100).toFixed(1)}%) share one lastmod ` +
-      `across ${distinct} distinct values. More than 20% identical means the dates are being ` +
-      `generated rather than sourced — check that route-dates.json is current.`,
-  );
-});
-
 test("every lastmod is a real, past date", () => {
   const now = Date.now();
   for (const entry of entries) {
@@ -91,11 +82,11 @@ test("sitemap lists no redirected or noindexed URL", async () => {
   }
 });
 
-test("Study Club CMS updates supply the canonical page's lastmod", async (t) => {
+test("newer Study Club CMS updates supply the canonical page's lastmod", async (t) => {
   const { client } = await import("../sanity/lib/client.ts");
   const { STUDY_CLUB } = await import("../data/studyClub.ts");
   const { SITE_URL } = await import("../data/businessInfo.ts");
-  const updatedAt = "2026-10-30T12:30:00.000Z";
+  const updatedAt = new Date(Date.parse(recordedDates[STUDY_CLUB.path]) + 86_400_000).toISOString();
   let calls = 0;
   t.mock.method(client, "fetch", async (query: string, params: Record<string, unknown>) => {
     if (calls++ === 0) return [];
@@ -112,6 +103,20 @@ test("Study Club CMS updates supply the canonical page's lastmod", async (t) => 
   assert.equal(new Date(studyClubEntries[0].lastModified!).toISOString(), updatedAt);
 });
 
+test("older CMS content cannot hide a newer committed page change", async (t) => {
+  const { client } = await import("../sanity/lib/client.ts");
+  const { STUDY_CLUB } = await import("../data/studyClub.ts");
+  const { SITE_URL } = await import("../data/businessInfo.ts");
+  const codeDate = new Date(recordedDates[STUDY_CLUB.path]);
+  const updatedAt = new Date(codeDate.getTime() - 86_400_000).toISOString();
+  let calls = 0;
+  t.mock.method(client, "fetch", async () => calls++ === 0
+    ? [] : [{ path: STUDY_CLUB.path, updatedAt }]);
+  const result = await sitemap();
+  const entry = result.find((item) => item.url === `${SITE_URL}${STUDY_CLUB.path}`);
+  assert.ok(entry?.lastModified);
+  assert.equal(new Date(entry.lastModified).toISOString(), codeDate.toISOString());
+});
 test("CMS outages are reported and keep Study Club's recorded fallback date", async (t) => {
   const { client } = await import("../sanity/lib/client.ts");
   const { STUDY_CLUB } = await import("../data/studyClub.ts");
@@ -135,7 +140,7 @@ test("CMS outages are reported and keep Study Club's recorded fallback date", as
 test("city CMS dates update canonical math-tutor URLs", async (t) => {
   const { client } = await import("../sanity/lib/client.ts");
   const { SITE_URL } = await import("../data/businessInfo.ts");
-  const updatedAt = "2026-10-29T10:15:00.000Z";
+  const updatedAt = new Date(Date.parse(recordedDates["/math-tutor-burnaby"]) + 86_400_000).toISOString();
   let calls = 0;
   t.mock.method(client, "fetch", async (query: string) => {
     if (calls++ === 0) return [];

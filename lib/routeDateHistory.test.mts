@@ -1,6 +1,54 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { routeEntryFingerprints, routeDatesFromSnapshots } from "../scripts/route-date-history.mts";
+import { latestContentDate } from "./contentDates.ts";
+
+test("keyed guidance maps date only the entry whose copy changed", () => {
+  const before = 'export const guidance: Record<string, string[]> = { math: ["Original explanation"], physics: ["Forces and motion"] };';
+  const after = before.replace("Original explanation", "Revised explanation");
+  const mapSnapshot = (date: string, source: string) => ({ date, entries: routeEntryFingerprints(source, "guidance") });
+  const dates = routeDatesFromSnapshots([
+    mapSnapshot("2026-09-03T10:00:00Z", after),
+    mapSnapshot("2026-09-01T10:00:00Z", before),
+  ], ["math", "physics"]);
+  assert.equal(dates.get("math"), "2026-09-03T10:00:00Z");
+  assert.equal(dates.get("physics"), "2026-09-01T10:00:00Z");
+});
+
+test("map entry fingerprints ignore reordering and formatting but resolve shared values", () => {
+  const before = 'const TIP = "Explain your working"; export const guidance = { math: [TIP], physics: ["Forces"] } as const;';
+  const reordered = "// Editorial formatting only\nconst TIP = 'Explain your working'; export const guidance = { 'physics': ['Forces'], 'math': [TIP] } satisfies Record<string, readonly string[]>;";
+  const original = routeEntryFingerprints(before, "guidance");
+  const same = routeEntryFingerprints(reordered, "guidance");
+  assert.deepEqual([...original].sort(), [...same].sort());
+  const changed = routeEntryFingerprints(before.replace("Explain your working", "Check your reasoning"), "guidance");
+  assert.notEqual(original.get("math"), changed.get("math"));
+  assert.equal(original.get("physics"), changed.get("physics"));
+});
+
+test("new keyed guidance uses its introduction date and absent keys receive none", () => {
+  const entries = routeEntryFingerprints('export const guidance = { math: ["Explain your reasoning"] };', "guidance");
+  const dates = routeDatesFromSnapshots([
+    { date: "2026-09-03T10:00:00Z", entries },
+    { date: "2026-09-01T10:00:00Z", entries: new Map() },
+  ], ["math", "missing"]);
+  assert.equal(dates.get("math"), "2026-09-03T10:00:00Z");
+  assert.equal(dates.has("missing"), false);
+  assert.throws(() => routeEntryFingerprints('const guidance = { math: [], "math": [] };', "guidance"), /Duplicate slug/);
+  assert.throws(() => routeEntryFingerprints('const guidance = { ...other };', "guidance"), /Unsupported non-literal/);
+  assert.throws(() => routeEntryFingerprints('const guidance = { [slug]: [] };', "guidance"), /Missing literal slug key/);
+});
+
+test("CMS, route and supplemental dates choose the latest real timestamp", () => {
+  const earlier = "2026-09-01T10:00:00Z";
+  const later = "2026-09-03T10:00:00Z";
+  assert.equal(latestContentDate(earlier, later), later);
+  assert.equal(latestContentDate(later, earlier), later);
+  // Compare instants rather than lexically sorting ISO strings with offsets.
+  assert.equal(latestContentDate("2026-09-03T01:00:00+02:00", "2026-09-02T23:30:00Z"), "2026-09-02T23:30:00Z");
+  assert.equal(latestContentDate(undefined, "not-a-date", earlier), earlier);
+  assert.equal(latestContentDate(undefined, null, ""), undefined);
+});
 
 const initial = 'export const pages = [{ slug: "math", h1: "Math help", body: ["Original explanation"] }, { slug: "physics", h1: "Physics help" }];';
 const snapshot = (date: string, source: string) => ({ date, entries: routeEntryFingerprints(source, "pages") });

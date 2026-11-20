@@ -3,7 +3,6 @@
 import React from "react";
 import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
-import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   Layers,
@@ -18,6 +17,7 @@ import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import ConsultationLayout from "@/components/ConsultationLayout";
 import {
   ConsultationCtaLink,
   StickyConsultationBar,
@@ -63,147 +63,149 @@ export default async function FrenchCoursePage() {
         }}
       />
 
-      <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-[100px] pb-12 lg:pb-16 relative z-10">
+      <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-12 lg:pb-16 relative z-10">
         <Breadcrumbs items={breadcrumbItems} />
 
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 mt-10 items-start">
-          {/* Left Column: Content */}
-          <div>
-            <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
-              French Language Tutoring in Vancouver
-            </h1>
+        <ConsultationLayout
+          className="mt-10"
+          intro={
+            <div>
+              <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
+                French Language Tutoring in Vancouver
+              </h1>
 
-            <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
-              <p>
-                French is one of the most widely spoken languages globally and
-                an important skill for academics, travel, careers, and personal
-                growth.
-              </p>
-              <p>
-                At Dr. Shreyank Educare, our French language program helps
-                learners develop strong communication skills through interactive
-                lessons, conversational practice, vocabulary building, grammar
-                training, and cultural understanding.
-              </p>
-            </div>
-
-            {/* Consultation offer. The description and the response time are the
-                same ones published on /book and /contact. */}
-            <div className="mb-8 rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <ConsultationCtaLink
-                  targetId={ENQUIRY_ANCHOR}
-                  formId={FORM_ID}
-                  className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
-                >
-                  Book a Free 30-Minute Consultation
-                </ConsultationCtaLink>
-                <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
-                  One free, no-obligation 30-minute conversation: tell us which course
-                  the student is taking and where they are stuck, and we map out the
-                  level, tutor and schedule that would help. We reply within 24 hours on
-                  business days.
+              <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
+                <p>
+                  French is one of the most widely spoken languages globally and
+                  an important skill for academics, travel, careers, and personal
+                  growth.
+                </p>
+                <p>
+                  At Dr. Shreyank Educare, our French language program helps
+                  learners develop strong communication skills through interactive
+                  lessons, conversational practice, vocabulary building, grammar
+                  training, and cultural understanding.
                 </p>
               </div>
-              <p className="mt-4 text-[14px] font-montserrat text-slate/70">
-                One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
-                level — we confirm the rate for the course at the consultation. See{" "}
-                <Link href="/pricing" className="text-primary underline underline-offset-2">
-                  full pricing
-                </Link>
-                .
-              </p>
+
+              {/* Consultation offer. The description and the response time are the
+                  same ones published on /book and /contact. */}
+              <div className="rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
+                <div className="flex flex-col items-start gap-4">
+                  <ConsultationCtaLink
+                    targetId={ENQUIRY_ANCHOR}
+                    formId={FORM_ID}
+                    className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
+                  >
+                    Book a Free 30-Minute Consultation
+                  </ConsultationCtaLink>
+                  <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
+                    One free, no-obligation 30-minute conversation: tell us which course
+                    the student is taking and where they are stuck, and we map out the
+                    level, tutor and schedule that would help. We reply within 24 hours on
+                    business days.
+                  </p>
+                </div>
+                <p className="mt-4 text-[14px] font-montserrat text-slate/70">
+                  One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
+                  level — we confirm the rate for the course at the consultation. See{" "}
+                  <Link href="/pricing" className="text-primary underline underline-offset-2">
+                    full pricing
+                  </Link>
+                  .
+                </p>
+              </div>
             </div>
+          }
+          consultation={
+            <CourseConsultationPanel
+              subject={ENQUIRY.subject}
+              anchor={ENQUIRY_ANCHOR}
+              courseExample={ENQUIRY.courseExample}
+              courseLabel={ENQUIRY.courseLabel}
+              testimonialTopic={ENQUIRY.testimonialTopic}
+              heading={ENQUIRY.heading}
+              showCredential={ENQUIRY.taughtByFounder}
+            />
+          }
+        >
+          <ProgramOverview>
+            <ProgramInfoCard icon={Layers} title="What We Cover">
+              <ProgramBulletList
+                items={[
+                  "Speaking and pronunciation",
+                  "Listening comprehension",
+                  "Reading fluency",
+                  "Writing skills",
+                  "Vocabulary development",
+                  "Grammar fundamentals",
+                  "Conversational French",
+                  "Cultural communication skills",
+                ]}
+              />
+            </ProgramInfoCard>
 
-            <ProgramOverview>
-              <ProgramInfoCard icon={Layers} title="What We Cover">
-                <ProgramBulletList
-                  items={[
-                    "Speaking and pronunciation",
-                    "Listening comprehension",
-                    "Reading fluency",
-                    "Writing skills",
-                    "Vocabulary development",
-                    "Grammar fundamentals",
-                    "Conversational French",
-                    "Cultural communication skills",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={FileText} title="Who Is This For">
+              <ProgramBulletList
+                items={[
+                  "Kids learning a second language",
+                  "School students studying French",
+                  "Adults learning for travel or personal growth",
+                  "Professionals improving communication skills",
+                  "Students preparing for French proficiency exams",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={FileText} title="Who Is This For">
-                <ProgramBulletList
-                  items={[
-                    "Kids learning a second language",
-                    "School students studying French",
-                    "Adults learning for travel or personal growth",
-                    "Professionals improving communication skills",
-                    "Students preparing for French proficiency exams",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+              <ProgramBulletList
+                items={[
+                  "Small Group Classes",
+                  "Private 1-on-1 Coaching",
+                  "Online Classes",
+                  "Exam Preparation Support",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
-                <ProgramBulletList
-                  items={[
-                    "Small Group Classes",
-                    "Private 1-on-1 Coaching",
-                    "Online Classes",
-                    "Exam Preparation Support",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+              <ProgramBulletList
+                items={[
+                  "Strong conversational fluency",
+                  "Improved grammar and writing skills",
+                  "Better academic performance in French",
+                  "Increased cultural confidence",
+                  "Preparation for proficiency exams",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
-                <ProgramBulletList
-                  items={[
-                    "Strong conversational fluency",
-                    "Improved grammar and writing skills",
-                    "Better academic performance in French",
-                    "Increased cultural confidence",
-                    "Preparation for proficiency exams",
-                  ]}
-                />
-              </ProgramInfoCard>
-
-              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
-                <ProgramApproach
-                  items={[
-                    {
-                      title: "Interactive Learning Methods",
-                      desc: "We use games, conversations, storytelling, and practical exercises to keep learning engaging.",
-                    },
-                    {
-                      title: "Speaking Confidence",
-                      desc: "Students regularly practice speaking in real-world situations.",
-                    },
-                    {
-                      title: "Personalized Progress Tracking",
-                      desc: "Weekly feedback helps learners stay on track.",
-                    },
-                    {
-                      title: "Small Class Sizes",
-                      desc: "Smaller groups ensure better attention and faster growth.",
-                    },
-                  ]}
-                />
-              </ProgramInfoCard>
-            </ProgramOverview>
-          </div>
-
-          <CourseConsultationPanel
-            wide
-            subject={ENQUIRY.subject}
-            anchor={ENQUIRY_ANCHOR}
-            courseExample={ENQUIRY.courseExample}
-            courseLabel={ENQUIRY.courseLabel}
-            testimonialTopic={ENQUIRY.testimonialTopic}
-            heading={ENQUIRY.heading}
-            showCredential={ENQUIRY.taughtByFounder}
-          />
-        </div>
+            <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+              <ProgramApproach
+                items={[
+                  {
+                    title: "Interactive Learning Methods",
+                    desc: "We use games, conversations, storytelling, and practical exercises to keep learning engaging.",
+                  },
+                  {
+                    title: "Speaking Confidence",
+                    desc: "Students regularly practice speaking in real-world situations.",
+                  },
+                  {
+                    title: "Personalized Progress Tracking",
+                    desc: "Weekly feedback helps learners stay on track.",
+                  },
+                  {
+                    title: "Small Class Sizes",
+                    desc: "Smaller groups ensure better attention and faster growth.",
+                  },
+                ]}
+              />
+            </ProgramInfoCard>
+          </ProgramOverview>
+        </ConsultationLayout>
       </div>
-    
+
         {faqs.length > 0 && (
           <>
             <JsonLd schema={getFAQSchema(faqs)} />
@@ -213,7 +215,7 @@ export default async function FrenchCoursePage() {
       <RichBody value={bodyContent} />
       <RelatedTutoringPages pillar="/programs/french" programSlug="french" />
 
-      
+
         <StickyConsultationBar targetId={ENQUIRY_ANCHOR} formId={FORM_ID} />
 
         <ProgramNextSteps

@@ -6,6 +6,7 @@ import { ArrowRight, Check, Link2 } from "lucide-react";
 
 import { ButtonLink } from "@/components/ui/Button";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import ConsultationLayout from "@/components/ConsultationLayout";
 import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
 import Reviews from "@/components/Reviews";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
@@ -26,6 +27,7 @@ import { BUSINESS } from "@/data/businessInfo";
 import { correctSeoCopy } from "@/data/seoCopyCorrections";
 import { tutorIdsForContext } from "@/data/tutorAssignments";
 import { testimonialsFor } from "@/data/testimonials";
+import { expandLandingIntro } from "@/data/landingLearningGuidance";
 
 const metrics = [
   { value: "PhD-Led", label: "by Dr. Shreyank Gupta" },
@@ -81,7 +83,7 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
   const h1 = orFallback(content?.heading, page.h1);
   const heroSubheading = orFallback(content?.heroSubheading, page.heroSubheading);
   const metaDescription = correctSeoCopy(orFallback(content?.metaDescription, page.metaDescription));
-  const intro = orFallback(content?.intro, page.intro);
+  const intro = expandLandingIntro(slug, orFallback(content?.intro, page.intro), content?.introGuidance);
   const sections = orFallback(content?.sections, page.sections);
   const faqs = orFallback(content?.faqs, page.faqs);
   const trustMetrics = slug === "english-tutor-vancouver" ? englishTutorMetrics : metrics;
@@ -90,6 +92,37 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
     ? "university-physics" : undefined;
   const hasDedicatedTestimonial = Boolean(
     testimonialTopic && testimonialsFor(testimonialTopic).length > 0,
+  );
+
+  const renderSection = (section: (typeof sections)[number], i: number) => (
+    <div key={i} className="@container">
+      <h2 className="text-[24px] sm:text-[30px] font-bricolage font-medium text-slate mb-5">
+        {section.heading}
+      </h2>
+      {section.body?.map((p, j) => (
+        <p
+          key={j}
+          className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed mb-4"
+        >
+          {p}
+        </p>
+      ))}
+      {section.points && (
+        <div className="grid grid-cols-1 @min-[540px]:grid-cols-2 gap-3">
+          {section.points.map((point) => (
+            <div
+              key={point}
+              className="flex items-start gap-3 bg-bg-grey rounded-xl px-4 py-3 border border-[#F1F5F9]"
+            >
+              <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+              <span className="text-[16px] font-montserrat text-slate">
+                {point}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 
   return (
@@ -120,69 +153,65 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
           <Breadcrumbs items={[{ label: h1 }]} />
         </div>
 
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8">
-          {/* Content flows directly into the enquiry section at every width. */}
-          <div className="flex flex-col">
-            <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
-              {h1}
-            </h1>
-            <p className="text-[#64748B] text-[16px] sm:text-[18px] leading-relaxed max-w-3xl mb-8">
-              {heroSubheading}
-            </p>
+        <ConsultationLayout
+          intro={
+            <div className="flex flex-col">
+              <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
+                {h1}
+              </h1>
+              <p className="text-[#64748B] text-[16px] sm:text-[18px] leading-relaxed max-w-3xl mb-8">
+                {heroSubheading}
+              </p>
 
-            <div className="flex flex-wrap gap-4">
-              <ButtonLink href="/book" iconRight={ArrowRight}>
-                {page.location === "Vancouver"
-                  ? "Book a Free Assessment Session"
-                  : "Book a Free 30-Minute Consultation"}
-              </ButtonLink>
-              <a
-                href={BUSINESS.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#15803D] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
-              >
-                Chat on WhatsApp
-              </a>
-            </div>
-
-            <div data-landing-introduction className="mt-8 space-y-4 rounded-[16px] border border-[#F1F5F9] bg-white/75 p-5 sm:p-6">
-              <h2 className="text-[22px] font-bricolage font-medium text-slate">
-                Tutoring Built Around the Student
-              </h2>
-              {intro.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="text-[15px] sm:text-[16px] font-montserrat text-slate/75 leading-relaxed"
+              <div className="flex flex-wrap gap-4">
+                <ButtonLink href="/book" iconRight={ArrowRight}>
+                  {page.location === "Vancouver"
+                    ? "Book a Free Assessment Session"
+                    : "Book a Free 30-Minute Consultation"}
+                </ButtonLink>
+                <a
+                  href={BUSINESS.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#15803D] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
                 >
-                  {paragraph}
-                </p>
-              ))}
+                  Chat on WhatsApp
+                </a>
+              </div>
+
+              <div data-landing-introduction className="mt-8 space-y-4 rounded-[16px] border border-[#F1F5F9] bg-white/75 p-5 sm:p-6">
+                <h2 className="text-[22px] font-bricolage font-medium text-slate">
+                  Tutoring Built Around the Student
+                </h2>
+                {intro.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="text-[15px] sm:text-[16px] font-montserrat text-slate/75 leading-relaxed"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
-          </div>
-
-          {/* Full-width enquiry avoids a tall sidebar leaving an empty column. */}
-          <div data-landing-enquiry className="relative">
-            {/* The page's own H1 becomes the lead subject, so an enquiry names
-                the page that produced it rather than a generic bucket. */}
-            <CourseConsultationPanel
-              wide
-              subject={h1}
-              anchor={`${slug}-enquiry`}
-              courseLabel="Student's grade or course"
-              courseExample="Math 10, Chemistry 12, or a first-year university course"
-              heading={page.location ? `Ask about tutoring in ${page.location}` : "Ask about tutoring"}
-              testimonialTopic={testimonialTopic}
-              showCredential={founderTeaches(`${page.h1} ${page.cluster}`)}
-            />
-          </div>
-        </div>
-
-        {tutorIds.length > 0 && (
-          <div className="mx-auto max-w-5xl pt-10 lg:pt-14">
-            <RelevantTutorProfiles tutorIds={tutorIds} />
-          </div>
-        )}
+          }
+          consultation={
+            <div data-landing-enquiry className="relative">
+              {/* The page's own H1 becomes the lead subject, so an enquiry names
+                  the page that produced it rather than a generic bucket. */}
+              <CourseConsultationPanel
+                subject={h1}
+                anchor={`${slug}-enquiry`}
+                courseLabel="Student's grade or course"
+                courseExample="Math 10, Chemistry 12, or a first-year university course"
+                heading={page.location ? `Ask about tutoring in ${page.location}` : "Ask about tutoring"}
+                testimonialTopic={testimonialTopic}
+                showCredential={founderTeaches(`${page.h1} ${page.cluster}`)}
+              />
+            </div>
+          }
+        >
+          {sections.slice(0, 1).map(renderSection)}
+        </ConsultationLayout>
 
         {/* Trust badges */}
         <div className="mt-10 lg:mt-12">
@@ -206,39 +235,12 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
 
       </section>
 
-      {/* Content sections */}
-      <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-12">
-        {sections.map((section, i) => (
-          <div key={i}>
-            <h2 className="text-[24px] sm:text-[30px] font-bricolage font-medium text-slate mb-5">
-              {section.heading}
-            </h2>
-            {section.body?.map((p, j) => (
-              <p
-                key={j}
-                className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed mb-4"
-              >
-                {p}
-              </p>
-            ))}
-            {section.points && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {section.points.map((point) => (
-                  <div
-                    key={point}
-                    className="flex items-start gap-3 bg-bg-grey rounded-xl px-4 py-3 border border-[#F1F5F9]"
-                  >
-                    <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <span className="text-[16px] font-montserrat text-slate">
-                      {point}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-      </section>
+      {/* Remaining course details use the full reading width. */}
+      {sections.length > 1 && (
+        <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-10">
+          {sections.slice(1).map(renderSection)}
+        </section>
+      )}
 
       {/* Related internal links */}
       {page.related && page.related.length > 0 && (
@@ -288,6 +290,12 @@ export default async function SeoLandingPage({ slug }: { slug: string }) {
           </section>
         );
       })()}
+
+      {tutorIds.length > 0 && (
+        <section className="mx-auto max-w-5xl px-4 sm:px-6 py-8">
+          <RelevantTutorProfiles tutorIds={tutorIds} />
+        </section>
+      )}
 
       {!hasDedicatedTestimonial && <Reviews context="service" />}
       <VancouverCTABanner />

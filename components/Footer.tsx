@@ -136,7 +136,7 @@ const footerColumns = [
       { label: "Contact", href: "/contact" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
-      { label: "Study Club Terms", href: "/homework-help-burnaby#programme-terms" },
+      { label: "Study Club Terms", href: "/homework-help-burnaby" },
     ],
   },
 ];

@@ -201,20 +201,6 @@ export default async function StudyClubPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <RelevantTutorProfiles tutorIds={[0]} heading="Meet Your Study Club Supervisor" />
-        <p className="mt-5 text-[15px] font-montserrat leading-relaxed text-slate/70">
-          Dr. Shreyank oversees the opening programme. The tutor assigned to each
-          group and the subjects they will cover are confirmed before enrolment.
-          You can also{" "}
-          <Link href="/about" className="font-medium text-primary underline underline-offset-4">
-            meet the wider Educare team
-          </Link>{" "}
-          and discuss individual tutoring if your child needs more sustained
-          one-to-one support.
-        </p>
-      </div>
-
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
@@ -249,6 +235,20 @@ export default async function StudyClubPage() {
           <table className="w-full min-w-[720px] text-left font-montserrat"><thead className="bg-primary text-white"><tr><th className="p-5">Programme</th><th className="p-5">Main purpose</th><th className="p-5">Format and price</th></tr></thead><tbody className="divide-y divide-[#E5EAF0] text-[15px] text-slate/75"><tr><th className="p-5 text-slate">Homework and Study Club</th><td className="p-5">Current schoolwork and a regular study routine</td><td className="p-5">Grades 9–10 · 12 group sessions · CAD $299 monthly</td></tr><tr><th className="p-5 text-slate">Subject-specific group tutoring</th><td className="p-5">Planned lessons and practice in one subject</td><td className="p-5">Two weekly sessions · currently CAD $185–$200 monthly</td></tr><tr><th className="p-5 text-slate">Private tutoring</th><td className="p-5">Sustained attention and an individual plan</td><td className="p-5">Currently CAD $75–$100 per hour</td></tr></tbody></table>
         </div>
       </section>
+
+      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <RelevantTutorProfiles tutorIds={[0]} heading="Meet Your Study Club Supervisor" />
+        <p className="mt-5 text-[15px] font-montserrat leading-relaxed text-slate/70">
+          Dr. Shreyank oversees the opening programme. The tutor assigned to each
+          group and the subjects they will cover are confirmed before enrolment.
+          You can also{" "}
+          <Link href="/about" className="font-medium text-primary underline underline-offset-4">
+            meet the wider Educare team
+          </Link>{" "}
+          and discuss individual tutoring if your child needs more sustained
+          one-to-one support.
+        </p>
+      </div>
 
       <section className="bg-bg-grey py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

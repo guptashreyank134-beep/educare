@@ -48,10 +48,20 @@ export function routeEntryFingerprints(source: string, arrayName: string): Map<s
 
   const declaration = bindings.get(arrayName);
   const array = declaration && unwrap(declaration);
-  if (!array || !ts.isArrayLiteralExpression(array)) {
-    throw new Error(`Cannot find the literal ${arrayName} route array in a committed snapshot`);
+  if (!array || (!ts.isArrayLiteralExpression(array) && !ts.isObjectLiteralExpression(array))) {
+    throw new Error(`Cannot find the literal ${arrayName} route array or map in a committed snapshot`);
   }
   const result = new Map<string, string>();
+  if (ts.isObjectLiteralExpression(array)) {
+    for (const entry of array.properties) {
+      if (!ts.isPropertyAssignment(entry)) throw new Error(`Unsupported non-literal entry in ${arrayName}`);
+      const slug = propertyName(entry.name);
+      if (!slug) throw new Error(`Missing literal slug key in ${arrayName}`);
+      if (result.has(slug)) throw new Error(`Duplicate slug ${slug} in ${arrayName}`);
+      result.set(slug, JSON.stringify(fingerprint(entry.initializer)));
+    }
+    return result;
+  }
   for (const entry of array.elements) {
     if (!ts.isObjectLiteralExpression(entry)) throw new Error(`Unsupported non-literal entry in ${arrayName}`);
     const slugProperty = entry.properties.find((property) =>

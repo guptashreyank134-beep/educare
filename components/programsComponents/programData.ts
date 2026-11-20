@@ -93,7 +93,7 @@ export const programTabs: ProgramTab[] = [
           "Commerce students and beginners looking to understand real-world financial systems.",
         expectedOutcome:
           "Clear understanding of financial principles with practical, applicable knowledge.",
-        learnMoreHref: "/programs/university-finance",
+        learnMoreHref: "/programs/finance",
       },
     ],
   },

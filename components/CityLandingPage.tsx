@@ -5,6 +5,7 @@ import { ArrowRight, MapPin, GraduationCap } from "lucide-react";
 
 import { ButtonLink } from "@/components/ui/Button";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import ConsultationLayout from "@/components/ConsultationLayout";
 import RelevantTutorProfiles from "@/components/RelevantTutorProfiles";
 import Reviews from "@/components/Reviews";
 import VancouverHeroImage from "@/components/VancouverHeroImage";
@@ -25,6 +26,7 @@ import {
 } from "@/components/SchemaMarkup";
 import AtAGlance from "@/components/AtAGlance";
 import { BUSINESS } from "@/data/businessInfo";
+import { expandLandingIntro } from "@/data/landingLearningGuidance";
 
 import { getCityBySlug, cityUrl } from "@/data/cities";
 
@@ -77,7 +79,7 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
   const heroHeading = orFallback(content?.heading, city.heroHeading);
   const metaDescription = orFallback(content?.metaDescription, city.metaDescription);
   const heroSubheading = orFallback(content?.heroSubheading, city.heroSubheading);
-  const intro = orFallback(content?.intro, city.intro);
+  const intro = expandLandingIntro(slug, orFallback(content?.intro, city.intro), content?.introGuidance);
   const faqs = orFallback(content?.faqs, city.faqs);
 
   return (
@@ -102,63 +104,79 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
           <Breadcrumbs items={breadcrumbItems} />
         </div>
 
-        <div data-landing-introduction className="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-center">
-          {/* Left Column: Content & Images */}
-          <div className="flex flex-col">
-            <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
-              {heroHeading}
-            </h1>
-            <p className="text-[#64748B] text-[16px] leading-relaxed max-w-[500px] mb-8">
-              {heroSubheading}
-            </p>
+        <ConsultationLayout
+          intro={
+            <div data-landing-introduction className="flex flex-col">
+              <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-bricolage font-medium text-slate leading-[1.2] mb-6">
+                {heroHeading}
+              </h1>
+              <p className="text-[#64748B] text-[16px] leading-relaxed max-w-[500px] mb-8">
+                {heroSubheading}
+              </p>
 
-            <div className="flex flex-wrap gap-4">
-              <ButtonLink href="/book" iconRight={ArrowRight}>
-                {city.slug === "vancouver"
-                  ? "Book a Free Assessment Session"
-                  : "Book a Free 30-Minute Consultation"}
-              </ButtonLink>
-              <a
-                href={BUSINESS.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#15803D] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5 fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
+              <div className="flex flex-wrap gap-4">
+                <ButtonLink href="/book" iconRight={ArrowRight}>
+                  {city.slug === "vancouver"
+                    ? "Book a Free Assessment Session"
+                    : "Book a Free 30-Minute Consultation"}
+                </ButtonLink>
+                <a
+                  href={BUSINESS.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-[10px] border border-[#25D366] rounded-[8px] px-[20px] py-[10px] text-[#15803D] font-medium text-[16px] leading-none hover:bg-[#25D366]/10 transition-all"
                 >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                </svg>
-                Chat on WhatsApp
-              </a>
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                  </svg>
+                  Chat on WhatsApp
+                </a>
+              </div>
+
+            </div>
+          }
+          consultation={
+            <div data-landing-enquiry className="relative">
+              {/* Form-widget label, not a content heading — kept as <p> so it
+                  stays out of the heading outline (avoids duplicate-heading). */}
+              <CourseConsultationPanel
+                subject={`Mathematics — ${city.name}`}
+                anchor={`math-tutor-${city.slug}-enquiry`}
+                courseLabel="Student's grade or course"
+                courseExample="Math 10, Pre-Calculus 11, or Calculus 12"
+                heading={`Ask about maths tutoring in ${city.name}`}
+                showCredential
+              />
+            </div>
+          }
+        >
+          <div>
+            <h2 className="text-[28px] sm:text-[34px] font-bricolage font-medium text-slate mb-6">
+              Mathematics Tutoring in {city.name}
+            </h2>
+            <div className="space-y-5">
+              {intro.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed"
+                >
+                  {paragraph}
+                </p>
+              ))}
+              <p className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed">
+                {city.availability}
+              </p>
             </div>
 
+            <div className="mx-auto mt-8 w-full max-w-[500px] px-8">
+              <VancouverHeroImage />
+            </div>
           </div>
-          <div className="mx-auto w-full max-w-[500px]">
-            <VancouverHeroImage />
-          </div>
-        </div>
-
-          {/* The form has its own row, so it cannot leave a void under the hero. */}
-          <div data-landing-enquiry className="relative mx-auto mt-8 max-w-5xl">
-            {/* Form-widget label, not a content heading — kept as <p> so it
-                stays out of the heading outline (avoids duplicate-heading). */}
-            <CourseConsultationPanel
-              wide
-              subject={`Mathematics — ${city.name}`}
-              anchor={`math-tutor-${city.slug}-enquiry`}
-              courseLabel="Student's grade or course"
-              courseExample="Math 10, Pre-Calculus 11, or Calculus 12"
-              heading={`Ask about maths tutoring in ${city.name}`}
-              showCredential
-            />
-          </div>
-
-        <div className="mx-auto max-w-5xl pt-10 lg:pt-14">
-          <RelevantTutorProfiles tutorIds={[0, 9]} />
-        </div>
+        </ConsultationLayout>
 
         {/* Trust Badges */}
         <div className="mt-10 lg:mt-12">
@@ -199,29 +217,12 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
         />
       </div>
 
-      {/* City-specific intro / local content */}
-      <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-16">
-        <h2 className="text-[28px] sm:text-[34px] font-bricolage font-medium text-slate mb-6">
-          Mathematics Tutoring in {city.name}
-        </h2>
-        <div className="space-y-5">
-          {intro.map((paragraph, index) => (
-            <p
-              key={index}
-              className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed"
-            >
-              {paragraph}
-            </p>
-          ))}
-          <p className="text-[16px] sm:text-[18px] font-montserrat text-slate/80 leading-relaxed">
-            {city.availability}
-          </p>
-        </div>
-
+      {/* Local course details and genuine city-specific feedback. */}
+      <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-8">
         {/* City-specific long-form sections — the substance that makes each
             city page genuinely distinct rather than a templated name swap. */}
         {city.localSections?.map((section) => (
-          <div key={section.heading} className="mt-12">
+          <div key={section.heading} className="mt-10 first:mt-0">
             <h3 className="text-[22px] sm:text-[26px] font-bricolage font-medium text-slate mb-4">
               {section.heading}
             </h3>
@@ -307,6 +308,9 @@ export default async function CityLandingPage({ slug }: { slug: string }) {
       />
       <VancouverWhyChooseSection />
       <VancouverFlexibleProgramsSection />
+      <section className="mx-auto max-w-5xl px-4 sm:px-6 py-8">
+        <RelevantTutorProfiles tutorIds={[0, 9]} />
+      </section>
       <Reviews context="service" />
       <VancouverCTABanner />
       <VancouverFAQSection faqs={faqs} />

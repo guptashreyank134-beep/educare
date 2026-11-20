@@ -16,6 +16,7 @@ import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import ConsultationLayout from "@/components/ConsultationLayout";
 import {
   ConsultationCtaLink,
   StickyConsultationBar,
@@ -62,144 +63,146 @@ export default async function BiologyProgramPage() {
         }}
       />
 
-      <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-[100px] pb-12 lg:pb-16 relative z-10">
+      <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-12 lg:pb-16 relative z-10">
         <Breadcrumbs items={breadcrumbItems} />
 
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 mt-10 items-start">
-          {/* Left Column: Content */}
-          <div>
-            <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
-              Biology Tutoring in Burnaby & Vancouver
-            </h1>
+        <ConsultationLayout
+          className="mt-10"
+          intro={
+            <div>
+              <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
+                Biology Tutoring in Burnaby & Vancouver
+              </h1>
 
-            <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
-              <p>
-                University biology becomes challenging when students rely solely
-                on memorization. We help students understand biological systems,
-                relationships, and scientific reasoning to master the subject
-                effectively.
-              </p>
-              <p>
-                Whether you&apos;re preparing for nursing school, pre-med, or a
-                biology major, our tutors provide the conceptual clarity and lab
-                support needed to excel in your coursework and exams.
-              </p>
-            </div>
-
-            {/* Consultation offer. The description and the response time are the
-                same ones published on /book and /contact. */}
-            <div className="mb-8 rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <ConsultationCtaLink
-                  targetId={ENQUIRY_ANCHOR}
-                  formId={FORM_ID}
-                  className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
-                >
-                  Book a Free 30-Minute Consultation
-                </ConsultationCtaLink>
-                <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
-                  One free, no-obligation 30-minute conversation: tell us which course
-                  the student is taking and where they are stuck, and we map out the
-                  level, tutor and schedule that would help. We reply within 24 hours on
-                  business days.
+              <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
+                <p>
+                  University biology becomes challenging when students rely solely
+                  on memorization. We help students understand biological systems,
+                  relationships, and scientific reasoning to master the subject
+                  effectively.
+                </p>
+                <p>
+                  Whether you&apos;re preparing for nursing school, pre-med, or a
+                  biology major, our tutors provide the conceptual clarity and lab
+                  support needed to excel in your coursework and exams.
                 </p>
               </div>
-              <p className="mt-4 text-[14px] font-montserrat text-slate/70">
-                One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
-                level — we confirm the rate for the course at the consultation. See{" "}
-                <Link href="/pricing" className="text-primary underline underline-offset-2">
-                  full pricing
-                </Link>
-                .
-              </p>
+
+              {/* Consultation offer. The description and the response time are the
+                  same ones published on /book and /contact. */}
+              <div className="rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
+                <div className="flex flex-col items-start gap-4">
+                  <ConsultationCtaLink
+                    targetId={ENQUIRY_ANCHOR}
+                    formId={FORM_ID}
+                    className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
+                  >
+                    Book a Free 30-Minute Consultation
+                  </ConsultationCtaLink>
+                  <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
+                    One free, no-obligation 30-minute conversation: tell us which course
+                    the student is taking and where they are stuck, and we map out the
+                    level, tutor and schedule that would help. We reply within 24 hours on
+                    business days.
+                  </p>
+                </div>
+                <p className="mt-4 text-[14px] font-montserrat text-slate/70">
+                  One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
+                  level — we confirm the rate for the course at the consultation. See{" "}
+                  <Link href="/pricing" className="text-primary underline underline-offset-2">
+                    full pricing
+                  </Link>
+                  .
+                </p>
+              </div>
             </div>
+          }
+          consultation={
+            <CourseConsultationPanel
+              subject={ENQUIRY.subject}
+              anchor={ENQUIRY_ANCHOR}
+              courseExample={ENQUIRY.courseExample}
+              courseLabel={ENQUIRY.courseLabel}
+              testimonialTopic={ENQUIRY.testimonialTopic}
+              heading={ENQUIRY.heading}
+              showCredential={ENQUIRY.taughtByFounder}
+            />
+          }
+        >
+          <ProgramOverview>
+            <ProgramInfoCard icon={Layers} title="What We Cover">
+              <ProgramBulletList
+                items={[
+                  "Cell Biology",
+                  "Molecular Biology",
+                  "Genetics",
+                  "Anatomy & Physiology",
+                  "Ecology",
+                  "Biotechnology",
+                  "Research Concepts",
+                  "Lab Support",
+                ]}
+              />
+            </ProgramInfoCard>
 
-            <ProgramOverview>
-              <ProgramInfoCard icon={Layers} title="What We Cover">
-                <ProgramBulletList
-                  items={[
-                    "Cell Biology",
-                    "Molecular Biology",
-                    "Genetics",
-                    "Anatomy & Physiology",
-                    "Ecology",
-                    "Biotechnology",
-                    "Research Concepts",
-                    "Lab Support",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={FileText} title="Who Is This For">
+              <ProgramBulletList
+                items={[
+                  "Biology majors",
+                  "Pre-med students",
+                  "Nursing students",
+                  "Healthcare students",
+                  "Students preparing for exams/labs",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={FileText} title="Who Is This For">
-                <ProgramBulletList
-                  items={[
-                    "Biology majors",
-                    "Pre-med students",
-                    "Nursing students",
-                    "Healthcare students",
-                    "Students preparing for exams/labs",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+              <ProgramBulletList
+                items={[
+                  "One-on-One Tutoring",
+                  "Online Tutoring",
+                  "In-Person Tutoring",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
-                <ProgramBulletList
-                  items={[
-                    "One-on-One Tutoring",
-                    "Online Tutoring",
-                    "In-Person Tutoring",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+              <ProgramBulletList
+                items={[
+                  "Better understanding of biological systems",
+                  "Improved retention of complex concepts",
+                  "Higher grades and exam performance",
+                  "Greater confidence in theory-heavy subjects",
+                  "Stronger academic consistency",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
-                <ProgramBulletList
-                  items={[
-                    "Better understanding of biological systems",
-                    "Improved retention of complex concepts",
-                    "Higher grades and exam performance",
-                    "Greater confidence in theory-heavy subjects",
-                    "Stronger academic consistency",
-                  ]}
-                />
-              </ProgramInfoCard>
-
-              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
-                <ProgramApproach
-                  items={[
-                    {
-                      title: "Concept-Based Learning",
-                      desc: "Focus on understanding rather than memorization. We teach you to see the bigger picture and connect different biological concepts.",
-                    },
-                    {
-                      title: "System-Level Thinking",
-                      desc: "Learn how biological systems interact. This approach helps in mastering complex topics like human physiology and ecology.",
-                    },
-                    {
-                      title: "Lab Preparation",
-                      desc: "Support for assignments and practicals. We help you understand the 'why' behind experiments and how to write effective reports.",
-                    },
-                    {
-                      title: "Exam Preparation",
-                      desc: "Targeted revision plans. We focus on high-yield topics and test-taking strategies to boost your performance.",
-                    },
-                  ]}
-                />
-              </ProgramInfoCard>
-            </ProgramOverview>
-          </div>
-
-          <CourseConsultationPanel
-            wide
-            subject={ENQUIRY.subject}
-            anchor={ENQUIRY_ANCHOR}
-            courseExample={ENQUIRY.courseExample}
-            courseLabel={ENQUIRY.courseLabel}
-            testimonialTopic={ENQUIRY.testimonialTopic}
-            heading={ENQUIRY.heading}
-            showCredential={ENQUIRY.taughtByFounder}
-          />
-        </div>
+            <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+              <ProgramApproach
+                items={[
+                  {
+                    title: "Concept-Based Learning",
+                    desc: "Focus on understanding rather than memorization. We teach you to see the bigger picture and connect different biological concepts.",
+                  },
+                  {
+                    title: "System-Level Thinking",
+                    desc: "Learn how biological systems interact. This approach helps in mastering complex topics like human physiology and ecology.",
+                  },
+                  {
+                    title: "Lab Preparation",
+                    desc: "Support for assignments and practicals. We help you understand the 'why' behind experiments and how to write effective reports.",
+                  },
+                  {
+                    title: "Exam Preparation",
+                    desc: "Targeted revision plans. We focus on high-yield topics and test-taking strategies to boost your performance.",
+                  },
+                ]}
+              />
+            </ProgramInfoCard>
+          </ProgramOverview>
+        </ConsultationLayout>
 
         {/* Bottom Section: Courses We Support */}
         <section className="mt-12 lg:mt-16">
@@ -237,7 +240,7 @@ export default async function BiologyProgramPage() {
           </div>
         </section>
       </div>
-    
+
         {faqs.length > 0 && (
           <>
             <JsonLd schema={getFAQSchema(faqs)} />
@@ -247,7 +250,7 @@ export default async function BiologyProgramPage() {
       <RichBody value={bodyContent} />
       <RelatedTutoringPages pillar="/programs/biology" programSlug="biology" />
 
-      
+
         <StickyConsultationBar targetId={ENQUIRY_ANCHOR} formId={FORM_ID} />
 
         <ProgramNextSteps

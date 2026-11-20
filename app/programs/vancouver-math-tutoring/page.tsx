@@ -17,6 +17,7 @@ import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import ConsultationLayout from "@/components/ConsultationLayout";
 import {
   ConsultationCtaLink,
   StickyConsultationBar,
@@ -70,151 +71,153 @@ export default async function VancouverMathTutoringPage() {
             backgroundRepeat: "no-repeat",
           }}
         />
-        <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-[100px] pb-12 lg:pb-16 relative z-10">
+        <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-12 lg:pb-16 relative z-10">
           <Breadcrumbs items={breadcrumbItems} />
 
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 mt-10 items-start">
-            {/* Left Column */}
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <MapPin size={18} className="text-primary" />
-                <span className="text-[14px] font-montserrat text-primary font-medium uppercase tracking-wide">
-                  Serving Vancouver, BC
-                </span>
+          <ConsultationLayout
+            className="mt-10"
+            intro={
+              <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <MapPin size={18} className="text-primary" />
+                    <span className="text-[14px] font-montserrat text-primary font-medium uppercase tracking-wide">
+                      Serving Vancouver, BC
+                    </span>
+                  </div>
+
+                  <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
+                    Vancouver Math Tutoring
+                  </h1>
+
+                  <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
+                    <p>
+                      Looking for reliable math tutoring in Vancouver? Dr. Shreyank
+                      Educare provides expert, personalized math support for students
+                      from Grade 8 through university. Whether your child is
+                      struggling with foundational concepts or preparing for final
+                      exams, our experienced tutors are here to help.
+                    </p>
+                    <p>
+                      We focus on concept clarity, structured practice, and
+                      confidence-building — helping Vancouver students not just pass,
+                      but truly understand mathematics.
+                    </p>
+                  </div>
+
+                  {/* Consultation offer. The description and the response time are
+                      the same ones published on /book and /contact. */}
+                  <div className="rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
+                    <div className="flex flex-col items-start gap-4">
+                      <ConsultationCtaLink
+                        targetId={ENQUIRY_ANCHOR}
+                        formId={FORM_ID}
+                        className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
+                      >
+                        Book a Free 30-Minute Consultation
+                      </ConsultationCtaLink>
+                      <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
+                        One free, no-obligation 30-minute conversation: tell us which
+                        course the student is taking and where they are stuck, and we map
+                        out the level, tutor and schedule that would help. We reply within
+                        24 hours on business days.
+                      </p>
+                    </div>
+                    <p className="mt-4 text-[14px] font-montserrat text-slate/70">
+                      One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
+                      level — we confirm the rate for the course at the consultation. See{" "}
+                      <Link href="/pricing" className="text-primary underline underline-offset-2">
+                        full pricing
+                      </Link>
+                      .
+                    </p>
+                  </div>
               </div>
+            }
+            consultation={
+              <CourseConsultationPanel
+                subject={ENQUIRY.subject}
+                anchor={ENQUIRY_ANCHOR}
+                courseExample={ENQUIRY.courseExample}
+                courseLabel={ENQUIRY.courseLabel}
+                testimonialTopic={ENQUIRY.testimonialTopic}
+                heading={ENQUIRY.heading}
+                showCredential={ENQUIRY.taughtByFounder}
+              />
+            }
+          >
+            <ProgramOverview>
+              <ProgramInfoCard icon={Layers} title="What We Cover">
+                <ProgramBulletList
+                  items={[
+                    "Algebra & Functions (Grades 8–12)",
+                    "Pre-Calculus 11 & 12",
+                    "Foundations of Mathematics 10, 11, 12",
+                    "Calculus (Limits, Derivatives, Integration)",
+                    "Statistics and Probability",
+                    "Word Problems & Exam Strategies",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
-                Vancouver Math Tutoring
-              </h1>
+              <ProgramInfoCard icon={FileText} title="Who Is This For">
+                <ProgramBulletList
+                  items={[
+                    "Vancouver students in Grades 8 through 12",
+                    "University students in introductory math courses",
+                    "Students falling behind or needing to accelerate",
+                    "Learners preparing for final exams and BC curriculum-aligned coursework",
+                    "Students who want structured, consistent support",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
-                <p>
-                  Looking for reliable math tutoring in Vancouver? Dr. Shreyank
-                  Educare provides expert, personalized math support for students
-                  from Grade 8 through university. Whether your child is
-                  struggling with foundational concepts or preparing for final
-                  exams, our experienced tutors are here to help.
-                </p>
-                <p>
-                  We focus on concept clarity, structured practice, and
-                  confidence-building — helping Vancouver students not just pass,
-                  but truly understand mathematics.
-                </p>
-              </div>
+              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                <ProgramBulletList
+                  items={[
+                    "One-on-One Online Tutoring",
+                    "Flexible scheduling — evenings & weekends",
+                    "Homework Help & Assignment Support",
+                    "Exam Preparation Sessions",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              {/* Consultation offer. The description and the response time are
-                  the same ones published on /book and /contact. */}
-              <div className="mb-8 rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <ConsultationCtaLink
-                    targetId={ENQUIRY_ANCHOR}
-                    formId={FORM_ID}
-                    className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
-                  >
-                    Book a Free 30-Minute Consultation
-                  </ConsultationCtaLink>
-                  <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
-                    One free, no-obligation 30-minute conversation: tell us which
-                    course the student is taking and where they are stuck, and we map
-                    out the level, tutor and schedule that would help. We reply within
-                    24 hours on business days.
-                  </p>
-                </div>
-                <p className="mt-4 text-[14px] font-montserrat text-slate/70">
-                  One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
-                  level — we confirm the rate for the course at the consultation. See{" "}
-                  <Link href="/pricing" className="text-primary underline underline-offset-2">
-                    full pricing
-                  </Link>
-                  .
-                </p>
-              </div>
+              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                <ProgramBulletList
+                  items={[
+                    "Improved report card grades",
+                    "Stronger exam performance",
+                    "Greater confidence in approaching math problems",
+                    "Solid foundation for future courses",
+                    "Reduced math anxiety",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <ProgramOverview>
-                <ProgramInfoCard icon={Layers} title="What We Cover">
-                  <ProgramBulletList
-                    items={[
-                      "Algebra & Functions (Grades 8–12)",
-                      "Pre-Calculus 11 & 12",
-                      "Foundations of Mathematics 10, 11, 12",
-                      "Calculus (Limits, Derivatives, Integration)",
-                      "Statistics and Probability",
-                      "Word Problems & Exam Strategies",
-                    ]}
-                  />
-                </ProgramInfoCard>
-
-                <ProgramInfoCard icon={FileText} title="Who Is This For">
-                  <ProgramBulletList
-                    items={[
-                      "Vancouver students in Grades 8 through 12",
-                      "University students in introductory math courses",
-                      "Students falling behind or needing to accelerate",
-                      "Learners preparing for final exams and BC curriculum-aligned coursework",
-                      "Students who want structured, consistent support",
-                    ]}
-                  />
-                </ProgramInfoCard>
-
-                <ProgramInfoCard icon={LayoutGrid} title="Program Format">
-                  <ProgramBulletList
-                    items={[
-                      "One-on-One Online Tutoring",
-                      "Flexible scheduling — evenings & weekends",
-                      "Homework Help & Assignment Support",
-                      "Exam Preparation Sessions",
-                    ]}
-                  />
-                </ProgramInfoCard>
-
-                <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
-                  <ProgramBulletList
-                    items={[
-                      "Improved report card grades",
-                      "Stronger exam performance",
-                      "Greater confidence in approaching math problems",
-                      "Solid foundation for future courses",
-                      "Reduced math anxiety",
-                    ]}
-                  />
-                </ProgramInfoCard>
-
-                <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
-                  <ProgramApproach
-                    items={[
-                      {
-                        title: "Personalized to Each Student",
-                        desc: "Every Vancouver student learns differently. We tailor each session to match the student's current level, pace, and BC curriculum requirements.",
-                      },
-                      {
-                        title: "BC Curriculum Aligned",
-                        desc: "Our tutors are familiar with the BC Math curriculum and ensure sessions directly support what students are learning in class.",
-                      },
-                      {
-                        title: "Building Long-Term Understanding",
-                        desc: "Rather than quick fixes, we build lasting conceptual understanding so students are prepared for each next step in their math journey.",
-                      },
-                      {
-                        title: "Consistent Progress Tracking",
-                        desc: "We monitor student progress and adjust our approach to ensure continuous improvement and growing confidence.",
-                      },
-                    ]}
-                  />
-                </ProgramInfoCard>
-              </ProgramOverview>
-            </div>
-
-            <CourseConsultationPanel
-              wide
-              subject={ENQUIRY.subject}
-              anchor={ENQUIRY_ANCHOR}
-              courseExample={ENQUIRY.courseExample}
-              courseLabel={ENQUIRY.courseLabel}
-              testimonialTopic={ENQUIRY.testimonialTopic}
-              heading={ENQUIRY.heading}
-              showCredential={ENQUIRY.taughtByFounder}
-            />
-          </div>
+              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                <ProgramApproach
+                  items={[
+                    {
+                      title: "Personalized to Each Student",
+                      desc: "Every Vancouver student learns differently. We tailor each session to match the student's current level, pace, and BC curriculum requirements.",
+                    },
+                    {
+                      title: "BC Curriculum Aligned",
+                      desc: "Our tutors are familiar with the BC Math curriculum and ensure sessions directly support what students are learning in class.",
+                    },
+                    {
+                      title: "Building Long-Term Understanding",
+                      desc: "Rather than quick fixes, we build lasting conceptual understanding so students are prepared for each next step in their math journey.",
+                    },
+                    {
+                      title: "Consistent Progress Tracking",
+                      desc: "We monitor student progress and adjust our approach to ensure continuous improvement and growing confidence.",
+                    },
+                  ]}
+                />
+              </ProgramInfoCard>
+            </ProgramOverview>
+          </ConsultationLayout>
 
           {/* Courses We Support */}
           <section className="mt-12 lg:mt-16">
@@ -269,14 +272,14 @@ export default async function VancouverMathTutoringPage() {
             </div>
           </section>
         </div>
-      
+
         {faqs.length > 0 && (
           <>
             <JsonLd schema={getFAQSchema(faqs)} />
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
-      
+
         <StickyConsultationBar targetId={ENQUIRY_ANCHOR} formId={FORM_ID} />
 
         <ProgramNextSteps

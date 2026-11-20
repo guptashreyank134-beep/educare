@@ -3,7 +3,6 @@
 import React from "react";
 import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
-import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   Layers,
@@ -18,6 +17,7 @@ import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import ConsultationLayout from "@/components/ConsultationLayout";
 import {
   ConsultationCtaLink,
   StickyConsultationBar,
@@ -60,141 +60,143 @@ export default async function PythonProgramPage() {
         }}
       />
 
-      <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-[100px] pb-12 lg:pb-16 relative z-10">
+      <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-12 lg:pb-16 relative z-10">
         <Breadcrumbs items={breadcrumbItems} />
 
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 mt-10 items-start">
-          {/* Left Column: Content */}
-          <div>
-            <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
-              Python Programming Tutoring in Burnaby & Vancouver
-            </h1>
+        <ConsultationLayout
+          className="mt-10"
+          intro={
+            <div>
+              <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
+                Python Programming Tutoring in Burnaby & Vancouver
+              </h1>
 
-            <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
-              <p>
-                At Dr. Shreyank Educare, our Python program is designed to
-                introduce kids to programming in a simple, engaging, and
-                structured way. With its easy-to-understand syntax, Python
-                allows students to focus on building logic and solving problems
-                rather than struggling with complex rules.
-              </p>
-              <p>
-                Through guided lessons and interactive projects, students not
-                only learn how to code but also understand how their code works
-                and why it matters.
-              </p>
-            </div>
-
-            {/* Consultation offer. The description and the response time are the
-                same ones published on /book and /contact. */}
-            <div className="mb-8 rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <ConsultationCtaLink
-                  targetId={ENQUIRY_ANCHOR}
-                  formId={FORM_ID}
-                  className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
-                >
-                  Book a Free 30-Minute Consultation
-                </ConsultationCtaLink>
-                <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
-                  One free, no-obligation 30-minute conversation: tell us which course
-                  the student is taking and where they are stuck, and we map out the
-                  level, tutor and schedule that would help. We reply within 24 hours on
-                  business days.
+              <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
+                <p>
+                  At Dr. Shreyank Educare, our Python program is designed to
+                  introduce kids to programming in a simple, engaging, and
+                  structured way. With its easy-to-understand syntax, Python
+                  allows students to focus on building logic and solving problems
+                  rather than struggling with complex rules.
+                </p>
+                <p>
+                  Through guided lessons and interactive projects, students not
+                  only learn how to code but also understand how their code works
+                  and why it matters.
                 </p>
               </div>
-              <p className="mt-4 text-[14px] font-montserrat text-slate/70">
-                One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
-                level — we confirm the rate for the course at the consultation. See{" "}
-                <Link href="/pricing" className="text-primary underline underline-offset-2">
-                  full pricing
-                </Link>
-                .
-              </p>
+
+              {/* Consultation offer. The description and the response time are the
+                  same ones published on /book and /contact. */}
+              <div className="rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
+                <div className="flex flex-col items-start gap-4">
+                  <ConsultationCtaLink
+                    targetId={ENQUIRY_ANCHOR}
+                    formId={FORM_ID}
+                    className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
+                  >
+                    Book a Free 30-Minute Consultation
+                  </ConsultationCtaLink>
+                  <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
+                    One free, no-obligation 30-minute conversation: tell us which course
+                    the student is taking and where they are stuck, and we map out the
+                    level, tutor and schedule that would help. We reply within 24 hours on
+                    business days.
+                  </p>
+                </div>
+                <p className="mt-4 text-[14px] font-montserrat text-slate/70">
+                  One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
+                  level — we confirm the rate for the course at the consultation. See{" "}
+                  <Link href="/pricing" className="text-primary underline underline-offset-2">
+                    full pricing
+                  </Link>
+                  .
+                </p>
+              </div>
             </div>
+          }
+          consultation={
+            <CourseConsultationPanel
+              subject={ENQUIRY.subject}
+              anchor={ENQUIRY_ANCHOR}
+              courseExample={ENQUIRY.courseExample}
+              courseLabel={ENQUIRY.courseLabel}
+              testimonialTopic={ENQUIRY.testimonialTopic}
+              heading={ENQUIRY.heading}
+              showCredential={ENQUIRY.taughtByFounder}
+            />
+          }
+        >
+          <ProgramOverview>
+            <ProgramInfoCard icon={Layers} title="What We Cover">
+              <ProgramBulletList
+                items={[
+                  "Variables and data types",
+                  "Loops and conditionals",
+                  "Functions and logic building",
+                  "Basic syntax and program structure",
+                  "Debugging and error handling",
+                ]}
+              />
+            </ProgramInfoCard>
 
-            <ProgramOverview>
-              <ProgramInfoCard icon={Layers} title="What We Cover">
-                <ProgramBulletList
-                  items={[
-                    "Variables and data types",
-                    "Loops and conditionals",
-                    "Functions and logic building",
-                    "Basic syntax and program structure",
-                    "Debugging and error handling",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={FileText} title="Who Is This For">
+              <ProgramBulletList
+                items={[
+                  "Kids and beginners with no prior coding experience",
+                  "Students interested in technology and programming",
+                  "Learners who enjoy problem-solving and creativity",
+                  "Students looking to build future-ready digital skills",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={FileText} title="Who Is This For">
-                <ProgramBulletList
-                  items={[
-                    "Kids and beginners with no prior coding experience",
-                    "Students interested in technology and programming",
-                    "Learners who enjoy problem-solving and creativity",
-                    "Students looking to build future-ready digital skills",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+              <ProgramBulletList
+                items={[
+                  "One-on-one sessions for personalized guidance",
+                  "Small group classes for collaborative learning",
+                  "Interactive sessions focused on practical coding",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
-                <ProgramBulletList
-                  items={[
-                    "One-on-one sessions for personalized guidance",
-                    "Small group classes for collaborative learning",
-                    "Interactive sessions focused on practical coding",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+              <ProgramBulletList
+                items={[
+                  "Strong programming fundamentals",
+                  "Improved logical and analytical thinking",
+                  "Ability to build simple applications and projects",
+                  "Confidence in problem-solving and debugging",
+                  "Early exposure to real-world tech skills",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
-                <ProgramBulletList
-                  items={[
-                    "Strong programming fundamentals",
-                    "Improved logical and analytical thinking",
-                    "Ability to build simple applications and projects",
-                    "Confidence in problem-solving and debugging",
-                    "Early exposure to real-world tech skills",
-                  ]}
-                />
-              </ProgramInfoCard>
-
-              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
-                <ProgramApproach
-                  items={[
-                    {
-                      title: "Building Strong Fundamentals",
-                      desc: "We focus on building logic and solving problems, ensuring a solid foundation for future learning.",
-                    },
-                    {
-                      title: "Breaking Down Complex Problems",
-                      desc: "Difficult questions are simplified into step-by-step methods, helping students approach them with clarity and confidence.",
-                    },
-                    {
-                      title: "Making Learning Engaging and Structured",
-                      desc: "Our sessions are designed to be interactive and supportive, encouraging students to ask questions, practice regularly, and stay motivated.",
-                    },
-                    {
-                      title: "Focusing on Concept Clarity Over Memorization",
-                      desc: "We prioritize understanding over rote learning, ensuring students can apply concepts effectively in exams and real-world situations.",
-                    },
-                  ]}
-                />
-              </ProgramInfoCard>
-            </ProgramOverview>
-          </div>
-
-          <CourseConsultationPanel
-            wide
-            subject={ENQUIRY.subject}
-            anchor={ENQUIRY_ANCHOR}
-            courseExample={ENQUIRY.courseExample}
-            courseLabel={ENQUIRY.courseLabel}
-            testimonialTopic={ENQUIRY.testimonialTopic}
-            heading={ENQUIRY.heading}
-            showCredential={ENQUIRY.taughtByFounder}
-          />
-        </div>
+            <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+              <ProgramApproach
+                items={[
+                  {
+                    title: "Building Strong Fundamentals",
+                    desc: "We focus on building logic and solving problems, ensuring a solid foundation for future learning.",
+                  },
+                  {
+                    title: "Breaking Down Complex Problems",
+                    desc: "Difficult questions are simplified into step-by-step methods, helping students approach them with clarity and confidence.",
+                  },
+                  {
+                    title: "Making Learning Engaging and Structured",
+                    desc: "Our sessions are designed to be interactive and supportive, encouraging students to ask questions, practice regularly, and stay motivated.",
+                  },
+                  {
+                    title: "Focusing on Concept Clarity Over Memorization",
+                    desc: "We prioritize understanding over rote learning, ensuring students can apply concepts effectively in exams and real-world situations.",
+                  },
+                ]}
+              />
+            </ProgramInfoCard>
+          </ProgramOverview>
+        </ConsultationLayout>
 
         {/* Bottom Section: Program Structure */}
         <section className="mt-12 lg:mt-16">
@@ -273,14 +275,14 @@ export default async function PythonProgramPage() {
           </div>
         </section>
       </div>
-    
+
         {faqs.length > 0 && (
           <>
             <JsonLd schema={getFAQSchema(faqs)} />
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
-      
+
         <StickyConsultationBar targetId={ENQUIRY_ANCHOR} formId={FORM_ID} />
 
         <ProgramNextSteps

@@ -3,7 +3,6 @@
 import React from "react";
 import { ProgramOverview, ProgramInfoCard, ProgramBulletList, ProgramApproach } from "@/components/ProgramOverview";
 import Link from "next/link";
-import { Metadata } from "next";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   Layers,
@@ -18,6 +17,7 @@ import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import ConsultationLayout from "@/components/ConsultationLayout";
 import {
   ConsultationCtaLink,
   StickyConsultationBar,
@@ -61,165 +61,167 @@ export default async function UniversityBiologyPage() {
         }}
       />
 
-      <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-[100px] pb-12 lg:pb-16 relative z-10">
+      <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-12 lg:pb-16 relative z-10">
         <Breadcrumbs items={breadcrumbItems} />
 
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 mt-10 items-start">
-          {/* Left Column: Content */}
-          <div>
-            <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
-              University Biology Tutoring in Vancouver
-            </h1>
+        <ConsultationLayout
+          className="mt-10"
+          intro={
+            <div>
+              <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
+                University Biology Tutoring in Vancouver
+              </h1>
 
-            <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
-              <p>
-                Biology is more than memorizing definitions and diagrams, it&apos;s
-                about understanding how living systems interact and function
-                together. Many students struggle because they rely heavily on
-                memorization instead of true comprehension.
-              </p>
-              <p>
-                At Dr. Shreyank Educare, we provide structured tutoring that
-                helps students build genuine conceptual understanding, connect
-                ideas across biological systems, and approach exams and lab work
-                with confidence — through active recall, diagrams and applied
-                practice rather than rote memorization.
-              </p>
-              <p>
-                We tutor life-sciences students from UBC and Langara —
-                introductory biology, cell and molecular biology, genetics, and
-                anatomy and physiology — along with pre-med students preparing
-                for the MCAT. Sessions run in person at our Burnaby centre,
-                minutes from SFU, and online for students across Vancouver and
-                the Lower Mainland.
-              </p>
-            </div>
-
-            {/* Consultation offer. The description and the response time are the
-                same ones published on /book and /contact. */}
-            <div className="mb-8 rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <ConsultationCtaLink
-                  targetId={ENQUIRY_ANCHOR}
-                  formId={FORM_ID}
-                  className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
-                >
-                  Book a Free 30-Minute Consultation
-                </ConsultationCtaLink>
-                <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
-                  One free, no-obligation 30-minute conversation: tell us which course
-                  the student is taking and where they are stuck, and we map out the
-                  level, tutor and schedule that would help. We reply within 24 hours on
-                  business days.
+              <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
+                <p>
+                  Biology is more than memorizing definitions and diagrams, it&apos;s
+                  about understanding how living systems interact and function
+                  together. Many students struggle because they rely heavily on
+                  memorization instead of true comprehension.
+                </p>
+                <p>
+                  At Dr. Shreyank Educare, we provide structured tutoring that
+                  helps students build genuine conceptual understanding, connect
+                  ideas across biological systems, and approach exams and lab work
+                  with confidence — through active recall, diagrams and applied
+                  practice rather than rote memorization.
+                </p>
+                <p>
+                  We tutor life-sciences students from UBC and Langara —
+                  introductory biology, cell and molecular biology, genetics, and
+                  anatomy and physiology — along with pre-med students preparing
+                  for the MCAT. Sessions run in person at our Burnaby centre,
+                  minutes from SFU, and online for students across Vancouver and
+                  the Lower Mainland.
                 </p>
               </div>
-              <p className="mt-4 text-[14px] font-montserrat text-slate/70">
-                One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
-                level — we confirm the rate for the course at the consultation. See{" "}
-                <Link href="/pricing" className="text-primary underline underline-offset-2">
-                  full pricing
-                </Link>
-                .
-              </p>
+
+              {/* Consultation offer. The description and the response time are the
+                  same ones published on /book and /contact. */}
+              <div className="rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
+                <div className="flex flex-col items-start gap-4">
+                  <ConsultationCtaLink
+                    targetId={ENQUIRY_ANCHOR}
+                    formId={FORM_ID}
+                    className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
+                  >
+                    Book a Free 30-Minute Consultation
+                  </ConsultationCtaLink>
+                  <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
+                    One free, no-obligation 30-minute conversation: tell us which course
+                    the student is taking and where they are stuck, and we map out the
+                    level, tutor and schedule that would help. We reply within 24 hours on
+                    business days.
+                  </p>
+                </div>
+                <p className="mt-4 text-[14px] font-montserrat text-slate/70">
+                  One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
+                  level — we confirm the rate for the course at the consultation. See{" "}
+                  <Link href="/pricing" className="text-primary underline underline-offset-2">
+                    full pricing
+                  </Link>
+                  .
+                </p>
+              </div>
             </div>
+          }
+          consultation={
+            <CourseConsultationPanel
+              subject={ENQUIRY.subject}
+              anchor={ENQUIRY_ANCHOR}
+              courseExample={ENQUIRY.courseExample}
+              courseLabel={ENQUIRY.courseLabel}
+              testimonialTopic={ENQUIRY.testimonialTopic}
+              heading={ENQUIRY.heading}
+              showCredential={ENQUIRY.taughtByFounder}
+            />
+          }
+        >
+          <ProgramOverview>
+            <ProgramInfoCard icon={Layers} title="What We Cover">
+              <ProgramBulletList
+                items={[
+                  "Cell Biology",
+                  "Genetics and Molecular Biology",
+                  "Human Anatomy and Physiology",
+                  "Ecology and Environmental Science",
+                  "Evolution and Biotechnology",
+                  "Biological Systems and Interconnections",
+                  "Exam Preparation Strategies",
+                ]}
+              />
+            </ProgramInfoCard>
 
-            <ProgramOverview>
-              <ProgramInfoCard icon={Layers} title="What We Cover">
-                <ProgramBulletList
-                  items={[
-                    "Cell Biology",
-                    "Genetics and Molecular Biology",
-                    "Human Anatomy and Physiology",
-                    "Ecology and Environmental Science",
-                    "Evolution and Biotechnology",
-                    "Biological Systems and Interconnections",
-                    "Exam Preparation Strategies",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={FileText} title="Who Is This For">
+              <ProgramBulletList
+                items={[
+                  "High school students preparing for Biology 11 & 12",
+                  "College and university students studying life sciences",
+                  "Students struggling with memory-heavy subjects",
+                  "Learners preparing for exams and assessments",
+                  "Students interested in healthcare and science-related careers",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={FileText} title="Who Is This For">
-                <ProgramBulletList
-                  items={[
-                    "High school students preparing for Biology 11 & 12",
-                    "College and university students studying life sciences",
-                    "Students struggling with memory-heavy subjects",
-                    "Learners preparing for exams and assessments",
-                    "Students interested in healthcare and science-related careers",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+              <ProgramBulletList
+                items={[
+                  "One-on-One Tutoring: Personalized sessions based on student goals and learning pace",
+                  "Online Tutoring: Flexible support from anywhere across Canada",
+                  "In-Person Tutoring: Focused face-to-face learning support",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
-                <ProgramBulletList
-                  items={[
-                    "One-on-One Tutoring: Personalized sessions based on student goals and learning pace",
-                    "Online Tutoring: Flexible support from anywhere across Canada",
-                    "In-Person Tutoring: Focused face-to-face learning support",
-                  ]}
-                />
-              </ProgramInfoCard>
+            <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+              <ProgramBulletList
+                items={[
+                  "Better understanding of biological systems",
+                  "Improved retention of complex concepts",
+                  "Higher grades and exam performance",
+                  "Greater confidence in theory-heavy subjects",
+                  "Stronger academic consistency",
+                ]}
+              />
+            </ProgramInfoCard>
 
-              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
-                <ProgramBulletList
-                  items={[
-                    "Better understanding of biological systems",
-                    "Improved retention of complex concepts",
-                    "Higher grades and exam performance",
-                    "Greater confidence in theory-heavy subjects",
-                    "Stronger academic consistency",
-                  ]}
-                />
-              </ProgramInfoCard>
-
-              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
-                <ProgramApproach
-                  items={[
-                    {
-                      title: "Concept-Based Learning",
-                      desc: "Focus on understanding rather than memorization.",
-                    },
-                    {
-                      title: "System-Level Thinking",
-                      desc: "Learn how biological systems interact.",
-                    },
-                    {
-                      title: "Lab Preparation",
-                      desc: "Support for assignments and practicals.",
-                    },
-                    {
-                      title: "Exam Preparation",
-                      desc: "Targeted revision plans.",
-                    },
-                  ]}
-                />
-              </ProgramInfoCard>
-            </ProgramOverview>
-          </div>
-
-          <CourseConsultationPanel
-            wide
-            subject={ENQUIRY.subject}
-            anchor={ENQUIRY_ANCHOR}
-            courseExample={ENQUIRY.courseExample}
-            courseLabel={ENQUIRY.courseLabel}
-            testimonialTopic={ENQUIRY.testimonialTopic}
-            heading={ENQUIRY.heading}
-            showCredential={ENQUIRY.taughtByFounder}
-          />
-        </div>
+            <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+              <ProgramApproach
+                items={[
+                  {
+                    title: "Concept-Based Learning",
+                    desc: "Focus on understanding rather than memorization.",
+                  },
+                  {
+                    title: "System-Level Thinking",
+                    desc: "Learn how biological systems interact.",
+                  },
+                  {
+                    title: "Lab Preparation",
+                    desc: "Support for assignments and practicals.",
+                  },
+                  {
+                    title: "Exam Preparation",
+                    desc: "Targeted revision plans.",
+                  },
+                ]}
+              />
+            </ProgramInfoCard>
+          </ProgramOverview>
+        </ConsultationLayout>
 
         {/* Bottom Section: Courses We Support */}
                 <UniversityCourseTable subject={"Biology"} />
       </div>
-    
+
         {faqs.length > 0 && (
           <>
             <JsonLd schema={getFAQSchema(faqs)} />
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
-      
+
         <StickyConsultationBar targetId={ENQUIRY_ANCHOR} formId={FORM_ID} />
 
         <ProgramNextSteps

@@ -108,6 +108,14 @@ export const pageFaq = defineType({
       description: "Opening paragraphs. Leave empty to keep the current ones.",
     }),
     defineField({
+      name: "introGuidance",
+      title: "Learning Guidance",
+      type: "array",
+      of: [{ type: "text", rows: 4 }],
+      group: "content",
+      description: "Subject-specific guidance shown after the intro paragraphs. Leave unset to use the website's built-in copy. Add paragraphs to replace that guidance, or remove all items to hide it. Keep the original introduction in Intro Paragraphs above.",
+    }),
+    defineField({
       name: "sections",
       title: "Content Sections",
       type: "array",

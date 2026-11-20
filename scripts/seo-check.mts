@@ -163,10 +163,13 @@ try {
 
   // ── Sitemap: every URL 200, self-canonical, parseable JSON-LD ─────────────
   const sitemapXml = await (await fetch(`${ORIGIN}/sitemap.xml`)).text();
-  const sitemapEntries = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) =>
-    normalize(m[1].replace(PUBLIC_ORIGIN, "")),
-  );
-  const lastmods = [...sitemapXml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
+  const sitemapRows = [...sitemapXml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(([, block]) => {
+    const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
+    if (!loc) throw new Error("Sitemap entry is missing its loc");
+    return { path: normalize(loc.replace(PUBLIC_ORIGIN, "")), lastmod: block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] };
+  });
+  if (!sitemapRows.length) throw new Error("Sitemap contains no URL entries");
+  const sitemapEntries = sitemapRows.map((row) => row.path);
   console.log(`sitemap URLs: ${sitemapEntries.length}`);
 
   const titles = new Map<string, string[]>();
@@ -229,14 +232,24 @@ try {
   }
 
   // ── Identical-lastmod condition from Task 4 ───────────────────────────────
-  const lastmodCounts = new Map<string, number>();
-  for (const value of lastmods) lastmodCounts.set(value, (lastmodCounts.get(value) ?? 0) + 1);
+  // A commit can change many pages together. Count only shared timestamps
+  // that aren't explained by the individual route's recorded content date.
+  const recordedDates: Record<string, string> = JSON.parse(readFileSync(new URL("../data/route-dates.json", import.meta.url), "utf8"));
+  const lastmodCounts = new Map<number, number>();
+  for (const { path, lastmod } of sitemapRows) {
+    if (!lastmod) continue;
+    const timestamp = Date.parse(lastmod);
+    if (!Number.isFinite(timestamp)) fail("invalid-lastmod", `${path} has unparseable lastmod ${lastmod}`);
+    else if (timestamp !== Date.parse(recordedDates[path])) {
+      lastmodCounts.set(timestamp, (lastmodCounts.get(timestamp) ?? 0) + 1);
+    }
+  }
   const largest = Math.max(0, ...lastmodCounts.values());
   const share = sitemapEntries.length ? largest / sitemapEntries.length : 0;
   if (share > 0.2) {
     fail(
       "identical-lastmod",
-      `${largest} of ${sitemapEntries.length} entries (${(share * 100).toFixed(1)}%) share one lastmod`,
+      `${largest} of ${sitemapEntries.length} entries (${(share * 100).toFixed(1)}%) share one lastmod without matching their recorded content dates`,
     );
   }
 

@@ -17,6 +17,7 @@ import { JsonLd, getPageSchema, getFAQSchema } from "@/components/SchemaMarkup";
 import VancouverFAQSection from "@/components/VancouverFAQSection";
 import ProgramNextSteps from "@/components/ProgramNextSteps";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
+import ConsultationLayout from "@/components/ConsultationLayout";
 import {
   ConsultationCtaLink,
   StickyConsultationBar,
@@ -70,150 +71,152 @@ export default async function BurnabySTEMTutoringPage() {
             backgroundRepeat: "no-repeat",
           }}
         />
-        <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-[100px] pb-12 lg:pb-16 relative z-10">
+        <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-12 lg:pb-16 relative z-10">
           <Breadcrumbs items={breadcrumbItems} />
 
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 mt-10 items-start">
-            {/* Left Column */}
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <MapPin size={18} className="text-primary" />
-                <span className="text-[14px] font-montserrat text-primary font-medium uppercase tracking-wide">
-                  Serving Burnaby, BC
-                </span>
+          <ConsultationLayout
+            className="mt-10"
+            intro={
+              <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <MapPin size={18} className="text-primary" />
+                    <span className="text-[14px] font-montserrat text-primary font-medium uppercase tracking-wide">
+                      Serving Burnaby, BC
+                    </span>
+                  </div>
+
+                  <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
+                    Burnaby STEM Tutoring
+                  </h1>
+
+                  <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
+                    <p>
+                      Dr. Shreyank Educare offers comprehensive STEM tutoring for
+                      Burnaby students. From Mathematics and Physics to Chemistry,
+                      Biology, and Computer Science, our expert tutors provide
+                      structured, personalized support aligned with the BC curriculum.
+                    </p>
+                    <p>
+                      Whether your child is at Simon Fraser University, a Burnaby high
+                      school, or preparing for university entrance, we deliver the
+                      focused academic support they need to succeed in STEM.
+                    </p>
+                  </div>
+
+                  {/* Consultation offer. The description and the response time are
+                      the same ones published on /book and /contact. */}
+                  <div className="rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
+                    <div className="flex flex-col items-start gap-4">
+                      <ConsultationCtaLink
+                        targetId={ENQUIRY_ANCHOR}
+                        formId={FORM_ID}
+                        className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
+                      >
+                        Book a Free 30-Minute Consultation
+                      </ConsultationCtaLink>
+                      <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
+                        One free, no-obligation 30-minute conversation: tell us which
+                        course the student is taking and where they are stuck, and we map
+                        out the level, tutor and schedule that would help. We reply within
+                        24 hours on business days.
+                      </p>
+                    </div>
+                    <p className="mt-4 text-[14px] font-montserrat text-slate/70">
+                      One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
+                      level — we confirm the rate for the course at the consultation. See{" "}
+                      <Link href="/pricing" className="text-primary underline underline-offset-2">
+                        full pricing
+                      </Link>
+                      .
+                    </p>
+                  </div>
               </div>
+            }
+            consultation={
+              <CourseConsultationPanel
+                subject={ENQUIRY.subject}
+                anchor={ENQUIRY_ANCHOR}
+                courseExample={ENQUIRY.courseExample}
+                courseLabel={ENQUIRY.courseLabel}
+                testimonialTopic={ENQUIRY.testimonialTopic}
+                heading={ENQUIRY.heading}
+                showCredential={ENQUIRY.taughtByFounder}
+              />
+            }
+          >
+            <ProgramOverview>
+              <ProgramInfoCard icon={Layers} title="Subjects We Cover">
+                <ProgramBulletList
+                  items={[
+                    "Mathematics (Grades 8–12 & University)",
+                    "Physics 11 & 12 / University Physics",
+                    "Chemistry 11 & 12 / University Chemistry",
+                    "Biology 11 & 12 / University Biology",
+                    "Computer Science & Programming",
+                    "Statistics & Data Analysis",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
-                Burnaby STEM Tutoring
-              </h1>
+              <ProgramInfoCard icon={FileText} title="Who Is This For">
+                <ProgramBulletList
+                  items={[
+                    "Burnaby high school students (Grades 8–12)",
+                    "SFU and other university students",
+                    "Students struggling with one or more STEM subjects",
+                    "Learners preparing for final exams and unit assessments",
+                    "Students aiming for post-secondary STEM programs",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <div className="space-y-4 text-[16px] leading-[22px] font-montserrat text-slate mb-6">
-                <p>
-                  Dr. Shreyank Educare offers comprehensive STEM tutoring for
-                  Burnaby students. From Mathematics and Physics to Chemistry,
-                  Biology, and Computer Science, our expert tutors provide
-                  structured, personalized support aligned with the BC curriculum.
-                </p>
-                <p>
-                  Whether your child is at Simon Fraser University, a Burnaby high
-                  school, or preparing for university entrance, we deliver the
-                  focused academic support they need to succeed in STEM.
-                </p>
-              </div>
+              <ProgramInfoCard icon={LayoutGrid} title="Program Format">
+                <ProgramBulletList
+                  items={[
+                    "One-on-One Online Tutoring",
+                    "Subject-Specific Deep Dives",
+                    "Homework & Assignment Assistance",
+                    "Flexible scheduling for busy students",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              {/* Consultation offer. The description and the response time are
-                  the same ones published on /book and /contact. */}
-              <div className="mb-8 rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <ConsultationCtaLink
-                    targetId={ENQUIRY_ANCHOR}
-                    formId={FORM_ID}
-                    className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
-                  >
-                    Book a Free 30-Minute Consultation
-                  </ConsultationCtaLink>
-                  <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
-                    One free, no-obligation 30-minute conversation: tell us which
-                    course the student is taking and where they are stuck, and we map
-                    out the level, tutor and schedule that would help. We reply within
-                    24 hours on business days.
-                  </p>
-                </div>
-                <p className="mt-4 text-[14px] font-montserrat text-slate/70">
-                  One-to-one sessions are {PRICING_TEXT.oneOnOne}, varying by subject
-                  level — we confirm the rate for the course at the consultation. See{" "}
-                  <Link href="/pricing" className="text-primary underline underline-offset-2">
-                    full pricing
-                  </Link>
-                  .
-                </p>
-              </div>
+              <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
+                <ProgramBulletList
+                  items={[
+                    "Improved grades across all STEM subjects",
+                    "Stronger problem-solving and analytical skills",
+                    "Greater confidence in lab work and assignments",
+                    "Better preparation for post-secondary programs",
+                    "Reduced subject-specific anxiety",
+                  ]}
+                />
+              </ProgramInfoCard>
 
-              <ProgramOverview>
-                <ProgramInfoCard icon={Layers} title="Subjects We Cover">
-                  <ProgramBulletList
-                    items={[
-                      "Mathematics (Grades 8–12 & University)",
-                      "Physics 11 & 12 / University Physics",
-                      "Chemistry 11 & 12 / University Chemistry",
-                      "Biology 11 & 12 / University Biology",
-                      "Computer Science & Programming",
-                      "Statistics & Data Analysis",
-                    ]}
-                  />
-                </ProgramInfoCard>
-
-                <ProgramInfoCard icon={FileText} title="Who Is This For">
-                  <ProgramBulletList
-                    items={[
-                      "Burnaby high school students (Grades 8–12)",
-                      "SFU and other university students",
-                      "Students struggling with one or more STEM subjects",
-                      "Learners preparing for final exams and unit assessments",
-                      "Students aiming for post-secondary STEM programs",
-                    ]}
-                  />
-                </ProgramInfoCard>
-
-                <ProgramInfoCard icon={LayoutGrid} title="Program Format">
-                  <ProgramBulletList
-                    items={[
-                      "One-on-One Online Tutoring",
-                      "Subject-Specific Deep Dives",
-                      "Homework & Assignment Assistance",
-                      "Flexible scheduling for busy students",
-                    ]}
-                  />
-                </ProgramInfoCard>
-
-                <ProgramInfoCard icon={Sparkles} title="Expected Outcomes">
-                  <ProgramBulletList
-                    items={[
-                      "Improved grades across all STEM subjects",
-                      "Stronger problem-solving and analytical skills",
-                      "Greater confidence in lab work and assignments",
-                      "Better preparation for post-secondary programs",
-                      "Reduced subject-specific anxiety",
-                    ]}
-                  />
-                </ProgramInfoCard>
-
-                <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
-                  <ProgramApproach
-                    items={[
-                      {
-                        title: "Cross-Subject Connections",
-                        desc: "STEM subjects interconnect. We help students see how math supports physics, and how chemistry relates to biology — building a richer, more cohesive understanding.",
-                      },
-                      {
-                        title: "BC Curriculum Aligned",
-                        desc: "Our tutors are familiar with Burnaby school curricula and university course structures, ensuring sessions are always relevant and practical.",
-                      },
-                      {
-                        title: "Targeted Concept Reinforcement",
-                        desc: "We identify the specific gaps holding each student back and address them systematically, so no weak area is left unresolved.",
-                      },
-                      {
-                        title: "Exam & Assignment Focus",
-                        desc: "Practical, outcome-focused sessions ensure students are prepared not just to understand material, but to perform well in assessments.",
-                      },
-                    ]}
-                  />
-                </ProgramInfoCard>
-              </ProgramOverview>
-            </div>
-
-            <CourseConsultationPanel
-              wide
-              subject={ENQUIRY.subject}
-              anchor={ENQUIRY_ANCHOR}
-              courseExample={ENQUIRY.courseExample}
-              courseLabel={ENQUIRY.courseLabel}
-              testimonialTopic={ENQUIRY.testimonialTopic}
-              heading={ENQUIRY.heading}
-              showCredential={ENQUIRY.taughtByFounder}
-            />
-          </div>
+              <ProgramInfoCard icon={Rocket} title="Our Approach" wide>
+                <ProgramApproach
+                  items={[
+                    {
+                      title: "Cross-Subject Connections",
+                      desc: "STEM subjects interconnect. We help students see how math supports physics, and how chemistry relates to biology — building a richer, more cohesive understanding.",
+                    },
+                    {
+                      title: "BC Curriculum Aligned",
+                      desc: "Our tutors are familiar with Burnaby school curricula and university course structures, ensuring sessions are always relevant and practical.",
+                    },
+                    {
+                      title: "Targeted Concept Reinforcement",
+                      desc: "We identify the specific gaps holding each student back and address them systematically, so no weak area is left unresolved.",
+                    },
+                    {
+                      title: "Exam & Assignment Focus",
+                      desc: "Practical, outcome-focused sessions ensure students are prepared not just to understand material, but to perform well in assessments.",
+                    },
+                  ]}
+                />
+              </ProgramInfoCard>
+            </ProgramOverview>
+          </ConsultationLayout>
 
           {/* Courses We Support */}
           <section className="mt-12 lg:mt-16">
@@ -268,14 +271,14 @@ export default async function BurnabySTEMTutoringPage() {
             </div>
           </section>
         </div>
-      
+
         {faqs.length > 0 && (
           <>
             <JsonLd schema={getFAQSchema(faqs)} />
             <VancouverFAQSection faqs={faqs} />
           </>
         )}
-      
+
         <StickyConsultationBar targetId={ENQUIRY_ANCHOR} formId={FORM_ID} />
 
         <ProgramNextSteps

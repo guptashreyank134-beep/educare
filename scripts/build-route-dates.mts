@@ -20,12 +20,14 @@ import { execFileSync } from "node:child_process";
 import { writeFileSync } from "node:fs";
 import { parseArgs } from "node:util";
 import { routeEntryFingerprints, routeDatesFromSnapshots, type RouteSnapshot } from "./route-date-history.mts";
+import { latestContentDate } from "../lib/contentDates.ts";
 
 const { cities, cityPath } = await import("../data/cities.ts");
 const { seoPages, seoPagePath } = await import("../data/seoPages.ts");
 const { vancouverSeoPages } = await import("../data/vancouverSeoPages.ts");
 const { verticalPages, verticalPath } = await import("../data/verticalPages.ts");
 const { retiredPaths } = await import("../content/page-policy.ts");
+const { LANDING_LEARNING_GUIDANCE } = await import("../data/landingLearningGuidance.ts");
 
 const { values } = parseArgs({ options: { output: { type: "string", default: "data/route-dates.json" } } });
 const outputPath = values.output!;
@@ -81,7 +83,8 @@ const routeDates: Record<string, string> = {};
 /** Record a route's date, skipping routes that were merged away. */
 function record(route: string, date: string | undefined) {
   if (!date || retiredPaths.has(route)) return;
-  routeDates[route] = date;
+  const latest = latestContentDate(routeDates[route], date);
+  if (latest) routeDates[route] = latest;
 }
 
 // Routes that are their own file.
@@ -138,6 +141,16 @@ for (const page of verticalPages) {
     verticalDates.get(page.slug),
   );
 }
+
+// Supplemental introduction copy is shared in one module, but its actual
+// committed changes belong only to the pages whose keyed entries changed.
+const guidanceSlugs = Object.keys(LANDING_LEARNING_GUIDANCE);
+const guidanceDates = lastCommitDateBySlug(
+  "data/landingLearningGuidance.ts",
+  "LANDING_LEARNING_GUIDANCE",
+  guidanceSlugs,
+);
+for (const slug of guidanceSlugs) record(`/${slug}`, guidanceDates.get(slug));
 
 const sorted = Object.fromEntries(Object.entries(routeDates).sort(([a], [b]) => a.localeCompare(b)));
 writeFileSync(outputPath, `${JSON.stringify(sorted, null, 2)}\n`, "utf8");

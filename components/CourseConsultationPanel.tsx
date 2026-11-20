@@ -53,7 +53,7 @@ export default function CourseConsultationPanel({
     : [];
 
   return (
-    <div data-course-consultation className={wide ? "w-full" : "w-full lg:w-[400px]"}>
+    <div data-course-consultation className="w-full min-w-0">
       {showCredential && (
         <div className="flex gap-4 rounded-[16px] border border-[#F1F5F9] bg-white/90 p-5 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
           <div className="relative h-20 w-16 shrink-0 overflow-hidden rounded-xl bg-bg-grey">

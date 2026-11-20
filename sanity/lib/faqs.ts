@@ -20,6 +20,8 @@ export type LandingContent = {
   heading?: string;
   heroSubheading?: string;
   intro?: string[];
+  /** Unset uses the built-in learning guidance; an empty array hides it. */
+  introGuidance?: string[];
   sections?: LandingSection[];
   faqs?: FaqItem[];
   relatedLinks?: { label?: string; href?: string }[];
@@ -27,7 +29,7 @@ export type LandingContent = {
 };
 
 const LANDING_QUERY = `*[_type == "pageFaq" && pageSlug == $slug][0]{
-  metaTitle, metaDescription, heading, heroSubheading, intro,
+  metaTitle, metaDescription, heading, heroSubheading, intro, introGuidance,
   sections[]{ heading, body, points },
   faqs[]{ question, answer },
   relatedLinks[]{ label, href },
@@ -129,9 +131,13 @@ export function faqAnswerToPlainText(answer: unknown): string {
   if (typeof answer === "string") return answer;
   if (!Array.isArray(answer)) return "";
   return answer
-    .map((block: any) => {
-      if (!block || block._type !== "block" || !Array.isArray(block.children)) return "";
-      return block.children.map((child: any) => child?.text ?? "").join("");
+    .map((block: unknown) => {
+      if (!block || typeof block !== "object" || !("_type" in block)
+        || block._type !== "block" || !("children" in block) || !Array.isArray(block.children)) return "";
+      return block.children.map((child: unknown) =>
+        child && typeof child === "object" && "text" in child && typeof child.text === "string"
+          ? child.text : "",
+      ).join("");
     })
     .filter(Boolean)
     .join(" ")
