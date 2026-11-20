@@ -52,7 +52,9 @@ export const linked = (parts) => {
     else if (part._type) children.push(part);
     else {
       const k = key();
-      markDefs.push({ _key: k, _type: "link", href: part.href });
+      // Older article definitions used the enquiry page for consultation CTAs.
+      const href = part.href === "/contact" && /\b(?:assessment|consultation)\b/i.test(part.text) ? "/book" : part.href;
+      markDefs.push({ _key: k, _type: "link", href });
       children.push(span(part.text, [k]));
     }
   }

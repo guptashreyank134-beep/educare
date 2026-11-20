@@ -6,6 +6,7 @@ import { Loader2 } from "lucide-react";
 
 import { createLead } from "@/app/actions/lead";
 import FormSpamFields from "@/components/FormSpamFields";
+import type { LeadVertical } from "@/components/LeadForm";
 import { Button } from "@/components/ui/Button";
 import { isConfirmedCapture, trackEvent, type EnquiryErrorReason } from "@/lib/analytics";
 
@@ -25,7 +26,7 @@ interface CourseEnquiryFormProps {
    */
   courseLabel?: string;
   /** Routes the notification and tags the lead. */
-  vertical?: "local-k12" | "medical" | "quant";
+  vertical?: LeadVertical;
   /**
    * The whole heading, not a fragment. Deriving it from `subject` produced
    * "Ask about ib & ap tutoring" and "Ask about best math tutor in burnaby
@@ -139,7 +140,7 @@ export default function CourseEnquiryForm({
       [
         `Name: ${name}`,
         `Subject: ${subject}`,
-        course ? `University / course code: ${course}` : null,
+        course ? `${courseLabel}: ${course}` : null,
         `Preferred contact: ${contactMethod}`,
         help ? `Needs help with: ${help}` : null,
         `Marketing opt-in: ${marketingOptIn ? "yes" : "no"}`,
@@ -180,8 +181,8 @@ export default function CourseEnquiryForm({
           Thank you — we have your enquiry.
         </p>
         <p className="text-[16px] font-montserrat text-slate/80 leading-relaxed">
-          We typically respond within 24 hours on business days to arrange your free
-          30-minute consultation.
+          We typically reply within 24 hours on business days. To book a consultation,{" "}
+          <Link href="/book" className="text-primary underline underline-offset-2">choose an available time</Link>.
         </p>
       </div>
     );
@@ -193,7 +194,8 @@ export default function CourseEnquiryForm({
         {heading}
       </p>
       <p className="text-[14px] font-montserrat text-slate/70 mb-6">
-        Takes under a minute. We reply within 24 hours on business days.
+        Send a question and we’ll reply within 24 hours on business days. To book a consultation,{" "}
+        <Link href="/book" className="text-primary underline underline-offset-2">choose an available time</Link>.
       </p>
 
       <form
@@ -348,7 +350,7 @@ export default function CourseEnquiryForm({
               Sending…
             </span>
           ) : (
-            "Book a Free 30-Minute Consultation"
+            "Send my enquiry"
           )}
         </Button>
 

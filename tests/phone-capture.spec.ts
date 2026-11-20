@@ -1,4 +1,6 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
+import { getAppointmentBooking } from "../lib/appointmentBooking";
+import { readOnlyPage } from "./helpers/consultation-layout";
 
 /**
  * Exercises browser validation and preference switching only. Every write
@@ -30,6 +32,40 @@ async function expectRequiredPhone(phone: Locator) {
   );
 }
 
+test("program booking links lead to the scheduler and the enquiry has its own action", async ({ page }) => {
+  await readOnlyPage(page);
+  await page.goto("/programs/physics");
+  const destination = getAppointmentBooking()?.url ?? "/book";
+  const intro = page.locator("[data-consultation-intro]");
+  await expect(intro.getByRole("link", { name: "Book a Free 30-Minute Consultation" })).toHaveAttribute("href", destination);
+  await expect(intro.getByRole("link", { name: "Ask about this program" })).toHaveAttribute("href", "#physics-enquiry");
+  await expect(page.locator("div.fixed.bottom-0 a", { hasText: "Book a Free 30-Minute Consultation" })).toHaveAttribute("href", destination);
+  await expect(page.getByRole("link", { name: "Book a free 30-minute Physics consultation" })).toHaveAttribute("href", "/book");
+});
+
+for (const [path, category] of [
+  ["/online-medical-tutoring", "medical"],
+  ["/online-economics-tutor", "quant"],
+  ["/programs/physics", "local-k12"],
+] as const) {
+  test(`${path} sends the course enquiry with the correct category`, async ({ page }) => {
+    await readOnlyPage(page);
+    await page.goto(path);
+    const form = page.locator('form[data-enquiry-form="page"]');
+    await form.getByLabel("Your name", { exact: true }).fill("Routing Test");
+    await form.getByLabel("Email address").fill("routing@example.invalid");
+    await form.getByLabel("Phone number (required)").fill("604 555 0123");
+    // Inspect the outgoing payload. readOnlyPage aborts it before it reaches the server.
+    const pending = page.waitForRequest((request) => Boolean(request.headers()["next-action"]));
+    await form.getByRole("button", { name: "Send my enquiry" }).click();
+    const request = await pending;
+    const fields = await new Response(request.postData(), {
+      headers: { "content-type": request.headers()["content-type"] },
+    }).formData();
+    expect([...fields.entries()].find(([key]) => key.endsWith("_vertical"))?.[1]).toBe(category);
+  });
+}
+
 for (const viewport of [
   { name: "mobile", width: 390, height: 844 },
   { name: "desktop", width: 1280, height: 900 },
@@ -50,7 +86,7 @@ for (const viewport of [
 
         // All required fields except phone are complete. Browser validation
         // must keep this email-preferred enquiry from calling the server.
-        await form.getByRole("button", { name: "Book a Free 30-Minute Consultation" }).click();
+        await form.getByRole("button", { name: "Send my enquiry" }).click();
         await expect(phone).toBeFocused();
         expect(await phone.evaluate((node: HTMLInputElement) => node.validity.valueMissing)).toBe(true);
         expect(actionRequests).toEqual([]);

@@ -71,7 +71,7 @@ const PricingPage = async () => {
                                     { label: "Math tutoring in Vancouver", href: "/math-tutor-vancouver" },
                                     { label: "Our tutoring programs by subject", href: "/programs" },
                                     { label: "How to choose a math tutor in Burnaby", href: "/how-to-choose-a-math-tutor-in-burnaby" },
-                                    { label: "Book a free 30-minute consultation", href: "/contact" },
+                                    { label: "Book a free 30-minute consultation", href: "/book" },
                                 ].map((l) => (
                                     <Link
                                         key={l.href}

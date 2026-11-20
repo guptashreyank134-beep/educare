@@ -51,7 +51,8 @@ export async function GET() {
     ["Resources", "/resources", "Free study resources, practice exams and FAQs."],
     ["Blog", "/blog", "Study guides and subject articles by PhD-qualified educators."],
     ["Locations", "/locations", "Tutoring locations across Metro Vancouver."],
-    ["Contact", "/contact", "Book a free 30-minute consultation."],
+    ["Contact", "/contact", "Send a tutoring enquiry or find our contact details."],
+    ["Book a consultation", "/book", "Choose a time for a free 30-minute consultation."],
     [
       LEAD_AUTHOR.name,
       authorPath(LEAD_AUTHOR.slug),

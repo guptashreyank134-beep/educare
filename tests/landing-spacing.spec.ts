@@ -43,7 +43,7 @@ for (const width of [390, 768, 1024, 1280, 1440]) {
         await expect(form.locator('input[name="phone"]')).toBeVisible();
         await form.getByText("email", { exact: true }).click();
         await expect(form.locator('input[name="email"]')).toBeVisible();
-        await expect(form.getByRole("button", { name: "Book a Free 30-Minute Consultation", exact: true })).toBeVisible();
+        await expect(form.getByRole("button", { name: "Send my enquiry", exact: true })).toBeVisible();
 
         if (route === "/physics-tutor-vancouver" && width === 1440) {
           // Simulate a network failure locally: no submitted request reaches
@@ -51,7 +51,7 @@ for (const width of [390, 768, 1024, 1280, 1440]) {
           await form.locator('input[name="fullName"]').fill("Layout Validation Test");
           await form.locator('input[name="email"]').fill("layout@example.invalid");
           await form.locator('input[name="phone"]').fill("604 555 0123");
-          await form.getByRole("button", { name: "Book a Free 30-Minute Consultation", exact: true }).click();
+          await form.getByRole("button", { name: "Send my enquiry", exact: true }).click();
           await expect(form.locator('[aria-live="polite"]')).toContainText("Something went wrong sending your enquiry");
           await expect(form.locator('[aria-live="polite"]')).toBeVisible();
         }

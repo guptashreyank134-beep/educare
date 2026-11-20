@@ -213,6 +213,16 @@ try {
       descriptions.set(description, [...(descriptions.get(description) ?? []), path]);
     }
 
+    // Published FAQs and blog bodies can reintroduce misleading booking links
+    // independently of the shared buttons and form components.
+    for (const [, href, contents] of html.matchAll(/<a\b[^>]*\shref="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)) {
+      const destination = href.replace(PUBLIC_ORIGIN, "");
+      if (!/^\/contact(?:$|[/?#])|^#[\w-]*enquiry$/i.test(destination)) continue;
+      const label = contents.replace(/<[^>]*>/g, "").trim();
+      if (/^(?:book|schedule|reserve)\b.*\b(?:consultation|assessment|appointment|session)\b/i.test(label)) {
+        fail("booking-link", `${path} links “${label}” to the enquiry destination ${href}`);
+      }
+    }
     for (const href of internalLinks(html)) linkTargets.add(normalize(href));
   });
 
@@ -232,25 +242,54 @@ try {
   }
 
   // ── Identical-lastmod condition from Task 4 ───────────────────────────────
-  // A commit can change many pages together. Count only shared timestamps
-  // that aren't explained by the individual route's recorded content date.
+  // A commit, editorial review or CMS transaction can update many routes together.
   const recordedDates: Record<string, string> = JSON.parse(readFileSync(new URL("../data/route-dates.json", import.meta.url), "utf8"));
-  const lastmodCounts = new Map<number, number>();
+  const reviewedDates = new Map(answerPages.filter((page) => page.status === "published")
+    .map((page) => [answerPagePath(page.slug), Date.parse(page.lastReviewed)]));
+  const lastmodPaths = new Map<number, string[]>();
   for (const { path, lastmod } of sitemapRows) {
     if (!lastmod) continue;
     const timestamp = Date.parse(lastmod);
     if (!Number.isFinite(timestamp)) fail("invalid-lastmod", `${path} has unparseable lastmod ${lastmod}`);
-    else if (timestamp !== Date.parse(recordedDates[path])) {
-      lastmodCounts.set(timestamp, (lastmodCounts.get(timestamp) ?? 0) + 1);
+    else if (timestamp !== Date.parse(recordedDates[path]) && timestamp !== reviewedDates.get(path)) {
+      const paths = lastmodPaths.get(timestamp) ?? [];
+      paths.push(path);
+      lastmodPaths.set(timestamp, paths);
     }
   }
-  const largest = Math.max(0, ...lastmodCounts.values());
-  const share = sitemapEntries.length ? largest / sitemapEntries.length : 0;
-  if (share > 0.2) {
-    fail(
-      "identical-lastmod",
-      `${largest} of ${sitemapEntries.length} entries (${(share * 100).toFixed(1)}%) share one lastmod without matching their recorded content dates`,
-    );
+  const suspiciousGroups = [...lastmodPaths].filter(([, paths]) => paths.length > sitemapRows.length * 0.2);
+  if (suspiciousGroups.length) {
+    // Independently verify the public CMS records for the URLs in each batch.
+    const { client } = await import("../sanity/lib/client.ts");
+    const { LISTED_POSTS, REDIRECTED_POST_SLUGS } = await import("../lib/blogPagination.ts");
+    const { STUDY_CLUB } = await import("../data/studyClub.ts");
+    type CmsDate = { path: string; updatedAt: string };
+    try {
+      const dates = await client.withConfig({ perspective: "published", useCdn: false })
+        .fetch<{ posts: CmsDate[]; overrides: CmsDate[] }>(`{
+          "posts": ${LISTED_POSTS} { "path": "/blog/" + slug.current, "updatedAt": coalesce(_updatedAt, publishedAt) },
+          "overrides": *[_type in ["pageFaq", "programPage"] || (_type == "studyClubPage" && _id == "studyClubPage")] {
+            "path": select(
+              _type == "pageFaq" && pageType == "city" => "/math-tutor-" + pageSlug,
+              _type == "pageFaq" => "/" + pageSlug,
+              _type == "programPage" => "/programs/" + slug.current,
+              _type == "studyClubPage" => $studyClubPath
+            ),
+            "updatedAt": _updatedAt
+          }
+        }`, { excluded: REDIRECTED_POST_SLUGS, studyClubPath: STUDY_CLUB.path });
+      const cmsDates = new Map([...dates.posts, ...dates.overrides].map((doc) => [doc.path, Date.parse(doc.updatedAt)]));
+      for (const [timestamp, paths] of suspiciousGroups) {
+        const unexplained = paths.filter((path) => cmsDates.get(path) !== timestamp);
+        if (unexplained.length) {
+          fail("identical-lastmod", `${unexplained.length} of ${paths.length} entries sharing ${new Date(timestamp).toISOString()} have no matching content date: ${unexplained.slice(0, 5).join(", ")}`);
+        } else {
+          console.log(`verified identical lastmod against published CMS dates for ${paths.length} URLs`);
+        }
+      }
+    } catch (error) {
+      fail("identical-lastmod", `could not verify published CMS dates: ${(error as Error).message}`);
+    }
   }
 
   // ── Redirects: one hop, permanent ─────────────────────────────────────────

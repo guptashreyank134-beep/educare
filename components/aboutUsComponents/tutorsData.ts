@@ -12,7 +12,7 @@ export interface Tutor {
   id: number;
   name: string;
   role: string;
-  image: string;
+  image?: string;
   /** Keep the face visible when a portrait is cropped into a profile card. */
   imagePosition?: "top" | "center";
   belowshortDescription: string;
@@ -206,7 +206,6 @@ export const tutors: Tutor[] = [
     id: 9,
     name: "Niti",
     role: "English, ESL, Mathematics & Science Tutor",
-    image: "/assets/tutors/niti-placeholder.svg",
     belowshortDescription:
       "Niti actively explains concepts, demonstrates examples and uses guided practice before students work independently. Lessons begin with an informal assessment and adapt to each learner’s needs.",
     fullDescription:

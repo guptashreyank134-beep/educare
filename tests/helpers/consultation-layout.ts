@@ -64,7 +64,7 @@ export async function expectConsultationLayout(page: Page, width: number) {
 export async function expectProfilesAfterContent(page: Page) {
   const profiles = page.locator('section[aria-labelledby="subject-tutor-heading"]');
   await expect(profiles).toHaveCount(1);
-  const content = page.locator("[data-consultation-content]");
+  const content = page.locator("[data-consultation-content], [data-program-row]").last();
   const contentBox = (await content.boundingBox())!;
   const profilesBox = (await profiles.boundingBox())!;
   expect(profilesBox.y).toBeGreaterThanOrEqual(contentBox.y + contentBox.height);

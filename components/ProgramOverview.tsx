@@ -1,15 +1,46 @@
-import type { ReactNode } from "react";
+import { Children, isValidElement, type ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 
-/** Cards follow their content column's width, including when a consultation
- * form occupies the other desktop column. */
-export function ProgramOverview({ children }: { children: ReactNode }) {
+export function ProgramOverview({ intro, consultation, children }: {
+  intro: ReactNode;
+  consultation: ReactNode;
+  children: ReactNode;
+}) {
+  // At laptop widths only the opening cards share the form's row. Wider
+  // desktops can fit another pair alongside it. Long articles always span
+  // the section once the form ends.
+  const rows: { cards: ReactNode[]; wide: boolean }[] = [];
+  for (const card of Children.toArray(children)) {
+    const wide = isValidElement<{ wide?: boolean }>(card) && card.props.wide === true;
+    const previous = rows.at(-1);
+    if (!wide && previous && !previous.wide && previous.cards.length === 1) {
+      previous.cards.push(card);
+    } else {
+      rows.push({ cards: [card], wide });
+    }
+  }
+
   return (
-    <div className="@container/program-overview min-w-0">
-      <section data-program-overview className="grid min-w-0 gap-5 @[36rem]/program-overview:grid-cols-2">
-        {children}
-      </section>
-    </div>
+    <section data-program-overview data-consultation-layout className="mt-10 flow-root lg:[--panel-width:26.25rem] lg:[--panel-gap:2.5rem]">
+      <div data-consultation-intro className="mb-8 min-w-0 lg:float-left lg:w-[calc(100%-var(--panel-width)-var(--panel-gap))]">
+        {intro}
+      </div>
+      <div data-consultation-aside className="mb-8 min-w-0 lg:float-right lg:mb-5 lg:ml-[var(--panel-gap)] lg:w-[var(--panel-width)]">
+        {consultation}
+      </div>
+      {rows.map(({ cards, wide }, index) => (
+        <div
+          key={index}
+          data-consultation-content={index === 0 ? true : undefined}
+          data-program-row
+          className={`@container/program-overview mb-5 flow-root min-w-0 last:mb-0 ${index === 0 && !wide ? "clear-left" : "clear-both"} ${wide ? "" : "xl:clear-left"}`}
+        >
+          <div className="grid min-w-0 gap-5 @[30rem]/program-overview:grid-cols-2 [&>:only-child]:col-span-full">
+            {cards}
+          </div>
+        </div>
+      ))}
+    </section>
   );
 }
 
@@ -27,7 +58,7 @@ export function ProgramInfoCard({
   return (
     <article
       data-program-card
-      className={`min-w-0 rounded-2xl border border-[#E2E8F0] bg-white p-5 shadow-sm sm:p-6 ${wide ? "@[36rem]/program-overview:col-span-2" : ""}`}
+      className={`min-w-0 rounded-2xl border border-[#E2E8F0] bg-white p-5 shadow-sm sm:p-6 ${wide ? "col-span-full" : ""}`}
     >
       <div className="mb-5 flex items-center gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-yellow-light text-slate">

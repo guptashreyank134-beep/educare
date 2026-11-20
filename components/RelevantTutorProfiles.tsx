@@ -44,19 +44,21 @@ export default function RelevantTutorProfiles({
             id={`${idPrefix}-${tutor.id}`}
             className="scroll-mt-28 overflow-hidden rounded-[24px] border border-[#E2E8F0] bg-white shadow-[0_18px_50px_rgba(15,23,42,0.08)]"
           >
-            <div className="grid gap-0 md:grid-cols-[210px_minmax(0,1fr)]">
-              <div className="flex justify-center p-5 pb-0 md:pr-0 md:pb-5">
-                <div className="relative aspect-[4/5] w-40 self-start overflow-hidden rounded-2xl bg-bg-grey md:w-full">
-                  <Image
-                    src={tutor.image}
-                    alt={`${tutor.name}, ${tutor.role}`}
-                    fill
-                    sizes="(max-width: 767px) 160px, 190px"
-                    className="object-cover"
-                    style={{ objectPosition: tutor.imagePosition ?? "top" }}
-                  />
+            <div className={tutor.image ? "grid md:grid-cols-[210px_minmax(0,1fr)]" : undefined}>
+              {tutor.image && (
+                <div className="flex justify-center p-5 pb-0 md:pr-0 md:pb-5">
+                  <div className="relative aspect-[4/5] w-40 self-start overflow-hidden rounded-2xl bg-bg-grey md:w-full">
+                    <Image
+                      src={tutor.image}
+                      alt={`${tutor.name}, ${tutor.role}`}
+                      fill
+                      sizes="(max-width: 767px) 160px, 190px"
+                      className="object-cover"
+                      style={{ objectPosition: tutor.imagePosition ?? "top" }}
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
 
               <div className="min-w-0 p-5 sm:p-7">
                 <div className="flex flex-wrap items-start justify-between gap-4">

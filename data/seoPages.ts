@@ -50,7 +50,7 @@ export const SEO_BASE_URL = SITE_URL;
 export const seoPagePath = (slug: string) => `/${slug}`;
 export const seoPageUrl = (slug: string) => `${SEO_BASE_URL}/${slug}`;
 
-const CONTACT: SeoRelated = { label: "Book a Free Consultation", href: "/contact" };
+const CONTACT: SeoRelated = { label: "Book a Free Consultation", href: "/book" };
 
 export const seoPages: SeoPage[] = [
   // ─────────────────────────── BRAND ───────────────────────────
@@ -5960,7 +5960,7 @@ export const seoPages: SeoPage[] = [
       {
         question: "How do we start?",
         answer:
-          "Fill in the form on this page for a free consultation. We will ask about the learner's current level and goal, then recommend a format and pace — with no obligation to continue.",
+          "Choose an available time in the booking calendar and complete the appointment form. At the free consultation, we’ll discuss your current French level and what you want to practise, then recommend a format and pace.",
       },
     ],
     related: [

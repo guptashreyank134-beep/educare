@@ -19,17 +19,10 @@ import { testimonialsFor } from "@/data/testimonials";
 export default function ProgramNextSteps({
   subject,
   relatedLinks = [],
-  consultationHref = "/book",
 }: {
   /** e.g. "Physics" — used to make the anchors specific to this page. */
   subject: string;
   relatedLinks?: Array<{ label: string; href: string }>;
-  /**
-   * Where the consultation link goes. A page with its own enquiry form passes
-   * that form's anchor, so the reader is not sent to a different page to do
-   * what this one already offers.
-   */
-  consultationHref?: string;
 }) {
   const tutorIds = tutorIdsForContext(subject);
   const testimonialTopic = Object.values(PROGRAM_ENQUIRY)
@@ -61,7 +54,7 @@ export default function ProgramNextSteps({
 
         <div className="flex flex-wrap gap-x-6 gap-y-3">
           <Link
-            href={consultationHref}
+            href="/book"
             className="text-[16px] font-montserrat font-medium text-primary underline hover:text-primary/80 transition-colors"
           >
             Book a free 30-minute {subject} consultation

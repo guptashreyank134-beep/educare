@@ -245,7 +245,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
 
   // Fetch the current post with updatedAt and metadata
-  const query = `*[_type == "post" && slug.current == $slug][0] {
+  const query = `*[_type == "post" && slug.current == $slug] | order(_updatedAt desc, _id asc)[0] {
     _id,
     _updatedAt,
     title,
@@ -259,7 +259,10 @@ export default async function BlogPostPage({ params }: PageProps) {
     relatedLinks[]{ label, href }
   }`;
 
-  const post = await client.fetch(query, { slug });
+  const post = await client.fetch(query, { slug }, {
+    tag: "article",
+    next: { revalidate: 3600 },
+  });
 
   if (!post) {
     notFound();

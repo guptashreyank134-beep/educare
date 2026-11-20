@@ -100,7 +100,7 @@ const PAGES = [
 
 for (const { path, anchor, courseLabel } of PAGES) {
   test.describe(path, () => {
-    test("desktop: form present, labelled, reachable from the CTA", async ({ page }) => {
+    test("desktop: form present, labelled, reachable from the enquiry link", async ({ page }) => {
       await page.setViewportSize({ width: 1280, height: 900 });
       await page.goto(path);
 
@@ -108,7 +108,7 @@ for (const { path, anchor, courseLabel } of PAGES) {
       await expect(page.getByLabel(/your name/i)).toBeVisible();
       await expect(page.getByLabel(courseLabel)).toBeVisible();
 
-      await page.getByRole("link", { name: /Book a Free 30-Minute Consultation/i }).first().click();
+      await page.getByRole("link", { name: /Ask about this program/i }).first().click();
       await expect(page).toHaveURL(new RegExp(`#${anchor}$`));
       await expect(page.locator(`#${anchor}`)).toBeInViewport();
     });
@@ -162,7 +162,7 @@ for (const { path, anchor, courseLabel } of PAGES) {
       await page.getByLabel(/email address/i).fill("invalid@localhost");
       await page.getByLabel(/phone number/i).fill("604 555 0123");
       await page.waitForTimeout(BOT_WINDOW_MS);
-      await page.getByRole("button", { name: /Book a Free 30-Minute Consultation/i }).click();
+      await page.getByRole("button", { name: /Send my enquiry/i }).click();
 
       await expect(page.getByText(/doesn't look right/i)).toBeVisible();
       // Entered values are preserved, so retrying costs nothing.
@@ -184,10 +184,9 @@ for (const { path, anchor, courseLabel } of PAGES) {
       await page.getByLabel(/email address/i).fill("browser.test@example.invalid");
       await page.getByLabel(/phone number/i).fill("604 555 0123");
       await page.waitForTimeout(BOT_WINDOW_MS);
-      await page.getByRole("button", { name: /Book a Free 30-Minute Consultation/i }).click();
+      await page.getByRole("button", { name: /Send my enquiry/i }).click();
 
-      // Success is shown only after the server confirms durable storage. Scoped
-      // to the form: the same timeframe also appears in the consultation box.
+      // Success is shown only after the server confirms durable storage.
       const confirmation = page.locator(`#${anchor}`);
       await expect(confirmation.getByText(/we have your enquiry/i)).toBeVisible({ timeout: 20_000 });
       await expect(confirmation.getByText(/24 hours on business days/i)).toBeVisible();
@@ -252,9 +251,13 @@ test.describe("analytics events", () => {
     await captureDataLayer(page);
     await page.goto("/programs/physics");
 
-    // 1. Clicking the consultation CTA.
-    await page.getByRole("link", { name: /Book a Free 30-Minute Consultation/i }).first().click();
+    // Keep the test on this page while exercising the real booking click handler.
+    const booking = page.locator("[data-consultation-intro]").getByRole("link", { name: /Book a Free 30-Minute Consultation/i });
+    await booking.evaluate((link) => link.addEventListener("click", (event) => event.preventDefault(), { once: true }));
+    await booking.click();
     expect((await firedEvents(page)).map((e) => e.event)).toContain("consultation_cta_click");
+    await page.getByRole("link", { name: /Ask about this program/i }).click();
+    expect((await firedEvents(page)).filter((event) => event.event === "consultation_cta_click")).toHaveLength(1);
 
     // 2. First edit of the form.
     await page.getByLabel(/your name/i).fill(`${TEST_MARKER} analytics`);
@@ -268,7 +271,7 @@ test.describe("analytics events", () => {
 
     // 3. A confirmed capture.
     await page.waitForTimeout(BOT_WINDOW_MS);
-    await page.getByRole("button", { name: /Book a Free 30-Minute Consultation/i }).click();
+    await page.getByRole("button", { name: /Send my enquiry/i }).click();
     await expect(
       page.locator("#physics-enquiry").getByText(/we have your enquiry/i),
     ).toBeVisible({ timeout: 20_000 });
@@ -305,7 +308,7 @@ test.describe("analytics events", () => {
     await page.getByLabel(/email address/i).fill("invalid@localhost");
     await page.getByLabel(/phone number/i).fill("604 555 0123");
     await page.waitForTimeout(BOT_WINDOW_MS);
-    await page.getByRole("button", { name: /Book a Free 30-Minute Consultation/i }).click();
+    await page.getByRole("button", { name: /Send my enquiry/i }).click();
     await expect(page.getByText(/doesn't look right/i)).toBeVisible();
 
     const error = (await firedEvents(page)).find((e) => e.event === "enquiry_form_error");
@@ -317,13 +320,13 @@ test.describe("analytics events", () => {
 });
 
 /**
- * The consultation CTA must visibly arrive at the form.
+ * The program enquiry link must visibly arrive at the form.
  *
  * A plain anchor jumped thousands of pixels instantly, which reads as a broken
  * button rather than as having moved. These assert the click lands with the
  * cursor in the first field, so the visitor can type straight away.
  */
-test.describe("consultation CTA lands in the form", () => {
+test.describe("program enquiry link lands in the form", () => {
   for (const [label, width, height] of [
     ["mobile", 390, 844],
     ["narrow", 572, 690],
@@ -335,7 +338,7 @@ test.describe("consultation CTA lands in the form", () => {
       await page.setViewportSize({ width, height });
       await page.goto("/programs/computer-science");
 
-      await page.getByRole("link", { name: /Book a Free 30-Minute Consultation/i }).first().click();
+      await page.getByRole("link", { name: /Ask about this program/i }).first().click();
       await page.waitForTimeout(1200);
 
       const state = await page.evaluate(() => {
@@ -348,7 +351,7 @@ test.describe("consultation CTA lands in the form", () => {
         };
       });
 
-      // The button that completes the booking must be on screen. A top-aligned
+      // The button that sends the enquiry must be on screen. A top-aligned
       // scroll left it below the fold, which is what made the form look cut off.
       expect(state.submitVisible, "submit button must be visible after the click").toBe(true);
       expect(state.formOnScreen).toBe(true);
@@ -360,7 +363,7 @@ test.describe("consultation CTA lands in the form", () => {
     // Where the form fits, it is top-aligned and the visitor can type at once.
     await page.setViewportSize({ width: 1280, height: 1200 });
     await page.goto("/programs/computer-science");
-    await page.getByRole("link", { name: /Book a Free 30-Minute Consultation/i }).first().click();
+    await page.getByRole("link", { name: /Ask about this program/i }).first().click();
 
     await expect(page.getByLabel(/your name/i)).toBeFocused({ timeout: 5_000 });
     await page.keyboard.type("Priya Sharma");
@@ -373,7 +376,7 @@ test.describe("consultation CTA lands in the form", () => {
     // would strand a keyboard user thousands of pixels up the page.
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/programs/computer-science");
-    await page.getByRole("link", { name: /Book a Free 30-Minute Consultation/i }).first().click();
+    await page.getByRole("link", { name: /Ask about this program/i }).first().click();
     await page.waitForTimeout(1300);
 
     const focus = await page.evaluate(() => {

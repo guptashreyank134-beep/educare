@@ -21,16 +21,18 @@ export default function Team() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 max-w-5xl mx-auto">
           {tutors.map((tutor) => (
             <article key={tutor.id} className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm flex flex-col">
-              <div className="rounded-xl overflow-hidden mb-5 bg-bg-grey aspect-[4/3] relative">
-                <Image
-                  src={tutor.image}
-                  alt={`${tutor.name}, ${tutor.role}`}
-                  fill
-                      className="object-cover"
-                      style={{ objectPosition: tutor.imagePosition ?? "top" }}
-                  sizes="(max-width: 767px) calc(100vw - 64px), (max-width: 1023px) 45vw, 300px"
-                />
-              </div>
+              {tutor.image && (
+                <div className="rounded-xl overflow-hidden mb-5 bg-bg-grey aspect-[4/3] relative">
+                  <Image
+                    src={tutor.image}
+                    alt={`${tutor.name}, ${tutor.role}`}
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: tutor.imagePosition ?? "top" }}
+                    sizes="(max-width: 767px) calc(100vw - 64px), (max-width: 1023px) 45vw, 300px"
+                  />
+                </div>
+              )}
               <h3 className="text-[22px] font-bricolage font-medium text-slate">{tutor.name}</h3>
               <p className="mt-1 text-sm font-semibold text-primary">{tutor.role}</p>
               <ul className="mt-3 space-y-1 text-sm leading-relaxed text-slate/75">

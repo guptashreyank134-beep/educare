@@ -12,6 +12,7 @@
 // form and, for failures, a short reason code.
 
 export type AnalyticsEvent =
+  | "booking_confirmed"
   | "consultation_cta_click"
   | "enquiry_form_start"
   | "generate_lead"

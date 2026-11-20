@@ -167,7 +167,7 @@ const body = [
 
   h2("Getting help with Pre-Calculus 12"),
   linked(["If two or three of these felt uncomfortably familiar, that is useful information rather than bad news — it means the marks are being lost somewhere specific and identifiable. Our ", { text: "Pre-Calculus 12 tutoring in Burnaby", href: "/pre-calculus-12-tutor-burnaby" }, " works exactly here: watching the step where the reasoning turns, which is something no worked solution can show you."]),
-  linked(["Sessions run in person at our Burnaby centre or online across Metro Vancouver, aligned to the BC curriculum. ", { text: "Book a free 30-minute consultation", href: "/contact" }, " and we will talk through where the marks are actually going."]),
+  linked(["Sessions run in person at our Burnaby centre or online across Metro Vancouver, aligned to the BC curriculum. ", { text: "Book a free 30-minute consultation", href: "/book" }, " and we will talk through where the marks are actually going."]),
 ];
 
 /** Every equation must compile, or it renders as red error text on the page. */

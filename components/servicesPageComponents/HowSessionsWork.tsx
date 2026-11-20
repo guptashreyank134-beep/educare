@@ -131,7 +131,7 @@ export default function HowSessionsWork() {
           If tutoring is not what your child needs, we will say so.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-3">
-          <Link href="/contact" className="text-[16px] font-montserrat font-medium text-primary underline hover:text-primary/80 transition-colors">
+          <Link href="/book" className="text-[16px] font-montserrat font-medium text-primary underline hover:text-primary/80 transition-colors">
             Book a free 30-minute consultation
           </Link>
           <Link href="/pricing" className="text-[16px] font-montserrat font-medium text-primary underline hover:text-primary/80 transition-colors">

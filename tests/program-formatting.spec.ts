@@ -5,7 +5,7 @@ import { expectConsultationLayout, expectProfilesAfterContent, readOnlyPage } fr
 
 const programs = readdirSync("app/programs").filter((slug) => existsSync(join("app/programs", slug, "page.tsx")));
 
-for (const width of [390, 1280]) {
+for (const width of [390, 1024, 1440]) {
   test.describe(`program summaries at ${width}px`, () => {
     test.use({ viewport: { width, height: 900 }, deviceScaleFactor: 1.5 });
     test.beforeEach(async ({ page }) => readOnlyPage(page));
@@ -24,12 +24,13 @@ for (const width of [390, 1280]) {
         const cards = overview.locator("[data-program-card]");
         const expectedCards = ["gre-prep", "gmat-prep"].includes(slug) ? 7 : 5;
         await expect(cards).toHaveCount(expectedCards);
-        const bounds = (await overview.boundingBox())!;
+        const rows = overview.locator("[data-program-row]");
+        const bounds = (await rows.first().boundingBox())!;
         const first = (await cards.nth(0).boundingBox())!;
         const second = (await cards.nth(1).boundingBox())!;
         // Card columns respond to their available space beside the form,
         // rather than assuming that every desktop section spans the full page.
-        if (bounds.width >= 576) {
+        if (bounds.width >= 480) {
           expect(Math.abs(first.y - second.y)).toBeLessThanOrEqual(1);
           expect(second.x - first.x - first.width).toBeGreaterThanOrEqual(16);
           expect(Math.abs(second.x + second.width - bounds.x - bounds.width)).toBeLessThanOrEqual(1);
@@ -44,7 +45,23 @@ for (const width of [390, 1280]) {
           expect(await card.evaluate((el) => el.scrollWidth - el.clientWidth)).toBeLessThanOrEqual(1);
         }
         const approach = cards.filter({ has: page.getByRole("heading", { name: "Our Approach", exact: true }) });
-        expect(Math.abs((await approach.boundingBox())!.width - bounds.width)).toBeLessThanOrEqual(1);
+        const overviewBounds = (await overview.boundingBox())!;
+        const aside = (await overview.locator("[data-consultation-aside]").boundingBox())!;
+        const approachBounds = (await approach.boundingBox())!;
+        expect(approachBounds.y).toBeGreaterThanOrEqual(aside.y + aside.height);
+        expect(Math.abs(approachBounds.width - overviewBounds.width)).toBeLessThanOrEqual(1);
+        if (width === 1024) {
+          const secondRow = (await rows.nth(1).boundingBox())!;
+          expect(secondRow.y).toBeGreaterThanOrEqual(aside.y + aside.height);
+          expect(Math.abs(secondRow.width - overviewBounds.width)).toBeLessThanOrEqual(1);
+        }
+        // A card row that begins below the form must reclaim the whole width.
+        for (const row of await rows.all()) {
+          const box = (await row.boundingBox())!;
+          if (box.y >= aside.y + aside.height + 20) {
+            expect(Math.abs(box.width - overviewBounds.width)).toBeLessThanOrEqual(1);
+          }
+        }
         await expect(approach.locator("[data-program-approach]")).toBeVisible();
         expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
       });

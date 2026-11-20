@@ -103,7 +103,7 @@ export default function AuthorBox({
 
           <div className="mt-5">
             <Link
-              href="/contact"
+              href="/book"
               className="text-[15px] font-montserrat font-medium text-primary underline hover:text-primary/80 transition-colors"
             >
               Book a free 30-minute consultation

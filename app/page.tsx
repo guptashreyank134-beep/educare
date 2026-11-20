@@ -81,7 +81,7 @@ export default async function Home() {
               We’ll discuss what to work on first and which tutoring options fit.
             </p>
             <p className="mt-3 text-[15px] leading-relaxed text-slate/75">
-              Select an available time in Calendly to confirm your appointment.
+              Choose an available time and complete the Calendly booking form to confirm your appointment.
             </p>
             <AppointmentBookingLink>Book a Free Consultation</AppointmentBookingLink>
             <p className="mt-4 text-[14px] leading-relaxed text-slate/75">

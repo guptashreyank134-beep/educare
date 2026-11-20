@@ -80,7 +80,7 @@ for (const width of [390, 1280]) {
       await expect(hero.locator('a[href="/book"]')).toHaveCount(0);
       await expect(hero.getByRole("link", { name: "Choose an Available Timeslot", exact: true })).toHaveCount(0);
       await expect(booking.locator("form")).toHaveCount(0);
-      await expect(booking).toContainText(/select an available time/i);
+      await expect(booking).toContainText(/(?:select|choose) an available time and complete the .*booking form/i);
 
       const whatsapp = hero.getByRole("link", { name: "Chat on WhatsApp", exact: true });
       await expect(whatsapp).toHaveCount(1);

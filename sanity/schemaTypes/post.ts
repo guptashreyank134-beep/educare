@@ -1,10 +1,16 @@
 import { defineField, defineType } from "sanity";
 import { relatedLinksField } from "./relatedLinksField";
+import { BUSINESS } from "../../data/businessInfo";
+import { containsRetiredBusinessPhone } from "../../lib/retiredBusinessPhone";
 
 export const post = defineType({
   name: "post",
   title: "Blog Posts",
   type: "document",
+  validation: (Rule) => Rule.custom((doc) =>
+    doc && containsRetiredBusinessPhone(JSON.stringify(doc))
+      ? `Replace the retired office phone number with ${BUSINESS.phone}. Check the text and the link destination.`
+      : true),
   fields: [
     defineField({
       name: "title",

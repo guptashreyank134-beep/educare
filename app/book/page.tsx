@@ -79,8 +79,8 @@ export default function BookPage() {
 
             <p className="text-[14px] text-slate/60 leading-relaxed max-w-md">
               {booking
-                ? "Choose an available appointment time in the calendar to request your free assessment."
-                : "Fill in the form and we'll be in touch to arrange your free assessment. It takes under a minute and commits you to nothing."}
+                ? "Choose an available time and complete the booking form to confirm your free assessment."
+                : "Please check back to select an appointment time."}
             </p>
           </div>
 

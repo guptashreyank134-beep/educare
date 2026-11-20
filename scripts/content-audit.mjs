@@ -14,6 +14,7 @@
 
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
+import { containsRetiredBusinessPhone } from "../lib/retiredBusinessPhone.ts";
 
 const ROOTS = ["app", "components", "data", "utils"];
 const EXTS = new Set([".ts", ".tsx", ".js", ".jsx", ".mjs"]);
@@ -123,8 +124,8 @@ for (const file of files) {
 // ─── Sanity content scan ─────────────────────────────────────────────────────
 // The FAQs and metadata rendered on many pages live in Sanity, NOT in the code
 // files above — so a code-only scan misses them. If a Sanity token is available
-// (.env.local or the environment), scan every programPage and pageFaq FAQ with
-// the same content rules. Silently skipped when no token (e.g. bare CI).
+// (.env.local or the environment), scan programPage and pageFaq FAQs and
+// check authored blog content for the retired business number.
 const plain = (a) =>
   Array.isArray(a) ? a.map((b) => (b.children || []).map((x) => x.text).join("")).join(" ") : a || "";
 
@@ -159,6 +160,13 @@ async function scanSanity() {
   ];
   const progs = await c.fetch('*[_type=="programPage"]{"id":slug.current,"faqs":faqs[]{question,answer}}');
   const pfaqs = await c.fetch('*[_type=="pageFaq"]{"id":pageSlug,"faqs":faqs[]{question,answer}}');
+  const posts = await c.fetch('*[_type=="post"]{_id, slug, title, excerpt, body, metaData, relatedLinks}');
+  for (const post of posts) {
+    if (containsRetiredBusinessPhone(JSON.stringify(post))) {
+      out.push({ file: `sanity:post/${post.slug?.current ?? post._id}`, line: 0,
+        rule: { id: "old-phone", level: "ERROR" }, text: "The article contains the retired business phone number." });
+    }
+  }
   for (const [label, docs] of [["programPage", progs], ["pageFaq", pfaqs]]) {
     for (const d of docs || []) {
       for (const f of d.faqs || []) {
@@ -181,13 +189,13 @@ try {
   // Sanity errors may carry request headers, including the authorization token.
   // Report an incomplete audit without serializing the authenticated request.
   sanityScanFailed = true;
-  console.error("Sanity FAQ scan failed. Check network access and CMS credentials; the content audit is incomplete.");
+  console.error("Sanity content scan failed. Check network access and CMS credentials; the content audit is incomplete.");
 }
 const all = [...findings, ...sanityFindings];
 const errors = all.filter((f) => f.rule.level === "ERROR");
 const warns = all.filter((f) => f.rule.level === "WARN");
 
-console.log(`\nContent audit — scanned ${files.length} source files${sanityScanCompleted ? " + Sanity FAQs" : sanityScanFailed ? " (Sanity FAQ scan failed)" : " (Sanity FAQ scan skipped)"}\n`);
+console.log(`\nContent audit — scanned ${files.length} source files${sanityScanCompleted ? " + Sanity FAQs and blog posts" : sanityScanFailed ? " (Sanity scan failed)" : " (Sanity scan skipped)"}\n`);
 for (const f of all) {
   console.log(`  ${f.rule.level === "ERROR" ? "✗" : "!"} [${f.rule.id}] ${f.file}${f.line ? ":" + f.line : ""}`);
   console.log(`      ${f.text}`);

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { trackEvent } from "@/lib/analytics";
+import { getAppointmentBooking } from "@/lib/appointmentBooking";
 
 /**
  * Moves the reader to the enquiry form and puts the cursor in it.
@@ -31,8 +32,7 @@ export function scrollToEnquiryForm(targetId: string): boolean {
   // Aligning the top is only right when the whole form fits. The form runs to
   // ~889px against a 900px viewport, so a top-aligned scroll left the submit
   // button below the fold and the form looked cut off. When it does not fit,
-  // bring the bottom into view instead, so the button that completes the
-  // booking is the thing the visitor can see.
+  // bring the bottom into view so the submit button is visible.
   const fits = box.height <= usable;
   const top = fits
     ? pageTop - HEADER_CLEARANCE
@@ -79,7 +79,7 @@ export function ConsultationCtaLink({
   className = "",
 }: {
   targetId: string;
-  formId: string;
+  formId?: string;
   children: React.ReactNode;
   className?: string;
 }) {
@@ -87,7 +87,7 @@ export function ConsultationCtaLink({
     <a
       href={`#${targetId}`}
       onClick={(event) => {
-        trackEvent("consultation_cta_click", { form_id: formId });
+        if (formId) trackEvent("consultation_cta_click", { form_id: formId });
         // Only take over when the target is really there; otherwise let the
         // browser handle the link as it normally would.
         if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
@@ -100,8 +100,25 @@ export function ConsultationCtaLink({
   );
 }
 
+export function ProgramConsultationLinks({ targetId, formId }: { targetId: string; formId: string }) {
+  return (
+    <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+      <a
+        href={getAppointmentBooking()?.url ?? "/book"}
+        onClick={() => trackEvent("consultation_cta_click", { form_id: formId })}
+        className="inline-flex items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white hover:bg-primary/90"
+      >
+        Book a Free 30-Minute Consultation
+      </a>
+      <ConsultationCtaLink targetId={targetId} className="text-primary underline underline-offset-2">
+        Ask about this program
+      </ConsultationCtaLink>
+    </div>
+  );
+}
+
 /**
- * Mobile-only bar pinned to the bottom, linking back to the form.
+ * Mobile-only booking shortcut displayed after the course enquiry form.
  *
  * Hidden whenever the form is on screen, so it can never sit over the fields a
  * visitor is trying to fill. The page reserves matching bottom padding while the
@@ -142,13 +159,9 @@ export function StickyConsultationBar({
       }`}
     >
       <a
-        href={`#${targetId}`}
+        href={getAppointmentBooking()?.url ?? "/book"}
         tabIndex={visible ? 0 : -1}
-        onClick={(event) => {
-          trackEvent("consultation_cta_click", { form_id: `${formId}-sticky` });
-          if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
-          if (scrollToEnquiryForm(targetId)) event.preventDefault();
-        }}
+        onClick={() => trackEvent("consultation_cta_click", { form_id: `${formId}-sticky` })}
         className="flex w-full items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white"
       >
         {label}

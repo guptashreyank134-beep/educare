@@ -1,4 +1,5 @@
 import { getAppointmentBooking } from "@/lib/appointmentBooking";
+import BookingCalendarFrame from "@/components/BookingCalendarFrame";
 
 export default function AppointmentBooking() {
   const booking = getAppointmentBooking();
@@ -14,11 +15,9 @@ export default function AppointmentBooking() {
     <section aria-label="Appointment scheduler" data-enquiry-form="page">
       <p className="mb-4 text-sm text-slate/80">
         Select an available time to continue. Your consultation is confirmed only after you
-        complete the Calendly booking form. Check the displayed time zone before booking.
+        complete the {booking.provider} booking form. Check the displayed time zone before booking.
       </p>
-      <iframe src={booking.embedUrl} title={`Book a tutoring consultation with ${booking.provider}`}
-        className="w-full min-w-0 rounded-xl border border-slate-200 bg-white"
-        height={780} referrerPolicy="strict-origin-when-cross-origin" />
+      <BookingCalendarFrame booking={booking} />
       <p className="mt-4 text-sm">
         Having trouble with the calendar?{" "}
         <a href={booking.url} target="_blank" rel="noopener noreferrer" className="text-primary underline">

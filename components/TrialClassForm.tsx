@@ -47,7 +47,7 @@ const TrialClassForm = ({
         </p>
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-slate/75">
           A consultation is booked only after you select an available time and complete the
-          Calendly form. Times already occupied in our connected calendars are unavailable.
+          Calendly form. Check the time zone shown when choosing your slot.
         </p>
 
         <AppointmentBookingLink>{buttonLabel}</AppointmentBookingLink>

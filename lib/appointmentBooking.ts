@@ -24,7 +24,7 @@ export function parseAppointmentBooking(value: string | undefined): AppointmentB
       embed.searchParams.set("gv", "true");
       return { provider: "Google Calendar", url: url.href, embedUrl: embed.href };
     }
-  } catch { /* Invalid configuration leaves the enquiry form available. */ }
+  } catch { /* Display the scheduler's unavailable state for an invalid URL. */ }
   return null;
 }
 

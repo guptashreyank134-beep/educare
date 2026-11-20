@@ -186,9 +186,9 @@ const ANCHORS = {
   // Varied phrasing for SEO (no exact-match repetition), but every variant names
   // the SAME offer — a consultation. "trial"/"session" wording is deliberately
   // absent: it implied a different service and confused parents.
-  "/contact": [
+  "/book": [
     "free consultation", "free 30-minute consultation", "no-obligation consultation",
-    "complimentary consultation", "free initial consultation", "book a consultation",
+    "complimentary consultation", "free initial consultation",
   ],
 };
 
@@ -367,7 +367,7 @@ function buildBody(article, slug, title) {
     blocks.push(para(pick(A_STUDY_LEAD, slug, "as") + joinPoints(article.studyTips)));
   }
   blocks.push(strongPara(pick(Q_TUTOR, slug, "qt")));
-  blocks.push(linkedPara(pick(A_TUTOR, slug, "at")(L(link("/contact", "cta")))));
+  blocks.push(linkedPara(pick(A_TUTOR, slug, "at")(L(link("/book", "cta")))));
 
   blocks.push(heading(pick(H_HELP, slug, "hh")));
   (article.closing || []).forEach((p) => blocks.push(para(p)));

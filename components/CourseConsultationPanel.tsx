@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import CourseEnquiryForm from "@/components/CourseEnquiryForm";
+import type { LeadVertical } from "@/components/LeadForm";
 import TestimonialQuote from "@/components/TestimonialQuote";
 import { LEAD_AUTHOR, authorPath, credentialLabel } from "@/data/authors";
 import { testimonialsFor } from "@/data/testimonials";
@@ -20,6 +21,7 @@ import { testimonialsFor } from "@/data/testimonials";
  */
 export default function CourseConsultationPanel({
   subject,
+  vertical,
   anchor,
   courseExample,
   courseLabel,
@@ -30,6 +32,7 @@ export default function CourseConsultationPanel({
 }: {
   /** Recorded as the lead subject. Set by the page, never typed by the visitor. */
   subject: string;
+  vertical?: LeadVertical;
   /** Element id the page's CTAs scroll to. */
   anchor: string;
   courseExample: string;
@@ -89,6 +92,7 @@ export default function CourseConsultationPanel({
       >
         <CourseEnquiryForm
           subject={subject}
+          vertical={vertical}
           formId={anchor}
           courseExample={courseExample}
           courseLabel={courseLabel}

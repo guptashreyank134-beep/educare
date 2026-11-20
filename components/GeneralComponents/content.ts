@@ -75,7 +75,7 @@ export const ChemistryHeroSectionContent = {
   image: {
     src: "chemistryHeroImg.png",
     alt: "Chemistry Tutoring",
-    href: "/contact",
+    href: "/book",
   },
 };
 

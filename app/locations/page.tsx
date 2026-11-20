@@ -26,7 +26,7 @@ export function generateMetadata(): Metadata {
 
 export default function LocationsPage() {
   return (
-    <div className="min-h-screen bg-white font-montserrat relative overflow-hidden">
+    <main className="min-h-screen bg-white font-montserrat relative overflow-hidden">
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-40"
         style={{
@@ -36,7 +36,7 @@ export default function LocationsPage() {
         }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-20">
         <div className="mb-8">
           <Breadcrumbs items={[{ label: "Locations" }]} />
         </div>
@@ -152,7 +152,7 @@ export default function LocationsPage() {
           </p>
           <p className="text-[#64748B] text-[16px] sm:text-[18px] leading-relaxed">
             Not sure which format fits your student?{" "}
-            <Link href="/contact" className="text-primary font-semibold underline underline-offset-4">
+            <Link href="/book" className="text-primary font-semibold underline underline-offset-4">
               Book a free 30-minute consultation
             </Link>{" "}
             and we&apos;ll recommend the right tutor and schedule — in person in
@@ -160,7 +160,7 @@ export default function LocationsPage() {
           </p>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

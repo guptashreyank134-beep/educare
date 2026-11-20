@@ -1,7 +1,7 @@
 # Lead analytics: what fires, and what to do in GTM
 
-The site pushes four events to the GTM dataLayer. They fire correctly — asserted
-in a real browser by `tests/lead-capture.spec.ts` — but **nothing consumes them
+The site pushes five events to the GTM dataLayer. They fire correctly — asserted
+in a real browser by `tests/lead-capture.spec.ts` and `tests/appointment-booking.spec.ts` — but **nothing consumes them
 until triggers exist in GTM**, so conversion reporting stays empty until the
 steps below are done. That configuration lives in the GTM web interface, not in
 this repository.
@@ -11,6 +11,7 @@ this repository.
 | Event | Fires when | Payload |
 | --- | --- | --- |
 | `consultation_cta_click` | A "Book a Free 30-Minute Consultation" link is clicked | `page`, `form_id` |
+| `booking_confirmed` | Calendly reports a completed appointment in the embedded scheduler on `/book` | `page` |
 | `enquiry_form_start` | The visitor first edits the form — **once per interaction**, not per keystroke | `page`, `form_id` |
 | `generate_lead` | The server confirms the enquiry was **stored durably** | `page`, `form_id`, `lead_subject` |
 | `enquiry_form_error` | A submission was rejected | `page`, `form_id`, `reason` |
@@ -31,7 +32,7 @@ conversion figure cannot drift above the enquiries that actually exist in Studio
 
 ## Setting up GTM
 
-For each of the four events:
+For each event:
 
 1. **Triggers → New → Trigger Configuration → Custom Event**
 2. Event name: exactly the name from the table above (no wildcards)
@@ -69,7 +70,7 @@ rejecting a format real visitors use.
 npm run test:browser
 ```
 
-Asserts in a real browser that all four fire, that `enquiry_form_start` fires
+Asserts in a real browser that these events fire, that `enquiry_form_start` fires
 once rather than per keystroke, that `generate_lead` carries the right
 `form_id`/`lead_subject`, and that no personal data reaches any event.
 

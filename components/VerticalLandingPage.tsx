@@ -187,6 +187,7 @@ export default async function VerticalLandingPage({ slug }: { slug: string }) {
             <div data-landing-enquiry className="relative">
               <CourseConsultationPanel
                 subject={page.heroHeading}
+                vertical={page.vertical}
                 anchor={`${page.slug}-enquiry`}
                 courseLabel={page.leadSubjectLabel}
                 courseExample={

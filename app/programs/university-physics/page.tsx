@@ -19,11 +19,10 @@ import ProgramNextSteps from "@/components/ProgramNextSteps";
 import { getProgramFaqs } from "@/sanity/lib/faqs";
 import UniversityCourseTable from "@/components/UniversityCourseTable";
 import {
-  ConsultationCtaLink,
+  ProgramConsultationLinks,
   StickyConsultationBar,
 } from "@/components/ConsultationCta";
 import CourseConsultationPanel from "@/components/CourseConsultationPanel";
-import ConsultationLayout from "@/components/ConsultationLayout";
 import { PROGRAM_ENQUIRY, programAnchor } from "@/content/program-enquiry";
 import { PRICING_TEXT } from "@/data/pricing";
 
@@ -64,8 +63,7 @@ export default async function UniversityPhysicsPage() {
       <div className="max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-12 lg:pb-16 relative z-10">
         <Breadcrumbs items={breadcrumbItems} />
 
-        <ConsultationLayout
-          className="mt-10"
+        <ProgramOverview
           intro={
             <div>
               <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bricolage font-normal text-slate leading-tight mb-[18px]">
@@ -92,23 +90,13 @@ export default async function UniversityPhysicsPage() {
                   Vancouver and the Lower Mainland.
                 </p>
               </div>
-
-              {/* Consultation offer. The description and the response time are the
-                  same ones published on /book and /contact. */}
               <div className="rounded-[16px] border border-[#F1F5F9] bg-white/80 p-5 sm:p-6">
                 <div className="flex flex-col items-start gap-4">
-                  <ConsultationCtaLink
-                    targetId={ENQUIRY_ANCHOR}
-                    formId={FORM_ID}
-                    className="inline-flex shrink-0 items-center justify-center rounded-[8px] bg-primary px-5 py-3 text-[16px] font-montserrat font-medium text-white transition-colors hover:bg-primary/90"
-                  >
-                    Book a Free 30-Minute Consultation
-                  </ConsultationCtaLink>
+                  <ProgramConsultationLinks targetId={ENQUIRY_ANCHOR} formId={FORM_ID} />
                   <p className="text-[15px] font-montserrat leading-relaxed text-slate/80">
                     One free, no-obligation 30-minute conversation: tell us where you are
                     stuck, and we map out the subject, level and schedule that would help.
-                    Bring a recent test or problem set. We reply within 24 hours on
-                    business days.
+                    Bring a recent test or problem set.
                   </p>
                 </div>
                 <p className="mt-4 text-[14px] font-montserrat text-slate/70">
@@ -134,7 +122,6 @@ export default async function UniversityPhysicsPage() {
             />
           }
         >
-          <ProgramOverview>
             <ProgramInfoCard icon={Layers} title="What We Cover">
               <ProgramBulletList
                 items={[
@@ -205,8 +192,7 @@ export default async function UniversityPhysicsPage() {
                 ]}
               />
             </ProgramInfoCard>
-          </ProgramOverview>
-        </ConsultationLayout>
+        </ProgramOverview>
 
         {/* Bottom Section: Courses We Support */}
                 <UniversityCourseTable subject={"Physics"} />
@@ -223,7 +209,6 @@ export default async function UniversityPhysicsPage() {
 
         <ProgramNextSteps
           subject="University Physics"
-          consultationHref={`#${ENQUIRY_ANCHOR}`}
           relatedLinks={[
             { label: "Physics 11 & 12 tutoring", href: "/programs/physics" },
             { label: "Engineering statics tutor", href: "/engineering-statics-tutor" },

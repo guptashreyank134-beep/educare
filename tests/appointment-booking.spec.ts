@@ -1,4 +1,37 @@
 import { test, expect } from "@playwright/test";
+import { readOnlyPage } from "./helpers/consultation-layout";
+
+test("booking confirmation comes only from a completed appointment in the scheduler", async ({ page }) => {
+  await readOnlyPage(page);
+  await page.addInitScript(() => {
+    (window as unknown as { dataLayer: unknown[] }).dataLayer = [];
+  });
+  const confirmations = () => page.evaluate(() =>
+    (window as unknown as { dataLayer: { event?: string }[] }).dataLayer.filter((entry) => entry.event === "booking_confirmed"),
+  );
+  await page.goto("/thank-you");
+  expect(await confirmations()).toEqual([]);
+  await expect(page.getByRole("link", { name: "choose an available time", exact: true })).toHaveAttribute("href", "/book");
+
+  // Stand in for Calendly without sending any appointment requests.
+  await page.route("https://calendly.com/**", (route) => route.fulfill({
+    contentType: "text/html",
+    body: "<p>Booking provider</p>",
+  }));
+  await page.goto("/book");
+  const frame = page.frameLocator('iframe[title*="Calendly"]');
+  await expect(frame.getByText("Booking provider")).toBeVisible();
+  await page.evaluate(() => window.postMessage({ event: "calendly.event_scheduled" }, location.origin));
+  await frame.getByText("Booking provider").evaluate(() => {
+    window.parent.postMessage({ event: "calendly.date_and_time_selected" }, "*");
+  });
+  expect(await confirmations()).toEqual([]);
+  await frame.getByText("Booking provider").evaluate(() => {
+    window.parent.postMessage({ event: "calendly.event_scheduled" }, "*");
+    window.parent.postMessage({ event: "calendly.event_scheduled" }, "*");
+  });
+  await expect.poll(confirmations).toEqual([{ event: "booking_confirmed", page: "/book" }]);
+});
 
 test("booking page requires visitors to use Calendly", async ({ page }) => {
   // Validate our integration without creating appointments or depending on
