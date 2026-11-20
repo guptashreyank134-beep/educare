@@ -71,6 +71,12 @@ for (const width of [390, 1280]) {
       await expect(primary).toHaveCount(1);
       await expect(primary).toBeInViewport({ ratio: 1 });
       await expect(primary).toHaveAttribute("href", "https://calendly.com/drshreyankeducare-info/30min");
+      await expect(hero.locator('a[href*="calendly.com/"]')).toHaveCount(1);
+      const filledActionLabels = await hero.getByRole("link").evaluateAll((links) =>
+        links.filter((link) => getComputedStyle(link).backgroundColor !== "rgba(0, 0, 0, 0)")
+          .map((link) => link.textContent?.trim()),
+      );
+      expect(filledActionLabels).toEqual(["Book a Free Consultation"]);
       await expect(hero.locator('a[href="/book"]')).toHaveCount(0);
       await expect(hero.getByRole("link", { name: "Choose an Available Timeslot", exact: true })).toHaveCount(0);
       await expect(booking.locator("form")).toHaveCount(0);
@@ -86,11 +92,24 @@ for (const width of [390, 1280]) {
       expect(linkStyle.border).toBe("0px");
       await expect(page.locator('a.fixed[aria-label="Chat on WhatsApp"]')).toHaveCount(0);
 
-      const headingBox = (await hero.getByRole("heading", { level: 1 }).boundingBox())!;
-      const bookingBox = (await booking.boundingBox())!;
+      const heading = hero.getByRole("heading", { level: 1 });
+      const bookingTitle = booking.getByRole("heading", {
+        level: 2, name: "Your Free 30-Minute Consultation", exact: true,
+      });
+      await expect(bookingTitle).toBeVisible();
       if (width >= 1024) {
-        expect(Math.abs(headingBox.y - bookingBox.y)).toBeLessThanOrEqual(2);
+        for (const desktopWidth of [width, 1024]) {
+          await page.setViewportSize({ width: desktopWidth, height: 900 });
+          const headingBox = (await heading.boundingBox())!;
+          const bookingBox = (await booking.boundingBox())!;
+          const titleBox = (await bookingTitle.boundingBox())!;
+          expect(Math.abs(headingBox.y - bookingBox.y)).toBeLessThanOrEqual(2);
+          expect(Math.abs(headingBox.y - titleBox.y)).toBeLessThanOrEqual(2);
+          expect(titleBox.x).toBeGreaterThanOrEqual(headingBox.x + headingBox.width);
+        }
       } else {
+        const headingBox = (await heading.boundingBox())!;
+        const bookingBox = (await booking.boundingBox())!;
         const visualBox = (await hero.locator("[data-home-visual]").boundingBox())!;
         expect(bookingBox.y).toBeGreaterThan(headingBox.y + headingBox.height);
         expect(visualBox.y).toBeGreaterThanOrEqual(bookingBox.y + bookingBox.height);

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import TrialClassForm from "@/components/TrialClassForm";
+import { AppointmentBookingLink } from "@/components/TrialClassForm";
 import VancouverHeroImage from "@/components/VancouverHeroImage";
 import VancouverAboutSection from "@/components/VancouverAboutSection";
 import VancouverWhyChooseSection from "@/components/VancouverWhyChooseSection";
@@ -67,16 +67,24 @@ export default async function Home() {
             </p>
           </div>
 
-          <div data-home-booking className="min-w-0 lg:col-start-2 lg:row-start-1 lg:row-span-2">
-            <TrialClassForm
-              title="Your Free 30-Minute Consultation"
-              buttonLabel="Book a Free Consultation"
-            />
-            <p className="text-[14px] text-slate font-montserrat text-center mt-4 leading-relaxed">
-              No obligation — we&apos;ll discuss your course, current challenges
-              and a suitable next step.
+          <section
+            data-home-booking
+            data-enquiry-form="page"
+            aria-labelledby="home-booking-heading"
+            className="min-w-0 rounded-xl border-l-4 border-primary bg-[#F5F7FC] p-5 sm:p-6 lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:rounded-none lg:bg-transparent lg:py-0 lg:pl-8"
+          >
+            <h2 id="home-booking-heading" className="font-bricolage text-[24px] font-medium leading-tight text-slate sm:text-[28px]">
+              Your Free 30-Minute Consultation
+            </h2>
+            <p className="mt-3 max-w-md text-[16px] leading-relaxed text-slate/80">
+              Bring a question about your course or a topic you find difficult.
+              We’ll discuss what to work on first and which tutoring options fit.
             </p>
-            <p className="mt-3 text-center text-[14px] leading-relaxed text-slate/75">
+            <p className="mt-3 text-[15px] leading-relaxed text-slate/75">
+              Select an available time in Calendly to confirm your appointment.
+            </p>
+            <AppointmentBookingLink>Book a Free Consultation</AppointmentBookingLink>
+            <p className="mt-4 text-[14px] leading-relaxed text-slate/75">
               Have a question first?{" "}
               <a
                 href={BUSINESS.whatsapp}
@@ -87,7 +95,7 @@ export default async function Home() {
                 Chat on WhatsApp
               </a>
             </p>
-          </div>
+          </section>
 
           <div data-home-details className="min-w-0 lg:col-start-1 lg:row-start-2">
             <p className="text-[#64748B] text-[16px] leading-relaxed mb-4">

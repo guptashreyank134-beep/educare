@@ -1,6 +1,27 @@
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { getAppointmentBooking } from "@/lib/appointmentBooking";
 
+export function AppointmentBookingLink({ children }: { children: string }) {
+  const booking = getAppointmentBooking();
+  if (!booking) {
+    return (
+      <p className="mt-6 rounded-xl bg-amber-50 p-4 text-sm text-amber-900">
+        Online appointment booking is temporarily unavailable. Please try again shortly.
+      </p>
+    );
+  }
+
+  return (
+    <a
+      href={booking.url}
+      className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 font-medium text-white transition-colors hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+    >
+      {children}
+      <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
+    </a>
+  );
+}
+
 const TrialClassForm = ({
   scope = "page",
   title = "Select Your Required Timeslot",
@@ -12,8 +33,6 @@ const TrialClassForm = ({
   title?: string;
   buttonLabel?: string;
 }) => {
-  const booking = getAppointmentBooking();
-
   return (
     <div
       data-enquiry-form={scope}
@@ -31,19 +50,7 @@ const TrialClassForm = ({
           Calendly form. Times already occupied in our connected calendars are unavailable.
         </p>
 
-        {booking ? (
-          <a
-            href={booking.url}
-            className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 font-medium text-white transition-colors hover:bg-primary/90"
-          >
-            {buttonLabel}
-            <ArrowRight className="h-5 w-5" aria-hidden="true" />
-          </a>
-        ) : (
-          <p className="mt-6 rounded-xl bg-amber-50 p-4 text-sm text-amber-900">
-            Online appointment booking is temporarily unavailable. Please try again shortly.
-          </p>
-        )}
+        <AppointmentBookingLink>{buttonLabel}</AppointmentBookingLink>
       </div>
     </div>
   );
