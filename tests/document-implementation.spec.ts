@@ -90,7 +90,7 @@ for (const width of [390, 1280]) {
       });
       expect(linkStyle.background).toBe("rgba(0, 0, 0, 0)");
       expect(linkStyle.border).toBe("0px");
-      await expect(page.locator('a.fixed[aria-label="Chat on WhatsApp"]')).toHaveCount(0);
+      await expect(page.locator('[data-whatsapp-shortcut]')).toBeHidden();
 
       const heading = hero.getByRole("heading", { level: 1 });
       const bookingTitle = booking.getByRole("heading", {
@@ -139,6 +139,18 @@ for (const width of [390, 1280]) {
     });
   });
 }
+
+test.describe("homepage before hydration", () => {
+  test.use({ javaScriptEnabled: false });
+  test("offers WhatsApp as a text link on the first render", async ({ page }) => {
+    await readOnlyPage(page);
+    await page.goto("/");
+    const whatsapp = page.locator('[data-home-booking]').getByRole("link", { name: "Chat on WhatsApp", exact: true });
+    await expect(whatsapp).toHaveCount(1);
+    await expect(whatsapp).toBeVisible();
+    await expect(page.locator('[data-whatsapp-shortcut]')).toBeHidden();
+  });
+});
 
 for (const path of [
   "/physics-tutor-vancouver",

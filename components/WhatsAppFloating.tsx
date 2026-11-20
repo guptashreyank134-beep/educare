@@ -10,12 +10,13 @@ const WhatsAppFloating = () => {
   const pathname = usePathname();
   // The homepage offers a quieter WhatsApp text link beside its main booking
   // action. Keep the floating shortcut on the rest of the site.
-  if (pathname === "/") return null;
+  if (!pathname || pathname === "/") return null;
 
   const whatsappUrl = BUSINESS.whatsapp;
 
   return (
     <a
+      data-whatsapp-shortcut
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"

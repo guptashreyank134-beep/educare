@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* The public homepage can arrive before the client router knows its pathname. */
+body:has([data-home-hero]) [data-whatsapp-shortcut] {
+  display: none;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
