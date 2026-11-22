@@ -3,14 +3,14 @@
 "use client";
 
 import React from "react";
-import { usePathname } from "next/navigation";
+import { useSelectedLayoutSegment } from "next/navigation";
 import { BUSINESS } from "@/data/businessInfo";
 
 const WhatsAppFloating = () => {
-  const pathname = usePathname();
+  const segment = useSelectedLayoutSegment();
   // The homepage offers a quieter WhatsApp text link beside its main booking
   // action. Keep the floating shortcut on the rest of the site.
-  if (!pathname || pathname === "/") return null;
+  if (segment === null) return null;
 
   const whatsappUrl = BUSINESS.whatsapp;
 

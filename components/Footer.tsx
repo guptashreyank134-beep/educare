@@ -3,7 +3,7 @@
 "use client";
 
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useSelectedLayoutSegments } from "next/navigation";
 import { ROUTES_WITH_THEIR_OWN_FORM } from "@/content/own-form-routes";
 import { SHARED_ENQUIRY_ANCHOR } from "@/content/program-enquiry";
 import TrialClassForm from "./TrialClassForm";
@@ -274,14 +274,10 @@ function FooterBar() {
  */
 
 export default function Footer() {
-  const pathname = usePathname();
-
-  // The route list is written without a trailing slash, so "/about/" has to be
-  // reduced to "/about" or the lookup misses and the page gets two forms. An
-  // unknown path still shows the form: it is the only enquiry form on most
-  // pages, and a missing form costs an enquiry outright.
-  const route = pathname ? pathname.replace(/(.)\/+$/, "$1") : null;
-  const showGlobalForm = !route || !ROUTES_WITH_THEIR_OWN_FORM.has(route);
+  // The deployed homepage can be prerendered at /index and hydrated at /.
+  // Its layout segments are empty in both cases; the pathname can disagree.
+  const segments = useSelectedLayoutSegments();
+  const showGlobalForm = !ROUTES_WITH_THEIR_OWN_FORM.has(`/${segments.join("/")}`);
 
   return (
     <>
